@@ -1,0 +1,173 @@
+\hypertarget{classGaussianCharge}{\section{Gaussian\-Charge Class Reference}
+\label{classGaussianCharge}\index{Gaussian\-Charge@{Gaussian\-Charge}}
+}
+
+
+Class derived from \hyperlink{classCharge}{Charge}, under the hypothesis that Density of States is a combination of gaussians.  
+
+
+
+
+{\ttfamily \#include $<$charge.\-h$>$}
+
+Inheritance diagram for Gaussian\-Charge\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGaussianCharge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGaussianCharge_a860db9bf8bccf98756f1f6bd60de5463}{\hyperlink{classGaussianCharge_a860db9bf8bccf98756f1f6bd60de5463}{Gaussian\-Charge} ()=delete}\label{classGaussianCharge_a860db9bf8bccf98756f1f6bd60de5463}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify a \hyperlink{classParamList}{Param\-List} and a \hyperlink{classQuadratureRule}{Quadrature\-Rule}). \end{DoxyCompactList}\item 
+\hyperlink{classGaussianCharge_a3e5ff9c43a3deb7861ea10435de4bb55}{Gaussian\-Charge} (const \hyperlink{classParamList}{Param\-List} \&, const \hyperlink{classQuadratureRule}{Quadrature\-Rule} \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}{virtual \hyperlink{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}{$\sim$\-Gaussian\-Charge} ()=default}\label{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual Vector\-Xd \hyperlink{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{charge} (const Vector\-Xd \&) override
+\begin{DoxyCompactList}\small\item\em Compute the total charge. \end{DoxyCompactList}\item 
+virtual Vector\-Xd \hyperlink{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{dcharge} (const Vector\-Xd \&) override
+\begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classGaussianCharge_a23fbccf4687490da653b2ea642284245}{n\-\_\-approx} (const double \&, const double \&, const double \&) const 
+\begin{DoxyCompactList}\small\item\em Compute electrons density (per unit volume). \end{DoxyCompactList}\item 
+double \hyperlink{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}{dn\-\_\-approx} (const double \&, const double \&, const double \&) const 
+\begin{DoxyCompactList}\small\item\em Compute the approximate derivative of electrons density (per unit volume) with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class derived from \hyperlink{classCharge}{Charge}, under the hypothesis that Density of States is a combination of gaussians. 
+
+Provide methods to compute total electric charge and its derivative under the hypothesis that Density of States is a linear combination of multiple gaussians, whose parameters are read from a \hyperlink{classParamList}{Param\-List} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGaussianCharge_a3e5ff9c43a3deb7861ea10435de4bb55}{\index{Gaussian\-Charge@{Gaussian\-Charge}!Gaussian\-Charge@{Gaussian\-Charge}}
+\index{Gaussian\-Charge@{Gaussian\-Charge}!GaussianCharge@{Gaussian\-Charge}}
+\subsubsection[{Gaussian\-Charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gaussian\-Charge} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Param\-List} \&}]{params, }
+\item[{const {\bf Quadrature\-Rule} \&}]{rule}
+\end{DoxyParamCaption}
+)}}\label{classGaussianCharge_a3e5ff9c43a3deb7861ea10435de4bb55}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \-: the list of simulation parameters; \\
+\hline
+\mbox{\tt in}  & {\em rule} & \-: a quadrature rule. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{\index{Gaussian\-Charge@{Gaussian\-Charge}!charge@{charge}}
+\index{charge@{charge}!GaussianCharge@{Gaussian\-Charge}}
+\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd charge (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{phi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}
+
+
+Compute the total charge. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total charge $ q \left[ C \right] $. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{Charge}.
+
+\hypertarget{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dcharge@{dcharge}}
+\index{dcharge@{dcharge}!GaussianCharge@{Gaussian\-Charge}}
+\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd dcharge (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{phi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}
+
+
+Compute the derivative of the total charge with respect to the electric potential. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the derivative\-: $ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] $. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{Charge}.
+
+\hypertarget{classGaussianCharge_a23fbccf4687490da653b2ea642284245}{\index{Gaussian\-Charge@{Gaussian\-Charge}!n\-\_\-approx@{n\-\_\-approx}}
+\index{n\-\_\-approx@{n\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
+\subsubsection[{n\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}double n\-\_\-approx (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{phi, }
+\item[{const double \&}]{N0, }
+\item[{const double \&}]{sigma}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_a23fbccf4687490da653b2ea642284245}
+
+
+Compute electrons density (per unit volume). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $; \\
+\hline
+\mbox{\tt in}  & {\em N0} & \-: the gaussian mean $ N_0 $; \\
+\hline
+\mbox{\tt in}  & {\em sigma} & \-: the gaussian standard deviation $ \sigma $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the electrons density $ n(\varphi) \left[ m^{-3} \right] $. 
+\end{DoxyReturn}
+\hypertarget{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dn\-\_\-approx@{dn\-\_\-approx}}
+\index{dn\-\_\-approx@{dn\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
+\subsubsection[{dn\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}double dn\-\_\-approx (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{phi, }
+\item[{const double \&}]{N0, }
+\item[{const double \&}]{sigma}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}
+
+
+Compute the approximate derivative of electrons density (per unit volume) with respect to the electric potential. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $; \\
+\hline
+\mbox{\tt in}  & {\em N0} & \-: the gaussian mean $ N_0 $; \\
+\hline
+\mbox{\tt in}  & {\em sigma} & \-: the gaussian standard deviation $ \sigma $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the derivative\-: $ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] $. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{charge_8h}{charge.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/charge.\-c++\end{DoxyCompactItemize}

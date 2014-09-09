@@ -1,0 +1,122 @@
+\hypertarget{classCharge}{\section{Charge Class Reference}
+\label{classCharge}\index{Charge@{Charge}}
+}
+
+
+Abstract class providing methods to calculate total electric charge (the rhs in the Poisson equation).  
+
+
+
+
+{\ttfamily \#include $<$charge.\-h$>$}
+
+Inheritance diagram for Charge\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCharge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCharge_ad8bd7ca1f5eb4af83b0457a01aeeb001}{\hyperlink{classCharge_ad8bd7ca1f5eb4af83b0457a01aeeb001}{Charge} ()=delete}\label{classCharge_ad8bd7ca1f5eb4af83b0457a01aeeb001}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify a \hyperlink{classParamList}{Param\-List} and a \hyperlink{classQuadratureRule}{Quadrature\-Rule}). \end{DoxyCompactList}\item 
+\hyperlink{classCharge_a447211f3a5181d4efb8f2c7f1012c32b}{Charge} (const \hyperlink{classParamList}{Param\-List} \&, const \hyperlink{classQuadratureRule}{Quadrature\-Rule} \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classCharge_ad350b0cd3356862aacbf538e6cffac61}{virtual \hyperlink{classCharge_ad350b0cd3356862aacbf538e6cffac61}{$\sim$\-Charge} ()=default}\label{classCharge_ad350b0cd3356862aacbf538e6cffac61}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual Vector\-Xd \hyperlink{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{charge} (const Vector\-Xd \&phi)=0
+\begin{DoxyCompactList}\small\item\em Compute the total charge. \end{DoxyCompactList}\item 
+virtual Vector\-Xd \hyperlink{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{dcharge} (const Vector\-Xd \&phi)=0
+\begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCharge_a98166e75a7ce8273bfedf02e87bfd15f}{const \hyperlink{classParamList}{Param\-List} \& \hyperlink{classCharge_a98166e75a7ce8273bfedf02e87bfd15f}{params\-\_\-}}\label{classCharge_a98166e75a7ce8273bfedf02e87bfd15f}
+
+\begin{DoxyCompactList}\small\item\em Parameter list handler. \end{DoxyCompactList}\item 
+\hypertarget{classCharge_a37ca7d0fb67d7144675a97f8e4cbdf34}{const \hyperlink{classQuadratureRule}{Quadrature\-Rule} \& \hyperlink{classCharge_a37ca7d0fb67d7144675a97f8e4cbdf34}{rule\-\_\-}}\label{classCharge_a37ca7d0fb67d7144675a97f8e4cbdf34}
+
+\begin{DoxyCompactList}\small\item\em Quadrature rule handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class providing methods to calculate total electric charge (the rhs in the Poisson equation). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCharge_a447211f3a5181d4efb8f2c7f1012c32b}{\index{Charge@{Charge}!Charge@{Charge}}
+\index{Charge@{Charge}!Charge@{Charge}}
+\subsubsection[{Charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Charge} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Param\-List} \&}]{params, }
+\item[{const {\bf Quadrature\-Rule} \&}]{rule}
+\end{DoxyParamCaption}
+)}}\label{classCharge_a447211f3a5181d4efb8f2c7f1012c32b}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \-: the list of simulation parameters; \\
+\hline
+\mbox{\tt in}  & {\em rule} & \-: a quadrature rule. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{\index{Charge@{Charge}!charge@{charge}}
+\index{charge@{charge}!Charge@{Charge}}
+\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vector\-Xd charge (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{phi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}
+
+
+Compute the total charge. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total charge $ q \left[ C \right] $. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{Gaussian\-Charge}.
+
+\hypertarget{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{\index{Charge@{Charge}!dcharge@{dcharge}}
+\index{dcharge@{dcharge}!Charge@{Charge}}
+\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vector\-Xd dcharge (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{phi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}
+
+
+Compute the derivative of the total charge with respect to the electric potential. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em phi} & \-: the electric potential $ \varphi $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the derivative\-: $ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] $. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{Gaussian\-Charge}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{charge_8h}{charge.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/charge.\-c++\end{DoxyCompactItemize}

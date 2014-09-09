@@ -1,0 +1,222 @@
+\hypertarget{namespacenumerics}{\section{numerics Namespace Reference}
+\label{namespacenumerics}\index{numerics@{numerics}}
+}
+
+
+Namespace for generic numeric algorithms.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar\-Type $>$ }\\\hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \hyperlink{namespacenumerics_a1633aabded7159bb15bbf573bf9e12c5}{sort} (const \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Function to sort Eigen vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\-Type $>$ }\\\hyperlink{typedefs_8h_a21ab9e8bc0dd8e3c178df27d98155cfa}{Vector\-Xpair}$<$ Scalar\-Type $>$ \hyperlink{namespacenumerics_a510fe73118ce8c79570ac87fa3e7df47}{sort\-\_\-pair} (const \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Function to sort Eigen vectors, keeping track of indexes. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a42e19b3ed2ac997af23b6cd39323c013}{trapz} (const Vector\-Xd \&x, const Vector\-Xd \&y)
+\begin{DoxyCompactList}\small\item\em Function to compute approximate integral of {\itshape y} with spacing increment specified by {\itshape x}, using trapezoidal rule. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a91e617ca6ea3fb6a16ff741ea31dc689}{trapz} (const Vector\-Xd \&y)
+\begin{DoxyCompactList}\small\item\em Compute the approximate integral of {\itshape y} with unit spacing, using trapezoidal rule. \end{DoxyCompactList}\item 
+Vector\-Xd \hyperlink{namespacenumerics_a902afe79eec526f73e070726d858c368}{deriv} (const Vector\-Xd \&, const Vector\-Xd \&)
+\begin{DoxyCompactList}\small\item\em Compute the numeric derivative\-: $ \frac{\mathrm{d}y}{\mathrm{d}x} $. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a4e1271b4748935d7f4889fc1bdf5117b}{interp1} (const Vector\-Xd \&, const Vector\-Xd \&, const double \&)
+\begin{DoxyCompactList}\small\item\em Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the point {\itshape x\-New}. \end{DoxyCompactList}\item 
+Vector\-Xd \hyperlink{namespacenumerics_af30101e79ffdfd4dae00b864e3514ac7}{interp1} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&)
+\begin{DoxyCompactList}\small\item\em Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the points {\itshape x\-New}. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_ad636dd100e7ebe7b1e83868001e9d55a}{error\-\_\-\-L2} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const double \&)
+\begin{DoxyCompactList}\small\item\em Compute the $ L^2 $-\/norm error between simulated and interpolated values, using {\itshape trapz}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace for generic numeric algorithms. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacenumerics_a1633aabded7159bb15bbf573bf9e12c5}{\index{numerics@{numerics}!sort@{sort}}
+\index{sort@{sort}!numerics@{numerics}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector\-X}$<$ Scalar\-Type $>$ sort (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector\-X}$<$ Scalar\-Type $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a1633aabded7159bb15bbf573bf9e12c5}
+
+
+Function to sort Eigen vectors. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\-Type} & \-: the scalar type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vector} & \-: the vector to be sorted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sorted vector. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_a510fe73118ce8c79570ac87fa3e7df47}{\index{numerics@{numerics}!sort\-\_\-pair@{sort\-\_\-pair}}
+\index{sort\-\_\-pair@{sort\-\_\-pair}!numerics@{numerics}}
+\subsubsection[{sort\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector\-Xpair}$<$ Scalar\-Type $>$ sort\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector\-X}$<$ Scalar\-Type $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a510fe73118ce8c79570ac87fa3e7df47}
+
+
+Function to sort Eigen vectors, keeping track of indexes. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\-Type} & \-: the scalar type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vector} & \-: the vector to be sorted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an Eigen vector of pairs\-: (sorted value, corresponding index in the unsorted vector). 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_a42e19b3ed2ac997af23b6cd39323c013}{\index{numerics@{numerics}!trapz@{trapz}}
+\index{trapz@{trapz}!numerics@{numerics}}
+\subsubsection[{trapz}]{\setlength{\rightskip}{0pt plus 5cm}double trapz (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{x, }
+\item[{const Vector\-Xd \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a42e19b3ed2ac997af23b6cd39323c013}
+
+
+Function to compute approximate integral of {\itshape y} with spacing increment specified by {\itshape x}, using trapezoidal rule. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \-: the vector of the discrete domain; \\
+\hline
+\mbox{\tt in}  & {\em y} & \-: the vector of values to integrate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the approximate integral value. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_a91e617ca6ea3fb6a16ff741ea31dc689}{\index{numerics@{numerics}!trapz@{trapz}}
+\index{trapz@{trapz}!numerics@{numerics}}
+\subsubsection[{trapz}]{\setlength{\rightskip}{0pt plus 5cm}double trapz (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a91e617ca6ea3fb6a16ff741ea31dc689}
+
+
+Compute the approximate integral of {\itshape y} with unit spacing, using trapezoidal rule. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & \-: the vector of values to integrate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the approximate integral value. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_a902afe79eec526f73e070726d858c368}{\index{numerics@{numerics}!deriv@{deriv}}
+\index{deriv@{deriv}!numerics@{numerics}}
+\subsubsection[{deriv}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd deriv (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{y, }
+\item[{const Vector\-Xd \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a902afe79eec526f73e070726d858c368}
+
+
+Compute the numeric derivative\-: $ \frac{\mathrm{d}y}{\mathrm{d}x} $. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & \-: the vector of values to differentiate; \\
+\hline
+\mbox{\tt in}  & {\em x} & \-: the vector of the discrete domain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of the same length as {\itshape y} containing the approximate derivative. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_a4e1271b4748935d7f4889fc1bdf5117b}{\index{numerics@{numerics}!interp1@{interp1}}
+\index{interp1@{interp1}!numerics@{numerics}}
+\subsubsection[{interp1}]{\setlength{\rightskip}{0pt plus 5cm}double interp1 (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{x, }
+\item[{const Vector\-Xd \&}]{y, }
+\item[{const double \&}]{x\-New}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_a4e1271b4748935d7f4889fc1bdf5117b}
+
+
+Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the point {\itshape x\-New}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & \-: the vector of values to interpolate; \\
+\hline
+\mbox{\tt in}  & {\em x} & \-: the vector of the discrete domain; \\
+\hline
+\mbox{\tt in}  & {\em x\-New} & \-: the point to interpolate at. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a scalar containing the interpolated value. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_af30101e79ffdfd4dae00b864e3514ac7}{\index{numerics@{numerics}!interp1@{interp1}}
+\index{interp1@{interp1}!numerics@{numerics}}
+\subsubsection[{interp1}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd interp1 (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{x, }
+\item[{const Vector\-Xd \&}]{y, }
+\item[{const Vector\-Xd \&}]{x\-New}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_af30101e79ffdfd4dae00b864e3514ac7}
+
+
+Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the points {\itshape x\-New}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em y} & \-: the vector of values to interpolate; \\
+\hline
+\mbox{\tt in}  & {\em x} & \-: the vector of the discrete domain; \\
+\hline
+\mbox{\tt in}  & {\em x\-New} & \-: the vector of points to interpolate at. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of the same length as {\itshape x\-New} containing the interpolated values. 
+\end{DoxyReturn}
+\hypertarget{namespacenumerics_ad636dd100e7ebe7b1e83868001e9d55a}{\index{numerics@{numerics}!error\-\_\-\-L2@{error\-\_\-\-L2}}
+\index{error\-\_\-\-L2@{error\-\_\-\-L2}!numerics@{numerics}}
+\subsubsection[{error\-\_\-\-L2}]{\setlength{\rightskip}{0pt plus 5cm}double error\-\_\-\-L2 (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{interp, }
+\item[{const Vector\-Xd \&}]{simulated, }
+\item[{const Vector\-Xd \&}]{V, }
+\item[{const double \&}]{V\-\_\-shift}
+\end{DoxyParamCaption}
+)}}\label{namespacenumerics_ad636dd100e7ebe7b1e83868001e9d55a}
+
+
+Compute the $ L^2 $-\/norm error between simulated and interpolated values, using {\itshape trapz}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em interp} & \-: the interpolated values; \\
+\hline
+\mbox{\tt in}  & {\em simulated} & \-: the simulated values; \\
+\hline
+\mbox{\tt in}  & {\em V} & \-: the vector of the electric potential; \\
+\hline
+\mbox{\tt in}  & {\em V\-\_\-shift} & \-: shift to the electric potential. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the $ L^2 $-\/norm error. 
+\end{DoxyReturn}

@@ -1,0 +1,260 @@
+\hypertarget{classCsvParser}{\section{Csv\-Parser Class Reference}
+\label{classCsvParser}\index{Csv\-Parser@{Csv\-Parser}}
+}
+
+
+Class providing methods to read content from a .csv file and store it in matrices or vectors.  
+
+
+
+
+{\ttfamily \#include $<$csv\-Parser.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCsvParser_a9694abc21c2bc6d593a2489f6896ca10}{\hyperlink{classCsvParser_a9694abc21c2bc6d593a2489f6896ca10}{Csv\-Parser} ()=delete}\label{classCsvParser_a9694abc21c2bc6d593a2489f6896ca10}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify at least a filename). \end{DoxyCompactList}\item 
+\hyperlink{classCsvParser_a928811b407ea6816bab9fef75d504301}{Csv\-Parser} (const std\-::string \&, const bool \&=true)
+\begin{DoxyCompactList}\small\item\em Constructor\-: load the input file and check its compatibility with the code. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_a73aa36f7e9a832f184c98873c930e83e}{virtual \hyperlink{classCsvParser_a73aa36f7e9a832f184c98873c930e83e}{$\sim$\-Csv\-Parser} ()}\label{classCsvParser_a73aa36f7e9a832f184c98873c930e83e}
+
+\begin{DoxyCompactList}\small\item\em Destructor\-: close the input file. \end{DoxyCompactList}\item 
+Row\-Vector\-Xd \hyperlink{classCsvParser_a1ffc9952a2ceb0d2fd8216c0db327a63}{import\-Row} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Method to import a row from the input file. \end{DoxyCompactList}\item 
+Matrix\-Xd \hyperlink{classCsvParser_aecc038e4b8d0db2b62d97a6d9fc639d7}{import\-Rows} (const std\-::initializer\-\_\-list$<$ unsigned $>$ \&)
+\begin{DoxyCompactList}\small\item\em Method to import multiple rows from the input file. \end{DoxyCompactList}\item 
+Matrix\-Xd \hyperlink{classCsvParser_ade6a3f28e28a86dcad0251d16b9a59b9}{import\-First\-Rows} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Method to import the first {\itshape n\-Rows} rows from the input file. \end{DoxyCompactList}\item 
+Vector\-Xd \hyperlink{classCsvParser_a3ca9f7023c42fcabe6e31e54d6cfdc16}{import\-Col} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Method to import a column from the input file. \end{DoxyCompactList}\item 
+Matrix\-Xd \hyperlink{classCsvParser_a25c5604cd3cd6061b9c7e7c3e8efc779}{import\-Cols} (const std\-::initializer\-\_\-list$<$ unsigned $>$ \&)
+\begin{DoxyCompactList}\small\item\em Method to import multiple columns from the input file. \end{DoxyCompactList}\item 
+Matrix\-Xd \hyperlink{classCsvParser_a47d7037e91224c1d3e2817489d939bf8}{import\-First\-Cols} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Method to import the first {\itshape n\-Cols} columns from the input file. \end{DoxyCompactList}\item 
+double \hyperlink{classCsvParser_aaa5332e0ec78d1f38dd54240dcc728fe}{import\-Cell} (const unsigned \&, const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Method to import a single cell from the input file. \end{DoxyCompactList}\item 
+Matrix\-Xd \hyperlink{classCsvParser_af4d7e0e1fe650b836e87387962297e86}{import\-All} ()
+\begin{DoxyCompactList}\small\item\em Method to import the whole input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Getter methods.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCsvParser_a97cc0c0da2b3691103450622dda2519a}{const unsigned \& {\bfseries n\-Rows} () const }\label{classCsvParser_a97cc0c0da2b3691103450622dda2519a}
+
+\item 
+\hypertarget{classCsvParser_a5de88cc09cb45066e7b6396b24d68a19}{const unsigned \& {\bfseries n\-Cols} () const }\label{classCsvParser_a5de88cc09cb45066e7b6396b24d68a19}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCsvParser_ad20897c5c8bd47f5d4005989bead0e55}{void \hyperlink{classCsvParser_ad20897c5c8bd47f5d4005989bead0e55}{reset} ()}\label{classCsvParser_ad20897c5c8bd47f5d4005989bead0e55}
+
+\begin{DoxyCompactList}\small\item\em Reset all the flags for {\itshape input\-\_\-} and go back to the beginning of file (possibly by ignoring headers). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}{bool \hyperlink{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}{has\-Headers\-\_\-}}\label{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}
+
+\begin{DoxyCompactList}\small\item\em bool to determine if first row contains header information or not. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_a646e6783ca009681d11cdd80148c50c2}{unsigned \hyperlink{classCsvParser_a646e6783ca009681d11cdd80148c50c2}{n\-Rows\-\_\-}}\label{classCsvParser_a646e6783ca009681d11cdd80148c50c2}
+
+\begin{DoxyCompactList}\small\item\em No. of rows in the input file. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}{unsigned \hyperlink{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}{n\-Cols\-\_\-}}\label{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}
+
+\begin{DoxyCompactList}\small\item\em No. of columns in the input file. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}{std\-::ifstream \hyperlink{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}{input\-\_\-}}\label{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}
+
+\begin{DoxyCompactList}\small\item\em Input stream to {\itshape input\-\_\-filename}. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_aaeb353f8e1c649830268cfa5635eaa4f}{std\-::string \hyperlink{classCsvParser_aaeb353f8e1c649830268cfa5635eaa4f}{line\-\_\-}}\label{classCsvParser_aaeb353f8e1c649830268cfa5635eaa4f}
+
+\begin{DoxyCompactList}\small\item\em Auxiliary variable to store currently processed line. \end{DoxyCompactList}\item 
+\hypertarget{classCsvParser_a650afe260de7540becd03fd198dd1a59}{char \hyperlink{classCsvParser_a650afe260de7540becd03fd198dd1a59}{separator\-\_\-}}\label{classCsvParser_a650afe260de7540becd03fd198dd1a59}
+
+\begin{DoxyCompactList}\small\item\em The separator character detected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class providing methods to read content from a .csv file and store it in matrices or vectors. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCsvParser_a928811b407ea6816bab9fef75d504301}{\index{Csv\-Parser@{Csv\-Parser}!Csv\-Parser@{Csv\-Parser}}
+\index{Csv\-Parser@{Csv\-Parser}!CsvParser@{Csv\-Parser}}
+\subsubsection[{Csv\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Csv\-Parser} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{input\-\_\-filename, }
+\item[{const bool \&}]{has\-Headers = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_a928811b407ea6816bab9fef75d504301}
+
+
+Constructor\-: load the input file and check its compatibility with the code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input\-\_\-filename} & \-: the input filename; \\
+\hline
+\mbox{\tt in}  & {\em has\-Headers} & \-: bool to determine if first row contains header information or not; if {\bfseries true}, first row is always ignored. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCsvParser_a1ffc9952a2ceb0d2fd8216c0db327a63}{\index{Csv\-Parser@{Csv\-Parser}!import\-Row@{import\-Row}}
+\index{import\-Row@{import\-Row}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-Row}]{\setlength{\rightskip}{0pt plus 5cm}Row\-Vector\-Xd import\-Row (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{index}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_a1ffc9952a2ceb0d2fd8216c0db327a63}
+
+
+Method to import a row from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & \-: the row index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a row vector containing the content read. 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_aecc038e4b8d0db2b62d97a6d9fc639d7}{\index{Csv\-Parser@{Csv\-Parser}!import\-Rows@{import\-Rows}}
+\index{import\-Rows@{import\-Rows}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd import\-Rows (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ unsigned $>$ \&}]{indexes}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_aecc038e4b8d0db2b62d97a6d9fc639d7}
+
+
+Method to import multiple rows from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em indexes} & \-: initializer list containing the row indexes (e.\-g. something like \{1, 3, 4\}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix containing the content read (row by row). 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_ade6a3f28e28a86dcad0251d16b9a59b9}{\index{Csv\-Parser@{Csv\-Parser}!import\-First\-Rows@{import\-First\-Rows}}
+\index{import\-First\-Rows@{import\-First\-Rows}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-First\-Rows}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd import\-First\-Rows (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{n\-Rows}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_ade6a3f28e28a86dcad0251d16b9a59b9}
+
+
+Method to import the first {\itshape n\-Rows} rows from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Rows} & \-: the number of rows to import. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix containing the content read (row by row). 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_a3ca9f7023c42fcabe6e31e54d6cfdc16}{\index{Csv\-Parser@{Csv\-Parser}!import\-Col@{import\-Col}}
+\index{import\-Col@{import\-Col}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-Col}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd import\-Col (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{index}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_a3ca9f7023c42fcabe6e31e54d6cfdc16}
+
+
+Method to import a column from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & \-: the column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a column vector containing the content read. 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_a25c5604cd3cd6061b9c7e7c3e8efc779}{\index{Csv\-Parser@{Csv\-Parser}!import\-Cols@{import\-Cols}}
+\index{import\-Cols@{import\-Cols}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd import\-Cols (
+\begin{DoxyParamCaption}
+\item[{const std\-::initializer\-\_\-list$<$ unsigned $>$ \&}]{indexes}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_a25c5604cd3cd6061b9c7e7c3e8efc779}
+
+
+Method to import multiple columns from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em indexes} & \-: initializer list containing the column indexes (e.\-g. something like \{1, 3, 4\}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix containing the content read (column by column). 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_a47d7037e91224c1d3e2817489d939bf8}{\index{Csv\-Parser@{Csv\-Parser}!import\-First\-Cols@{import\-First\-Cols}}
+\index{import\-First\-Cols@{import\-First\-Cols}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-First\-Cols}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd import\-First\-Cols (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{n\-Cols}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_a47d7037e91224c1d3e2817489d939bf8}
+
+
+Method to import the first {\itshape n\-Cols} columns from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Cols} & \-: the number of columns to import. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix containing the content read (column by column). 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_aaa5332e0ec78d1f38dd54240dcc728fe}{\index{Csv\-Parser@{Csv\-Parser}!import\-Cell@{import\-Cell}}
+\index{import\-Cell@{import\-Cell}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-Cell}]{\setlength{\rightskip}{0pt plus 5cm}double import\-Cell (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{row\-Index, }
+\item[{const unsigned \&}]{col\-Index}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_aaa5332e0ec78d1f38dd54240dcc728fe}
+
+
+Method to import a single cell from the input file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em row\-Index} & \-: the cell row index. \\
+\hline
+\mbox{\tt in}  & {\em col\-Index} & \-: the cell column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a scalar containing the value read. 
+\end{DoxyReturn}
+\hypertarget{classCsvParser_af4d7e0e1fe650b836e87387962297e86}{\index{Csv\-Parser@{Csv\-Parser}!import\-All@{import\-All}}
+\index{import\-All@{import\-All}!CsvParser@{Csv\-Parser}}
+\subsubsection[{import\-All}]{\setlength{\rightskip}{0pt plus 5cm}Matrix\-Xd import\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCsvParser_af4d7e0e1fe650b836e87387962297e86}
+
+
+Method to import the whole input file. 
+
+\begin{DoxyReturn}{Returns}
+a matrix containing the content read (cell by cell). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{csvParser_8h}{csv\-Parser.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/csv\-Parser.\-c++\end{DoxyCompactItemize}

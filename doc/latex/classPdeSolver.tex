@@ -1,0 +1,99 @@
+\hypertarget{classPdeSolver}{\section{Pde\-Solver Class Reference}
+\label{classPdeSolver}\index{Pde\-Solver@{Pde\-Solver}}
+}
+
+
+Class providing methods to process a simulation to extract the Density of States starting from a parameter list.  
+
+
+
+
+{\ttfamily \#include $<$solvers.\-h$>$}
+
+Inheritance diagram for Pde\-Solver\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPdeSolver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPdeSolver_ad86822099b3e118a49eaa0cef47bf189}{{\bfseries Pde\-Solver} (Vector\-Xd \&)}\label{classPdeSolver_ad86822099b3e118a49eaa0cef47bf189}
+
+\item 
+\hypertarget{classPdeSolver_a1cff68e39de420ce84effe9924046975}{virtual void {\bfseries assemble\-Adv\-Diff} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&)=0}\label{classPdeSolver_a1cff68e39de420ce84effe9924046975}
+
+\item 
+\hypertarget{classPdeSolver_a1fd0916e52471a991186617f4081edee}{virtual void {\bfseries assemble\-Stiff} (const Vector\-Xd \&, const Vector\-Xd \&)=0}\label{classPdeSolver_a1fd0916e52471a991186617f4081edee}
+
+\item 
+virtual void \hyperlink{classPdeSolver_af761d8bfc25fc0446af9d85fddfed2e2}{assemble\-Mass} (const Vector\-Xd \&, const Vector\-Xd \&)=0
+\item 
+\hypertarget{classPdeSolver_a30abfde92c6d3c03a976287e968ed310}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Adv\-Diff} () const }\label{classPdeSolver_a30abfde92c6d3c03a976287e968ed310}
+
+\item 
+\hypertarget{classPdeSolver_ae27e38d5d2568ffdac3d4fd6b8399386}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Stiff} () const }\label{classPdeSolver_ae27e38d5d2568ffdac3d4fd6b8399386}
+
+\item 
+\hypertarget{classPdeSolver_ad68939b3aa2acb790cd4df84ea80b931}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Mass} () const }\label{classPdeSolver_ad68939b3aa2acb790cd4df84ea80b931}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPdeSolver_afeaaf0c1c2d83cffdfb0bfee66c55ba2}{friend {\bfseries Non\-Linear\-Poisson1\-D}}\label{classPdeSolver_afeaaf0c1c2d83cffdfb0bfee66c55ba2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPdeSolver_ac0185cf9f8cdf64273950a48d63df3f7}{Vector\-Xd {\bfseries mesh\-\_\-}}\label{classPdeSolver_ac0185cf9f8cdf64273950a48d63df3f7}
+
+\item 
+\hypertarget{classPdeSolver_a8f4bb43717322579edc12974700aec98}{unsigned {\bfseries n\-Nodes\-\_\-}}\label{classPdeSolver_a8f4bb43717322579edc12974700aec98}
+
+\item 
+\hypertarget{classPdeSolver_a2febd884c8758db9fd346a40d81671eb}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} {\bfseries Adv\-Diff\-\_\-}}\label{classPdeSolver_a2febd884c8758db9fd346a40d81671eb}
+
+\item 
+\hypertarget{classPdeSolver_a63de5de1757c8bc5cd0941030f9794e3}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} {\bfseries Stiff\-\_\-}}\label{classPdeSolver_a63de5de1757c8bc5cd0941030f9794e3}
+
+\item 
+\hypertarget{classPdeSolver_aa0e70aa868721f4bbf1fe7ec57e097a9}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} {\bfseries Mass\-\_\-}}\label{classPdeSolver_aa0e70aa868721f4bbf1fe7ec57e097a9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class providing methods to process a simulation to extract the Density of States starting from a parameter list. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPdeSolver_af761d8bfc25fc0446af9d85fddfed2e2}{\index{Pde\-Solver@{Pde\-Solver}!assemble\-Mass@{assemble\-Mass}}
+\index{assemble\-Mass@{assemble\-Mass}!PdeSolver@{Pde\-Solver}}
+\subsubsection[{assemble\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}virtual void assemble\-Mass (
+\begin{DoxyParamCaption}
+\item[{const Vector\-Xd \&}]{, }
+\item[{const Vector\-Xd \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver_af761d8bfc25fc0446af9d85fddfed2e2}
+Assemble lumped mass matrix for a P\-D\-E solver. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em delta} & delta \\
+\hline
+\mbox{\tt in}  & {\em zeta} & zeta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mass matrix. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classBim1D_aa99f58d5ec1d53891b11ea81adec6b92}{Bim1\-D}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{solvers_8h}{solvers.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/solvers.\-c++\end{DoxyCompactItemize}

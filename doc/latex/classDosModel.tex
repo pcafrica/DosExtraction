@@ -1,0 +1,183 @@
+\hypertarget{classDosModel}{\section{Dos\-Model Class Reference}
+\label{classDosModel}\index{Dos\-Model@{Dos\-Model}}
+}
+
+
+Class providing methods to process a simulation to extract the Density of States starting from a parameter list.  
+
+
+
+
+{\ttfamily \#include $<$dos\-Model.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDosModel_a500b55ef4d49a883dbe2ea137e85c839}{\hyperlink{classDosModel_a500b55ef4d49a883dbe2ea137e85c839}{Dos\-Model} ()}\label{classDosModel_a500b55ef4d49a883dbe2ea137e85c839}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDosModel_a34d929790447adf8aae840519e1c8284}{Dos\-Model} (const \hyperlink{classParamList}{Param\-List} \&)
+\begin{DoxyCompactList}\small\item\em Explicit conversion constructor. \end{DoxyCompactList}\item 
+\hypertarget{classDosModel_a5361d0f34ccc062eef4564226f765aee}{virtual \hyperlink{classDosModel_a5361d0f34ccc062eef4564226f765aee}{$\sim$\-Dos\-Model} ()=default}\label{classDosModel_a5361d0f34ccc062eef4564226f765aee}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}{const \hyperlink{classParamList}{Param\-List} \& \hyperlink{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}{params} () const }\label{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}
+
+\begin{DoxyCompactList}\small\item\em Getter method. \end{DoxyCompactList}\item 
+void \hyperlink{classDosModel_a5203629bc44905401b1b0d71a021db40}{simulate} (const Get\-Pot \&, const std\-::string \&, const std\-::string \&, const std\-::string \&, const std\-::string \&) const 
+\begin{DoxyCompactList}\small\item\em Perform the simulation. \end{DoxyCompactList}\item 
+void \hyperlink{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}{post\-\_\-process} (const Get\-Pot \&, const std\-::string \&, std\-::ostream \&, std\-::ostream \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&) const 
+\begin{DoxyCompactList}\small\item\em Perform post-\/processing. \end{DoxyCompactList}\item 
+void \hyperlink{classDosModel_a26e64253688b5b51ffc54013bf3bc553}{gnuplot\-\_\-commands} (const std\-::string \&, std\-::ostream \&) const 
+\begin{DoxyCompactList}\small\item\em Defines commands to generate Gnuplot output files. \end{DoxyCompactList}\item 
+void \hyperlink{classDosModel_aa614583c066c644e83085beaad05279d}{save\-\_\-plot} (const std\-::string \&, const std\-::string \&, const std\-::string \&, const std\-::string \&) const 
+\begin{DoxyCompactList}\small\item\em Save the Gnuplot output files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classDosModel_aef7436a220692b5b863db4e9d8b870a3}{bool \hyperlink{classDosModel_aef7436a220692b5b863db4e9d8b870a3}{initialized\-\_\-}}\label{classDosModel_aef7436a220692b5b863db4e9d8b870a3}
+
+\begin{DoxyCompactList}\small\item\em bool to determine if \hyperlink{classDosModel}{Dos\-Model} {\itshape param\-\_\-} has been properly initialized. \end{DoxyCompactList}\item 
+\hypertarget{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}{\hyperlink{classParamList}{Param\-List} \hyperlink{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}{params\-\_\-}}\label{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}
+
+\begin{DoxyCompactList}\small\item\em The parameter list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class providing methods to process a simulation to extract the Density of States starting from a parameter list. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDosModel_a34d929790447adf8aae840519e1c8284}{\index{Dos\-Model@{Dos\-Model}!Dos\-Model@{Dos\-Model}}
+\index{Dos\-Model@{Dos\-Model}!DosModel@{Dos\-Model}}
+\subsubsection[{Dos\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dos\-Model} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Param\-List} \&}]{params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classDosModel_a34d929790447adf8aae840519e1c8284}
+
+
+Explicit conversion constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \-: a parameter list. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDosModel_a5203629bc44905401b1b0d71a021db40}{\index{Dos\-Model@{Dos\-Model}!simulate@{simulate}}
+\index{simulate@{simulate}!DosModel@{Dos\-Model}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}void simulate (
+\begin{DoxyParamCaption}
+\item[{const Get\-Pot \&}]{config, }
+\item[{const std\-::string \&}]{input\-\_\-experim, }
+\item[{const std\-::string \&}]{output\-\_\-directory, }
+\item[{const std\-::string \&}]{output\-\_\-plot\-\_\-subdir, }
+\item[{const std\-::string \&}]{output\-\_\-filename}
+\end{DoxyParamCaption}
+) const}}\label{classDosModel_a5203629bc44905401b1b0d71a021db40}
+
+
+Perform the simulation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & \-: the Get\-Pot configuration object; \\
+\hline
+\mbox{\tt in}  & {\em input\-\_\-experim} & \-: the file containing experimental data; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-directory} & \-: directory where to store output files; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-plot\-\_\-subdir} & \-: sub-\/directory where to store Gnuplot files; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-filename} & \-: prefix for the output filename. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}{\index{Dos\-Model@{Dos\-Model}!post\-\_\-process@{post\-\_\-process}}
+\index{post\-\_\-process@{post\-\_\-process}!DosModel@{Dos\-Model}}
+\subsubsection[{post\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-process (
+\begin{DoxyParamCaption}
+\item[{const Get\-Pot \&}]{config, }
+\item[{const std\-::string \&}]{input\-\_\-experim, }
+\item[{std\-::ostream \&}]{output\-\_\-fitting, }
+\item[{std\-::ostream \&}]{output\-\_\-\-C\-V, }
+\item[{const Vector\-Xd \&}]{x\-\_\-semic, }
+\item[{const Vector\-Xd \&}]{dens, }
+\item[{const Vector\-Xd \&}]{V\-\_\-simulated, }
+\item[{const Vector\-Xd \&}]{C\-\_\-simulated}
+\end{DoxyParamCaption}
+) const}}\label{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}
+
+
+Perform post-\/processing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & \-: the Get\-Pot configuration object; \\
+\hline
+\mbox{\tt in}  & {\em input\-\_\-experim} & \-: the file containing experimental data; \\
+\hline
+\mbox{\tt out}  & {\em output\-\_\-fitting} & \-: output file containing infos about fitting experimental data; \\
+\hline
+\mbox{\tt out}  & {\em output\-\_\-\-C\-V} & \-: output file containing infos about capacitance-\/voltage data; \\
+\hline
+\mbox{\tt in}  & {\em x\-\_\-semic} & \-: the mesh corresponding to the semiconductor domain; \\
+\hline
+\mbox{\tt in}  & {\em dens} & \-: charge density; \\
+\hline
+\mbox{\tt in}  & {\em V\-\_\-simulated} & \-: simulated voltage values; \\
+\hline
+\mbox{\tt in}  & {\em C\-\_\-simulated} & \-: simulated capacitance values. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDosModel_a26e64253688b5b51ffc54013bf3bc553}{\index{Dos\-Model@{Dos\-Model}!gnuplot\-\_\-commands@{gnuplot\-\_\-commands}}
+\index{gnuplot\-\_\-commands@{gnuplot\-\_\-commands}!DosModel@{Dos\-Model}}
+\subsubsection[{gnuplot\-\_\-commands}]{\setlength{\rightskip}{0pt plus 5cm}void gnuplot\-\_\-commands (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{output\-\_\-\-C\-V\-\_\-filename, }
+\item[{std\-::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const}}\label{classDosModel_a26e64253688b5b51ffc54013bf3bc553}
+
+
+Defines commands to generate Gnuplot output files. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em output\-\_\-\-C\-V\-\_\-filename} & \-: output C\-V filename; \\
+\hline
+\mbox{\tt out}  & {\em os} & \-: output stream. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDosModel_aa614583c066c644e83085beaad05279d}{\index{Dos\-Model@{Dos\-Model}!save\-\_\-plot@{save\-\_\-plot}}
+\index{save\-\_\-plot@{save\-\_\-plot}!DosModel@{Dos\-Model}}
+\subsubsection[{save\-\_\-plot}]{\setlength{\rightskip}{0pt plus 5cm}void save\-\_\-plot (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{output\-\_\-directory, }
+\item[{const std\-::string \&}]{output\-\_\-plot\-\_\-subdir, }
+\item[{const std\-::string \&}]{output\-\_\-\-C\-V\-\_\-filename, }
+\item[{const std\-::string \&}]{output\-\_\-filename}
+\end{DoxyParamCaption}
+) const}}\label{classDosModel_aa614583c066c644e83085beaad05279d}
+
+
+Save the Gnuplot output files. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em output\-\_\-directory} & \-: directory where to store output files; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-plot\-\_\-subdir} & \-: sub-\/directory where to store Gnuplot files; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-\-C\-V\-\_\-filename} & \-: output C\-V filename; \\
+\hline
+\mbox{\tt in}  & {\em output\-\_\-filename} & \-: prefix for the output filename. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{dosModel_8h}{dos\-Model.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/dos\-Model.\-c++\end{DoxyCompactItemize}

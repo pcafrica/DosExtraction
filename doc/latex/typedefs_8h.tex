@@ -1,0 +1,90 @@
+\hypertarget{typedefs_8h}{\section{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/typedefs.h File Reference}
+\label{typedefs_8h}\index{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/typedefs.\-h@{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/typedefs.\-h}}
+}
+
+
+Typedefs and utility functions.  
+
+
+{\ttfamily \#include \char`\"{}physical\-Constants.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$Eigen/\-Dense$>$}\\*
+{\ttfamily \#include $<$Eigen/\-Sparse$>$}\\*
+{\ttfamily \#include $<$Get\-Pot$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceconstants}{constants}
+\begin{DoxyCompactList}\small\item\em Numerical constants. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{typedef Sparse\-Matrix$<$ double $>$ \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd}}\label{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}
+
+\begin{DoxyCompactList}\small\item\em Typedef for sparse dynamic-\/sized matrices. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\-Type $>$ }\\using \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X} = Matrix$<$ Scalar\-Type, Dynamic, 1 $>$
+\begin{DoxyCompactList}\small\item\em Template alias for Eigen vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\using \hyperlink{typedefs_8h_a21ab9e8bc0dd8e3c178df27d98155cfa}{Vector\-Xpair} = \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ std\-::pair$<$ T, unsigned $>$ $>$
+\begin{DoxyCompactList}\small\item\em Template alias for an Eigen vector of pairs\-: ({\itshape Scalar\-Type}, unsigned int). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries print\-\_\-block} (const char $\ast$, std\-::ostream \&=std\-::cout)
+\begin{DoxyCompactList}\small\item\em Auxiliary function to print a string inside a block. \end{DoxyCompactList}\item 
+void {\bfseries print\-\_\-done} (std\-::ostream \&=std\-::cout)
+\begin{DoxyCompactList}\small\item\em Auxiliary function to print a \char`\"{}\-D\-O\-N\-E!\char`\"{} string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceconstants_a55c7c5d84b0709c6786dec9908107a04}{const unsigned \hyperlink{namespaceconstants_a55c7c5d84b0709c6786dec9908107a04}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 22}\label{namespaceconstants_a55c7c5d84b0709c6786dec9908107a04}
+
+\begin{DoxyCompactList}\small\item\em Number of parameters required in input file. \end{DoxyCompactList}\item 
+\hypertarget{namespaceconstants_a952eac791b596a61bba0a133a3bb439f}{const double \hyperlink{namespaceconstants_a952eac791b596a61bba0a133a3bb439f}{P\-I} = M\-\_\-\-P\-I}\label{namespaceconstants_a952eac791b596a61bba0a133a3bb439f}
+
+\begin{DoxyCompactList}\small\item\em $ \pi $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceconstants_a7477e8f618e55155827d512dc7a0f098}{const double \hyperlink{namespaceconstants_a7477e8f618e55155827d512dc7a0f098}{S\-Q\-R\-T\-\_\-\-P\-I} = std\-::sqrt(P\-I)}\label{namespaceconstants_a7477e8f618e55155827d512dc7a0f098}
+
+\begin{DoxyCompactList}\small\item\em $ \sqrt{\pi} $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceconstants_a9b6eb4b81f3ef26474b7ec60ef4f7b40}{const double \hyperlink{namespaceconstants_a9b6eb4b81f3ef26474b7ec60ef4f7b40}{P\-I\-\_\-\-M4} = 0.\-7511255444649425}\label{namespaceconstants_a9b6eb4b81f3ef26474b7ec60ef4f7b40}
+
+\begin{DoxyCompactList}\small\item\em $ \pi^{-\frac{1}{4}} $. \end{DoxyCompactList}\item 
+\hypertarget{namespaceconstants_a61ee8d36601448a8e5a232be8852468e}{const double \hyperlink{namespaceconstants_a61ee8d36601448a8e5a232be8852468e}{S\-Q\-R\-T\-\_\-2} = std\-::sqrt(2)}\label{namespaceconstants_a61ee8d36601448a8e5a232be8852468e}
+
+\begin{DoxyCompactList}\small\item\em $ \sqrt{2} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Typedefs and utility functions. \begin{DoxyAuthor}{Author}
+Pasquale Claudio Africa \href{mailto:pasquale.africa@gmail.com}{\tt pasquale.\-africa@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2014 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{\index{typedefs.\-h@{typedefs.\-h}!Vector\-X@{Vector\-X}}
+\index{Vector\-X@{Vector\-X}!typedefs.h@{typedefs.\-h}}
+\subsubsection[{Vector\-X}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Vector\-X} =  Matrix$<$Scalar\-Type, Dynamic, 1$>$}}\label{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}
+
+
+Template alias for Eigen vectors. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\-Type} & \-: the scalar type. \\
+\hline
+\end{DoxyTemplParams}
+\hypertarget{typedefs_8h_a21ab9e8bc0dd8e3c178df27d98155cfa}{\index{typedefs.\-h@{typedefs.\-h}!Vector\-Xpair@{Vector\-Xpair}}
+\index{Vector\-Xpair@{Vector\-Xpair}!typedefs.h@{typedefs.\-h}}
+\subsubsection[{Vector\-Xpair}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Vector\-Xpair} =  {\bf Vector\-X}$<$std\-::pair$<$T, unsigned$>$ $>$}}\label{typedefs_8h_a21ab9e8bc0dd8e3c178df27d98155cfa}
+
+
+Template alias for an Eigen vector of pairs\-: ({\itshape Scalar\-Type}, unsigned int). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Scalar\-Type} & \-: the scalar type. \\
+\hline
+\end{DoxyTemplParams}

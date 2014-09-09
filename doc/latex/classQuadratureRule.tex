@@ -1,0 +1,93 @@
+\hypertarget{classQuadratureRule}{\section{Quadrature\-Rule Class Reference}
+\label{classQuadratureRule}\index{Quadrature\-Rule@{Quadrature\-Rule}}
+}
+
+
+Abstract class providing a quadrature rule.  
+
+
+
+
+{\ttfamily \#include $<$quadrature\-Rule.\-h$>$}
+
+Inheritance diagram for Quadrature\-Rule\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQuadratureRule}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQuadratureRule_ac7fb9aaf8e3f9eae03235f68a935880a}{\hyperlink{classQuadratureRule_ac7fb9aaf8e3f9eae03235f68a935880a}{Quadrature\-Rule} ()=delete}\label{classQuadratureRule_ac7fb9aaf8e3f9eae03235f68a935880a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify the no. of nodes). \end{DoxyCompactList}\item 
+\hyperlink{classQuadratureRule_a376dee153044df24015711c9a8411bae}{Quadrature\-Rule} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classQuadratureRule_a80e11fbb08b332f2d4c56740cb63ac4e}{virtual \hyperlink{classQuadratureRule_a80e11fbb08b332f2d4c56740cb63ac4e}{$\sim$\-Quadrature\-Rule} ()=default}\label{classQuadratureRule_a80e11fbb08b332f2d4c56740cb63ac4e}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}{virtual void \hyperlink{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}{apply} ()=0}\label{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}
+
+\begin{DoxyCompactList}\small\item\em Apply the quadrature rule in order to compute the nodes and weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Getter methods.}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQuadratureRule_a1fe4b7cc4dd74cd606cd56e169b20895}{const unsigned \& {\bfseries n\-Nodes} () const }\label{classQuadratureRule_a1fe4b7cc4dd74cd606cd56e169b20895}
+
+\item 
+\hypertarget{classQuadratureRule_a3e83db6b0a26aa35fa94d592c2c5426c}{const Vector\-Xd \& {\bfseries nodes} () const }\label{classQuadratureRule_a3e83db6b0a26aa35fa94d592c2c5426c}
+
+\item 
+\hypertarget{classQuadratureRule_ad03df86d720dadce277cd07fe460d8ee}{const Vector\-Xd \& {\bfseries weights} () const }\label{classQuadratureRule_ad03df86d720dadce277cd07fe460d8ee}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQuadratureRule_a8f4bb43717322579edc12974700aec98}{unsigned \hyperlink{classQuadratureRule_a8f4bb43717322579edc12974700aec98}{n\-Nodes\-\_\-}}\label{classQuadratureRule_a8f4bb43717322579edc12974700aec98}
+
+\begin{DoxyCompactList}\small\item\em The no. of nodes to be used for the quadrature rule. \end{DoxyCompactList}\item 
+\hypertarget{classQuadratureRule_a62ad07fa140bcc39af00e04b045dd341}{Vector\-Xd \hyperlink{classQuadratureRule_a62ad07fa140bcc39af00e04b045dd341}{nodes\-\_\-}}\label{classQuadratureRule_a62ad07fa140bcc39af00e04b045dd341}
+
+\begin{DoxyCompactList}\small\item\em Vector containing the computed nodes coordinates. \end{DoxyCompactList}\item 
+\hypertarget{classQuadratureRule_a092f514241565ee4a925e654b331dbf6}{Vector\-Xd \hyperlink{classQuadratureRule_a092f514241565ee4a925e654b331dbf6}{weights\-\_\-}}\label{classQuadratureRule_a092f514241565ee4a925e654b331dbf6}
+
+\begin{DoxyCompactList}\small\item\em Vector containing the computed weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQuadratureRule_a6be33a81953be5c0377a00dec7d5b1d3}{class {\bfseries Gaussian\-Charge}}\label{classQuadratureRule_a6be33a81953be5c0377a00dec7d5b1d3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class providing a quadrature rule. 
+
+Approximate the integral\-: \[ \int_{a}^{b} f(x)~\mathrm{d}x \] with the finite sum\-: \[ \sum_{i=1}^{nNodes_{}} w_i \cdot f(x_i) \] where $ \{x_i\}_{i=1}^{nNodes_{}} $ and $ \{w_i\}_{i=1}^{nNodes_{}} $ are called respectively nodes and weights. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQuadratureRule_a376dee153044df24015711c9a8411bae}{\index{Quadrature\-Rule@{Quadrature\-Rule}!Quadrature\-Rule@{Quadrature\-Rule}}
+\index{Quadrature\-Rule@{Quadrature\-Rule}!QuadratureRule@{Quadrature\-Rule}}
+\subsubsection[{Quadrature\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quadrature\-Rule} (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{n\-Nodes}
+\end{DoxyParamCaption}
+)}}\label{classQuadratureRule_a376dee153044df24015711c9a8411bae}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Nodes} & \-: the no. of nodes to be used for the quadrature rule. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8h}{quadrature\-Rule.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/quadrature\-Rule.\-c++\end{DoxyCompactItemize}

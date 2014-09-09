@@ -1,0 +1,43 @@
+\hypertarget{numerics_8h}{\section{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/numerics.h File Reference}
+\label{numerics_8h}\index{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/numerics.\-h@{/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/numerics.\-h}}
+}
+
+
+Generic numeric algorithms.  
+
+
+{\ttfamily \#include \char`\"{}typedefs.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacenumerics}{numerics}
+\begin{DoxyCompactList}\small\item\em Namespace for generic numeric algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Scalar\-Type $>$ }\\\hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \hyperlink{namespacenumerics_a1633aabded7159bb15bbf573bf9e12c5}{sort} (const \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Function to sort Eigen vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Scalar\-Type $>$ }\\\hyperlink{typedefs_8h_a21ab9e8bc0dd8e3c178df27d98155cfa}{Vector\-Xpair}$<$ Scalar\-Type $>$ \hyperlink{namespacenumerics_a510fe73118ce8c79570ac87fa3e7df47}{sort\-\_\-pair} (const \hyperlink{typedefs_8h_ac264e7346c0c88c8a573518d1e8f8c3d}{Vector\-X}$<$ Scalar\-Type $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Function to sort Eigen vectors, keeping track of indexes. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a42e19b3ed2ac997af23b6cd39323c013}{trapz} (const Vector\-Xd \&x, const Vector\-Xd \&y)
+\begin{DoxyCompactList}\small\item\em Function to compute approximate integral of {\itshape y} with spacing increment specified by {\itshape x}, using trapezoidal rule. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a91e617ca6ea3fb6a16ff741ea31dc689}{trapz} (const Vector\-Xd \&y)
+\begin{DoxyCompactList}\small\item\em Compute the approximate integral of {\itshape y} with unit spacing, using trapezoidal rule. \end{DoxyCompactList}\item 
+Vector\-Xd \hyperlink{namespacenumerics_a902afe79eec526f73e070726d858c368}{deriv} (const Vector\-Xd \&, const Vector\-Xd \&)
+\begin{DoxyCompactList}\small\item\em Compute the numeric derivative\-: $ \frac{\mathrm{d}y}{\mathrm{d}x} $. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_a4e1271b4748935d7f4889fc1bdf5117b}{interp1} (const Vector\-Xd \&, const Vector\-Xd \&, const double \&)
+\begin{DoxyCompactList}\small\item\em Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the point {\itshape x\-New}. \end{DoxyCompactList}\item 
+Vector\-Xd \hyperlink{namespacenumerics_af30101e79ffdfd4dae00b864e3514ac7}{interp1} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&)
+\begin{DoxyCompactList}\small\item\em Linear 1\-D interpolation. Interpolate {\itshape y}, defined at points {\itshape x}, at the points {\itshape x\-New}. \end{DoxyCompactList}\item 
+double \hyperlink{namespacenumerics_ad636dd100e7ebe7b1e83868001e9d55a}{error\-\_\-\-L2} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const double \&)
+\begin{DoxyCompactList}\small\item\em Compute the $ L^2 $-\/norm error between simulated and interpolated values, using {\itshape trapz}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic numeric algorithms. \begin{DoxyAuthor}{Author}
+Pasquale Claudio Africa \href{mailto:pasquale.africa@gmail.com}{\tt pasquale.\-africa@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2014 
+\end{DoxyDate}

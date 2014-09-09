@@ -1,0 +1,93 @@
+\hypertarget{classGaussHermiteRule}{\section{Gauss\-Hermite\-Rule Class Reference}
+\label{classGaussHermiteRule}\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}}
+}
+
+
+Class derived from \hyperlink{classQuadratureRule}{Quadrature\-Rule} providing the Gauss-\/\-Hermite quadrature rule.  
+
+
+
+
+{\ttfamily \#include $<$quadrature\-Rule.\-h$>$}
+
+Inheritance diagram for Gauss\-Hermite\-Rule\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGaussHermiteRule}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGaussHermiteRule_a82318908e412ac924a27d7c816c5e89d}{\hyperlink{classGaussHermiteRule_a82318908e412ac924a27d7c816c5e89d}{Gauss\-Hermite\-Rule} ()=delete}\label{classGaussHermiteRule_a82318908e412ac924a27d7c816c5e89d}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify the no. of nodes). \end{DoxyCompactList}\item 
+\hyperlink{classGaussHermiteRule_a578638d12f9b74af6a94428eb939e57a}{Gauss\-Hermite\-Rule} (const unsigned \&)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classGaussHermiteRule_ade51ec8543da3071631a6e1dbf1ac9f7}{virtual \hyperlink{classGaussHermiteRule_ade51ec8543da3071631a6e1dbf1ac9f7}{$\sim$\-Gauss\-Hermite\-Rule} ()=default}\label{classGaussHermiteRule_ade51ec8543da3071631a6e1dbf1ac9f7}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}{virtual void \hyperlink{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}{apply} () override}\label{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}
+
+\begin{DoxyCompactList}\small\item\em Apply the quadrature rule in order to compute the nodes and weights. \end{DoxyCompactList}\item 
+void \hyperlink{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}{apply} (const Get\-Pot \&)
+\begin{DoxyCompactList}\small\item\em Apply the quadrature rule reading parameters from a configuration file. \end{DoxyCompactList}\item 
+\hypertarget{classGaussHermiteRule_a5cbc7c77124838d27b8ccf686e5f7ff8}{void \hyperlink{classGaussHermiteRule_a5cbc7c77124838d27b8ccf686e5f7ff8}{apply\-\_\-iterative\-\_\-algorithm} (const unsigned \&=1000, const double \&=1.\-0e-\/14)}\label{classGaussHermiteRule_a5cbc7c77124838d27b8ccf686e5f7ff8}
+
+\begin{DoxyCompactList}\small\item\em Compute nodes and weights using an adapted version of the algorithm presented in\-: \par
+William H. Press, Saul A. Teukolsky, William T. Vetterling, and Brian P. Flannery. 2007. \par
+Numerical Recipes\-: The Art of Scientific Computing (3rd edition). \par
+Cambridge University Press, New York, N\-Y, U\-S\-A. \end{DoxyCompactList}\item 
+\hypertarget{classGaussHermiteRule_add3939f72a845e748c388220bb1ad934}{void \hyperlink{classGaussHermiteRule_add3939f72a845e748c388220bb1ad934}{apply\-\_\-using\-\_\-eigendecomposition} ()}\label{classGaussHermiteRule_add3939f72a845e748c388220bb1ad934}
+
+\begin{DoxyCompactList}\small\item\em Compute nodes and weights using an eigendecomposition-\/based algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class derived from \hyperlink{classQuadratureRule}{Quadrature\-Rule} providing the Gauss-\/\-Hermite quadrature rule. 
+
+Compute nodes and weights for the {\itshape n\-Nodes\-\_\-} -\/points approximation of \[ \int_{-\infty}^{+\infty} w(x)f(x)~\mathrm{d}x \] where $ w(x) = e^{-x^2} $. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGaussHermiteRule_a578638d12f9b74af6a94428eb939e57a}{\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}!Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}}
+\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}!GaussHermiteRule@{Gauss\-Hermite\-Rule}}
+\subsubsection[{Gauss\-Hermite\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gauss\-Hermite\-Rule} (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{n\-Nodes}
+\end{DoxyParamCaption}
+)}}\label{classGaussHermiteRule_a578638d12f9b74af6a94428eb939e57a}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Nodes} & \-: the no. of nodes to be used for the quadrature rule. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}{\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}!apply@{apply}}
+\index{apply@{apply}!GaussHermiteRule@{Gauss\-Hermite\-Rule}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void apply (
+\begin{DoxyParamCaption}
+\item[{const Get\-Pot \&}]{config}
+\end{DoxyParamCaption}
+)}}\label{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}
+
+
+Apply the quadrature rule reading parameters from a configuration file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & \-: the Get\-Pot configuration object. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8h}{quadrature\-Rule.\-h}\item 
+/home/\-Data/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/quadrature\-Rule.\-c++\end{DoxyCompactItemize}
