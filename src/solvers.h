@@ -245,7 +245,7 @@ class NonLinearPoisson1D
 		
 		double qTot_  ;	/**< @brief Total charge. */
 		double cTot_  ;	/**< @brief Total capacitance. */
-		// double cTot_n_;
+		/* double cTot_n_; */
 };
 
 inline const SparseXd & PdeSolver1D::AdvDiff() const
