@@ -46,7 +46,7 @@
  * 
  * @section configure Set up the configuration file
  * 
- * @warning: each file described in this section must be placed under the @a config/ directory.
+ * @warning each file described in this section must be placed under the @a config/ directory.
  * 
  * Before you can an executable, you have to set up the configuration file, called @a config.pot.
  * Within it, you can find a list of parameters, each of which is commented out to explain what

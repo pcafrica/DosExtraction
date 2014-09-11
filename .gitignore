@@ -1,0 +1,5 @@
+.directory
+.kateproject
+.kateproject.d/
+bin/
+build/
