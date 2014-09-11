@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['n_5fapprox',['n_approx',['../classGaussianCharge.html#a23fbccf4687490da653b2ea642284245',1,'GaussianCharge']]],
-  ['nonlinearpoisson1d',['NonLinearPoisson1D',['../classNonLinearPoisson1D.html#ad4d805d47a62331707176ad2693499f3',1,'NonLinearPoisson1D::NonLinearPoisson1D()=delete'],['../classNonLinearPoisson1D.html#af102dded9f007403d0e795413c59d7d3',1,'NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D &amp;, const unsigned &amp;=100, const double &amp;=1.0e-6)']]]
+  ['paramlist',['ParamList',['../classParamList.html#a9e4b0ea6081bb500861f231f0b4f7900',1,'ParamList::ParamList()=default'],['../classParamList.html#a05bb961ce49e684edbae5f3f07f8b128',1,'ParamList::ParamList(const RowVectorXd &amp;)']]],
+  ['params',['params',['../classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a',1,'DosModel']]],
+  ['pdesolver1d',['PdeSolver1D',['../classPdeSolver1D.html#a9e578d43e38517bade5c0911b7906e73',1,'PdeSolver1D::PdeSolver1D()=delete'],['../classPdeSolver1D.html#a2fb4efbf180a22aa8d8404765a3a7aa5',1,'PdeSolver1D::PdeSolver1D(VectorXd &amp;)']]],
+  ['post_5fprocess',['post_process',['../classDosModel.html#a16cf4bc9c1a053efd9a2f1b607fd0643',1,'DosModel']]]
 ];

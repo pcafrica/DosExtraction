@@ -24,14 +24,23 @@ endif
 ############################################################
 ## Source, header, object files and executables
 ############################################################
-EXEC  = simulate_dos
-VPATH = src/
+BINDIR = bin
+OBJDIR = build
+SRCDIR = src
+TESTDIR = test
 
-SRCS = $(wildcard *.c++) $(wildcard $(VPATH)*.c++)
-HDRS = $(wildcard *.h) $(wildcard $(VPATH)*.h)
+ifdef NAME
+TEST = $(NAME)
+else
+TEST = simulate_dos
+endif
 
-OBJDIR = obj/
-OBJS   = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c++=.o)))
+EXEC  = $(BINDIR)/$(TEST)
+
+SRCS = $(wildcard $(TESTDIR)/$(TEST).c++) $(wildcard $(SRCDIR)/*.c++)
+HDRS = $(wildcard $(TESTDIR)/$(TEST).h) $(wildcard $(SRCDIR)/*.h)
+
+OBJS   = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c++=.o)))
 
 ############################################################
 ## Documentation generation settings
@@ -59,6 +68,7 @@ profile: $(EXEC)
 	valgrind --tool=callgrind ./$^
 
 $(EXEC): $(OBJS)
+	$(MUTE)mkdir -p $(BINDIR)/
 	# Linking and creating executable...
 	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $(OBJS) -o $(EXEC)
 
@@ -70,13 +80,13 @@ else
 	$(MUTE) astyle -q -A10 -t4 -C -S -N -f -p -H -E $(addprefix $(shell pwd)/, $(SRCS) $(HDRS))
 endif
 
-obj/%.o: %.c++ %.h	# Check if header file has been modified.
-	$(MUTE)mkdir -p $(OBJDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c++ $(SRCDIR)/%.h	# Check if header file has been modified.
+	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
 	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $< -c -o $@
 
-obj/$(EXEC).o: $(EXEC).c++	# Except for sources without a related header file.
-	$(MUTE)mkdir -p $(OBJDIR)
+$(OBJDIR)/$(notdir $(EXEC)).o: $(TESTDIR)/$(notdir $(EXEC).c++)	# Except for sources without a related header file.
+	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
 	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $< -c -o $@
 

@@ -10,7 +10,6 @@ var searchData=
   ['sigma_5f3_5f',['sigma_3_',['../classParamList.html#a049c8b36c29fb765c363cf05610ca9e2',1,'ParamList']]],
   ['sigma_5f4_5f',['sigma_4_',['../classParamList.html#a8c6b6653287d435a1dce5f3ce3819352',1,'ParamList']]],
   ['simulate',['simulate',['../classDosModel.html#a5203629bc44905401b1b0d71a021db40',1,'DosModel']]],
-  ['simulate_5fdos_2ec_2b_2b',['simulate_dos.c++',['../simulate__dos_8c_09_09.html',1,'']]],
   ['simulationno_5f',['simulationNo_',['../classParamList.html#af9bb206ec2cb223298bf327f49a66dbb',1,'ParamList']]],
   ['solver_5f',['solver_',['../classNonLinearPoisson1D.html#aca4acc679876b21bdbf4c09c589aed69',1,'NonLinearPoisson1D']]],
   ['solvers_2eh',['solvers.h',['../solvers_8h.html',1,'']]],

@@ -21,7 +21,8 @@
  * 
  * @section install_sec Compile
  * 
- * To compile the software, simply execute one of these commands in a terminal pointing the root directory:
+ * In order to compile a test executable, simply execute one of these commands
+ * in a terminal pointing the root directory:
  * 
  * \code
  *     $ make
@@ -33,41 +34,60 @@
  *     $ make debug
  * \endcode
  * 
- * The compiler will generate the executable @a simulate_dos.
+ * You can specify the name of the test to be compiled (without extension, for example: @a simulate_dos)
+ * by passing the variable @b NAME through command-line:
+ * 
+ * \code
+ *     $ make NAME=test_filename
+ * \endcode
+ * 
+ * The compiler will generate the @a test_filename executable under the @a bin/ directory. @n
+ * Repeat these instructions for each test you want to compile.
  * 
  * @section configure Set up the configuration file
  * 
- * Before you can run the program, you have to set up the configuration file, called @a config.pot.
+ * @warning: each file described in this section must be placed under the @a config/ directory.
+ * 
+ * Before you can an executable, you have to set up the configuration file, called @a config.pot.
  * Within it, you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
  * Particularly, you can set the variables @a input_params and @a input_experim, i.e. the filenames
  * where to find input fitting parameters and experimental data respectively.
- * It's recommended to put these files in the same directory as the configuration file. @n
- * 
+ * It's recommended (but not compulsory) to put these files in the same directory as the configuration
+ * file (otherwise you can specify a relative or absolute path to them). @n
+ * @n
  * You can create multiple configuration files, each with different parameter values: the one you
  * aim to use can be specified in the command-line before running.
  * 
  * @section run Run!
  * 
- * To run using the default configuration filename (@a config.pot) simply execute:
+ * Executables are placed under the @a bin/ directory. @n
+ * @n
+ * To run by using the default configuration filename (@a config.pot) simply execute in the root:
  * 
  * \code
- *     $ ./simulate_dos
+ *     $ bin/test_filename
  * \endcode
  * 
- * To specify a different configuration file:
+ * or, if your terminal is already pointing the @a bin/ directory:
  * 
  * \code
- *     $ ./simulate_dos -f configuration_filename
+ *     $ ./test_filename
+ * \endcode
+ * 
+ * To specify a different configuration file previously saved in the @a config/ directory:
+ * 
+ * \code
+ *     $ bin/test_filename -f configuration_filename
  * \endcode
  * 
  * or:
  * 
  * \code
- *     $ ./simulate_dos --file configuration_filename
+ *     $ bin/test_filename --file configuration_filename
  * \endcode
  * 
- * Once simulation is complete, you can find the results in the output directory
- * specified in the configuration file (default: @a output/).
+ * Once complete, you can find the results of the simulation(s) in the output directory specified in
+ * the configuration file (default: @a output/) under @a bin/.
  * 
  */ 

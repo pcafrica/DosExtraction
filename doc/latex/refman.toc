@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Dependancies\discretionary {-}{}{}:}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Compile}{1}{section.1.3}
-\contentsline {section}{\numberline {1.4}Set up the configuration file}{1}{section.1.4}
+\contentsline {section}{\numberline {1.4}Set up the configuration file}{2}{section.1.4}
 \contentsline {section}{\numberline {1.5}Run!}{2}{section.1.5}
 \contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}
@@ -105,27 +105,25 @@
 \contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{36}{subsection.7.10.2}
 \contentsline {subsubsection}{\numberline {7.10.2.1}Quadrature\discretionary {-}{}{}Rule}{36}{subsubsection.7.10.2.1}
 \contentsline {chapter}{\numberline {8}File Documentation}{39}{chapter.8}
-\contentsline {section}{\numberline {8.1}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.c++ File Reference}{39}{section.8.1}
+\contentsline {section}{\numberline {8.1}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.h File Reference}{39}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Detailed Description}{39}{subsection.8.1.1}
-\contentsline {section}{\numberline {8.2}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.h File Reference}{39}{section.8.2}
+\contentsline {section}{\numberline {8.2}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.h File Reference}{39}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Detailed Description}{40}{subsection.8.2.1}
-\contentsline {section}{\numberline {8.3}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.h File Reference}{40}{section.8.3}
+\contentsline {section}{\numberline {8.3}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.h File Reference}{40}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Detailed Description}{40}{subsection.8.3.1}
-\contentsline {section}{\numberline {8.4}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.h File Reference}{40}{section.8.4}
+\contentsline {section}{\numberline {8.4}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.h File Reference}{41}{section.8.4}
 \contentsline {subsection}{\numberline {8.4.1}Detailed Description}{41}{subsection.8.4.1}
-\contentsline {section}{\numberline {8.5}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.h File Reference}{41}{section.8.5}
+\contentsline {section}{\numberline {8.5}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.h File Reference}{41}{section.8.5}
 \contentsline {subsection}{\numberline {8.5.1}Detailed Description}{42}{subsection.8.5.1}
-\contentsline {section}{\numberline {8.6}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.h File Reference}{42}{section.8.6}
+\contentsline {section}{\numberline {8.6}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/physical\discretionary {-}{}{}Constants.h File Reference}{42}{section.8.6}
 \contentsline {subsection}{\numberline {8.6.1}Detailed Description}{42}{subsection.8.6.1}
-\contentsline {section}{\numberline {8.7}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/physical\discretionary {-}{}{}Constants.h File Reference}{42}{section.8.7}
+\contentsline {section}{\numberline {8.7}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{43}{section.8.7}
 \contentsline {subsection}{\numberline {8.7.1}Detailed Description}{43}{subsection.8.7.1}
-\contentsline {section}{\numberline {8.8}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{43}{section.8.8}
-\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{43}{subsection.8.8.1}
-\contentsline {section}{\numberline {8.9}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.h File Reference}{44}{section.8.9}
-\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{44}{subsection.8.9.1}
-\contentsline {section}{\numberline {8.10}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.h File Reference}{44}{section.8.10}
-\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{45}{subsection.8.10.1}
-\contentsline {subsection}{\numberline {8.10.2}Typedef Documentation}{45}{subsection.8.10.2}
-\contentsline {subsubsection}{\numberline {8.10.2.1}Vector\discretionary {-}{}{}X}{45}{subsubsection.8.10.2.1}
-\contentsline {subsubsection}{\numberline {8.10.2.2}Vector\discretionary {-}{}{}Xpair}{45}{subsubsection.8.10.2.2}
-\contentsline {chapter}{Index}{47}{section*.46}
+\contentsline {section}{\numberline {8.8}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.h File Reference}{43}{section.8.8}
+\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{44}{subsection.8.8.1}
+\contentsline {section}{\numberline {8.9}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.h File Reference}{44}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{45}{subsection.8.9.1}
+\contentsline {subsection}{\numberline {8.9.2}Typedef Documentation}{45}{subsection.8.9.2}
+\contentsline {subsubsection}{\numberline {8.9.2.1}Vector\discretionary {-}{}{}X}{45}{subsubsection.8.9.2.1}
+\contentsline {subsubsection}{\numberline {8.9.2.2}Vector\discretionary {-}{}{}Xpair}{45}{subsubsection.8.9.2.2}
+\contentsline {chapter}{Index}{46}{section*.45}
