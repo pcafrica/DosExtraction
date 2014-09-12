@@ -122,6 +122,7 @@ class CsvParser
 		char separator_;	/**< @brief The separator character detected. */
 };
 
+// Implementations.
 inline const unsigned & CsvParser::nRows() const
 {
 	return nRows_;

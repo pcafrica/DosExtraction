@@ -116,6 +116,7 @@ class GaussHermiteRule : public QuadratureRule
 		void apply_using_eigendecomposition();
 };
 
+// Implementations.
 inline const unsigned & QuadratureRule::nNodes() const
 {
 	return nNodes_;

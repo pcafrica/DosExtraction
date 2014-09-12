@@ -101,6 +101,7 @@ class DosModel
 		ParamList params_;	/**< @brief The parameter list. */
 };
 
+// Implementations.
 inline const ParamList & DosModel::params() const
 {
 	return params_;

@@ -248,6 +248,7 @@ class NonLinearPoisson1D
 		/* double cTot_n_; */
 };
 
+// Implementations.
 inline const SparseXd & PdeSolver1D::AdvDiff() const
 {
 	return AdvDiff_;
