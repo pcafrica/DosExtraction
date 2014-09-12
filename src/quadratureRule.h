@@ -53,7 +53,7 @@ class QuadratureRule
 		virtual void apply() = 0;
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & nNodes () const;

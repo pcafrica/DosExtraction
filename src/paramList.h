@@ -46,7 +46,7 @@ class ParamList
 		virtual ~ParamList() = default;
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & simulationNo() const;

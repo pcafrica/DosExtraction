@@ -45,7 +45,7 @@ class CsvParser
 		virtual ~CsvParser();
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & nRows() const;

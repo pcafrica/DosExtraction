@@ -85,7 +85,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 				
 				const std::string output_filename = "output_" + std::to_string(model.params().simulationNo());
 				
-				// Remove old files.
+				// Remove possible old files.
 				system( ("exec rm -f " + output_directory + output_filename + "* "
 				         + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() );
 				         
