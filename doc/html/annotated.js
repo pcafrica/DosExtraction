@@ -2,6 +2,7 @@ var annotated =
 [
     [ "constants", "namespaceconstants.html", null ],
     [ "numerics", "namespacenumerics.html", null ],
+    [ "utility", "namespaceutility.html", null ],
     [ "Bim1D", "classBim1D.html", "classBim1D" ],
     [ "Charge", "classCharge.html", "classCharge" ],
     [ "CsvParser", "classCsvParser.html", "classCsvParser" ],

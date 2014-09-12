@@ -3,6 +3,7 @@ var typedefs_8h =
     [ "SparseXd", "typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f", null ],
     [ "VectorX", "typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d", null ],
     [ "VectorXpair", "typedefs_8h.html#a21ab9e8bc0dd8e3c178df27d98155cfa", null ],
+    [ "full_path", "typedefs_8h.html#ac713105bb0c74653e26a924689ecc8c3", null ],
     [ "print_block", "typedefs_8h.html#afe82f121837a9a5c250e77d133632c15", null ],
     [ "print_done", "typedefs_8h.html#a226df4bf30ae6e01ba77b81f7f3e8993", null ],
     [ "PARAMS_NO", "typedefs_8h.html#a55c7c5d84b0709c6786dec9908107a04", null ],

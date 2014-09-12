@@ -3,7 +3,7 @@ var NAVTREE =
   [ "DOS extraction", "index.html", [
     [ "Index", "index.html", [
       [ "Introduction", "index.html#intro", null ],
-      [ "Dependancies:", "index.html#dependancies", null ],
+      [ "Dependancies", "index.html#dependancies", null ],
       [ "Compile", "index.html#install_sec", null ],
       [ "Set up the configuration file", "index.html#configure", null ],
       [ "Run!", "index.html#run", null ]
@@ -30,6 +30,7 @@ var NAVTREE =
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Typedefs", "globals_type.html", null ]
       ] ]
     ] ]

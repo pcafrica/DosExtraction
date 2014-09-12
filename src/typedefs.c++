@@ -1,5 +1,10 @@
 #include "typedefs.h"
 
+std::string utility::full_path(const std::string & filename, const std::string & relative_directory)
+{
+	return (filename[0] == '/') ? filename : (relative_directory + filename);
+}
+
 void utility::print_block(const char * string, std::ostream & os)
 {
 	os << "╔";

@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['save_5fplot',['save_plot',['../classDosModel.html#aa614583c066c644e83085beaad05279d',1,'DosModel']]],
-  ['separator_5f',['separator_',['../classCsvParser.html#a650afe260de7540becd03fd198dd1a59',1,'CsvParser']]],
-  ['shift_5f2_5f',['shift_2_',['../classParamList.html#a9ae72a20f59400fc96f9e33ed21dfb39',1,'ParamList']]],
-  ['shift_5f3_5f',['shift_3_',['../classParamList.html#a29c887174f28cfa06e7ea7fd80185bd7',1,'ParamList']]],
-  ['shift_5f4_5f',['shift_4_',['../classParamList.html#a966625893d78fcd3c8e989792b500617',1,'ParamList']]],
-  ['sigma_5f',['sigma_',['../classParamList.html#a497f69dd5195462ce23e591069b4232f',1,'ParamList']]],
-  ['sigma_5f2_5f',['sigma_2_',['../classParamList.html#a1743ba1b8d56ae8f3ab9256e6f8b62bd',1,'ParamList']]],
-  ['sigma_5f3_5f',['sigma_3_',['../classParamList.html#a049c8b36c29fb765c363cf05610ca9e2',1,'ParamList']]],
-  ['sigma_5f4_5f',['sigma_4_',['../classParamList.html#a8c6b6653287d435a1dce5f3ce3819352',1,'ParamList']]],
-  ['simulate',['simulate',['../classDosModel.html#a5203629bc44905401b1b0d71a021db40',1,'DosModel']]],
-  ['simulationno_5f',['simulationNo_',['../classParamList.html#af9bb206ec2cb223298bf327f49a66dbb',1,'ParamList']]],
-  ['solver_5f',['solver_',['../classNonLinearPoisson1D.html#aca4acc679876b21bdbf4c09c589aed69',1,'NonLinearPoisson1D']]],
-  ['solvers_2eh',['solvers.h',['../solvers_8h.html',1,'']]],
-  ['sort',['sort',['../namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5',1,'numerics']]],
-  ['sort_5fpair',['sort_pair',['../namespacenumerics.html#a510fe73118ce8c79570ac87fa3e7df47',1,'numerics']]],
-  ['sparsexd',['SparseXd',['../typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f',1,'typedefs.h']]],
-  ['sqrt_5f2',['SQRT_2',['../namespaceconstants.html#a61ee8d36601448a8e5a232be8852468e',1,'constants']]],
-  ['sqrt_5fpi',['SQRT_PI',['../namespaceconstants.html#a7477e8f618e55155827d512dc7a0f098',1,'constants']]],
-  ['stiff_5f',['Stiff_',['../classPdeSolver1D.html#a63de5de1757c8bc5cd0941030f9794e3',1,'PdeSolver1D']]]
+  ['reset',['reset',['../classCsvParser.html#ad20897c5c8bd47f5d4005989bead0e55',1,'CsvParser']]],
+  ['rule_5f',['rule_',['../classCharge.html#a37ca7d0fb67d7144675a97f8e4cbdf34',1,'Charge']]]
 ];

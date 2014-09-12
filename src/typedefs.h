@@ -51,18 +51,33 @@ namespace constants
 	const double  SQRT_2 = std::sqrt(2)      ;	/**< @brief @f$ \sqrt{2} @f$. */
 }
 
+/**
+ * @namespace utility
+ *
+ * @brief Namespace for utilities and auxiliary functions.
+ *
+ */
 namespace utility
 {
 	/**
-	* @brief Auxiliary function to print a string inside a block.
-	* @param[in]  string : the string to print;
-	* @param[out] os     : output stream.
-	*/
+	 * @brief Auxiliary function to return the full path to a file.
+	 * @param[in] filename           : the filename;
+	 * @param[in] relative_directory : the directory for a relative path.
+	 * @returns the variable @a filename, if it contains an absolute path; otherwise returns the concatenation
+	 * of @a relative_directory and @a filename (i.e. the relative path to @a filename).
+	 */
+	std::string full_path(const std::string &, const std::string &);
+	
+	/**
+	 * @brief Auxiliary function to print a string inside a block.
+	 * @param[in]  string : the string to print;
+	 * @param[out] os     : output stream.
+	 */
 	void print_block(const char *, std::ostream & = std::cout);
 	/**
-	* @brief Auxiliary function to print a "DONE!" string.
-	* @param[out] os : output stream.
-	*/
+	 * @brief Auxiliary function to print a "DONE!" string.
+	 * @param[out] os : output stream.
+	 */
 	void print_done (std::ostream & = std::cout);
 }
 

@@ -8,7 +8,7 @@
  * Source files and headers are written in C++11 language.
  * The software is intended to be used on a UNIX operating system.
  *
- * @section dependancies Dependancies:
+ * @section dependancies Dependancies
  * 
  * The program requires the following libraries to be installed on your system:
  * 

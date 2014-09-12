@@ -5,14 +5,14 @@
  * @author Pasquale Claudio Africa <pasquale.africa@gmail.com>
  * @date   2014
  *
- * @brief Main file.
+ * @brief A test file.
  *
  */
 
 #include "../src/dosModel.h"
 
 /**
- *  @brief main() function.
+ *  @brief The @b main function.
  */
 
 int main(const int argc, const char * const * argv, const char * const * envp)
@@ -20,12 +20,15 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 	try {
 		const std::string config_directory = "../config/";
 		GetPot commandLine(argc, (char **) argv);
-		GetPot config     ( (config_directory + commandLine.follow("config.pot", 2, "-f", "--file")).c_str() );
-		
+		GetPot config = utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
+		                                   config_directory).c_str();
+		                                   
 		// Input filenames.
-		const std::string input_params  = config_directory + config("input_params" , "input_params.csv" );
-		const std::string input_experim = config_directory + config("input_experim", "input_experim.csv");
-		
+		const std::string input_params  = utility::full_path(config("input_params", "input_params.csv" ),
+		                                  config_directory);
+		const std::string input_experim = utility::full_path(config("input_experim", "input_experim.csv" ),
+		                                  config_directory);
+		                                  
 		CsvParser parser(input_params, config("hasHeaders", true));
 		
 		// Get no. of simulations to be performed.
@@ -46,10 +49,9 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		
 		// Directories names.
 		const std::string output_directory   = config("output_directory", "./output" ) + "/";
-		const std::string output_plot_subdir = "gnuplot/";
+		const std::string output_plot_subdir = (std::string) "gnuplot/" + "/";
 		
-		// Clean up and re-create output directories.
-		system( ("exec rm -rf " + output_directory + " 2> /dev/null").c_str() );
+		// Create output directories, if they don't exist.
 		system( ("exec mkdir " + output_directory + " " + output_directory + output_plot_subdir + " 2> /dev/null").c_str() );
 		
 		// Create variables to catch error messages inside the parallel region:
@@ -58,7 +60,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		bool thrownException = false;
 		
 		// Loop for the parallel simulation.
-		#pragma omp parallel for shared(omp_loopException, thrownException) private(config)
+		#pragma omp parallel for shared(omp_loopException, thrownException) private(config) schedule(dynamic, 1)
 		
 		for ( unsigned i = 0; i < nSimulations; ++i ) {
 			try {	// Exception handling inside parallel region.
@@ -68,8 +70,9 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 				#pragma omp critical
 				{
 					// Re-initialize configuration file for each thread.
-					config = (GetPot) commandLine.follow("config.pot", 2, "-f", "--file").c_str();
-					
+					config = (GetPot) utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
+					                                     config_directory).c_str();
+					                                     
 					// Import params.
 					if ( nSimulations == parser.nRows() ) {	// Simulate each row in the input file.
 						model = (DosModel) (ParamList) parser.importRow( i + 1 );
@@ -78,10 +81,18 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 					}
 				}
 				
+				std::cout << "Performing simulation no. " << model.params().simulationNo() << "..." << std::endl;
+				
 				const std::string output_filename = "output_" + std::to_string(model.params().simulationNo());
 				
+				// Remove old files.
+				system( ("exec rm -f " + output_directory + output_filename + "* "
+				         + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() );
+				         
 				// Simulate and save output files.
 				model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
+				
+				std::cout << "\tSimulation no. " << model.params().simulationNo() << " complete!" << std::endl;
 			} catch ( const std::exception & genericException ) {
 				#pragma omp critical
 				{
@@ -100,7 +111,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		return 1;
 	}
 	
-	utility::print_block("Simulation complete!", std::cout);
+	std::cout << std::endl;
+	utility::print_block("Tasks complete!", std::cout);
 	
 	return 0;
 }

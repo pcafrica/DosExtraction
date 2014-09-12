@@ -13,10 +13,10 @@ hasHeaders = 1
 simulate_all = 0
 
 	# If "simulate_all = 0", set indexes of rows to simulate.
-	indexes = '1 6'
+	indexes = '1 3 5'
 
 # Number of threads to be used for a parallel simulation.
-nThreads = 10
+nThreads = 3
 
 # The directory where output files must be saved.
 output_directory = ./output

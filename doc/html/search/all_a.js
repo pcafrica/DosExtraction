@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mass_5f',['Mass_',['../classPdeSolver1D.html#aa0e70aa868721f4bbf1fe7ec57e097a9',1,'PdeSolver1D']]],
-  ['maxiterationsno_5f',['maxIterationsNo_',['../classNonLinearPoisson1D.html#acb070dfc3c7ac14a61f20d0b88d0a9d3',1,'NonLinearPoisson1D']]],
-  ['mesh_5f',['mesh_',['../classPdeSolver1D.html#ac0185cf9f8cdf64273950a48d63df3f7',1,'PdeSolver1D']]]
+  ['line_5f',['line_',['../classCsvParser.html#aaeb353f8e1c649830268cfa5635eaa4f',1,'CsvParser']]],
+  ['log_5fmean',['log_mean',['../classBim1D.html#a41aba54d21f6f0de00f3d02aa357e16c',1,'Bim1D']]]
 ];

@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['paramlist',['ParamList',['../classParamList.html',1,'ParamList'],['../classParamList.html#a9e4b0ea6081bb500861f231f0b4f7900',1,'ParamList::ParamList()=default'],['../classParamList.html#a05bb961ce49e684edbae5f3f07f8b128',1,'ParamList::ParamList(const RowVectorXd &amp;)']]],
-  ['paramlist_2eh',['paramList.h',['../paramList_8h.html',1,'']]],
-  ['params',['params',['../classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a',1,'DosModel']]],
-  ['params_5f',['params_',['../classCharge.html#a98166e75a7ce8273bfedf02e87bfd15f',1,'Charge::params_()'],['../classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b',1,'DosModel::params_()']]],
-  ['params_5fno',['PARAMS_NO',['../namespaceconstants.html#a55c7c5d84b0709c6786dec9908107a04',1,'constants']]],
-  ['pdesolver1d',['PdeSolver1D',['../classPdeSolver1D.html',1,'PdeSolver1D'],['../classPdeSolver1D.html#a9e578d43e38517bade5c0911b7906e73',1,'PdeSolver1D::PdeSolver1D()=delete'],['../classPdeSolver1D.html#a2fb4efbf180a22aa8d8404765a3a7aa5',1,'PdeSolver1D::PdeSolver1D(VectorXd &amp;)']]],
-  ['phi_5f',['phi_',['../classNonLinearPoisson1D.html#ada9b394b7f20717dd4a9aabfdf55e459',1,'NonLinearPoisson1D']]],
-  ['physicalconstants_2eh',['physicalConstants.h',['../physicalConstants_8h.html',1,'']]],
-  ['pi',['PI',['../namespaceconstants.html#a952eac791b596a61bba0a133a3bb439f',1,'constants']]],
-  ['pi_5fm4',['PI_M4',['../namespaceconstants.html#a9b6eb4b81f3ef26474b7ec60ef4f7b40',1,'constants']]],
-  ['post_5fprocess',['post_process',['../classDosModel.html#a16cf4bc9c1a053efd9a2f1b607fd0643',1,'DosModel']]]
+  ['n0_5f',['N0_',['../classParamList.html#ab02f44dcc57ae9925ef021ac2856ed0b',1,'ParamList']]],
+  ['n0_5f2_5f',['N0_2_',['../classParamList.html#a6ebf9f469e500f05185919e534c6f6d4',1,'ParamList']]],
+  ['n0_5f3_5f',['N0_3_',['../classParamList.html#afa2f537bf13e1e3105ec91f9282c6dc6',1,'ParamList']]],
+  ['n0_5f4_5f',['N0_4_',['../classParamList.html#a2c548ad5a69cd791b80ba623accf50b3',1,'ParamList']]],
+  ['n_5fapprox',['n_approx',['../classGaussianCharge.html#a23fbccf4687490da653b2ea642284245',1,'GaussianCharge']]],
+  ['ncols_5f',['nCols_',['../classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942',1,'CsvParser']]],
+  ['nnodes_5f',['nNodes_',['../classParamList.html#a8f4bb43717322579edc12974700aec98',1,'ParamList::nNodes_()'],['../classQuadratureRule.html#a8f4bb43717322579edc12974700aec98',1,'QuadratureRule::nNodes_()'],['../classPdeSolver1D.html#a8f4bb43717322579edc12974700aec98',1,'PdeSolver1D::nNodes_()']]],
+  ['nodes_5f',['nodes_',['../classQuadratureRule.html#a62ad07fa140bcc39af00e04b045dd341',1,'QuadratureRule']]],
+  ['nonlinearpoisson1d',['NonLinearPoisson1D',['../classNonLinearPoisson1D.html',1,'NonLinearPoisson1D'],['../classNonLinearPoisson1D.html#ad4d805d47a62331707176ad2693499f3',1,'NonLinearPoisson1D::NonLinearPoisson1D()=delete'],['../classNonLinearPoisson1D.html#af102dded9f007403d0e795413c59d7d3',1,'NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D &amp;, const unsigned &amp;=100, const double &amp;=1.0e-6)']]],
+  ['norm_5f',['norm_',['../classNonLinearPoisson1D.html#ad632ecc09af8e8244dd853da59a9a8ff',1,'NonLinearPoisson1D']]],
+  ['nrows_5f',['nRows_',['../classCsvParser.html#a646e6783ca009681d11cdd80148c50c2',1,'CsvParser']]],
+  ['nsteps_5f',['nSteps_',['../classParamList.html#af3118b388e4eb4a7ae9831c7aa947f84',1,'ParamList']]],
+  ['numerics',['numerics',['../namespacenumerics.html',1,'']]],
+  ['numerics_2eh',['numerics.h',['../numerics_8h.html',1,'']]]
 ];

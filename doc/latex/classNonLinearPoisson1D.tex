@@ -75,6 +75,10 @@ Provide a solver for a non-\/linear Poisson equation.
 
 A Newton method is applied in order to solve\-: \[ -\frac{\mathrm{d}}{\mathrm{d}z} \left(\epsilon(z) \cdot \frac{\mathrm{d}\varphi}{\mathrm{d}z}(z) \right) = - q \cdot \frac{N_0}{\sqrt{\pi}} \int_{-\infty}^{+\infty} \exp\left(-\alpha^2\right) \left( 1 + \exp\left( \frac{\sqrt{2}\sigma\alpha - q\varphi(z)}{K_B \cdot T} \right) \right)^{-1} \mathrm{d}\alpha ~ . \] 
 
+Definition at line 190 of file solvers.\-h.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classNonLinearPoisson1D_af102dded9f007403d0e795413c59d7d3}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}}
 \index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
@@ -100,6 +104,10 @@ Constructor.
 \end{DoxyParams}
 
 
+Definition at line 162 of file solvers.\-c++.
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{classNonLinearPoisson1D_abd3b11ca576a30baefa0c73c2beb31cf}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!apply@{apply}}
 \index{apply@{apply}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
@@ -123,6 +131,10 @@ Apply a Newton method to the equation and then discretize it using the solver sp
 \mbox{\tt in}  & {\em charge\-\_\-fun} & \-: an object of class \hyperlink{classCharge}{Charge} specifying how to compute total electric charge. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 165 of file solvers.\-c++.
+
 \hypertarget{classNonLinearPoisson1D_a68da1b47bb6eb20a50057e8b35a4c09f}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!compute\-Jac@{compute\-Jac}}
 \index{compute\-Jac@{compute\-Jac}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
 \subsubsection[{compute\-Jac}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sparse\-Xd} compute\-Jac (
@@ -142,6 +154,10 @@ Compute the Jacobi matrix.
 \begin{DoxyReturn}{Returns}
 the Jacobi matrix in a sparse format. 
 \end{DoxyReturn}
+
+
+Definition at line 265 of file solvers.\-c++.
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

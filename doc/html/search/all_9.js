@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['line_5f',['line_',['../classCsvParser.html#aaeb353f8e1c649830268cfa5635eaa4f',1,'CsvParser']]],
-  ['log_5fmean',['log_mean',['../classBim1D.html#a41aba54d21f6f0de00f3d02aa357e16c',1,'Bim1D']]]
+  ['k_5fb',['K_B',['../namespaceconstants.html#a00c952dfd5e516e8aed05892039e2723',1,'constants']]]
 ];

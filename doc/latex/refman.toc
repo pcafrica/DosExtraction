@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Index}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Dependancies\discretionary {-}{}{}:}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}Dependancies}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Compile}{1}{section.1.3}
 \contentsline {section}{\numberline {1.4}Set up the configuration file}{2}{section.1.4}
 \contentsline {section}{\numberline {1.5}Run!}{2}{section.1.5}
@@ -26,104 +26,112 @@
 \contentsline {subsubsection}{\numberline {6.2.2.6}interp1}{13}{subsubsection.6.2.2.6}
 \contentsline {subsubsection}{\numberline {6.2.2.7}interp1}{14}{subsubsection.6.2.2.7}
 \contentsline {subsubsection}{\numberline {6.2.2.8}error\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L2}{14}{subsubsection.6.2.2.8}
-\contentsline {chapter}{\numberline {7}Class Documentation}{15}{chapter.7}
-\contentsline {section}{\numberline {7.1}Bim1\discretionary {-}{}{}D Class Reference}{15}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{16}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Constructor \& Destructor Documentation}{16}{subsection.7.1.2}
-\contentsline {subsubsection}{\numberline {7.1.2.1}Bim1\discretionary {-}{}{}D}{16}{subsubsection.7.1.2.1}
-\contentsline {subsection}{\numberline {7.1.3}Member Function Documentation}{16}{subsection.7.1.3}
-\contentsline {subsubsection}{\numberline {7.1.3.1}log\discretionary {-}{}{}\_\discretionary {-}{}{}mean}{16}{subsubsection.7.1.3.1}
-\contentsline {subsubsection}{\numberline {7.1.3.2}bernoulli}{16}{subsubsection.7.1.3.2}
-\contentsline {subsubsection}{\numberline {7.1.3.3}assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}{16}{subsubsection.7.1.3.3}
-\contentsline {subsubsection}{\numberline {7.1.3.4}assemble\discretionary {-}{}{}Stiff}{17}{subsubsection.7.1.3.4}
-\contentsline {subsubsection}{\numberline {7.1.3.5}assemble\discretionary {-}{}{}Mass}{17}{subsubsection.7.1.3.5}
-\contentsline {section}{\numberline {7.2}Charge Class Reference}{17}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{18}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Constructor \& Destructor Documentation}{18}{subsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Charge}{18}{subsubsection.7.2.2.1}
-\contentsline {subsection}{\numberline {7.2.3}Member Function Documentation}{18}{subsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.3.1}charge}{18}{subsubsection.7.2.3.1}
-\contentsline {subsubsection}{\numberline {7.2.3.2}dcharge}{18}{subsubsection.7.2.3.2}
-\contentsline {section}{\numberline {7.3}Csv\discretionary {-}{}{}Parser Class Reference}{19}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{20}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{20}{subsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.2.1}Csv\discretionary {-}{}{}Parser}{20}{subsubsection.7.3.2.1}
-\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{20}{subsection.7.3.3}
-\contentsline {subsubsection}{\numberline {7.3.3.1}import\discretionary {-}{}{}Row}{20}{subsubsection.7.3.3.1}
-\contentsline {subsubsection}{\numberline {7.3.3.2}import\discretionary {-}{}{}Rows}{20}{subsubsection.7.3.3.2}
-\contentsline {subsubsection}{\numberline {7.3.3.3}import\discretionary {-}{}{}First\discretionary {-}{}{}Rows}{21}{subsubsection.7.3.3.3}
-\contentsline {subsubsection}{\numberline {7.3.3.4}import\discretionary {-}{}{}Col}{21}{subsubsection.7.3.3.4}
-\contentsline {subsubsection}{\numberline {7.3.3.5}import\discretionary {-}{}{}Cols}{21}{subsubsection.7.3.3.5}
-\contentsline {subsubsection}{\numberline {7.3.3.6}import\discretionary {-}{}{}First\discretionary {-}{}{}Cols}{21}{subsubsection.7.3.3.6}
-\contentsline {subsubsection}{\numberline {7.3.3.7}import\discretionary {-}{}{}Cell}{22}{subsubsection.7.3.3.7}
-\contentsline {subsubsection}{\numberline {7.3.3.8}import\discretionary {-}{}{}All}{23}{subsubsection.7.3.3.8}
-\contentsline {section}{\numberline {7.4}Dos\discretionary {-}{}{}Model Class Reference}{23}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{24}{subsection.7.4.1}
-\contentsline {subsection}{\numberline {7.4.2}Constructor \& Destructor Documentation}{24}{subsection.7.4.2}
-\contentsline {subsubsection}{\numberline {7.4.2.1}Dos\discretionary {-}{}{}Model}{24}{subsubsection.7.4.2.1}
-\contentsline {subsection}{\numberline {7.4.3}Member Function Documentation}{24}{subsection.7.4.3}
-\contentsline {subsubsection}{\numberline {7.4.3.1}simulate}{24}{subsubsection.7.4.3.1}
-\contentsline {subsubsection}{\numberline {7.4.3.2}post\discretionary {-}{}{}\_\discretionary {-}{}{}process}{24}{subsubsection.7.4.3.2}
-\contentsline {subsubsection}{\numberline {7.4.3.3}gnuplot\discretionary {-}{}{}\_\discretionary {-}{}{}commands}{25}{subsubsection.7.4.3.3}
-\contentsline {subsubsection}{\numberline {7.4.3.4}save\discretionary {-}{}{}\_\discretionary {-}{}{}plot}{25}{subsubsection.7.4.3.4}
-\contentsline {section}{\numberline {7.5}Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule Class Reference}{25}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{26}{subsection.7.5.1}
-\contentsline {subsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{26}{subsection.7.5.2}
-\contentsline {subsubsection}{\numberline {7.5.2.1}Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}{26}{subsubsection.7.5.2.1}
-\contentsline {subsection}{\numberline {7.5.3}Member Function Documentation}{26}{subsection.7.5.3}
-\contentsline {subsubsection}{\numberline {7.5.3.1}apply}{26}{subsubsection.7.5.3.1}
-\contentsline {section}{\numberline {7.6}Gaussian\discretionary {-}{}{}Charge Class Reference}{26}{section.7.6}
-\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{27}{subsection.7.6.1}
-\contentsline {subsection}{\numberline {7.6.2}Constructor \& Destructor Documentation}{27}{subsection.7.6.2}
-\contentsline {subsubsection}{\numberline {7.6.2.1}Gaussian\discretionary {-}{}{}Charge}{27}{subsubsection.7.6.2.1}
-\contentsline {subsection}{\numberline {7.6.3}Member Function Documentation}{27}{subsection.7.6.3}
-\contentsline {subsubsection}{\numberline {7.6.3.1}charge}{27}{subsubsection.7.6.3.1}
-\contentsline {subsubsection}{\numberline {7.6.3.2}dcharge}{28}{subsubsection.7.6.3.2}
-\contentsline {subsubsection}{\numberline {7.6.3.3}n\discretionary {-}{}{}\_\discretionary {-}{}{}approx}{28}{subsubsection.7.6.3.3}
-\contentsline {subsubsection}{\numberline {7.6.3.4}dn\discretionary {-}{}{}\_\discretionary {-}{}{}approx}{28}{subsubsection.7.6.3.4}
-\contentsline {section}{\numberline {7.7}Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D Class Reference}{29}{section.7.7}
-\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{29}{subsection.7.7.1}
-\contentsline {subsection}{\numberline {7.7.2}Constructor \& Destructor Documentation}{30}{subsection.7.7.2}
-\contentsline {subsubsection}{\numberline {7.7.2.1}Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}{30}{subsubsection.7.7.2.1}
-\contentsline {subsection}{\numberline {7.7.3}Member Function Documentation}{30}{subsection.7.7.3}
-\contentsline {subsubsection}{\numberline {7.7.3.1}apply}{30}{subsubsection.7.7.3.1}
-\contentsline {subsubsection}{\numberline {7.7.3.2}compute\discretionary {-}{}{}Jac}{30}{subsubsection.7.7.3.2}
-\contentsline {section}{\numberline {7.8}Param\discretionary {-}{}{}List Class Reference}{30}{section.7.8}
-\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{32}{subsection.7.8.1}
-\contentsline {subsection}{\numberline {7.8.2}Constructor \& Destructor Documentation}{32}{subsection.7.8.2}
-\contentsline {subsubsection}{\numberline {7.8.2.1}Param\discretionary {-}{}{}List}{32}{subsubsection.7.8.2.1}
-\contentsline {section}{\numberline {7.9}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D Class Reference}{32}{section.7.9}
-\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{33}{subsection.7.9.1}
-\contentsline {subsection}{\numberline {7.9.2}Constructor \& Destructor Documentation}{34}{subsection.7.9.2}
-\contentsline {subsubsection}{\numberline {7.9.2.1}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}{34}{subsubsection.7.9.2.1}
-\contentsline {subsection}{\numberline {7.9.3}Member Function Documentation}{35}{subsection.7.9.3}
-\contentsline {subsubsection}{\numberline {7.9.3.1}assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}{35}{subsubsection.7.9.3.1}
-\contentsline {subsubsection}{\numberline {7.9.3.2}assemble\discretionary {-}{}{}Stiff}{35}{subsubsection.7.9.3.2}
-\contentsline {subsubsection}{\numberline {7.9.3.3}assemble\discretionary {-}{}{}Mass}{35}{subsubsection.7.9.3.3}
-\contentsline {section}{\numberline {7.10}Quadrature\discretionary {-}{}{}Rule Class Reference}{35}{section.7.10}
-\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{36}{subsection.7.10.1}
-\contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{36}{subsection.7.10.2}
-\contentsline {subsubsection}{\numberline {7.10.2.1}Quadrature\discretionary {-}{}{}Rule}{36}{subsubsection.7.10.2.1}
-\contentsline {chapter}{\numberline {8}File Documentation}{39}{chapter.8}
-\contentsline {section}{\numberline {8.1}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.h File Reference}{39}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{39}{subsection.8.1.1}
-\contentsline {section}{\numberline {8.2}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.h File Reference}{39}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{40}{subsection.8.2.1}
-\contentsline {section}{\numberline {8.3}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.h File Reference}{40}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{40}{subsection.8.3.1}
-\contentsline {section}{\numberline {8.4}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.h File Reference}{41}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{41}{subsection.8.4.1}
-\contentsline {section}{\numberline {8.5}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.h File Reference}{41}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{42}{subsection.8.5.1}
-\contentsline {section}{\numberline {8.6}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/physical\discretionary {-}{}{}Constants.h File Reference}{42}{section.8.6}
-\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{42}{subsection.8.6.1}
-\contentsline {section}{\numberline {8.7}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{43}{section.8.7}
-\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{43}{subsection.8.7.1}
-\contentsline {section}{\numberline {8.8}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.h File Reference}{43}{section.8.8}
-\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{44}{subsection.8.8.1}
-\contentsline {section}{\numberline {8.9}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.h File Reference}{44}{section.8.9}
-\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{45}{subsection.8.9.1}
-\contentsline {subsection}{\numberline {8.9.2}Typedef Documentation}{45}{subsection.8.9.2}
-\contentsline {subsubsection}{\numberline {8.9.2.1}Vector\discretionary {-}{}{}X}{45}{subsubsection.8.9.2.1}
-\contentsline {subsubsection}{\numberline {8.9.2.2}Vector\discretionary {-}{}{}Xpair}{45}{subsubsection.8.9.2.2}
-\contentsline {chapter}{Index}{46}{section*.45}
+\contentsline {section}{\numberline {6.3}utility Namespace Reference}{14}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{15}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Function Documentation}{15}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}full\discretionary {-}{}{}\_\discretionary {-}{}{}path}{15}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}print\discretionary {-}{}{}\_\discretionary {-}{}{}block}{15}{subsubsection.6.3.2.2}
+\contentsline {subsubsection}{\numberline {6.3.2.3}print\discretionary {-}{}{}\_\discretionary {-}{}{}done}{15}{subsubsection.6.3.2.3}
+\contentsline {chapter}{\numberline {7}Class Documentation}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}Bim1\discretionary {-}{}{}D Class Reference}{17}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{18}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Constructor \& Destructor Documentation}{18}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}Bim1\discretionary {-}{}{}D}{18}{subsubsection.7.1.2.1}
+\contentsline {subsection}{\numberline {7.1.3}Member Function Documentation}{18}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.3.1}log\discretionary {-}{}{}\_\discretionary {-}{}{}mean}{18}{subsubsection.7.1.3.1}
+\contentsline {subsubsection}{\numberline {7.1.3.2}bernoulli}{18}{subsubsection.7.1.3.2}
+\contentsline {subsubsection}{\numberline {7.1.3.3}assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}{19}{subsubsection.7.1.3.3}
+\contentsline {subsubsection}{\numberline {7.1.3.4}assemble\discretionary {-}{}{}Stiff}{19}{subsubsection.7.1.3.4}
+\contentsline {subsubsection}{\numberline {7.1.3.5}assemble\discretionary {-}{}{}Mass}{19}{subsubsection.7.1.3.5}
+\contentsline {section}{\numberline {7.2}Charge Class Reference}{19}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{20}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Constructor \& Destructor Documentation}{20}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Charge}{20}{subsubsection.7.2.2.1}
+\contentsline {subsection}{\numberline {7.2.3}Member Function Documentation}{20}{subsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.3.1}charge}{20}{subsubsection.7.2.3.1}
+\contentsline {subsubsection}{\numberline {7.2.3.2}dcharge}{21}{subsubsection.7.2.3.2}
+\contentsline {section}{\numberline {7.3}Csv\discretionary {-}{}{}Parser Class Reference}{21}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{22}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{22}{subsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.2.1}Csv\discretionary {-}{}{}Parser}{22}{subsubsection.7.3.2.1}
+\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{23}{subsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.3.1}import\discretionary {-}{}{}Row}{23}{subsubsection.7.3.3.1}
+\contentsline {subsubsection}{\numberline {7.3.3.2}import\discretionary {-}{}{}Rows}{24}{subsubsection.7.3.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3.3}import\discretionary {-}{}{}First\discretionary {-}{}{}Rows}{24}{subsubsection.7.3.3.3}
+\contentsline {subsubsection}{\numberline {7.3.3.4}import\discretionary {-}{}{}Col}{24}{subsubsection.7.3.3.4}
+\contentsline {subsubsection}{\numberline {7.3.3.5}import\discretionary {-}{}{}Cols}{24}{subsubsection.7.3.3.5}
+\contentsline {subsubsection}{\numberline {7.3.3.6}import\discretionary {-}{}{}First\discretionary {-}{}{}Cols}{25}{subsubsection.7.3.3.6}
+\contentsline {subsubsection}{\numberline {7.3.3.7}import\discretionary {-}{}{}Cell}{25}{subsubsection.7.3.3.7}
+\contentsline {subsubsection}{\numberline {7.3.3.8}import\discretionary {-}{}{}All}{25}{subsubsection.7.3.3.8}
+\contentsline {section}{\numberline {7.4}Dos\discretionary {-}{}{}Model Class Reference}{25}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{26}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Constructor \& Destructor Documentation}{26}{subsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.2.1}Dos\discretionary {-}{}{}Model}{26}{subsubsection.7.4.2.1}
+\contentsline {subsection}{\numberline {7.4.3}Member Function Documentation}{26}{subsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.3.1}simulate}{26}{subsubsection.7.4.3.1}
+\contentsline {subsubsection}{\numberline {7.4.3.2}post\discretionary {-}{}{}\_\discretionary {-}{}{}process}{27}{subsubsection.7.4.3.2}
+\contentsline {subsubsection}{\numberline {7.4.3.3}gnuplot\discretionary {-}{}{}\_\discretionary {-}{}{}commands}{27}{subsubsection.7.4.3.3}
+\contentsline {subsubsection}{\numberline {7.4.3.4}save\discretionary {-}{}{}\_\discretionary {-}{}{}plot}{27}{subsubsection.7.4.3.4}
+\contentsline {section}{\numberline {7.5}Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule Class Reference}{28}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{28}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{29}{subsection.7.5.2}
+\contentsline {subsubsection}{\numberline {7.5.2.1}Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}{29}{subsubsection.7.5.2.1}
+\contentsline {subsection}{\numberline {7.5.3}Member Function Documentation}{29}{subsection.7.5.3}
+\contentsline {subsubsection}{\numberline {7.5.3.1}apply}{29}{subsubsection.7.5.3.1}
+\contentsline {section}{\numberline {7.6}Gaussian\discretionary {-}{}{}Charge Class Reference}{29}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{30}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Constructor \& Destructor Documentation}{30}{subsection.7.6.2}
+\contentsline {subsubsection}{\numberline {7.6.2.1}Gaussian\discretionary {-}{}{}Charge}{30}{subsubsection.7.6.2.1}
+\contentsline {subsection}{\numberline {7.6.3}Member Function Documentation}{30}{subsection.7.6.3}
+\contentsline {subsubsection}{\numberline {7.6.3.1}charge}{30}{subsubsection.7.6.3.1}
+\contentsline {subsubsection}{\numberline {7.6.3.2}dcharge}{30}{subsubsection.7.6.3.2}
+\contentsline {subsubsection}{\numberline {7.6.3.3}n\discretionary {-}{}{}\_\discretionary {-}{}{}approx}{31}{subsubsection.7.6.3.3}
+\contentsline {subsubsection}{\numberline {7.6.3.4}dn\discretionary {-}{}{}\_\discretionary {-}{}{}approx}{31}{subsubsection.7.6.3.4}
+\contentsline {section}{\numberline {7.7}Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D Class Reference}{31}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{32}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}Constructor \& Destructor Documentation}{33}{subsection.7.7.2}
+\contentsline {subsubsection}{\numberline {7.7.2.1}Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}{33}{subsubsection.7.7.2.1}
+\contentsline {subsection}{\numberline {7.7.3}Member Function Documentation}{34}{subsection.7.7.3}
+\contentsline {subsubsection}{\numberline {7.7.3.1}apply}{34}{subsubsection.7.7.3.1}
+\contentsline {subsubsection}{\numberline {7.7.3.2}compute\discretionary {-}{}{}Jac}{34}{subsubsection.7.7.3.2}
+\contentsline {section}{\numberline {7.8}Param\discretionary {-}{}{}List Class Reference}{34}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{36}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}Constructor \& Destructor Documentation}{36}{subsection.7.8.2}
+\contentsline {subsubsection}{\numberline {7.8.2.1}Param\discretionary {-}{}{}List}{36}{subsubsection.7.8.2.1}
+\contentsline {section}{\numberline {7.9}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D Class Reference}{36}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{37}{subsection.7.9.1}
+\contentsline {subsection}{\numberline {7.9.2}Constructor \& Destructor Documentation}{38}{subsection.7.9.2}
+\contentsline {subsubsection}{\numberline {7.9.2.1}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}{38}{subsubsection.7.9.2.1}
+\contentsline {subsection}{\numberline {7.9.3}Member Function Documentation}{38}{subsection.7.9.3}
+\contentsline {subsubsection}{\numberline {7.9.3.1}assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}{38}{subsubsection.7.9.3.1}
+\contentsline {subsubsection}{\numberline {7.9.3.2}assemble\discretionary {-}{}{}Stiff}{38}{subsubsection.7.9.3.2}
+\contentsline {subsubsection}{\numberline {7.9.3.3}assemble\discretionary {-}{}{}Mass}{38}{subsubsection.7.9.3.3}
+\contentsline {section}{\numberline {7.10}Quadrature\discretionary {-}{}{}Rule Class Reference}{39}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{39}{subsection.7.10.1}
+\contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{40}{subsection.7.10.2}
+\contentsline {subsubsection}{\numberline {7.10.2.1}Quadrature\discretionary {-}{}{}Rule}{40}{subsubsection.7.10.2.1}
+\contentsline {chapter}{\numberline {8}File Documentation}{41}{chapter.8}
+\contentsline {section}{\numberline {8.1}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.h File Reference}{41}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{41}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.h File Reference}{41}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{42}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.h File Reference}{42}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{42}{subsection.8.3.1}
+\contentsline {section}{\numberline {8.4}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.h File Reference}{43}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{43}{subsection.8.4.1}
+\contentsline {section}{\numberline {8.5}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.h File Reference}{43}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{44}{subsection.8.5.1}
+\contentsline {section}{\numberline {8.6}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/physical\discretionary {-}{}{}Constants.h File Reference}{44}{section.8.6}
+\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{45}{subsection.8.6.1}
+\contentsline {section}{\numberline {8.7}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{45}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{45}{subsection.8.7.1}
+\contentsline {section}{\numberline {8.8}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.h File Reference}{45}{section.8.8}
+\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{46}{subsection.8.8.1}
+\contentsline {section}{\numberline {8.9}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.h File Reference}{46}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{47}{subsection.8.9.1}
+\contentsline {subsection}{\numberline {8.9.2}Typedef Documentation}{47}{subsection.8.9.2}
+\contentsline {subsubsection}{\numberline {8.9.2.1}Vector\discretionary {-}{}{}X}{47}{subsubsection.8.9.2.1}
+\contentsline {subsubsection}{\numberline {8.9.2.2}Vector\discretionary {-}{}{}Xpair}{47}{subsubsection.8.9.2.2}
+\contentsline {section}{\numberline {8.10}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.c++ File Reference}{48}{section.8.10}
+\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{48}{subsection.8.10.1}
+\contentsline {chapter}{Index}{49}{section*.47}

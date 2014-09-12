@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quadraturerule',['QuadratureRule',['../classQuadratureRule.html#ac7fb9aaf8e3f9eae03235f68a935880a',1,'QuadratureRule::QuadratureRule()=delete'],['../classQuadratureRule.html#a376dee153044df24015711c9a8411bae',1,'QuadratureRule::QuadratureRule(const unsigned &amp;)']]]
+  ['n_5fapprox',['n_approx',['../classGaussianCharge.html#a23fbccf4687490da653b2ea642284245',1,'GaussianCharge']]],
+  ['nonlinearpoisson1d',['NonLinearPoisson1D',['../classNonLinearPoisson1D.html#ad4d805d47a62331707176ad2693499f3',1,'NonLinearPoisson1D::NonLinearPoisson1D()=delete'],['../classNonLinearPoisson1D.html#af102dded9f007403d0e795413c59d7d3',1,'NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D &amp;, const unsigned &amp;=100, const double &amp;=1.0e-6)']]]
 ];

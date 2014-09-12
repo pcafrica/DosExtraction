@@ -20,8 +20,8 @@
  * Approximate the integral:
  * @f[ \int_{a}^{b} f(x)~\mathrm{d}x @f]
  * with the finite sum:
- * @f[ \sum_{i=1}^{nNodes_{}} w_i \cdot f(x_i) @f]
- * where @f$ \{x_i\}_{i=1}^{nNodes_{}} @f$ and @f$ \{w_i\}_{i=1}^{nNodes_{}} @f$ are called respectively nodes and weights.
+ * @f[ \sum_{i=1}^{nNodes\_} w_i \cdot f(x_i) @f]
+ * where @f$ \{x_i\}_{i=1}^{nNodes\_} @f$ and @f$ \{w_i\}_{i=1}^{nNodes\_} @f$ are called respectively nodes and weights.
  *
  * @brief Abstract class providing a quadrature rule.
  *
@@ -72,7 +72,7 @@ class QuadratureRule
 /**
  * @class GaussHermiteRule
  *
- * Compute nodes and weights for the @a nNodes_ -points approximation of
+ * Compute nodes and weights for the <em>nNodes_</em>-points approximation of
  * @f[ \int_{-\infty}^{+\infty} w(x)f(x)~\mathrm{d}x @f]
  * where @f$ w(x) = e^{-x^2} @f$.
  *
