@@ -130,9 +130,9 @@ Compile</h1>
 </div><!-- fragment --><p>The compiler will generate the <em>test_filename</em> executable under the <em>bin/</em> directory. <br/>
 Repeat these instructions for each test you want to compile.</p>
 <h1><a class="anchor" id="configure"></a>
-Set up the configuration file</h1>
-<dl class="section warning"><dt>Warning</dt><dd>each file described in this section must be placed under the <em>config/</em> directory.</dd></dl>
-<p>Before you can an executable, you have to set up the configuration file, called <em>config.pot</em>. Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
+Set up the configurations</h1>
+<dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
+<p>Before you can an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
 Particularly, you can set the variables <em>input_params</em> and <em>input_experim</em>, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). <br/>
 <br/>
 You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
@@ -140,15 +140,23 @@ You can create multiple configuration files, each with different parameter value
 Run!</h1>
 <p>Executables are placed under the <em>bin/</em> directory. <br/>
 <br/>
-To run by using the default configuration filename (<em>config.pot</em>) simply execute in the root:</p>
-<div class="fragment"><div class="line">$ bin/test_filename</div>
-</div><!-- fragment --><p>or, if your terminal is already pointing the <em>bin/</em> directory:</p>
+To run by using the default configuration filename (<em>config.pot</em>) simply move to the <em>bin/</em> directory and execute:</p>
 <div class="fragment"><div class="line">$ ./test_filename</div>
-</div><!-- fragment --><p>To specify a different configuration file previously saved in the <em>config/</em> directory:</p>
-<div class="fragment"><div class="line">$ bin/test_filename -f configuration_filename</div>
+</div><!-- fragment --><p>To specify a different configuration file previously saved in the configuration directory:</p>
+<div class="fragment"><div class="line">$ ./test_filename -f configuration_filename</div>
 </div><!-- fragment --><p>or:</p>
-<div class="fragment"><div class="line">$ bin/test_filename --file configuration_filename</div>
-</div><!-- fragment --><p>Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file (default: <em>output/</em>) under <em>bin/</em>. </p>
+<div class="fragment"><div class="line">$ ./test_filename --file configuration_filename</div>
+</div><!-- fragment --><p>The variable <em>configuration_filename</em> should <b>not</b> contain the path.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Furthermore, if you run the program from a different folder than <em>bin/</em> or if you chose a different configuration directory, you have to manually specify the <b>full</b> path to the configuration directory (either absolute or relative to the current directory) by using:</dd>
+<dd>
+<div class="fragment"><div class="line">$ ./test_filename -d configuration_directory</div>
+</div><!-- fragment --></dd>
+<dd>
+or:</dd>
+<dd>
+<div class="fragment"><div class="line">$ ./test_filename --directory configuration_directory</div>
+</div><!-- fragment --></dd></dl>
+<p>Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file (default: <em>output/</em>) under <em>bin/</em>. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

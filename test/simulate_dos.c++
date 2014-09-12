@@ -18,8 +18,10 @@
 int main(const int argc, const char * const * argv, const char * const * envp)
 {
 	try {
-		const std::string config_directory = "../config/";
 		GetPot commandLine(argc, (char **) argv);
+		
+		const std::string config_directory = commandLine.follow("../config/", 2, "-d", "--directory");
+		
 		GetPot config = utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
 		                                   config_directory).c_str();
 		                                   

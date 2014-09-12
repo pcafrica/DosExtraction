@@ -30,25 +30,17 @@ $ make NAME=test\_filename
 
 
 The compiler will generate the {\itshape test\-\_\-filename} executable under the {\itshape bin/} directory. \par
-Repeat these instructions for each test you want to compile.\hypertarget{index_configure}{}\section{Set up the configuration file}\label{index_configure}
-\begin{DoxyWarning}{Warning}
-each file described in this section must be placed under the {\itshape config/} directory.
-\end{DoxyWarning}
-Before you can an executable, you have to set up the configuration file, called {\itshape config.\-pot}. Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
+Repeat these instructions for each test you want to compile.\hypertarget{index_configure}{}\section{Set up the configurations}\label{index_configure}
+\begin{DoxyNote}{Note}
+The default configuration directory is {\itshape config/}.
+\end{DoxyNote}
+Before you can an executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
 Particularly, you can set the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim}, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). \par
 \par
 You can create multiple configuration files, each with different parameter values\-: the one you aim to use can be specified in the command-\/line before running.\hypertarget{index_run}{}\section{Run!}\label{index_run}
 Executables are placed under the {\itshape bin/} directory. \par
 \par
-To run by using the default configuration filename ({\itshape config.\-pot}) simply execute in the root\-:
-
-
-\begin{DoxyCode}
-$ bin/test\_filename
-\end{DoxyCode}
-
-
-or, if your terminal is already pointing the {\itshape bin/} directory\-:
+To run by using the default configuration filename ({\itshape config.\-pot}) simply move to the {\itshape bin/} directory and execute\-:
 
 
 \begin{DoxyCode}
@@ -56,11 +48,11 @@ $ ./test\_filename
 \end{DoxyCode}
 
 
-To specify a different configuration file previously saved in the {\itshape config/} directory\-:
+To specify a different configuration file previously saved in the configuration directory\-:
 
 
 \begin{DoxyCode}
-$ bin/test\_filename -f configuration\_filename
+$ ./test\_filename -f configuration\_filename
 \end{DoxyCode}
 
 
@@ -68,8 +60,27 @@ or\-:
 
 
 \begin{DoxyCode}
-$ bin/test\_filename --file configuration\_filename
+$ ./test\_filename --file configuration\_filename
 \end{DoxyCode}
 
 
+The variable {\itshape configuration\-\_\-filename} should {\bfseries not} contain the path.
+
+\begin{DoxyWarning}{Warning}
+Furthermore, if you run the program from a different folder than {\itshape bin/} or if you chose a different configuration directory, you have to manually specify the {\bfseries full} path to the configuration directory (either absolute or relative to the current directory) by using\-:
+
+
+\begin{DoxyCode}
+$ ./test\_filename -d configuration\_directory
+\end{DoxyCode}
+
+
+or\-:
+
+
+\begin{DoxyCode}
+$ ./test\_filename --directory configuration\_directory
+\end{DoxyCode}
+
+\end{DoxyWarning}
 Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file (default\-: {\itshape output/}) under {\itshape bin/}. 

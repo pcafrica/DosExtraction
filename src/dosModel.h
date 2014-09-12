@@ -20,7 +20,7 @@
 #include "solvers.h"
 #include "typedefs.h"
 
-#include "../include/gnuplot-iostream.h"
+#include "gnuplot-iostream.h"
 
 #include <chrono>	// Timing
 #include <limits>	// NaN

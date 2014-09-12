@@ -8,20 +8,6 @@ MUTE = @
 endif
 
 ############################################################
-## Compiler settings
-############################################################
-CXX = g++
-CXXFLAGS = -g -std=c++11 -Wall --pedantic -fopenmp
-LIBS = -lboost_iostreams -lboost_system -lboost_filesystem
-
-LBITS := $(shell getconf LONG_BIT)
-ifeq ($(LBITS), 64)
-   # do 64 bit stuff here, like set some CFLAGS
-else
-   # do 32 bit stuff here
-endif
-
-############################################################
 ## Source, header, object files and executables
 ############################################################
 BINDIR = bin
@@ -41,6 +27,21 @@ SRCS = $(wildcard $(TESTDIR)/$(TEST).c++) $(wildcard $(SRCDIR)/*.c++)
 HDRS = $(wildcard $(TESTDIR)/$(TEST).h) $(wildcard $(SRCDIR)/*.h)
 
 OBJS   = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c++=.o)))
+
+############################################################
+## Compiler settings
+############################################################
+CXX = g++
+CXXFLAGS = -g -std=c++11 -Wall --pedantic -fopenmp
+LIB = -lboost_iostreams -lboost_system -lboost_filesystem
+INC = -isystem include
+
+LBITS := $(shell getconf LONG_BIT)
+ifeq ($(LBITS), 64)
+   # do 64 bit stuff here, like set some CFLAGS
+else
+   # do 32 bit stuff here
+endif
 
 ############################################################
 ## Documentation generation settings
@@ -70,7 +71,7 @@ profile: $(EXEC)
 $(EXEC): $(OBJS)
 	$(MUTE)mkdir -p $(BINDIR)/
 	# Linking and creating executable...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $(OBJS) -o $(EXEC)
+	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $(OBJS) -o $(EXEC)
 
 astyle:
 	# Formatting source codes...
@@ -83,12 +84,12 @@ endif
 $(OBJDIR)/%.o: $(SRCDIR)/%.c++ $(SRCDIR)/%.h	# Check if header file has been modified.
 	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $< -c -o $@
+	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $< -c -o $@
 
 $(OBJDIR)/$(notdir $(EXEC)).o: $(TESTDIR)/$(notdir $(EXEC).c++)	# Except for sources without a related header file.
 	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIBS) $< -c -o $@
+	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $< -c -o $@
 
 doc:
 	$(MUTE)$(MAKE) -C $(DOCDIR) -s --no-print-directory > /dev/null
