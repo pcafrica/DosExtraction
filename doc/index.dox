@@ -22,7 +22,7 @@
  * @section install_sec Compile
  * 
  * In order to compile a test executable, simply execute one of these commands
- * in a terminal pointing the root directory:
+ * in a terminal pointing to the root directory of this package:
  * 
  * @code
  *     $ make

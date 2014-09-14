@@ -194,47 +194,48 @@ $(document).ready(function(){initNavTree('solvers_8h_source.html','');});
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">/* double cTot_n_; */</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;};</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::AdvDiff()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#a2febd884c8758db9fd346a40d81671eb">AdvDiff_</a>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::Stiff()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#a63de5de1757c8bc5cd0941030f9794e3">Stiff_</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::Mass()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#aa0e70aa868721f4bbf1fe7ec57e097a9">Mass_</a>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> VectorXd &amp; NonLinearPoisson1D::phi()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ada9b394b7f20717dd4a9aabfdf55e459">phi_</a>;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> VectorXd &amp; NonLinearPoisson1D::norm()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ad632ecc09af8e8244dd853da59a9a8ff">norm_</a>;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; NonLinearPoisson1D::qTot()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ae1963262f050f62954c9966d12b4f1b5">qTot_</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; NonLinearPoisson1D::cTot()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#a15f65780cee04f1053be486efbdc3270">cTot_</a>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">/* inline const double &amp; NonLinearPoisson1D::cTot_n() const</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">{</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">    return cTot_n_;</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">} */</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SOLVERS_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">// Implementations.</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::AdvDiff()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#a2febd884c8758db9fd346a40d81671eb">AdvDiff_</a>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::Stiff()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#a63de5de1757c8bc5cd0941030f9794e3">Stiff_</a>;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a> &amp; PdeSolver1D::Mass()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classPdeSolver1D.html#aa0e70aa868721f4bbf1fe7ec57e097a9">Mass_</a>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> VectorXd &amp; NonLinearPoisson1D::phi()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ada9b394b7f20717dd4a9aabfdf55e459">phi_</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> VectorXd &amp; NonLinearPoisson1D::norm()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ad632ecc09af8e8244dd853da59a9a8ff">norm_</a>;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; NonLinearPoisson1D::qTot()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#ae1963262f050f62954c9966d12b4f1b5">qTot_</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; NonLinearPoisson1D::cTot()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classNonLinearPoisson1D.html#a15f65780cee04f1053be486efbdc3270">cTot_</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">/* inline const double &amp; NonLinearPoisson1D::cTot_n() const</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment">    return cTot_n_;</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">} */</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SOLVERS_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="classPdeSolver1D_html_aca065bfba5136470a4caf30fd7927e37"><div class="ttname"><a href="classPdeSolver1D.html#aca065bfba5136470a4caf30fd7927e37">PdeSolver1D::assembleMass</a></div><div class="ttdeci">virtual void assembleMass(const VectorXd &amp;delta, const VectorXd &amp;zeta)=0</div><div class="ttdoc">Assemble the matrix for a reaction term. </div></div>
 <div class="ttc" id="classPdeSolver1D_html_a63de5de1757c8bc5cd0941030f9794e3"><div class="ttname"><a href="classPdeSolver1D.html#a63de5de1757c8bc5cd0941030f9794e3">PdeSolver1D::Stiff_</a></div><div class="ttdeci">SparseXd Stiff_</div><div class="ttdoc">Stiffness matrix. </div><div class="ttdef"><b>Definition:</b> <a href="solvers_8h_source.html#l00099">solvers.h:99</a></div></div>
 <div class="ttc" id="typedefs_8h_html_a86edf437f454f4dd79d5422366403b7f"><div class="ttname"><a href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a></div><div class="ttdeci">SparseMatrix&lt; double &gt; SparseXd</div><div class="ttdoc">Typedef for sparse dynamic-sized matrices. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00027">typedefs.h:27</a></div></div>

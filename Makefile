@@ -92,10 +92,10 @@ $(OBJDIR)/$(notdir $(EXEC)).o: $(TESTDIR)/$(notdir $(EXEC).c++)	# Except for sou
 	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $< -c -o $@
 
 doc:
-	$(MUTE)$(MAKE) -C $(DOCDIR) -s --no-print-directory > /dev/null
+	$(MUTE)$(MAKE) -C $(DOCDIR) -s --no-print-directory
 
 doc-clean:
-	$(MUTE)$(MAKE) -C $(DOCDIR) clean -s --no-print-directory > /dev/null
+	$(MUTE)$(MAKE) -C $(DOCDIR) clean -s --no-print-directory
 
 clean:
 	# Deleting object files...

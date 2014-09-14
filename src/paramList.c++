@@ -1,10 +1,10 @@
 #include "paramList.h"
 
+using namespace constants;
+
 ParamList::ParamList(const RowVectorXd & list)
 {
-	using namespace constants;
-	
-	assert( list.cols() == PARAMS_NO );
+	assert( list.size() == PARAMS_NO );
 	
 	assert( list( 0) >  0 );
 	assert( list( 1) >  0 );

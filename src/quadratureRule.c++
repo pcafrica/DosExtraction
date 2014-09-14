@@ -1,5 +1,7 @@
 #include "quadratureRule.h"
 
+using namespace constants;
+
 QuadratureRule::QuadratureRule(const unsigned & nNodes)
 	: nNodes_(nNodes)
 {
@@ -24,8 +26,6 @@ void GaussHermiteRule::apply(const GetPot & config)
 
 void GaussHermiteRule::apply_iterative_algorithm(const unsigned & maxIterationsNo, const double & tolerance)
 {
-	using namespace constants;
-	
 	double p1, p2, temp, dp;
 	double z, zOld;
 	
@@ -84,8 +84,6 @@ void GaussHermiteRule::apply_iterative_algorithm(const unsigned & maxIterationsN
 
 void GaussHermiteRule::apply_using_eigendecomposition()
 {
-	using namespace constants;
-	
 	if (nNodes_ == 1) {
 		nodes_  .fill(0.0);
 		weights_.fill(PI) ;

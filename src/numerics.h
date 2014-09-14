@@ -94,35 +94,32 @@ namespace numerics
 }
 
 // Implementations.
-namespace numerics
+template<typename ScalarType>
+VectorX<ScalarType> numerics::sort(const VectorX<ScalarType> & vector)
 {
-	template<typename ScalarType>
-	VectorX<ScalarType> sort(const VectorX<ScalarType> & vector)
-	{
-		VectorX<ScalarType> copy( vector );
-		std::sort(copy.data(), copy.data() + copy.size());
-		
-		return copy;
+	VectorX<ScalarType> copy( vector );
+	std::sort(copy.data(), copy.data() + copy.size());
+	
+	return copy;
+}
+
+template<typename ScalarType>
+VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
+{
+	VectorXpair<ScalarType> copy( vector.size() );
+	
+	for ( int i = 0; i < copy.size(); ++i ) {
+		copy(i).first = vector(i);
+		copy(i).second = i;
 	}
 	
-	template<typename ScalarType>
-	VectorXpair<ScalarType> sort_pair(const VectorX<ScalarType> & vector)
-	{
-		VectorXpair<ScalarType> copy( vector.size() );
-		
-		for ( int i = 0; i < copy.size(); ++i ) {
-			copy(i).first = vector(i);
-			copy(i).second = i;
-		}
-		
-		std::sort(copy.data(), copy.data() + copy.size(),
-		[&](std::pair<ScalarType, unsigned> l, std::pair<ScalarType, unsigned> r) {
-			return l.first < r.first;
-		}
-		         );
-		         
-		return copy;
+	std::sort(copy.data(), copy.data() + copy.size(),
+	[&](std::pair<ScalarType, unsigned> l, std::pair<ScalarType, unsigned> r) {
+		return l.first < r.first;
 	}
+	         );
+	         
+	return copy;
 }
 
 #endif /* NUMERICS_H */
