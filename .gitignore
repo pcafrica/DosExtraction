@@ -1,7 +1,10 @@
-.directory
-.kateproject
+# Directories
 .kateproject.d/
 bin/
 build/
 
+# Files
+.directory
+.kateproject
 .fuse_hidden*
+*.orig
