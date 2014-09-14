@@ -3,3 +3,5 @@
 .kateproject.d/
 bin/
 build/
+
+.fuse_hidden*
