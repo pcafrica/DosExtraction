@@ -1,0 +1,44 @@
+Running on thread: 0.
+╔═════════════════════════╗
+║Simulation no. 5 started.║
+╚═════════════════════════╝
+Creating mesh... DONE! ✓
+Assembling system matrices... DONE! ✓
+Computing nodes and weights of quadrature rule using 101 nodes... DONE! ✓
+Initializing variables... DONE! ✓
+Running Newton solver for non-linear Poisson equation...
+	Max no. of iterations set: 1
+	Tolerance set: 0.0001
+
+	iteration: 1/1000
+	iteration: 10/1000
+	iteration: 20/1000
+	iteration: 30/1000
+	iteration: 40/1000
+	iteration: 50/1000
+	iteration: 60/1000
+	iteration: 70/1000
+	iteration: 80/1000
+	iteration: 90/1000
+	iteration: 100/1000
+	iteration: 110/1000
+	iteration: 120/1000
+	iteration: 130/1000
+	iteration: 140/1000
+	iteration: 150/1000
+	iteration: 160/1000
+	iteration: 170/1000
+	iteration: 180/1000
+	iteration: 190/1000
+	iteration: 200/1000
+	iteration: 210/1000
+	iteration: 220/1000
+	iteration: 230/1000
+	iteration: 240/1000
+	iteration: 250/1000
+	iteration: 260/1000
+	iteration: 270/1000
+	iteration: 280/1000
+	iteration: 290/1000
+	iteration: 300/1000
+	iteration: 310/1000
