@@ -45,7 +45,7 @@ class CsvParser
 		virtual ~CsvParser();
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & nRows() const;
@@ -122,6 +122,7 @@ class CsvParser
 		char separator_;	/**< @brief The separator character detected. */
 };
 
+// Implementations.
 inline const unsigned & CsvParser::nRows() const
 {
 	return nRows_;

@@ -20,7 +20,7 @@
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 
-#include <GetPot>
+#include "GetPot"
 
 using namespace Eigen;
 

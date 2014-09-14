@@ -53,7 +53,7 @@ class QuadratureRule
 		virtual void apply() = 0;
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & nNodes () const;
@@ -116,6 +116,7 @@ class GaussHermiteRule : public QuadratureRule
 		void apply_using_eigendecomposition();
 };
 
+// Implementations.
 inline const unsigned & QuadratureRule::nNodes() const
 {
 	return nNodes_;

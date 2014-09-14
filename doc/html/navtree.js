@@ -5,7 +5,7 @@ var NAVTREE =
       [ "Introduction", "index.html#intro", null ],
       [ "Dependancies", "index.html#dependancies", null ],
       [ "Compile", "index.html#install_sec", null ],
-      [ "Set up the configuration file", "index.html#configure", null ],
+      [ "Set up the configurations", "index.html#configure", null ],
       [ "Run!", "index.html#run", null ]
     ] ],
     [ "Namespaces", null, [

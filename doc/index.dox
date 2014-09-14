@@ -22,33 +22,33 @@
  * @section install_sec Compile
  * 
  * In order to compile a test executable, simply execute one of these commands
- * in a terminal pointing the root directory:
+ * in a terminal pointing to the root directory of this package:
  * 
- * \code
+ * @code
  *     $ make
- * \endcode
+ * @endcode
  * 
  * or, if you want the compiler to produce debugging informations:
  * 
- * \code
+ * @code
  *     $ make debug
- * \endcode
+ * @endcode
  * 
  * You can specify the name of the test to be compiled (without extension, for example: @a simulate_dos)
  * by passing the variable @b NAME through command-line:
  * 
- * \code
+ * @code
  *     $ make NAME=test_filename
- * \endcode
+ * @endcode
  * 
  * The compiler will generate the @a test_filename executable under the @a bin/ directory. @n
  * Repeat these instructions for each test you want to compile.
  * 
- * @section configure Set up the configuration file
+ * @section configure Set up the configurations
  * 
- * @warning each file described in this section must be placed under the @a config/ directory.
+ * @note The default configuration directory is @a config/.
  * 
- * Before you can an executable, you have to set up the configuration file, called @a config.pot.
+ * Before you can an executable, you have to set up the configuration file (default: @a config.pot).
  * Within it, you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
  * Particularly, you can set the variables @a input_params and @a input_experim, i.e. the filenames
@@ -63,31 +63,41 @@
  * 
  * Executables are placed under the @a bin/ directory. @n
  * @n
- * To run by using the default configuration filename (@a config.pot) simply execute in the root:
+ * To run by using the default configuration filename (@a config.pot) simply move to the @a bin/ directory and execute:
  * 
- * \code
- *     $ bin/test_filename
- * \endcode
- * 
- * or, if your terminal is already pointing the @a bin/ directory:
- * 
- * \code
+ * @code
  *     $ ./test_filename
- * \endcode
+ * @endcode
  * 
- * To specify a different configuration file previously saved in the @a config/ directory:
+ * To specify a different configuration file previously saved in the configuration directory:
  * 
- * \code
- *     $ bin/test_filename -f configuration_filename
- * \endcode
+ * @code
+ *     $ ./test_filename -f configuration_filename
+ * @endcode
  * 
  * or:
  * 
- * \code
- *     $ bin/test_filename --file configuration_filename
- * \endcode
+ * @code
+ *     $ ./test_filename --file configuration_filename
+ * @endcode
  * 
- * Once complete, you can find the results of the simulation(s) in the output directory specified in
- * the configuration file (default: @a output/) under @a bin/.
+ * The variable @a configuration_filename should @b not contain the path.
  * 
- */ 
+ * @warning Furthermore, if you run the program from a different folder than @a bin/ or if you chose a different configuration
+ * directory, you have to manually specify the @b full path to the configuration directory (either absolute or relative to the
+ * current directory) by using:
+ * 
+ * @warning @code
+ *     $ ./test_filename -d configuration_directory
+ * @endcode
+ * 
+ * @warning or:
+ * 
+ * @warning @code
+ *     $ ./test_filename --directory configuration_directory
+ * @endcode
+ * 
+ * Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file
+ * (default: @a output/) under @a bin/.
+ * 
+ */

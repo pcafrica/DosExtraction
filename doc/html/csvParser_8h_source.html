@@ -156,17 +156,18 @@ $(document).ready(function(){initNavTree('csvParser_8h_source.html','');});
 <div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classCsvParser.html#a650afe260de7540becd03fd198dd1a59">  122</a></span>&#160;        <span class="keywordtype">char</span> <a class="code" href="classCsvParser.html#a650afe260de7540becd03fd198dd1a59">separator_</a>;    </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; CsvParser::nRows()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCsvParser.html#a646e6783ca009681d11cdd80148c50c2">nRows_</a>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; CsvParser::nCols()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942">nCols_</a>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CSVPARSER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// Implementations.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; CsvParser::nRows()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCsvParser.html#a646e6783ca009681d11cdd80148c50c2">nRows_</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; CsvParser::nCols()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942">nCols_</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CSVPARSER_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="classCsvParser_html_aaeb353f8e1c649830268cfa5635eaa4f"><div class="ttname"><a href="classCsvParser.html#aaeb353f8e1c649830268cfa5635eaa4f">CsvParser::line_</a></div><div class="ttdeci">std::string line_</div><div class="ttdoc">Auxiliary variable to store currently processed line. </div><div class="ttdef"><b>Definition:</b> <a href="csvParser_8h_source.html#l00120">csvParser.h:120</a></div></div>
 <div class="ttc" id="classCsvParser_html_ab12394b6deff7073d7182fc5a1b3d942"><div class="ttname"><a href="classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942">CsvParser::nCols_</a></div><div class="ttdeci">unsigned nCols_</div><div class="ttdoc">No. of columns in the input file. </div><div class="ttdef"><b>Definition:</b> <a href="csvParser_8h_source.html#l00117">csvParser.h:117</a></div></div>
 <div class="ttc" id="classCsvParser_html_af4d7e0e1fe650b836e87387962297e86"><div class="ttname"><a href="classCsvParser.html#af4d7e0e1fe650b836e87387962297e86">CsvParser::importAll</a></div><div class="ttdeci">MatrixXd importAll()</div><div class="ttdoc">Method to import the whole input file. </div><div class="ttdef"><b>Definition:</b> <a href="csvParser_8c_09_09_source.html#l00178">csvParser.c++:178</a></div></div>

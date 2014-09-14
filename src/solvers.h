@@ -81,7 +81,7 @@ class PdeSolver1D
 		virtual void assembleMass   (const VectorXd & delta, const VectorXd & zeta) = 0;
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const SparseXd & AdvDiff() const;
@@ -215,7 +215,7 @@ class NonLinearPoisson1D
 		void apply(const VectorXd &, const VectorXd &, Charge &);
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const VectorXd & phi()    const;
@@ -248,6 +248,7 @@ class NonLinearPoisson1D
 		/* double cTot_n_; */
 };
 
+// Implementations.
 inline const SparseXd & PdeSolver1D::AdvDiff() const
 {
 	return AdvDiff_;

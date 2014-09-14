@@ -46,7 +46,7 @@ class ParamList
 		virtual ~ParamList() = default;
 		
 		/**
-		 * @name Getter methods.
+		 * @name Getter methods
 		 * @{
 		 */
 		inline const unsigned & simulationNo() const;
@@ -100,6 +100,7 @@ class ParamList
 		double   V_max_       ;	/**< @brief Maximum voltage @f$ \left[ V \right] @f$. */
 };
 
+// Implementations.
 inline const unsigned & ParamList::simulationNo() const
 {
 	return simulationNo_;

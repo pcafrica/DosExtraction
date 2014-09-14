@@ -93,6 +93,7 @@ namespace numerics
 	double error_L2(const VectorXd &, const VectorXd &, const VectorXd &, const double &);
 }
 
+// Implementations.
 template<typename ScalarType>
 VectorX<ScalarType> numerics::sort(const VectorX<ScalarType> & vector)
 {

@@ -95,5 +95,5 @@ double numerics::error_L2(const VectorXd & interp, const VectorXd & simulated,
 		}
 	}
 	
-	return numerics::trapz(V_centered.array() - V_shift, (interp_centered - simulated_centered).array().square().matrix());
+	return trapz(V_centered.array() - V_shift, (interp_centered - simulated_centered).array().square().matrix());
 }

@@ -20,7 +20,7 @@
 #include "solvers.h"
 #include "typedefs.h"
 
-#include "../include/gnuplot-iostream.h"
+#include "gnuplot-iostream.h"
 
 #include <chrono>	// Timing
 #include <limits>	// NaN
@@ -101,6 +101,7 @@ class DosModel
 		ParamList params_;	/**< @brief The parameter list. */
 };
 
+// Implementations.
 inline const ParamList & DosModel::params() const
 {
 	return params_;

@@ -1,5 +1,9 @@
 #include "dosModel.h"
 
+using namespace std::chrono;
+using namespace constants;
+using namespace utility;
+
 DosModel::DosModel()
 	: initialized_(false) {}
 
@@ -12,10 +16,6 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	if ( !initialized_ ) {
 		throw std::logic_error("ERROR: parameters list of DosModel has not been properly initialized.");
 	}
-	
-	using namespace std::chrono;
-	using namespace constants;
-	using namespace utility;
 	
 	// Define output filenames.
 	const std::string output_fitting_filename = output_filename + "_fitting.txt";
