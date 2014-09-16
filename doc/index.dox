@@ -6,7 +6,7 @@
  * This program allows to extract the Density of States, assessed by mean capacitance-voltage measurements,
  * in an organic semiconductor device. Simulated values are fitted to experimental data. @n
  * Source and header files are written in C++11 language. @n
- * The software is intended to be used on a Unix operating system.
+ * The software is intended to be used on a Unix-like operating system.
  *
  * @section dependancies Dependancies
  * 
