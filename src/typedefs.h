@@ -14,13 +14,13 @@
 
 #include "physicalConstants.h"
 
-#include <iostream>
-#include <fstream>
-
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 
 #include "GetPot"
+
+#include <iostream>
+#include <fstream>
 
 using namespace Eigen;
 

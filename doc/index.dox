@@ -13,11 +13,13 @@
  * The program requires the following libraries to be installed on your system:
  * 
  * @arg <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra;
- * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files;
  * @arg <a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots;
- * its interface to C++ also requires:
- * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library;
+ * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the Gnuplot interface to C++;
  * @arg <a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory).
+ * 
+ * It also uses the following packages, provided in the @a include/ folder:
+ * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files;
+ * @arg <a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for Gnuplot.
  * 
  * @section install_sec Compile
  * 
@@ -28,7 +30,7 @@
  *     $ make
  * @endcode
  * 
- * or, if you want the compiler to produce debugging informations:
+ * or, if you want the compiler to produce also debugging informations:
  * 
  * @code
  *     $ make debug
@@ -48,10 +50,10 @@
  * 
  * @note The default configuration directory is @a config/.
  * 
- * Before you can an executable, you have to set up the configuration file (default: @a config.pot).
- * Within it, you can find a list of parameters, each of which is commented out to explain what
+ * Before you can run an executable, you have to set up the configuration file (default: @a config.pot).
+ * Within it you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
- * Particularly, you can set the variables @a input_params and @a input_experim, i.e. the filenames
+ * Particularly, the variables @a input_params and @a input_experim can be set, i.e. the filenames
  * where to find input fitting parameters and experimental data respectively.
  * It's recommended (but not compulsory) to put these files in the same directory as the configuration
  * file (otherwise you can specify a relative or absolute path to them). @n
@@ -87,13 +89,15 @@
  * directory, you have to manually specify the @b full path to the configuration directory (either absolute or relative to the
  * current directory) by using:
  * 
- * @warning @code
+ * @warning
+ * @code
  *     $ ./test_filename -d configuration_directory
  * @endcode
  * 
  * @warning or:
  * 
- * @warning @code
+ * @warning
+ * @code
  *     $ ./test_filename --directory configuration_directory
  * @endcode
  * 

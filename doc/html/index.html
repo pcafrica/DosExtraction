@@ -114,16 +114,20 @@ Dependancies</h1>
 <p>The program requires the following libraries to be installed on your system:</p>
 <ul>
 <li><a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra; </li>
-<li><a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files; </li>
-<li><a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots; its interface to C++ also requires: </li>
-<li><a href="http://www.boost.org"><b>Boost</b></a>, a C++ library; </li>
+<li><a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots; </li>
+<li><a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the Gnuplot interface to C++; </li>
 <li><a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory).</li>
+</ul>
+<p>It also uses the following packages, provided in the <em>include/</em> folder: </p>
+<ul>
+<li><a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files; </li>
+<li><a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for Gnuplot.</li>
 </ul>
 <h1><a class="anchor" id="install_sec"></a>
 Compile</h1>
 <p>In order to compile a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package:</p>
 <div class="fragment"><div class="line">$ make</div>
-</div><!-- fragment --><p>or, if you want the compiler to produce debugging informations:</p>
+</div><!-- fragment --><p>or, if you want the compiler to produce also debugging informations:</p>
 <div class="fragment"><div class="line">$ make debug</div>
 </div><!-- fragment --><p>You can specify the name of the test to be compiled (without extension, for example: <em>simulate_dos</em>) by passing the variable <b>NAME</b> through command-line:</p>
 <div class="fragment"><div class="line">$ make NAME=test_filename</div>
@@ -132,8 +136,8 @@ Repeat these instructions for each test you want to compile.</p>
 <h1><a class="anchor" id="configure"></a>
 Set up the configurations</h1>
 <dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
-<p>Before you can an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
-Particularly, you can set the variables <em>input_params</em> and <em>input_experim</em>, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). <br/>
+<p>Before you can run an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
+Particularly, the variables <em>input_params</em> and <em>input_experim</em> can be set, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). <br/>
 <br/>
 You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
 <h1><a class="anchor" id="run"></a>

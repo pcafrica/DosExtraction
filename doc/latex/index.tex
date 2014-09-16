@@ -3,7 +3,9 @@ This program allows to extract the Density of States, assessed by mean capacitan
 The program requires the following libraries to be installed on your system\-:
 
 \begin{DoxyItemize}
-\item \href{http://eigen.tuxfamily.org}{\tt {\bfseries Eigen}}, to handle with matrices, vectors and linear algebra; \item \href{http://getpot.sourceforge.net}{\tt {\bfseries Get\-Pot}}, to parse command-\/line and configuration files; \item \href{http://www.gnuplot.info}{\tt {\bfseries Gnuplot}}, a graphical utility to generate plots; its interface to C++ also requires\-: \item \href{http://www.boost.org}{\tt {\bfseries Boost}}, a C++ library; \item \href{http://openmp.org}{\tt {\bfseries Open\-M\-P}}, for parallel computing (recommended but not compulsory).\end{DoxyItemize}
+\item \href{http://eigen.tuxfamily.org}{\tt {\bfseries Eigen}}, to handle with matrices, vectors and linear algebra; \item \href{http://www.gnuplot.info}{\tt {\bfseries Gnuplot}}, a graphical utility to generate plots; \item \href{http://www.boost.org}{\tt {\bfseries Boost}}, a C++ library used by the Gnuplot interface to C++; \item \href{http://openmp.org}{\tt {\bfseries Open\-M\-P}}, for parallel computing (recommended but not compulsory).\end{DoxyItemize}
+It also uses the following packages, provided in the {\itshape include/} folder\-: \begin{DoxyItemize}
+\item \href{http://getpot.sourceforge.net}{\tt {\bfseries Get\-Pot}}, to parse command-\/line and configuration files; \item \href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt {\bfseries gnuplot-\/iostream}}, the C++ interface for Gnuplot.\end{DoxyItemize}
 \hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
 In order to compile a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package\-:
 
@@ -13,7 +15,7 @@ $ make
 \end{DoxyCode}
 
 
-or, if you want the compiler to produce debugging informations\-:
+or, if you want the compiler to produce also debugging informations\-:
 
 
 \begin{DoxyCode}
@@ -34,8 +36,8 @@ Repeat these instructions for each test you want to compile.\hypertarget{index_c
 \begin{DoxyNote}{Note}
 The default configuration directory is {\itshape config/}.
 \end{DoxyNote}
-Before you can an executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it, you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
-Particularly, you can set the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim}, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). \par
+Before you can run an executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
+Particularly, the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim} can be set, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). \par
 \par
 You can create multiple configuration files, each with different parameter values\-: the one you aim to use can be specified in the command-\/line before running.\hypertarget{index_run}{}\section{Run!}\label{index_run}
 Executables are placed under the {\itshape bin/} directory. \par

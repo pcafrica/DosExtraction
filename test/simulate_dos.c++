@@ -9,7 +9,7 @@
  *
  */
 
-#include "../src/dosModel.h"
+#include "src/dosModel.h"
 
 /**
  *  @brief The @b main function.

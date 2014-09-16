@@ -34,7 +34,7 @@ OBJS   = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c++=.o)))
 CXX = g++
 CXXFLAGS = -g -std=c++11 -Wall --pedantic -fopenmp
 LIB = -lboost_iostreams -lboost_system -lboost_filesystem
-INC = -isystem include
+INC = -I. -isystem include
 
 LBITS := $(shell getconf LONG_BIT)
 ifeq ($(LBITS), 64)
