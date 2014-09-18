@@ -16,33 +16,33 @@ Provide a solver for a non-\/linear Poisson equation.
 \hypertarget{classNonLinearPoisson1D_ad4d805d47a62331707176ad2693499f3}{\hyperlink{classNonLinearPoisson1D_ad4d805d47a62331707176ad2693499f3}{Non\-Linear\-Poisson1\-D} ()=delete}\label{classNonLinearPoisson1D_ad4d805d47a62331707176ad2693499f3}
 
 \begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify the solver to be used). \end{DoxyCompactList}\item 
-\hyperlink{classNonLinearPoisson1D_af102dded9f007403d0e795413c59d7d3}{Non\-Linear\-Poisson1\-D} (const \hyperlink{classPdeSolver1D}{Pde\-Solver1\-D} \&, const unsigned \&=100, const double \&=1.\-0e-\/6)
+\hyperlink{classNonLinearPoisson1D_ac6c77988b843e0bd9df82c97b7da7cf6}{Non\-Linear\-Poisson1\-D} (const \hyperlink{classPdeSolver1D}{Pde\-Solver1\-D} \&, const \hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \&=100, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&=1.\-0e-\/6)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hypertarget{classNonLinearPoisson1D_a1452123e4787361491d2f54c46794df9}{virtual \hyperlink{classNonLinearPoisson1D_a1452123e4787361491d2f54c46794df9}{$\sim$\-Non\-Linear\-Poisson1\-D} ()=default}\label{classNonLinearPoisson1D_a1452123e4787361491d2f54c46794df9}
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
-void \hyperlink{classNonLinearPoisson1D_abd3b11ca576a30baefa0c73c2beb31cf}{apply} (const Vector\-Xd \&, const Vector\-Xd \&, \hyperlink{classCharge}{Charge} \&)
+void \hyperlink{classNonLinearPoisson1D_a54768475940b34c5e39583a3635cf63b}{apply} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, \hyperlink{classCharge}{Charge} \&)
 \begin{DoxyCompactList}\small\item\em Apply a Newton method to the equation and then discretize it using the solver specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}{\bf Getter methods}\par
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNonLinearPoisson1D_acbe945a7e028306e53fa2b121ddadc7a}{const Vector\-Xd \& {\bfseries phi} () const }\label{classNonLinearPoisson1D_acbe945a7e028306e53fa2b121ddadc7a}
+\hypertarget{classNonLinearPoisson1D_a49da0d6a457d7d2d996926ea813ec55f}{const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \& {\bfseries phi} () const }\label{classNonLinearPoisson1D_a49da0d6a457d7d2d996926ea813ec55f}
 
 \item 
-\hypertarget{classNonLinearPoisson1D_a690be2163ccaff066191959fd1f413ed}{const Vector\-Xd \& {\bfseries norm} () const }\label{classNonLinearPoisson1D_a690be2163ccaff066191959fd1f413ed}
+\hypertarget{classNonLinearPoisson1D_a146128a8e8cc2cad80edb7883e4823b8}{const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \& {\bfseries norm} () const }\label{classNonLinearPoisson1D_a146128a8e8cc2cad80edb7883e4823b8}
 
 \item 
-\hypertarget{classNonLinearPoisson1D_ad8d751396b67e23d237e90b7072a1db2}{const double \& {\bfseries q\-Tot} () const }\label{classNonLinearPoisson1D_ad8d751396b67e23d237e90b7072a1db2}
+\hypertarget{classNonLinearPoisson1D_af46d2aa1358eab6b5d547cf40ba8a720}{const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \& {\bfseries q\-Tot} () const }\label{classNonLinearPoisson1D_af46d2aa1358eab6b5d547cf40ba8a720}
 
 \item 
-\hypertarget{classNonLinearPoisson1D_a01d78f24af67b4721fa1fe3c456285d8}{const double \& {\bfseries c\-Tot} () const }\label{classNonLinearPoisson1D_a01d78f24af67b4721fa1fe3c456285d8}
+\hypertarget{classNonLinearPoisson1D_a341de5204baac856de6f8b6ed3721414}{const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \& {\bfseries c\-Tot} () const }\label{classNonLinearPoisson1D_a341de5204baac856de6f8b6ed3721414}
 
 \end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \hyperlink{classNonLinearPoisson1D_a68da1b47bb6eb20a50057e8b35a4c09f}{compute\-Jac} (const Vector\-Xd \&) const 
+\hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \hyperlink{classNonLinearPoisson1D_aeb48e911a352f4115f872f28a188b10a}{compute\-Jac} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) const 
 \begin{DoxyCompactList}\small\item\em Compute the Jacobi matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -50,22 +50,22 @@ void \hyperlink{classNonLinearPoisson1D_abd3b11ca576a30baefa0c73c2beb31cf}{apply
 \hypertarget{classNonLinearPoisson1D_aca4acc679876b21bdbf4c09c589aed69}{const \hyperlink{classPdeSolver1D}{Pde\-Solver1\-D} \& \hyperlink{classNonLinearPoisson1D_aca4acc679876b21bdbf4c09c589aed69}{solver\-\_\-}}\label{classNonLinearPoisson1D_aca4acc679876b21bdbf4c09c589aed69}
 
 \begin{DoxyCompactList}\small\item\em Solver handler. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_acb070dfc3c7ac14a61f20d0b88d0a9d3}{unsigned \hyperlink{classNonLinearPoisson1D_acb070dfc3c7ac14a61f20d0b88d0a9d3}{max\-Iterations\-No\-\_\-}}\label{classNonLinearPoisson1D_acb070dfc3c7ac14a61f20d0b88d0a9d3}
+\hypertarget{classNonLinearPoisson1D_a6154a48301e532ef10ef6f1ceb6fa1c6}{\hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \hyperlink{classNonLinearPoisson1D_a6154a48301e532ef10ef6f1ceb6fa1c6}{max\-Iterations\-No\-\_\-}}\label{classNonLinearPoisson1D_a6154a48301e532ef10ef6f1ceb6fa1c6}
 
 \begin{DoxyCompactList}\small\item\em Maximum number of iterations. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_aaf0e20e7183662254959fa56809a4261}{double \hyperlink{classNonLinearPoisson1D_aaf0e20e7183662254959fa56809a4261}{tolerance\-\_\-}}\label{classNonLinearPoisson1D_aaf0e20e7183662254959fa56809a4261}
+\hypertarget{classNonLinearPoisson1D_a23d2944fdb4ac7f255b13aaa685af25d}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classNonLinearPoisson1D_a23d2944fdb4ac7f255b13aaa685af25d}{tolerance\-\_\-}}\label{classNonLinearPoisson1D_a23d2944fdb4ac7f255b13aaa685af25d}
 
 \begin{DoxyCompactList}\small\item\em Tolerance. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_ada9b394b7f20717dd4a9aabfdf55e459}{Vector\-Xd \hyperlink{classNonLinearPoisson1D_ada9b394b7f20717dd4a9aabfdf55e459}{phi\-\_\-}}\label{classNonLinearPoisson1D_ada9b394b7f20717dd4a9aabfdf55e459}
+\hypertarget{classNonLinearPoisson1D_ad7990f1c65d985ae84833b7dde37f359}{\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classNonLinearPoisson1D_ad7990f1c65d985ae84833b7dde37f359}{phi\-\_\-}}\label{classNonLinearPoisson1D_ad7990f1c65d985ae84833b7dde37f359}
 
 \begin{DoxyCompactList}\small\item\em The electric potential. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_ad632ecc09af8e8244dd853da59a9a8ff}{Vector\-Xd \hyperlink{classNonLinearPoisson1D_ad632ecc09af8e8244dd853da59a9a8ff}{norm\-\_\-}}\label{classNonLinearPoisson1D_ad632ecc09af8e8244dd853da59a9a8ff}
+\hypertarget{classNonLinearPoisson1D_a114ea11ef7ef7b96a627aced27fbe066}{\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classNonLinearPoisson1D_a114ea11ef7ef7b96a627aced27fbe066}{norm\-\_\-}}\label{classNonLinearPoisson1D_a114ea11ef7ef7b96a627aced27fbe066}
 
 \begin{DoxyCompactList}\small\item\em Vector holding $ L^\infty $-\/norm errors for each iteration. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_ae1963262f050f62954c9966d12b4f1b5}{double \hyperlink{classNonLinearPoisson1D_ae1963262f050f62954c9966d12b4f1b5}{q\-Tot\-\_\-}}\label{classNonLinearPoisson1D_ae1963262f050f62954c9966d12b4f1b5}
+\hypertarget{classNonLinearPoisson1D_a5fa713b8efdf7b2651478e560ae70074}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classNonLinearPoisson1D_a5fa713b8efdf7b2651478e560ae70074}{q\-Tot\-\_\-}}\label{classNonLinearPoisson1D_a5fa713b8efdf7b2651478e560ae70074}
 
 \begin{DoxyCompactList}\small\item\em Total charge. \end{DoxyCompactList}\item 
-\hypertarget{classNonLinearPoisson1D_a15f65780cee04f1053be486efbdc3270}{double \hyperlink{classNonLinearPoisson1D_a15f65780cee04f1053be486efbdc3270}{c\-Tot\-\_\-}}\label{classNonLinearPoisson1D_a15f65780cee04f1053be486efbdc3270}
+\hypertarget{classNonLinearPoisson1D_a4edec5e6395e5a862df829a223323533}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classNonLinearPoisson1D_a4edec5e6395e5a862df829a223323533}{c\-Tot\-\_\-}}\label{classNonLinearPoisson1D_a4edec5e6395e5a862df829a223323533}
 
 \begin{DoxyCompactList}\small\item\em Total capacitance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -80,15 +80,15 @@ Definition at line 190 of file solvers.\-h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classNonLinearPoisson1D_af102dded9f007403d0e795413c59d7d3}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}}
+\hypertarget{classNonLinearPoisson1D_ac6c77988b843e0bd9df82c97b7da7cf6}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}}
 \index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
 \subsubsection[{Non\-Linear\-Poisson1\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Non\-Linear\-Poisson1\-D} (
 \begin{DoxyParamCaption}
 \item[{const {\bf Pde\-Solver1\-D} \&}]{solver, }
-\item[{const unsigned \&}]{max\-Iterations\-No = {\ttfamily 100}, }
-\item[{const double \&}]{tolerance = {\ttfamily 1.0e-\/6}}
+\item[{const {\bf Index} \&}]{max\-Iterations\-No = {\ttfamily 100}, }
+\item[{const {\bf Real} \&}]{tolerance = {\ttfamily 1.0e-\/6}}
 \end{DoxyParamCaption}
-)}}\label{classNonLinearPoisson1D_af102dded9f007403d0e795413c59d7d3}
+)}}\label{classNonLinearPoisson1D_ac6c77988b843e0bd9df82c97b7da7cf6}
 
 
 Constructor. 
@@ -109,15 +109,15 @@ Definition at line 162 of file solvers.\-c++.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classNonLinearPoisson1D_abd3b11ca576a30baefa0c73c2beb31cf}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!apply@{apply}}
+\hypertarget{classNonLinearPoisson1D_a54768475940b34c5e39583a3635cf63b}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!apply@{apply}}
 \index{apply@{apply}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
 \subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void apply (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{mesh, }
-\item[{const Vector\-Xd \&}]{init\-\_\-guess, }
+\item[{const {\bf Vector\-Xr} \&}]{mesh, }
+\item[{const {\bf Vector\-Xr} \&}]{init\-\_\-guess, }
 \item[{{\bf Charge} \&}]{charge\-\_\-fun}
 \end{DoxyParamCaption}
-)}}\label{classNonLinearPoisson1D_abd3b11ca576a30baefa0c73c2beb31cf}
+)}}\label{classNonLinearPoisson1D_a54768475940b34c5e39583a3635cf63b}
 
 
 Apply a Newton method to the equation and then discretize it using the solver specified. 
@@ -135,13 +135,13 @@ Apply a Newton method to the equation and then discretize it using the solver sp
 
 Definition at line 165 of file solvers.\-c++.
 
-\hypertarget{classNonLinearPoisson1D_a68da1b47bb6eb20a50057e8b35a4c09f}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!compute\-Jac@{compute\-Jac}}
+\hypertarget{classNonLinearPoisson1D_aeb48e911a352f4115f872f28a188b10a}{\index{Non\-Linear\-Poisson1\-D@{Non\-Linear\-Poisson1\-D}!compute\-Jac@{compute\-Jac}}
 \index{compute\-Jac@{compute\-Jac}!NonLinearPoisson1D@{Non\-Linear\-Poisson1\-D}}
-\subsubsection[{compute\-Jac}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sparse\-Xd} compute\-Jac (
+\subsubsection[{compute\-Jac}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sparse\-Xr} compute\-Jac (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{x}
+\item[{const {\bf Vector\-Xr} \&}]{x}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNonLinearPoisson1D_a68da1b47bb6eb20a50057e8b35a4c09f}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classNonLinearPoisson1D_aeb48e911a352f4115f872f28a188b10a}
 
 
 Compute the Jacobi matrix. 
@@ -156,7 +156,7 @@ the Jacobi matrix in a sparse format.
 \end{DoxyReturn}
 
 
-Definition at line 265 of file solvers.\-c++.
+Definition at line 273 of file solvers.\-c++.
 
 
 

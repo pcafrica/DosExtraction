@@ -49,13 +49,13 @@ namespace numerics
 	 * @param[in] y : the vector of values to integrate.
 	 * @returns the approximate integral value.
 	 */
-	double trapz(const VectorXd & x, const VectorXd & y);
+	Real trapz(const VectorXr & x, const VectorXr & y);
 	/**
 	 * @brief Compute the approximate integral of @a y with unit spacing, using trapezoidal rule.
 	 * @param[in] y : the vector of values to integrate.
 	 * @returns the approximate integral value.
 	 */
-	double trapz(const VectorXd & y);
+	Real trapz(const VectorXr & y);
 	
 	/**
 	 * @brief Compute the numeric derivative: @f$ \frac{\mathrm{d}y}{\mathrm{d}x} @f$.
@@ -63,7 +63,7 @@ namespace numerics
 	 * @param[in] x : the vector of the discrete domain.
 	 * @returns a vector of the same length as @a y containing the approximate derivative.
 	 */
-	VectorXd deriv(const VectorXd &, const VectorXd &);
+	VectorXr deriv(const VectorXr &, const VectorXr &);
 	
 	/**
 	 * @brief Linear 1D interpolation. Interpolate @a y, defined at points @a x, at the point @a xNew.
@@ -72,7 +72,7 @@ namespace numerics
 	 * @param[in] xNew : the point to interpolate at.
 	 * @returns a scalar containing the interpolated value.
 	 */
-	double   interp1(const VectorXd &, const VectorXd &, const double &);
+	Real   interp1(const VectorXr &, const VectorXr &, const Real &);
 	/**
 	 * @brief Linear 1D interpolation. Interpolate @a y, defined at points @a x, at the points @a xNew.
 	 * @param[in] y    : the vector of values to interpolate;
@@ -80,7 +80,7 @@ namespace numerics
 	 * @param[in] xNew : the vector of points to interpolate at.
 	 * @returns a vector of the same length as @a xNew containing the interpolated values.
 	 */
-	VectorXd interp1(const VectorXd &, const VectorXd &, const VectorXd &);
+	VectorXr interp1(const VectorXr &, const VectorXr &, const VectorXr &);
 	
 	/**
 	 * @brief Compute the @f$ L^2 @f$-norm error between simulated and interpolated values, using @a trapz.
@@ -90,7 +90,7 @@ namespace numerics
 	 * @param[in] V_shift   : shift to the electric potential.
 	 * @returns the value of the @f$ L^2 @f$-norm error.
 	 */
-	double error_L2(const VectorXd &, const VectorXd &, const VectorXd &, const double &);
+	Real error_L2(const VectorXr &, const VectorXr &, const VectorXr &, const Real &);
 }
 
 // Implementations.
@@ -114,7 +114,7 @@ VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
 	}
 	
 	std::sort(copy.data(), copy.data() + copy.size(),
-	[&](std::pair<ScalarType, unsigned> l, std::pair<ScalarType, unsigned> r) {
+	[&](std::pair<ScalarType, Index> l, std::pair<ScalarType, Index> r) {
 		return l.first < r.first;
 	}
 	         );

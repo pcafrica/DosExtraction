@@ -45,13 +45,13 @@ class Charge
 		 * @param[in] phi : the electric potential @f$ \varphi @f$.
 		 * @returns the total charge @f$ q \left[ C \right] @f$.
 		 */
-		virtual VectorXd  charge(const VectorXd & phi) = 0;
+		virtual VectorXr  charge(const VectorXr & phi) = 0;
 		/**
 		 * @brief Compute the derivative of the total charge with respect to the electric potential.
 		 * @param[in] phi : the electric potential @f$ \varphi @f$.
 		 * @returns the derivative: @f$ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] @f$.
 		 */
-		virtual VectorXd dcharge(const VectorXd & phi) = 0;
+		virtual VectorXr dcharge(const VectorXr & phi) = 0;
 		
 	protected:
 		const ParamList      & params_;	/**< @brief Parameter list handler. */
@@ -85,8 +85,8 @@ class GaussianCharge : public Charge
 		 */
 		virtual ~GaussianCharge() = default;
 		
-		virtual VectorXd  charge(const VectorXd &) override;
-		virtual VectorXd dcharge(const VectorXd &) override;
+		virtual VectorXr  charge(const VectorXr &) override;
+		virtual VectorXr dcharge(const VectorXr &) override;
 		
 	private:
 		/**
@@ -96,7 +96,7 @@ class GaussianCharge : public Charge
 		 * @param[in] sigma : the gaussian standard deviation @f$ \sigma @f$.
 		 * @returns the electrons density @f$ n(\varphi) \left[ m^{-3} \right] @f$.
 		 */
-		double  n_approx(const double &, const double &, const double &) const;
+		Real  n_approx(const Real &, const Real &, const Real &) const;
 		/**
 		 * @brief Compute the approximate derivative of electrons density (per unit volume)
 		 * with respect to the electric potential.
@@ -105,7 +105,7 @@ class GaussianCharge : public Charge
 		 * @param[in] sigma : the gaussian standard deviation @f$ \sigma @f$.
 		 * @returns the derivative: @f$ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
 		 */
-		double dn_approx(const double &, const double &, const double &) const;
+		Real dn_approx(const Real &, const Real &, const Real &) const;
 };
 
 #endif /* CHARGE_H */

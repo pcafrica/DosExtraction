@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('typedefs_8h.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('typedefs_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -120,12 +121,12 @@ $(document).ready(function(){initNavTree('typedefs_8h.html','');});
 
 <p>Typedefs and utility functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="physicalConstants_8h_source.html">physicalConstants.h</a>&quot;</code><br/>
-<code>#include &lt;Eigen/Dense&gt;</code><br/>
+<div class="textblock"><code>#include &lt;Eigen/Dense&gt;</code><br/>
 <code>#include &lt;Eigen/Sparse&gt;</code><br/>
 <code>#include &quot;GetPot&quot;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;fstream&gt;</code><br/>
+<code>#include &quot;<a class="el" href="physicalConstants_8h_source.html">physicalConstants.h</a>&quot;</code><br/>
 </div>
 <p><a href="typedefs_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -138,20 +139,44 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceutility"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for utilities and auxiliary functions. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a060b837c3b4486ee35317744156f3da2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a060b837c3b4486ee35317744156f3da2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;&#160;&#160;double</td></tr>
+<tr class="memdesc:a060b837c3b4486ee35317744156f3da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-processor macro for real numbers. <br/></td></tr>
+<tr class="separator:a060b837c3b4486ee35317744156f3da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c726f8f32697958e9d6c2afecda531d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c726f8f32697958e9d6c2afecda531d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a>&#160;&#160;&#160;unsigned</td></tr>
+<tr class="memdesc:a2c726f8f32697958e9d6c2afecda531d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-processor macro for indexing variables. <br/></td></tr>
+<tr class="separator:a2c726f8f32697958e9d6c2afecda531d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a86edf437f454f4dd79d5422366403b7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86edf437f454f4dd79d5422366403b7f"></a>
-typedef SparseMatrix&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f">SparseXd</a></td></tr>
-<tr class="memdesc:a86edf437f454f4dd79d5422366403b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for sparse dynamic-sized matrices. <br/></td></tr>
-<tr class="separator:a86edf437f454f4dd79d5422366403b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d507f5d0c665fb16966595c9520a55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81d507f5d0c665fb16966595c9520a55"></a>
+typedef Matrix&lt; <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>, Dynamic, <br class="typebreak"/>
+Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a></td></tr>
+<tr class="memdesc:a81d507f5d0c665fb16966595c9520a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for dense real-valued dynamic-sized matrices. <br/></td></tr>
+<tr class="separator:a81d507f5d0c665fb16966595c9520a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae6cee78ed9cd8f234ed8cb48682548a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae6cee78ed9cd8f234ed8cb48682548a"></a>
+typedef Matrix&lt; <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>, Dynamic, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a></td></tr>
+<tr class="memdesc:aae6cee78ed9cd8f234ed8cb48682548a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for dense real-valued dynamic-sized column vectors. <br/></td></tr>
+<tr class="separator:aae6cee78ed9cd8f234ed8cb48682548a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf38a491cc6d8aeb1c1f53f380789bad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf38a491cc6d8aeb1c1f53f380789bad"></a>
+typedef Matrix&lt; <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>, 1, Dynamic &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#aaf38a491cc6d8aeb1c1f53f380789bad">RowVectorXr</a></td></tr>
+<tr class="memdesc:aaf38a491cc6d8aeb1c1f53f380789bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for dense real-valued dynamic-sized row vectors. <br/></td></tr>
+<tr class="separator:aaf38a491cc6d8aeb1c1f53f380789bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3b7db3fa8171d0e743df848524c269"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d3b7db3fa8171d0e743df848524c269"></a>
+typedef SparseMatrix&lt; <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a6d3b7db3fa8171d0e743df848524c269">SparseXr</a></td></tr>
+<tr class="memdesc:a6d3b7db3fa8171d0e743df848524c269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for sparse real-valued dynamic-sized matrices. <br/></td></tr>
+<tr class="separator:a6d3b7db3fa8171d0e743df848524c269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac264e7346c0c88c8a573518d1e8f8c3d"><td class="memTemplParams" colspan="2">template&lt;typename ScalarType &gt; </td></tr>
 <tr class="memitem:ac264e7346c0c88c8a573518d1e8f8c3d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d">VectorX</a> = Matrix&lt; ScalarType, Dynamic, 1 &gt;</td></tr>
 <tr class="memdesc:ac264e7346c0c88c8a573518d1e8f8c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template alias for <a class="el" href="index.html#Eigen">Eigen</a> vectors.  <a href="#ac264e7346c0c88c8a573518d1e8f8c3d">More...</a><br/></td></tr>
 <tr class="separator:ac264e7346c0c88c8a573518d1e8f8c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21ab9e8bc0dd8e3c178df27d98155cfa"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a21ab9e8bc0dd8e3c178df27d98155cfa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#a21ab9e8bc0dd8e3c178df27d98155cfa">VectorXpair</a> = <a class="el" href="typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d">VectorX</a>&lt; std::pair&lt; T, unsigned &gt; &gt;</td></tr>
-<tr class="memdesc:a21ab9e8bc0dd8e3c178df27d98155cfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template alias for an <a class="el" href="index.html#Eigen">Eigen</a> vector of pairs: (<em>ScalarType</em>, unsigned int).  <a href="#a21ab9e8bc0dd8e3c178df27d98155cfa">More...</a><br/></td></tr>
-<tr class="separator:a21ab9e8bc0dd8e3c178df27d98155cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38b14e4434227fa8e1b41e0d6632171"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af38b14e4434227fa8e1b41e0d6632171"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="typedefs_8h.html#af38b14e4434227fa8e1b41e0d6632171">VectorXpair</a> = <a class="el" href="typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d">VectorX</a>&lt; std::pair&lt; T, <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &gt; &gt;</td></tr>
+<tr class="memdesc:af38b14e4434227fa8e1b41e0d6632171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template alias for an <a class="el" href="index.html#Eigen">Eigen</a> vector of pairs: (<em>ScalarType</em>, <em>Index</em>).  <a href="#af38b14e4434227fa8e1b41e0d6632171">More...</a><br/></td></tr>
+<tr class="separator:af38b14e4434227fa8e1b41e0d6632171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -171,22 +196,22 @@ Variables</h2></td></tr>
 const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a55c7c5d84b0709c6786dec9908107a04">PARAMS_NO</a> = 22</td></tr>
 <tr class="memdesc:a55c7c5d84b0709c6786dec9908107a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of parameters required in input file. <br/></td></tr>
 <tr class="separator:a55c7c5d84b0709c6786dec9908107a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a952eac791b596a61bba0a133a3bb439f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a952eac791b596a61bba0a133a3bb439f"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a952eac791b596a61bba0a133a3bb439f">PI</a> = M_PI</td></tr>
-<tr class="memdesc:a952eac791b596a61bba0a133a3bb439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \pi \). <br/></td></tr>
-<tr class="separator:a952eac791b596a61bba0a133a3bb439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7477e8f618e55155827d512dc7a0f098"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7477e8f618e55155827d512dc7a0f098"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a7477e8f618e55155827d512dc7a0f098">SQRT_PI</a> = std::sqrt(PI)</td></tr>
-<tr class="memdesc:a7477e8f618e55155827d512dc7a0f098"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \sqrt{\pi} \). <br/></td></tr>
-<tr class="separator:a7477e8f618e55155827d512dc7a0f098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b6eb4b81f3ef26474b7ec60ef4f7b40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6eb4b81f3ef26474b7ec60ef4f7b40"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a9b6eb4b81f3ef26474b7ec60ef4f7b40">PI_M4</a> = 0.7511255444649425</td></tr>
-<tr class="memdesc:a9b6eb4b81f3ef26474b7ec60ef4f7b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \pi^{-\frac{1}{4}} \). <br/></td></tr>
-<tr class="separator:a9b6eb4b81f3ef26474b7ec60ef4f7b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ee8d36601448a8e5a232be8852468e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61ee8d36601448a8e5a232be8852468e"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a61ee8d36601448a8e5a232be8852468e">SQRT_2</a> = std::sqrt(2)</td></tr>
-<tr class="memdesc:a61ee8d36601448a8e5a232be8852468e"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \sqrt{2} \). <br/></td></tr>
-<tr class="separator:a61ee8d36601448a8e5a232be8852468e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5340fb69690fffd134dcae882754638"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5340fb69690fffd134dcae882754638"></a>
+const <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#af5340fb69690fffd134dcae882754638">PI</a> = M_PI</td></tr>
+<tr class="memdesc:af5340fb69690fffd134dcae882754638"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \pi \). <br/></td></tr>
+<tr class="separator:af5340fb69690fffd134dcae882754638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebb82a72cc0395d173fba22dff4d8c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ebb82a72cc0395d173fba22dff4d8c0"></a>
+const <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a0ebb82a72cc0395d173fba22dff4d8c0">SQRT_PI</a> = std::sqrt(PI)</td></tr>
+<tr class="memdesc:a0ebb82a72cc0395d173fba22dff4d8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \sqrt{\pi} \). <br/></td></tr>
+<tr class="separator:a0ebb82a72cc0395d173fba22dff4d8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b733bd721f65dc9124f4fb15af3da5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b733bd721f65dc9124f4fb15af3da5c"></a>
+const <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#a3b733bd721f65dc9124f4fb15af3da5c">PI_M4</a> = 0.7511255444649425</td></tr>
+<tr class="memdesc:a3b733bd721f65dc9124f4fb15af3da5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \pi^{-\frac{1}{4}} \). <br/></td></tr>
+<tr class="separator:a3b733bd721f65dc9124f4fb15af3da5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c53d0b9c422d694073f97eb185d292"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0c53d0b9c422d694073f97eb185d292"></a>
+const <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconstants.html#ab0c53d0b9c422d694073f97eb185d292">SQRT_2</a> = std::sqrt(2)</td></tr>
+<tr class="memdesc:ab0c53d0b9c422d694073f97eb185d292"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( \sqrt{2} \). <br/></td></tr>
+<tr class="separator:ab0c53d0b9c422d694073f97eb185d292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Typedefs and utility functions. </p>
@@ -213,21 +238,21 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="typedefs_8h_source.html#l00034">34</a> of file <a class="el" href="typedefs_8h_source.html">typedefs.h</a>.</p>
+<p>Definition at line <a class="el" href="typedefs_8h_source.html#l00041">41</a> of file <a class="el" href="typedefs_8h_source.html">typedefs.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a21ab9e8bc0dd8e3c178df27d98155cfa"></a>
+<a class="anchor" id="af38b14e4434227fa8e1b41e0d6632171"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="typedefs_8h.html#a21ab9e8bc0dd8e3c178df27d98155cfa">VectorXpair</a> =  <a class="el" href="typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d">VectorX</a>&lt;std::pair&lt;T, unsigned&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="typedefs_8h.html#af38b14e4434227fa8e1b41e0d6632171">VectorXpair</a> =  <a class="el" href="typedefs_8h.html#ac264e7346c0c88c8a573518d1e8f8c3d">VectorX</a>&lt;std::pair&lt;T, <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Template alias for an <a class="el" href="index.html#Eigen">Eigen</a> vector of pairs: (<em>ScalarType</em>, unsigned int). </p>
+<p>Template alias for an <a class="el" href="index.html#Eigen">Eigen</a> vector of pairs: (<em>ScalarType</em>, <em>Index</em>). </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">ScalarType</td><td>: the scalar type. </td></tr>
@@ -235,7 +260,7 @@ const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="typedefs_8h_source.html#l00041">41</a> of file <a class="el" href="typedefs_8h_source.html">typedefs.h</a>.</p>
+<p>Definition at line <a class="el" href="typedefs_8h_source.html#l00048">48</a> of file <a class="el" href="typedefs_8h_source.html">typedefs.h</a>.</p>
 
 </div>
 </div>

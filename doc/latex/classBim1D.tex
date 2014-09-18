@@ -22,24 +22,24 @@ Inheritance diagram for Bim1\-D\-:\begin{figure}[H]
 \hypertarget{classBim1D_aaa2cb4f70036268c64965b09be0ee721}{\hyperlink{classBim1D_aaa2cb4f70036268c64965b09be0ee721}{Bim1\-D} ()=delete}\label{classBim1D_aaa2cb4f70036268c64965b09be0ee721}
 
 \begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify the mesh). \end{DoxyCompactList}\item 
-\hyperlink{classBim1D_a42ae4a690e1f5d12202a7da216ed437f}{Bim1\-D} (Vector\-Xd \&)
+\hyperlink{classBim1D_a54ee6a3d7e3ebf52392f80800e31241c}{Bim1\-D} (\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hypertarget{classBim1D_a2fa6995307b37f25bf3c047a959e8b5a}{virtual \hyperlink{classBim1D_a2fa6995307b37f25bf3c047a959e8b5a}{$\sim$\-Bim1\-D} ()=default}\label{classBim1D_a2fa6995307b37f25bf3c047a959e8b5a}
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
-virtual void \hyperlink{classBim1D_a70f740fd42f21c2284f4c67c94b36ef3}{assemble\-Adv\-Diff} (const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&) override
+virtual void \hyperlink{classBim1D_a87a3b65a453d6fee3aa04e0b63b3b16d}{assemble\-Adv\-Diff} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for an advection-\/diffusion term. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classBim1D_ad16a59cddd56a41185163574507dfdef}{assemble\-Stiff} (const Vector\-Xd \&, const Vector\-Xd \&) override
+virtual void \hyperlink{classBim1D_a9afebaa0bb7d919ece20a533ef000921}{assemble\-Stiff} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for a diffusion term. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classBim1D_aa99f58d5ec1d53891b11ea81adec6b92}{assemble\-Mass} (const Vector\-Xd \&, const Vector\-Xd \&) override
+virtual void \hyperlink{classBim1D_afd5e07bb246bdacd59eefb7a3396e650}{assemble\-Mass} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for a reaction term. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static Vector\-Xd \hyperlink{classBim1D_a41aba54d21f6f0de00f3d02aa357e16c}{log\-\_\-mean} (const Vector\-Xd \&, const Vector\-Xd \&)
+static \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classBim1D_a303a753f955d8733960429064c425331}{log\-\_\-mean} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&)
 \begin{DoxyCompactList}\small\item\em Compute the element-\/wise logarithmic mean of two vectors. \end{DoxyCompactList}\item 
-static std\-::pair$<$ Vector\-Xd, \\*
-Vector\-Xd $>$ \hyperlink{classBim1D_a72b60ee37fc216d8a4ac463a5ad62913}{bernoulli} (const Vector\-Xd \&)
+static std\-::pair$<$ \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr}, \\*
+\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} $>$ \hyperlink{classBim1D_aefd0ddeec3502f3a505ff18aec525925}{bernoulli} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&)
 \begin{DoxyCompactList}\small\item\em Compute the values of the Bernoulli function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -54,13 +54,13 @@ Definition at line 111 of file solvers.\-h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classBim1D_a42ae4a690e1f5d12202a7da216ed437f}{\index{Bim1\-D@{Bim1\-D}!Bim1\-D@{Bim1\-D}}
+\hypertarget{classBim1D_a54ee6a3d7e3ebf52392f80800e31241c}{\index{Bim1\-D@{Bim1\-D}!Bim1\-D@{Bim1\-D}}
 \index{Bim1\-D@{Bim1\-D}!Bim1D@{Bim1\-D}}
 \subsubsection[{Bim1\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bim1\-D} (
 \begin{DoxyParamCaption}
-\item[{Vector\-Xd \&}]{mesh}
+\item[{{\bf Vector\-Xr} \&}]{mesh}
 \end{DoxyParamCaption}
-)}}\label{classBim1D_a42ae4a690e1f5d12202a7da216ed437f}
+)}}\label{classBim1D_a54ee6a3d7e3ebf52392f80800e31241c}
 
 
 Constructor. 
@@ -77,14 +77,14 @@ Definition at line 6 of file solvers.\-c++.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classBim1D_a41aba54d21f6f0de00f3d02aa357e16c}{\index{Bim1\-D@{Bim1\-D}!log\-\_\-mean@{log\-\_\-mean}}
+\hypertarget{classBim1D_a303a753f955d8733960429064c425331}{\index{Bim1\-D@{Bim1\-D}!log\-\_\-mean@{log\-\_\-mean}}
 \index{log\-\_\-mean@{log\-\_\-mean}!Bim1D@{Bim1\-D}}
-\subsubsection[{log\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd log\-\_\-mean (
+\subsubsection[{log\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector\-Xr} log\-\_\-mean (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{x1, }
-\item[{const Vector\-Xd \&}]{x2}
+\item[{const {\bf Vector\-Xr} \&}]{x1, }
+\item[{const {\bf Vector\-Xr} \&}]{x2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classBim1D_a41aba54d21f6f0de00f3d02aa357e16c}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classBim1D_a303a753f955d8733960429064c425331}
 
 
 Compute the element-\/wise logarithmic mean of two vectors. 
@@ -103,13 +103,13 @@ the vector of the logarithmic means.
 
 Definition at line 9 of file solvers.\-c++.
 
-\hypertarget{classBim1D_a72b60ee37fc216d8a4ac463a5ad62913}{\index{Bim1\-D@{Bim1\-D}!bernoulli@{bernoulli}}
+\hypertarget{classBim1D_aefd0ddeec3502f3a505ff18aec525925}{\index{Bim1\-D@{Bim1\-D}!bernoulli@{bernoulli}}
 \index{bernoulli@{bernoulli}!Bim1D@{Bim1\-D}}
-\subsubsection[{bernoulli}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ Vector\-Xd, Vector\-Xd $>$ bernoulli (
+\subsubsection[{bernoulli}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$ {\bf Vector\-Xr}, {\bf Vector\-Xr} $>$ bernoulli (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{x}
+\item[{const {\bf Vector\-Xr} \&}]{x}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classBim1D_a72b60ee37fc216d8a4ac463a5ad62913}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classBim1D_aefd0ddeec3502f3a505ff18aec525925}
 
 
 Compute the values of the Bernoulli function. 
@@ -126,16 +126,16 @@ the pair $ \left(\mathfrak{B}(x), \mathfrak{B}(-x)\right) $.
 
 Definition at line 32 of file solvers.\-c++.
 
-\hypertarget{classBim1D_a70f740fd42f21c2284f4c67c94b36ef3}{\index{Bim1\-D@{Bim1\-D}!assemble\-Adv\-Diff@{assemble\-Adv\-Diff}}
+\hypertarget{classBim1D_a87a3b65a453d6fee3aa04e0b63b3b16d}{\index{Bim1\-D@{Bim1\-D}!assemble\-Adv\-Diff@{assemble\-Adv\-Diff}}
 \index{assemble\-Adv\-Diff@{assemble\-Adv\-Diff}!Bim1D@{Bim1\-D}}
 \subsubsection[{assemble\-Adv\-Diff}]{\setlength{\rightskip}{0pt plus 5cm}void assemble\-Adv\-Diff (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{alpha, }
-\item[{const Vector\-Xd \&}]{gamma, }
-\item[{const Vector\-Xd \&}]{eta, }
-\item[{const Vector\-Xd \&}]{beta}
+\item[{const {\bf Vector\-Xr} \&}]{alpha, }
+\item[{const {\bf Vector\-Xr} \&}]{gamma, }
+\item[{const {\bf Vector\-Xr} \&}]{eta, }
+\item[{const {\bf Vector\-Xr} \&}]{beta}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_a70f740fd42f21c2284f4c67c94b36ef3}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_a87a3b65a453d6fee3aa04e0b63b3b16d}
 
 
 Assemble the matrix for an advection-\/diffusion term. 
@@ -155,20 +155,20 @@ Build the Scharfetter-\/\-Gummel stabilized stiffness matrix for\-: $ -\nabla\cd
 \end{DoxyParams}
 
 
-Implements \hyperlink{classPdeSolver1D_aa325f9e11f8b91cb22afca860888300d}{Pde\-Solver1\-D}.
+Implements \hyperlink{classPdeSolver1D_a8eef3ec8fa2d444e8d0d1815d81e81f9}{Pde\-Solver1\-D}.
 
 
 
 Definition at line 79 of file solvers.\-c++.
 
-\hypertarget{classBim1D_ad16a59cddd56a41185163574507dfdef}{\index{Bim1\-D@{Bim1\-D}!assemble\-Stiff@{assemble\-Stiff}}
+\hypertarget{classBim1D_a9afebaa0bb7d919ece20a533ef000921}{\index{Bim1\-D@{Bim1\-D}!assemble\-Stiff@{assemble\-Stiff}}
 \index{assemble\-Stiff@{assemble\-Stiff}!Bim1D@{Bim1\-D}}
 \subsubsection[{assemble\-Stiff}]{\setlength{\rightskip}{0pt plus 5cm}void assemble\-Stiff (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{eps, }
-\item[{const Vector\-Xd \&}]{kappa}
+\item[{const {\bf Vector\-Xr} \&}]{eps, }
+\item[{const {\bf Vector\-Xr} \&}]{kappa}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_ad16a59cddd56a41185163574507dfdef}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_a9afebaa0bb7d919ece20a533ef000921}
 
 
 Assemble the matrix for a diffusion term. 
@@ -184,20 +184,20 @@ Build the standard finite element stiffness matrix for the diffusion problem\-: 
 \end{DoxyParams}
 
 
-Implements \hyperlink{classPdeSolver1D_af75110b5d68e91b62cfc3e7e4e969a32}{Pde\-Solver1\-D}.
+Implements \hyperlink{classPdeSolver1D_a0283447d8d645afde9fadb6adf224ee5}{Pde\-Solver1\-D}.
 
 
 
 Definition at line 132 of file solvers.\-c++.
 
-\hypertarget{classBim1D_aa99f58d5ec1d53891b11ea81adec6b92}{\index{Bim1\-D@{Bim1\-D}!assemble\-Mass@{assemble\-Mass}}
+\hypertarget{classBim1D_afd5e07bb246bdacd59eefb7a3396e650}{\index{Bim1\-D@{Bim1\-D}!assemble\-Mass@{assemble\-Mass}}
 \index{assemble\-Mass@{assemble\-Mass}!Bim1D@{Bim1\-D}}
 \subsubsection[{assemble\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}void assemble\-Mass (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{delta, }
-\item[{const Vector\-Xd \&}]{zeta}
+\item[{const {\bf Vector\-Xr} \&}]{delta, }
+\item[{const {\bf Vector\-Xr} \&}]{zeta}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_aa99f58d5ec1d53891b11ea81adec6b92}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classBim1D_afd5e07bb246bdacd59eefb7a3396e650}
 
 
 Assemble the matrix for a reaction term. 
@@ -213,7 +213,7 @@ Build the lumped finite element mass matrix for the reaction problem\-: $ \delta
 \end{DoxyParams}
 
 
-Implements \hyperlink{classPdeSolver1D_aca065bfba5136470a4caf30fd7927e37}{Pde\-Solver1\-D}.
+Implements \hyperlink{classPdeSolver1D_aa3dadbe748bfb8b897425e46500ab33b}{Pde\-Solver1\-D}.
 
 
 

@@ -2,7 +2,7 @@
 
 using namespace constants;
 
-QuadratureRule::QuadratureRule(const unsigned & nNodes)
+QuadratureRule::QuadratureRule(const Index & nNodes)
 	: nNodes_(nNodes)
 {
 	assert(nNodes_ >= 1);
@@ -11,7 +11,7 @@ QuadratureRule::QuadratureRule(const unsigned & nNodes)
 	weights_.resize( nNodes_ );
 }
 
-GaussHermiteRule::GaussHermiteRule(const unsigned & nNodes)
+GaussHermiteRule::GaussHermiteRule(const Index & nNodes)
 	: QuadratureRule(nNodes) {}
 
 void GaussHermiteRule::apply()
@@ -24,12 +24,12 @@ void GaussHermiteRule::apply(const GetPot & config)
 	apply_iterative_algorithm( config("GaussHermite/maxIterationsNo", 1000), config("GaussHermite/tolerance", 1.0e-14) );
 }
 
-void GaussHermiteRule::apply_iterative_algorithm(const unsigned & maxIterationsNo, const double & tolerance)
+void GaussHermiteRule::apply_iterative_algorithm(const Index & maxIterationsNo, const Real & tolerance)
 {
-	double p1, p2, temp, dp;
-	double z, zOld;
+	Real p1, p2, temp, dp;
+	Real z, zOld;
 	
-	for ( unsigned i = 0; i < (nNodes_ + 1) / 2; ++i ) {	// The roots are symmetric about the origin,
+	for ( Index i = 0; i < (nNodes_ + 1) / 2; ++i ) {	// The roots are symmetric about the origin,
 		// so only finding half of them is needed.
 		// Good guesses at initial values for the most largest roots.
 		if ( i == 0 ) {
@@ -44,13 +44,13 @@ void GaussHermiteRule::apply_iterative_algorithm(const unsigned & maxIterationsN
 			z = 2.0 * z - nodes_(nNodes_ - i + 1);
 		}
 		
-		unsigned j = 0;
+		Index j = 0;
 		
-		for ( j = 0; j < maxIterationsNo; ++j ) {	// Refinement by Newton's method.
+		for ( ; j < maxIterationsNo; ++j ) {	// Refinement by Newton's method.
 			p1 = PI_M4;
 			p2 = 0.0;
 			
-			for ( unsigned k = 0; k < nNodes_; ++k ) {	// Loop up the recurrence relation to evaluate the Hermite polynomial at "z".
+			for ( Index k = 0; k < nNodes_; ++k ) {	// Loop up the recurrence relation to evaluate the Hermite polynomial at "z".
 				temp = p2;
 				p2 = p1;
 				p1 = z * std::sqrt( 2.0 / (k + 1.0) ) * p2 - std::sqrt( k / (k + 1.0) ) * temp;
@@ -90,22 +90,22 @@ void GaussHermiteRule::apply_using_eigendecomposition()
 		return;
 	}
 	
-	MatrixXd Jac = MatrixXd::Zero( nNodes_, nNodes_ );	// Jacobi matrix.
-	VectorXd k = VectorXd::LinSpaced( nNodes_, 1, nNodes_);
-	VectorXd v = std::sqrt(0.5) * k.cwiseSqrt();
+	MatrixXr Jac = MatrixXr::Zero( nNodes_, nNodes_ );	// Jacobi matrix.
+	VectorXr k = VectorXr::LinSpaced( nNodes_, 1, nNodes_);
+	VectorXr v = std::sqrt(0.5) * k.cwiseSqrt();
 	
-	for ( unsigned i = 0; i < Jac.rows() - 1; ++i ) {
+	for ( Index i = 0; i < Jac.rows() - 1; ++i ) {
 		Jac(i + 1,  i ) = v(i);	// Sub-diagonal.
 		Jac( i , i + 1) = v(i);	// Super-diagonal.
 	}
 	
-	SelfAdjointEigenSolver<MatrixXd> eigSolver(Jac);
+	SelfAdjointEigenSolver<MatrixXr> eigSolver(Jac);
 	
 	nodes_ = eigSolver.eigenvalues();
 	
-	MatrixXd EigVec = eigSolver.eigenvectors();
+	MatrixXr EigVec = eigSolver.eigenvectors();
 	
-	VectorXd norm2 = (EigVec.transpose() * EigVec ).diagonal().cwiseSqrt();	// To normalize weights.
+	VectorXr norm2 = (EigVec.transpose() * EigVec ).diagonal().cwiseSqrt();	// To normalize weights.
 	
 	weights_ = ( SQRT_PI * EigVec.row(0).cwiseProduct(EigVec.row(0)).transpose() ).cwiseQuotient(norm2);	// sqrt(pi) = beta0;
 	

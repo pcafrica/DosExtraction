@@ -27,9 +27,9 @@ Inheritance diagram for Charge\-:\begin{figure}[H]
 \hypertarget{classCharge_ad350b0cd3356862aacbf538e6cffac61}{virtual \hyperlink{classCharge_ad350b0cd3356862aacbf538e6cffac61}{$\sim$\-Charge} ()=default}\label{classCharge_ad350b0cd3356862aacbf538e6cffac61}
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
-virtual Vector\-Xd \hyperlink{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{charge} (const Vector\-Xd \&phi)=0
+virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classCharge_a597abd6d429e1c18935e4806082d67d8}{charge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&phi)=0
 \begin{DoxyCompactList}\small\item\em Compute the total charge. \end{DoxyCompactList}\item 
-virtual Vector\-Xd \hyperlink{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{dcharge} (const Vector\-Xd \&phi)=0
+virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classCharge_acd71b3197f9081512d70d96ac694a3fc}{dcharge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&phi)=0
 \begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -76,13 +76,13 @@ Definition at line 5 of file charge.\-c++.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{\index{Charge@{Charge}!charge@{charge}}
+\hypertarget{classCharge_a597abd6d429e1c18935e4806082d67d8}{\index{Charge@{Charge}!charge@{charge}}
 \index{charge@{charge}!Charge@{Charge}}
-\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vector\-Xd charge (
+\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector\-Xr} charge (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{phi}
+\item[{const {\bf Vector\-Xr} \&}]{phi}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_a597abd6d429e1c18935e4806082d67d8}
 
 
 Compute the total charge. 
@@ -97,15 +97,15 @@ the total charge $ q \left[ C \right] $.
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{Gaussian\-Charge}.
+Implemented in \hyperlink{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}{Gaussian\-Charge}.
 
-\hypertarget{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{\index{Charge@{Charge}!dcharge@{dcharge}}
+\hypertarget{classCharge_acd71b3197f9081512d70d96ac694a3fc}{\index{Charge@{Charge}!dcharge@{dcharge}}
 \index{dcharge@{dcharge}!Charge@{Charge}}
-\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}virtual Vector\-Xd dcharge (
+\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector\-Xr} dcharge (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{phi}
+\item[{const {\bf Vector\-Xr} \&}]{phi}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCharge_acd71b3197f9081512d70d96ac694a3fc}
 
 
 Compute the derivative of the total charge with respect to the electric potential. 
@@ -120,7 +120,7 @@ the derivative\-: $ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} 
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{Gaussian\-Charge}.
+Implemented in \hyperlink{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}{Gaussian\-Charge}.
 
 
 

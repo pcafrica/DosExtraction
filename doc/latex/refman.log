@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.8.10)  18 SEP 2014 10:47
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.8.10)  18 SEP 2014 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,27 +860,27 @@ Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 ) (./refman.aux
 
-LaTeX Warning: Label `namespaceconstants_a4a1828262ad1758b7ba69747f653b3b5' mul
+LaTeX Warning: Label `namespaceconstants_a791181f54af6cd7794fe58fec8e4ce97' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a58f4d8c535a1a29924ab9895ac5e3027' mul
+LaTeX Warning: Label `namespaceconstants_a6af60c0507d9627b476d85e3275b161e' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a00c952dfd5e516e8aed05892039e2723' mul
+LaTeX Warning: Label `namespaceconstants_a02b04d1da9b8254ea609a8334de09da7' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_ade68b010588957aef9890077adb7565f' mul
+LaTeX Warning: Label `namespaceconstants_a1be297a9c9ca81f310b848dbe6c5525d' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_aee9271065c005ea3392646a1151202c8' mul
+LaTeX Warning: Label `namespaceconstants_a7edd24c94138918da1001d874cbe3232' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_afd7a7b38f822d154b359b383913a41f4' mul
+LaTeX Warning: Label `namespaceconstants_ac3177292376f63989fb17af38575b97f' mul
 tiply defined.
 
 
@@ -888,19 +888,19 @@ LaTeX Warning: Label `namespaceconstants_a55c7c5d84b0709c6786dec9908107a04' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a952eac791b596a61bba0a133a3bb439f' mul
+LaTeX Warning: Label `namespaceconstants_af5340fb69690fffd134dcae882754638' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a7477e8f618e55155827d512dc7a0f098' mul
+LaTeX Warning: Label `namespaceconstants_a0ebb82a72cc0395d173fba22dff4d8c0' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a9b6eb4b81f3ef26474b7ec60ef4f7b40' mul
+LaTeX Warning: Label `namespaceconstants_a3b733bd721f65dc9124f4fb15af3da5c' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a61ee8d36601448a8e5a232be8852468e' mul
+LaTeX Warning: Label `namespaceconstants_ab0c53d0b9c422d694073f97eb185d292' mul
 tiply defined.
 
 )
@@ -1279,7 +1279,7 @@ LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
 
 ]
 Chapter 7.
-(./classBim1D.tex <classBim1D.pdf, id=960, 501.875pt x 422.62892pt>
+(./classBim1D.tex <classBim1D.pdf, id=993, 501.875pt x 422.62892pt>
 File: classBim1D.pdf Graphic file (type pdf)
 
 <use classBim1D.pdf>
@@ -1300,7 +1300,7 @@ Underfull \hbox (badness 10000) detected at line 122
 [][][]
  []
 
-[18]) (./classCharge.tex <classCharge.pdf, id=999, 501.875pt x 352.1958pt>
+[18]) (./classCharge.tex <classCharge.pdf, id=1048, 501.875pt x 352.1958pt>
 File: classCharge.pdf Graphic file (type pdf)
 
 <use classCharge.pdf>
@@ -1357,7 +1357,7 @@ Underfull \hbox (badness 10000) detected at line 288
  []
 
 ) (./classDosModel.tex [25] [26] [27]) (./classGaussHermiteRule.tex
-<classGaussHermiteRule.pdf, id=1154, 501.875pt x 326.41951pt>
+<classGaussHermiteRule.pdf, id=1234, 501.875pt x 326.41951pt>
 File: classGaussHermiteRule.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRule.pdf>
@@ -1365,7 +1365,7 @@ Package pdftex.def Info: classGaussHermiteRule.pdf used on input line 16.
 (pdftex.def)             Requested size: 87.49248pt x 56.9055pt.
  [28 <./classGaussHermiteRule.pdf>])
 (./classGaussianCharge.tex
-<classGaussianCharge.pdf, id=1183, 501.875pt x 352.1958pt>
+<classGaussianCharge.pdf, id=1266, 501.875pt x 352.1958pt>
 File: classGaussianCharge.pdf Graphic file (type pdf)
 
 <use classGaussianCharge.pdf>
@@ -1397,7 +1397,7 @@ Underfull \hbox (badness 10000) detected at line 154
  []
 
 ) (./classParamList.tex [34] [35]) (./classPdeSolver1D.tex
-<classPdeSolver1D.pdf, id=1351, 501.875pt x 422.62892pt>
+<classPdeSolver1D.pdf, id=1507, 501.875pt x 422.62892pt>
 File: classPdeSolver1D.pdf Graphic file (type pdf)
 
 <use classPdeSolver1D.pdf>
@@ -1405,7 +1405,7 @@ Package pdftex.def Info: classPdeSolver1D.pdf used on input line 16.
 (pdftex.def)             Requested size: 67.57407pt x 56.9055pt.
  [36] [37 <./classPdeSolver1D.pdf>])
 (./classQuadratureRule.tex [38]
-<classQuadratureRule.pdf, id=1417, 501.875pt x 326.41951pt>
+<classQuadratureRule.pdf, id=1584, 501.875pt x 326.41951pt>
 File: classQuadratureRule.pdf Graphic file (type pdf)
 
 <use classQuadratureRule.pdf>
@@ -1436,6 +1436,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--14
 [41
 
 ]
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 8.09995pt on input line 18.
+
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
@@ -1496,42 +1503,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a4a1828262ad1758b7ba69747f653b3b5}) has been already used, duplicate igno
+tants_a791181f54af6cd7794fe58fec8e4ce97}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.18 ...47f653b3b5}{Q} = 1.\-60217653000000e-\/19}
+l.18 ...fec8e4ce97}{Q} = 1.\-60217653000000e-\/19}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a58f4d8c535a1a29924ab9895ac5e3027}) has been already used, duplicate igno
+tants_a6af60c0507d9627b476d85e3275b161e}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.21 ...5a1a29924ab9895ac5e3027}{Q2} = Q $\ast$ Q}
+l.21 ...7d9627b476d85e3275b161e}{Q2} = Q $\ast$ Q}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a00c952dfd5e516e8aed05892039e2723}) has been already used, duplicate igno
+tants_a02b04d1da9b8254ea609a8334de09da7}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.24 ...3}{K\-\_\-\-B} = 1.\-38065050000000e-\/23}
+l.24 ...7}{K\-\_\-\-B} = 1.\-38065050000000e-\/23}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_ade68b010588957aef9890077adb7565f}) has been already used, duplicate igno
+tants_a1be297a9c9ca81f310b848dbe6c5525d}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.27 ...adb7565f}{E\-P\-S0} = 8.\-854187817e-\/12}
+l.27 ...e6c5525d}{E\-P\-S0} = 8.\-854187817e-\/12}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_aee9271065c005ea3392646a1151202c8}) has been already used, duplicate igno
+tants_a7edd24c94138918da1001d874cbe3232}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.30 ...e9271065c005ea3392646a1151202c8}{T} = 300}
+l.30 ...edd24c94138918da1001d874cbe3232}{T} = 300}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_afd7a7b38f822d154b359b383913a41f4}) has been already used, duplicate igno
+tants_ac3177292376f63989fb17af38575b97f}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
@@ -1593,43 +1600,43 @@ constants_a55c7c5d84b0709c6786dec9908107a04}) has been already used, duplicate
 ignored
 <to be read again> 
                    \relax 
-l.44 ...07a04}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 22}
+l.63 ...07a04}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 22}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a952eac791b596a61bba0a133a3bb439f}) has been already used, duplicate igno
+tants_af5340fb69690fffd134dcae882754638}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.47 ...61bba0a133a3bb439f}{P\-I} = M\-\_\-\-P\-I}
+l.66 ...fd134dcae882754638}{P\-I} = M\-\_\-\-P\-I}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a7477e8f618e55155827d512dc7a0f098}) has been already used, duplicate igno
+tants_a0ebb82a72cc0395d173fba22dff4d8c0}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.50 ...-Q\-R\-T\-\_\-\-P\-I} = std\-::sqrt(P\-I)}
+l.69 ...-Q\-R\-T\-\_\-\-P\-I} = std\-::sqrt(P\-I)}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a9b6eb4b81f3ef26474b7ec60ef4f7b40}) has been already used, duplicate igno
+tants_a3b733bd721f65dc9124f4fb15af3da5c}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.53 ...0}{P\-I\-\_\-\-M4} = 0.\-7511255444649425}
+l.72 ...c}{P\-I\-\_\-\-M4} = 0.\-7511255444649425}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
-tants_a61ee8d36601448a8e5a232be8852468e}) has been already used, duplicate igno
+tants_ab0c53d0b9c422d694073f97eb185d292}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.56 ...468e}{S\-Q\-R\-T\-\_\-2} = std\-::sqrt(2)}
+l.75 ...d292}{S\-Q\-R\-T\-\_\-2} = std\-::sqrt(2)}
                                                   \label{namespaceconstants_...
 
-Underfull \hbox (badness 10000) detected at line 62
+Underfull \hbox (badness 10000) detected at line 81
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 65
+Underfull \hbox (badness 10000) detected at line 84
 [][][]
  []
 
@@ -1644,12 +1651,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 15.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 15.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 8.09995pt on input line 15.
 
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
@@ -1717,7 +1718,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 2D063AA77318BBF82959A8F1F0A16D7D;24001.
+(rerunfilecheck)             Checksum: EBCE75A072303274224B3001DCCCA22D;24001.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1731,13 +1732,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 13144 strings out of 495034
- 194681 string characters out of 6181677
- 263813 words of memory out of 5000000
- 15601 multiletter control sequences out of 15000+600000
+ 13155 strings out of 495034
+ 195152 string characters out of 6181677
+ 263989 words of memory out of 5000000
+ 15606 multiletter control sequences out of 15000+600000
  108779 words of font info for 167 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 48i,13n,43p,511b,530s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,556b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{simulate__dos_8c_09_09_source} has been reference
 d but does not exist, replaced by a fixed one
 
@@ -1784,10 +1785,10 @@ etic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (56 pages, 294731 bytes).
+Output written on refman.pdf (56 pages, 302604 bytes).
 PDF statistics:
- 1879 PDF objects out of 2073 (max. 8388607)
- 1774 compressed objects within 18 object streams
- 451 named destinations out of 1000 (max. 500000)
+ 2096 PDF objects out of 2487 (max. 8388607)
+ 1989 compressed objects within 20 object streams
+ 457 named destinations out of 1000 (max. 500000)
  1127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

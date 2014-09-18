@@ -26,7 +26,7 @@ Class providing methods to process a simulation to extract the Density of States
 \begin{DoxyCompactList}\small\item\em Getter method. \end{DoxyCompactList}\item 
 void \hyperlink{classDosModel_a5203629bc44905401b1b0d71a021db40}{simulate} (const Get\-Pot \&, const std\-::string \&, const std\-::string \&, const std\-::string \&, const std\-::string \&) const 
 \begin{DoxyCompactList}\small\item\em Perform the simulation. \end{DoxyCompactList}\item 
-void \hyperlink{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}{post\-\_\-process} (const Get\-Pot \&, const std\-::string \&, std\-::ostream \&, std\-::ostream \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&, const Vector\-Xd \&) const 
+void \hyperlink{classDosModel_a864b576fe626805c8dbf15aac5461a8e}{post\-\_\-process} (const Get\-Pot \&, const std\-::string \&, std\-::ostream \&, std\-::ostream \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) const 
 \begin{DoxyCompactList}\small\item\em Perform post-\/processing. \end{DoxyCompactList}\item 
 void \hyperlink{classDosModel_a26e64253688b5b51ffc54013bf3bc553}{gnuplot\-\_\-commands} (const std\-::string \&, std\-::ostream \&) const 
 \begin{DoxyCompactList}\small\item\em Defines commands to generate \hyperlink{index_Gnuplot}{Gnuplot} output files. \end{DoxyCompactList}\item 
@@ -106,7 +106,7 @@ Perform the simulation.
 
 Definition at line 13 of file dos\-Model.\-c++.
 
-\hypertarget{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}{\index{Dos\-Model@{Dos\-Model}!post\-\_\-process@{post\-\_\-process}}
+\hypertarget{classDosModel_a864b576fe626805c8dbf15aac5461a8e}{\index{Dos\-Model@{Dos\-Model}!post\-\_\-process@{post\-\_\-process}}
 \index{post\-\_\-process@{post\-\_\-process}!DosModel@{Dos\-Model}}
 \subsubsection[{post\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-process (
 \begin{DoxyParamCaption}
@@ -114,12 +114,12 @@ Definition at line 13 of file dos\-Model.\-c++.
 \item[{const std\-::string \&}]{input\-\_\-experim, }
 \item[{std\-::ostream \&}]{output\-\_\-fitting, }
 \item[{std\-::ostream \&}]{output\-\_\-\-C\-V, }
-\item[{const Vector\-Xd \&}]{x\-\_\-semic, }
-\item[{const Vector\-Xd \&}]{dens, }
-\item[{const Vector\-Xd \&}]{V\-\_\-simulated, }
-\item[{const Vector\-Xd \&}]{C\-\_\-simulated}
+\item[{const {\bf Vector\-Xr} \&}]{x\-\_\-semic, }
+\item[{const {\bf Vector\-Xr} \&}]{dens, }
+\item[{const {\bf Vector\-Xr} \&}]{V\-\_\-simulated, }
+\item[{const {\bf Vector\-Xr} \&}]{C\-\_\-simulated}
 \end{DoxyParamCaption}
-) const}}\label{classDosModel_a16cf4bc9c1a053efd9a2f1b607fd0643}
+) const}}\label{classDosModel_a864b576fe626805c8dbf15aac5461a8e}
 
 
 Perform post-\/processing. 
@@ -145,7 +145,7 @@ Perform post-\/processing.
 \end{DoxyParams}
 
 
-Definition at line 172 of file dos\-Model.\-c++.
+Definition at line 176 of file dos\-Model.\-c++.
 
 \hypertarget{classDosModel_a26e64253688b5b51ffc54013bf3bc553}{\index{Dos\-Model@{Dos\-Model}!gnuplot\-\_\-commands@{gnuplot\-\_\-commands}}
 \index{gnuplot\-\_\-commands@{gnuplot\-\_\-commands}!DosModel@{Dos\-Model}}
@@ -168,7 +168,7 @@ Defines commands to generate \hyperlink{index_Gnuplot}{Gnuplot} output files.
 \end{DoxyParams}
 
 
-Definition at line 257 of file dos\-Model.\-c++.
+Definition at line 261 of file dos\-Model.\-c++.
 
 \hypertarget{classDosModel_aa614583c066c644e83085beaad05279d}{\index{Dos\-Model@{Dos\-Model}!save\-\_\-plot@{save\-\_\-plot}}
 \index{save\-\_\-plot@{save\-\_\-plot}!DosModel@{Dos\-Model}}
@@ -197,7 +197,7 @@ Save the \hyperlink{index_Gnuplot}{Gnuplot} output files.
 \end{DoxyParams}
 
 
-Definition at line 286 of file dos\-Model.\-c++.
+Definition at line 290 of file dos\-Model.\-c++.
 
 
 

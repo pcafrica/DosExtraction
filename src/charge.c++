@@ -8,37 +8,37 @@ Charge::Charge(const ParamList & params, const QuadratureRule & rule)
 GaussianCharge::GaussianCharge(const ParamList & params, const QuadratureRule & rule)
 	: Charge(params, rule) {}
 
-double GaussianCharge::n_approx(const double & phi, const double & N0, const double & sigma) const
+Real GaussianCharge::n_approx(const Real & phi, const Real & N0, const Real & sigma) const
 {
-	double n = 0.0;
+	Real n = 0.0;
 	
 	#pragma omp parallel for default(shared) reduction(+: n)
 	
-	for (unsigned i = 0; i < rule_.nNodes_; ++i) {
+	for ( Index i = 0; i < rule_.nNodes_; ++i ) {
 		n += rule_.weights_(i) * N0 / SQRT_PI / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
 	}
 	
 	return n;
 }
 
-double GaussianCharge::dn_approx(const double & phi, const double & N0, const double & sigma) const
+Real GaussianCharge::dn_approx(const Real & phi, const Real & N0, const Real & sigma) const
 {
-	double dn = 0.0;
+	Real dn = 0.0;
 	
 	#pragma omp parallel for default(shared) reduction(+: dn)
 	
-	for ( unsigned i = 0; i < rule_.nNodes_; ++i) {
+	for ( Index i = 0; i < rule_.nNodes_; ++i ) {
 		dn += rule_.weights_(i) * N0 * SQRT_2 / (sigma * SQRT_PI) * rule_.nodes_(i) / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
 	}
 	
 	return dn;
 }
 
-VectorXd GaussianCharge::charge(const VectorXd & phi)
+VectorXr GaussianCharge::charge(const VectorXr & phi)
 {
-	VectorXd charge = VectorXd::Zero( phi.size() );
+	VectorXr charge = VectorXr::Zero( phi.size() );
 	
-	for ( unsigned i = 0; i < phi.size(); ++i ) {
+	for ( Index i = 0; i < phi.size(); ++i ) {
 		charge(i) = - Q * n_approx(phi(i), params_.N0_, params_.sigma_);
 		
 		if ( params_.N0_2_ > 0.0 ) {
@@ -57,11 +57,11 @@ VectorXd GaussianCharge::charge(const VectorXd & phi)
 	return charge;
 }
 
-VectorXd GaussianCharge::dcharge(const VectorXd & phi)
+VectorXr GaussianCharge::dcharge(const VectorXr & phi)
 {
-	VectorXd dcharge = VectorXd::Zero( phi.size() );
+	VectorXr dcharge = VectorXr::Zero( phi.size() );
 	
-	for ( unsigned i = 0; i < phi.size(); ++i ) {
+	for ( Index i = 0; i < phi.size(); ++i ) {
 		dcharge(i) = Q2 * dn_approx(phi(i), params_.N0_, params_.sigma_);
 		
 		if ( params_.N0_2_ > 0.0 ) {

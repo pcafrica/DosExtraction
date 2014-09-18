@@ -43,7 +43,7 @@ class PdeSolver1D
 		 * @brief Constructor.
 		 * @param[in] mesh : the mesh.
 		 */
-		PdeSolver1D(VectorXd &);
+		PdeSolver1D(VectorXr &);
 		/**
 		 * @brief Destructor (defaulted).
 		 */
@@ -59,8 +59,8 @@ class PdeSolver1D
 		 * @param[in] eta   : @f$ \eta   @f$, an element-wise linear   function;
 		 * @param[in] beta  : @f$ \beta  @f$, an element-wise constant function.
 		 */
-		virtual void assembleAdvDiff(const VectorXd & alpha, const VectorXd & gamma,
-		                             const VectorXd & eta, const VectorXd & beta) = 0;
+		virtual void assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma,
+		                             const VectorXr & eta, const VectorXr & beta) = 0;
 		/**
 		 * Build the matrix for the diffusion problem:
 		 * @f$ -\nabla\cdot\left(\epsilon\cdot\kappa\nabla u\right) = f @f$.
@@ -69,7 +69,7 @@ class PdeSolver1D
 		 * @param[in] eps   : @f$ \epsilon @f$, an element-wise constant function;
 		 * @param[in] kappa : @f$ \kappa   @f$, an element-wise linear   function.
 		 */
-		virtual void assembleStiff  (const VectorXd & eps, const VectorXd & kappa) = 0;
+		virtual void assembleStiff  (const VectorXr & eps, const VectorXr & kappa) = 0;
 		/**
 		 * Build the mass matrix for the reaction problem:
 		 * @f$ \delta\cdot\zeta u = f @f$.
@@ -78,26 +78,26 @@ class PdeSolver1D
 		 * @param[in] delta : @f$ \delta @f$, an element-wise constant function;
 		 * @param[in] zeta  : @f$ \zeta  @f$, an element-wise linear   function.
 		 */
-		virtual void assembleMass   (const VectorXd & delta, const VectorXd & zeta) = 0;
+		virtual void assembleMass   (const VectorXr & delta, const VectorXr & zeta) = 0;
 		
 		/**
 		 * @name Getter methods
 		 * @{
 		 */
-		inline const SparseXd & AdvDiff() const;
-		inline const SparseXd & Stiff  () const;
-		inline const SparseXd & Mass   () const;
+		inline const SparseXr & AdvDiff() const;
+		inline const SparseXr & Stiff  () const;
+		inline const SparseXr & Mass   () const;
 		/**
 		 * @}
 		 */
 		
 	protected:
-		VectorXd mesh_  ;	/**< @brief The mesh. */
-		unsigned nNodes_;	/**< @brief Number of nodes that form the mesh. */
+		VectorXr mesh_  ;	/**< @brief The mesh. */
+		Index nNodes_;	/**< @brief Number of nodes that form the mesh. */
 		
-		SparseXd AdvDiff_;	/**< @brief Matrix for an advection-diffusion term. */
-		SparseXd Stiff_  ;	/**< @brief Stiffness matrix. */
-		SparseXd Mass_   ;	/**< @brief Mass matrix. */
+		SparseXr AdvDiff_;	/**< @brief Matrix for an advection-diffusion term. */
+		SparseXr Stiff_  ;	/**< @brief Stiffness matrix. */
+		SparseXr Mass_   ;	/**< @brief Mass matrix. */
 };
 
 /**
@@ -119,7 +119,7 @@ class Bim1D : public PdeSolver1D
 		 * @brief Constructor.
 		 * @param[in] mesh : the mesh coordinates.
 		 */
-		Bim1D(VectorXd &);
+		Bim1D(VectorXr &);
 		/**
 		 * @brief Destructor (defaulted).
 		 */
@@ -134,14 +134,14 @@ class Bim1D : public PdeSolver1D
 		 * @param[in] x2 : the second vector.
 		 * @returns the vector of the logarithmic means.
 		 */
-		static VectorXd log_mean(const VectorXd &, const VectorXd &);
+		static VectorXr log_mean(const VectorXr &, const VectorXr &);
 		/**
 		 * @f[ \mathfrak{B}(x) = \frac{x}{e^x - 1} ~ .@f]
 		 * @brief Compute the values of the Bernoulli function.
 		 * @param[in] x : the vector of the values to compute the Bernoulli function at.
 		 * @returns the pair @f$ \left(\mathfrak{B}(x), \mathfrak{B}(-x)\right) @f$.
 		 */
-		static std::pair<VectorXd, VectorXd> bernoulli(const VectorXd &);
+		static std::pair<VectorXr, VectorXr> bernoulli(const VectorXr &);
 		
 		/**
 		 * Build the Scharfetter-Gummel stabilized stiffness matrix for:
@@ -153,7 +153,7 @@ class Bim1D : public PdeSolver1D
 		 * @param[in] eta   : @f$ \eta   @f$, an element-wise linear   function;
 		 * @param[in] beta  : @f$ \beta  @f$, an element-wise constant function.
 		 */
-		virtual void assembleAdvDiff(const VectorXd &, const VectorXd &, const VectorXd &, const VectorXd &) override;
+		virtual void assembleAdvDiff(const VectorXr &, const VectorXr &, const VectorXr &, const VectorXr &) override;
 		/**
 		 * Build the standard finite element stiffness matrix for the diffusion problem:
 		 * @f$ -\nabla\cdot\left(\epsilon\cdot\kappa\nabla u\right) = f @f$.
@@ -162,7 +162,7 @@ class Bim1D : public PdeSolver1D
 		 * @param[in] eps   : @f$ \epsilon @f$, an element-wise constant function;
 		 * @param[in] kappa : @f$ \kappa   @f$, an element-wise linear   function.
 		 */
-		virtual void assembleStiff  (const VectorXd &, const VectorXd &) override;
+		virtual void assembleStiff  (const VectorXr &, const VectorXr &) override;
 		/**
 		 * Build the lumped finite element mass matrix for the reaction problem:
 		 * @f$ \delta\cdot\zeta u = f @f$.
@@ -171,7 +171,7 @@ class Bim1D : public PdeSolver1D
 		 * @param[in] delta : @f$ \delta @f$, an element-wise constant function;
 		 * @param[in] zeta  : @f$ \zeta  @f$, an element-wise linear   function.
 		 */
-		virtual void assembleMass   (const VectorXd &, const VectorXd &) override;
+		virtual void assembleMass   (const VectorXr &, const VectorXr &) override;
 };
 
 /**
@@ -200,7 +200,7 @@ class NonLinearPoisson1D
 		 * @param[in] maxIterationsNo : maximum number of iterations desired;
 		 * @param[in] tolerance       : tolerance desired.
 		 */
-		NonLinearPoisson1D(const PdeSolver1D &, const unsigned & = 100, const double & = 1.0e-6);
+		NonLinearPoisson1D(const PdeSolver1D &, const Index & = 100, const Real & = 1.0e-6);
 		/**
 		 * @brief Destructor (defaulted).
 		 */
@@ -212,17 +212,17 @@ class NonLinearPoisson1D
 		 * @param[in] init_guess : initial guess for the Newton algorithm;
 		 * @param[in] charge_fun : an object of class @ref Charge specifying how to compute total electric charge.
 		 */
-		void apply(const VectorXd &, const VectorXd &, Charge &);
+		void apply(const VectorXr &, const VectorXr &, Charge &);
 		
 		/**
 		 * @name Getter methods
 		 * @{
 		 */
-		inline const VectorXd & phi()    const;
-		inline const VectorXd & norm()   const;
-		inline const double   & qTot()   const;
-		inline const double   & cTot()   const;
-		/* inline const double   & cTot_n() const; */
+		inline const VectorXr & phi()    const;
+		inline const VectorXr & norm()   const;
+		inline const Real   & qTot()   const;
+		inline const Real   & cTot()   const;
+		/* inline const Real   & cTot_n() const; */
 		/**
 		 * @}
 		 */
@@ -233,58 +233,58 @@ class NonLinearPoisson1D
 		 * @param[in] x : the vector where to start from.
 		 * @returns the Jacobi matrix in a sparse format.
 		 */
-		SparseXd computeJac(const VectorXd &) const;
+		SparseXr computeJac(const VectorXr &) const;
 		
 		const PdeSolver1D & solver_;	/**< @brief Solver handler. */
 		
-		unsigned maxIterationsNo_;	/**< @brief Maximum number of iterations. */
-		double   tolerance_      ;	/**< @brief Tolerance. */
+		Index maxIterationsNo_;	/**< @brief Maximum number of iterations. */
+		Real   tolerance_      ;	/**< @brief Tolerance. */
 		
-		VectorXd phi_ ;	/**< @brief The electric potential. */
-		VectorXd norm_;	/**< @brief Vector holding @f$ L^\infty @f$-norm errors for each iteration. */
+		VectorXr phi_ ;	/**< @brief The electric potential. */
+		VectorXr norm_;	/**< @brief Vector holding @f$ L^\infty @f$-norm errors for each iteration. */
 		
-		double qTot_  ;	/**< @brief Total charge. */
-		double cTot_  ;	/**< @brief Total capacitance. */
-		/* double cTot_n_; */
+		Real qTot_  ;	/**< @brief Total charge. */
+		Real cTot_  ;	/**< @brief Total capacitance. */
+		/* Real cTot_n_; */
 };
 
 // Implementations.
-inline const SparseXd & PdeSolver1D::AdvDiff() const
+inline const SparseXr & PdeSolver1D::AdvDiff() const
 {
 	return AdvDiff_;
 }
 
-inline const SparseXd & PdeSolver1D::Stiff() const
+inline const SparseXr & PdeSolver1D::Stiff() const
 {
 	return Stiff_;
 }
 
-inline const SparseXd & PdeSolver1D::Mass() const
+inline const SparseXr & PdeSolver1D::Mass() const
 {
 	return Mass_;
 }
 
-inline const VectorXd & NonLinearPoisson1D::phi() const
+inline const VectorXr & NonLinearPoisson1D::phi() const
 {
 	return phi_;
 }
 
-inline const VectorXd & NonLinearPoisson1D::norm() const
+inline const VectorXr & NonLinearPoisson1D::norm() const
 {
 	return norm_;
 }
 
-inline const double & NonLinearPoisson1D::qTot() const
+inline const Real & NonLinearPoisson1D::qTot() const
 {
 	return qTot_;
 }
 
-inline const double & NonLinearPoisson1D::cTot() const
+inline const Real & NonLinearPoisson1D::cTot() const
 {
 	return cTot_;
 }
 
-/* inline const double & NonLinearPoisson1D::cTot_n() const
+/* inline const Real & NonLinearPoisson1D::cTot_n() const
 {
 	return cTot_n_;
 } */

@@ -2,19 +2,19 @@
 
 using namespace constants;
 
-ParamList::ParamList(const RowVectorXd & list)
+ParamList::ParamList(const RowVectorXr & list)
 {
 	assert( list.size() == PARAMS_NO );
 	
-	assert( list( 0) >  0 );
-	assert( list( 1) >  0 );
-	assert( list( 2) >  0 );
-	assert( list( 7) >= 0 );
-	assert( list( 9) >= 0 );
-	assert( list(12) >= 0 );
-	assert( list(15) >= 0 );
-	assert( list(18) >  0 );
-	assert( list(19) >  0 );
+	assert( list( 0) >  0   );
+	assert( list( 1) >  0.0 );
+	assert( list( 2) >  0.0 );
+	assert( list( 7) >= 0.0 );
+	assert( list( 9) >= 0.0 );
+	assert( list(12) >= 0.0 );
+	assert( list(15) >= 0.0 );
+	assert( list(18) >  0   );
+	assert( list(19) >  0   );
 	
 	simulationNo_ = list( 0)          ;
 	t_semic_      = list( 1)          ;

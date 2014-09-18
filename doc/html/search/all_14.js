@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['weights_5f',['weights_',['../classQuadratureRule.html#a092f514241565ee4a925e654b331dbf6',1,'QuadratureRule']]],
-  ['wf_5f',['Wf_',['../classParamList.html#abdbc36c238ba50f2a0e2bc72298f5752',1,'ParamList']]]
+  ['weights_5f',['weights_',['../classQuadratureRule.html#a35b6b677135284647f99765144b3af7a',1,'QuadratureRule']]],
+  ['wf_5f',['Wf_',['../classParamList.html#a9121165703c9ef6b60fe469701a48fad',1,'ParamList']]]
 ];

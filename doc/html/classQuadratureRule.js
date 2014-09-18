@@ -1,14 +1,14 @@
 var classQuadratureRule =
 [
     [ "QuadratureRule", "classQuadratureRule.html#ac7fb9aaf8e3f9eae03235f68a935880a", null ],
-    [ "QuadratureRule", "classQuadratureRule.html#a376dee153044df24015711c9a8411bae", null ],
+    [ "QuadratureRule", "classQuadratureRule.html#a1d658803a64ae7aa2d9a59754483f8a0", null ],
     [ "~QuadratureRule", "classQuadratureRule.html#a80e11fbb08b332f2d4c56740cb63ac4e", null ],
     [ "apply", "classQuadratureRule.html#ae8035f1283a63c55fbbfb4e786db8a98", null ],
-    [ "nNodes", "classQuadratureRule.html#a1fe4b7cc4dd74cd606cd56e169b20895", null ],
-    [ "nodes", "classQuadratureRule.html#a3e83db6b0a26aa35fa94d592c2c5426c", null ],
-    [ "weights", "classQuadratureRule.html#ad03df86d720dadce277cd07fe460d8ee", null ],
+    [ "nNodes", "classQuadratureRule.html#a32e8457e19f3f8f4096e82a0cd759a03", null ],
+    [ "nodes", "classQuadratureRule.html#ac955b3953fe9174d6c9c4c9f519b4858", null ],
+    [ "weights", "classQuadratureRule.html#a34502030990595ad6c2ededfb52383ae", null ],
     [ "GaussianCharge", "classQuadratureRule.html#a6be33a81953be5c0377a00dec7d5b1d3", null ],
-    [ "nNodes_", "classQuadratureRule.html#a8f4bb43717322579edc12974700aec98", null ],
-    [ "nodes_", "classQuadratureRule.html#a62ad07fa140bcc39af00e04b045dd341", null ],
-    [ "weights_", "classQuadratureRule.html#a092f514241565ee4a925e654b331dbf6", null ]
+    [ "nNodes_", "classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4", null ],
+    [ "nodes_", "classQuadratureRule.html#af96d558adb075a6049017281e98fbed3", null ],
+    [ "weights_", "classQuadratureRule.html#a35b6b677135284647f99765144b3af7a", null ]
 ];

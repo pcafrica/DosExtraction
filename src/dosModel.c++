@@ -29,7 +29,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	
 	output_CV.open(output_directory + output_CV_filename, std::ios_base::out);
 	output_CV.setf(std::ios_base::scientific);
-	output_CV.precision(std::numeric_limits<double>::digits10);
+	output_CV.precision(std::numeric_limits<Real>::digits10);
 	
 	if ( !output_fitting.is_open() || !output_CV.is_open() ) {
 		throw std::ofstream::failure("ERROR: output files cannot be opened or directory does not exist.");
@@ -42,28 +42,28 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	
 	print_block( ( "Simulation No. " + std::to_string(params_.simulationNo_) + " started.").c_str(), output_fitting );
 	
-	VectorXd V = VectorXd::LinSpaced(params_.nSteps_, params_.V_min_, params_.V_max_);
+	VectorXr V = VectorXr::LinSpaced(params_.nSteps_, params_.V_min_, params_.V_max_);
 	
-	unsigned semicNodesNo = floor( 0.6 * params_.nNodes_ );
-	unsigned   insNodesNo = params_.nNodes_ - semicNodesNo;
+	Index semicNodesNo = floor( 0.6 * params_.nNodes_ );
+	Index   insNodesNo = params_.nNodes_ - semicNodesNo;
 	
 	// Mesh creation.
 	output_fitting << "Creating mesh...";
-	VectorXd x = VectorXd::Zero( params_.nNodes_ );	// The mesh.
+	VectorXr x = VectorXr::Zero( params_.nNodes_ );	// The mesh.
 	
 	{
-		VectorXd temp1 = VectorXd::LinSpaced(  semicNodesNo, -params_.t_semic_,              0);
-		VectorXd temp2 = VectorXd::LinSpaced(insNodesNo + 1,                 0, params_.t_ins_);
+		VectorXr temp1 = VectorXr::LinSpaced(  semicNodesNo, -params_.t_semic_,              0);
+		VectorXr temp2 = VectorXr::LinSpaced(insNodesNo + 1,                 0, params_.t_ins_);
 		
 		x << temp1, temp2.segment(1, temp2.size() - 1);
 	}
 	
-	VectorXd xm = 0.5 * ( x.segment(1, x.size() - 1) + x.segment(0, x.size() - 1) );
+	VectorXr xm = 0.5 * ( x.segment(1, x.size() - 1) + x.segment(0, x.size() - 1) );
 	print_done(output_fitting);
 	
 	// System assembly.
 	output_fitting << "Assembling system matrices...";
-	VectorXd eps = EPS0 * params_.eps_semic_ * VectorXd::Ones( xm.size() );
+	VectorXr eps = EPS0 * params_.eps_semic_ * VectorXr::Ones( xm.size() );
 	
 	for ( int i = 0; i < eps.size(); ++i ) {
 		if ( xm(i) > 0.0 ) {
@@ -72,10 +72,10 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	}
 	
 	Bim1D bimSolver(x);
-	bimSolver.assembleStiff( eps, VectorXd::Ones( params_.nNodes_ ) );
+	bimSolver.assembleStiff( eps, VectorXr::Ones( params_.nNodes_ ) );
 	
 	{
-		VectorXd temp = VectorXd::Zero( xm.size() );
+		VectorXr temp = VectorXr::Zero( xm.size() );
 		
 		for ( int i = 0; i < temp.size(); ++i ) {
 			if ( xm(i) < 0.0 ) {
@@ -83,11 +83,11 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 			}
 		}
 		
-		bimSolver.assembleMass( temp, VectorXd::Ones( params_.nNodes_ ) );
+		bimSolver.assembleMass( temp, VectorXr::Ones( params_.nNodes_ ) );
 	}
 	
-	SparseXd A = bimSolver.Stiff();	// Stiffness matrix.
-	SparseXd M = bimSolver.Mass ();	// Mass matrix.
+	SparseXr A = bimSolver.Stiff();	// Stiffness matrix.
+	SparseXr M = bimSolver.Mass ();	// Mass matrix.
 	
 	print_done(output_fitting);
 	
@@ -108,11 +108,11 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	output_fitting << "Initializing variables...";
 	GaussianCharge charge_fun(params_, rule);
 	
-	MatrixXd Phi  = MatrixXd::Zero(     x.size(), V.size() );
-	MatrixXd Dens = MatrixXd::Zero( semicNodesNo, V.size() );
+	MatrixXr Phi  = MatrixXr::Zero(     x.size(), V.size() );
+	MatrixXr Dens = MatrixXr::Zero( semicNodesNo, V.size() );
 	
-	VectorXd cTot     = VectorXd::Zero( V.size() );
-	VectorXd charge_n = VectorXd::Zero( V.size() );
+	VectorXr cTot     = VectorXr::Zero( V.size() );
+	VectorXr charge_n = VectorXr::Zero( V.size() );
 	
 	print_done(output_fitting);
 	
@@ -121,18 +121,18 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	output_fitting << "\tTolerance set: " << config("NLP/tolerance", 1.0e-4) << std::endl;
 	
 	// Start simulation.
-	for ( unsigned i = 0; i < V.size(); ++i ) {
+	for ( Index i = 0; i < V.size(); ++i ) {
 		// Print current iteration.
 		if ( i == 0 || (i + 1) % 10 == 0 || i == V.size() - 1 ) {
 			output_fitting << std::endl << "\titeration: " << (i + 1) << "/" << params_.nSteps_;
 		}
 		
-		VectorXd phiOld = VectorXd::Zero( x.size() );
+		VectorXr phiOld = VectorXr::Zero( x.size() );
 		
 		if ( i == 0 ) {
-			phiOld = -VectorXd::LinSpaced(phiOld.size(), params_.Wf_ / Q - params_.Ea_ / Q, params_.Wf_ / Q - params_.Ea_ / Q - V(i));
+			phiOld = -VectorXr::LinSpaced(phiOld.size(), params_.Wf_ / Q - params_.Ea_ / Q, params_.Wf_ / Q - params_.Ea_ / Q - V(i));
 		} else {
-			phiOld = Phi.col(i - 1) + VectorXd::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));
+			phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));
 		}
 		
 		NonLinearPoisson1D nlpSolver( bimSolver, config("NLP/maxIterationsNo", 1), config("NLP/tolerance", 1.0e-4) );
@@ -140,12 +140,12 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 		
 		Phi.col(i) = nlpSolver.phi();
 		
-		VectorXd charge = charge_fun.charge( Phi.col(i).segment(0, semicNodesNo) );
+		VectorXr charge = charge_fun.charge( Phi.col(i).segment(0, semicNodesNo) );
 		Dens.col(i) = - charge / Q;
 		
 		cTot(i) = nlpSolver.cTot();
 		
-		charge_n(i) = numerics::trapz((VectorXd) x.segment(0, semicNodesNo), charge);
+		charge_n(i) = numerics::trapz((VectorXr) x.segment(0, semicNodesNo), charge);
 	}
 	
 	print_done(output_fitting);
@@ -157,40 +157,44 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	               
 	// Post-processing and creation of output files.
 	
-	post_process(config, input_experim, output_fitting, output_CV, (VectorXd) x.segment(0, semicNodesNo),
-	             (VectorXd) Dens.col(Dens.cols() - 1), V, cTot);
+	post_process(config, input_experim, output_fitting, output_CV, (VectorXr) x.segment(0, semicNodesNo),
+	             (VectorXr) Dens.col(Dens.cols() - 1), V, cTot);
 	             
 	output_fitting.close();
 	output_CV     .close();
 	
 	// Create output Gnuplot files.
-	save_plot(output_directory, output_plot_subdir, output_CV_filename, output_filename);
+	try {
+		save_plot(output_directory, output_plot_subdir, output_CV_filename, output_filename);
+	} catch ( const std::exception & genericException ) {
+		throw genericException;
+	}
 	
 	return;
 }
 
 void DosModel::post_process(const GetPot & config, const std::string & input_experim, std::ostream & output_fitting,
-                            std::ostream & output_CV, const VectorXd & x_semic, const VectorXd & dens,
-                            const VectorXd & V_simulated, const VectorXd & C_simulated) const
+                            std::ostream & output_CV, const VectorXr & x_semic, const VectorXr & dens,
+                            const VectorXr & V_simulated, const VectorXr & C_simulated) const
 {
 	assert( x_semic    .size() == dens       .size() );
 	assert( V_simulated.size() == C_simulated.size() );
 	
 	CsvParser parser_experim(input_experim, config("hasHeaders", true));
 	
-	double A_semic = parser_experim.importCell(1, 3);	// Semiconductor area [m^2].
-	double C_sb    = parser_experim.importCell(1, 4);	// Sbord capacitance [F].
+	Real A_semic = parser_experim.importCell(1, 3);	// Semiconductor area [m^2].
+	Real C_sb    = parser_experim.importCell(1, 4);	// Sbord capacitance [F].
 	
-	VectorXd V_experim = parser_experim.importCol(1);
-	VectorXd C_experim = parser_experim.importCol(2);
+	VectorXr V_experim = parser_experim.importCol(1);
+	VectorXr C_experim = parser_experim.importCol(2);
 	
 	assert( V_experim.size() == C_experim.size() );
 	
 	// Sorting "V_experim" and "C_experim". The order is established by "V_experim".
 	{
-		VectorXpair<double> order = numerics::sort_pair( V_experim );
-		VectorXd V_sort = VectorXd::Zero( V_experim.size() );
-		VectorXd C_sort = VectorXd::Zero( C_experim.size() );
+		VectorXpair<Real> order = numerics::sort_pair( V_experim );
+		VectorXr V_sort = VectorXr::Zero( V_experim.size() );
+		VectorXr C_sort = VectorXr::Zero( C_experim.size() );
 		
 		for ( int i = 0; i < order.size(); ++i ) {
 			V_sort(i) = V_experim( order(i).second );
@@ -201,28 +205,28 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
 		C_experim = C_sort;
 	}
 	
-	VectorXd dC_dV_experim   = numerics::deriv(C_experim,                            V_experim  );
-	VectorXd dC_dV_simulated = numerics::deriv(C_simulated.array() * A_semic + C_sb, V_simulated);
+	VectorXr dC_dV_experim   = numerics::deriv(C_experim,                            V_experim  );
+	VectorXr dC_dV_simulated = numerics::deriv(C_simulated.array() * A_semic + C_sb, V_simulated);
 	
-	double charge_center_of_mass = numerics::trapz( x_semic.cwiseProduct(dens) ) / numerics::trapz( dens );
-	double cAccStar = C_simulated.maxCoeff();	// Simulated.
+	Real charge_center_of_mass = numerics::trapz( x_semic.cwiseProduct(dens) ) / numerics::trapz( dens );
+	Real cAccStar = C_simulated.maxCoeff();	// Simulated.
 	
-	unsigned j_e = 0;
+	Index j_e = 0;
 	dC_dV_experim  .maxCoeff(&j_e);
 	
-	unsigned j_s = 0;
+	Index j_s = 0;
 	dC_dV_simulated.maxCoeff(&j_s);
 	
-	double V_shift = V_simulated(j_s) - V_experim(j_e);
+	Real V_shift = V_simulated(j_s) - V_experim(j_e);
 	
-	VectorXd     C_interp = numerics::interp1(V_experim,     C_experim, V_simulated.array() - V_shift);
-	VectorXd dC_dV_interp = numerics::interp1(V_experim, dC_dV_experim, V_simulated.array() - V_shift);
+	VectorXr     C_interp = numerics::interp1(V_experim,     C_experim, V_simulated.array() - V_shift);
+	VectorXr dC_dV_interp = numerics::interp1(V_experim, dC_dV_experim, V_simulated.array() - V_shift);
 	
-	double error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift) );
-	double error_H1 = std::sqrt( error_L2 * error_L2 +
-	                             numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift)
-	                           );
-	                           
+	Real error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift) );
+	Real error_H1 = std::sqrt( error_L2 * error_L2 +
+	                           numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift)
+	                         );
+	                         
 	// Print to output.
 	output_fitting << std::endl;
 	output_fitting << "V_shift = " << V_shift << std::endl;

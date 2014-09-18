@@ -129,9 +129,9 @@
 \contentsline {subsection}{\numberline {8.8.1}Detailed Description}{46}{subsection.8.8.1}
 \contentsline {section}{\numberline {8.9}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.h File Reference}{46}{section.8.9}
 \contentsline {subsection}{\numberline {8.9.1}Detailed Description}{47}{subsection.8.9.1}
-\contentsline {subsection}{\numberline {8.9.2}Typedef Documentation}{47}{subsection.8.9.2}
-\contentsline {subsubsection}{\numberline {8.9.2.1}Vector\discretionary {-}{}{}X}{47}{subsubsection.8.9.2.1}
-\contentsline {subsubsection}{\numberline {8.9.2.2}Vector\discretionary {-}{}{}Xpair}{47}{subsubsection.8.9.2.2}
+\contentsline {subsection}{\numberline {8.9.2}Typedef Documentation}{48}{subsection.8.9.2}
+\contentsline {subsubsection}{\numberline {8.9.2.1}Vector\discretionary {-}{}{}X}{48}{subsubsection.8.9.2.1}
+\contentsline {subsubsection}{\numberline {8.9.2.2}Vector\discretionary {-}{}{}Xpair}{48}{subsubsection.8.9.2.2}
 \contentsline {section}{\numberline {8.10}/home/\discretionary {-}{}{}Data/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.c++ File Reference}{48}{section.8.10}
 \contentsline {subsection}{\numberline {8.10.1}Detailed Description}{48}{subsection.8.10.1}
-\contentsline {chapter}{Index}{49}{section*.47}
+\contentsline {chapter}{Index}{49}{section*.48}

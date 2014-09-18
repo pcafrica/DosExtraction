@@ -1,10 +1,10 @@
 #include "numerics.h"
 
-double numerics::trapz(const VectorXd & x, const VectorXd & y)
+Real numerics::trapz(const VectorXr & x, const VectorXr & y)
 {
 	assert( x.size() == y.size() );
 	
-	double integral = 0.0;
+	Real integral = 0.0;
 	
 	#pragma omp parallel for default(shared) reduction(+: integral)
 	
@@ -15,18 +15,18 @@ double numerics::trapz(const VectorXd & x, const VectorXd & y)
 	return integral;
 }
 
-double numerics::trapz(const VectorXd & y)
+Real numerics::trapz(const VectorXr & y)
 {
-	return trapz(VectorXd::LinSpaced(y.size(), 1, y.size()), y);
+	return trapz(VectorXr::LinSpaced(y.size(), 1, y.size()), y);
 }
 
-VectorXd numerics::deriv(const VectorXd & y, const VectorXd & x)
+VectorXr numerics::deriv(const VectorXr & y, const VectorXr & x)
 {
 	assert( y.size() == x.size() );
 	
 	int n = x.size();
 	
-	VectorXd dy_dx(n);
+	VectorXr dy_dx(n);
 	
 	dy_dx(0) = ( y(1) - y(0) ) / ( x(1) - x(0) );	// Forward difference.
 	
@@ -39,13 +39,13 @@ VectorXd numerics::deriv(const VectorXd & y, const VectorXd & x)
 	return dy_dx;
 }
 
-double numerics::interp1(const VectorXd & x, const VectorXd & y, const double & xNew)
+Real numerics::interp1(const VectorXr & x, const VectorXr & y, const Real & xNew)
 {
 	assert( x.size() == y.size() );
 	assert( x == sort(x) );	// Initial grid must be monotonic.
 	
 	if ( xNew < x.minCoeff() || xNew > x.maxCoeff() ) {	// New point cannot be external to the initial grid.
-		return std::numeric_limits<double>::quiet_NaN();
+		return std::numeric_limits<Real>::quiet_NaN();
 	}
 	
 	// Index of the last element in "x" lower than xNew.s: "x(index + 1)" is greater or equal than "xNew".
@@ -55,15 +55,15 @@ double numerics::interp1(const VectorXd & x, const VectorXd & y, const double & 
 		return y(index + 1);
 	}
 	
-	return (double) ( (xNew - x(index + 1)) * y(index) - (xNew - x(index)) * y(index + 1) ) / (x(index) - x(index + 1));
+	return (Real) ( (xNew - x(index + 1)) * y(index) - (xNew - x(index)) * y(index + 1) ) / (x(index) - x(index + 1));
 }
 
-VectorXd numerics::interp1(const VectorXd & x, const VectorXd & y, const VectorXd & xNew)
+VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorXr & xNew)
 {
 	assert( x.size() == y.size() );
 	assert( x == sort(x) );	// Initial grid must be monotonic.
 	
-	VectorXd yNew = VectorXd::Zero( xNew.size() );
+	VectorXr yNew = VectorXr::Zero( xNew.size() );
 	
 	for ( int i = 0; i < yNew.size(); ++i ) {
 		yNew(i) = interp1(x, y, xNew(i));
@@ -72,26 +72,28 @@ VectorXd numerics::interp1(const VectorXd & x, const VectorXd & y, const VectorX
 	return yNew;
 }
 
-double numerics::error_L2(const VectorXd & interp, const VectorXd & simulated,
-                          const VectorXd & V, const double & V_shift)
+Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
+                        const VectorXr & V, const Real & V_shift)
 {
 	// Number of not-NaN values.
-	unsigned nNotNaN = std::min( (interp   .array() != std::numeric_limits<double>::quiet_NaN()).count(),
-	                             (simulated.array() != std::numeric_limits<double>::quiet_NaN()).count()
-	                           );
-	                           
-	VectorXd         V_centered = VectorXd::Zero( nNotNaN );
-	VectorXd simulated_centered = VectorXd::Zero( nNotNaN );
-	VectorXd    interp_centered = VectorXd::Zero( nNotNaN );
+	Index nNotNaN = std::min( (interp   .array() != std::numeric_limits<Real>::quiet_NaN()).count(),
+	                          (simulated.array() != std::numeric_limits<Real>::quiet_NaN()).count()
+	                        );
+	                        
+	VectorXr         V_centered = VectorXr::Zero( nNotNaN );
+	VectorXr simulated_centered = VectorXr::Zero( nNotNaN );
+	VectorXr    interp_centered = VectorXr::Zero( nNotNaN );
 	
-	unsigned k = 0;
-	
-	for ( unsigned i = 0; i < nNotNaN; ++i ) {
-		if ( !std::isnan(interp(i)) && !std::isnan(simulated(i)) ) {
-			V_centered(k) = V(i);
-			simulated_centered(k) = simulated(i);
-			interp_centered(k) = interp(i);
-			++k;
+	{
+		Index k = 0;
+		
+		for ( Index i = 0; i < nNotNaN; ++i ) {
+			if ( !std::isnan(interp(i)) && !std::isnan(simulated(i)) ) {
+				V_centered(k) = V(i);
+				simulated_centered(k) = simulated(i);
+				interp_centered(k) = interp(i);
+				++k;
+			}
 		}
 	}
 	

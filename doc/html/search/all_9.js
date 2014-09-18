@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k_5fb',['K_B',['../namespaceconstants.html#a00c952dfd5e516e8aed05892039e2723',1,'constants']]]
+  ['k_5fb',['K_B',['../namespaceconstants.html#a02b04d1da9b8254ea609a8334de09da7',1,'constants']]]
 ];

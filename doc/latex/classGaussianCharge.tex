@@ -27,16 +27,16 @@ Inheritance diagram for Gaussian\-Charge\-:\begin{figure}[H]
 \hypertarget{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}{virtual \hyperlink{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}{$\sim$\-Gaussian\-Charge} ()=default}\label{classGaussianCharge_ab64872dfef0abc7d116d65373496ac33}
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
-virtual Vector\-Xd \hyperlink{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{charge} (const Vector\-Xd \&) override
+virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}{charge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
 \begin{DoxyCompactList}\small\item\em Compute the total charge. \end{DoxyCompactList}\item 
-virtual Vector\-Xd \hyperlink{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{dcharge} (const Vector\-Xd \&) override
+virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}{dcharge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
 \begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \hyperlink{classGaussianCharge_a23fbccf4687490da653b2ea642284245}{n\-\_\-approx} (const double \&, const double \&, const double \&) const 
+\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classGaussianCharge_a91f27044b2f7ced7c2330153bb9da652}{n\-\_\-approx} (const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&) const 
 \begin{DoxyCompactList}\small\item\em Compute electrons density (per unit volume). \end{DoxyCompactList}\item 
-double \hyperlink{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}{dn\-\_\-approx} (const double \&, const double \&, const double \&) const 
+\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classGaussianCharge_ab5ce245792f1b0d7c2038ebc75bbc758}{dn\-\_\-approx} (const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&) const 
 \begin{DoxyCompactList}\small\item\em Compute the approximate derivative of electrons density (per unit volume) with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -77,13 +77,13 @@ Definition at line 8 of file charge.\-c++.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}{\index{Gaussian\-Charge@{Gaussian\-Charge}!charge@{charge}}
+\hypertarget{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}{\index{Gaussian\-Charge@{Gaussian\-Charge}!charge@{charge}}
 \index{charge@{charge}!GaussianCharge@{Gaussian\-Charge}}
-\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd charge (
+\subsubsection[{charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector\-Xr} charge (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{phi}
+\item[{const {\bf Vector\-Xr} \&}]{phi}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_ace13e6c8f0e0eaac0b3e397d406bed1a}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}
 
 
 Compute the total charge. 
@@ -98,19 +98,19 @@ the total charge $ q \left[ C \right] $.
 \end{DoxyReturn}
 
 
-Implements \hyperlink{classCharge_ad71141a7a99b0b27493571cb5aa56a0a}{Charge}.
+Implements \hyperlink{classCharge_a597abd6d429e1c18935e4806082d67d8}{Charge}.
 
 
 
 Definition at line 37 of file charge.\-c++.
 
-\hypertarget{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dcharge@{dcharge}}
+\hypertarget{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dcharge@{dcharge}}
 \index{dcharge@{dcharge}!GaussianCharge@{Gaussian\-Charge}}
-\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}Vector\-Xd dcharge (
+\subsubsection[{dcharge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector\-Xr} dcharge (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{phi}
+\item[{const {\bf Vector\-Xr} \&}]{phi}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a93bfdcacb3bd72aa196771816ee24ab4}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}
 
 
 Compute the derivative of the total charge with respect to the electric potential. 
@@ -125,21 +125,21 @@ the derivative\-: $ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} 
 \end{DoxyReturn}
 
 
-Implements \hyperlink{classCharge_a1e3748286784b1baf022ca8c97fa6ea4}{Charge}.
+Implements \hyperlink{classCharge_acd71b3197f9081512d70d96ac694a3fc}{Charge}.
 
 
 
 Definition at line 60 of file charge.\-c++.
 
-\hypertarget{classGaussianCharge_a23fbccf4687490da653b2ea642284245}{\index{Gaussian\-Charge@{Gaussian\-Charge}!n\-\_\-approx@{n\-\_\-approx}}
+\hypertarget{classGaussianCharge_a91f27044b2f7ced7c2330153bb9da652}{\index{Gaussian\-Charge@{Gaussian\-Charge}!n\-\_\-approx@{n\-\_\-approx}}
 \index{n\-\_\-approx@{n\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
-\subsubsection[{n\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}double n\-\_\-approx (
+\subsubsection[{n\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real} n\-\_\-approx (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{phi, }
-\item[{const double \&}]{N0, }
-\item[{const double \&}]{sigma}
+\item[{const {\bf Real} \&}]{phi, }
+\item[{const {\bf Real} \&}]{N0, }
+\item[{const {\bf Real} \&}]{sigma}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_a23fbccf4687490da653b2ea642284245}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_a91f27044b2f7ced7c2330153bb9da652}
 
 
 Compute electrons density (per unit volume). 
@@ -160,15 +160,15 @@ the electrons density $ n(\varphi) \left[ m^{-3} \right] $.
 
 Definition at line 11 of file charge.\-c++.
 
-\hypertarget{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dn\-\_\-approx@{dn\-\_\-approx}}
+\hypertarget{classGaussianCharge_ab5ce245792f1b0d7c2038ebc75bbc758}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dn\-\_\-approx@{dn\-\_\-approx}}
 \index{dn\-\_\-approx@{dn\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
-\subsubsection[{dn\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}double dn\-\_\-approx (
+\subsubsection[{dn\-\_\-approx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real} dn\-\_\-approx (
 \begin{DoxyParamCaption}
-\item[{const double \&}]{phi, }
-\item[{const double \&}]{N0, }
-\item[{const double \&}]{sigma}
+\item[{const {\bf Real} \&}]{phi, }
+\item[{const {\bf Real} \&}]{N0, }
+\item[{const {\bf Real} \&}]{sigma}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_a1d3cfe51e6fd2b806356ba3fdbbc824b}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{classGaussianCharge_ab5ce245792f1b0d7c2038ebc75bbc758}
 
 
 Compute the approximate derivative of electrons density (per unit volume) with respect to the electric potential. 

@@ -226,8 +226,8 @@
   \item {trapz}
     \subitem {numerics}, \hyperpage{13}
   \item {typedefs.\discretionary {-}{}{}h}
-    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{47}
-    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{47}
+    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{48}
+    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{48}
 
   \indexspace
 
@@ -242,8 +242,8 @@
   \indexspace
 
   \item {Vector\discretionary {-}{}{}X}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{47}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{48}
   \item {Vector\discretionary {-}{}{}Xpair}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{47}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{48}
 
 \end{theindex}

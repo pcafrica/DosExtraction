@@ -54,21 +54,23 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
 			++nCols_;
 		}
 		
-		++nCols_;	// The last field is '\n'-separated.
+		if ( field.empty() ) {	// If field is empty, the last column has not been counted.
+			++nCols_;
+		}
 	}
 	
 	reset();
 }
 
-RowVectorXd CsvParser::importRow(const unsigned & index)
+RowVectorXr CsvParser::importRow(const Index & index)
 {
 	assert( index >= 1 && index <= nRows_ );
 	
 	reset();
 	
-	RowVectorXd data = RowVectorXd::Zero( nCols_ );
+	RowVectorXr data = RowVectorXr::Zero( nCols_ );
 	
-	for ( unsigned i = 0; i < index; ++i ) {
+	for ( Index i = 0; i < index; ++i ) {
 		std::getline(input_, line_, '\n');	// Read "i"-th row.
 	}
 	
@@ -79,25 +81,25 @@ RowVectorXd CsvParser::importRow(const unsigned & index)
 		std::stringstream line_stream(line_);
 		std::string field;
 		
-		for ( unsigned j = 0; j < nCols_; ++j ) {
+		for ( Index j = 0; j < nCols_; ++j ) {
 			std::getline(line_stream, field, separator_);
 			
-			data(j) = (double) atof(field.c_str());
+			data(j) = (Real) atof(field.c_str());
 		}
 	}
 	
 	return data;
 }
 
-MatrixXd CsvParser::importRows(const std::initializer_list<unsigned> & indexes)
+MatrixXr CsvParser::importRows(const std::initializer_list<Index> & indexes)
 {
 	assert( indexes.size() > 0 );
 	
-	MatrixXd Data = MatrixXd::Zero( indexes.size(), nCols_ );
+	MatrixXr Data = MatrixXr::Zero( indexes.size(), nCols_ );
 	
-	unsigned i = 0;
+	Index i = 0;
 	
-	for ( unsigned index : indexes ) {
+	for ( Index index : indexes ) {
 		Data.row(i) = importRow( index );
 		++i;
 	}
@@ -105,11 +107,11 @@ MatrixXd CsvParser::importRows(const std::initializer_list<unsigned> & indexes)
 	return Data;
 }
 
-MatrixXd CsvParser::importFirstRows(const unsigned & nRows)
+MatrixXr CsvParser::importFirstRows(const Index & nRows)
 {
 	assert( nRows >= 1 && nRows <= nRows_ );
 	
-	MatrixXd Data = MatrixXd::Zero( nRows, nCols_ );
+	MatrixXr Data = MatrixXr::Zero( nRows, nCols_ );
 	
 	for ( int i = 0; i < Data.rows(); ++i ) {
 		Data.row(i) = importRow(i + 1);
@@ -118,38 +120,38 @@ MatrixXd CsvParser::importFirstRows(const unsigned & nRows)
 	return Data;
 }
 
-VectorXd CsvParser::importCol(const unsigned & index)
+VectorXr CsvParser::importCol(const Index & index)
 {
 	assert( index >= 1 && index <= nCols_ );
 	
 	reset();
 	
-	VectorXd data = VectorXd::Zero( nRows_ );
+	VectorXr data = VectorXr::Zero( nRows_ );
 	
 	// Start import.
-	for ( unsigned i = 0; i < nRows_; ++i ) {	// For each row.
+	for ( Index i = 0; i < nRows_; ++i ) {	// For each row.
 		std::getline(input_, line_, '\n');	// Read "i"-th row.
 		
 		std::stringstream line_stream(line_);
 		std::string field;
 		
-		for ( unsigned j = 0; j < index; ++j ) {
+		for ( Index j = 0; j < index; ++j ) {
 			std::getline(line_stream, field, separator_);
 		}
 		
-		data(i) = (double) atof(field.c_str());
+		data(i) = (Real) atof(field.c_str());
 	}
 	
 	return data;
 }
 
-MatrixXd CsvParser::importCols(const std::initializer_list<unsigned> & indexes)
+MatrixXr CsvParser::importCols(const std::initializer_list<Index> & indexes)
 {
 	assert( indexes.size() > 0 );
 	
-	MatrixXd Data = MatrixXd::Zero( nRows_, indexes.size() );
+	MatrixXr Data = MatrixXr::Zero( nRows_, indexes.size() );
 	
-	unsigned j = 0;
+	Index j = 0;
 	
 	for ( int index : indexes ) {
 		Data.col(j) = importCol( index );
@@ -159,11 +161,11 @@ MatrixXd CsvParser::importCols(const std::initializer_list<unsigned> & indexes)
 	return Data;
 }
 
-MatrixXd CsvParser::importFirstCols(const unsigned & nCols)
+MatrixXr CsvParser::importFirstCols(const Index & nCols)
 {
 	assert( nCols >= 1 && nCols <= nCols_ );
 	
-	MatrixXd Data = MatrixXd::Zero( nRows_, nCols );
+	MatrixXr Data = MatrixXr::Zero( nRows_, nCols );
 	
 	for ( int j = 0; j < Data.cols(); ++j ) {
 		Data.col(j) = importRow(j + 1);
@@ -172,7 +174,7 @@ MatrixXd CsvParser::importFirstCols(const unsigned & nCols)
 	return Data;
 }
 
-double CsvParser::importCell(const unsigned & rowIndex, const unsigned & colIndex)
+Real CsvParser::importCell(const Index & rowIndex, const Index & colIndex)
 {
 	assert( rowIndex >= 1 && rowIndex <= nRows_ );
 	assert( colIndex >= 1 && colIndex <= nCols_ );
@@ -180,7 +182,7 @@ double CsvParser::importCell(const unsigned & rowIndex, const unsigned & colInde
 	return importRow(rowIndex)(colIndex - 1);
 }
 
-MatrixXd CsvParser::importAll()
+MatrixXr CsvParser::importAll()
 {
 	return importFirstRows( nRows_ );
 }

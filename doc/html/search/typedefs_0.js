@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sparsexd',['SparseXd',['../typedefs_8h.html#a86edf437f454f4dd79d5422366403b7f',1,'typedefs.h']]]
+  ['matrixxr',['MatrixXr',['../typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55',1,'typedefs.h']]]
 ];

@@ -41,7 +41,7 @@ class QuadratureRule
 		 * @brief Constructor.
 		 * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
 		 */
-		QuadratureRule(const unsigned &);
+		QuadratureRule(const Index &);
 		/**
 		 * @brief Destructor (defaulted).
 		 */
@@ -56,17 +56,17 @@ class QuadratureRule
 		 * @name Getter methods
 		 * @{
 		 */
-		inline const unsigned & nNodes () const;
-		inline const VectorXd & nodes  () const;
-		inline const VectorXd & weights() const;
+		inline const Index & nNodes () const;
+		inline const VectorXr & nodes  () const;
+		inline const VectorXr & weights() const;
 		/**
 		 * @}
 		 */
 		
 	protected:
-		unsigned nNodes_ ;	/**< @brief Number of nodes of the quadrature rule. */
-		VectorXd nodes_  ;	/**< @brief Vector containing the computed nodes coordinates. */
-		VectorXd weights_;	/**< @brief Vector containing the computed weights. */
+		Index nNodes_ ;	/**< @brief Number of nodes of the quadrature rule. */
+		VectorXr nodes_  ;	/**< @brief Vector containing the computed nodes coordinates. */
+		VectorXr weights_;	/**< @brief Vector containing the computed weights. */
 };
 
 /**
@@ -90,7 +90,7 @@ class GaussHermiteRule : public QuadratureRule
 		 * @brief Constructor.
 		 * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
 		 */
-		GaussHermiteRule(const unsigned &);
+		GaussHermiteRule(const Index &);
 		/**
 		 * @brief Destructor (defaulted).
 		 */
@@ -109,7 +109,7 @@ class GaussHermiteRule : public QuadratureRule
 		 * Numerical Recipes: The Art of Scientific Computing (3rd edition). @n
 		 * Cambridge University Press, New York, NY, USA.
 		 */
-		void apply_iterative_algorithm(const unsigned & = 1000, const double & = 1.0e-14);
+		void apply_iterative_algorithm(const Index & = 1000, const Real & = 1.0e-14);
 		/**
 		 * @brief Compute nodes and weights using an eigendecomposition-based algorithm.
 		 */
@@ -117,17 +117,17 @@ class GaussHermiteRule : public QuadratureRule
 };
 
 // Implementations.
-inline const unsigned & QuadratureRule::nNodes() const
+inline const Index & QuadratureRule::nNodes() const
 {
 	return nNodes_;
 }
 
-inline const VectorXd & QuadratureRule::nodes() const
+inline const VectorXr & QuadratureRule::nodes() const
 {
 	return nodes_;
 }
 
-inline const VectorXd & QuadratureRule::weights() const
+inline const VectorXr & QuadratureRule::weights() const
 {
 	return weights_;
 }

@@ -9,7 +9,7 @@ void utility::print_block(const char * string, std::ostream & os)
 {
 	os << "╔";
 	
-	for ( unsigned i = 0; i < strlen(string); ++i ) {
+	for ( std::size_t i = 0; i < strlen(string); ++i ) {
 		os << "═";
 	}
 	
@@ -19,7 +19,7 @@ void utility::print_block(const char * string, std::ostream & os)
 	
 	os << "╚";
 	
-	for ( unsigned i = 0; i < strlen(string); ++i ) {
+	for ( std::size_t i = 0; i < strlen(string); ++i ) {
 		os << "═";
 	}
 	

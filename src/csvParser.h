@@ -22,7 +22,7 @@
 /**
  * @class CsvParser
  *
- * @brief Class providing methods to read numeric content from a .csv file
+ * @brief Class providing methods to read @b numeric content from a .csv file
  * and to store it in @ref Eigen matrices or vectors.
  *
  */
@@ -49,63 +49,63 @@ class CsvParser
 		 * @name Getter methods
 		 * @{
 		 */
-		inline const unsigned & nRows() const;
-		inline const unsigned & nCols() const;
+		inline const Index & nRows() const;
+		inline const Index & nCols() const;
 		/**
 		 * @}
 		 */
 		
 		/**
 		 * @brief Method to import a row from the input file.
-		 * @param[in] index : the row index.
+		 * @param[in] index : the row Index.
 		 * @returns a row vector containing the content read.
 		 */
-		RowVectorXd importRow      (const unsigned                        &);
+		RowVectorXr importRow      (const Index                        &);
 		/**
 		 * @brief Method to import multiple rows from the input file.
-		 * @param[in] indexes : initializer list containing the row indexes (e.g. something like {1, 3, 4}).
+		 * @param[in] indexes : initializer list containing the row Indexes (e.g. something like {1, 3, 4}).
 		 * @returns a matrix containing the content read (row by row).
 		 */
-		MatrixXd    importRows     (const std::initializer_list<unsigned> &);
+		MatrixXr    importRows     (const std::initializer_list<Index> &);
 		/**
 		 * @brief Method to import the first @a nRows rows from the input file.
 		 * @param[in] nRows : the number of rows to import.
 		 * @returns a matrix containing the content read (row by row).
 		 */
-		MatrixXd    importFirstRows(const unsigned                        &);
+		MatrixXr    importFirstRows(const Index                        &);
 		
 		/**
 		 * @brief Method to import a column from the input file.
-		 * @param[in] index : the column index.
+		 * @param[in] index : the column Index.
 		 * @returns a column vector containing the content read.
 		 */
-		VectorXd    importCol      (const unsigned                        &);
+		VectorXr    importCol      (const Index                        &);
 		/**
 		 * @brief Method to import multiple columns from the input file.
-		 * @param[in] indexes : initializer list containing the column indexes (e.g. something like {1, 3, 4}).
+		 * @param[in] indexes : initializer list containing the column Indexes (e.g. something like {1, 3, 4}).
 		 * @returns a matrix containing the content read (column by column).
 		 */
-		MatrixXd    importCols     (const std::initializer_list<unsigned> &);
+		MatrixXr    importCols     (const std::initializer_list<Index> &);
 		/**
 		 * @brief Method to import the first @a nCols columns from the input file.
 		 * @param[in] nCols : the number of columns to import.
 		 * @returns a matrix containing the content read (column by column).
 		 */
-		MatrixXd    importFirstCols(const unsigned                        &);
+		MatrixXr    importFirstCols(const Index                        &);
 		
 		/**
 		 * @brief Method to import a single cell from the input file.
-		 * @param[in] rowIndex : the cell row index.
-		 * @param[in] colIndex : the cell column index.
+		 * @param[in] rowIndex : the cell row Index.
+		 * @param[in] colIndex : the cell column Index.
 		 * @returns a scalar containing the value read.
 		 */
-		double      importCell     (const unsigned &, const unsigned &);
+		Real      importCell     (const Index &, const Index &);
 		
 		/**
 		 * @brief Method to import the whole input file.
 		 * @returns a matrix containing the content read (cell by cell).
 		 */
-		MatrixXd    importAll      ();
+		MatrixXr    importAll      ();
 		
 	private:
 		/**
@@ -113,9 +113,9 @@ class CsvParser
 		 */
 		void reset();
 		
-		bool     hasHeaders_;	/**< @brief bool to determine if first row contains headers or not. */
-		unsigned nRows_     ;	/**< @brief Number of rows in the input file. */
-		unsigned nCols_     ;	/**< @brief Number of columns in the input file. */
+		bool  hasHeaders_;	/**< @brief bool to determine if first row contains headers or not. */
+		Index nRows_     ;	/**< @brief Number of rows in the input file. */
+		Index nCols_     ;	/**< @brief Number of columns in the input file. */
 		
 		std::ifstream input_;	/**< @brief Input stream to @a input_filename. */
 		std::string   line_ ;	/**< @brief Auxiliary variable to store currently processed line. */
@@ -124,12 +124,12 @@ class CsvParser
 };
 
 // Implementations.
-inline const unsigned & CsvParser::nRows() const
+inline const Index & CsvParser::nRows() const
 {
 	return nRows_;
 }
 
-inline const unsigned & CsvParser::nCols() const
+inline const Index & CsvParser::nCols() const
 {
 	return nCols_;
 }

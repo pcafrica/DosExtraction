@@ -12,8 +12,6 @@
 #ifndef TYPEDEFS_H
 #define TYPEDEFS_H
 
-#include "physicalConstants.h"
-
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 
@@ -22,9 +20,18 @@
 #include <iostream>
 #include <fstream>
 
+#define Real  double	/**< @brief Pre-processor macro for real numbers. */
+#define Index unsigned	/**< @brief Pre-processor macro for indexing variables. */
+
+#include "physicalConstants.h"
+
 using namespace Eigen;
 
-typedef SparseMatrix<double> SparseXd;	/**< @brief Typedef for sparse dynamic-sized matrices. */
+typedef Matrix<Real, Dynamic, Dynamic> MatrixXr   ;	/**< @brief Typedef for dense real-valued dynamic-sized matrices. */
+typedef Matrix<Real, Dynamic,       1> VectorXr   ;	/**< @brief Typedef for dense real-valued dynamic-sized column vectors. */
+typedef Matrix<Real,       1, Dynamic> RowVectorXr;	/**< @brief Typedef for dense real-valued dynamic-sized row vectors. */
+
+typedef SparseMatrix<Real>             SparseXr   ;	/**< @brief Typedef for sparse real-valued dynamic-sized matrices. */
 
 /**
  * @brief Template alias for @ref Eigen vectors.
@@ -34,21 +41,21 @@ template<typename ScalarType>
 using VectorX = Matrix<ScalarType, Dynamic, 1>;
 
 /**
- * @brief Template alias for an @ref Eigen vector of pairs: (@a ScalarType, unsigned int).
+ * @brief Template alias for an @ref Eigen vector of pairs: (@a ScalarType, @a Index).
  * @tparam ScalarType : the scalar type.
  */
 template<typename T>
-using VectorXpair = VectorX<std::pair<T, unsigned> >;
+using VectorXpair = VectorX<std::pair<T, Index> >;
 
 namespace constants
 {
 	const unsigned PARAMS_NO = 22;	/**< @brief Number of parameters required in input file. */
 	
 	// From <cmath> library.
-	const double      PI = M_PI              ;	/**< @brief @f$ \pi @f$. */
-	const double SQRT_PI = std::sqrt(PI)     ;	/**< @brief @f$ \sqrt{\pi} @f$. */
-	const double   PI_M4 = 0.7511255444649425;	/**< @brief @f$ \pi^{-\frac{1}{4}} @f$. */
-	const double  SQRT_2 = std::sqrt(2)      ;	/**< @brief @f$ \sqrt{2} @f$. */
+	const Real      PI = M_PI              ;	/**< @brief @f$ \pi @f$. */
+	const Real SQRT_PI = std::sqrt(PI)     ;	/**< @brief @f$ \sqrt{\pi} @f$. */
+	const Real   PI_M4 = 0.7511255444649425;	/**< @brief @f$ \pi^{-\frac{1}{4}} @f$. */
+	const Real  SQRT_2 = std::sqrt(2)      ;	/**< @brief @f$ \sqrt{2} @f$. */
 }
 
 /**

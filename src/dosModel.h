@@ -78,7 +78,7 @@ class DosModel
 		 * @param[in]  C_simulated    : simulated capacitance values.
 		 */
 		void post_process(const GetPot &, const std::string &, std::ostream &, std::ostream &,
-		                  const VectorXd &, const VectorXd &, const VectorXd &, const VectorXd &) const;
+		                  const VectorXr &, const VectorXr &, const VectorXr &, const VectorXr &) const;
 		                  
 		/**
 		 * @brief Defines commands to generate @ref Gnuplot output files.

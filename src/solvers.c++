@@ -1,25 +1,25 @@
 #include "solvers.h"
 
-PdeSolver1D::PdeSolver1D(VectorXd & mesh)
+PdeSolver1D::PdeSolver1D(VectorXr & mesh)
 	: mesh_(mesh), nNodes_(mesh_.size()) {}
 
-Bim1D::Bim1D(VectorXd & mesh)
+Bim1D::Bim1D(VectorXr & mesh)
 	: PdeSolver1D(mesh) {}
 
-VectorXd Bim1D::log_mean(const VectorXd & x1, const VectorXd & x2)
+VectorXr Bim1D::log_mean(const VectorXr & x1, const VectorXr & x2)
 {
 	assert( x1.size() == x2.size() );
 	assert( x1.minCoeff() >= 0.0 );
 	assert( x2.minCoeff() >= 0.0 );
 	
-	VectorXd log_mean = VectorXd::Zero( x1.size() );
+	VectorXr log_mean = VectorXr::Zero( x1.size() );
 	
 	for ( int i = 0; i < log_mean.size(); ++i ) {
 		if ( x1(i) == 0.0 || x2(i) == 0.0 ) {
 			log_mean(i) = 0.0;
 		} else if ( x1(i) == x2(i) ) {
 			log_mean(i) = x1(i);
-		} else if ( std::abs( x2(i) - x1(i) ) < 100 * std::numeric_limits<double>::epsilon() ) {	// Small values.
+		} else if ( std::abs( x2(i) - x1(i) ) < 100 * std::numeric_limits<Real>::epsilon() ) {	// Small values.
 			log_mean(i) = 0.5 * ( x1(i) + x2(i) );
 		} else {
 			log_mean(i) = ( x2(i) - x1(i) ) / std::log( x2(i) / x1(i) );
@@ -29,14 +29,14 @@ VectorXd Bim1D::log_mean(const VectorXd & x1, const VectorXd & x2)
 	return log_mean;
 }
 
-std::pair<VectorXd, VectorXd> Bim1D::bernoulli(const VectorXd & x)
+std::pair<VectorXr, VectorXr> Bim1D::bernoulli(const VectorXr & x)
 {
-	VectorXd bp = VectorXd::Zero( x.size() );
-	VectorXd bn = VectorXd::Zero( x.size() );
+	VectorXr bp = VectorXr::Zero( x.size() );
+	VectorXr bn = VectorXr::Zero( x.size() );
 	
-	double lim = 1.0e-2;
+	Real lim = 1.0e-2;
 	
-	VectorXd ax = x.cwiseAbs();
+	VectorXr ax = x.cwiseAbs();
 	
 	for ( int i = 0; i < x.size(); ++i ) {
 		if ( x(i) == 0.0 ) {
@@ -54,10 +54,10 @@ std::pair<VectorXd, VectorXd> Bim1D::bernoulli(const VectorXd & x)
 			bp(i) = x(i) / ( std::exp(x(i)) - 1.0 );
 			bn(i) = x(i) + bp(i);
 		} else {	//  if ( ax(i) <= lim ). Small values: Taylor expansion.
-			double  j = 1.0;
-			double fp = 1.0;
-			double fn = 1.0;
-			double df = 1.0;
+			Real  j = 1.0;
+			Real fp = 1.0;
+			Real fn = 1.0;
+			Real df = 1.0;
 			int segno = 1  ;
 			
 			while ( std::abs(df) > 1.0e-16 ) {
@@ -76,7 +76,7 @@ std::pair<VectorXd, VectorXd> Bim1D::bernoulli(const VectorXd & x)
 	return std::make_pair(bp, bn);
 }
 
-void Bim1D::assembleAdvDiff(const VectorXd & alpha, const VectorXd & gamma, const VectorXd & eta, const VectorXd & beta)
+void Bim1D::assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma, const VectorXr & eta, const VectorXr & beta)
 {
 	assert( alpha.size() == nNodes_ - 1 );
 	assert( gamma.size() == nNodes_     );
@@ -84,9 +84,9 @@ void Bim1D::assembleAdvDiff(const VectorXd & alpha, const VectorXd & gamma, cons
 	
 	assert( beta.size() == 1 || beta.size() == nNodes_ || beta.size() == nNodes_ - 1 );
 	
-	VectorXd area_k = mesh_.segment(1, mesh_.size() - 1) - mesh_.segment(0, mesh_.size() - 1);
+	VectorXr area_k = mesh_.segment(1, mesh_.size() - 1) - mesh_.segment(0, mesh_.size() - 1);
 	
-	VectorXd v_k = VectorXd::Zero( nNodes_ - 1 );
+	VectorXr v_k = VectorXr::Zero( nNodes_ - 1 );
 	
 	if ( beta.size() == 1) {
 		v_k.fill(0.0);
@@ -96,19 +96,19 @@ void Bim1D::assembleAdvDiff(const VectorXd & alpha, const VectorXd & gamma, cons
 		v_k = beta.segment(1, beta.size() - 1) - beta.segment(0, beta.size() - 1);
 	}
 	
-	VectorXd gammaEta_k = VectorXd::Zero( nNodes_ - 1 );
+	VectorXr gammaEta_k = VectorXr::Zero( nNodes_ - 1 );
 	{
-		VectorXd temp = gamma.cwiseProduct(eta);
+		VectorXr temp = gamma.cwiseProduct(eta);
 		gammaEta_k = log_mean(temp.segment(0, temp.size() - 1), temp.segment(1, temp.size() - 1));
 	}
 	
-	VectorXd eta_k = log_mean(eta.segment(0, eta.size() - 1), eta.segment(1, eta.size() - 1));
-	VectorXd  dEta = eta.segment(1, eta.size() - 1) - eta.segment(0, eta.size() - 1);
-	VectorXd   c_k = alpha.cwiseProduct(gammaEta_k).cwiseProduct(eta_k).cwiseQuotient(area_k);
+	VectorXr eta_k = log_mean(eta.segment(0, eta.size() - 1), eta.segment(1, eta.size() - 1));
+	VectorXr  dEta = eta.segment(1, eta.size() - 1) - eta.segment(0, eta.size() - 1);
+	VectorXr   c_k = alpha.cwiseProduct(gammaEta_k).cwiseProduct(eta_k).cwiseQuotient(area_k);
 	
-	std::pair<VectorXd, VectorXd> bp_bn_k = bernoulli( (v_k - dEta).cwiseQuotient(eta_k) );
-	VectorXd & bp = bp_bn_k.first ;
-	VectorXd & bn = bp_bn_k.second;
+	std::pair<VectorXr, VectorXr> bp_bn_k = bernoulli( (v_k - dEta).cwiseQuotient(eta_k) );
+	VectorXr & bp = bp_bn_k.first ;
+	VectorXr & bn = bp_bn_k.second;
 	
 	// Assembly
 	AdvDiff_.resize( nNodes_, nNodes_ );
@@ -129,21 +129,21 @@ void Bim1D::assembleAdvDiff(const VectorXd & alpha, const VectorXd & gamma, cons
 	return;
 }
 
-void Bim1D::assembleStiff(const VectorXd & eps, const VectorXd & kappa)
+void Bim1D::assembleStiff(const VectorXr & eps, const VectorXr & kappa)
 {
-	assembleAdvDiff( eps, kappa, VectorXd::Ones( nNodes_ ), VectorXd::Zero( 1 ) );
+	assembleAdvDiff( eps, kappa, VectorXr::Ones( nNodes_ ), VectorXr::Zero( 1 ) );
 	
 	Stiff_ = AdvDiff_;
 	
 	return;
 }
 
-void Bim1D::assembleMass(const VectorXd & delta, const VectorXd & zeta)
+void Bim1D::assembleMass(const VectorXr & delta, const VectorXr & zeta)
 {
 	assert( delta.size() == nNodes_ - 1 );
 	assert( zeta .size() == nNodes_     );
 	
-	VectorXd h = delta.cwiseProduct( mesh_.segment(1, mesh_.size() - 1) - mesh_.segment(0, mesh_.size() - 1) );
+	VectorXr h = delta.cwiseProduct( mesh_.segment(1, mesh_.size() - 1) - mesh_.segment(0, mesh_.size() - 1) );
 	
 	// Assembly
 	Mass_.resize( nNodes_, nNodes_ );
@@ -159,10 +159,10 @@ void Bim1D::assembleMass(const VectorXd & delta, const VectorXd & zeta)
 	return;
 }
 
-NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const unsigned & maxIterationsNo, const double & tolerance)
+NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const Index & maxIterationsNo, const Real & tolerance)
 	: solver_(solver), maxIterationsNo_(maxIterationsNo), tolerance_(tolerance), qTot_(0.0), cTot_(0.0)/*, cTot_n_(0.0) */ {}
 
-void NonLinearPoisson1D::apply(const VectorXd & mesh, const VectorXd & init_guess, Charge & charge_fun)
+void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_guess, Charge & charge_fun)
 {
 	assert( init_guess    .size() == mesh.size() );
 	assert( solver_.Stiff_.rows() == mesh.size() );
@@ -170,53 +170,61 @@ void NonLinearPoisson1D::apply(const VectorXd & mesh, const VectorXd & init_gues
 	assert( solver_.Mass_ .rows() == mesh.size() );
 	assert( solver_.Mass_ .cols() == mesh.size() );
 	
-	phi_  = VectorXd::Zero( mesh.size() );
-	norm_ = VectorXd::Zero( maxIterationsNo_ );
+	phi_  = VectorXr::Zero( mesh.size() );
+	norm_ = VectorXr::Zero( maxIterationsNo_ );
 	
 	phi_ = init_guess;
-	VectorXd phiOld = phi_;
+	VectorXr phiOld = phi_;
 	
-	VectorXd  charge = VectorXd::Zero( mesh.size() );
-	VectorXd dcharge = VectorXd::Zero( mesh.size() );
+	VectorXr  charge = VectorXr::Zero( mesh.size() );
+	VectorXr dcharge = VectorXr::Zero( mesh.size() );
 	
-	SparseXd    Jac( solver_.Stiff_.rows()    , solver_.Stiff_.rows()     );
-	SparseXd CutJac( solver_.Stiff_.rows() - 1, solver_.Stiff_.rows() - 1 );
+	SparseXr    Jac( solver_.Stiff_.rows()    , solver_.Stiff_.rows()     );
+	SparseXr CutJac( solver_.Stiff_.rows() - 1, solver_.Stiff_.rows() - 1 );
 	
-	BiCGSTAB<SparseMatrix<double>, IncompleteLUT<double> > systemSolver;	// Initialize system solver.
+	BiCGSTAB<SparseMatrix<Real>, IncompleteLUT<Real> > systemSolver;	// Initialize system solver.
 	systemSolver.setMaxIterations(1000);
 	
 	// Newton loop.
-	for ( unsigned k = 0; k < maxIterationsNo_; ++k ) {
-		phiOld.segment(1, phiOld.size() - 2) = phi_.segment(1, phiOld.size() - 2);
+	{
+		Index k = 0;
 		
-		charge  = charge_fun. charge(phiOld);
-		dcharge = charge_fun.dcharge(phiOld);
-		
-		// System assembly.
-		Jac    = computeJac(dcharge);
-		CutJac = Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2);
-		
-		systemSolver.compute(CutJac);
-		
-		VectorXd res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge).segment(1, phiOld.size() - 2);
-		
-		VectorXd dphi = - systemSolver.solve(res);
-		
-		/* for ( int i = 0; i < dphi.size(); ++i ) {	// Tolerance cut-off.
-			if ( dphi(i) > tolerance_ ) {
-				dphi(i) = tolerance_;
-			} else if ( dphi(i) < - tolerance_ ) {
-				dphi(i) = - tolerance_;
+		for ( ; k < maxIterationsNo_; ++k ) {
+			phiOld.segment(1, phiOld.size() - 2) = phi_.segment(1, phiOld.size() - 2);
+			
+			charge  = charge_fun. charge(phiOld);
+			dcharge = charge_fun.dcharge(phiOld);
+			
+			// System assembly.
+			Jac    = computeJac(dcharge);
+			CutJac = Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2);
+			
+			systemSolver.compute(CutJac);
+			
+			VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge).segment(1, phiOld.size() - 2);
+			
+			VectorXr dphi = - systemSolver.solve(res);
+			
+			/* for ( int i = 0; i < dphi.size(); ++i ) {	// Tolerance cut-off.
+				if ( dphi(i) > tolerance_ ) {
+					dphi(i) = tolerance_;
+				} else if ( dphi(i) < - tolerance_ ) {
+					dphi(i) = - tolerance_;
+				}
+			} */
+			
+			// Newton step.
+			phi_.segment(1, phi_.size() - 2) += dphi;	// Dirichlet conditions on boundary.
+			
+			norm_(k) = dphi.cwiseAbs().maxCoeff();
+			
+			if ( norm_(k) < tolerance_ ) {
+				break;
 			}
-		} */
+		}
 		
-		// Newton step.
-		phi_.segment(1, phi_.size() - 2) += dphi;	// Dirichlet conditions on boundary.
-		
-		norm_(k) = dphi.cwiseAbs().maxCoeff();
-		
-		if ( norm_(k) < tolerance_ ) {
-			break;
+		if ( k != maxIterationsNo_ - 1 ) {
+			norm_.conservativeResize(k + 1);
 		}
 	}
 	
@@ -236,10 +244,10 @@ void NonLinearPoisson1D::apply(const VectorXd & mesh, const VectorXd & init_gues
 	
 	systemSolver.compute(CutJac);
 	
-	VectorXd u = VectorXd::LinSpaced(phi_.size(), 0, 1);
+	VectorXr u = VectorXr::LinSpaced(phi_.size(), 0, 1);
 	
 	// Constant term: b = - Jac(2:end-1, [1 end]) * u([1 end]');
-	VectorXd b = VectorXd::Zero( Jac.rows() - 2 );
+	VectorXr b = VectorXr::Zero( Jac.rows() - 2 );
 	
 	for ( int i = 1; i < Jac.rows() - 1; ++i ) {
 		if ( Jac.coeff(i, 0) != 0.0 || Jac.coeff(i, Jac.cols() - 1) != 0.0 ) {
@@ -262,11 +270,11 @@ void NonLinearPoisson1D::apply(const VectorXd & mesh, const VectorXd & init_gues
 	// cTot_n_ += cTot_;
 }
 
-SparseXd NonLinearPoisson1D::computeJac(const VectorXd & x) const
+SparseXr NonLinearPoisson1D::computeJac(const VectorXr & x) const
 {
 	assert( x.size() == solver_.Stiff_.rows() );
 	
-	SparseXd Jac( x.size(), x.size() );
+	SparseXr Jac( x.size(), x.size() );
 	
 	Jac = solver_.Stiff_;
 	

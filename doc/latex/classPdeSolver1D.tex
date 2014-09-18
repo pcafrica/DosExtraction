@@ -22,46 +22,46 @@ Inheritance diagram for Pde\-Solver1\-D\-:\begin{figure}[H]
 \hypertarget{classPdeSolver1D_a9e578d43e38517bade5c0911b7906e73}{\hyperlink{classPdeSolver1D_a9e578d43e38517bade5c0911b7906e73}{Pde\-Solver1\-D} ()=delete}\label{classPdeSolver1D_a9e578d43e38517bade5c0911b7906e73}
 
 \begin{DoxyCompactList}\small\item\em Default constructor (deleted since it is required to specify the mesh). \end{DoxyCompactList}\item 
-\hyperlink{classPdeSolver1D_a2fb4efbf180a22aa8d8404765a3a7aa5}{Pde\-Solver1\-D} (Vector\-Xd \&)
+\hyperlink{classPdeSolver1D_a9b9afdddc0715af15ffcffa1a29a8c0d}{Pde\-Solver1\-D} (\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hypertarget{classPdeSolver1D_ae52bcba084b9cc8daa575e3f06d9271a}{virtual \hyperlink{classPdeSolver1D_ae52bcba084b9cc8daa575e3f06d9271a}{$\sim$\-Pde\-Solver1\-D} ()=default}\label{classPdeSolver1D_ae52bcba084b9cc8daa575e3f06d9271a}
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
-virtual void \hyperlink{classPdeSolver1D_aa325f9e11f8b91cb22afca860888300d}{assemble\-Adv\-Diff} (const Vector\-Xd \&alpha, const Vector\-Xd \&gamma, const Vector\-Xd \&eta, const Vector\-Xd \&beta)=0
+virtual void \hyperlink{classPdeSolver1D_a8eef3ec8fa2d444e8d0d1815d81e81f9}{assemble\-Adv\-Diff} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&alpha, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&gamma, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&eta, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&beta)=0
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for an advection-\/diffusion term. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classPdeSolver1D_af75110b5d68e91b62cfc3e7e4e969a32}{assemble\-Stiff} (const Vector\-Xd \&eps, const Vector\-Xd \&kappa)=0
+virtual void \hyperlink{classPdeSolver1D_a0283447d8d645afde9fadb6adf224ee5}{assemble\-Stiff} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&eps, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&kappa)=0
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for a diffusion term. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classPdeSolver1D_aca065bfba5136470a4caf30fd7927e37}{assemble\-Mass} (const Vector\-Xd \&delta, const Vector\-Xd \&zeta)=0
+virtual void \hyperlink{classPdeSolver1D_aa3dadbe748bfb8b897425e46500ab33b}{assemble\-Mass} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&delta, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&zeta)=0
 \begin{DoxyCompactList}\small\item\em Assemble the matrix for a reaction term. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}{\bf Getter methods}\par
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPdeSolver1D_a30abfde92c6d3c03a976287e968ed310}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Adv\-Diff} () const }\label{classPdeSolver1D_a30abfde92c6d3c03a976287e968ed310}
+\hypertarget{classPdeSolver1D_aacae28f5283dba7ae6f396e4722b390a}{const \hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \& {\bfseries Adv\-Diff} () const }\label{classPdeSolver1D_aacae28f5283dba7ae6f396e4722b390a}
 
 \item 
-\hypertarget{classPdeSolver1D_ae27e38d5d2568ffdac3d4fd6b8399386}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Stiff} () const }\label{classPdeSolver1D_ae27e38d5d2568ffdac3d4fd6b8399386}
+\hypertarget{classPdeSolver1D_a453454d0773e196945f73967e4102ade}{const \hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \& {\bfseries Stiff} () const }\label{classPdeSolver1D_a453454d0773e196945f73967e4102ade}
 
 \item 
-\hypertarget{classPdeSolver1D_ad68939b3aa2acb790cd4df84ea80b931}{const \hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \& {\bfseries Mass} () const }\label{classPdeSolver1D_ad68939b3aa2acb790cd4df84ea80b931}
+\hypertarget{classPdeSolver1D_a48f0820eba081a12bed887613dbf7187}{const \hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \& {\bfseries Mass} () const }\label{classPdeSolver1D_a48f0820eba081a12bed887613dbf7187}
 
 \end{DoxyCompactItemize}
 \end{Indent}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPdeSolver1D_ac0185cf9f8cdf64273950a48d63df3f7}{Vector\-Xd \hyperlink{classPdeSolver1D_ac0185cf9f8cdf64273950a48d63df3f7}{mesh\-\_\-}}\label{classPdeSolver1D_ac0185cf9f8cdf64273950a48d63df3f7}
+\hypertarget{classPdeSolver1D_a99efe6ddef2043e5aa5d0c14aa1e468b}{\hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classPdeSolver1D_a99efe6ddef2043e5aa5d0c14aa1e468b}{mesh\-\_\-}}\label{classPdeSolver1D_a99efe6ddef2043e5aa5d0c14aa1e468b}
 
 \begin{DoxyCompactList}\small\item\em The mesh. \end{DoxyCompactList}\item 
-\hypertarget{classPdeSolver1D_a8f4bb43717322579edc12974700aec98}{unsigned \hyperlink{classPdeSolver1D_a8f4bb43717322579edc12974700aec98}{n\-Nodes\-\_\-}}\label{classPdeSolver1D_a8f4bb43717322579edc12974700aec98}
+\hypertarget{classPdeSolver1D_a574676917a0d7d70140f4ed29bb1e8b4}{\hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \hyperlink{classPdeSolver1D_a574676917a0d7d70140f4ed29bb1e8b4}{n\-Nodes\-\_\-}}\label{classPdeSolver1D_a574676917a0d7d70140f4ed29bb1e8b4}
 
 \begin{DoxyCompactList}\small\item\em Number of nodes that form the mesh. \end{DoxyCompactList}\item 
-\hypertarget{classPdeSolver1D_a2febd884c8758db9fd346a40d81671eb}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \hyperlink{classPdeSolver1D_a2febd884c8758db9fd346a40d81671eb}{Adv\-Diff\-\_\-}}\label{classPdeSolver1D_a2febd884c8758db9fd346a40d81671eb}
+\hypertarget{classPdeSolver1D_aab986b3e8e274bb85144dad225dcb31d}{\hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \hyperlink{classPdeSolver1D_aab986b3e8e274bb85144dad225dcb31d}{Adv\-Diff\-\_\-}}\label{classPdeSolver1D_aab986b3e8e274bb85144dad225dcb31d}
 
 \begin{DoxyCompactList}\small\item\em Matrix for an advection-\/diffusion term. \end{DoxyCompactList}\item 
-\hypertarget{classPdeSolver1D_a63de5de1757c8bc5cd0941030f9794e3}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \hyperlink{classPdeSolver1D_a63de5de1757c8bc5cd0941030f9794e3}{Stiff\-\_\-}}\label{classPdeSolver1D_a63de5de1757c8bc5cd0941030f9794e3}
+\hypertarget{classPdeSolver1D_a7c5250f1553811e6a98dd771c2699c4d}{\hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \hyperlink{classPdeSolver1D_a7c5250f1553811e6a98dd771c2699c4d}{Stiff\-\_\-}}\label{classPdeSolver1D_a7c5250f1553811e6a98dd771c2699c4d}
 
 \begin{DoxyCompactList}\small\item\em Stiffness matrix. \end{DoxyCompactList}\item 
-\hypertarget{classPdeSolver1D_aa0e70aa868721f4bbf1fe7ec57e097a9}{\hyperlink{typedefs_8h_a86edf437f454f4dd79d5422366403b7f}{Sparse\-Xd} \hyperlink{classPdeSolver1D_aa0e70aa868721f4bbf1fe7ec57e097a9}{Mass\-\_\-}}\label{classPdeSolver1D_aa0e70aa868721f4bbf1fe7ec57e097a9}
+\hypertarget{classPdeSolver1D_a3c0eafffe0b07ee6e232899c2270f450}{\hyperlink{typedefs_8h_a6d3b7db3fa8171d0e743df848524c269}{Sparse\-Xr} \hyperlink{classPdeSolver1D_a3c0eafffe0b07ee6e232899c2270f450}{Mass\-\_\-}}\label{classPdeSolver1D_a3c0eafffe0b07ee6e232899c2270f450}
 
 \begin{DoxyCompactList}\small\item\em Mass matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
@@ -82,13 +82,13 @@ Definition at line 31 of file solvers.\-h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPdeSolver1D_a2fb4efbf180a22aa8d8404765a3a7aa5}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!Pde\-Solver1\-D@{Pde\-Solver1\-D}}
+\hypertarget{classPdeSolver1D_a9b9afdddc0715af15ffcffa1a29a8c0d}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!Pde\-Solver1\-D@{Pde\-Solver1\-D}}
 \index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!PdeSolver1D@{Pde\-Solver1\-D}}
 \subsubsection[{Pde\-Solver1\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pde\-Solver1\-D} (
 \begin{DoxyParamCaption}
-\item[{Vector\-Xd \&}]{mesh}
+\item[{{\bf Vector\-Xr} \&}]{mesh}
 \end{DoxyParamCaption}
-)}}\label{classPdeSolver1D_a2fb4efbf180a22aa8d8404765a3a7aa5}
+)}}\label{classPdeSolver1D_a9b9afdddc0715af15ffcffa1a29a8c0d}
 
 
 Constructor. 
@@ -105,16 +105,16 @@ Definition at line 3 of file solvers.\-c++.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPdeSolver1D_aa325f9e11f8b91cb22afca860888300d}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Adv\-Diff@{assemble\-Adv\-Diff}}
+\hypertarget{classPdeSolver1D_a8eef3ec8fa2d444e8d0d1815d81e81f9}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Adv\-Diff@{assemble\-Adv\-Diff}}
 \index{assemble\-Adv\-Diff@{assemble\-Adv\-Diff}!PdeSolver1D@{Pde\-Solver1\-D}}
 \subsubsection[{assemble\-Adv\-Diff}]{\setlength{\rightskip}{0pt plus 5cm}virtual void assemble\-Adv\-Diff (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{alpha, }
-\item[{const Vector\-Xd \&}]{gamma, }
-\item[{const Vector\-Xd \&}]{eta, }
-\item[{const Vector\-Xd \&}]{beta}
+\item[{const {\bf Vector\-Xr} \&}]{alpha, }
+\item[{const {\bf Vector\-Xr} \&}]{gamma, }
+\item[{const {\bf Vector\-Xr} \&}]{eta, }
+\item[{const {\bf Vector\-Xr} \&}]{beta}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_aa325f9e11f8b91cb22afca860888300d}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_a8eef3ec8fa2d444e8d0d1815d81e81f9}
 
 
 Assemble the matrix for an advection-\/diffusion term. 
@@ -134,16 +134,16 @@ Build the matrix for the advection-\/diffusion problem\-: $ -\nabla\cdot\left(\a
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classBim1D_a70f740fd42f21c2284f4c67c94b36ef3}{Bim1\-D}.
+Implemented in \hyperlink{classBim1D_a87a3b65a453d6fee3aa04e0b63b3b16d}{Bim1\-D}.
 
-\hypertarget{classPdeSolver1D_af75110b5d68e91b62cfc3e7e4e969a32}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Stiff@{assemble\-Stiff}}
+\hypertarget{classPdeSolver1D_a0283447d8d645afde9fadb6adf224ee5}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Stiff@{assemble\-Stiff}}
 \index{assemble\-Stiff@{assemble\-Stiff}!PdeSolver1D@{Pde\-Solver1\-D}}
 \subsubsection[{assemble\-Stiff}]{\setlength{\rightskip}{0pt plus 5cm}virtual void assemble\-Stiff (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{eps, }
-\item[{const Vector\-Xd \&}]{kappa}
+\item[{const {\bf Vector\-Xr} \&}]{eps, }
+\item[{const {\bf Vector\-Xr} \&}]{kappa}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_af75110b5d68e91b62cfc3e7e4e969a32}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_a0283447d8d645afde9fadb6adf224ee5}
 
 
 Assemble the matrix for a diffusion term. 
@@ -159,16 +159,16 @@ Build the matrix for the diffusion problem\-: $ -\nabla\cdot\left(\epsilon\cdot\
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classBim1D_ad16a59cddd56a41185163574507dfdef}{Bim1\-D}.
+Implemented in \hyperlink{classBim1D_a9afebaa0bb7d919ece20a533ef000921}{Bim1\-D}.
 
-\hypertarget{classPdeSolver1D_aca065bfba5136470a4caf30fd7927e37}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Mass@{assemble\-Mass}}
+\hypertarget{classPdeSolver1D_aa3dadbe748bfb8b897425e46500ab33b}{\index{Pde\-Solver1\-D@{Pde\-Solver1\-D}!assemble\-Mass@{assemble\-Mass}}
 \index{assemble\-Mass@{assemble\-Mass}!PdeSolver1D@{Pde\-Solver1\-D}}
 \subsubsection[{assemble\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}virtual void assemble\-Mass (
 \begin{DoxyParamCaption}
-\item[{const Vector\-Xd \&}]{delta, }
-\item[{const Vector\-Xd \&}]{zeta}
+\item[{const {\bf Vector\-Xr} \&}]{delta, }
+\item[{const {\bf Vector\-Xr} \&}]{zeta}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_aca065bfba5136470a4caf30fd7927e37}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classPdeSolver1D_aa3dadbe748bfb8b897425e46500ab33b}
 
 
 Assemble the matrix for a reaction term. 
@@ -184,7 +184,7 @@ Build the mass matrix for the reaction problem\-: $ \delta\cdot\zeta u = f $.
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classBim1D_aa99f58d5ec1d53891b11ea81adec6b92}{Bim1\-D}.
+Implemented in \hyperlink{classBim1D_afd5e07bb246bdacd59eefb7a3396e650}{Bim1\-D}.
 
 
 

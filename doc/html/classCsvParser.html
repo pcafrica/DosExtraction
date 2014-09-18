@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('classCsvParser.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('classCsvParser.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Class providing methods to read numeric content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors.  
+<p>Class providing methods to read <b>numeric</b> content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors.  
  <a href="classCsvParser.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="csvParser_8h_source.html">csvParser.h</a>&gt;</code></p>
@@ -138,37 +138,37 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a73aa36f7e9a832f184c98873c930e83e">~CsvParser</a> ()</td></tr>
 <tr class="memdesc:a73aa36f7e9a832f184c98873c930e83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor: close the input file. <br/></td></tr>
 <tr class="separator:a73aa36f7e9a832f184c98873c930e83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffc9952a2ceb0d2fd8216c0db327a63"><td class="memItemLeft" align="right" valign="top">RowVectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a1ffc9952a2ceb0d2fd8216c0db327a63">importRow</a> (const unsigned &amp;)</td></tr>
-<tr class="memdesc:a1ffc9952a2ceb0d2fd8216c0db327a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a row from the input file.  <a href="#a1ffc9952a2ceb0d2fd8216c0db327a63">More...</a><br/></td></tr>
-<tr class="separator:a1ffc9952a2ceb0d2fd8216c0db327a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc038e4b8d0db2b62d97a6d9fc639d7"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#aecc038e4b8d0db2b62d97a6d9fc639d7">importRows</a> (const std::initializer_list&lt; unsigned &gt; &amp;)</td></tr>
-<tr class="memdesc:aecc038e4b8d0db2b62d97a6d9fc639d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import multiple rows from the input file.  <a href="#aecc038e4b8d0db2b62d97a6d9fc639d7">More...</a><br/></td></tr>
-<tr class="separator:aecc038e4b8d0db2b62d97a6d9fc639d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade6a3f28e28a86dcad0251d16b9a59b9"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ade6a3f28e28a86dcad0251d16b9a59b9">importFirstRows</a> (const unsigned &amp;)</td></tr>
-<tr class="memdesc:ade6a3f28e28a86dcad0251d16b9a59b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the first <em>nRows</em> rows from the input file.  <a href="#ade6a3f28e28a86dcad0251d16b9a59b9">More...</a><br/></td></tr>
-<tr class="separator:ade6a3f28e28a86dcad0251d16b9a59b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca9f7023c42fcabe6e31e54d6cfdc16"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a3ca9f7023c42fcabe6e31e54d6cfdc16">importCol</a> (const unsigned &amp;)</td></tr>
-<tr class="memdesc:a3ca9f7023c42fcabe6e31e54d6cfdc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a column from the input file.  <a href="#a3ca9f7023c42fcabe6e31e54d6cfdc16">More...</a><br/></td></tr>
-<tr class="separator:a3ca9f7023c42fcabe6e31e54d6cfdc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c5604cd3cd6061b9c7e7c3e8efc779"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a25c5604cd3cd6061b9c7e7c3e8efc779">importCols</a> (const std::initializer_list&lt; unsigned &gt; &amp;)</td></tr>
-<tr class="memdesc:a25c5604cd3cd6061b9c7e7c3e8efc779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import multiple columns from the input file.  <a href="#a25c5604cd3cd6061b9c7e7c3e8efc779">More...</a><br/></td></tr>
-<tr class="separator:a25c5604cd3cd6061b9c7e7c3e8efc779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47d7037e91224c1d3e2817489d939bf8"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a47d7037e91224c1d3e2817489d939bf8">importFirstCols</a> (const unsigned &amp;)</td></tr>
-<tr class="memdesc:a47d7037e91224c1d3e2817489d939bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the first <em>nCols</em> columns from the input file.  <a href="#a47d7037e91224c1d3e2817489d939bf8">More...</a><br/></td></tr>
-<tr class="separator:a47d7037e91224c1d3e2817489d939bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa5332e0ec78d1f38dd54240dcc728fe"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#aaa5332e0ec78d1f38dd54240dcc728fe">importCell</a> (const unsigned &amp;, const unsigned &amp;)</td></tr>
-<tr class="memdesc:aaa5332e0ec78d1f38dd54240dcc728fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a single cell from the input file.  <a href="#aaa5332e0ec78d1f38dd54240dcc728fe">More...</a><br/></td></tr>
-<tr class="separator:aaa5332e0ec78d1f38dd54240dcc728fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4d7e0e1fe650b836e87387962297e86"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#af4d7e0e1fe650b836e87387962297e86">importAll</a> ()</td></tr>
-<tr class="memdesc:af4d7e0e1fe650b836e87387962297e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the whole input file.  <a href="#af4d7e0e1fe650b836e87387962297e86">More...</a><br/></td></tr>
-<tr class="separator:af4d7e0e1fe650b836e87387962297e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480e8570942d68f55cfae439e210e46e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#aaf38a491cc6d8aeb1c1f53f380789bad">RowVectorXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">importRow</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;)</td></tr>
+<tr class="memdesc:a480e8570942d68f55cfae439e210e46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a row from the input file.  <a href="#a480e8570942d68f55cfae439e210e46e">More...</a><br/></td></tr>
+<tr class="separator:a480e8570942d68f55cfae439e210e46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42817812d475d6a42dee592d5854b297"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a42817812d475d6a42dee592d5854b297">importRows</a> (const std::initializer_list&lt; <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &gt; &amp;)</td></tr>
+<tr class="memdesc:a42817812d475d6a42dee592d5854b297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import multiple rows from the input file.  <a href="#a42817812d475d6a42dee592d5854b297">More...</a><br/></td></tr>
+<tr class="separator:a42817812d475d6a42dee592d5854b297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad061e2e592b0f2d1b1f33c12fe0424d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ad061e2e592b0f2d1b1f33c12fe0424d6">importFirstRows</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;)</td></tr>
+<tr class="memdesc:ad061e2e592b0f2d1b1f33c12fe0424d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the first <em>nRows</em> rows from the input file.  <a href="#ad061e2e592b0f2d1b1f33c12fe0424d6">More...</a><br/></td></tr>
+<tr class="separator:ad061e2e592b0f2d1b1f33c12fe0424d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade7034e1a9dba4299e53a96d27aa836e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ade7034e1a9dba4299e53a96d27aa836e">importCol</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;)</td></tr>
+<tr class="memdesc:ade7034e1a9dba4299e53a96d27aa836e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a column from the input file.  <a href="#ade7034e1a9dba4299e53a96d27aa836e">More...</a><br/></td></tr>
+<tr class="separator:ade7034e1a9dba4299e53a96d27aa836e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ae981df8f4b1e9d5878a7be6a0c867"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a02ae981df8f4b1e9d5878a7be6a0c867">importCols</a> (const std::initializer_list&lt; <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &gt; &amp;)</td></tr>
+<tr class="memdesc:a02ae981df8f4b1e9d5878a7be6a0c867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import multiple columns from the input file.  <a href="#a02ae981df8f4b1e9d5878a7be6a0c867">More...</a><br/></td></tr>
+<tr class="separator:a02ae981df8f4b1e9d5878a7be6a0c867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bb8475e310605adc492fdd942d4347"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a98bb8475e310605adc492fdd942d4347">importFirstCols</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;)</td></tr>
+<tr class="memdesc:a98bb8475e310605adc492fdd942d4347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the first <em>nCols</em> columns from the input file.  <a href="#a98bb8475e310605adc492fdd942d4347">More...</a><br/></td></tr>
+<tr class="separator:a98bb8475e310605adc492fdd942d4347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55ce0b3da48508e006698bb639d90a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ab55ce0b3da48508e006698bb639d90a2">importCell</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;, const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;)</td></tr>
+<tr class="memdesc:ab55ce0b3da48508e006698bb639d90a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import a single cell from the input file.  <a href="#ab55ce0b3da48508e006698bb639d90a2">More...</a><br/></td></tr>
+<tr class="separator:ab55ce0b3da48508e006698bb639d90a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603c6845e97f53719d61319e45c188a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a603c6845e97f53719d61319e45c188a9">importAll</a> ()</td></tr>
+<tr class="memdesc:a603c6845e97f53719d61319e45c188a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to import the whole input file.  <a href="#a603c6845e97f53719d61319e45c188a9">More...</a><br/></td></tr>
+<tr class="separator:a603c6845e97f53719d61319e45c188a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Getter methods</div></td></tr>
-<tr class="memitem:a97cc0c0da2b3691103450622dda2519a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97cc0c0da2b3691103450622dda2519a"></a>
-const unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nRows</b> () const </td></tr>
-<tr class="separator:a97cc0c0da2b3691103450622dda2519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de88cc09cb45066e7b6396b24d68a19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5de88cc09cb45066e7b6396b24d68a19"></a>
-const unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nCols</b> () const </td></tr>
-<tr class="separator:a5de88cc09cb45066e7b6396b24d68a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ea83f67eb1df8778c2408eae5adfc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7ea83f67eb1df8778c2408eae5adfc3"></a>
+const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nRows</b> () const </td></tr>
+<tr class="separator:ac7ea83f67eb1df8778c2408eae5adfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a883f9a29fb05649de4212acf808dbde4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a883f9a29fb05649de4212acf808dbde4"></a>
+const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nCols</b> () const </td></tr>
+<tr class="separator:a883f9a29fb05649de4212acf808dbde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -183,14 +183,14 @@ Private Attributes</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#abd8b856c78fe3ce8b32f1e6b0a390c84">hasHeaders_</a></td></tr>
 <tr class="memdesc:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool to determine if first row contains headers or not. <br/></td></tr>
 <tr class="separator:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a646e6783ca009681d11cdd80148c50c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a646e6783ca009681d11cdd80148c50c2"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a646e6783ca009681d11cdd80148c50c2">nRows_</a></td></tr>
-<tr class="memdesc:a646e6783ca009681d11cdd80148c50c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows in the input file. <br/></td></tr>
-<tr class="separator:a646e6783ca009681d11cdd80148c50c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab12394b6deff7073d7182fc5a1b3d942"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab12394b6deff7073d7182fc5a1b3d942"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942">nCols_</a></td></tr>
-<tr class="memdesc:ab12394b6deff7073d7182fc5a1b3d942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns in the input file. <br/></td></tr>
-<tr class="separator:ab12394b6deff7073d7182fc5a1b3d942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62252c05d21acdbb51ce29623efe9da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad62252c05d21acdbb51ce29623efe9da"></a>
+<a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ad62252c05d21acdbb51ce29623efe9da">nRows_</a></td></tr>
+<tr class="memdesc:ad62252c05d21acdbb51ce29623efe9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows in the input file. <br/></td></tr>
+<tr class="separator:ad62252c05d21acdbb51ce29623efe9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec28145f095ecbfb8dcec7a7fb90c382"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec28145f095ecbfb8dcec7a7fb90c382"></a>
+<a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#aec28145f095ecbfb8dcec7a7fb90c382">nCols_</a></td></tr>
+<tr class="memdesc:aec28145f095ecbfb8dcec7a7fb90c382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns in the input file. <br/></td></tr>
+<tr class="separator:aec28145f095ecbfb8dcec7a7fb90c382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a418665bb33ded4f1ce88bedb60e3ffc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a418665bb33ded4f1ce88bedb60e3ffc0"></a>
 std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a418665bb33ded4f1ce88bedb60e3ffc0">input_</a></td></tr>
 <tr class="memdesc:a418665bb33ded4f1ce88bedb60e3ffc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input stream to <em>input_filename</em>. <br/></td></tr>
@@ -205,7 +205,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a650afe260de7540becd03fd198dd1a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class providing methods to read numeric content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors. </p>
+<div class="textblock"><p>Class providing methods to read <b>numeric</b> content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors. </p>
 
 <p>Definition at line <a class="el" href="csvParser_8h_source.html#l00029">29</a> of file <a class="el" href="csvParser_8h_source.html">csvParser.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -247,14 +247,14 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1ffc9952a2ceb0d2fd8216c0db327a63"></a>
+<a class="anchor" id="a480e8570942d68f55cfae439e210e46e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">RowVectorXd importRow </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#aaf38a491cc6d8aeb1c1f53f380789bad">RowVectorXr</a> importRow </td>
           <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -264,24 +264,24 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import a row from the input file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>: the row index. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>: the row Index. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a row vector containing the content read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00063">63</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00065">65</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aecc038e4b8d0db2b62d97a6d9fc639d7"></a>
+<a class="anchor" id="a42817812d475d6a42dee592d5854b297"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd importRows </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> importRows </td>
           <td>(</td>
-          <td class="paramtype">const std::initializer_list&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::initializer_list&lt; <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -291,24 +291,24 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import multiple rows from the input file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">indexes</td><td>: initializer list containing the row indexes (e.g. something like {1, 3, 4}). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indexes</td><td>: initializer list containing the row Indexes (e.g. something like {1, 3, 4}). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (row by row). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00092">92</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00094">94</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ade6a3f28e28a86dcad0251d16b9a59b9"></a>
+<a class="anchor" id="ad061e2e592b0f2d1b1f33c12fe0424d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd importFirstRows </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> importFirstRows </td>
           <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>nRows</em></td><td>)</td>
           <td></td>
         </tr>
@@ -324,18 +324,18 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (row by row). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00108">108</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00110">110</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3ca9f7023c42fcabe6e31e54d6cfdc16"></a>
+<a class="anchor" id="ade7034e1a9dba4299e53a96d27aa836e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VectorXd importCol </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> importCol </td>
           <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -345,24 +345,24 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import a column from the input file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>: the column index. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>: the column Index. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a column vector containing the content read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00121">121</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00123">123</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a25c5604cd3cd6061b9c7e7c3e8efc779"></a>
+<a class="anchor" id="a02ae981df8f4b1e9d5878a7be6a0c867"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd importCols </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> importCols </td>
           <td>(</td>
-          <td class="paramtype">const std::initializer_list&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::initializer_list&lt; <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>indexes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -372,24 +372,24 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import multiple columns from the input file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">indexes</td><td>: initializer list containing the column indexes (e.g. something like {1, 3, 4}). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indexes</td><td>: initializer list containing the column Indexes (e.g. something like {1, 3, 4}). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (column by column). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00146">146</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00148">148</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a47d7037e91224c1d3e2817489d939bf8"></a>
+<a class="anchor" id="a98bb8475e310605adc492fdd942d4347"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd importFirstCols </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> importFirstCols </td>
           <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>nCols</em></td><td>)</td>
           <td></td>
         </tr>
@@ -405,24 +405,24 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (column by column). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00162">162</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00164">164</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aaa5332e0ec78d1f38dd54240dcc728fe"></a>
+<a class="anchor" id="ab55ce0b3da48508e006698bb639d90a2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double importCell </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> importCell </td>
           <td>(</td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>rowIndex</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td>
           <td class="paramname"><em>colIndex</em>&#160;</td>
         </tr>
         <tr>
@@ -436,23 +436,23 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import a single cell from the input file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">rowIndex</td><td>: the cell row index. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">colIndex</td><td>: the cell column index. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rowIndex</td><td>: the cell row Index. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colIndex</td><td>: the cell column Index. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a scalar containing the value read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00175">175</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00177">177</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af4d7e0e1fe650b836e87387962297e86"></a>
+<a class="anchor" id="a603c6845e97f53719d61319e45c188a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixXd importAll </td>
+          <td class="memname"><a class="el" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> importAll </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -463,7 +463,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import the whole input file. </p>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (cell by cell). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00183">183</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00185">185</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
