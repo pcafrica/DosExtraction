@@ -21,7 +21,7 @@
 #include <fstream>
 
 #define Real  double	/**< @brief Pre-processor macro for real numbers. */
-#define Index unsigned	/**< @brief Pre-processor macro for indexing variables. */
+#define Index ptrdiff_t	/**< @brief Pre-processor macro for indexing variables. */
 
 #include "physicalConstants.h"
 
