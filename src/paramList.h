@@ -94,8 +94,8 @@ class ParamList
 		double   N0_4_        ;	/**< @brief 4th gaussian mean. */
 		double   sigma_4_     ;	/**< @brief 4th gaussian standard deviation. */
 		double   shift_4_     ;	/**< @brief 4th gaussian shift with respect to the 1st gaussian electric potential. */
-		unsigned nNodes_      ;	/**< @brief No. of nodes that form the mesh. */
-		unsigned nSteps_      ;	/**< @brief No. of steps to simulate. */
+		unsigned nNodes_      ;	/**< @brief Number of nodes that form the mesh. */
+		unsigned nSteps_      ;	/**< @brief Number of steps to simulate. */
 		double   V_min_       ;	/**< @brief Minimum voltage @f$ \left[ V \right] @f$. */
 		double   V_max_       ;	/**< @brief Maximum voltage @f$ \left[ V \right] @f$. */
 };

@@ -22,7 +22,8 @@
 /**
  * @class CsvParser
  *
- * @brief Class providing methods to read content from a .csv file and store it in matrices or vectors.
+ * @brief Class providing methods to read numeric content from a .csv file
+ * and to store it in @ref Eigen matrices or vectors.
  *
  */
 class CsvParser
@@ -34,8 +35,8 @@ class CsvParser
 		CsvParser() = delete;
 		/**
 		 * @brief Constructor: load the input file and check its compatibility with the code.
-		 * @param[in] input_filename : the input filename;
-		 * @param[in] hasHeaders     : bool to determine if first row contains header information or not;
+		 * @param[in] input_filename : the name of the input file;
+		 * @param[in] hasHeaders     : bool to specify if first row contains headers or not;
 		 * if @b true, first row is always ignored.
 		 */
 		CsvParser(const std::string &, const bool & = true);
@@ -112,9 +113,9 @@ class CsvParser
 		 */
 		void reset();
 		
-		bool     hasHeaders_;	/**< @brief bool to determine if first row contains header information or not. */
-		unsigned nRows_     ;	/**< @brief No. of rows in the input file. */
-		unsigned nCols_     ;	/**< @brief No. of columns in the input file. */
+		bool     hasHeaders_;	/**< @brief bool to determine if first row contains headers or not. */
+		unsigned nRows_     ;	/**< @brief Number of rows in the input file. */
+		unsigned nCols_     ;	/**< @brief Number of columns in the input file. */
 		
 		std::ifstream input_;	/**< @brief Input stream to @a input_filename. */
 		std::string   line_ ;	/**< @brief Auxiliary variable to store currently processed line. */

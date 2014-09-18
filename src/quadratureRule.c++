@@ -16,7 +16,7 @@ GaussHermiteRule::GaussHermiteRule(const unsigned & nNodes)
 
 void GaussHermiteRule::apply()
 {
-	apply_iterative_algorithm();	// Using default parameters for maximum iterations no. and tolerance.
+	apply_iterative_algorithm();	// Using default parameters for maximum iterations number and tolerance.
 }
 
 void GaussHermiteRule::apply(const GetPot & config)

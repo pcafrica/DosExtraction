@@ -33,7 +33,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		                                  
 		CsvParser parser(input_params, config("hasHeaders", true));
 		
-		// Get no. of simulations to be performed.
+		// Get number of simulations to be performed.
 		unsigned nSimulations = 0;
 		
 		if ( config("simulate_all", false) ) {
@@ -46,7 +46,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 			throw std::ifstream::failure("ERROR: wrong configuration file...");
 		}
 		
-		// Set no. of threads.
+		// Set number of threads.
 		omp_set_num_threads( config("nThreads", (int) nSimulations) );
 		
 		// Directories names.
@@ -83,7 +83,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 					}
 				}
 				
-				std::cout << "Performing simulation no. " << model.params().simulationNo() << "..." << std::endl;
+				std::cout << "Performing simulation No. " << model.params().simulationNo() << "..." << std::endl;
 				
 				const std::string output_filename = "output_" + std::to_string(model.params().simulationNo());
 				
@@ -94,7 +94,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 				// Simulate and save output files.
 				model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
 				
-				std::cout << "\tSimulation no. " << model.params().simulationNo() << " complete!" << std::endl;
+				std::cout << "\tSimulation No. " << model.params().simulationNo() << " complete!" << std::endl;
 			} catch ( const std::exception & genericException ) {
 				#pragma omp critical
 				{

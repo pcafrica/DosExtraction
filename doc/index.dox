@@ -12,14 +12,14 @@
  * 
  * The program requires the following libraries to be installed on your system:
  * 
- * @arg <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra;
- * @arg <a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots;
- * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the Gnuplot interface to C++;
+ * @arg @anchor Eigen <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra;
+ * @arg @anchor Gnuplot <a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots;
+ * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the @ref Gnuplot interface to C++;
  * @arg <a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory).
  * 
  * It also uses the following packages, provided in the @a include/ folder:
  * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files;
- * @arg <a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for Gnuplot.
+ * @arg <a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for @ref Gnuplot.
  * 
  * @section install_sec Compile
  * 

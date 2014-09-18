@@ -27,16 +27,16 @@ output_directory = ./output
 	# Number of nodes.
 	nNodes = 101
 
-	# Max no. of iterations for iterative algorithm used to compute nodes and weights.
+	# Maximum number of iterations for the iterative algorithm used to compute nodes and weights.
 	maxIterationsNo = 1000
 
-	# Tolerance for iterative algorithm used to compute nodes and weights.
+	# Tolerance for the iterative algorithm used to compute nodes and weights.
 	tolerance = 1.0e-14
 
 [NLP]
 # Newton solver for non-linear Poisson equation.
 
-	# Max no. of iterations.
+	# Maximum number of iterations.
 	maxIterationsNo = 1
 
 	# Tolerance.

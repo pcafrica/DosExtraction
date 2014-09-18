@@ -3,7 +3,7 @@
 }
 
 
-Class providing methods to read content from a .csv file and store it in matrices or vectors.  
+Class providing methods to read numeric content from a .csv file and to store it in \hyperlink{index_Eigen}{Eigen} matrices or vectors.  
 
 
 
@@ -58,13 +58,13 @@ Matrix\-Xd \hyperlink{classCsvParser_af4d7e0e1fe650b836e87387962297e86}{import\-
 \item 
 \hypertarget{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}{bool \hyperlink{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}{has\-Headers\-\_\-}}\label{classCsvParser_abd8b856c78fe3ce8b32f1e6b0a390c84}
 
-\begin{DoxyCompactList}\small\item\em bool to determine if first row contains header information or not. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em bool to determine if first row contains headers or not. \end{DoxyCompactList}\item 
 \hypertarget{classCsvParser_a646e6783ca009681d11cdd80148c50c2}{unsigned \hyperlink{classCsvParser_a646e6783ca009681d11cdd80148c50c2}{n\-Rows\-\_\-}}\label{classCsvParser_a646e6783ca009681d11cdd80148c50c2}
 
-\begin{DoxyCompactList}\small\item\em No. of rows in the input file. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Number of rows in the input file. \end{DoxyCompactList}\item 
 \hypertarget{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}{unsigned \hyperlink{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}{n\-Cols\-\_\-}}\label{classCsvParser_ab12394b6deff7073d7182fc5a1b3d942}
 
-\begin{DoxyCompactList}\small\item\em No. of columns in the input file. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Number of columns in the input file. \end{DoxyCompactList}\item 
 \hypertarget{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}{std\-::ifstream \hyperlink{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}{input\-\_\-}}\label{classCsvParser_a418665bb33ded4f1ce88bedb60e3ffc0}
 
 \begin{DoxyCompactList}\small\item\em Input stream to {\itshape input\-\_\-filename}. \end{DoxyCompactList}\item 
@@ -77,9 +77,9 @@ Matrix\-Xd \hyperlink{classCsvParser_af4d7e0e1fe650b836e87387962297e86}{import\-
 
 
 \subsection{Detailed Description}
-Class providing methods to read content from a .csv file and store it in matrices or vectors. 
+Class providing methods to read numeric content from a .csv file and to store it in \hyperlink{index_Eigen}{Eigen} matrices or vectors. 
 
-Definition at line 28 of file csv\-Parser.\-h.
+Definition at line 29 of file csv\-Parser.\-h.
 
 
 
@@ -98,9 +98,9 @@ Constructor\-: load the input file and check its compatibility with the code.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em input\-\_\-filename} & \-: the input filename; \\
+\mbox{\tt in}  & {\em input\-\_\-filename} & \-: the name of the input file; \\
 \hline
-\mbox{\tt in}  & {\em has\-Headers} & \-: bool to determine if first row contains header information or not; if {\bfseries true}, first row is always ignored. \\
+\mbox{\tt in}  & {\em has\-Headers} & \-: bool to specify if first row contains headers or not; if {\bfseries true}, first row is always ignored. \\
 \hline
 \end{DoxyParams}
 
@@ -131,7 +131,7 @@ a row vector containing the content read.
 \end{DoxyReturn}
 
 
-Definition at line 58 of file csv\-Parser.\-c++.
+Definition at line 63 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_aecc038e4b8d0db2b62d97a6d9fc639d7}{\index{Csv\-Parser@{Csv\-Parser}!import\-Rows@{import\-Rows}}
 \index{import\-Rows@{import\-Rows}!CsvParser@{Csv\-Parser}}
@@ -154,7 +154,7 @@ a matrix containing the content read (row by row).
 \end{DoxyReturn}
 
 
-Definition at line 87 of file csv\-Parser.\-c++.
+Definition at line 92 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_ade6a3f28e28a86dcad0251d16b9a59b9}{\index{Csv\-Parser@{Csv\-Parser}!import\-First\-Rows@{import\-First\-Rows}}
 \index{import\-First\-Rows@{import\-First\-Rows}!CsvParser@{Csv\-Parser}}
@@ -177,7 +177,7 @@ a matrix containing the content read (row by row).
 \end{DoxyReturn}
 
 
-Definition at line 103 of file csv\-Parser.\-c++.
+Definition at line 108 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_a3ca9f7023c42fcabe6e31e54d6cfdc16}{\index{Csv\-Parser@{Csv\-Parser}!import\-Col@{import\-Col}}
 \index{import\-Col@{import\-Col}!CsvParser@{Csv\-Parser}}
@@ -200,7 +200,7 @@ a column vector containing the content read.
 \end{DoxyReturn}
 
 
-Definition at line 116 of file csv\-Parser.\-c++.
+Definition at line 121 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_a25c5604cd3cd6061b9c7e7c3e8efc779}{\index{Csv\-Parser@{Csv\-Parser}!import\-Cols@{import\-Cols}}
 \index{import\-Cols@{import\-Cols}!CsvParser@{Csv\-Parser}}
@@ -223,7 +223,7 @@ a matrix containing the content read (column by column).
 \end{DoxyReturn}
 
 
-Definition at line 141 of file csv\-Parser.\-c++.
+Definition at line 146 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_a47d7037e91224c1d3e2817489d939bf8}{\index{Csv\-Parser@{Csv\-Parser}!import\-First\-Cols@{import\-First\-Cols}}
 \index{import\-First\-Cols@{import\-First\-Cols}!CsvParser@{Csv\-Parser}}
@@ -246,7 +246,7 @@ a matrix containing the content read (column by column).
 \end{DoxyReturn}
 
 
-Definition at line 157 of file csv\-Parser.\-c++.
+Definition at line 162 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_aaa5332e0ec78d1f38dd54240dcc728fe}{\index{Csv\-Parser@{Csv\-Parser}!import\-Cell@{import\-Cell}}
 \index{import\-Cell@{import\-Cell}!CsvParser@{Csv\-Parser}}
@@ -272,7 +272,7 @@ a scalar containing the value read.
 \end{DoxyReturn}
 
 
-Definition at line 170 of file csv\-Parser.\-c++.
+Definition at line 175 of file csv\-Parser.\-c++.
 
 \hypertarget{classCsvParser_af4d7e0e1fe650b836e87387962297e86}{\index{Csv\-Parser@{Csv\-Parser}!import\-All@{import\-All}}
 \index{import\-All@{import\-All}!CsvParser@{Csv\-Parser}}
@@ -290,7 +290,7 @@ a matrix containing the content read (cell by cell).
 \end{DoxyReturn}
 
 
-Definition at line 178 of file csv\-Parser.\-c++.
+Definition at line 183 of file csv\-Parser.\-c++.
 
 
 

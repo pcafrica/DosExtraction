@@ -34,12 +34,12 @@ class QuadratureRule
 		// them through getter methods that slow down the program execution.
 		
 		/**
-		 * @brief Default constructor (deleted since it is required to specify the no. of nodes).
+		 * @brief Default constructor (deleted since it is required to specify the number of nodes).
 		 */
 		QuadratureRule() = delete;
 		/**
 		 * @brief Constructor.
-		 * @param[in] nNodes : the no. of nodes to be used for the quadrature rule.
+		 * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
 		 */
 		QuadratureRule(const unsigned &);
 		/**
@@ -64,7 +64,7 @@ class QuadratureRule
 		 */
 		
 	protected:
-		unsigned nNodes_ ;	/**< @brief The no. of nodes to be used for the quadrature rule. */
+		unsigned nNodes_ ;	/**< @brief Number of nodes of the quadrature rule. */
 		VectorXd nodes_  ;	/**< @brief Vector containing the computed nodes coordinates. */
 		VectorXd weights_;	/**< @brief Vector containing the computed weights. */
 };
@@ -83,12 +83,12 @@ class GaussHermiteRule : public QuadratureRule
 {
 	public:
 		/**
-		 * @brief Default constructor (deleted since it is required to specify the no. of nodes).
+		 * @brief Default constructor (deleted since it is required to specify the number of nodes).
 		 */
 		GaussHermiteRule() = delete;
 		/**
 		 * @brief Constructor.
-		 * @param[in] nNodes : the no. of nodes to be used for the quadrature rule.
+		 * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
 		 */
 		GaussHermiteRule(const unsigned &);
 		/**

@@ -25,7 +25,7 @@
 namespace numerics
 {
 	/**
-	 * @brief Function to sort Eigen vectors.
+	 * @brief Function to sort @ref Eigen vectors.
 	 * @tparam ScalarType : the scalar type.
 	 * @param[in] vector  : the vector to be sorted.
 	 * @returns the sorted vector.
@@ -34,10 +34,10 @@ namespace numerics
 	VectorX<ScalarType> sort(const VectorX<ScalarType> & vector);
 	
 	/**
-	 * @brief Function to sort Eigen vectors, keeping track of indexes.
+	 * @brief Function to sort @ref Eigen vectors, keeping track of indexes.
 	 * @tparam ScalarType : the scalar type.
 	 * @param[in] vector  : the vector to be sorted.
-	 * @returns an Eigen vector of pairs: (sorted value, corresponding index in the unsorted vector).
+	 * @returns an @ref Eigen vector of pairs: (sorted value, corresponding index in the unsorted vector).
 	 */
 	template<typename ScalarType>
 	VectorXpair<ScalarType> sort_pair(const VectorX<ScalarType> & vector);

@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('classCsvParser.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Class providing methods to read content from a .csv file and store it in matrices or vectors.  
+<p>Class providing methods to read numeric content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors.  
  <a href="classCsvParser.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="csvParser_8h_source.html">csvParser.h</a>&gt;</code></p>
@@ -181,15 +181,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Private Attributes</h2></td></tr>
 <tr class="memitem:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd8b856c78fe3ce8b32f1e6b0a390c84"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#abd8b856c78fe3ce8b32f1e6b0a390c84">hasHeaders_</a></td></tr>
-<tr class="memdesc:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool to determine if first row contains header information or not. <br/></td></tr>
+<tr class="memdesc:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="mdescLeft">&#160;</td><td class="mdescRight">bool to determine if first row contains headers or not. <br/></td></tr>
 <tr class="separator:abd8b856c78fe3ce8b32f1e6b0a390c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a646e6783ca009681d11cdd80148c50c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a646e6783ca009681d11cdd80148c50c2"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a646e6783ca009681d11cdd80148c50c2">nRows_</a></td></tr>
-<tr class="memdesc:a646e6783ca009681d11cdd80148c50c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">No. of rows in the input file. <br/></td></tr>
+<tr class="memdesc:a646e6783ca009681d11cdd80148c50c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows in the input file. <br/></td></tr>
 <tr class="separator:a646e6783ca009681d11cdd80148c50c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12394b6deff7073d7182fc5a1b3d942"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab12394b6deff7073d7182fc5a1b3d942"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#ab12394b6deff7073d7182fc5a1b3d942">nCols_</a></td></tr>
-<tr class="memdesc:ab12394b6deff7073d7182fc5a1b3d942"><td class="mdescLeft">&#160;</td><td class="mdescRight">No. of columns in the input file. <br/></td></tr>
+<tr class="memdesc:ab12394b6deff7073d7182fc5a1b3d942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns in the input file. <br/></td></tr>
 <tr class="separator:ab12394b6deff7073d7182fc5a1b3d942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a418665bb33ded4f1ce88bedb60e3ffc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a418665bb33ded4f1ce88bedb60e3ffc0"></a>
 std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCsvParser.html#a418665bb33ded4f1ce88bedb60e3ffc0">input_</a></td></tr>
@@ -205,9 +205,9 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a650afe260de7540becd03fd198dd1a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class providing methods to read content from a .csv file and store it in matrices or vectors. </p>
+<div class="textblock"><p>Class providing methods to read numeric content from a .csv file and to store it in <a class="el" href="index.html#Eigen">Eigen</a> matrices or vectors. </p>
 
-<p>Definition at line <a class="el" href="csvParser_8h_source.html#l00028">28</a> of file <a class="el" href="csvParser_8h_source.html">csvParser.h</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8h_source.html#l00029">29</a> of file <a class="el" href="csvParser_8h_source.html">csvParser.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a928811b407ea6816bab9fef75d504301"></a>
 <div class="memitem">
@@ -236,8 +236,8 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Constructor: load the input file and check its compatibility with the code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">input_filename</td><td>: the input filename; </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">hasHeaders</td><td>: bool to determine if first row contains header information or not; if <b>true</b>, first row is always ignored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_filename</td><td>: the name of the input file; </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hasHeaders</td><td>: bool to specify if first row contains headers or not; if <b>true</b>, first row is always ignored. </td></tr>
   </table>
   </dd>
 </dl>
@@ -270,7 +270,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a row vector containing the content read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00058">58</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00063">63</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -297,7 +297,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (row by row). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00087">87</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00092">92</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -324,7 +324,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (row by row). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00103">103</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00108">108</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -351,7 +351,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a column vector containing the content read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00116">116</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00121">121</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -378,7 +378,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (column by column). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00141">141</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00146">146</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -405,7 +405,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (column by column). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00157">157</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00162">162</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -443,7 +443,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a scalar containing the value read. </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00170">170</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00175">175</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>
@@ -463,7 +463,7 @@ char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Method to import the whole input file. </p>
 <dl class="section return"><dt>Returns</dt><dd>a matrix containing the content read (cell by cell). </dd></dl>
 
-<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00178">178</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
+<p>Definition at line <a class="el" href="csvParser_8c_09_09_source.html#l00183">183</a> of file <a class="el" href="csvParser_8c_09_09_source.html">csvParser.c++</a>.</p>
 
 </div>
 </div>

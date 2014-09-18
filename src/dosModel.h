@@ -60,7 +60,7 @@ class DosModel
 		 * @param[in] config             : the GetPot configuration object;
 		 * @param[in] input_experim      : the file containing experimental data;
 		 * @param[in] output_directory   : directory where to store output files;
-		 * @param[in] output_plot_subdir : sub-directory where to store Gnuplot files;
+		 * @param[in] output_plot_subdir : sub-directory where to store @ref Gnuplot files;
 		 * @param[in] output_filename    : prefix for the output filename.
 		 */
 		void simulate(const GetPot &, const std::string &, const std::string &,
@@ -81,15 +81,15 @@ class DosModel
 		                  const VectorXd &, const VectorXd &, const VectorXd &, const VectorXd &) const;
 		                  
 		/**
-		 * @brief Defines commands to generate Gnuplot output files.
+		 * @brief Defines commands to generate @ref Gnuplot output files.
 		 * @param[in]  output_CV_filename : output CV filename;
 		 * @param[out] os                 : output stream.
 		 */
 		void gnuplot_commands(const std::string &, std::ostream &) const;
 		/**
-		 * @brief Save the Gnuplot output files.
+		 * @brief Save the @ref Gnuplot output files.
 		 * @param[in] output_directory   : directory where to store output files;
-		 * @param[in] output_plot_subdir : sub-directory where to store Gnuplot files;
+		 * @param[in] output_plot_subdir : sub-directory where to store @ref Gnuplot files;
 		 * @param[in] output_CV_filename : output CV filename;
 		 * @param[in] output_filename    : prefix for the output filename.
 		 */

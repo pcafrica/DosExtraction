@@ -93,7 +93,7 @@ class PdeSolver1D
 		
 	protected:
 		VectorXd mesh_  ;	/**< @brief The mesh. */
-		unsigned nNodes_;	/**< @brief No. of nodes that form the mesh. */
+		unsigned nNodes_;	/**< @brief Number of nodes that form the mesh. */
 		
 		SparseXd AdvDiff_;	/**< @brief Matrix for an advection-diffusion term. */
 		SparseXd Stiff_  ;	/**< @brief Stiffness matrix. */
@@ -197,7 +197,7 @@ class NonLinearPoisson1D
 		/**
 		 * @brief Constructor.
 		 * @param[in] solver          : the solver to be used;
-		 * @param[in] maxIterationsNo : maximum no. of iterations desired;
+		 * @param[in] maxIterationsNo : maximum number of iterations desired;
 		 * @param[in] tolerance       : tolerance desired.
 		 */
 		NonLinearPoisson1D(const PdeSolver1D &, const unsigned & = 100, const double & = 1.0e-6);
@@ -237,7 +237,7 @@ class NonLinearPoisson1D
 		
 		const PdeSolver1D & solver_;	/**< @brief Solver handler. */
 		
-		unsigned maxIterationsNo_;	/**< @brief Maximum no. of iterations. */
+		unsigned maxIterationsNo_;	/**< @brief Maximum number of iterations. */
 		double   tolerance_      ;	/**< @brief Tolerance. */
 		
 		VectorXd phi_ ;	/**< @brief The electric potential. */

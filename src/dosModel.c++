@@ -40,7 +40,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	// Timing.
 	high_resolution_clock::time_point initTime = high_resolution_clock::now();
 	
-	print_block( ( "Simulation no. " + std::to_string(params_.simulationNo_) + " started.").c_str(), output_fitting );
+	print_block( ( "Simulation No. " + std::to_string(params_.simulationNo_) + " started.").c_str(), output_fitting );
 	
 	VectorXd V = VectorXd::LinSpaced(params_.nSteps_, params_.V_min_, params_.V_max_);
 	
@@ -117,7 +117,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	print_done(output_fitting);
 	
 	output_fitting << "Running Newton solver for non-linear Poisson equation..." << std::endl;
-	output_fitting << "\tMax no. of iterations set: " << config("NLP/maxIterationsNo", 1000) << std::endl;
+	output_fitting << "\tMax No. of iterations set: " << config("NLP/maxIterationsNo", 1000) << std::endl;
 	output_fitting << "\tTolerance set: " << config("NLP/tolerance", 1.0e-4) << std::endl;
 	
 	// Start simulation.

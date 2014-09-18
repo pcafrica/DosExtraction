@@ -27,14 +27,14 @@ using namespace Eigen;
 typedef SparseMatrix<double> SparseXd;	/**< @brief Typedef for sparse dynamic-sized matrices. */
 
 /**
- * @brief Template alias for Eigen vectors.
+ * @brief Template alias for @ref Eigen vectors.
  * @tparam ScalarType : the scalar type.
  */
 template<typename ScalarType>
 using VectorX = Matrix<ScalarType, Dynamic, 1>;
 
 /**
- * @brief Template alias for an Eigen vector of pairs: (@a ScalarType, unsigned int).
+ * @brief Template alias for an @ref Eigen vector of pairs: (@a ScalarType, unsigned int).
  * @tparam ScalarType : the scalar type.
  */
 template<typename T>
