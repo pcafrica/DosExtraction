@@ -43,13 +43,18 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
 	}
 	
 	// Get number of columns.
-	std::stringstream line_stream(line_);	// "line_" contains first row.
-	std::string string;
-	
-	// std::getline(line_stream, string, separator_);	// Skip first column (containing the simulation index).
-	
-	while ( std::getline(line_stream, string, separator_) ) {
-		++nCols_;
+	{
+		// Import the first row: .csv files are formatted so that
+		// each row contains the same number of columns.
+		std::stringstream line_stream(line_);
+		
+		std::string field;
+		
+		while ( std::getline(line_stream, field, separator_) ) {
+			++nCols_;
+		}
+		
+		++nCols_;	// The last field is '\n'-separated.
 	}
 	
 	reset();
@@ -61,7 +66,7 @@ RowVectorXd CsvParser::importRow(const unsigned & index)
 	
 	reset();
 	
-	RowVectorXd data( nCols_ );
+	RowVectorXd data = RowVectorXd::Zero( nCols_ );
 	
 	for ( unsigned i = 0; i < index; ++i ) {
 		std::getline(input_, line_, '\n');	// Read "i"-th row.
@@ -72,12 +77,12 @@ RowVectorXd CsvParser::importRow(const unsigned & index)
 	// Start import.
 	{
 		std::stringstream line_stream(line_);
-		std::string string;
+		std::string field;
 		
 		for ( unsigned j = 0; j < nCols_; ++j ) {
-			std::getline(line_stream, string, separator_);
+			std::getline(line_stream, field, separator_);
 			
-			data(j) = (double) atof(string.c_str());
+			data(j) = (double) atof(field.c_str());
 		}
 	}
 	
@@ -88,7 +93,7 @@ MatrixXd CsvParser::importRows(const std::initializer_list<unsigned> & indexes)
 {
 	assert( indexes.size() > 0 );
 	
-	MatrixXd Data( indexes.size(), nCols_ );
+	MatrixXd Data = MatrixXd::Zero( indexes.size(), nCols_ );
 	
 	unsigned i = 0;
 	
@@ -104,7 +109,7 @@ MatrixXd CsvParser::importFirstRows(const unsigned & nRows)
 {
 	assert( nRows >= 1 && nRows <= nRows_ );
 	
-	MatrixXd Data( nRows, nCols_ );
+	MatrixXd Data = MatrixXd::Zero( nRows, nCols_ );
 	
 	for ( int i = 0; i < Data.rows(); ++i ) {
 		Data.row(i) = importRow(i + 1);
@@ -119,20 +124,20 @@ VectorXd CsvParser::importCol(const unsigned & index)
 	
 	reset();
 	
-	VectorXd data( nRows_ );
+	VectorXd data = VectorXd::Zero( nRows_ );
 	
 	// Start import.
 	for ( unsigned i = 0; i < nRows_; ++i ) {	// For each row.
 		std::getline(input_, line_, '\n');	// Read "i"-th row.
 		
-		std::stringstream line_stream(line_);	// "line_" already containing first row;
-		std::string string;
+		std::stringstream line_stream(line_);
+		std::string field;
 		
 		for ( unsigned j = 0; j < index; ++j ) {
-			std::getline(line_stream, string, separator_);
+			std::getline(line_stream, field, separator_);
 		}
 		
-		data(i) = (double) atof(string.c_str());
+		data(i) = (double) atof(field.c_str());
 	}
 	
 	return data;
@@ -142,7 +147,7 @@ MatrixXd CsvParser::importCols(const std::initializer_list<unsigned> & indexes)
 {
 	assert( indexes.size() > 0 );
 	
-	MatrixXd Data( nRows_, indexes.size() );
+	MatrixXd Data = MatrixXd::Zero( nRows_, indexes.size() );
 	
 	unsigned j = 0;
 	
@@ -158,7 +163,7 @@ MatrixXd CsvParser::importFirstCols(const unsigned & nCols)
 {
 	assert( nCols >= 1 && nCols <= nCols_ );
 	
-	MatrixXd Data( nRows_, nCols );
+	MatrixXd Data = MatrixXd::Zero( nRows_, nCols );
 	
 	for ( int j = 0; j < Data.cols(); ++j ) {
 		Data.col(j) = importRow(j + 1);
@@ -185,7 +190,7 @@ void CsvParser::reset()
 	input_.clear();	// Reset eof flag.
 	input_.seekg(0, std::ios::beg);	// Go to beginning of file.
 	
-	if ( hasHeaders_ ) {	// Ignore row containing headers.
+	if ( hasHeaders_ ) {	// Ignore the row containing headers.
 		std::getline(input_, line_, '\n');
 	}
 	
