@@ -65,7 +65,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	output_fitting << "Assembling system matrices...";
 	VectorXr eps = EPS0 * params_.eps_semic_ * VectorXr::Ones( xm.size() );
 	
-	for ( int i = 0; i < eps.size(); ++i ) {
+	for ( Index i = 0; i < eps.size(); ++i ) {
 		if ( xm(i) > 0.0 ) {
 			eps(i) = EPS0 * params_.eps_ins_;
 		}
@@ -77,7 +77,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	{
 		VectorXr temp = VectorXr::Zero( xm.size() );
 		
-		for ( int i = 0; i < temp.size(); ++i ) {
+		for ( Index i = 0; i < temp.size(); ++i ) {
 			if ( xm(i) < 0.0 ) {
 				temp(i) = 1.0;
 			}
@@ -91,7 +91,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	
 	print_done(output_fitting);
 	
-	// Computing nodes and weights of quadrature rule.
+	// Computing nodes and weights of quadrature.
 	output_fitting << "Computing nodes and weights of quadrature rule";
 	GaussHermiteRule rule( config("GaussHermite/nNodes", 101) );
 	output_fitting << " using " << rule.nNodes() << " nodes...";
@@ -192,13 +192,13 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
 	
 	// Sorting "V_experim" and "C_experim". The order is established by "V_experim".
 	{
-		VectorXpair<Real> order = numerics::sort_pair( V_experim );
+		VectorXpair<Real> sort = numerics::sort_pair( V_experim );
 		VectorXr V_sort = VectorXr::Zero( V_experim.size() );
 		VectorXr C_sort = VectorXr::Zero( C_experim.size() );
 		
-		for ( int i = 0; i < order.size(); ++i ) {
-			V_sort(i) = V_experim( order(i).second );
-			C_sort(i) = C_experim( order(i).second );
+		for ( Index i = 0; i < sort.size(); ++i ) {
+			V_sort(i) = V_experim( sort(i).second );
+			C_sort(i) = C_experim( sort(i).second );
 		}
 		
 		V_experim = V_sort;
@@ -239,7 +239,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
 	
 	output_CV << "V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated" << std::endl;
 	
-	for ( int i = 0; i < std::max( V_simulated.size(), V_experim.size() ); ++i ) {
+	for ( Index i = 0; i < std::max( V_simulated.size(), V_experim.size() ); ++i ) {
 		if ( i < V_experim.size() ) {
 			output_CV << V_experim(i) << ", " << C_experim(i) << ", " << dC_dV_experim(i) << ", ";
 		} else {

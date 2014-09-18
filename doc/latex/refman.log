@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.8.10)  18 SEP 2014 21:55
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.8.10)  18 SEP 2014 23:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,7 +884,7 @@ LaTeX Warning: Label `namespaceconstants_ac3177292376f63989fb17af38575b97f' mul
 tiply defined.
 
 
-LaTeX Warning: Label `namespaceconstants_a55c7c5d84b0709c6786dec9908107a04' mul
+LaTeX Warning: Label `namespaceconstants_a8d66156216c7101bc75f6f62a7449cf7' mul
 tiply defined.
 
 
@@ -1279,7 +1279,7 @@ LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
 
 ]
 Chapter 7.
-(./classBim1D.tex <classBim1D.pdf, id=993, 501.875pt x 422.62892pt>
+(./classBim1D.tex <classBim1D.pdf, id=995, 501.875pt x 422.62892pt>
 File: classBim1D.pdf Graphic file (type pdf)
 
 <use classBim1D.pdf>
@@ -1300,7 +1300,7 @@ Underfull \hbox (badness 10000) detected at line 122
 [][][]
  []
 
-[18]) (./classCharge.tex <classCharge.pdf, id=1048, 501.875pt x 352.1958pt>
+[18]) (./classCharge.tex <classCharge.pdf, id=1050, 501.875pt x 352.1958pt>
 File: classCharge.pdf Graphic file (type pdf)
 
 <use classCharge.pdf>
@@ -1357,7 +1357,7 @@ Underfull \hbox (badness 10000) detected at line 288
  []
 
 ) (./classDosModel.tex [25] [26] [27]) (./classGaussHermiteRule.tex
-<classGaussHermiteRule.pdf, id=1234, 501.875pt x 326.41951pt>
+<classGaussHermiteRule.pdf, id=1235, 501.875pt x 326.41951pt>
 File: classGaussHermiteRule.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRule.pdf>
@@ -1365,7 +1365,7 @@ Package pdftex.def Info: classGaussHermiteRule.pdf used on input line 16.
 (pdftex.def)             Requested size: 87.49248pt x 56.9055pt.
  [28 <./classGaussHermiteRule.pdf>])
 (./classGaussianCharge.tex
-<classGaussianCharge.pdf, id=1266, 501.875pt x 352.1958pt>
+<classGaussianCharge.pdf, id=1267, 501.875pt x 352.1958pt>
 File: classGaussianCharge.pdf Graphic file (type pdf)
 
 <use classGaussianCharge.pdf>
@@ -1397,7 +1397,7 @@ Underfull \hbox (badness 10000) detected at line 154
  []
 
 ) (./classParamList.tex [34] [35]) (./classPdeSolver1D.tex
-<classPdeSolver1D.pdf, id=1507, 501.875pt x 422.62892pt>
+<classPdeSolver1D.pdf, id=1508, 501.875pt x 422.62892pt>
 File: classPdeSolver1D.pdf Graphic file (type pdf)
 
 <use classPdeSolver1D.pdf>
@@ -1405,7 +1405,7 @@ Package pdftex.def Info: classPdeSolver1D.pdf used on input line 16.
 (pdftex.def)             Requested size: 67.57407pt x 56.9055pt.
  [36] [37 <./classPdeSolver1D.pdf>])
 (./classQuadratureRule.tex [38]
-<classQuadratureRule.pdf, id=1584, 501.875pt x 326.41951pt>
+<classQuadratureRule.pdf, id=1585, 501.875pt x 326.41951pt>
 File: classQuadratureRule.pdf Graphic file (type pdf)
 
 <use classQuadratureRule.pdf>
@@ -1596,11 +1596,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
  []
 
 [46]pdfTeX warning (ext4): destination with the same identifier (name{namespace
-constants_a55c7c5d84b0709c6786dec9908107a04}) has been already used, duplicate 
+constants_a8d66156216c7101bc75f6f62a7449cf7}) has been already used, duplicate 
 ignored
 <to be read again> 
                    \relax 
-l.63 ...07a04}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 22}
+l.63 ...49cf7}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 22}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
 tants_af5340fb69690fffd134dcae882754638}) has been already used, duplicate igno
@@ -1785,10 +1785,10 @@ etic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (56 pages, 302600 bytes).
+Output written on refman.pdf (56 pages, 302503 bytes).
 PDF statistics:
- 2096 PDF objects out of 2487 (max. 8388607)
- 1989 compressed objects within 20 object streams
+ 2098 PDF objects out of 2487 (max. 8388607)
+ 1991 compressed objects within 20 object streams
  457 named destinations out of 1000 (max. 500000)
  1127 words of extra memory for PDF output out of 10000 (max. 10000000)
 

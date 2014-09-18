@@ -14,7 +14,7 @@ VectorXr Bim1D::log_mean(const VectorXr & x1, const VectorXr & x2)
 	
 	VectorXr log_mean = VectorXr::Zero( x1.size() );
 	
-	for ( int i = 0; i < log_mean.size(); ++i ) {
+	for ( Index i = 0; i < log_mean.size(); ++i ) {
 		if ( x1(i) == 0.0 || x2(i) == 0.0 ) {
 			log_mean(i) = 0.0;
 		} else if ( x1(i) == x2(i) ) {
@@ -38,7 +38,7 @@ std::pair<VectorXr, VectorXr> Bim1D::bernoulli(const VectorXr & x)
 	
 	VectorXr ax = x.cwiseAbs();
 	
-	for ( int i = 0; i < x.size(); ++i ) {
+	for ( Index i = 0; i < x.size(); ++i ) {
 		if ( x(i) == 0.0 ) {
 			bp(i) = 1.0;
 			bn(i) = 1.0;
@@ -113,14 +113,14 @@ void Bim1D::assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma, cons
 	// Assembly
 	AdvDiff_.resize( nNodes_, nNodes_ );
 	
-	for ( int i = 0; i < AdvDiff_.rows() - 1; ++i ) {
+	for ( Index i = 0; i < AdvDiff_.rows() - 1; ++i ) {
 		AdvDiff_.insert(i + 1,  i ) = - c_k(i) * bp(i);	// Sub-diagonal.
 		AdvDiff_.insert( i , i + 1) = - c_k(i) * bn(i);	// Super-diagonal.
 	}
 	
 	AdvDiff_.insert(0, 0) = c_k(0) * bn(0);
 	
-	for ( int i = 1; i < AdvDiff_.rows() - 1; ++i ) {
+	for ( Index i = 1; i < AdvDiff_.rows() - 1; ++i ) {
 		AdvDiff_.insert(i, i) = c_k(i) * bn(i) + c_k(i - 1) * bn(i - 1);	// Main diagonal.
 	}
 	
@@ -150,7 +150,7 @@ void Bim1D::assembleMass(const VectorXr & delta, const VectorXr & zeta)
 	
 	Mass_.insert(0, 0) = zeta(0) * 0.5 * h(0);
 	
-	for ( int i = 1; i < Mass_.rows() - 1; ++i ) {
+	for ( Index i = 1; i < Mass_.rows() - 1; ++i ) {
 		Mass_.insert(i, i) = zeta(i) * 0.5 * ( h(i - 1) + h(i) );
 	}
 	
@@ -205,7 +205,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
 			
 			VectorXr dphi = - systemSolver.solve(res);
 			
-			/* for ( int i = 0; i < dphi.size(); ++i ) {	// Tolerance cut-off.
+			/* for ( Index i = 0; i < dphi.size(); ++i ) {	// Tolerance cut-off.
 				if ( dphi(i) > tolerance_ ) {
 					dphi(i) = tolerance_;
 				} else if ( dphi(i) < - tolerance_ ) {
@@ -228,7 +228,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
 		}
 	}
 	
-	for ( int i = 0; i < phiOld.size(); ++i ) {
+	for ( Index i = 0; i < phiOld.size(); ++i ) {
 		if ( solver_.Stiff_.coeff(solver_.Stiff_.rows() - 1, i) != 0.0 ) {
 			qTot_ += solver_.Stiff_.coeff(solver_.Stiff_.rows() - 1, i) * phiOld(i);
 		}
@@ -249,7 +249,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
 	// Constant term: b = - Jac(2:end-1, [1 end]) * u([1 end]');
 	VectorXr b = VectorXr::Zero( Jac.rows() - 2 );
 	
-	for ( int i = 1; i < Jac.rows() - 1; ++i ) {
+	for ( Index i = 1; i < Jac.rows() - 1; ++i ) {
 		if ( Jac.coeff(i, 0) != 0.0 || Jac.coeff(i, Jac.cols() - 1) != 0.0 ) {
 			b(i - 1) = Jac.coeff(i, 0) * u(0) + Jac.coeff(i, Jac.cols() - 1) * u(u.size() - 1);
 		}
@@ -257,7 +257,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
 	
 	u.segment(1, u.size() - 2) = - systemSolver.solve(b);
 	
-	for ( int i = 0; i < phiOld.size(); ++i ) {
+	for ( Index i = 0; i < phiOld.size(); ++i ) {
 		if ( Jac.coeff(Jac.rows() - 1, i) != 0.0 ) {
 			cTot_   += Jac.coeff(Jac.rows() - 1, i) * u(i);
 		}
@@ -278,7 +278,7 @@ SparseXr NonLinearPoisson1D::computeJac(const VectorXr & x) const
 	
 	Jac = solver_.Stiff_;
 	
-	for ( int i = 0; i < Jac.rows(); ++i ) {
+	for ( Index i = 0; i < Jac.rows(); ++i ) {
 		if ( solver_.Mass_.coeff(i, i) != 0.0 ) {
 			Jac.coeffRef(i, i) -= solver_.Mass_.coeff(i, i) * x(i);
 		}

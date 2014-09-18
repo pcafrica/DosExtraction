@@ -49,7 +49,7 @@ using VectorXpair = VectorX<std::pair<T, Index> >;
 
 namespace constants
 {
-	const unsigned PARAMS_NO = 22;	/**< @brief Number of parameters required in input file. */
+	const Index PARAMS_NO = 22;	/**< @brief Number of parameters required in input file. */
 	
 	// From <cmath> library.
 	const Real      PI = M_PI              ;	/**< @brief @f$ \pi @f$. */

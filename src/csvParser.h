@@ -57,13 +57,13 @@ class CsvParser
 		
 		/**
 		 * @brief Method to import a row from the input file.
-		 * @param[in] index : the row Index.
+		 * @param[in] index : the row index.
 		 * @returns a row vector containing the content read.
 		 */
 		RowVectorXr importRow      (const Index                        &);
 		/**
 		 * @brief Method to import multiple rows from the input file.
-		 * @param[in] indexes : initializer list containing the row Indexes (e.g. something like {1, 3, 4}).
+		 * @param[in] indexes : initializer list containing the row indexes (e.g. something like {1, 3, 4}).
 		 * @returns a matrix containing the content read (row by row).
 		 */
 		MatrixXr    importRows     (const std::initializer_list<Index> &);
@@ -76,13 +76,13 @@ class CsvParser
 		
 		/**
 		 * @brief Method to import a column from the input file.
-		 * @param[in] index : the column Index.
+		 * @param[in] index : the column index.
 		 * @returns a column vector containing the content read.
 		 */
 		VectorXr    importCol      (const Index                        &);
 		/**
 		 * @brief Method to import multiple columns from the input file.
-		 * @param[in] indexes : initializer list containing the column Indexes (e.g. something like {1, 3, 4}).
+		 * @param[in] indexes : initializer list containing the column indexes (e.g. something like {1, 3, 4}).
 		 * @returns a matrix containing the content read (column by column).
 		 */
 		MatrixXr    importCols     (const std::initializer_list<Index> &);
@@ -95,8 +95,8 @@ class CsvParser
 		
 		/**
 		 * @brief Method to import a single cell from the input file.
-		 * @param[in] rowIndex : the cell row Index.
-		 * @param[in] colIndex : the cell column Index.
+		 * @param[in] rowIndex : the cell row index.
+		 * @param[in] colIndex : the cell column index.
 		 * @returns a scalar containing the value read.
 		 */
 		Real      importCell     (const Index &, const Index &);

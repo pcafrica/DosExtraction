@@ -76,7 +76,7 @@ class ParamList
 		 */
 		
 	private:
-		Index simulationNo_;	/**< @brief Index of the simulation. */
+		Index simulationNo_;	/**< @brief Simulation number index. */
 		Real  t_semic_     ;	/**< @brief Semiconductor layer thickness @f$ \left[ m \right] @f$. */
 		Real  t_ins_       ;	/**< @brief Insulator layer thickness @f$ \left[ m \right] @f$. */
 		Real  eps_semic_   ;	/**< @brief Semiconductor layer relative electrical permittivity @f$ \left[ ~ \right] @f$. */

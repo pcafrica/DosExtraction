@@ -56,7 +56,7 @@ class QuadratureRule
 		 * @name Getter methods
 		 * @{
 		 */
-		inline const Index & nNodes () const;
+		inline const Index    & nNodes () const;
 		inline const VectorXr & nodes  () const;
 		inline const VectorXr & weights() const;
 		/**
@@ -64,7 +64,7 @@ class QuadratureRule
 		 */
 		
 	protected:
-		Index nNodes_ ;	/**< @brief Number of nodes of the quadrature rule. */
+		Index    nNodes_ ;	/**< @brief Number of nodes of quadrature. */
 		VectorXr nodes_  ;	/**< @brief Vector containing the computed nodes coordinates. */
 		VectorXr weights_;	/**< @brief Vector containing the computed weights. */
 };

@@ -60,7 +60,7 @@ class PdeSolver1D
 		 * @param[in] beta  : @f$ \beta  @f$, an element-wise constant function.
 		 */
 		virtual void assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma,
-		                             const VectorXr & eta, const VectorXr & beta) = 0;
+		                             const VectorXr & eta, const VectorXr & beta)  = 0;
 		/**
 		 * Build the matrix for the diffusion problem:
 		 * @f$ -\nabla\cdot\left(\epsilon\cdot\kappa\nabla u\right) = f @f$.
@@ -93,7 +93,7 @@ class PdeSolver1D
 		
 	protected:
 		VectorXr mesh_  ;	/**< @brief The mesh. */
-		Index nNodes_;	/**< @brief Number of nodes that form the mesh. */
+		Index    nNodes_;	/**< @brief Number of nodes that form the mesh. */
 		
 		SparseXr AdvDiff_;	/**< @brief Matrix for an advection-diffusion term. */
 		SparseXr Stiff_  ;	/**< @brief Stiffness matrix. */

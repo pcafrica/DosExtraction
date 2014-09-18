@@ -8,7 +8,7 @@ Real numerics::trapz(const VectorXr & x, const VectorXr & y)
 	
 	#pragma omp parallel for default(shared) reduction(+: integral)
 	
-	for ( int i = 0; i < x.size() - 1; ++i ) {
+	for ( Index i = 0; i < x.size() - 1; ++i ) {
 		integral += 0.5 * ( x(i + 1) - x(i) ) * ( y(i) + y(i + 1) );
 	}
 	
@@ -24,13 +24,13 @@ VectorXr numerics::deriv(const VectorXr & y, const VectorXr & x)
 {
 	assert( y.size() == x.size() );
 	
-	int n = x.size();
+	Index n = x.size();
 	
 	VectorXr dy_dx(n);
 	
 	dy_dx(0) = ( y(1) - y(0) ) / ( x(1) - x(0) );	// Forward difference.
 	
-	for ( int i = 1; i < n - 1; ++i ) {
+	for ( Index i = 1; i < n - 1; ++i ) {
 		dy_dx(i) = ( y(i + 1) - y(i - 1) ) / ( x(i + 1) - x(i - 1) );	// Central difference.
 	}
 	
@@ -49,7 +49,7 @@ Real numerics::interp1(const VectorXr & x, const VectorXr & y, const Real & xNew
 	}
 	
 	// Index of the last element in "x" lower than xNew.s: "x(index + 1)" is greater or equal than "xNew".
-	int index = std::lower_bound(x.data(), x.data() + x.size(), xNew) - x.data() - 1;
+	Index index = std::lower_bound(x.data(), x.data() + x.size(), xNew) - x.data() - 1;
 	
 	if ( x(index + 1) == xNew ) {	// If "xNew" belongs to the original grid.
 		return y(index + 1);
@@ -65,7 +65,7 @@ VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorX
 	
 	VectorXr yNew = VectorXr::Zero( xNew.size() );
 	
-	for ( int i = 0; i < yNew.size(); ++i ) {
+	for ( Index i = 0; i < yNew.size(); ++i ) {
 		yNew(i) = interp1(x, y, xNew(i));
 	}
 	

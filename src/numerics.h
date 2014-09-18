@@ -108,7 +108,7 @@ VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
 {
 	VectorXpair<ScalarType> copy( vector.size() );
 	
-	for ( int i = 0; i < copy.size(); ++i ) {
+	for ( Index i = 0; i < copy.size(); ++i ) {
 		copy(i).first = vector(i);
 		copy(i).second = i;
 	}

@@ -113,7 +113,7 @@ MatrixXr CsvParser::importFirstRows(const Index & nRows)
 	
 	MatrixXr Data = MatrixXr::Zero( nRows, nCols_ );
 	
-	for ( int i = 0; i < Data.rows(); ++i ) {
+	for ( Index i = 0; i < Data.rows(); ++i ) {
 		Data.row(i) = importRow(i + 1);
 	}
 	
@@ -153,7 +153,7 @@ MatrixXr CsvParser::importCols(const std::initializer_list<Index> & indexes)
 	
 	Index j = 0;
 	
-	for ( int index : indexes ) {
+	for ( Index index : indexes ) {
 		Data.col(j) = importCol( index );
 		++j;
 	}
@@ -167,7 +167,7 @@ MatrixXr CsvParser::importFirstCols(const Index & nCols)
 	
 	MatrixXr Data = MatrixXr::Zero( nRows_, nCols );
 	
-	for ( int j = 0; j < Data.cols(); ++j ) {
+	for ( Index j = 0; j < Data.cols(); ++j ) {
 		Data.col(j) = importRow(j + 1);
 	}
 	
