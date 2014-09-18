@@ -14,7 +14,6 @@
 /**
  *  @brief The @b main function.
  */
-
 int main(const int argc, const char * const * argv, const char * const * envp)
 {
 	try {
@@ -34,7 +33,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		CsvParser parser(input_params, config("hasHeaders", true));
 		
 		// Get number of simulations to be performed.
-		unsigned nSimulations = 0;
+		Index nSimulations = 0;
 		
 		if ( config("simulate_all", false) ) {
 			nSimulations = parser.nRows();
@@ -43,7 +42,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		}
 		
 		if ( nSimulations < 1 ) {
-			throw std::ifstream::failure("ERROR: wrong configuration file...");
+			throw std::ifstream::failure("ERROR: wrong configuration file.");
 		}
 		
 		// Set number of threads.
@@ -58,13 +57,13 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		
 		// Create variables to catch error messages inside the parallel region:
 		// there are not many ways to throw exceptions outside an OpenMP block.
-		std::string omp_loopException;
-		bool thrownException = false;
+		std::string ompException;
+		bool ompThrewException = false;
 		
 		// Loop for the parallel simulation.
-		#pragma omp parallel for shared(omp_loopException, thrownException) private(config) schedule(dynamic, 1)
+		#pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)
 		
-		for ( unsigned i = 0; i < nSimulations; ++i ) {
+		for ( Index i = 0; i < nSimulations; ++i ) {
 			try {	// Exception handling inside parallel region.
 				// Initialize model.
 				DosModel model;
@@ -98,23 +97,22 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 			} catch ( const std::exception & genericException ) {
 				#pragma omp critical
 				{
-					omp_loopException = genericException.what();
-					thrownException = true;
+					ompException = genericException.what();
+					ompThrewException = true;
 				}
 			}
 		}
 		
-		if ( thrownException ) {
-			utility::print_block(omp_loopException.c_str(), std::cerr);
-			return 1;
+		if ( ompThrewException ) {
+			throw std::runtime_error(ompException);
 		}
 	} catch ( const std::exception & genericException ) {
 		utility::print_block(genericException.what(), std::cerr);
-		return 1;
+		return EXIT_FAILURE;
 	}
 	
 	std::cout << std::endl;
 	utility::print_block("Tasks complete!", std::cout);
 	
-	return 0;
+	return EXIT_SUCCESS;
 }
