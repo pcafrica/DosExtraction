@@ -14,7 +14,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
                         const std::string & output_plot_subdir, const std::string & output_filename) const
 {
 	if ( !initialized_ ) {
-		throw std::logic_error("ERROR: parameters list of DosModel has not been properly initialized.");
+		throw std::logic_error("ERROR: list of parameters in DosModel has not been properly initialized.");
 	}
 	
 	// Define output filenames.

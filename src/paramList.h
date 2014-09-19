@@ -36,7 +36,7 @@ class ParamList
 		ParamList() = default;
 		/**
 		 * @brief Explicit conversion constructor.
-		 * @param[in] list : a row vector containing a parameters list (for example got by a @ref CsvParser object).
+		 * @param[in] list : a row vector containing a list of parameters (for example got by a @ref CsvParser object).
 		 * Parameters should be sorted in the same order as specified above.
 		 */
 		explicit ParamList(const RowVectorXr &);
