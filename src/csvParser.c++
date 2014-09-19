@@ -46,7 +46,7 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
 	{
 		// Import the first row: .csv files are formatted so that
 		// each row contains the same number of columns.
-		std::stringstream line_stream(line_);
+		std::istringstream line_stream(line_);
 		
 		std::string field;
 		
@@ -80,7 +80,7 @@ RowVectorXr CsvParser::importRow(const Index & index)
 	
 	// Start import.
 	{
-		std::stringstream line_stream(line_);
+		std::istringstream line_stream(line_);
 		std::string field;
 		
 		for ( Index j = 0; j < nCols_; ++j ) {
@@ -134,7 +134,7 @@ VectorXr CsvParser::importCol(const Index & index)
 	for ( Index i = 0; i < nRows_; ++i ) {	// For each row.
 		std::getline(input_, line_, '\n');	// Read "i"-th row.
 		
-		std::stringstream line_stream(line_);
+		std::istringstream line_stream(line_);
 		std::string field;
 		
 		for ( Index j = 0; j < index; ++j ) {
