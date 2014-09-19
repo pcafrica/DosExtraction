@@ -99,7 +99,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	try {
 		rule.apply(config);
 	} catch ( const std::runtime_error & runtimeError ) {
-		throw runtimeError;
+		throw;
 	}
 	
 	print_done(output_fitting);
@@ -167,7 +167,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	try {
 		save_plot(output_directory, output_plot_subdir, output_CV_filename, output_filename);
 	} catch ( const std::exception & genericException ) {
-		throw genericException;
+		throw;
 	}
 	
 	return;

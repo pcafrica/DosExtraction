@@ -54,7 +54,9 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
 			++nCols_;
 		}
 		
-		if ( field.empty() ) {	// If field is empty, the last column has not been counted.
+		// If field is empty, the last column has not been counted,
+		// because the end of line has been reached.
+		if ( field.empty() ) {
 			++nCols_;
 		}
 	}
