@@ -72,6 +72,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	}
 	
 	Bim1D bimSolver(x);
+	
 	bimSolver.assembleStiff( eps, VectorXr::Ones( params_.nNodes_ ) );
 	
 	{
@@ -122,7 +123,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 	
 	// Start simulation.
 	for ( Index i = 0; i < V.size(); ++i ) {
-		// Print current iteration.
+		// Print current iteration number.
 		if ( i == 0 || (i + 1) % 10 == 0 || i == V.size() - 1 ) {
 			output_fitting << std::endl << "\titeration: " << (i + 1) << "/" << params_.nSteps_;
 		}
