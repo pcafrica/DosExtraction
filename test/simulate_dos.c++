@@ -19,7 +19,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 	try {
 		GetPot commandLine(argc, (char **) argv);
 		
-		const std::string config_directory = commandLine.follow("../config/", 2, "-d", "--directory");
+		const std::string config_directory = commandLine.follow("../config", 2, "-d", "--directory") + "/";
 		
 		GetPot config = utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
 		                                   config_directory).c_str();
@@ -50,11 +50,12 @@ int main(const int argc, const char * const * argv, const char * const * envp)
 		
 		// Directories names.
 		const std::string output_directory   = config("output_directory", "./output" ) + "/";
-		const std::string output_plot_subdir = (std::string) "gnuplot/" + "/";
+		const std::string output_plot_subdir = (std::string) "gnuplot" + "/";
 		
 		// Create output directories, if they don't exist.
-		system( ("exec mkdir " + output_directory + " " + output_directory + output_plot_subdir + " 2> /dev/null").c_str() );
-		
+		if ( system( ("exec mkdir " + output_directory + " " + output_directory
+		              + output_plot_subdir + " 2> /dev/null").c_str() ) );
+		              
 		// Create variables to catch error messages inside the parallel region:
 		// there are not many ways to throw exceptions outside an OpenMP block.
 		std::string ompException;

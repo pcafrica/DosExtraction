@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DOS extraction: /home/Data/Dropbox/Progetto-PACS/C++/Source/test/simulate_dos.c++ Source File</title>
+<title>DOS extraction: /home/elauksap/Dropbox/Progetto-PACS/C++/Source/test/simulate_dos.c++ Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('simulate__dos_8c_09_09_source.html',''
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        GetPot commandLine(argc, (<span class="keywordtype">char</span> **) argv);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> std::string config_directory = commandLine.follow(<span class="stringliteral">&quot;../config/&quot;</span>, 2, <span class="stringliteral">&quot;-d&quot;</span>, <span class="stringliteral">&quot;--directory&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> std::string config_directory = commandLine.follow(<span class="stringliteral">&quot;../config&quot;</span>, 2, <span class="stringliteral">&quot;-d&quot;</span>, <span class="stringliteral">&quot;--directory&quot;</span>) + <span class="stringliteral">&quot;/&quot;</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        GetPot config = <a class="code" href="namespaceutility.html#ac713105bb0c74653e26a924689ecc8c3">utility::full_path</a>(commandLine.follow(<span class="stringliteral">&quot;config.pot&quot;</span>, 2, <span class="stringliteral">&quot;-f&quot;</span>, <span class="stringliteral">&quot;--file&quot;</span>),</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                           config_directory).c_str();</div>
@@ -152,74 +152,75 @@ $(document).ready(function(){initNavTree('simulate__dos_8c_09_09_source.html',''
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// Directories names.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> std::string output_directory   = config(<span class="stringliteral">&quot;output_directory&quot;</span>, <span class="stringliteral">&quot;./output&quot;</span> ) + <span class="stringliteral">&quot;/&quot;</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> std::string output_plot_subdir = (std::string) <span class="stringliteral">&quot;gnuplot/&quot;</span> + <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">const</span> std::string output_plot_subdir = (std::string) <span class="stringliteral">&quot;gnuplot&quot;</span> + <span class="stringliteral">&quot;/&quot;</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Create output directories, if they don&#39;t exist.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        system( (<span class="stringliteral">&quot;exec mkdir &quot;</span> + output_directory + <span class="stringliteral">&quot; &quot;</span> + output_directory + output_plot_subdir + <span class="stringliteral">&quot; 2&gt; /dev/null&quot;</span>).c_str() );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// Create variables to catch error messages inside the parallel region:</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// there are not many ways to throw exceptions outside an OpenMP block.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::string ompException;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">bool</span> ompThrewException = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Loop for the parallel simulation.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">        #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; nSimulations; ++i ) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">try</span> {   <span class="comment">// Exception handling inside parallel region.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="comment">// Initialize model.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="classDosModel.html">DosModel</a> model;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">                #pragma omp critical</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>                {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="comment">// Re-initialize configuration file for each thread.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    config = (GetPot) <a class="code" href="namespaceutility.html#ac713105bb0c74653e26a924689ecc8c3">utility::full_path</a>(commandLine.follow(<span class="stringliteral">&quot;config.pot&quot;</span>, 2, <span class="stringliteral">&quot;-f&quot;</span>, <span class="stringliteral">&quot;--file&quot;</span>),</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                         config_directory).c_str();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                         </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="comment">// Import params.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="keywordflow">if</span> ( nSimulations == parser.nRows() ) { <span class="comment">// Simulate each row in the input file.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        model = (<a class="code" href="classDosModel.html">DosModel</a>) (<a class="code" href="classParamList.html">ParamList</a>) parser.<a class="code" href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">importRow</a>( i + 1 );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        model = (<a class="code" href="classDosModel.html">DosModel</a>) (<a class="code" href="classParamList.html">ParamList</a>) parser.<a class="code" href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">importRow</a>( config(<span class="stringliteral">&quot;indexes&quot;</span>, (<span class="keywordtype">int</span>) (i + 1), i) );</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Performing simulation No. &quot;</span> &lt;&lt; model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo() &lt;&lt; <span class="stringliteral">&quot;...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keyword">const</span> std::string output_filename = <span class="stringliteral">&quot;output_&quot;</span> + std::to_string(model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo());</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="comment">// Remove possible old files.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                system( (<span class="stringliteral">&quot;exec rm -f &quot;</span> + output_directory + output_filename + <span class="stringliteral">&quot;* &quot;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                         + output_directory + output_plot_subdir + output_filename + <span class="stringliteral">&quot;* 2&gt; /dev/null&quot;</span>).c_str() );</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                         </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="comment">// Simulate and save output files.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                model.<a class="code" href="classDosModel.html#a5203629bc44905401b1b0d71a021db40">simulate</a>(config, input_experim, output_directory, output_plot_subdir, output_filename);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\tSimulation No. &quot;</span> &lt;&lt; model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo() &lt;&lt; <span class="stringliteral">&quot; complete!&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            } <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException ) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">                #pragma omp critical</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor"></span>                {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    ompException = genericException.what();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    ompThrewException = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> ( ompThrewException ) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(ompException);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    } <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException ) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="namespaceutility.html#afe82f121837a9a5c250e77d133632c15">utility::print_block</a>(genericException.what(), std::cerr);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="namespaceutility.html#afe82f121837a9a5c250e77d133632c15">utility::print_block</a>(<span class="stringliteral">&quot;Tasks complete!&quot;</span>, std::cout);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> ( system( (<span class="stringliteral">&quot;exec mkdir &quot;</span> + output_directory + <span class="stringliteral">&quot; &quot;</span> + output_directory</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      + output_plot_subdir + <span class="stringliteral">&quot; 2&gt; /dev/null&quot;</span>).c_str() ) );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                      </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Create variables to catch error messages inside the parallel region:</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// there are not many ways to throw exceptions outside an OpenMP block.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::string ompException;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> ompThrewException = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// Loop for the parallel simulation.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; nSimulations; ++i ) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">try</span> {   <span class="comment">// Exception handling inside parallel region.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="comment">// Initialize model.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classDosModel.html">DosModel</a> model;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">                #pragma omp critical</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>                {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="comment">// Re-initialize configuration file for each thread.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    config = (GetPot) <a class="code" href="namespaceutility.html#ac713105bb0c74653e26a924689ecc8c3">utility::full_path</a>(commandLine.follow(<span class="stringliteral">&quot;config.pot&quot;</span>, 2, <span class="stringliteral">&quot;-f&quot;</span>, <span class="stringliteral">&quot;--file&quot;</span>),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                         config_directory).c_str();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                         </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="comment">// Import params.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordflow">if</span> ( nSimulations == parser.nRows() ) { <span class="comment">// Simulate each row in the input file.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        model = (<a class="code" href="classDosModel.html">DosModel</a>) (<a class="code" href="classParamList.html">ParamList</a>) parser.<a class="code" href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">importRow</a>( i + 1 );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        model = (<a class="code" href="classDosModel.html">DosModel</a>) (<a class="code" href="classParamList.html">ParamList</a>) parser.<a class="code" href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">importRow</a>( config(<span class="stringliteral">&quot;indexes&quot;</span>, (<span class="keywordtype">int</span>) (i + 1), i) );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Performing simulation No. &quot;</span> &lt;&lt; model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo() &lt;&lt; <span class="stringliteral">&quot;...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keyword">const</span> std::string output_filename = <span class="stringliteral">&quot;output_&quot;</span> + std::to_string(model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">// Remove possible old files.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                system( (<span class="stringliteral">&quot;exec rm -f &quot;</span> + output_directory + output_filename + <span class="stringliteral">&quot;* &quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                         + output_directory + output_plot_subdir + output_filename + <span class="stringliteral">&quot;* 2&gt; /dev/null&quot;</span>).c_str() );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                         </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// Simulate and save output files.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                model.<a class="code" href="classDosModel.html#a5203629bc44905401b1b0d71a021db40">simulate</a>(config, input_experim, output_directory, output_plot_subdir, output_filename);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;\tSimulation No. &quot;</span> &lt;&lt; model.<a class="code" href="classDosModel.html#a5fd763c7e4ba5d643fdaa061ff3c506a">params</a>().simulationNo() &lt;&lt; <span class="stringliteral">&quot; complete!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            } <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException ) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">                #pragma omp critical</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor"></span>                {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    ompException = genericException.what();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    ompThrewException = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> ( ompThrewException ) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(ompException);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    } <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException ) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="namespaceutility.html#afe82f121837a9a5c250e77d133632c15">utility::print_block</a>(genericException.what(), std::cerr);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="namespaceutility.html#afe82f121837a9a5c250e77d133632c15">utility::print_block</a>(<span class="stringliteral">&quot;Tasks complete!&quot;</span>, std::cout);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="ttc" id="simulate__dos_8c_09_09_html_abb42499d73e7c21855b75ac125b8da84"><div class="ttname"><a href="simulate__dos_8c_09_09.html#abb42499d73e7c21855b75ac125b8da84">main</a></div><div class="ttdeci">int main(const int argc, const char *const *argv, const char *const *envp)</div><div class="ttdoc">The main function. </div><div class="ttdef"><b>Definition:</b> <a href="simulate__dos_8c_09_09_source.html#l00017">simulate_dos.c++:17</a></div></div>
-<div class="ttc" id="classCsvParser_html_a480e8570942d68f55cfae439e210e46e"><div class="ttname"><a href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">CsvParser::importRow</a></div><div class="ttdeci">RowVectorXr importRow(const Index &amp;)</div><div class="ttdoc">Method to import a row from the input file. </div><div class="ttdef"><b>Definition:</b> <a href="csvParser_8c_09_09_source.html#l00065">csvParser.c++:65</a></div></div>
+<div class="ttc" id="classCsvParser_html_a480e8570942d68f55cfae439e210e46e"><div class="ttname"><a href="classCsvParser.html#a480e8570942d68f55cfae439e210e46e">CsvParser::importRow</a></div><div class="ttdeci">RowVectorXr importRow(const Index &amp;)</div><div class="ttdoc">Method to import a row from the input file. </div><div class="ttdef"><b>Definition:</b> <a href="csvParser_8c_09_09_source.html#l00067">csvParser.c++:67</a></div></div>
 <div class="ttc" id="dosModel_8h_html"><div class="ttname"><a href="dosModel_8h.html">dosModel.h</a></div><div class="ttdoc">Mathematical model for Density of States extraction. </div></div>
 <div class="ttc" id="typedefs_8h_html_a2c726f8f32697958e9d6c2afecda531d"><div class="ttname"><a href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a></div><div class="ttdeci">#define Index</div><div class="ttdoc">Pre-processor macro for indexing variables. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00024">typedefs.h:24</a></div></div>
 <div class="ttc" id="namespaceutility_html_ac713105bb0c74653e26a924689ecc8c3"><div class="ttname"><a href="namespaceutility.html#ac713105bb0c74653e26a924689ecc8c3">utility::full_path</a></div><div class="ttdeci">std::string full_path(const std::string &amp;, const std::string &amp;)</div><div class="ttdoc">Auxiliary function to return the full path to a file. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8c_09_09_source.html#l00003">typedefs.c++:3</a></div></div>

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.8.10)  18 SEP 2014 23:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.24)  24 SEP 2014 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **refman
 (./refman.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+Babel <3.9h> and hyphenation patterns for 7 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
@@ -67,7 +67,7 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -822,7 +822,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen142
@@ -1030,7 +1030,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
  [1
 
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -1498,6 +1498,12 @@ Underfull \hbox (badness 10000) detected at line 21
  []
 
 ) (./physicalConstants_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]\T1/phv/bc/n/14.4 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src
+/physical-Constants.h File
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
@@ -1555,12 +1561,6 @@ Underfull \hbox (badness 10000) detected at line 42
  []
 
 ) (./quadratureRule_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--3
-[]\T1/phv/bc/n/14.4 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/qu
-adrature-Rule.h File Ref-er-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
@@ -1641,9 +1641,9 @@ Underfull \hbox (badness 10000) detected at line 84
  []
 
 [47]) (./simulate__dos_8c_09_09.tex
-Underfull \hbox (badness 1297) in paragraph at lines 3--3
-[]\T1/phv/bc/n/14.4 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/test/s
-imulate-_-dos.c++ File Ref-er-
+Underfull \hbox (badness 10000) in paragraph at lines 3--3
+[]\T1/phv/bc/n/14.4 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/tes
+t/simulate-_-dos.c++ File
  []
 
 
@@ -1662,51 +1662,63 @@ Underfull \hbox (badness 10000) detected at line 22
  []
 
 ) [48] (./refman.ind
-Overfull \hbox (24.56715pt too wide) in paragraph at lines 3--5
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/charg
-e.-
+Overfull \hbox (41.57695pt too wide) in paragraph at lines 3--5
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/ch
+arge.-
  []
 
 
-Overfull \hbox (33.60298pt too wide) in paragraph at lines 9--11
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/numer
-ics.-
+Overfull \hbox (25.19736pt too wide) in paragraph at lines 5--7
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/cs
+v-
  []
 
 
-Overfull \hbox (20.10321pt too wide) in paragraph at lines 11--13
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/param
--
+Overfull \hbox (26.20523pt too wide) in paragraph at lines 7--9
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/do
+s-
  []
 
 
-Overfull \hbox (26.92525pt too wide) in paragraph at lines 13--15
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/physi
-cal-
+Overfull \hbox (50.61278pt too wide) in paragraph at lines 9--11
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/nu
+merics.-
  []
 
 
-Overfull \hbox (38.12076pt too wide) in paragraph at lines 15--17
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/quadr
-ature-
+Overfull \hbox (37.113pt too wide) in paragraph at lines 11--13
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/pa
+ram-
  []
 
 
-Overfull \hbox (25.33223pt too wide) in paragraph at lines 17--19
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/solve
-rs.-
+Overfull \hbox (43.93504pt too wide) in paragraph at lines 13--15
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/ph
+ysical-
  []
 
 
-Overfull \hbox (31.07397pt too wide) in paragraph at lines 19--21
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/typed
-efs.-
+Overfull \hbox (55.13055pt too wide) in paragraph at lines 15--17
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/qu
+adrature-
  []
 
 
-Overfull \hbox (30.61484pt too wide) in paragraph at lines 21--23
-[]\T1/phv/m/n/10 /home/-Data/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/test/simu
-late-
+Overfull \hbox (42.34203pt too wide) in paragraph at lines 17--19
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/so
+lvers.-
+ []
+
+
+Overfull \hbox (48.08377pt too wide) in paragraph at lines 19--21
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/src/ty
+pedefs.-
+ []
+
+
+Overfull \hbox (47.62463pt too wide) in paragraph at lines 21--23
+[]\T1/phv/m/n/10 /home/elauksap/-Dropbox/-Progetto--P-A-C-S/-C++/-Source/test/s
+imulate-
  []
 
 [49
@@ -1718,7 +1730,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: EBCE75A072303274224B3001DCCCA22D;24001.
+(rerunfilecheck)             Checksum: 88CA3C56FC3F4DCA1E9ABE34DE4C9B2C;24201.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1732,12 +1744,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 13155 strings out of 495034
- 195152 string characters out of 6181677
- 263989 words of memory out of 5000000
- 15606 multiletter control sequences out of 15000+600000
+ 13154 strings out of 494951
+ 195103 string characters out of 6178882
+ 264297 words of memory out of 5000000
+ 15622 multiletter control sequences out of 15000+600000
  108779 words of font info for 167 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  48i,13n,43p,556b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{simulate__dos_8c_09_09_source} has been reference
 d but does not exist, replaced by a fixed one
@@ -1785,7 +1797,7 @@ etic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (56 pages, 302503 bytes).
+Output written on refman.pdf (56 pages, 302785 bytes).
 PDF statistics:
  2098 PDF objects out of 2487 (max. 8388607)
  1991 compressed objects within 20 object streams
