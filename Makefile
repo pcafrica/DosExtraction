@@ -23,8 +23,8 @@ endif
 
 EXEC  = $(BINDIR)/$(TEST)
 
-SRCS = $(wildcard $(TESTDIR)/$(TEST).c++) $(wildcard $(SRCDIR)/*.c++)
-HDRS = $(wildcard $(TESTDIR)/$(TEST).h) $(wildcard $(SRCDIR)/*.h)
+SRCS = $(wildcard $(SRCDIR)/*.c++) $(wildcard $(TESTDIR)/$(TEST).c++)
+HDRS = $(wildcard $(SRCDIR)/*.h)   $(wildcard $(TESTDIR)/$(TEST).h)
 
 OBJS   = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c++=.o)))
 
@@ -33,7 +33,7 @@ OBJS   = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c++=.o)))
 ############################################################
 CXX = g++
 CXXFLAGS = -g -std=c++11 -Wall --pedantic -fopenmp
-LIB = -lboost_iostreams -lboost_system -lboost_filesystem
+LIBS = -lboost_iostreams -lboost_system -lboost_filesystem
 INC = -I. -isystem include
 
 LBITS := $(shell getconf LONG_BIT)
@@ -71,7 +71,7 @@ profile: $(EXEC)
 $(EXEC): $(OBJS)
 	$(MUTE)mkdir -p $(BINDIR)/
 	# Linking and creating executable...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $(OBJS) -o $(EXEC)
+	$(MUTE)$(CXX) $(CXXFLAGS) $(INC) $^ -o $@ $(LIBS)
 
 astyle:
 	# Formatting source codes...
@@ -84,12 +84,12 @@ endif
 $(OBJDIR)/%.o: $(SRCDIR)/%.c++ $(SRCDIR)/%.h	# Check if header file has been modified.
 	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $< -c -o $@
+	$(MUTE)$(CXX) $(CXXFLAGS) $(INC) $< -c -o $@
 
 $(OBJDIR)/$(notdir $(EXEC)).o: $(TESTDIR)/$(notdir $(EXEC).c++)	# Except for sources without a related header file.
 	$(MUTE)mkdir -p $(OBJDIR)/
 	# Compiling $<...
-	$(MUTE)$(CXX) $(CXXFLAGS) $(LIB) $(INC) $< -c -o $@
+	$(MUTE)$(CXX) $(CXXFLAGS) $(INC) $< -c -o $@
 
 doc:
 	$(MUTE)$(MAKE) -C $(DOCDIR) -s --no-print-directory
