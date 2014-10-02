@@ -29,7 +29,9 @@ Inheritance diagram for Quadrature\-Rule\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
 \hypertarget{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}{virtual void \hyperlink{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}{apply} ()=0}\label{classQuadratureRule_ae8035f1283a63c55fbbfb4e786db8a98}
 
-\begin{DoxyCompactList}\small\item\em Apply the quadrature rule in order to compute the nodes and weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Apply the quadrature rule in order to compute the nodes and weights. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classQuadratureRule_a0eac623f625d4faa872b1b031db76a75}{apply} (const Get\-Pot \&config)=0
+\begin{DoxyCompactList}\small\item\em Apply the quadrature rule reading parameters from a configuration file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}{\bf Getter methods}\par
 \begin{DoxyCompactItemize}
 \item 
@@ -59,6 +61,9 @@ Inheritance diagram for Quadrature\-Rule\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classQuadratureRule_a6be33a81953be5c0377a00dec7d5b1d3}{class {\bfseries Gaussian\-Charge}}\label{classQuadratureRule_a6be33a81953be5c0377a00dec7d5b1d3}
+
+\item 
+\hypertarget{classQuadratureRule_a37daff3fd9f1cdb4519d878b4501d38b}{class {\bfseries Exponential\-Charge}}\label{classQuadratureRule_a37daff3fd9f1cdb4519d878b4501d38b}
 
 \end{DoxyCompactItemize}
 
@@ -91,11 +96,34 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 5 of file quadrature\-Rule.\-c++.
+Definition at line 14 of file quadrature\-Rule.\-cc.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classQuadratureRule_a0eac623f625d4faa872b1b031db76a75}{\index{Quadrature\-Rule@{Quadrature\-Rule}!apply@{apply}}
+\index{apply@{apply}!QuadratureRule@{Quadrature\-Rule}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}virtual void apply (
+\begin{DoxyParamCaption}
+\item[{const Get\-Pot \&}]{config}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQuadratureRule_a0eac623f625d4faa872b1b031db76a75}
+
+
+Apply the quadrature rule reading parameters from a configuration file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & \-: the Get\-Pot configuration object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGaussLaguerreRule_a6265ae995213bef29d216da947f5f692}{Gauss\-Laguerre\-Rule}, and \hyperlink{classGaussHermiteRule_a6265ae995213bef29d216da947f5f692}{Gauss\-Hermite\-Rule}.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8h}{quadrature\-Rule.\-h}\item 
-/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/quadrature\-Rule.\-c++\end{DoxyCompactItemize}
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8cc}{quadrature\-Rule.\-cc}\end{DoxyCompactItemize}

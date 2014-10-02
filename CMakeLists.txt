@@ -40,9 +40,10 @@ find_package (Boost REQUIRED COMPONENTS iostreams system filesystem)
 include_directories (SYSTEM ${Boost_INCLUDE_DIR})
 
 find_package(OpenMP)
+
 if (OPENMP_FOUND)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-endif()
+endif ()
 
 find_package (Gnuplot)
 
@@ -58,10 +59,14 @@ include (RunDoxygen)
 ############################################################
 ## Artistic style.
 ############################################################
-add_custom_target (astyle ALL
-    COMMAND astyle -q -A10 -t4 -C -S -N -f -p -H -E ${SRCS} ${HDRS}
-    COMMENT "Formatting source codes..."
-    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+find_package (AStyle)
+
+if (ASTYLE_FOUND)
+    add_custom_target (astyle ALL
+        COMMAND ${ASTYLE_EXECUTABLE} -q -A7 -s2 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS}
+        COMMENT "Formatting source codes..."
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+endif ()
 
 ############################################################
 ## Executables definition.

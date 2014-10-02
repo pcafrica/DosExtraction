@@ -149,9 +149,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussHermiteRule.html#ae5502fed0f3128dce83d1280a834ffac">apply</a> () override</td></tr>
 <tr class="memdesc:ae5502fed0f3128dce83d1280a834ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the quadrature rule in order to compute the nodes and weights. <br/></td></tr>
 <tr class="separator:ae5502fed0f3128dce83d1280a834ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedfa3b506bf5faafad17567ae2c6bed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussHermiteRule.html#aedfa3b506bf5faafad17567ae2c6bed4">apply</a> (const GetPot &amp;)</td></tr>
-<tr class="memdesc:aedfa3b506bf5faafad17567ae2c6bed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the quadrature rule reading parameters from a configuration file.  <a href="#aedfa3b506bf5faafad17567ae2c6bed4">More...</a><br/></td></tr>
-<tr class="separator:aedfa3b506bf5faafad17567ae2c6bed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6265ae995213bef29d216da947f5f692"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussHermiteRule.html#a6265ae995213bef29d216da947f5f692">apply</a> (const GetPot &amp;) override</td></tr>
+<tr class="memdesc:a6265ae995213bef29d216da947f5f692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the quadrature rule reading parameters from a configuration file.  <a href="#a6265ae995213bef29d216da947f5f692">More...</a><br/></td></tr>
+<tr class="separator:a6265ae995213bef29d216da947f5f692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a21a96592fcd473df6739c72c083063"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a21a96592fcd473df6739c72c083063"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussHermiteRule.html#a5a21a96592fcd473df6739c72c083063">apply_iterative_algorithm</a> (const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;=1000, const <a class="el" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp;=1.0e-14)</td></tr>
 <tr class="memdesc:a5a21a96592fcd473df6739c72c083063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute nodes and weights using an adapted version of the algorithm presented in: <br/>
@@ -203,13 +203,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class derived from <a class="el" href="classQuadratureRule.html">QuadratureRule</a> providing the Gauss-Hermite quadrature rule. </p>
-<p>Compute nodes and weights for the <em>nNodes_</em>-points approximation of </p>
+<p>Compute nodes and weights for the <em>nNodes_</em>-points approximation of: </p>
 <p class="formulaDsp">
 \[ \int_{-\infty}^{+\infty} w(x)f(x)~\mathrm{d}x \]
 </p>
 <p> where \( w(x) = e^{-x^2} \). </p>
 
-<p>Definition at line <a class="el" href="quadratureRule_8h_source.html#l00082">82</a> of file <a class="el" href="quadratureRule_8h_source.html">quadratureRule.h</a>.</p>
+<p>Definition at line <a class="el" href="quadratureRule_8h_source.html#l00089">89</a> of file <a class="el" href="quadratureRule_8h_source.html">quadratureRule.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a650e19b8ef2851cdc955a1201b76f9b5"></a>
 <div class="memitem">
@@ -233,14 +233,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="quadratureRule_8c_09_09_source.html#l00014">14</a> of file <a class="el" href="quadratureRule_8c_09_09_source.html">quadratureRule.c++</a>.</p>
+<p>Definition at line <a class="el" href="quadratureRule_8cc_source.html#l00023">23</a> of file <a class="el" href="quadratureRule_8cc_source.html">quadratureRule.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aedfa3b506bf5faafad17567ae2c6bed4"></a>
+<a class="anchor" id="a6265ae995213bef29d216da947f5f692"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void apply </td>
@@ -250,6 +253,11 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Apply the quadrature rule reading parameters from a configuration file. </p>
@@ -260,13 +268,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="quadratureRule_8c_09_09_source.html#l00022">22</a> of file <a class="el" href="quadratureRule_8c_09_09_source.html">quadratureRule.c++</a>.</p>
+<p>Implements <a class="el" href="classQuadratureRule.html#a0eac623f625d4faa872b1b031db76a75">QuadratureRule</a>.</p>
+
+<p>Definition at line <a class="el" href="quadratureRule_8cc_source.html#l00031">31</a> of file <a class="el" href="quadratureRule_8cc_source.html">quadratureRule.cc</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8h_source.html">quadratureRule.h</a></li>
-<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8c_09_09_source.html">quadratureRule.c++</a></li>
+<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8cc_source.html">quadratureRule.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,0 +1,67 @@
+\hypertarget{classQuadratureRuleFactory}{\section{Quadrature\-Rule\-Factory Class Reference}
+\label{classQuadratureRuleFactory}\index{Quadrature\-Rule\-Factory@{Quadrature\-Rule\-Factory}}
+}
+
+
+Abstract factory to handle at runtime a quadrature rule.  
+
+
+
+
+{\ttfamily \#include $<$factory.\-h$>$}
+
+Inheritance diagram for Quadrature\-Rule\-Factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQuadratureRuleFactory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classQuadratureRuleFactory_a2c094b9c41d5a88ae4e8e4ef1f665cf8}{\hyperlink{classQuadratureRuleFactory_a2c094b9c41d5a88ae4e8e4ef1f665cf8}{Quadrature\-Rule\-Factory} ()=default}\label{classQuadratureRuleFactory_a2c094b9c41d5a88ae4e8e4ef1f665cf8}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classQuadratureRuleFactory_a0744c125ab0b59fb96f8d9d33491d594}{virtual \hyperlink{classQuadratureRuleFactory_a0744c125ab0b59fb96f8d9d33491d594}{$\sim$\-Quadrature\-Rule\-Factory} ()=default}\label{classQuadratureRuleFactory_a0744c125ab0b59fb96f8d9d33491d594}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual \hyperlink{classQuadratureRule}{Quadrature\-Rule} $\ast$ \hyperlink{classQuadratureRuleFactory_adc9f82328b7cba8517e462e99c58335e}{Build\-Rule} (const \hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \&n\-Nodes)=0
+\begin{DoxyCompactList}\small\item\em Method to build an abstract \hyperlink{classQuadratureRule}{Quadrature\-Rule} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract factory to handle at runtime a quadrature rule. 
+
+Definition at line 106 of file factory.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classQuadratureRuleFactory_adc9f82328b7cba8517e462e99c58335e}{\index{Quadrature\-Rule\-Factory@{Quadrature\-Rule\-Factory}!Build\-Rule@{Build\-Rule}}
+\index{Build\-Rule@{Build\-Rule}!QuadratureRuleFactory@{Quadrature\-Rule\-Factory}}
+\subsubsection[{Build\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Quadrature\-Rule}$\ast$ Build\-Rule (
+\begin{DoxyParamCaption}
+\item[{const {\bf Index} \&}]{n\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classQuadratureRuleFactory_adc9f82328b7cba8517e462e99c58335e}
+
+
+Method to build an abstract \hyperlink{classQuadratureRule}{Quadrature\-Rule} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Nodes} & \-: the number of nodes to be used for the quadrature rule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classQuadratureRule}{Quadrature\-Rule}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGaussLaguerreRuleFactory_a1e907a5209041516fa18c86c79fb1ec6}{Gauss\-Laguerre\-Rule\-Factory}, and \hyperlink{classGaussHermiteRuleFactory_a1e907a5209041516fa18c86c79fb1ec6}{Gauss\-Hermite\-Rule\-Factory}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8h}{factory.\-h}\end{DoxyCompactItemize}

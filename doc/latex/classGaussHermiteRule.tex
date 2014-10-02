@@ -30,7 +30,7 @@ Inheritance diagram for Gauss\-Hermite\-Rule\-:\begin{figure}[H]
 \hypertarget{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}{virtual void \hyperlink{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}{apply} () override}\label{classGaussHermiteRule_ae5502fed0f3128dce83d1280a834ffac}
 
 \begin{DoxyCompactList}\small\item\em Apply the quadrature rule in order to compute the nodes and weights. \end{DoxyCompactList}\item 
-void \hyperlink{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}{apply} (const Get\-Pot \&)
+virtual void \hyperlink{classGaussHermiteRule_a6265ae995213bef29d216da947f5f692}{apply} (const Get\-Pot \&) override
 \begin{DoxyCompactList}\small\item\em Apply the quadrature rule reading parameters from a configuration file. \end{DoxyCompactList}\item 
 \hypertarget{classGaussHermiteRule_a5a21a96592fcd473df6739c72c083063}{void \hyperlink{classGaussHermiteRule_a5a21a96592fcd473df6739c72c083063}{apply\-\_\-iterative\-\_\-algorithm} (const \hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \&=1000, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&=1.\-0e-\/14)}\label{classGaussHermiteRule_a5a21a96592fcd473df6739c72c083063}
 
@@ -47,9 +47,9 @@ Cambridge University Press, New York, N\-Y, U\-S\-A. \end{DoxyCompactList}\item
 \subsection{Detailed Description}
 Class derived from \hyperlink{classQuadratureRule}{Quadrature\-Rule} providing the Gauss-\/\-Hermite quadrature rule. 
 
-Compute nodes and weights for the {\itshape n\-Nodes\-\_\-}-\/points approximation of \[ \int_{-\infty}^{+\infty} w(x)f(x)~\mathrm{d}x \] where $ w(x) = e^{-x^2} $. 
+Compute nodes and weights for the {\itshape n\-Nodes\-\_\-}-\/points approximation of\-: \[ \int_{-\infty}^{+\infty} w(x)f(x)~\mathrm{d}x \] where $ w(x) = e^{-x^2} $. 
 
-Definition at line 82 of file quadrature\-Rule.\-h.
+Definition at line 89 of file quadrature\-Rule.\-h.
 
 
 
@@ -72,18 +72,18 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 14 of file quadrature\-Rule.\-c++.
+Definition at line 23 of file quadrature\-Rule.\-cc.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}{\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}!apply@{apply}}
+\hypertarget{classGaussHermiteRule_a6265ae995213bef29d216da947f5f692}{\index{Gauss\-Hermite\-Rule@{Gauss\-Hermite\-Rule}!apply@{apply}}
 \index{apply@{apply}!GaussHermiteRule@{Gauss\-Hermite\-Rule}}
 \subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void apply (
 \begin{DoxyParamCaption}
 \item[{const Get\-Pot \&}]{config}
 \end{DoxyParamCaption}
-)}}\label{classGaussHermiteRule_aedfa3b506bf5faafad17567ae2c6bed4}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussHermiteRule_a6265ae995213bef29d216da947f5f692}
 
 
 Apply the quadrature rule reading parameters from a configuration file. 
@@ -95,11 +95,15 @@ Apply the quadrature rule reading parameters from a configuration file.
 \end{DoxyParams}
 
 
-Definition at line 22 of file quadrature\-Rule.\-c++.
+Implements \hyperlink{classQuadratureRule_a0eac623f625d4faa872b1b031db76a75}{Quadrature\-Rule}.
+
+
+
+Definition at line 31 of file quadrature\-Rule.\-cc.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8h}{quadrature\-Rule.\-h}\item 
-/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/quadrature\-Rule.\-c++\end{DoxyCompactItemize}
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{quadratureRule_8cc}{quadrature\-Rule.\-cc}\end{DoxyCompactItemize}

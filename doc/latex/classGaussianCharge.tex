@@ -44,9 +44,9 @@ virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \h
 \subsection{Detailed Description}
 Class derived from \hyperlink{classCharge}{Charge}, under the hypothesis that Density of States is a combination of gaussians. 
 
-Provide methods to compute total electric charge and its derivative under the hypothesis that Density of States is a linear combination of multiple gaussians, whose parameters are read from a \hyperlink{classParamList}{Param\-List} object. 
+Provide methods to compute total electric charge and its derivative under the hypothesis that Density of States is a linear combination of multiple gaussians, whose parameters are read from a \hyperlink{classParamList}{Param\-List} object, of the form\-: \[ \frac{N_0}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{\left(\cdot\right)^2}{2\sigma^2}\right) ~ . \] 
 
-Definition at line 70 of file charge.\-h.
+Definition at line 71 of file charge.\-h.
 
 
 
@@ -72,7 +72,7 @@ Constructor.
 \end{DoxyParams}
 
 
-Definition at line 8 of file charge.\-c++.
+Definition at line 17 of file charge.\-cc.
 
 
 
@@ -102,7 +102,7 @@ Implements \hyperlink{classCharge_a597abd6d429e1c18935e4806082d67d8}{Charge}.
 
 
 
-Definition at line 37 of file charge.\-c++.
+Definition at line 48 of file charge.\-cc.
 
 \hypertarget{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dcharge@{dcharge}}
 \index{dcharge@{dcharge}!GaussianCharge@{Gaussian\-Charge}}
@@ -129,7 +129,7 @@ Implements \hyperlink{classCharge_acd71b3197f9081512d70d96ac694a3fc}{Charge}.
 
 
 
-Definition at line 60 of file charge.\-c++.
+Definition at line 75 of file charge.\-cc.
 
 \hypertarget{classGaussianCharge_a91f27044b2f7ced7c2330153bb9da652}{\index{Gaussian\-Charge@{Gaussian\-Charge}!n\-\_\-approx@{n\-\_\-approx}}
 \index{n\-\_\-approx@{n\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
@@ -158,7 +158,7 @@ the electrons density $ n(\varphi) \left[ m^{-3} \right] $.
 \end{DoxyReturn}
 
 
-Definition at line 11 of file charge.\-c++.
+Definition at line 20 of file charge.\-cc.
 
 \hypertarget{classGaussianCharge_ab5ce245792f1b0d7c2038ebc75bbc758}{\index{Gaussian\-Charge@{Gaussian\-Charge}!dn\-\_\-approx@{dn\-\_\-approx}}
 \index{dn\-\_\-approx@{dn\-\_\-approx}!GaussianCharge@{Gaussian\-Charge}}
@@ -187,11 +187,11 @@ the derivative\-: $ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^
 \end{DoxyReturn}
 
 
-Definition at line 24 of file charge.\-c++.
+Definition at line 34 of file charge.\-cc.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{charge_8h}{charge.\-h}\item 
-/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/charge.\-c++\end{DoxyCompactItemize}
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{charge_8cc}{charge.\-cc}\end{DoxyCompactItemize}

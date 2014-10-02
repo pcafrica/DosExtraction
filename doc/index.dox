@@ -12,10 +12,12 @@
  * 
  * The program requires the following libraries to be installed on your system:
  * 
+ * @arg <a href="http://www.cmake.org"><b>CMake</b></a>, a cross-platform configuration tool (version 2.8 or above);
  * @arg @anchor Eigen <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra;
  * @arg @anchor Gnuplot <a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots;
  * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the @ref Gnuplot interface to C++;
- * @arg <a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory).
+ * @arg <a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory);
+ * @arg <a href="http://www.doxygen.org"><b>Doxygen</b></a>, a documentation generator (not compulsory).
  * 
  * It also uses the following packages, provided in the @a include/ folder:
  * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files;
@@ -23,28 +25,36 @@
  * 
  * @section install_sec Compile
  * 
- * In order to compile a test executable, simply execute one of these commands
+ * In order to generate a test executable, simply execute one of these commands
  * in a terminal pointing to the root directory of this package:
  * 
  * @code
+ *     $ mkdir build
+ *     $ cd build
+ *     $ cmake ..
  *     $ make
  * @endcode
  * 
  * or, if you want the compiler to produce also debugging informations:
  * 
  * @code
- *     $ make debug
+ *     $ mkdir build
+ *     $ cd build
+ *     $ cmake .. -DDEBUG_MODE=ON
+ *     $ make
  * @endcode
  * 
- * You can specify the name of the test to be compiled (without extension, for example: @a simulate_dos)
- * by passing the variable @b NAME through command-line:
+ * You can specify the name of the test source to be compiled (without extension, for example: @a simulate_dos)
+ * by editing the variable @b EXEC, defined in the @a CMakeLists.txt file.
+ * 
+ * Repeat these instructions for each test you want to compile.
+ * 
+ * The following command will generate this documentation under the @a doc/ folder
+ * (or the one specified in @a CMakeLists.txt):
  * 
  * @code
- *     $ make NAME=test_filename
+ *     $ make doc
  * @endcode
- * 
- * The compiler will generate the @a test_filename executable under the @a bin/ directory. @n
- * Repeat these instructions for each test you want to compile.
  * 
  * @section configure Set up the configurations
  * 
@@ -63,7 +73,7 @@
  * 
  * @section run Run!
  * 
- * Executables are placed under the @a bin/ directory. @n
+ * Executables are placed under the @a bin/ directory (or the one specified in @a CMakeLists.txt). @n
  * @n
  * To run by using the default configuration filename (@a config.pot) simply move to the @a bin/ directory and execute:
  * 

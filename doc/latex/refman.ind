@@ -1,45 +1,68 @@
 \begin{theindex}
 
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.\discretionary {-}{}{}cc}, 
+		\hyperpage{57}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/charge.\discretionary {-}{}{}h}, 
-		\hyperpage{41}
+		\hyperpage{57}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.\discretionary {-}{}{}cc}, 
+		\hyperpage{58}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/csv\discretionary {-}{}{}Parser.\discretionary {-}{}{}h}, 
-		\hyperpage{41}
+		\hyperpage{58}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.\discretionary {-}{}{}cc}, 
+		\hyperpage{59}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/dos\discretionary {-}{}{}Model.\discretionary {-}{}{}h}, 
-		\hyperpage{42}
+		\hyperpage{59}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/factory.\discretionary {-}{}{}cc}, 
+		\hyperpage{60}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/factory.\discretionary {-}{}{}h}, 
+		\hyperpage{60}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.\discretionary {-}{}{}cc}, 
+		\hyperpage{61}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/numerics.\discretionary {-}{}{}h}, 
-		\hyperpage{43}
+		\hyperpage{61}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}cc}, 
+		\hyperpage{62}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h}, 
-		\hyperpage{43}
+		\hyperpage{62}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h}, 
-		\hyperpage{44}
+		\hyperpage{63}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc}, 
+		\hyperpage{64}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h}, 
-		\hyperpage{45}
+		\hyperpage{64}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.\discretionary {-}{}{}cc}, 
+		\hyperpage{65}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/solvers.\discretionary {-}{}{}h}, 
-		\hyperpage{45}
+		\hyperpage{65}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.\discretionary {-}{}{}cc}, 
+		\hyperpage{66}
   \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/src/typedefs.\discretionary {-}{}{}h}, 
-		\hyperpage{46}
-  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}c++}, 
-		\hyperpage{48}
+		\hyperpage{66}
+  \item {/home/elauksap/\discretionary {-}{}{}Dropbox/\discretionary {-}{}{}Progetto-\/\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}S/\discretionary {-}{}{}C++/\discretionary {-}{}{}Source/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc}, 
+		\hyperpage{68}
 
   \indexspace
 
   \item {apply}
     \subitem {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}, 
-		\hyperpage{30}
+		\hyperpage{35}
+    \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
+		\hyperpage{42}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{33}
+		\hyperpage{45}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{53}
   \item {assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{18}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{37}
+		\hyperpage{50}
   \item {assemble\discretionary {-}{}{}Mass}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{19}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{38}
+		\hyperpage{51}
   \item {assemble\discretionary {-}{}{}Stiff}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{19}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{38}
+		\hyperpage{51}
 
   \indexspace
 
@@ -55,6 +78,19 @@
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{18}
     \subitem {log\discretionary {-}{}{}\_\discretionary {-}{}{}mean}, 
 		\hyperpage{18}
+  \item {Build\discretionary {-}{}{}Charge}
+    \subitem {Charge\discretionary {-}{}{}Factory}, \hyperpage{22}
+    \subitem {Exponential\discretionary {-}{}{}Charge\discretionary {-}{}{}Factory}, 
+		\hyperpage{33}
+    \subitem {Gaussian\discretionary {-}{}{}Charge\discretionary {-}{}{}Factory}, 
+		\hyperpage{41}
+  \item {Build\discretionary {-}{}{}Rule}
+    \subitem {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{36}
+    \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{43}
+    \subitem {Quadrature\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{53}
 
   \indexspace
 
@@ -64,49 +100,66 @@
     \subitem {dcharge}, \hyperpage{21}
   \item {charge}
     \subitem {Charge}, \hyperpage{20}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{31}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{31}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
+  \item {Charge\discretionary {-}{}{}Factory}, \hyperpage{21}
+    \subitem {Build\discretionary {-}{}{}Charge}, \hyperpage{22}
   \item {compute\discretionary {-}{}{}Jac}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{34}
+		\hyperpage{45}
   \item {constants}, \hyperpage{11}
-  \item {Csv\discretionary {-}{}{}Parser}, \hyperpage{21}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{22}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{22}
-    \subitem {import\discretionary {-}{}{}All}, \hyperpage{25}
-    \subitem {import\discretionary {-}{}{}Cell}, \hyperpage{25}
-    \subitem {import\discretionary {-}{}{}Col}, \hyperpage{24}
-    \subitem {import\discretionary {-}{}{}Cols}, \hyperpage{24}
+  \item {Csv\discretionary {-}{}{}Parser}, \hyperpage{22}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{23}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{23}
+    \subitem {import\discretionary {-}{}{}All}, \hyperpage{26}
+    \subitem {import\discretionary {-}{}{}Cell}, \hyperpage{26}
+    \subitem {import\discretionary {-}{}{}Col}, \hyperpage{25}
+    \subitem {import\discretionary {-}{}{}Cols}, \hyperpage{25}
     \subitem {import\discretionary {-}{}{}First\discretionary {-}{}{}Cols}, 
 		\hyperpage{25}
     \subitem {import\discretionary {-}{}{}First\discretionary {-}{}{}Rows}, 
-		\hyperpage{24}
+		\hyperpage{25}
     \subitem {import\discretionary {-}{}{}Row}, \hyperpage{23}
-    \subitem {import\discretionary {-}{}{}Rows}, \hyperpage{24}
+    \subitem {import\discretionary {-}{}{}Rows}, \hyperpage{23}
 
   \indexspace
 
   \item {dcharge}
     \subitem {Charge}, \hyperpage{21}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{31}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{32}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
   \item {deriv}
     \subitem {numerics}, \hyperpage{13}
   \item {dn\discretionary {-}{}{}\_\discretionary {-}{}{}approx}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{32}
-  \item {Dos\discretionary {-}{}{}Model}, \hyperpage{25}
-    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{26}
-    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{26}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{32}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{40}
+  \item {Dos\discretionary {-}{}{}Model}, \hyperpage{26}
+    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
+    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
     \subitem {gnuplot\discretionary {-}{}{}\_\discretionary {-}{}{}commands}, 
-		\hyperpage{27}
+		\hyperpage{29}
     \subitem {post\discretionary {-}{}{}\_\discretionary {-}{}{}process}, 
 		\hyperpage{27}
     \subitem {save\discretionary {-}{}{}\_\discretionary {-}{}{}plot}, 
-		\hyperpage{27}
-    \subitem {simulate}, \hyperpage{26}
+		\hyperpage{29}
+    \subitem {simulate}, \hyperpage{27}
 
   \indexspace
 
   \item {error\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L2}
     \subitem {numerics}, \hyperpage{14}
+  \item {Exponential\discretionary {-}{}{}Charge}, \hyperpage{29}
+    \subitem {charge}, \hyperpage{31}
+    \subitem {dcharge}, \hyperpage{32}
+    \subitem {dn\discretionary {-}{}{}\_\discretionary {-}{}{}approx}, 
+		\hyperpage{32}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{30}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{30}
+    \subitem {n\discretionary {-}{}{}\_\discretionary {-}{}{}approx}, 
+		\hyperpage{32}
+  \item {Exponential\discretionary {-}{}{}Charge\discretionary {-}{}{}Factory}, 
+		\hyperpage{33}
+    \subitem {Build\discretionary {-}{}{}Charge}, \hyperpage{33}
 
   \indexspace
 
@@ -116,62 +169,84 @@
   \indexspace
 
   \item {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}, 
-		\hyperpage{28}
-    \subitem {apply}, \hyperpage{30}
+		\hyperpage{34}
+    \subitem {apply}, \hyperpage{35}
     \subitem {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}, 
-		\hyperpage{29}
+		\hyperpage{34}
     \subitem {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule}, 
-		\hyperpage{29}
-  \item {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{30}
-    \subitem {charge}, \hyperpage{31}
-    \subitem {dcharge}, \hyperpage{31}
+		\hyperpage{34}
+  \item {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{35}
+    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{36}
+  \item {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
+		\hyperpage{41}
+    \subitem {apply}, \hyperpage{42}
+    \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
+		\hyperpage{42}
+    \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
+		\hyperpage{42}
+    \subitem {log\discretionary {-}{}{}\_\discretionary {-}{}{}gamma}, 
+		\hyperpage{42}
+  \item {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{43}
+    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{43}
+  \item {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{37}
+    \subitem {charge}, \hyperpage{38}
+    \subitem {dcharge}, \hyperpage{38}
     \subitem {dn\discretionary {-}{}{}\_\discretionary {-}{}{}approx}, 
-		\hyperpage{32}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{31}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{31}
+		\hyperpage{40}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
     \subitem {n\discretionary {-}{}{}\_\discretionary {-}{}{}approx}, 
-		\hyperpage{31}
+		\hyperpage{38}
+  \item {Gaussian\discretionary {-}{}{}Charge\discretionary {-}{}{}Factory}, 
+		\hyperpage{40}
+    \subitem {Build\discretionary {-}{}{}Charge}, \hyperpage{41}
   \item {gnuplot\discretionary {-}{}{}\_\discretionary {-}{}{}commands}
-    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
+    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{29}
 
   \indexspace
 
   \item {import\discretionary {-}{}{}All}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{26}
   \item {import\discretionary {-}{}{}Cell}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{26}
   \item {import\discretionary {-}{}{}Col}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{24}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
   \item {import\discretionary {-}{}{}Cols}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{24}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
   \item {import\discretionary {-}{}{}First\discretionary {-}{}{}Cols}
     \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
   \item {import\discretionary {-}{}{}First\discretionary {-}{}{}Rows}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{24}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{25}
   \item {import\discretionary {-}{}{}Row}
     \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{23}
   \item {import\discretionary {-}{}{}Rows}
-    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{24}
+    \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{23}
   \item {interp1}
     \subitem {numerics}, \hyperpage{13, 14}
 
   \indexspace
 
+  \item {log\discretionary {-}{}{}\_\discretionary {-}{}{}gamma}
+    \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
+		\hyperpage{42}
   \item {log\discretionary {-}{}{}\_\discretionary {-}{}{}mean}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{18}
 
   \indexspace
 
   \item {n\discretionary {-}{}{}\_\discretionary {-}{}{}approx}
-    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{31}
+    \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{32}
+    \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
   \item {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{32}
-    \subitem {apply}, \hyperpage{33}
-    \subitem {compute\discretionary {-}{}{}Jac}, \hyperpage{34}
+		\hyperpage{44}
+    \subitem {apply}, \hyperpage{45}
+    \subitem {compute\discretionary {-}{}{}Jac}, \hyperpage{45}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{33}
+		\hyperpage{45}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{33}
+		\hyperpage{45}
   \item {numerics}, \hyperpage{11}
     \subitem {deriv}, \hyperpage{13}
     \subitem {error\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L2}, 
@@ -184,19 +259,19 @@
 
   \indexspace
 
-  \item {Param\discretionary {-}{}{}List}, \hyperpage{34}
-    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{36}
-    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{36}
+  \item {Param\discretionary {-}{}{}List}, \hyperpage{46}
+    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{48}
+    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{48}
   \item {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{36}
+		\hyperpage{48}
     \subitem {assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}, 
-		\hyperpage{37}
-    \subitem {assemble\discretionary {-}{}{}Mass}, \hyperpage{38}
-    \subitem {assemble\discretionary {-}{}{}Stiff}, \hyperpage{38}
+		\hyperpage{50}
+    \subitem {assemble\discretionary {-}{}{}Mass}, \hyperpage{51}
+    \subitem {assemble\discretionary {-}{}{}Stiff}, \hyperpage{51}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{37}
+		\hyperpage{49}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{37}
+		\hyperpage{49}
   \item {post\discretionary {-}{}{}\_\discretionary {-}{}{}process}
     \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
   \item {print\discretionary {-}{}{}\_\discretionary {-}{}{}block}
@@ -206,16 +281,20 @@
 
   \indexspace
 
-  \item {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{38}
-    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{39}
-    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{39}
+  \item {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{51}
+    \subitem {apply}, \hyperpage{53}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{52}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{52}
+  \item {Quadrature\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
+		\hyperpage{53}
+    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{53}
 
   \indexspace
 
   \item {save\discretionary {-}{}{}\_\discretionary {-}{}{}plot}
-    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
+    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{29}
   \item {simulate}
-    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{26}
+    \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
   \item {sort}
     \subitem {numerics}, \hyperpage{12}
   \item {sort\discretionary {-}{}{}\_\discretionary {-}{}{}pair}
@@ -226,8 +305,8 @@
   \item {trapz}
     \subitem {numerics}, \hyperpage{13}
   \item {typedefs.\discretionary {-}{}{}h}
-    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{48}
-    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{48}
+    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{68}
+    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{68}
 
   \indexspace
 
@@ -242,8 +321,8 @@
   \indexspace
 
   \item {Vector\discretionary {-}{}{}X}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{48}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{68}
   \item {Vector\discretionary {-}{}{}Xpair}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{48}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{68}
 
 \end{theindex}

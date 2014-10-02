@@ -1,0 +1,75 @@
+\hypertarget{classExponentialChargeFactory}{\section{Exponential\-Charge\-Factory Class Reference}
+\label{classExponentialChargeFactory}\index{Exponential\-Charge\-Factory@{Exponential\-Charge\-Factory}}
+}
+
+
+Concrete factory to handle a single gaussian constitutive relation.  
+
+
+
+
+{\ttfamily \#include $<$factory.\-h$>$}
+
+Inheritance diagram for Exponential\-Charge\-Factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classExponentialChargeFactory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classExponentialChargeFactory_a857af7212bef3bc0691b90f82160ede0}{\hyperlink{classExponentialChargeFactory_a857af7212bef3bc0691b90f82160ede0}{Exponential\-Charge\-Factory} ()=default}\label{classExponentialChargeFactory_a857af7212bef3bc0691b90f82160ede0}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classExponentialChargeFactory_a27be0c4dbe004a49db0065cd9e26bb04}{virtual \hyperlink{classExponentialChargeFactory_a27be0c4dbe004a49db0065cd9e26bb04}{$\sim$\-Exponential\-Charge\-Factory} ()=default}\label{classExponentialChargeFactory_a27be0c4dbe004a49db0065cd9e26bb04}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual \hyperlink{classCharge}{Charge} $\ast$ \hyperlink{classExponentialChargeFactory_a1e1718ca16c1624e98865bc6359c2136}{Build\-Charge} (const \hyperlink{classParamList}{Param\-List} \&, const \hyperlink{classQuadratureRule}{Quadrature\-Rule} \&) override
+\begin{DoxyCompactList}\small\item\em Method to build a concrete \hyperlink{classCharge}{Charge} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Concrete factory to handle a single gaussian constitutive relation. 
+
+Definition at line 79 of file factory.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classExponentialChargeFactory_a1e1718ca16c1624e98865bc6359c2136}{\index{Exponential\-Charge\-Factory@{Exponential\-Charge\-Factory}!Build\-Charge@{Build\-Charge}}
+\index{Build\-Charge@{Build\-Charge}!ExponentialChargeFactory@{Exponential\-Charge\-Factory}}
+\subsubsection[{Build\-Charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Charge} $\ast$ Build\-Charge (
+\begin{DoxyParamCaption}
+\item[{const {\bf Param\-List} \&}]{params, }
+\item[{const {\bf Quadrature\-Rule} \&}]{rule}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classExponentialChargeFactory_a1e1718ca16c1624e98865bc6359c2136}
+
+
+Method to build a concrete \hyperlink{classCharge}{Charge} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \-: the list of simulation parameters; \\
+\hline
+\mbox{\tt in}  & {\em rule} & \-: a quadrature rule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classExponentialCharge}{Exponential\-Charge}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classChargeFactory_ad4b190a88028e2e195fc5c5a4cfdcf70}{Charge\-Factory}.
+
+
+
+Definition at line 17 of file factory.\-cc.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8h}{factory.\-h}\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8cc}{factory.\-cc}\end{DoxyCompactItemize}

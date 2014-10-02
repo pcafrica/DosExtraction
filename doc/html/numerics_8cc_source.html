@@ -118,111 +118,118 @@ $(document).ready(function(){initNavTree('numerics_8cc_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">   12</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    assert( x.size() == y.size() );</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> integral = 0.0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #pragma omp parallel for default(shared) reduction(+: integral)</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; x.size() - 1; ++i ) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        integral += 0.5 * ( x(i + 1) - x(i) ) * ( y(i) + y(i + 1) );</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> integral;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a24c140740098eaaa477d8ec263fbb441">   27</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">trapz</a>(VectorXr::LinSpaced(y.size(), 1, y.size()), y);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">   32</a></span>&#160;<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    assert( y.size() == x.size() );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> n = x.size();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dy_dx(n);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    dy_dx(0) = ( y(1) - y(0) ) / ( x(1) - x(0) );   <span class="comment">// Forward difference.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 1; i &lt; n - 1; ++i ) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dy_dx(i) = ( y(i + 1) - y(i - 1) ) / ( x(i + 1) - x(i - 1) );   <span class="comment">// Central difference.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    dy_dx(n - 1) = ( y(n - 1) - y(n - 2) ) / ( x(n - 1) - x(n - 2) );   <span class="comment">// Backward difference.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  assert( x.size() == y.size() );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> integral = 0.0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">  #pragma omp parallel for default(shared) reduction(+: integral)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span>  </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; x.size() - 1; ++i )</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      integral += 0.5 * ( x(i + 1) - x(i) ) * ( y(i) + y(i + 1) );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">return</span> integral;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a24c140740098eaaa477d8ec263fbb441">   28</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">trapz</a>(VectorXr::LinSpaced(y.size(), 1, y.size()), y);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">   33</a></span>&#160;<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  assert( y.size() == x.size() );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> n = x.size();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dy_dx(n);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  dy_dx(0) = ( y(1) - y(0) ) / ( x(1) - x(0) );    <span class="comment">// Forward difference.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 1; i &lt; n - 1; ++i )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      dy_dx(i) = ( y(i + 1) - y(i - 1) ) / ( x(i + 1) - x(i - 1) );    <span class="comment">// Central difference.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> dy_dx;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">   51</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; xNew)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    assert( x.size() == y.size() );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    assert( x == <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(x) ); <span class="comment">// Initial grid must be monotonic.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> ( xNew &lt; x.minCoeff() || xNew &gt; x.maxCoeff() ) { <span class="comment">// New point cannot be external to the initial grid.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> std::numeric_limits&lt;Real&gt;::quiet_NaN();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Index of the last element in &quot;x&quot; lower than xNew.s: &quot;x(index + 1)&quot; is greater or equal than &quot;xNew&quot;.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> index = std::lower_bound(x.data(), x.data() + x.size(), xNew) - x.data() - 1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  dy_dx(n - 1) = ( y(n - 1) - y(n - 2) ) / ( x(n - 1) - x(n - 2) );    <span class="comment">// Backward difference.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> dy_dx;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">   53</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; xNew)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  assert( x.size() == y.size() );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  assert( x == <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(x) );    <span class="comment">// Initial grid must be monotonic.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> ( xNew &lt; x.minCoeff() || xNew &gt; x.maxCoeff() )    <span class="comment">// New point cannot be external to the initial grid.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">return</span> std::numeric_limits&lt;Real&gt;::quiet_NaN();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> ( x(index + 1) == xNew ) {   <span class="comment">// If &quot;xNew&quot; belongs to the original grid.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> y(index + 1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>) ( (xNew - x(index + 1)) * y(index) - (xNew - x(index)) * y(index + 1) ) / (x(index) - x(index + 1));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a5056bae21df918a09efaf5fb45300bff">   70</a></span>&#160;<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; xNew)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    assert( x.size() == y.size() );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    assert( x == <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(x) ); <span class="comment">// Initial grid must be monotonic.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> yNew = VectorXr::Zero( xNew.size() );</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; yNew.size(); ++i ) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        yNew(i) = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">interp1</a>(x, y, xNew(i));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> yNew;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">   84</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; interp, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; simulated,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; V, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; V_shift)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Number of not-NaN values.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> nNotNaN = std::min( (interp   .array() != std::numeric_limits&lt;Real&gt;::quiet_NaN()).count(),</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              (simulated.array() != std::numeric_limits&lt;Real&gt;::quiet_NaN()).count()</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                            );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>         V_centered = VectorXr::Zero( nNotNaN );</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> simulated_centered = VectorXr::Zero( nNotNaN );</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>    interp_centered = VectorXr::Zero( nNotNaN );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> k = 0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; nNotNaN; ++i ) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> ( !std::isnan(interp(i)) &amp;&amp; !std::isnan(simulated(i)) ) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                V_centered(k) = V(i);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                simulated_centered(k) = simulated(i);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                interp_centered(k) = interp(i);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                ++k;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">trapz</a>(V_centered.array() - V_shift, (interp_centered - simulated_centered).array().square().matrix());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Index of the last element in &quot;x&quot; lower than xNew.s: &quot;x(index + 1)&quot; is greater or equal than &quot;xNew&quot;.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> index = std::lower_bound(x.data(), x.data() + x.size(), xNew) - x.data() - 1;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">if</span> ( x(index + 1) == xNew )    <span class="comment">// If &quot;xNew&quot; belongs to the original grid.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">return</span> y(index + 1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a>) ( (xNew - x(index + 1)) * y(index) - (xNew - x(index)) * y(index + 1) ) / (x(index) - x(index + 1));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a5056bae21df918a09efaf5fb45300bff">   74</a></span>&#160;<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; y, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; xNew)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  assert( x.size() == y.size() );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  assert( x == <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(x) );    <span class="comment">// Initial grid must be monotonic.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> yNew = VectorXr::Zero( xNew.size() );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; yNew.size(); ++i )</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      yNew(i) = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">interp1</a>(x, y, xNew(i));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> yNew;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">   89</a></span>&#160;<a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; interp, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; simulated,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; V, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; V_shift)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// Number of not-NaN values.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> nNotNaN = std::min( (interp   .array() != std::numeric_limits&lt;Real&gt;::quiet_NaN()).count(),</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                            (simulated.array() != std::numeric_limits&lt;Real&gt;::quiet_NaN()).count()</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                          );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                          </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>         V_centered = VectorXr::Zero( nNotNaN );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> simulated_centered = VectorXr::Zero( nNotNaN );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>    interp_centered = VectorXr::Zero( nNotNaN );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> k = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; nNotNaN; ++i )</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> ( !std::isnan(interp(i)) &amp;&amp; !std::isnan(simulated(i)) )</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            V_centered(k) = V(i);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            simulated_centered(k) = simulated(i);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            interp_centered(k) = interp(i);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            ++k;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;          }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">trapz</a>(V_centered.array() - V_shift, (interp_centered - simulated_centered).array().square().matrix());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="ttc" id="namespacenumerics_html_a1633aabded7159bb15bbf573bf9e12c5"><div class="ttname"><a href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">numerics::sort</a></div><div class="ttdeci">VectorX&lt; ScalarType &gt; sort(const VectorX&lt; ScalarType &gt; &amp;vector)</div><div class="ttdoc">Function to sort Eigen vectors. </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8h_source.html#l00098">numerics.h:98</a></div></div>
 <div class="ttc" id="numerics_8h_html"><div class="ttname"><a href="numerics_8h.html">numerics.h</a></div><div class="ttdoc">Generic numeric algorithms. </div></div>
-<div class="ttc" id="namespacenumerics_html_a8ba4a40c596ac41f1438a34c1e91d19d"><div class="ttname"><a href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a></div><div class="ttdeci">VectorXr deriv(const VectorXr &amp;, const VectorXr &amp;)</div><div class="ttdoc">Compute the numeric derivative: . </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00032">numerics.cc:32</a></div></div>
+<div class="ttc" id="namespacenumerics_html_a8ba4a40c596ac41f1438a34c1e91d19d"><div class="ttname"><a href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a></div><div class="ttdeci">VectorXr deriv(const VectorXr &amp;, const VectorXr &amp;)</div><div class="ttdoc">Compute the numeric derivative: . </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00033">numerics.cc:33</a></div></div>
 <div class="ttc" id="typedefs_8h_html_a2c726f8f32697958e9d6c2afecda531d"><div class="ttname"><a href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a></div><div class="ttdeci">#define Index</div><div class="ttdoc">Pre-processor macro for indexing variables. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00024">typedefs.h:24</a></div></div>
-<div class="ttc" id="namespacenumerics_html_a7beb6807c580a205d0c23b4a9b23213f"><div class="ttname"><a href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a></div><div class="ttdeci">Real error_L2(const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;, const Real &amp;)</div><div class="ttdoc">Compute the -norm error between simulated and interpolated values, using trapz. </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00084">numerics.cc:84</a></div></div>
+<div class="ttc" id="namespacenumerics_html_a7beb6807c580a205d0c23b4a9b23213f"><div class="ttname"><a href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a></div><div class="ttdeci">Real error_L2(const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;, const Real &amp;)</div><div class="ttdoc">Compute the -norm error between simulated and interpolated values, using trapz. </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00089">numerics.cc:89</a></div></div>
 <div class="ttc" id="typedefs_8h_html_a060b837c3b4486ee35317744156f3da2"><div class="ttname"><a href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a></div><div class="ttdeci">#define Real</div><div class="ttdoc">Pre-processor macro for real numbers. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00023">typedefs.h:23</a></div></div>
 <div class="ttc" id="typedefs_8h_html_aae6cee78ed9cd8f234ed8cb48682548a"><div class="ttname"><a href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, 1 &gt; VectorXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized column vectors. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00031">typedefs.h:31</a></div></div>
-<div class="ttc" id="namespacenumerics_html_a05cd7efecfbd0a2771993848352e2e2d"><div class="ttname"><a href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a></div><div class="ttdeci">Real interp1(const VectorXr &amp;, const VectorXr &amp;, const Real &amp;)</div><div class="ttdoc">Linear 1D interpolation. Interpolate y, defined at points x, at the point xNew. </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00051">numerics.cc:51</a></div></div>
+<div class="ttc" id="namespacenumerics_html_a05cd7efecfbd0a2771993848352e2e2d"><div class="ttname"><a href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a></div><div class="ttdeci">Real interp1(const VectorXr &amp;, const VectorXr &amp;, const Real &amp;)</div><div class="ttdoc">Linear 1D interpolation. Interpolate y, defined at points x, at the point xNew. </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00053">numerics.cc:53</a></div></div>
 <div class="ttc" id="namespacenumerics_html_a41daad9dd743c914a195298bda0c0269"><div class="ttname"><a href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a></div><div class="ttdeci">Real trapz(const VectorXr &amp;x, const VectorXr &amp;y)</div><div class="ttdoc">Function to compute approximate integral of y with spacing increment specified by x...</div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00012">numerics.cc:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

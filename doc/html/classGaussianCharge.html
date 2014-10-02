@@ -188,9 +188,12 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class derived from <a class="el" href="classCharge.html">Charge</a>, under the hypothesis that Density of States is a combination of gaussians. </p>
-<p>Provide methods to compute total electric charge and its derivative under the hypothesis that Density of States is a linear combination of multiple gaussians, whose parameters are read from a <a class="el" href="classParamList.html">ParamList</a> object. </p>
-
-<p>Definition at line <a class="el" href="charge_8h_source.html#l00070">70</a> of file <a class="el" href="charge_8h_source.html">charge.h</a>.</p>
+<p>Provide methods to compute total electric charge and its derivative under the hypothesis that Density of States is a linear combination of multiple gaussians, whose parameters are read from a <a class="el" href="classParamList.html">ParamList</a> object, of the form: </p>
+<p class="formulaDsp">
+\[ \frac{N_0}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{\left(\cdot\right)^2}{2\sigma^2}\right) ~ . \]
+</p>
+ 
+<p>Definition at line <a class="el" href="charge_8h_source.html#l00071">71</a> of file <a class="el" href="charge_8h_source.html">charge.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3e5ff9c43a3deb7861ea10435de4bb55"></a>
 <div class="memitem">
@@ -225,7 +228,7 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="charge_8c_09_09_source.html#l00008">8</a> of file <a class="el" href="charge_8c_09_09_source.html">charge.c++</a>.</p>
+<p>Definition at line <a class="el" href="charge_8cc_source.html#l00017">17</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 
 </div>
 </div>
@@ -263,7 +266,7 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 
 <p>Implements <a class="el" href="classCharge.html#a597abd6d429e1c18935e4806082d67d8">Charge</a>.</p>
 
-<p>Definition at line <a class="el" href="charge_8c_09_09_source.html#l00037">37</a> of file <a class="el" href="charge_8c_09_09_source.html">charge.c++</a>.</p>
+<p>Definition at line <a class="el" href="charge_8cc_source.html#l00048">48</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 
 </div>
 </div>
@@ -300,7 +303,7 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 
 <p>Implements <a class="el" href="classCharge.html#acd71b3197f9081512d70d96ac694a3fc">Charge</a>.</p>
 
-<p>Definition at line <a class="el" href="charge_8c_09_09_source.html#l00060">60</a> of file <a class="el" href="charge_8c_09_09_source.html">charge.c++</a>.</p>
+<p>Definition at line <a class="el" href="charge_8cc_source.html#l00075">75</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 
 </div>
 </div>
@@ -353,7 +356,7 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the electrons density \( n(\varphi) \left[ m^{-3} \right] \). </dd></dl>
 
-<p>Definition at line <a class="el" href="charge_8c_09_09_source.html#l00011">11</a> of file <a class="el" href="charge_8c_09_09_source.html">charge.c++</a>.</p>
+<p>Definition at line <a class="el" href="charge_8cc_source.html#l00020">20</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 
 </div>
 </div>
@@ -406,13 +409,13 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the derivative: \( \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] \). </dd></dl>
 
-<p>Definition at line <a class="el" href="charge_8c_09_09_source.html#l00024">24</a> of file <a class="el" href="charge_8c_09_09_source.html">charge.c++</a>.</p>
+<p>Definition at line <a class="el" href="charge_8cc_source.html#l00034">34</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="charge_8h_source.html">charge.h</a></li>
-<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="charge_8c_09_09_source.html">charge.c++</a></li>
+<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="charge_8cc_source.html">charge.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

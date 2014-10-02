@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gausshermiterule',['GaussHermiteRule',['../classGaussHermiteRule.html',1,'']]],
-  ['gaussiancharge',['GaussianCharge',['../classGaussianCharge.html',1,'']]]
+  ['exponentialcharge',['ExponentialCharge',['../classExponentialCharge.html',1,'']]],
+  ['exponentialchargefactory',['ExponentialChargeFactory',['../classExponentialChargeFactory.html',1,'']]]
 ];

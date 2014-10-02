@@ -130,7 +130,8 @@ Inheritance diagram for QuadratureRule:</div>
  <div class="center">
   <img src="classQuadratureRule.png" usemap="#QuadratureRule_map" alt=""/>
   <map id="QuadratureRule_map" name="QuadratureRule_map">
-<area href="classGaussHermiteRule.html" title="Class derived from QuadratureRule providing the Gauss-Hermite quadrature rule. " alt="GaussHermiteRule" shape="rect" coords="0,56,115,80"/>
+<area href="classGaussHermiteRule.html" title="Class derived from QuadratureRule providing the Gauss-Hermite quadrature rule. " alt="GaussHermiteRule" shape="rect" coords="0,56,124,80"/>
+<area href="classGaussLaguerreRule.html" title="Class derived from QuadratureRule providing the Gauss-Laguerre quadrature rule. " alt="GaussLaguerreRule" shape="rect" coords="134,56,258,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -151,6 +152,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuadratureRule.html#ae8035f1283a63c55fbbfb4e786db8a98">apply</a> ()=0</td></tr>
 <tr class="memdesc:ae8035f1283a63c55fbbfb4e786db8a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the quadrature rule in order to compute the nodes and weights. <br/></td></tr>
 <tr class="separator:ae8035f1283a63c55fbbfb4e786db8a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eac623f625d4faa872b1b031db76a75"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuadratureRule.html#a0eac623f625d4faa872b1b031db76a75">apply</a> (const GetPot &amp;config)=0</td></tr>
+<tr class="memdesc:a0eac623f625d4faa872b1b031db76a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the quadrature rule reading parameters from a configuration file.  <a href="#a0eac623f625d4faa872b1b031db76a75">More...</a><br/></td></tr>
+<tr class="separator:a0eac623f625d4faa872b1b031db76a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Getter methods</div></td></tr>
 <tr class="memitem:a32e8457e19f3f8f4096e82a0cd759a03"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32e8457e19f3f8f4096e82a0cd759a03"></a>
 const <a class="el" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>nNodes</b> () const </td></tr>
@@ -182,6 +186,9 @@ Friends</h2></td></tr>
 <tr class="memitem:a6be33a81953be5c0377a00dec7d5b1d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6be33a81953be5c0377a00dec7d5b1d3"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>GaussianCharge</b></td></tr>
 <tr class="separator:a6be33a81953be5c0377a00dec7d5b1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37daff3fd9f1cdb4519d878b4501d38b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37daff3fd9f1cdb4519d878b4501d38b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ExponentialCharge</b></td></tr>
+<tr class="separator:a37daff3fd9f1cdb4519d878b4501d38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class providing a quadrature rule. </p>
@@ -219,13 +226,48 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>GaussianCharge</b></
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="quadratureRule_8c_09_09_source.html#l00005">5</a> of file <a class="el" href="quadratureRule_8c_09_09_source.html">quadratureRule.c++</a>.</p>
+<p>Definition at line <a class="el" href="quadratureRule_8cc_source.html#l00014">14</a> of file <a class="el" href="quadratureRule_8cc_source.html">quadratureRule.cc</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0eac623f625d4faa872b1b031db76a75"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void apply </td>
+          <td>(</td>
+          <td class="paramtype">const GetPot &amp;&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the quadrature rule reading parameters from a configuration file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>: the GetPot configuration object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classGaussLaguerreRule.html#a6265ae995213bef29d216da947f5f692">GaussLaguerreRule</a>, and <a class="el" href="classGaussHermiteRule.html#a6265ae995213bef29d216da947f5f692">GaussHermiteRule</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8h_source.html">quadratureRule.h</a></li>
-<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8c_09_09_source.html">quadratureRule.c++</a></li>
+<li>/home/elauksap/Dropbox/Progetto-PACS/C++/Source/src/<a class="el" href="quadratureRule_8cc_source.html">quadratureRule.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

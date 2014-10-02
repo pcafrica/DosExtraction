@@ -1,0 +1,70 @@
+\hypertarget{classChargeFactory}{\section{Charge\-Factory Class Reference}
+\label{classChargeFactory}\index{Charge\-Factory@{Charge\-Factory}}
+}
+
+
+Abstract factory to handle at runtime a constitutive relation for the Density of States.  
+
+
+
+
+{\ttfamily \#include $<$factory.\-h$>$}
+
+Inheritance diagram for Charge\-Factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classChargeFactory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classChargeFactory_ac9cd065aedc271933d5d9ee8f82bc76b}{\hyperlink{classChargeFactory_ac9cd065aedc271933d5d9ee8f82bc76b}{Charge\-Factory} ()=default}\label{classChargeFactory_ac9cd065aedc271933d5d9ee8f82bc76b}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classChargeFactory_a311f54993f661651542b1fb5cec17692}{virtual \hyperlink{classChargeFactory_a311f54993f661651542b1fb5cec17692}{$\sim$\-Charge\-Factory} ()=default}\label{classChargeFactory_a311f54993f661651542b1fb5cec17692}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual \hyperlink{classCharge}{Charge} $\ast$ \hyperlink{classChargeFactory_ad4b190a88028e2e195fc5c5a4cfdcf70}{Build\-Charge} (const \hyperlink{classParamList}{Param\-List} \&params, const \hyperlink{classQuadratureRule}{Quadrature\-Rule} \&rule)=0
+\begin{DoxyCompactList}\small\item\em Method to build an abstract \hyperlink{classCharge}{Charge} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract factory to handle at runtime a constitutive relation for the Density of States. 
+
+Definition at line 25 of file factory.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChargeFactory_ad4b190a88028e2e195fc5c5a4cfdcf70}{\index{Charge\-Factory@{Charge\-Factory}!Build\-Charge@{Build\-Charge}}
+\index{Build\-Charge@{Build\-Charge}!ChargeFactory@{Charge\-Factory}}
+\subsubsection[{Build\-Charge}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Charge}$\ast$ Build\-Charge (
+\begin{DoxyParamCaption}
+\item[{const {\bf Param\-List} \&}]{params, }
+\item[{const {\bf Quadrature\-Rule} \&}]{rule}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classChargeFactory_ad4b190a88028e2e195fc5c5a4cfdcf70}
+
+
+Method to build an abstract \hyperlink{classCharge}{Charge} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em params} & \-: the list of simulation parameters; \\
+\hline
+\mbox{\tt in}  & {\em rule} & \-: a quadrature rule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classCharge}{Charge}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classExponentialChargeFactory_a1e1718ca16c1624e98865bc6359c2136}{Exponential\-Charge\-Factory}, and \hyperlink{classGaussianChargeFactory_a1e1718ca16c1624e98865bc6359c2136}{Gaussian\-Charge\-Factory}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8h}{factory.\-h}\end{DoxyCompactItemize}

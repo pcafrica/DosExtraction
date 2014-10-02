@@ -2,6 +2,10 @@
 ## Configuration file
 ############################################################
 
+############################################################
+## General settings
+############################################################
+
 # Input filenames.
 input_params  = input_params.csv
 input_experim = input_experim.csv
@@ -12,8 +16,8 @@ hasHeaders = 1
 # Simulate each row in the input_params file: 1 = true, 0 = false.
 simulate_all = 0
 
-	# If "simulate_all = 0", set indexes of rows to simulate.
-	indexes = '5 6'
+    # If "simulate_all = 0", set indexes of rows to simulate.
+    indexes = '5 6'
 
 # Number of threads to be used for a parallel simulation.
 nThreads = 3
@@ -21,23 +25,33 @@ nThreads = 3
 # The directory where output files must be saved.
 output_directory = ./output
 
-[GaussHermite]
-# Gauss-Hermite quadrature rule.
+############################################################
+## Numerical methods
+############################################################
 
-	# Number of nodes.
-	nNodes = 101
+# Constitutive relation for the Density of States: 1 = Multiple Gaussians, 0 = Single Exponential.
+DOS = 1
 
-	# Maximum number of iterations for the iterative algorithm used to compute nodes and weights.
-	maxIterationsNo = 1000
+[QuadratureRule]
+# Quadrature rule.
 
-	# Tolerance for the iterative algorithm used to compute nodes and weights.
-	tolerance = 1.0e-14
+    # Method to be used: 1 = Gauss-Hermite (Gaussian), 0 = Gauss-Laguerre (Exponential).
+    method = 1
+    
+    # Number of nodes.
+    nNodes = 101
+
+    # Maximum number of iterations for the iterative algorithm used to compute nodes and weights.
+    maxIterationsNo = 1000
+
+    # Tolerance for the iterative algorithm used to compute nodes and weights.
+    tolerance = 1.0e-14
 
 [NLP]
 # Newton solver for non-linear Poisson equation.
 
-	# Maximum number of iterations.
-	maxIterationsNo = 1
+    # Maximum number of iterations.
+    maxIterationsNo = 1
 
-	# Tolerance.
-	tolerance = 1.0e-4
+    # Tolerance.
+    tolerance = 1.0e-4

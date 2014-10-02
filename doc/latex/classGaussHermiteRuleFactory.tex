@@ -1,0 +1,72 @@
+\hypertarget{classGaussHermiteRuleFactory}{\section{Gauss\-Hermite\-Rule\-Factory Class Reference}
+\label{classGaussHermiteRuleFactory}\index{Gauss\-Hermite\-Rule\-Factory@{Gauss\-Hermite\-Rule\-Factory}}
+}
+
+
+Concrete factory to handle a Gauss-\/\-Hermite quadrature rule.  
+
+
+
+
+{\ttfamily \#include $<$factory.\-h$>$}
+
+Inheritance diagram for Gauss\-Hermite\-Rule\-Factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGaussHermiteRuleFactory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGaussHermiteRuleFactory_a192b5732878d8393276226a4f359f1cd}{\hyperlink{classGaussHermiteRuleFactory_a192b5732878d8393276226a4f359f1cd}{Gauss\-Hermite\-Rule\-Factory} ()=default}\label{classGaussHermiteRuleFactory_a192b5732878d8393276226a4f359f1cd}
+
+\begin{DoxyCompactList}\small\item\em Default constructor (defaulted). \end{DoxyCompactList}\item 
+\hypertarget{classGaussHermiteRuleFactory_ae01722716cbf1c2d540f8d8079208b92}{virtual \hyperlink{classGaussHermiteRuleFactory_ae01722716cbf1c2d540f8d8079208b92}{$\sim$\-Gauss\-Hermite\-Rule\-Factory} ()=default}\label{classGaussHermiteRuleFactory_ae01722716cbf1c2d540f8d8079208b92}
+
+\begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
+virtual \hyperlink{classQuadratureRule}{Quadrature\-Rule} $\ast$ \hyperlink{classGaussHermiteRuleFactory_a1e907a5209041516fa18c86c79fb1ec6}{Build\-Rule} (const \hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \&) override
+\begin{DoxyCompactList}\small\item\em Method to build a concrete \hyperlink{classQuadratureRule}{Quadrature\-Rule} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Concrete factory to handle a Gauss-\/\-Hermite quadrature rule. 
+
+Definition at line 132 of file factory.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGaussHermiteRuleFactory_a1e907a5209041516fa18c86c79fb1ec6}{\index{Gauss\-Hermite\-Rule\-Factory@{Gauss\-Hermite\-Rule\-Factory}!Build\-Rule@{Build\-Rule}}
+\index{Build\-Rule@{Build\-Rule}!GaussHermiteRuleFactory@{Gauss\-Hermite\-Rule\-Factory}}
+\subsubsection[{Build\-Rule}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quadrature\-Rule} $\ast$ Build\-Rule (
+\begin{DoxyParamCaption}
+\item[{const {\bf Index} \&}]{n\-Nodes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussHermiteRuleFactory_a1e907a5209041516fa18c86c79fb1ec6}
+
+
+Method to build a concrete \hyperlink{classQuadratureRule}{Quadrature\-Rule} object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n\-Nodes} & \-: the number of nodes to be used for the quadrature rule. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to \hyperlink{classGaussHermiteRule}{Gauss\-Hermite\-Rule}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classQuadratureRuleFactory_adc9f82328b7cba8517e462e99c58335e}{Quadrature\-Rule\-Factory}.
+
+
+
+Definition at line 22 of file factory.\-cc.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8h}{factory.\-h}\item 
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{factory_8cc}{factory.\-cc}\end{DoxyCompactItemize}

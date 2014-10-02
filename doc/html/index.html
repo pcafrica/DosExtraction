@@ -115,10 +115,12 @@ The software is intended to be used on a Unix-like operating system.</p>
 Dependancies</h1>
 <p>The program requires the following libraries to be installed on your system:</p>
 <ul>
+<li><a href="http://www.cmake.org"><b>CMake</b></a>, a cross-platform configuration tool (version 2.8 or above); </li>
 <li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra; </li>
 <li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots; </li>
 <li><a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the <a class="el" href="index.html#Gnuplot">Gnuplot</a> interface to C++; </li>
-<li><a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory).</li>
+<li><a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory); </li>
+<li><a href="http://www.doxygen.org"><b>Doxygen</b></a>, a documentation generator (not compulsory).</li>
 </ul>
 <p>It also uses the following packages, provided in the <em>include/</em> folder: </p>
 <ul>
@@ -127,15 +129,21 @@ Dependancies</h1>
 </ul>
 <h1><a class="anchor" id="install_sec"></a>
 Compile</h1>
-<p>In order to compile a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package:</p>
-<div class="fragment"><div class="line">$ make</div>
+<p>In order to generate a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package:</p>
+<div class="fragment"><div class="line">$ mkdir build</div>
+<div class="line">$ cd build</div>
+<div class="line">$ cmake ..</div>
+<div class="line">$ make</div>
 </div><!-- fragment --><p>or, if you want the compiler to produce also debugging informations:</p>
-<div class="fragment"><div class="line">$ make debug</div>
-</div><!-- fragment --><p>You can specify the name of the test to be compiled (without extension, for example: <em>simulate_dos</em>) by passing the variable <b>NAME</b> through command-line:</p>
-<div class="fragment"><div class="line">$ make NAME=test_filename</div>
-</div><!-- fragment --><p>The compiler will generate the <em>test_filename</em> executable under the <em>bin/</em> directory. <br/>
-Repeat these instructions for each test you want to compile.</p>
-<h1><a class="anchor" id="configure"></a>
+<div class="fragment"><div class="line">$ mkdir build</div>
+<div class="line">$ cd build</div>
+<div class="line">$ cmake .. -DDEBUG_MODE=ON</div>
+<div class="line">$ make</div>
+</div><!-- fragment --><p>You can specify the name of the test source to be compiled (without extension, for example: <em>simulate_dos</em>) by editing the variable <b>EXEC</b>, defined in the <em>CMakeLists.txt</em> file.</p>
+<p>Repeat these instructions for each test you want to compile.</p>
+<p>The following command will generate this documentation under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>):</p>
+<div class="fragment"><div class="line">$ make doc</div>
+</div><!-- fragment --><h1><a class="anchor" id="configure"></a>
 Set up the configurations</h1>
 <dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
 <p>Before you can run an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
@@ -144,7 +152,7 @@ Particularly, the variables <em>input_params</em> and <em>input_experim</em> can
 You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
 <h1><a class="anchor" id="run"></a>
 Run!</h1>
-<p>Executables are placed under the <em>bin/</em> directory. <br/>
+<p>Executables are placed under the <em>bin/</em> directory (or the one specified in <em>CMakeLists.txt</em>). <br/>
 <br/>
 To run by using the default configuration filename (<em>config.pot</em>) simply move to the <em>bin/</em> directory and execute:</p>
 <div class="fragment"><div class="line">$ ./test_filename</div>

@@ -78,6 +78,12 @@ Class providing methods to handle a list of parameters.
 \hypertarget{classParamList_aa24802602cf61339449510467e15b71c}{const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \& {\bfseries shift\-\_\-4} () const }\label{classParamList_aa24802602cf61339449510467e15b71c}
 
 \item 
+\hypertarget{classParamList_a60a95d89284a8bbafd31a151437eab30}{const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \& {\bfseries N0\-\_\-exp} () const }\label{classParamList_a60a95d89284a8bbafd31a151437eab30}
+
+\item 
+\hypertarget{classParamList_a8fc52358fd85d1f87860862539f174c2}{const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \& {\bfseries lambda\-\_\-exp} () const }\label{classParamList_a8fc52358fd85d1f87860862539f174c2}
+
+\item 
 \hypertarget{classParamList_a32e8457e19f3f8f4096e82a0cd759a03}{const \hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \& {\bfseries n\-Nodes} () const }\label{classParamList_a32e8457e19f3f8f4096e82a0cd759a03}
 
 \item 
@@ -117,13 +123,13 @@ Class providing methods to handle a list of parameters.
 \begin{DoxyCompactList}\small\item\em Electron affinity $ \left[ V \right] $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_aa51672586248c54289ad6ac1a5d3c274}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_aa51672586248c54289ad6ac1a5d3c274}{N0\-\_\-}}\label{classParamList_aa51672586248c54289ad6ac1a5d3c274}
 
-\begin{DoxyCompactList}\small\item\em 1st gaussian mean $ \left[ m^{-3} \right] $. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 1st gaussian $ N_0 \left[ m^{-3} \right] $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a37293181f9beea97f75b133deb9d9119}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a37293181f9beea97f75b133deb9d9119}{sigma\-\_\-}}\label{classParamList_a37293181f9beea97f75b133deb9d9119}
 
 \begin{DoxyCompactList}\small\item\em 1st gaussian standard deviation (normalized by $ K_B \cdot T $) $ \left[ ~ \right] $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a5cd86383f9ae39d6a8851c5b470051eb}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a5cd86383f9ae39d6a8851c5b470051eb}{N0\-\_\-2\-\_\-}}\label{classParamList_a5cd86383f9ae39d6a8851c5b470051eb}
 
-\begin{DoxyCompactList}\small\item\em 2nd gaussian mean. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 2nd gaussian $ N_0 $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a3ead6e4cc08dc0320e0b98c29e6d9337}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a3ead6e4cc08dc0320e0b98c29e6d9337}{sigma\-\_\-2\-\_\-}}\label{classParamList_a3ead6e4cc08dc0320e0b98c29e6d9337}
 
 \begin{DoxyCompactList}\small\item\em 2nd gaussian standard deviation. \end{DoxyCompactList}\item 
@@ -132,7 +138,7 @@ Class providing methods to handle a list of parameters.
 \begin{DoxyCompactList}\small\item\em 2nd gaussian shift with respect to the 1st gaussian electric potential. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a180b65203622e6c324a5f78bd16ac4d7}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a180b65203622e6c324a5f78bd16ac4d7}{N0\-\_\-3\-\_\-}}\label{classParamList_a180b65203622e6c324a5f78bd16ac4d7}
 
-\begin{DoxyCompactList}\small\item\em 3rd gaussian mean. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 3rd gaussian $ N_0 $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_ad0e6dd2c004d045b411bf0f0bb0544e2}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_ad0e6dd2c004d045b411bf0f0bb0544e2}{sigma\-\_\-3\-\_\-}}\label{classParamList_ad0e6dd2c004d045b411bf0f0bb0544e2}
 
 \begin{DoxyCompactList}\small\item\em 3rd gaussian standard deviation. \end{DoxyCompactList}\item 
@@ -141,13 +147,19 @@ Class providing methods to handle a list of parameters.
 \begin{DoxyCompactList}\small\item\em 3rd gaussian shift with respect to the 1st gaussian electric potential. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_aa65785f19373f13b7b3a5ef53480f3bb}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_aa65785f19373f13b7b3a5ef53480f3bb}{N0\-\_\-4\-\_\-}}\label{classParamList_aa65785f19373f13b7b3a5ef53480f3bb}
 
-\begin{DoxyCompactList}\small\item\em 4th gaussian mean. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 4th gaussian $ N_0 $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_ae484eb848d5c0716145e00c974ebecca}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_ae484eb848d5c0716145e00c974ebecca}{sigma\-\_\-4\-\_\-}}\label{classParamList_ae484eb848d5c0716145e00c974ebecca}
 
 \begin{DoxyCompactList}\small\item\em 4th gaussian standard deviation. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a52a824700b094c4d0d908e052989931d}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a52a824700b094c4d0d908e052989931d}{shift\-\_\-4\-\_\-}}\label{classParamList_a52a824700b094c4d0d908e052989931d}
 
 \begin{DoxyCompactList}\small\item\em 4th gaussian shift with respect to the 1st gaussian electric potential. \end{DoxyCompactList}\item 
+\hypertarget{classParamList_ae7b7161db305f26c559d3f84bfaf5881}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_ae7b7161db305f26c559d3f84bfaf5881}{N0\-\_\-exp\-\_\-}}\label{classParamList_ae7b7161db305f26c559d3f84bfaf5881}
+
+\begin{DoxyCompactList}\small\item\em Exponential $ N_0 $. \end{DoxyCompactList}\item 
+\hypertarget{classParamList_a3a463067804bd2f46f24a111b172dc0f}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classParamList_a3a463067804bd2f46f24a111b172dc0f}{lambda\-\_\-exp\-\_\-}}\label{classParamList_a3a463067804bd2f46f24a111b172dc0f}
+
+\begin{DoxyCompactList}\small\item\em Exponential $ \lambda $. \end{DoxyCompactList}\item 
 \hypertarget{classParamList_a574676917a0d7d70140f4ed29bb1e8b4}{\hyperlink{typedefs_8h_a2c726f8f32697958e9d6c2afecda531d}{Index} \hyperlink{classParamList_a574676917a0d7d70140f4ed29bb1e8b4}{n\-Nodes\-\_\-}}\label{classParamList_a574676917a0d7d70140f4ed29bb1e8b4}
 
 \begin{DoxyCompactList}\small\item\em Number of nodes that form the mesh. \end{DoxyCompactList}\item 
@@ -166,6 +178,9 @@ Class providing methods to handle a list of parameters.
 \hypertarget{classParamList_a6be33a81953be5c0377a00dec7d5b1d3}{class {\bfseries Gaussian\-Charge}}\label{classParamList_a6be33a81953be5c0377a00dec7d5b1d3}
 
 \item 
+\hypertarget{classParamList_a37daff3fd9f1cdb4519d878b4501d38b}{class {\bfseries Exponential\-Charge}}\label{classParamList_a37daff3fd9f1cdb4519d878b4501d38b}
+
+\item 
 \hypertarget{classParamList_a0200762a1ea62a10cc0aed231c12f279}{class {\bfseries Dos\-Model}}\label{classParamList_a0200762a1ea62a10cc0aed231c12f279}
 
 \end{DoxyCompactItemize}
@@ -174,7 +189,7 @@ Class providing methods to handle a list of parameters.
 \subsection{Detailed Description}
 Class providing methods to handle a list of parameters. 
 
-It can include up to 4 gaussians, later combined to compute total charge. 
+It can include up to 4 gaussians (later combined to compute total charge) and an exponential. 
 
 Definition at line 25 of file param\-List.\-h.
 
@@ -199,11 +214,11 @@ Explicit conversion constructor.
 \end{DoxyParams}
 
 
-Definition at line 5 of file param\-List.\-c++.
+Definition at line 14 of file param\-List.\-cc.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{paramList_8h}{param\-List.\-h}\item 
-/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/param\-List.\-c++\end{DoxyCompactItemize}
+/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/\hyperlink{paramList_8cc}{param\-List.\-cc}\end{DoxyCompactItemize}

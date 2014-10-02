@@ -1,0 +1,39 @@
+\hypertarget{factory_8h}{\section{/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/factory.h File Reference}
+\label{factory_8h}\index{/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/factory.\-h@{/home/elauksap/\-Dropbox/\-Progetto-\/\-P\-A\-C\-S/\-C++/\-Source/src/factory.\-h}}
+}
+
+
+Abstract factories for the D\-O\-S constitutive relation and for the quadrature rule.  
+
+
+{\ttfamily \#include \char`\"{}charge.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}param\-List.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}quadrature\-Rule.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classChargeFactory}{Charge\-Factory}
+\begin{DoxyCompactList}\small\item\em Abstract factory to handle at runtime a constitutive relation for the Density of States. \end{DoxyCompactList}\item 
+class \hyperlink{classGaussianChargeFactory}{Gaussian\-Charge\-Factory}
+\begin{DoxyCompactList}\small\item\em Concrete factory to handle a multiple gaussians constitutive relation. \end{DoxyCompactList}\item 
+class \hyperlink{classExponentialChargeFactory}{Exponential\-Charge\-Factory}
+\begin{DoxyCompactList}\small\item\em Concrete factory to handle a single gaussian constitutive relation. \end{DoxyCompactList}\item 
+class \hyperlink{classQuadratureRuleFactory}{Quadrature\-Rule\-Factory}
+\begin{DoxyCompactList}\small\item\em Abstract factory to handle at runtime a quadrature rule. \end{DoxyCompactList}\item 
+class \hyperlink{classGaussHermiteRuleFactory}{Gauss\-Hermite\-Rule\-Factory}
+\begin{DoxyCompactList}\small\item\em Concrete factory to handle a Gauss-\/\-Hermite quadrature rule. \end{DoxyCompactList}\item 
+class \hyperlink{classGaussLaguerreRuleFactory}{Gauss\-Laguerre\-Rule\-Factory}
+\begin{DoxyCompactList}\small\item\em Concrete factory to handle a Gauss-\/\-Laguerre quadrature rule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract factories for the D\-O\-S constitutive relation and for the quadrature rule. \begin{DoxyAuthor}{Author}
+Pasquale Claudio Africa \href{mailto:pasquale.africa@gmail.com}{\tt pasquale.\-africa@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2014 
+\end{DoxyDate}
+
+
+Definition in file \hyperlink{factory_8h_source}{factory.\-h}.
+
