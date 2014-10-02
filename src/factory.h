@@ -73,7 +73,7 @@ class GaussianChargeFactory : public ChargeFactory
 /**
  * @class ExponentialChargeFactory
  *
- * @brief Concrete factory to handle a single gaussian constitutive relation.
+ * @brief Concrete factory to handle a single exponential constitutive relation.
  *
  */
 class ExponentialChargeFactory : public ChargeFactory
