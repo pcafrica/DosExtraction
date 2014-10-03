@@ -8,7 +8,7 @@
  * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
  * @copyright This project is released under the GNU General Public License.
  *
- * @brief Abstract factories for the DOS constitutive relation and for the quadrature rule.
+ * @brief Abstract factory design patterns.
  *
  */
 
@@ -22,7 +22,7 @@
 /**
  * @class ChargeFactory
  *
- * @brief Abstract factory to handle at runtime a constitutive relation for the Density of States.
+ * @brief Abstract factory to handle the constitutive relation for the Density of States.
  *
  */
 class ChargeFactory
@@ -38,7 +38,7 @@ class ChargeFactory
     virtual ~ChargeFactory() = default;
     
     /**
-     * @brief Method to build an abstract @ref Charge object.
+     * @brief Factory method to build an abstract @ref Charge object.
      * @param[in] params : the list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref Charge.
@@ -49,7 +49,7 @@ class ChargeFactory
 /**
  * @class GaussianChargeFactory
  *
- * @brief Concrete factory to handle a multiple gaussians constitutive relation.
+ * @brief Concrete factory to handle a multiple gaussians DoS constitutive relation.
  *
  */
 class GaussianChargeFactory : public ChargeFactory
@@ -65,7 +65,7 @@ class GaussianChargeFactory : public ChargeFactory
     virtual ~GaussianChargeFactory() = default;
     
     /**
-     * @brief Method to build a concrete @ref Charge object.
+     * @brief Factory method to build a concrete @ref Charge object.
      * @param[in] params : the list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref GaussianCharge.
@@ -76,7 +76,7 @@ class GaussianChargeFactory : public ChargeFactory
 /**
  * @class ExponentialChargeFactory
  *
- * @brief Concrete factory to handle a single exponential constitutive relation.
+ * @brief Concrete factory to handle a single exponential DoS constitutive relation.
  *
  */
 class ExponentialChargeFactory : public ChargeFactory
@@ -92,7 +92,7 @@ class ExponentialChargeFactory : public ChargeFactory
     virtual ~ExponentialChargeFactory() = default;
     
     /**
-     * @brief Method to build a concrete @ref Charge object.
+     * @brief Factory method to build a concrete @ref Charge object.
      * @param[in] params : the list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref ExponentialCharge.
@@ -103,7 +103,7 @@ class ExponentialChargeFactory : public ChargeFactory
 /**
  * @class QuadratureRuleFactory
  *
- * @brief Abstract factory to handle at runtime a quadrature rule.
+ * @brief Abstract factory to handle a quadrature rule.
  *
  */
 class QuadratureRuleFactory
@@ -119,7 +119,7 @@ class QuadratureRuleFactory
     virtual ~QuadratureRuleFactory() = default;
     
     /**
-     * @brief Method to build an abstract @ref QuadratureRule object.
+     * @brief Factory method to build an abstract @ref QuadratureRule object.
      * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
      * @returns a pointer to @ref QuadratureRule.
      */
@@ -145,7 +145,7 @@ class GaussHermiteRuleFactory : public QuadratureRuleFactory
     virtual ~GaussHermiteRuleFactory() = default;
     
     /**
-     * @brief Method to build a concrete @ref QuadratureRule object.
+     * @brief Factory method to build a concrete @ref QuadratureRule object.
      * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
      * @returns a pointer to @ref GaussHermiteRule.
      */
@@ -171,7 +171,7 @@ class GaussLaguerreRuleFactory : public QuadratureRuleFactory
     virtual ~GaussLaguerreRuleFactory() = default;
     
     /**
-     * @brief Method to build a concrete @ref QuadratureRule object.
+     * @brief Factory method to build a concrete @ref QuadratureRule object.
      * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
      * @returns a pointer to @ref GaussLaguerreRule.
      */

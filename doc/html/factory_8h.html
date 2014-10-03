@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('factory_8h.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract factories for the DOS constitutive relation and for the quadrature rule.  
+<p>Abstract factory design patterns.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="charge_8h_source.html">charge.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="paramList_8h_source.html">paramList.h</a>&quot;</code><br/>
@@ -126,16 +126,16 @@ $(document).ready(function(){initNavTree('factory_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChargeFactory.html">ChargeFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract factory to handle at runtime a constitutive relation for the Density of States.  <a href="classChargeFactory.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract factory to handle the constitutive relation for the Density of States.  <a href="classChargeFactory.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussianChargeFactory.html">GaussianChargeFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete factory to handle a multiple gaussians constitutive relation.  <a href="classGaussianChargeFactory.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete factory to handle a multiple gaussians DoS constitutive relation.  <a href="classGaussianChargeFactory.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExponentialChargeFactory.html">ExponentialChargeFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete factory to handle a single exponential constitutive relation.  <a href="classExponentialChargeFactory.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete factory to handle a single exponential DoS constitutive relation.  <a href="classExponentialChargeFactory.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuadratureRuleFactory.html">QuadratureRuleFactory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract factory to handle at runtime a quadrature rule.  <a href="classQuadratureRuleFactory.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract factory to handle a quadrature rule.  <a href="classQuadratureRuleFactory.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGaussHermiteRuleFactory.html">GaussHermiteRuleFactory</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete factory to handle a Gauss-Hermite quadrature rule.  <a href="classGaussHermiteRuleFactory.html#details">More...</a><br/></td></tr>
@@ -145,7 +145,7 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract factories for the DOS constitutive relation and for the quadrature rule. </p>
+<div class="textblock"><p>Abstract factory design patterns. </p>
 <dl class="section author"><dt>Author</dt><dd>Pasquale Claudio Africa <a href="#" onclick="location.href='mai'+'lto:'+'pas'+'qu'+'ale'+'.a'+'fri'+'ca'+'@gm'+'ai'+'l.c'+'om'; return false;">pasqu<span style="display: none;">.nosp@m.</span>ale.<span style="display: none;">.nosp@m.</span>afric<span style="display: none;">.nosp@m.</span>a@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2014</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright © 2014 Pasquale Claudio Africa. All rights reserved. </dd>

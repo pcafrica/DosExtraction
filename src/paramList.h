@@ -8,7 +8,7 @@
  * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
  * @copyright This project is released under the GNU General Public License.
  *
- * @brief List of simulation parameters.
+ * @brief Interface to process a list of simulation parameters.
  *
  */
 
