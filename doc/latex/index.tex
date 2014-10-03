@@ -2,17 +2,25 @@
 This program allows to extract the Density of States, assessed by mean capacitance-\/voltage measurements, in an organic semiconductor device. Simulated values are fitted to experimental data. \par
 Source and header files are written in C++11 language. \par
 The software is intended to be used on a Unix-\/like operating system.\hypertarget{index_dependancies}{}\section{Dependancies}\label{index_dependancies}
-The program requires the following libraries to be installed on your system\-:
+The program requires the following software to be installed on your system\-:
 
 \begin{DoxyItemize}
-\item \href{http://www.cmake.org}{\tt {\bfseries C\-Make}}, a cross-\/platform configuration tool (version 2.\-8 or above); \item \label{index_Eigen}%
+\item \href{http://www.cmake.org}{\tt {\bfseries C\-Make}} (version 2.\-8 or above), a cross-\/platform configuration tool; \item \href{http://www.gnu.org/software/make}{\tt {\bfseries Make}} (version 3.\-8.\-1 or above), a utility to build executables; \item \label{index_GCC}%
+\hypertarget{index_GCC}{}%
+\href{http://www.gnu.org/software/gcc}{\tt {\bfseries G\-C\-C}} (version 4.\-8 or above), the G\-N\-U Compiler Collection; \par
+ \par
+\item \label{index_Eigen}%
 \hypertarget{index_Eigen}{}%
-\href{http://eigen.tuxfamily.org}{\tt {\bfseries Eigen}}, to handle with matrices, vectors and linear algebra; \item \label{index_Gnuplot}%
+\href{http://eigen.tuxfamily.org}{\tt {\bfseries Eigen}} (version 3.\-2 or above), to handle with matrices, vectors and linear algebra; \item \label{index_Gnuplot}%
 \hypertarget{index_Gnuplot}{}%
-\href{http://www.gnuplot.info}{\tt {\bfseries Gnuplot}}, a graphical utility to generate plots; \item \href{http://www.boost.org}{\tt {\bfseries Boost}}, a C++ library used by the \hyperlink{index_Gnuplot}{Gnuplot} interface to C++; \item \href{http://openmp.org}{\tt {\bfseries Open\-M\-P}}, for parallel computing (recommended but not compulsory); \item \href{http://www.doxygen.org}{\tt {\bfseries Doxygen}}, a documentation generator (not compulsory).\end{DoxyItemize}
-It also uses the following packages, provided in the {\itshape include/} folder\-: \begin{DoxyItemize}
-\item \href{http://getpot.sourceforge.net}{\tt {\bfseries Get\-Pot}}, to parse command-\/line and configuration files; \item \href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt {\bfseries gnuplot-\/iostream}}, the C++ interface for \hyperlink{index_Gnuplot}{Gnuplot}.\end{DoxyItemize}
-\hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
+\href{http://www.gnuplot.info}{\tt {\bfseries Gnuplot}} (version 4.\-6.\-4 or above), a graphical utility to generate plots (the package {\bfseries gnuplot-\/x11}, a terminal for X servers, is also required for the interactive interface); \item \href{http://www.boost.org}{\tt {\bfseries Boost}} (version 1.\-50 or above), a set of libraries used by \hyperlink{index_gnuplot-iostream}{gnuplot-\/iostream}; \item \href{http://www.doxygen.org}{\tt {\bfseries Doxygen}} (version 1.\-8.\-6 or above), a documentation generator (not compulsory).\end{DoxyItemize}
+It also uses the following libraries, shipped in the {\itshape include/} folder\-:
+
+\begin{DoxyItemize}
+\item \href{http://getpot.sourceforge.net}{\tt {\bfseries Get\-Pot}} (version 1.\-1.\-18), to parse command-\/line and configuration files; \item \label{index_gnuplot-iostream}%
+\hypertarget{index_gnuplot-iostream}{}%
+\href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt {\bfseries gnuplot-\/iostream}} (version 2), a C++ interface for \hyperlink{index_Gnuplot}{Gnuplot}.\end{DoxyItemize}
+Parallel computing capabilities are provided through the \href{http://openmp.org}{\tt {\bfseries Open\-M\-P}} library, shipped together with \hyperlink{index_GCC}{G\-C\-C}.\hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
 In order to generate a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package\-:
 
 
@@ -98,4 +106,11 @@ $ ./test\_filename --directory configuration\_directory
 \end{DoxyCode}
 
 \end{DoxyWarning}
-Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file (default\-: {\itshape output/}) under {\itshape bin/}. 
+Once complete, the results of the simulation(s) will be saved in the output directory (relative to {\itshape bin/}) specified in the configuration file (default\-: {\itshape output/}). \par
+\hyperlink{index_Gnuplot}{Gnuplot} scripts are saved too for later re-\/use under the {\itshape gnuplot/} subdirectory; you can run them through\-:
+
+
+\begin{DoxyCode}
+$ gnuplot name\_of\_the\_script
+\end{DoxyCode}
+ 

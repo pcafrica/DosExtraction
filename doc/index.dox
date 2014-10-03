@@ -10,18 +10,27 @@
  * 
  * @section dependancies Dependancies
  * 
- * The program requires the following libraries to be installed on your system:
+ * The program requires the following software to be installed on your system:
  * 
- * @arg <a href="http://www.cmake.org"><b>CMake</b></a>, a cross-platform configuration tool (version 2.8 or above);
- * @arg @anchor Eigen <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra;
- * @arg @anchor Gnuplot <a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots;
- * @arg <a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the @ref Gnuplot interface to C++;
- * @arg <a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory);
- * @arg <a href="http://www.doxygen.org"><b>Doxygen</b></a>, a documentation generator (not compulsory).
+ * @arg <a href="http://www.cmake.org"><b>CMake</b></a> (version 2.8 or above), a cross-platform configuration tool;
+ * @arg <a href="http://www.gnu.org/software/make"><b>Make</b></a> (version 3.8.1 or above), a utility to build executables;
+ * @arg @anchor GCC <a href="http://www.gnu.org/software/gcc"><b>GCC</b></a> (version 4.8 or above), the GNU Compiler Collection;
+ * @n @n
+ * @arg @anchor Eigen <a href="http://eigen.tuxfamily.org"><b>Eigen</b></a> (version 3.2 or above),
+ * to handle with matrices, vectors and linear algebra;
+ * @arg @anchor Gnuplot <a href="http://www.gnuplot.info"><b>Gnuplot</b></a> (version 4.6.4 or above), a graphical utility
+ * to generate plots (the package @b gnuplot-x11, a terminal for X servers, is also required for the interactive interface);
+ * @arg <a href="http://www.boost.org"><b>Boost</b></a> (version 1.50 or above), a set of libraries used by @ref gnuplot-iostream;
+ * @arg <a href="http://www.doxygen.org"><b>Doxygen</b></a> (version 1.8.6 or above), a documentation generator (not compulsory).
  * 
- * It also uses the following packages, provided in the @a include/ folder:
- * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files;
- * @arg <a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for @ref Gnuplot.
+ * It also uses the following libraries, shipped in the @a include/ folder:
+ * 
+ * @arg <a href="http://getpot.sourceforge.net"><b>GetPot</b></a> (version 1.1.18), to parse command-line and configuration files;
+ * @arg @anchor gnuplot-iostream <a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a> (version 2),
+ * a C++ interface for @ref Gnuplot.
+ * 
+ * Parallel computing capabilities are provided through the <a href="http://openmp.org"><b>OpenMP</b></a> library,
+ * shipped together with @ref GCC.
  * 
  * @section install_sec Compile
  * 
@@ -111,7 +120,12 @@
  *     $ ./test_filename --directory configuration_directory
  * @endcode
  * 
- * Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file
- * (default: @a output/) under @a bin/.
+ * Once complete, the results of the simulation(s) will be saved in the output directory (relative to @a bin/) specified
+ * in the configuration file (default: @a output/). @n
+ * @ref Gnuplot scripts are saved too for later re-use under the @a gnuplot/ subdirectory; you can run them through:
+ * 
+ * @code
+ *     $ gnuplot name_of_the_script
+ * @endcode
  * 
  */

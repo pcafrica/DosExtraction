@@ -22,7 +22,7 @@ simulate_all = 0
 # Number of threads to be used for a parallel simulation.
 nThreads = 3
 
-# The directory where output files must be saved.
+# The directory where output files will be saved.
 output_directory = ./output
 
 ############################################################

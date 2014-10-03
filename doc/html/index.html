@@ -113,20 +113,24 @@ Source and header files are written in C++11 language. <br/>
 The software is intended to be used on a Unix-like operating system.</p>
 <h1><a class="anchor" id="dependancies"></a>
 Dependancies</h1>
-<p>The program requires the following libraries to be installed on your system:</p>
+<p>The program requires the following software to be installed on your system:</p>
 <ul>
-<li><a href="http://www.cmake.org"><b>CMake</b></a>, a cross-platform configuration tool (version 2.8 or above); </li>
-<li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org"><b>Eigen</b></a>, to handle with matrices, vectors and linear algebra; </li>
-<li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info"><b>Gnuplot</b></a>, a graphical utility to generate plots; </li>
-<li><a href="http://www.boost.org"><b>Boost</b></a>, a C++ library used by the <a class="el" href="index.html#Gnuplot">Gnuplot</a> interface to C++; </li>
-<li><a href="http://openmp.org"><b>OpenMP</b></a>, for parallel computing (recommended but not compulsory); </li>
-<li><a href="http://www.doxygen.org"><b>Doxygen</b></a>, a documentation generator (not compulsory).</li>
+<li><a href="http://www.cmake.org"><b>CMake</b></a> (version 2.8 or above), a cross-platform configuration tool; </li>
+<li><a href="http://www.gnu.org/software/make"><b>Make</b></a> (version 3.8.1 or above), a utility to build executables; </li>
+<li><a class="anchor" id="GCC"></a><a href="http://www.gnu.org/software/gcc"><b>GCC</b></a> (version 4.8 or above), the GNU Compiler Collection; <br/>
+ <br/>
+</li>
+<li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org"><b>Eigen</b></a> (version 3.2 or above), to handle with matrices, vectors and linear algebra; </li>
+<li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info"><b>Gnuplot</b></a> (version 4.6.4 or above), a graphical utility to generate plots (the package <b>gnuplot-x11</b>, a terminal for X servers, is also required for the interactive interface); </li>
+<li><a href="http://www.boost.org"><b>Boost</b></a> (version 1.50 or above), a set of libraries used by <a class="el" href="index.html#gnuplot-iostream">gnuplot-iostream</a>; </li>
+<li><a href="http://www.doxygen.org"><b>Doxygen</b></a> (version 1.8.6 or above), a documentation generator (not compulsory).</li>
 </ul>
-<p>It also uses the following packages, provided in the <em>include/</em> folder: </p>
+<p>It also uses the following libraries, shipped in the <em>include/</em> folder:</p>
 <ul>
-<li><a href="http://getpot.sourceforge.net"><b>GetPot</b></a>, to parse command-line and configuration files; </li>
-<li><a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a>, the C++ interface for <a class="el" href="index.html#Gnuplot">Gnuplot</a>.</li>
+<li><a href="http://getpot.sourceforge.net"><b>GetPot</b></a> (version 1.1.18), to parse command-line and configuration files; </li>
+<li><a class="anchor" id="gnuplot-iostream"></a><a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a> (version 2), a C++ interface for <a class="el" href="index.html#Gnuplot">Gnuplot</a>.</li>
 </ul>
+<p>Parallel computing capabilities are provided through the <a href="http://openmp.org"><b>OpenMP</b></a> library, shipped together with <a class="el" href="index.html#GCC">GCC</a>.</p>
 <h1><a class="anchor" id="install_sec"></a>
 Compile</h1>
 <p>In order to generate a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package:</p>
@@ -170,8 +174,10 @@ or:</dd>
 <dd>
 <div class="fragment"><div class="line">$ ./test_filename --directory configuration_directory</div>
 </div><!-- fragment --></dd></dl>
-<p>Once complete, you can find the results of the simulation(s) in the output directory specified in the configuration file (default: <em>output/</em>) under <em>bin/</em>. </p>
-</div></div><!-- contents -->
+<p>Once complete, the results of the simulation(s) will be saved in the output directory (relative to <em>bin/</em>) specified in the configuration file (default: <em>output/</em>). <br/>
+<a class="el" href="index.html#Gnuplot">Gnuplot</a> scripts are saved too for later re-use under the <em>gnuplot/</em> subdirectory; you can run them through:</p>
+<div class="fragment"><div class="line">$ gnuplot name_of_the_script</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
