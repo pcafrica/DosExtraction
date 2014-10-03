@@ -222,296 +222,308 @@ $(document).ready(function(){initNavTree('dosModel_8cc_source.html','');});
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classQuadratureRuleFactory.html">QuadratureRuleFactory</a> * quadRuleFactory;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span> ( config(<span class="stringliteral">&quot;QuadratureRule/method&quot;</span>, 1) == 1 )</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gauss-Hermite)&quot;</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        quadRuleFactory = <span class="keyword">new</span> <a class="code" href="classGaussHermiteRuleFactory.html">GaussHermiteRuleFactory</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gauss-Laguerre)&quot;</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        quadRuleFactory = <span class="keyword">new</span> <a class="code" href="classGaussLaguerreRuleFactory.html">GaussLaguerreRuleFactory</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    quadRule = quadRuleFactory-&gt;<a class="code" href="classQuadratureRuleFactory.html#adc9f82328b7cba8517e462e99c58335e">BuildRule</a>( config(<span class="stringliteral">&quot;QuadratureRule/nNodes&quot;</span>, 101) );</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">delete</span> quadRuleFactory;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot; using &quot;</span> &lt;&lt; quadRule-&gt;nNodes() &lt;&lt; <span class="stringliteral">&quot; nodes...&quot;</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      quadRule-&gt;<a class="code" href="classQuadratureRule.html#ae8035f1283a63c55fbbfb4e786db8a98">apply</a>(config);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::runtime_error &amp; runtimeError )</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">throw</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Constitutive relation.</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Initializing constitutive relation for the Density of States&quot;</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="classCharge.html">Charge</a> * charge_fun = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="classChargeFactory.html">ChargeFactory</a> * chargeFactory;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> ( config(<span class="stringliteral">&quot;DOS&quot;</span>, 1) == 1 )</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gaussian)&quot;</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        chargeFactory = <span class="keyword">new</span> <a class="code" href="classGaussianChargeFactory.html">GaussianChargeFactory</a>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Exponential)&quot;</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        chargeFactory = <span class="keyword">new</span> <a class="code" href="classExponentialChargeFactory.html">ExponentialChargeFactory</a>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    charge_fun = chargeFactory-&gt;<a class="code" href="classChargeFactory.html#ad4b190a88028e2e195fc5c5a4cfdcf70">BuildCharge</a>(<a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>, *quadRule);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">delete</span> chargeFactory;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">// Variables initialization.</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Initializing variables...&quot;</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Phi  = MatrixXr::Zero(     x.size(), V.size() );</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Dens = MatrixXr::Zero( semicNodesNo, V.size() );</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> cTot     = VectorXr::Zero( V.size() );</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> charge_n = VectorXr::Zero( V.size() );</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> method = config(<span class="stringliteral">&quot;QuadratureRule/method&quot;</span>, 1);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> ( method == 1 )</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gauss-Hermite)&quot;</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        quadRuleFactory = <span class="keyword">new</span> <a class="code" href="classGaussHermiteRuleFactory.html">GaussHermiteRuleFactory</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( method == 0 )</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gauss-Laguerre)&quot;</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        quadRuleFactory = <span class="keyword">new</span> <a class="code" href="classGaussLaguerreRuleFactory.html">GaussLaguerreRuleFactory</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: wrong variable \&quot;method\&quot; set in the configuration file (only 1 or 0 allowed).&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    quadRule = quadRuleFactory-&gt;<a class="code" href="classQuadratureRuleFactory.html#adc9f82328b7cba8517e462e99c58335e">BuildRule</a>( config(<span class="stringliteral">&quot;QuadratureRule/nNodes&quot;</span>, 101) );</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">delete</span> quadRuleFactory;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot; using &quot;</span> &lt;&lt; quadRule-&gt;nNodes() &lt;&lt; <span class="stringliteral">&quot; nodes...&quot;</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      quadRule-&gt;<a class="code" href="classQuadratureRule.html#ae8035f1283a63c55fbbfb4e786db8a98">apply</a>(config);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::runtime_error &amp; runtimeError )</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// Constitutive relation.</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Initializing constitutive relation for the Density of States&quot;</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <a class="code" href="classCharge.html">Charge</a> * charge_fun = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classChargeFactory.html">ChargeFactory</a> * chargeFactory;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> constitutive_relation = config(<span class="stringliteral">&quot;DOS&quot;</span>, 1);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> ( constitutive_relation == 1 )</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Gaussian)&quot;</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        chargeFactory = <span class="keyword">new</span> <a class="code" href="classGaussianChargeFactory.html">GaussianChargeFactory</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( constitutive_relation == 0 )</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        output_fitting &lt;&lt; <span class="stringliteral">&quot; (Exponential)&quot;</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        chargeFactory = <span class="keyword">new</span> <a class="code" href="classExponentialChargeFactory.html">ExponentialChargeFactory</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: wrong variable \&quot;DOS\&quot; set in the configuration file (only 1 or 0 allowed).&quot;</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    charge_fun = chargeFactory-&gt;<a class="code" href="classChargeFactory.html#ad4b190a88028e2e195fc5c5a4cfdcf70">BuildCharge</a>(<a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>, *quadRule);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">delete</span> chargeFactory;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Running Newton solver for non-linear Poisson equation...&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\tMax No. of iterations set: &quot;</span> &lt;&lt; config(<span class="stringliteral">&quot;NLP/maxIterationsNo&quot;</span>, 1000) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\tTolerance set: &quot;</span> &lt;&lt; config(<span class="stringliteral">&quot;NLP/tolerance&quot;</span>, 1.0e-4) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;...&quot;</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="comment">// Variables initialization.</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Initializing variables...&quot;</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">// Start simulation.</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; V.size(); ++i )</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="comment">// Print current iteration number.</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span> ( i == 0 || (i + 1) % 10 == 0 || i == V.size() - 1 )</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;          output_fitting &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;\titeration: &quot;</span> &lt;&lt; (i + 1) &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a78ebf0df2418a1d19ac405bc86edee1e">nSteps_</a>;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> phiOld = VectorXr::Zero( x.size() );</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">if</span> ( i == 0 )</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          phiOld = -VectorXr::LinSpaced(phiOld.size(), <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a9121165703c9ef6b60fe469701a48fad">Wf_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aed555e87b2a431b6ecabaf17813ed289">Ea_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a>, <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a9121165703c9ef6b60fe469701a48fad">Wf_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aed555e87b2a431b6ecabaf17813ed289">Ea_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - V(i));</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <a class="code" href="classNonLinearPoisson1D.html">NonLinearPoisson1D</a> nlpSolver( bimSolver, config(<span class="stringliteral">&quot;NLP/maxIterationsNo&quot;</span>, 1), config(<span class="stringliteral">&quot;NLP/tolerance&quot;</span>, 1.0e-4) );</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      nlpSolver.<a class="code" href="classNonLinearPoisson1D.html#a54768475940b34c5e39583a3635cf63b">apply</a>(x, phiOld, *charge_fun);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Phi  = MatrixXr::Zero(     x.size(), V.size() );</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Dens = MatrixXr::Zero( semicNodesNo, V.size() );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> cTot     = VectorXr::Zero( V.size() );</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> charge_n = VectorXr::Zero( V.size() );</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Running Newton solver for non-linear Poisson equation...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\tMax No. of iterations set: &quot;</span> &lt;&lt; config(<span class="stringliteral">&quot;NLP/maxIterationsNo&quot;</span>, 1000) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\tTolerance set: &quot;</span> &lt;&lt; config(<span class="stringliteral">&quot;NLP/tolerance&quot;</span>, 1.0e-4) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">// Start simulation.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; V.size(); ++i )</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="comment">// Print current iteration number.</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">if</span> ( i == 0 || (i + 1) % 10 == 0 || i == V.size() - 1 )</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          output_fitting &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;\titeration: &quot;</span> &lt;&lt; (i + 1) &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a78ebf0df2418a1d19ac405bc86edee1e">nSteps_</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> phiOld = VectorXr::Zero( x.size() );</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      Phi.col(i) = nlpSolver.phi();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> charge = charge_fun-&gt;<a class="code" href="classCharge.html#a597abd6d429e1c18935e4806082d67d8">charge</a>( Phi.col(i).segment(0, semicNodesNo) );</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      Dens.col(i) = - charge / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a>;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      cTot(i) = nlpSolver.cTot();</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      charge_n(i) = <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>((<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) x.segment(0, semicNodesNo), charge);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// Timing.</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  high_resolution_clock::time_point finalTime = high_resolution_clock::now();</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Simulation took &quot;</span> &lt;&lt; duration_cast&lt;seconds&gt;(finalTime - initTime).count()</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                 </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="comment">// Free up memory to avoid leaks.</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keyword">delete</span> quadRule;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  quadRule = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keyword">delete</span> charge_fun;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  charge_fun = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">if</span> ( i == 0 )</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;          phiOld = -VectorXr::LinSpaced(phiOld.size(), <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a9121165703c9ef6b60fe469701a48fad">Wf_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aed555e87b2a431b6ecabaf17813ed289">Ea_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a>, <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#a9121165703c9ef6b60fe469701a48fad">Wf_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aed555e87b2a431b6ecabaf17813ed289">Ea_</a> / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a> - V(i));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <a class="code" href="classNonLinearPoisson1D.html">NonLinearPoisson1D</a> nlpSolver( bimSolver, config(<span class="stringliteral">&quot;NLP/maxIterationsNo&quot;</span>, 1), config(<span class="stringliteral">&quot;NLP/tolerance&quot;</span>, 1.0e-4) );</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      nlpSolver.<a class="code" href="classNonLinearPoisson1D.html#a54768475940b34c5e39583a3635cf63b">apply</a>(x, phiOld, *charge_fun);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      Phi.col(i) = nlpSolver.phi();</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> charge = charge_fun-&gt;<a class="code" href="classCharge.html#a597abd6d429e1c18935e4806082d67d8">charge</a>( Phi.col(i).segment(0, semicNodesNo) );</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      Dens.col(i) = - charge / <a class="code" href="namespaceconstants.html#a791181f54af6cd7794fe58fec8e4ce97">Q</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      cTot(i) = nlpSolver.cTot();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      charge_n(i) = <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>((<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) x.segment(0, semicNodesNo), charge);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">print_done</a>(output_fitting);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">// Post-processing and creation of output files.</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <a class="code" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">post_process</a>(config, input_experim, output_fitting, output_CV, (<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) x.segment(0, semicNodesNo),</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;               (<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) Dens.col(Dens.cols() - 1), V, cTot);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;               </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  output_fitting.close();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  output_CV     .close();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="comment">// Create output Gnuplot files.</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <a class="code" href="classDosModel.html#aa614583c066c644e83085beaad05279d">save_plot</a>(output_directory, output_plot_subdir, output_CV_filename, output_filename);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException )</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="keywordflow">throw</span>;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">  256</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">DosModel::post_process</a>(<span class="keyword">const</span> GetPot &amp; config, <span class="keyword">const</span> std::string &amp; input_experim, std::ostream &amp; output_fitting,</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                            std::ostream &amp; output_CV, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x_semic, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; dens,</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                            <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; V_simulated, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; C_simulated)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  assert( x_semic    .size() == dens       .size() );</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  assert( V_simulated.size() == C_simulated.size() );</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="classCsvParser.html">CsvParser</a> parser_experim(input_experim, config(<span class="stringliteral">&quot;hasHeaders&quot;</span>, <span class="keyword">true</span>));</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> A_semic = parser_experim.importCell(1, 3);    <span class="comment">// Semiconductor area [m^2].</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> C_sb    = parser_experim.importCell(1, 4);    <span class="comment">// Sbord capacitance [F].</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> V_experim = parser_experim.importCol(1);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> C_experim = parser_experim.importCol(2);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  assert( V_experim.size() == C_experim.size() );</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">// Sorting &quot;V_experim&quot; and &quot;C_experim&quot;. The order is established by &quot;V_experim&quot;.</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="typedefs_8h.html#af38b14e4434227fa8e1b41e0d6632171">VectorXpair&lt;Real&gt;</a> <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a> = <a class="code" href="namespacenumerics.html#a510fe73118ce8c79570ac87fa3e7df47">numerics::sort_pair</a>( V_experim );</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> V_sort = VectorXr::Zero( V_experim.size() );</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> C_sort = VectorXr::Zero( C_experim.size() );</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; sort.size(); ++i )</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        V_sort(i) = V_experim( <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(i).second );</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        C_sort(i) = C_experim( <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(i).second );</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    V_experim = V_sort;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    C_experim = C_sort;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_experim   = <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(C_experim,                            V_experim  );</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_simulated = <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(C_simulated.array() * A_semic + C_sb, V_simulated);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> charge_center_of_mass = <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>( x_semic.cwiseProduct(dens) ) / <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>( dens );</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> cAccStar = C_simulated.maxCoeff();    <span class="comment">// Simulated.</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j_e = 0;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  dC_dV_experim  .maxCoeff(&amp;j_e);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j_s = 0;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  dC_dV_simulated.maxCoeff(&amp;j_s);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">// Timing.</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  high_resolution_clock::time_point finalTime = high_resolution_clock::now();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Simulation took &quot;</span> &lt;&lt; duration_cast&lt;seconds&gt;(finalTime - initTime).count()</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                 &lt;&lt; <span class="stringliteral">&quot; seconds.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                 </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// Free up memory to avoid leaks.</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keyword">delete</span> quadRule;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  quadRule = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keyword">delete</span> charge_fun;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  charge_fun = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  <span class="comment">// Post-processing and creation of output files.</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <a class="code" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">post_process</a>(config, input_experim, output_fitting, output_CV, (<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) x.segment(0, semicNodesNo),</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;               (<a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>) Dens.col(Dens.cols() - 1), V, cTot);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;               </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  output_fitting.close();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  output_CV     .close();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="comment">// Create output Gnuplot files.</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <a class="code" href="classDosModel.html#aa614583c066c644e83085beaad05279d">save_plot</a>(output_directory, output_plot_subdir, output_CV_filename, output_filename);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException )</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="keywordflow">throw</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">  268</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">DosModel::post_process</a>(<span class="keyword">const</span> GetPot &amp; config, <span class="keyword">const</span> std::string &amp; input_experim, std::ostream &amp; output_fitting,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                            std::ostream &amp; output_CV, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; x_semic, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; dens,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                            <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; V_simulated, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp; C_simulated)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  assert( x_semic    .size() == dens       .size() );</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  assert( V_simulated.size() == C_simulated.size() );</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <a class="code" href="classCsvParser.html">CsvParser</a> parser_experim(input_experim, config(<span class="stringliteral">&quot;hasHeaders&quot;</span>, <span class="keyword">true</span>));</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> A_semic = parser_experim.importCell(1, 3);    <span class="comment">// Semiconductor area [m^2].</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> C_sb    = parser_experim.importCell(1, 4);    <span class="comment">// Sbord capacitance [F].</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> V_experim = parser_experim.importCol(1);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> C_experim = parser_experim.importCol(2);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  assert( V_experim.size() == C_experim.size() );</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="comment">// Sorting &quot;V_experim&quot; and &quot;C_experim&quot;. The order is established by &quot;V_experim&quot;.</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="typedefs_8h.html#af38b14e4434227fa8e1b41e0d6632171">VectorXpair&lt;Real&gt;</a> <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a> = <a class="code" href="namespacenumerics.html#a510fe73118ce8c79570ac87fa3e7df47">numerics::sort_pair</a>( V_experim );</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> V_sort = VectorXr::Zero( V_experim.size() );</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> C_sort = VectorXr::Zero( C_experim.size() );</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; sort.size(); ++i )</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        V_sort(i) = V_experim( <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(i).second );</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        C_sort(i) = C_experim( <a class="code" href="namespacenumerics.html#a1633aabded7159bb15bbf573bf9e12c5">sort</a>(i).second );</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    V_experim = V_sort;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    C_experim = C_sort;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  }</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> V_shift = V_simulated(j_s) - V_experim(j_e);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>     C_interp = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(V_experim,     C_experim, V_simulated.array() - V_shift);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_interp = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(V_experim, dC_dV_experim, V_simulated.array() - V_shift);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">error_L2</a> = std::sqrt( <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift) );</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> error_H1 = std::sqrt( error_L2 * error_L2 +</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                             <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                           );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                           </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="comment">// Print to output.</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  output_fitting &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;V_shift = &quot;</span> &lt;&lt; V_shift &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Charge center of mass = &quot;</span> &lt;&lt; charge_center_of_mass &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;C_acc* = &quot;</span> &lt;&lt; cAccStar &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  output_fitting &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Distance between experimental and simulated voltage values:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\t L2-distance = &quot;</span> &lt;&lt; error_L2 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\t H1-distance = &quot;</span> &lt;&lt; error_H1 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  output_CV &lt;&lt; <span class="stringliteral">&quot;V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; std::max( V_simulated.size(), V_experim.size() ); ++i )</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      <span class="keywordflow">if</span> ( i &lt; V_experim.size() )</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;          output_CV &lt;&lt; V_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; C_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; dC_dV_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          output_CV &lt;&lt; <span class="stringliteral">&quot;,,, &quot;</span>;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      <span class="keywordflow">if</span> ( i &lt; V_simulated.size() )</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;          output_CV &lt;&lt; V_simulated(i) - V_shift &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; C_simulated(i) * A_semic + C_sb &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; dC_dV_simulated(i);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;          output_CV &lt;&lt; <span class="stringliteral">&quot;,,&quot;</span>;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      output_CV &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
-<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">  349</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">DosModel::gnuplot_commands</a>(<span class="keyword">const</span> std::string &amp; output_CV_filename, std::ostream &amp; os)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set datafile separator \&quot;,\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set format y \&quot;%.2te%+03T\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;stats \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1 name \&quot;V\&quot; nooutput;\n&quot;</span>;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set multiplot;\n&quot;</span>;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set size 1, 0.5;\n&quot;</span>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set origin 0.0, 0.5;\n&quot;</span>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset xlabel \&quot;V_gate [V]\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset ylabel \&quot;dC/dV [F/V]\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset title \&quot;dC/dV [F/V], N0 = &quot;</span> &lt;&lt; <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aa51672586248c54289ad6ac1a5d3c274">N0_</a> &lt;&lt; <span class="stringliteral">&quot;\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tplot [V_min:V_max] \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1:3 title \&quot;Experimental\&quot; with lines lw 2, \\\n&quot;</span>;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t                   \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 4:6 title \&quot;Simulated\&quot;    with lines lw 2;\n&quot;</span>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_experim   = <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(C_experim,                            V_experim  );</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_simulated = <a class="code" href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a>(C_simulated.array() * A_semic + C_sb, V_simulated);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> charge_center_of_mass = <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>( x_semic.cwiseProduct(dens) ) / <a class="code" href="namespacenumerics.html#a41daad9dd743c914a195298bda0c0269">numerics::trapz</a>( dens );</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> cAccStar = C_simulated.maxCoeff();    <span class="comment">// Simulated.</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j_e = 0;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  dC_dV_experim  .maxCoeff(&amp;j_e);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j_s = 0;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  dC_dV_simulated.maxCoeff(&amp;j_s);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> V_shift = V_simulated(j_s) - V_experim(j_e);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>     C_interp = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(V_experim,     C_experim, V_simulated.array() - V_shift);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> dC_dV_interp = <a class="code" href="namespacenumerics.html#a05cd7efecfbd0a2771993848352e2e2d">numerics::interp1</a>(V_experim, dC_dV_experim, V_simulated.array() - V_shift);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">error_L2</a> = std::sqrt( <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift) );</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> error_H1 = std::sqrt( error_L2 * error_L2 +</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                             <a class="code" href="namespacenumerics.html#a7beb6807c580a205d0c23b4a9b23213f">numerics::error_L2</a>(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                           );</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                           </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="comment">// Print to output.</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  output_fitting &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;V_shift = &quot;</span> &lt;&lt; V_shift &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Charge center of mass = &quot;</span> &lt;&lt; charge_center_of_mass &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;C_acc* = &quot;</span> &lt;&lt; cAccStar &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  output_fitting &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;Distance between experimental and simulated voltage values:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\t L2-distance = &quot;</span> &lt;&lt; error_L2 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  output_fitting &lt;&lt; <span class="stringliteral">&quot;\t H1-distance = &quot;</span> &lt;&lt; error_H1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  output_CV &lt;&lt; <span class="stringliteral">&quot;V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; std::max( V_simulated.size(), V_experim.size() ); ++i )</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      <span class="keywordflow">if</span> ( i &lt; V_experim.size() )</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          output_CV &lt;&lt; V_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; C_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; dC_dV_experim(i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;          output_CV &lt;&lt; <span class="stringliteral">&quot;,,, &quot;</span>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;      <span class="keywordflow">if</span> ( i &lt; V_simulated.size() )</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          output_CV &lt;&lt; V_simulated(i) - V_shift &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; C_simulated(i) * A_semic + C_sb &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; dC_dV_simulated(i);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          output_CV &lt;&lt; <span class="stringliteral">&quot;,,&quot;</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        }</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      output_CV &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">  361</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">DosModel::gnuplot_commands</a>(<span class="keyword">const</span> std::string &amp; output_CV_filename, std::ostream &amp; os)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set datafile separator \&quot;,\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set format y \&quot;%.2te%+03T\&quot;;\n&quot;</span>;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set origin 0.0, 0.0;\n&quot;</span>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset xlabel \&quot;V_gate [V]\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset ylabel \&quot;C [F]\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset title \&quot;C [F]\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tplot [V_min:V_max] \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1:2 title \&quot;Experimental\&quot; with lines lw 2, \\\n&quot;</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t                   \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 4:5 title \&quot;Simulated\&quot;    with lines lw 2;\n&quot;</span>;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;unset multiplot;\n&quot;</span>;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
-<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="classDosModel.html#aa614583c066c644e83085beaad05279d">  378</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#aa614583c066c644e83085beaad05279d">DosModel::save_plot</a>(<span class="keyword">const</span> std::string &amp; output_directory, <span class="keyword">const</span> std::string &amp; output_plot_subdir,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                         <span class="keyword">const</span> std::string &amp; output_CV_filename, <span class="keyword">const</span> std::string &amp; output_filename)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="comment">// Save script for later reuse.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  <span class="keyword">const</span> std::string output_plot_filename = output_plot_subdir + output_filename + <span class="stringliteral">&quot;_plot.gp&quot;</span>;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  std::ofstream output_plot;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  output_plot.open(output_directory + output_plot_filename, std::ios_base::out);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;stats \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1 name \&quot;V\&quot; nooutput;\n&quot;</span>;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set multiplot;\n&quot;</span>;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set size 1, 0.5;\n&quot;</span>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set origin 0.0, 0.5;\n&quot;</span>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset xlabel \&quot;V_gate [V]\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset ylabel \&quot;dC/dV [F/V]\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset title \&quot;dC/dV [F/V], N0 = &quot;</span> &lt;&lt; <a class="code" href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">params_</a>.<a class="code" href="classParamList.html#aa51672586248c54289ad6ac1a5d3c274">N0_</a> &lt;&lt; <span class="stringliteral">&quot;\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tplot [V_min:V_max] \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1:3 title \&quot;Experimental\&quot; with lines lw 2, \\\n&quot;</span>;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t                   \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 4:6 title \&quot;Simulated\&quot;    with lines lw 2;\n&quot;</span>;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;set origin 0.0, 0.0;\n&quot;</span>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset xlabel \&quot;V_gate [V]\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset ylabel \&quot;C [F]\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tset title \&quot;C [F]\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\tplot [V_min:V_max] \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 1:2 title \&quot;Experimental\&quot; with lines lw 2, \\\n&quot;</span>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\t                   \&quot;&quot;</span> + output_CV_filename + <span class="stringliteral">&quot;\&quot; using 4:5 title \&quot;Simulated\&quot;    with lines lw 2;\n&quot;</span>;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  os &lt;&lt; <span class="stringliteral">&quot;unset multiplot;\n&quot;</span>;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">if</span> ( !output_plot.is_open() )</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: Gnuplot output file cannot be opened or directory does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">gnuplot_commands</a>(<span class="stringliteral">&quot;../&quot;</span> + output_CV_filename, output_plot);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  output_plot &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  output_plot &lt;&lt; <span class="stringliteral">&quot;pause mouse;\n&quot;</span>;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  output_plot.close();</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="comment">// Create .pdf plot file.</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  Gnuplot output_pdf;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set terminal pdf;\n&quot;</span>;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set output \&quot;&quot;</span> + output_directory + output_filename + <span class="stringliteral">&quot;_plot.pdf\&quot;;\n&quot;</span>;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">gnuplot_commands</a>(output_directory + output_CV_filename, output_pdf);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set output;\n&quot;</span>;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;}</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;</div>
+<div class="line"><a name="l00390"></a><span class="lineno"><a class="line" href="classDosModel.html#aa614583c066c644e83085beaad05279d">  390</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDosModel.html#aa614583c066c644e83085beaad05279d">DosModel::save_plot</a>(<span class="keyword">const</span> std::string &amp; output_directory, <span class="keyword">const</span> std::string &amp; output_plot_subdir,</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                         <span class="keyword">const</span> std::string &amp; output_CV_filename, <span class="keyword">const</span> std::string &amp; output_filename)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  <span class="comment">// Save script for later reuse.</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keyword">const</span> std::string output_plot_filename = output_plot_subdir + output_filename + <span class="stringliteral">&quot;_plot.gp&quot;</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  std::ofstream output_plot;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  output_plot.open(output_directory + output_plot_filename, std::ios_base::out);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">if</span> ( !output_plot.is_open() )</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: Gnuplot output file cannot be opened or directory does not exist.&quot;</span>);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">gnuplot_commands</a>(<span class="stringliteral">&quot;../&quot;</span> + output_CV_filename, output_plot);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  output_plot &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  output_plot &lt;&lt; <span class="stringliteral">&quot;pause mouse;\n&quot;</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;  output_plot.close();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  <span class="comment">// Create .pdf plot file.</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;  Gnuplot output_pdf;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set terminal pdf;\n&quot;</span>;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set output \&quot;&quot;</span> + output_directory + output_filename + <span class="stringliteral">&quot;_plot.pdf\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;  <a class="code" href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">gnuplot_commands</a>(output_directory + output_CV_filename, output_pdf);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  output_pdf &lt;&lt; <span class="stringliteral">&quot;set output;\n&quot;</span>;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
 <div class="ttc" id="classQuadratureRule_html"><div class="ttname"><a href="classQuadratureRule.html">QuadratureRule</a></div><div class="ttdoc">Abstract class providing a quadrature rule. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8h_source.html#l00029">quadratureRule.h:29</a></div></div>
 <div class="ttc" id="classBim1D_html_a9afebaa0bb7d919ece20a533ef000921"><div class="ttname"><a href="classBim1D.html#a9afebaa0bb7d919ece20a533ef000921">Bim1D::assembleStiff</a></div><div class="ttdeci">virtual void assembleStiff(const VectorXr &amp;, const VectorXr &amp;) override</div><div class="ttdoc">Assemble the matrix for a diffusion term. </div><div class="ttdef"><b>Definition:</b> <a href="solvers_8cc_source.html#l00168">solvers.cc:168</a></div></div>
 <div class="ttc" id="namespaceconstants_html_a1be297a9c9ca81f310b848dbe6c5525d"><div class="ttname"><a href="namespaceconstants.html#a1be297a9c9ca81f310b848dbe6c5525d">constants::EPS0</a></div><div class="ttdeci">const Real EPS0</div><div class="ttdoc">Vacuum electrical permittivity . </div><div class="ttdef"><b>Definition:</b> <a href="physicalConstants_8h_source.html#l00027">physicalConstants.h:27</a></div></div>
@@ -527,7 +539,7 @@ $(document).ready(function(){initNavTree('dosModel_8cc_source.html','');});
 <div class="ttc" id="classParamList_html_aeedc0268c6baa38b4821d85ad97d6f04"><div class="ttname"><a href="classParamList.html#aeedc0268c6baa38b4821d85ad97d6f04">ParamList::t_semic_</a></div><div class="ttdeci">Real t_semic_</div><div class="ttdoc">Semiconductor layer thickness . </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00084">paramList.h:84</a></div></div>
 <div class="ttc" id="dosModel_8h_html"><div class="ttname"><a href="dosModel_8h.html">dosModel.h</a></div><div class="ttdoc">Mathematical model for Density of States extraction. </div></div>
 <div class="ttc" id="classChargeFactory_html"><div class="ttname"><a href="classChargeFactory.html">ChargeFactory</a></div><div class="ttdoc">Abstract factory to handle at runtime a constitutive relation for the Density of States. </div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00025">factory.h:25</a></div></div>
-<div class="ttc" id="classDosModel_html_a864b576fe626805c8dbf15aac5461a8e"><div class="ttname"><a href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">DosModel::post_process</a></div><div class="ttdeci">void post_process(const GetPot &amp;, const std::string &amp;, std::ostream &amp;, std::ostream &amp;, const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;) const </div><div class="ttdoc">Perform post-processing. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00256">dosModel.cc:256</a></div></div>
+<div class="ttc" id="classDosModel_html_a864b576fe626805c8dbf15aac5461a8e"><div class="ttname"><a href="classDosModel.html#a864b576fe626805c8dbf15aac5461a8e">DosModel::post_process</a></div><div class="ttdeci">void post_process(const GetPot &amp;, const std::string &amp;, std::ostream &amp;, std::ostream &amp;, const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;, const VectorXr &amp;) const </div><div class="ttdoc">Perform post-processing. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00268">dosModel.cc:268</a></div></div>
 <div class="ttc" id="namespacenumerics_html_a8ba4a40c596ac41f1438a34c1e91d19d"><div class="ttname"><a href="namespacenumerics.html#a8ba4a40c596ac41f1438a34c1e91d19d">numerics::deriv</a></div><div class="ttdeci">VectorXr deriv(const VectorXr &amp;, const VectorXr &amp;)</div><div class="ttdoc">Compute the numeric derivative: . </div><div class="ttdef"><b>Definition:</b> <a href="numerics_8cc_source.html#l00033">numerics.cc:33</a></div></div>
 <div class="ttc" id="namespaceutility_html_a226df4bf30ae6e01ba77b81f7f3e8993"><div class="ttname"><a href="namespaceutility.html#a226df4bf30ae6e01ba77b81f7f3e8993">utility::print_done</a></div><div class="ttdeci">void print_done(std::ostream &amp;=std::cout)</div><div class="ttdoc">Auxiliary function to print a &quot;DONE!&quot; string. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8cc_source.html#l00042">typedefs.cc:42</a></div></div>
 <div class="ttc" id="classParamList_html_a54962bcd38fdd7844045a1c93ce005fc"><div class="ttname"><a href="classParamList.html#a54962bcd38fdd7844045a1c93ce005fc">ParamList::simulationNo_</a></div><div class="ttdeci">Index simulationNo_</div><div class="ttdoc">Simulation number index. </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00083">paramList.h:83</a></div></div>
@@ -543,14 +555,14 @@ $(document).ready(function(){initNavTree('dosModel_8cc_source.html','');});
 <div class="ttc" id="classBim1D_html_afd5e07bb246bdacd59eefb7a3396e650"><div class="ttname"><a href="classBim1D.html#afd5e07bb246bdacd59eefb7a3396e650">Bim1D::assembleMass</a></div><div class="ttdeci">virtual void assembleMass(const VectorXr &amp;, const VectorXr &amp;) override</div><div class="ttdoc">Assemble the matrix for a reaction term. </div><div class="ttdef"><b>Definition:</b> <a href="solvers_8cc_source.html#l00177">solvers.cc:177</a></div></div>
 <div class="ttc" id="classParamList_html_a9121165703c9ef6b60fe469701a48fad"><div class="ttname"><a href="classParamList.html#a9121165703c9ef6b60fe469701a48fad">ParamList::Wf_</a></div><div class="ttdeci">Real Wf_</div><div class="ttdoc">Work-function . </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00088">paramList.h:88</a></div></div>
 <div class="ttc" id="classParamList_html_afc5968e07015183cc569c8c286613cda"><div class="ttname"><a href="classParamList.html#afc5968e07015183cc569c8c286613cda">ParamList::V_max_</a></div><div class="ttdeci">Real V_max_</div><div class="ttdoc">Maximum voltage . </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00106">paramList.h:106</a></div></div>
-<div class="ttc" id="classDosModel_html_aa614583c066c644e83085beaad05279d"><div class="ttname"><a href="classDosModel.html#aa614583c066c644e83085beaad05279d">DosModel::save_plot</a></div><div class="ttdeci">void save_plot(const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;) const </div><div class="ttdoc">Save the Gnuplot output files. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00378">dosModel.cc:378</a></div></div>
+<div class="ttc" id="classDosModel_html_aa614583c066c644e83085beaad05279d"><div class="ttname"><a href="classDosModel.html#aa614583c066c644e83085beaad05279d">DosModel::save_plot</a></div><div class="ttdeci">void save_plot(const std::string &amp;, const std::string &amp;, const std::string &amp;, const std::string &amp;) const </div><div class="ttdoc">Save the Gnuplot output files. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00390">dosModel.cc:390</a></div></div>
 <div class="ttc" id="classDosModel_html_a4deb2401e648f5ad79e0aab68343a96b"><div class="ttname"><a href="classDosModel.html#a4deb2401e648f5ad79e0aab68343a96b">DosModel::params_</a></div><div class="ttdeci">ParamList params_</div><div class="ttdoc">The parameter list. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8h_source.html#l00102">dosModel.h:102</a></div></div>
 <div class="ttc" id="typedefs_8h_html_a81d507f5d0c665fb16966595c9520a55"><div class="ttname"><a href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, Dynamic &gt; MatrixXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized matrices. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00030">typedefs.h:30</a></div></div>
 <div class="ttc" id="classParamList_html_a6212d80113c5445355b66fef1e6928eb"><div class="ttname"><a href="classParamList.html#a6212d80113c5445355b66fef1e6928eb">ParamList::V_min_</a></div><div class="ttdeci">Real V_min_</div><div class="ttdoc">Minimum voltage . </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00105">paramList.h:105</a></div></div>
 <div class="ttc" id="classExponentialChargeFactory_html"><div class="ttname"><a href="classExponentialChargeFactory.html">ExponentialChargeFactory</a></div><div class="ttdoc">Concrete factory to handle a single exponential constitutive relation. </div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00079">factory.h:79</a></div></div>
 <div class="ttc" id="classParamList_html_a78ebf0df2418a1d19ac405bc86edee1e"><div class="ttname"><a href="classParamList.html#a78ebf0df2418a1d19ac405bc86edee1e">ParamList::nSteps_</a></div><div class="ttdeci">Index nSteps_</div><div class="ttdoc">Number of steps to simulate. </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00104">paramList.h:104</a></div></div>
 <div class="ttc" id="classParamList_html"><div class="ttname"><a href="classParamList.html">ParamList</a></div><div class="ttdoc">Class providing methods to handle a list of parameters. </div><div class="ttdef"><b>Definition:</b> <a href="paramList_8h_source.html#l00025">paramList.h:25</a></div></div>
-<div class="ttc" id="classDosModel_html_a26e64253688b5b51ffc54013bf3bc553"><div class="ttname"><a href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">DosModel::gnuplot_commands</a></div><div class="ttdeci">void gnuplot_commands(const std::string &amp;, std::ostream &amp;) const </div><div class="ttdoc">Defines commands to generate Gnuplot output files. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00349">dosModel.cc:349</a></div></div>
+<div class="ttc" id="classDosModel_html_a26e64253688b5b51ffc54013bf3bc553"><div class="ttname"><a href="classDosModel.html#a26e64253688b5b51ffc54013bf3bc553">DosModel::gnuplot_commands</a></div><div class="ttdeci">void gnuplot_commands(const std::string &amp;, std::ostream &amp;) const </div><div class="ttdoc">Defines commands to generate Gnuplot output files. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00361">dosModel.cc:361</a></div></div>
 <div class="ttc" id="typedefs_8h_html_af38b14e4434227fa8e1b41e0d6632171"><div class="ttname"><a href="typedefs_8h.html#af38b14e4434227fa8e1b41e0d6632171">VectorXpair</a></div><div class="ttdeci">VectorX&lt; std::pair&lt; T, Index &gt; &gt; VectorXpair</div><div class="ttdoc">Template alias for an Eigen vector of pairs: (ScalarType, Index). </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00048">typedefs.h:48</a></div></div>
 <div class="ttc" id="classQuadratureRuleFactory_html"><div class="ttname"><a href="classQuadratureRuleFactory.html">QuadratureRuleFactory</a></div><div class="ttdoc">Abstract factory to handle at runtime a quadrature rule. </div><div class="ttdef"><b>Definition:</b> <a href="factory_8h_source.html#l00106">factory.h:106</a></div></div>
 <div class="ttc" id="classDosModel_html_a500b55ef4d49a883dbe2ea137e85c839"><div class="ttname"><a href="classDosModel.html#a500b55ef4d49a883dbe2ea137e85c839">DosModel::DosModel</a></div><div class="ttdeci">DosModel()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> <a href="dosModel_8cc_source.html#l00016">dosModel.cc:16</a></div></div>

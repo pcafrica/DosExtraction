@@ -115,15 +115,21 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
   {
     QuadratureRuleFactory * quadRuleFactory;
     
-    if ( config("QuadratureRule/method", 1) == 1 )
+    Index method = config("QuadratureRule/method", 1);
+    
+    if ( method == 1 )
       {
         output_fitting << " (Gauss-Hermite)";
         quadRuleFactory = new GaussHermiteRuleFactory;
       }
-    else
+    else if ( method == 0 )
       {
         output_fitting << " (Gauss-Laguerre)";
         quadRuleFactory = new GaussLaguerreRuleFactory;
+      }
+    else
+      {
+        throw std::runtime_error("ERROR: wrong variable \"method\" set in the configuration file (only 1 or 0 allowed).");
       }
       
     quadRule = quadRuleFactory->BuildRule( config("QuadratureRule/nNodes", 101) );
@@ -152,15 +158,21 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
   {
     ChargeFactory * chargeFactory;
     
-    if ( config("DOS", 1) == 1 )
+    Index constitutive_relation = config("DOS", 1);
+    
+    if ( constitutive_relation == 1 )
       {
         output_fitting << " (Gaussian)";
         chargeFactory = new GaussianChargeFactory;
       }
-    else
+    else if ( constitutive_relation == 0 )
       {
         output_fitting << " (Exponential)";
         chargeFactory = new ExponentialChargeFactory;
+      }
+    else
+      {
+        throw std::runtime_error("ERROR: wrong variable \"DOS\" set in the configuration file (only 1 or 0 allowed).");
       }
       
     charge_fun = chargeFactory->BuildCharge(params_, *quadRule);

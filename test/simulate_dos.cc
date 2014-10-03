@@ -36,20 +36,24 @@ int main(const int argc, const char * const * argv, const char * const * envp)
       // Get number of simulations to be performed.
       Index nSimulations = 0;
       
-      if ( config("simulate_all", false) )
-        {
-          nSimulations = parser.nRows();
-        }
-      else
-        {
-          nSimulations = config.vector_variable_size("indexes");
-        }
+      {
+        bool simulate_all = config("simulate_all", false);
         
-      if ( nSimulations < 1 )
-        {
-          throw std::ifstream::failure("ERROR: wrong configuration file.");
-        }
-        
+        if ( simulate_all == true )
+          {
+            nSimulations = parser.nRows();
+          }
+        else
+          {
+            nSimulations = config.vector_variable_size("indexes");
+          }
+          
+        if ( nSimulations == 0 )
+          {
+            throw std::ifstream::failure("ERROR: wrong variables \"simulate_all\" and \"indexes\" set in the configuration file.");
+          }
+      }
+      
       // Set number of threads.
       omp_set_num_threads( config("nThreads", (int) nSimulations) );
       
