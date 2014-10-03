@@ -5,6 +5,9 @@
  * @author Pasquale Claudio Africa <pasquale.africa@gmail.com>
  * @date   2014
  *
+ * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
+ * @copyright This project is released under the GNU General Public License.
+ *
  */
 
 #include "dosModel.h"
@@ -360,29 +363,29 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
 
 void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ostream & os) const
 {
-  os << "set datafile separator \",\";\n";
-  os << "set format y \"%.2te%+03T\";\n";
-  os << "\n";
-  os << "stats \"" + output_CV_filename + "\" using 1 name \"V\" nooutput;\n";
-  os << "\n";
-  os << "set multiplot;\n";
-  os << "set size 1, 0.5;\n";
-  os << "\n";
-  os << "set origin 0.0, 0.5;\n";
-  os << "\tset xlabel \"V_gate [V]\";\n";
-  os << "\tset ylabel \"dC/dV [F/V]\";\n";
-  os << "\tset title \"dC/dV [F/V], N0 = " << params_.N0_ << "\";\n";
-  os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:3 title \"Experimental\" with lines lw 2, \\\n";
-  os << "\t                   \"" + output_CV_filename + "\" using 4:6 title \"Simulated\"    with lines lw 2;\n";
-  os << "\n";
-  os << "set origin 0.0, 0.0;\n";
-  os << "\tset xlabel \"V_gate [V]\";\n";
-  os << "\tset ylabel \"C [F]\";\n";
-  os << "\tset title \"C [F]\";\n";
-  os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:2 title \"Experimental\" with lines lw 2, \\\n";
-  os << "\t                   \"" + output_CV_filename + "\" using 4:5 title \"Simulated\"    with lines lw 2;\n";
-  os << "\n";
-  os << "unset multiplot;\n";
+  os << "set datafile separator \",\";" << std::endl;
+  os << "set format y \"%.2te%+03T\";" << std::endl;
+  os << std::endl;
+  os << "stats \"" + output_CV_filename + "\" using 1 name \"V\" nooutput;" << std::endl;
+  os << std::endl;
+  os << "set multiplot;" << std::endl;
+  os << "set size 1, 0.5;" << std::endl;
+  os << std::endl;
+  os << "set origin 0.0, 0.5;" << std::endl;
+  os << "\tset xlabel \"V_gate [V]\";" << std::endl;
+  os << "\tset ylabel \"dC/dV [F/V]\";" << std::endl;
+  os << "\tset title \"dC/dV [F/V], N0 = " << params_.N0_ << "\";" << std::endl;
+  os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:3 title \"Experimental\" with lines lw 2, \\" << std::endl;
+  os << "\t                   \"" + output_CV_filename + "\" using 4:6 title \"Simulated\"    with lines lw 2;" << std::endl;
+  os << std::endl;
+  os << "set origin 0.0, 0.0;" << std::endl;
+  os << "\tset xlabel \"V_gate [V]\";" << std::endl;
+  os << "\tset ylabel \"C [F]\";" << std::endl;
+  os << "\tset title \"C [F]\";" << std::endl;
+  os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:2 title \"Experimental\" with lines lw 2, \\" << std::endl;
+  os << "\t                   \"" + output_CV_filename + "\" using 4:5 title \"Simulated\"    with lines lw 2;" << std::endl;
+  os << std::endl;
+  os << "unset multiplot;" << std::endl;;
   
   return;
 }
@@ -402,18 +405,18 @@ void DosModel::save_plot(const std::string & output_directory, const std::string
     }
     
   gnuplot_commands("../" + output_CV_filename, output_plot);
-  output_plot << "\n";
-  output_plot << "pause mouse;\n";
+  output_plot << std::endl;
+  output_plot << "pause mouse;" << std::endl;
   output_plot.close();
   
   // Create .pdf plot file.
   Gnuplot output_pdf;
-  output_pdf << "set terminal pdf;\n";
-  output_pdf << "set output \"" + output_directory + output_filename + "_plot.pdf\";\n";
-  output_pdf << "\n";
+  output_pdf << "set terminal pdf;" << std::endl;
+  output_pdf << "set output \"" + output_directory + output_filename + "_plot.pdf\";" << std::endl;
+  output_pdf << std::endl;
   gnuplot_commands(output_directory + output_CV_filename, output_pdf);
-  output_pdf << "\n";
-  output_pdf << "set output;\n";
+  output_pdf << std::endl;
+  output_pdf << "set output;" << std::endl;
   
   return;
 }

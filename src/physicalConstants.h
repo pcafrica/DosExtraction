@@ -5,6 +5,9 @@
  * @author Pasquale Claudio Africa <pasquale.africa@gmail.com>
  * @date   2014
  *
+ * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
+ * @copyright This project is released under the GNU General Public License.
+ *
  * @brief Physical constants.
  *
  */
