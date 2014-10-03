@@ -41,7 +41,7 @@ Cambridge University Press, New York, N\-Y, U\-S\-A. \end{DoxyCompactList}\item
 \hypertarget{classGaussLaguerreRule_add3939f72a845e748c388220bb1ad934}{void \hyperlink{classGaussLaguerreRule_add3939f72a845e748c388220bb1ad934}{apply\-\_\-using\-\_\-eigendecomposition} ()}\label{classGaussLaguerreRule_add3939f72a845e748c388220bb1ad934}
 
 \begin{DoxyCompactList}\small\item\em Compute nodes and weights using an eigendecomposition-\/based algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Member Functions}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classGaussLaguerreRule_a0c297bfe019993090adc2df5aba866c7}{log\-\_\-gamma} (const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&)
@@ -82,6 +82,29 @@ Definition at line 143 of file quadrature\-Rule.\-cc.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classGaussLaguerreRule_a0c297bfe019993090adc2df5aba866c7}{\index{Gauss\-Laguerre\-Rule@{Gauss\-Laguerre\-Rule}!log\-\_\-gamma@{log\-\_\-gamma}}
+\index{log\-\_\-gamma@{log\-\_\-gamma}!GaussLaguerreRule@{Gauss\-Laguerre\-Rule}}
+\subsubsection[{log\-\_\-gamma}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real} log\-\_\-gamma (
+\begin{DoxyParamCaption}
+\item[{const {\bf Real} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classGaussLaguerreRule_a0c297bfe019993090adc2df5aba866c7}
+
+
+Auxiliary function to compute $ \log\Gamma\left(x\right) $. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & \-: the point to compute the function at. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the natural logarithm of the gamma function evaluated at {\itshape x}. 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file quadrature\-Rule.\-cc.
+
 \hypertarget{classGaussLaguerreRule_a6265ae995213bef29d216da947f5f692}{\index{Gauss\-Laguerre\-Rule@{Gauss\-Laguerre\-Rule}!apply@{apply}}
 \index{apply@{apply}!GaussLaguerreRule@{Gauss\-Laguerre\-Rule}}
 \subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}void apply (
@@ -104,30 +127,7 @@ Implements \hyperlink{classQuadratureRule_a0eac623f625d4faa872b1b031db76a75}{Qua
 
 
 
-Definition at line 151 of file quadrature\-Rule.\-cc.
-
-\hypertarget{classGaussLaguerreRule_a0c297bfe019993090adc2df5aba866c7}{\index{Gauss\-Laguerre\-Rule@{Gauss\-Laguerre\-Rule}!log\-\_\-gamma@{log\-\_\-gamma}}
-\index{log\-\_\-gamma@{log\-\_\-gamma}!GaussLaguerreRule@{Gauss\-Laguerre\-Rule}}
-\subsubsection[{log\-\_\-gamma}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Real} log\-\_\-gamma (
-\begin{DoxyParamCaption}
-\item[{const {\bf Real} \&}]{x}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classGaussLaguerreRule_a0c297bfe019993090adc2df5aba866c7}
-
-
-Auxiliary function to compute $ \log\Gamma\left(x\right) $. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em x} & \-: the point to compute the function at. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the natural logarithm of the gamma function evaluated at {\itshape x}. 
-\end{DoxyReturn}
-
-
-Definition at line 258 of file quadrature\-Rule.\-cc.
+Definition at line 179 of file quadrature\-Rule.\-cc.
 
 
 

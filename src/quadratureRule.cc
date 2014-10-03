@@ -35,8 +35,8 @@ void GaussHermiteRule::apply(const GetPot & config)
 
 void GaussHermiteRule::apply_iterative_algorithm(const Index & maxIterationsNo, const Real & tolerance)
 {
-  assert( maxIterationsNo > 0 );
-  assert( tolerance       > 0 );
+  assert( maxIterationsNo > 0   );
+  assert( tolerance       > 0.0 );
   
   Real p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;
   Real z = 0.0, zOld = 0.0;
@@ -143,6 +143,34 @@ void GaussHermiteRule::apply_using_eigendecomposition()
 GaussLaguerreRule::GaussLaguerreRule(const Index & nNodes)
   : QuadratureRule(nNodes) {}
 
+Real GaussLaguerreRule::log_gamma(const Real & x)
+{
+  assert( x > 0.0 );
+  
+  Real temp = 0.0, aux = 0.0;
+  
+  static const Real coeff[14] = { 57.1562356658629235, -59.5979603554754912,
+                                  14.1360979747417471, -0.491913816097620199,
+                                  0.339946499848118887e-4, 0.465236289270485756e-4,
+                                  -0.983744753048795646e-4, 0.158088703224912494e-3,
+                                  -0.210264441724104883e-3, 0.217439618115212643e-3,
+                                  -0.164318106536763890e-3, 0.844182239838527433e-4,
+                                  -0.261908384015814087e-4, 0.368991826595316234e-5
+                                };
+                                
+  temp = x + 5.24218750000000000;    // x + 671/128
+  temp = (x + 0.5) * std::log(temp) - temp;
+  
+  aux = 0.999999999999997092;
+  
+  for ( Index j = 0; j < 14; ++j )
+    {
+      aux += coeff[j] / (x + j);
+    }
+    
+  return temp + std::log(2.5066282746310005 * aux / x);
+}
+
 void GaussLaguerreRule::apply()
 {
   apply_iterative_algorithm();    // Using default parameters for maximum iterations number and tolerance.
@@ -155,8 +183,8 @@ void GaussLaguerreRule::apply(const GetPot & config)
 
 void GaussLaguerreRule::apply_iterative_algorithm(const Index & maxIterationsNo, const Real & tolerance)
 {
-  assert( maxIterationsNo > 0 );
-  assert( tolerance       > 0 );
+  assert( maxIterationsNo > 0   );
+  assert( tolerance       > 0.0 );
   
   Real p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;
   Real z = 0.0, zOld = 0.0;
@@ -237,9 +265,9 @@ void GaussLaguerreRule::apply_using_eigendecomposition()
       Jac(  i  , i + 1) = k(i);    // Super-diagonal.
     }
     
-  for ( Index i = 0; i < Jac.rows(); ++i )    // Main diagonal.
+  for ( Index i = 0; i < Jac.rows(); ++i )
     {
-      Jac(i, i) = 2 * k(i) - 1;
+      Jac(i, i) = 2 * k(i) - 1;    // Main diagonal.
     }
     
   SelfAdjointEigenSolver<MatrixXr> eigSolver(Jac);
@@ -253,32 +281,4 @@ void GaussLaguerreRule::apply_using_eigendecomposition()
   weights_ = ( 1 * EigVec.row(0).cwiseProduct(EigVec.row(0)).transpose() ).cwiseQuotient(norm2);    // 1 = beta0;
   
   return;
-}
-
-Real GaussLaguerreRule::log_gamma(const Real & x)
-{
-  assert( x > 0 );
-  
-  Real temp, y, aux;
-  static const Real coeff[14] = { 57.1562356658629235, -59.5979603554754912,
-                                  14.1360979747417471, -0.491913816097620199,
-                                  0.339946499848118887e-4, 0.465236289270485756e-4,
-                                  -0.983744753048795646e-4, 0.158088703224912494e-3,
-                                  -0.210264441724104883e-3, 0.217439618115212643e-3,
-                                  -0.164318106536763890e-3, 0.844182239838527433e-4,
-                                  -0.261908384015814087e-4, 0.368991826595316234e-5
-                                };
-                                
-  y = x;
-  temp = x + 5.24218750000000000;    // xx + 671/128
-  temp = (x + 0.5) * std::log(temp) - temp;
-  
-  aux = 0.999999999999997092;
-  
-  for ( Index j = 0; j < 14; ++j )
-    {
-      aux += coeff[j] / ++y;
-    }
-    
-  return temp + std::log(2.5066282746310005 * aux / x);
 }

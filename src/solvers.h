@@ -238,7 +238,7 @@ class NonLinearPoisson1D
     const PdeSolver1D & solver_;    /**< @brief Solver handler. */
     
     Index maxIterationsNo_;    /**< @brief Maximum number of iterations. */
-    Real   tolerance_     ;    /**< @brief Tolerance. */
+    Real  tolerance_      ;    /**< @brief Tolerance. */
     
     VectorXr phi_ ;    /**< @brief The electric potential. */
     VectorXr norm_;    /**< @brief Vector holding @f$ L^\infty @f$-norm errors for each iteration. */

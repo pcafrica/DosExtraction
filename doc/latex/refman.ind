@@ -49,20 +49,20 @@
     \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}, 
 		\hyperpage{42}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{45}
-    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{53}
+		\hyperpage{46}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{54}
   \item {assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{18}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{50}
+		\hyperpage{51}
   \item {assemble\discretionary {-}{}{}Mass}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{19}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{51}
+		\hyperpage{52}
   \item {assemble\discretionary {-}{}{}Stiff}
     \subitem {Bim1\discretionary {-}{}{}D}, \hyperpage{19}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{51}
+		\hyperpage{52}
 
   \indexspace
 
@@ -88,9 +88,9 @@
     \subitem {Gauss\discretionary {-}{}{}Hermite\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
 		\hyperpage{36}
     \subitem {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
-		\hyperpage{43}
+		\hyperpage{44}
     \subitem {Quadrature\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
-		\hyperpage{53}
+		\hyperpage{54}
 
   \indexspace
 
@@ -106,7 +106,7 @@
     \subitem {Build\discretionary {-}{}{}Charge}, \hyperpage{22}
   \item {compute\discretionary {-}{}{}Jac}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{45}
+		\hyperpage{46}
   \item {constants}, \hyperpage{11}
   \item {Csv\discretionary {-}{}{}Parser}, \hyperpage{22}
     \subitem {Csv\discretionary {-}{}{}Parser}, \hyperpage{23}
@@ -188,8 +188,8 @@
     \subitem {log\discretionary {-}{}{}\_\discretionary {-}{}{}gamma}, 
 		\hyperpage{42}
   \item {Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
-		\hyperpage{43}
-    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{43}
+		\hyperpage{44}
+    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{44}
   \item {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{37}
     \subitem {charge}, \hyperpage{38}
     \subitem {dcharge}, \hyperpage{38}
@@ -240,13 +240,13 @@
     \subitem {Exponential\discretionary {-}{}{}Charge}, \hyperpage{32}
     \subitem {Gaussian\discretionary {-}{}{}Charge}, \hyperpage{38}
   \item {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{44}
-    \subitem {apply}, \hyperpage{45}
-    \subitem {compute\discretionary {-}{}{}Jac}, \hyperpage{45}
-    \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
 		\hyperpage{45}
+    \subitem {apply}, \hyperpage{46}
+    \subitem {compute\discretionary {-}{}{}Jac}, \hyperpage{46}
     \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
-		\hyperpage{45}
+		\hyperpage{46}
+    \subitem {Non\discretionary {-}{}{}Linear\discretionary {-}{}{}Poisson1\discretionary {-}{}{}D}, 
+		\hyperpage{46}
   \item {numerics}, \hyperpage{11}
     \subitem {deriv}, \hyperpage{13}
     \subitem {error\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L2}, 
@@ -259,19 +259,19 @@
 
   \indexspace
 
-  \item {Param\discretionary {-}{}{}List}, \hyperpage{46}
-    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{48}
-    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{48}
+  \item {Param\discretionary {-}{}{}List}, \hyperpage{47}
+    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{49}
+    \subitem {Param\discretionary {-}{}{}List}, \hyperpage{49}
   \item {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{48}
+		\hyperpage{49}
     \subitem {assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}, 
+		\hyperpage{51}
+    \subitem {assemble\discretionary {-}{}{}Mass}, \hyperpage{52}
+    \subitem {assemble\discretionary {-}{}{}Stiff}, \hyperpage{52}
+    \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
 		\hyperpage{50}
-    \subitem {assemble\discretionary {-}{}{}Mass}, \hyperpage{51}
-    \subitem {assemble\discretionary {-}{}{}Stiff}, \hyperpage{51}
     \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{49}
-    \subitem {Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}, 
-		\hyperpage{49}
+		\hyperpage{50}
   \item {post\discretionary {-}{}{}\_\discretionary {-}{}{}process}
     \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{27}
   \item {print\discretionary {-}{}{}\_\discretionary {-}{}{}block}
@@ -281,13 +281,13 @@
 
   \indexspace
 
-  \item {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{51}
-    \subitem {apply}, \hyperpage{53}
-    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{52}
-    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{52}
+  \item {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{52}
+    \subitem {apply}, \hyperpage{54}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{53}
+    \subitem {Quadrature\discretionary {-}{}{}Rule}, \hyperpage{53}
   \item {Quadrature\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory}, 
-		\hyperpage{53}
-    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{53}
+		\hyperpage{54}
+    \subitem {Build\discretionary {-}{}{}Rule}, \hyperpage{54}
 
   \indexspace
 

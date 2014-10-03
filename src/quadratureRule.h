@@ -146,6 +146,13 @@ class GaussLaguerreRule : public QuadratureRule
      */
     virtual ~GaussLaguerreRule() = default;
     
+    /**
+     * @brief Auxiliary function to compute @f$ \log\Gamma\left(x\right) @f$
+     * @param[in] x : the point to compute the function at.
+     * @returns the natural logarithm of the gamma function evaluated at @a x.
+     */
+    static Real log_gamma(const Real &);
+    
     virtual void apply() override;
     virtual void apply(const GetPot &) override;
     
@@ -160,14 +167,6 @@ class GaussLaguerreRule : public QuadratureRule
      * @brief Compute nodes and weights using an eigendecomposition-based algorithm.
      */
     void apply_using_eigendecomposition();
-    
-  private:
-    /**
-     * @brief Auxiliary function to compute @f$ \log\Gamma\left(x\right) @f$
-     * @param[in] x : the point to compute the function at.
-     * @returns the natural logarithm of the gamma function evaluated at @a x.
-     */
-    static Real log_gamma(const Real &);
 };
 
 // Implementations.

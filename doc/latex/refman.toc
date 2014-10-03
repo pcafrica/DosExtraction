@@ -117,8 +117,8 @@
 \contentsline {subsection}{\numberline {7.12.2}Constructor \& Destructor Documentation}{40}{subsection.7.12.2}
 \contentsline {subsubsection}{\numberline {7.12.2.1}Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule}{40}{subsubsection.7.12.2.1}
 \contentsline {subsection}{\numberline {7.12.3}Member Function Documentation}{41}{subsection.7.12.3}
-\contentsline {subsubsection}{\numberline {7.12.3.1}apply}{41}{subsubsection.7.12.3.1}
-\contentsline {subsubsection}{\numberline {7.12.3.2}log\discretionary {-}{}{}\_\discretionary {-}{}{}gamma}{41}{subsubsection.7.12.3.2}
+\contentsline {subsubsection}{\numberline {7.12.3.1}log\discretionary {-}{}{}\_\discretionary {-}{}{}gamma}{41}{subsubsection.7.12.3.1}
+\contentsline {subsubsection}{\numberline {7.12.3.2}apply}{41}{subsubsection.7.12.3.2}
 \contentsline {section}{\numberline {7.13}Gauss\discretionary {-}{}{}Laguerre\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory Class Reference}{41}{section.7.13}
 \contentsline {subsection}{\numberline {7.13.1}Detailed Description}{42}{subsection.7.13.1}
 \contentsline {subsection}{\numberline {7.13.2}Member Function Documentation}{42}{subsection.7.13.2}

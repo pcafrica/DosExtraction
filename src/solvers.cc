@@ -199,8 +199,8 @@ void Bim1D::assembleMass(const VectorXr & delta, const VectorXr & zeta)
 NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const Index & maxIterationsNo, const Real & tolerance)
   : solver_(solver), maxIterationsNo_(maxIterationsNo), tolerance_(tolerance), qTot_(0.0), cTot_(0.0)/*, cTot_n_(0.0) */
 {
-  assert( maxIterationsNo_ > 0 );
-  assert( tolerance_       > 0 );
+  assert( maxIterationsNo_ > 0   );
+  assert( tolerance_       > 0.0 );
 }
 
 void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_guess, Charge & charge_fun)
