@@ -138,10 +138,10 @@ Compile</h1>
 <div class="line">$ cd build</div>
 <div class="line">$ cmake ..</div>
 <div class="line">$ make</div>
-</div><!-- fragment --><p>or, if you want the compiler to produce also debugging informations:</p>
+</div><!-- fragment --><p>or, if you want the compiler to produce also debug symbols:</p>
 <div class="fragment"><div class="line">$ mkdir build</div>
 <div class="line">$ cd build</div>
-<div class="line">$ cmake .. -DDEBUG_MODE=ON</div>
+<div class="line">$ cmake .. -DCMAKE_BUILD_TYPE=Debug</div>
 <div class="line">$ make</div>
 </div><!-- fragment --><p>You can specify the name of the test source to be compiled (without extension, for example: <em>simulate_dos</em>) by editing the variable <b>EXEC</b>, defined in the <em>CMakeLists.txt</em> file.</p>
 <p>Repeat these instructions for each test you want to compile.</p>
@@ -151,9 +151,9 @@ Compile</h1>
 Set up the configurations</h1>
 <dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
 <p>Before you can run an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
-Particularly, the variables <em>input_params</em> and <em>input_experim</em> can be set, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). <br/>
-<br/>
-You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
+Particularly, the variables <em>input_params</em> and <em>input_experim</em> can be set, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).</p>
+<dl class="section warning"><dt>Warning</dt><dd>The program never checks that the input values are numeric but will always try to cast them to floating point numbers, then please pay attention while setting up the variable <em>skipHeaders</em>.</dd></dl>
+<p>You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
 <h1><a class="anchor" id="run"></a>
 Run!</h1>
 <p>Executables are placed under the <em>bin/</em> directory (or the one specified in <em>CMakeLists.txt</em>). <br/>

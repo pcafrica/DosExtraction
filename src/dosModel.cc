@@ -146,7 +146,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     {
       quadRule->apply(config);
     }
-  catch ( const std::runtime_error & runtimeError )
+  catch ( const std::exception & genericException )
     {
       throw;
     }
@@ -275,7 +275,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
   assert( x_semic    .size() == dens       .size() );
   assert( V_simulated.size() == C_simulated.size() );
   
-  CsvParser parser_experim(input_experim, config("hasHeaders", true));
+  CsvParser parser_experim(input_experim, config("skipHeaders", true));
   
   Real A_semic = parser_experim.importCell(1, 3);    // Semiconductor area [m^2].
   Real C_sb    = parser_experim.importCell(1, 4);    // Sbord capacitance [F].

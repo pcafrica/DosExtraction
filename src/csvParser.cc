@@ -30,14 +30,15 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
     }
     
   // Get number of rows.
+  
+  if ( hasHeaders_ )    // Skip the row containing headers.
+    {
+      std::getline(input_, line_, '\n');
+    }
+    
   while ( std::getline(input_, line_, '\n') )
     {
       ++nRows_;
-    }
-    
-  if ( hasHeaders_ )
-    {
-      --nRows_;
     }
     
   reset();
@@ -96,6 +97,8 @@ RowVectorXr CsvParser::importRow(const Index & index)
   
   reset();
   
+  std::locale locale;
+  
   RowVectorXr data = RowVectorXr::Zero( nCols_ );
   
   for ( Index i = 0; i < index; ++i )
@@ -114,7 +117,7 @@ RowVectorXr CsvParser::importRow(const Index & index)
       {
         std::getline(line_stream, field, separator_);
         
-        data(j) = (Real) atof(field.c_str());
+        data(j) = (Real) std::atof(field.c_str());
       }
   }
   
@@ -158,6 +161,8 @@ VectorXr CsvParser::importCol(const Index & index)
   
   reset();
   
+  std::locale locale;
+  
   VectorXr data = VectorXr::Zero( nRows_ );
   
   // Start import.
@@ -173,7 +178,7 @@ VectorXr CsvParser::importCol(const Index & index)
           std::getline(line_stream, field, separator_);
         }
         
-      data(i) = (Real) atof(field.c_str());
+      data(i) = (Real) std::atof(field.c_str());
     }
     
   return data;
@@ -228,7 +233,7 @@ void CsvParser::reset()
   input_.clear();    // Reset eof flag.
   input_.seekg(0, std::ios::beg);    // Go to beginning of file.
   
-  if ( hasHeaders_ )    // Ignore the row containing headers.
+  if ( hasHeaders_ )    // Skip the row containing headers.
     {
       std::getline(input_, line_, '\n');
     }

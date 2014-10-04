@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('dosModel_8cc_source.html','');});
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      quadRule-&gt;<a class="code" href="classQuadratureRule.html#ae8035f1283a63c55fbbfb4e786db8a98">apply</a>(config);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::runtime_error &amp; runtimeError )</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::exception &amp; genericException )</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <span class="keywordflow">throw</span>;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
@@ -379,7 +379,7 @@ $(document).ready(function(){initNavTree('dosModel_8cc_source.html','');});
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  assert( x_semic    .size() == dens       .size() );</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  assert( V_simulated.size() == C_simulated.size() );</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <a class="code" href="classCsvParser.html">CsvParser</a> parser_experim(input_experim, config(<span class="stringliteral">&quot;hasHeaders&quot;</span>, <span class="keyword">true</span>));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <a class="code" href="classCsvParser.html">CsvParser</a> parser_experim(input_experim, config(<span class="stringliteral">&quot;skipHeaders&quot;</span>, <span class="keyword">true</span>));</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  </div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> A_semic = parser_experim.importCell(1, 3);    <span class="comment">// Semiconductor area [m^2].</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> C_sb    = parser_experim.importCell(1, 4);    <span class="comment">// Sbord capacitance [F].</span></div>

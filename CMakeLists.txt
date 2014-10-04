@@ -1,37 +1,38 @@
 set(EXEC "simulate_dos")    # Name of the test source file to compile.
 
-set(BINDIR  "bin" )    # Directory where to store the executables.
-set(DOCDIR  "doc" )    # Directory where to store the API documentation.
+set(BINDIR  "${CMAKE_CURRENT_SOURCE_DIR}/bin" )    # Directory where to store the executables.
+set(DOCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/doc" )    # Directory where to store the API documentation.
 
-##-- Do not edit below this line --##
+##--------------- Do not edit below this line ----------------##
 
 cmake_minimum_required(VERSION 2.8)
 project(DOS_Extraction CXX)
 
-############################################################
+################################################################
 ## Set up some variables.
-############################################################
-set(SRCDIR  "src" )    # Directory where to find the library sources.
-set(TESTDIR "test")    # Directory where to find the test sources.
+################################################################
+set(SRCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/src" )    # Directory where to find the library sources.
+set(TESTDIR "${CMAKE_CURRENT_SOURCE_DIR}/test")    # Directory where to find the test sources.
 
-file(GLOB SRCS ./${SRCDIR}/*.cc ./${TESTDIR}/${EXEC}.cc)
-file(GLOB HDRS ./${SRCDIR}/*.h  ./${TESTDIR}/${EXEC}.h )
+file(GLOB SRCS ${SRCDIR}/*.cc ${TESTDIR}/${EXEC}.cc)
+file(GLOB HDRS ${SRCDIR}/*.h  ${TESTDIR}/${EXEC}.h )
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/${BINDIR}")
-set(CMAKE_CXX_FLAGS "-std=c++11 -Wall --pedantic")
+set(EXECUTABLE_OUTPUT_PATH "${BINDIR}")
 
-option(DEBUG_MODE "Additional debug informations" OFF)
-if(DEBUG_MODE)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
-else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+set(CMAKE_CXX_FLAGS "-std=c++11 -Wall --pedantic")
+set(CMAKE_CXX_FLAGS_DEBUG "-Og -g")
+
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING    # Default build type: Release.
+      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+      FORCE)
 endif()
 
-############################################################
+################################################################
 ## Dependencies and third-party libraries.
-############################################################
-include_directories(SYSTEM "./" "./include")
+################################################################
+include_directories(SYSTEM "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 find_package(Eigen3 REQUIRED)
 include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
@@ -47,18 +48,18 @@ endif()
 
 find_package(Gnuplot)
 
-############################################################
+################################################################
 ## Documentation generation settings.
-############################################################
-set(DOXYFILE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/${DOCDIR}")
-set(DOXYFILE_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/${DOCDIR}")
+################################################################
+set(DOXYFILE_SOURCE_DIR "${DOCDIR}")
+set(DOXYFILE_OUTPUT_DIR "${DOCDIR}")
 set(DOXYFILE_LATEX "ON")
 
 include(RunDoxygen)
 
-############################################################
+################################################################
 ## Artistic style.
-############################################################
+################################################################
 find_package(AStyle)
 
 if(ASTYLE_FOUND)
@@ -68,8 +69,8 @@ if(ASTYLE_FOUND)
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
 
-############################################################
+################################################################
 ## Executables definition.
-############################################################
+################################################################
 add_executable(${EXEC} ${SRCS})
 target_link_libraries(${EXEC} ${Boost_LIBRARIES})

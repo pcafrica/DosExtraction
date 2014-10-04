@@ -17,9 +17,9 @@
 
 #include "typedefs.h"
 
-#include <string>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <utility>    // std::initializer_list<>
 
 /**

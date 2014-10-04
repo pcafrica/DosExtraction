@@ -44,12 +44,12 @@
  *     $ make
  * @endcode
  * 
- * or, if you want the compiler to produce also debugging informations:
+ * or, if you want the compiler to produce also debug symbols:
  * 
  * @code
  *     $ mkdir build
  *     $ cd build
- *     $ cmake .. -DDEBUG_MODE=ON
+ *     $ cmake .. -DCMAKE_BUILD_TYPE=Debug
  *     $ make
  * @endcode
  * 
@@ -75,8 +75,11 @@
  * Particularly, the variables @a input_params and @a input_experim can be set, i.e. the filenames
  * where to find input fitting parameters and experimental data respectively.
  * It's recommended (but not compulsory) to put these files in the same directory as the configuration
- * file (otherwise you can specify a relative or absolute path to them). @n
- * @n
+ * file (otherwise you can specify a relative or absolute path to them).
+ * 
+ * @warning The program never checks that the input values are numeric but will always try to cast
+ * them to floating point numbers, then please pay attention while setting up the variable @a skipHeaders.
+ * 
  * You can create multiple configuration files, each with different parameter values: the one you
  * aim to use can be specified in the command-line before running.
  * 

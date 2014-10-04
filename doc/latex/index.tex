@@ -32,13 +32,13 @@ $ make
 \end{DoxyCode}
 
 
-or, if you want the compiler to produce also debugging informations\-:
+or, if you want the compiler to produce also debug symbols\-:
 
 
 \begin{DoxyCode}
 $ mkdir build
 $ cd build
-$ cmake .. -DDEBUG\_MODE=ON
+$ cmake .. -DCMAKE\_BUILD\_TYPE=Debug
 $ make
 \end{DoxyCode}
 
@@ -58,8 +58,11 @@ $ make doc
 The default configuration directory is {\itshape config/}.
 \end{DoxyNote}
 Before you can run an executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
-Particularly, the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim} can be set, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them). \par
-\par
+Particularly, the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim} can be set, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).
+
+\begin{DoxyWarning}{Warning}
+The program never checks that the input values are numeric but will always try to cast them to floating point numbers, then please pay attention while setting up the variable {\itshape skip\-Headers}.
+\end{DoxyWarning}
 You can create multiple configuration files, each with different parameter values\-: the one you aim to use can be specified in the command-\/line before running.\hypertarget{index_run}{}\section{Run!}\label{index_run}
 Executables are placed under the {\itshape bin/} directory (or the one specified in {\itshape C\-Make\-Lists.\-txt}). \par
 \par

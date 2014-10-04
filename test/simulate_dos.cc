@@ -34,7 +34,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
       const std::string input_experim = utility::full_path(config("input_experim", "input_experim.csv" ),
                                         config_directory);
                                         
-      CsvParser parser(input_params, config("hasHeaders", true));
+      CsvParser parser(input_params, config("skipHeaders", true));
       
       // Get number of simulations to be performed.
       Index nSimulations = 0;
