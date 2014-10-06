@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.24)  4 OCT 2014 18:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.24)  6 OCT 2014 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,32 +1123,35 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 8.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 17.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 17.
+(Font)              scaled to size 8.99994pt on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 27.
+(Font)              scaled to size 6.29996pt on input line 31.
  [1
 
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 57.
+(Font)              scaled to size 8.99994pt on input line 45.
 
-Underfull \hbox (badness 10000) detected at line 57
+Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 63
+Underfull \hbox (badness 10000) detected at line 73
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 79
 [][][]
  []
 
 [2]
-Underfull \hbox (badness 10000) detected at line 95
+Underfull \hbox (badness 10000) detected at line 111
 [][][]
  []
 
@@ -1251,7 +1254,7 @@ LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
 
 ]
 Chapter 7.
-(./classBim1D.tex <classBim1D.pdf, id=1395, 501.875pt x 422.62892pt>
+(./classBim1D.tex <classBim1D.pdf, id=1396, 501.875pt x 422.62892pt>
 File: classBim1D.pdf Graphic file (type pdf)
 
 <use classBim1D.pdf>
@@ -1272,7 +1275,7 @@ Underfull \hbox (badness 10000) detected at line 122
 [][][]
  []
 
-[20]) (./classCharge.tex <classCharge.pdf, id=1450, 501.875pt x 158.07054pt>
+[20]) (./classCharge.tex <classCharge.pdf, id=1451, 501.875pt x 158.07054pt>
 File: classCharge.pdf Graphic file (type pdf)
 
 <use classCharge.pdf>
@@ -1289,7 +1292,7 @@ Underfull \hbox (badness 10000) detected at line 118
  []
 
 ) (./classChargeFactory.tex
-<classChargeFactory.pdf, id=1501, 501.875pt x 117.3986pt>
+<classChargeFactory.pdf, id=1502, 501.875pt x 117.3986pt>
 File: classChargeFactory.pdf Graphic file (type pdf)
 
 <use classChargeFactory.pdf>
@@ -1341,7 +1344,7 @@ Underfull \hbox (badness 10000) detected at line 288
  []
 
 ) (./classDosModel.tex [28] [29]) (./classExponentialCharge.tex [30]
-<classExponentialCharge.pdf, id=1671, 501.875pt x 316.1411pt>
+<classExponentialCharge.pdf, id=1672, 501.875pt x 316.1411pt>
 File: classExponentialCharge.pdf Graphic file (type pdf)
 
 <use classExponentialCharge.pdf>
@@ -1368,7 +1371,7 @@ Underfull \hbox (badness 10000) detected at line 191
  []
 
 ) (./classExponentialChargeFactory.tex
-<classExponentialChargeFactory.pdf, id=1729, 501.875pt x 234.7972pt>
+<classExponentialChargeFactory.pdf, id=1730, 501.875pt x 234.7972pt>
 File: classExponentialChargeFactory.pdf Graphic file (type pdf)
 
 <use classExponentialChargeFactory.pdf>
@@ -1381,7 +1384,7 @@ Underfull \hbox (badness 10000) detected at line 59
  []
 
 ) (./classGaussHermiteRule.tex
-<classGaussHermiteRule.pdf, id=1756, 501.875pt x 326.41951pt>
+<classGaussHermiteRule.pdf, id=1757, 501.875pt x 326.41951pt>
 File: classGaussHermiteRule.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRule.pdf>
@@ -1389,7 +1392,7 @@ Package pdftex.def Info: classGaussHermiteRule.pdf used on input line 16.
 (pdftex.def)             Requested size: 87.49248pt x 56.9055pt.
  [35 <./classGaussHermiteRule.pdf>])
 (./classGaussHermiteRuleFactory.tex
-<classGaussHermiteRuleFactory.pdf, id=1789, 501.875pt x 240.4182pt>
+<classGaussHermiteRuleFactory.pdf, id=1790, 501.875pt x 240.4182pt>
 File: classGaussHermiteRuleFactory.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRuleFactory.pdf>
@@ -1402,7 +1405,7 @@ Underfull \hbox (badness 10000) detected at line 56
  []
 
 ) (./classGaussianCharge.tex
-<classGaussianCharge.pdf, id=1813, 501.875pt x 352.1958pt>
+<classGaussianCharge.pdf, id=1814, 501.875pt x 352.1958pt>
 File: classGaussianCharge.pdf Graphic file (type pdf)
 
 <use classGaussianCharge.pdf>
@@ -1429,7 +1432,7 @@ Underfull \hbox (badness 10000) detected at line 185
  []
 
 [39]) (./classGaussianChargeFactory.tex
-<classGaussianChargeFactory.pdf, id=1874, 501.875pt x 254.10936pt>
+<classGaussianChargeFactory.pdf, id=1875, 501.875pt x 254.10936pt>
 File: classGaussianChargeFactory.pdf Graphic file (type pdf)
 
 <use classGaussianChargeFactory.pdf>
@@ -1441,7 +1444,7 @@ Underfull \hbox (badness 10000) detected at line 59
  []
 
 ) (./classGaussLaguerreRule.tex [40 <./classGaussianChargeFactory.pdf>]
-<classGaussLaguerreRule.pdf, id=1900, 501.875pt x 304.16637pt>
+<classGaussLaguerreRule.pdf, id=1901, 501.875pt x 304.16637pt>
 File: classGaussLaguerreRule.pdf Graphic file (type pdf)
 
 <use classGaussLaguerreRule.pdf>
@@ -1453,7 +1456,7 @@ Underfull \hbox (badness 10000) detected at line 101
  []
 
 ) (./classGaussLaguerreRuleFactory.tex
-<classGaussLaguerreRuleFactory.pdf, id=1944, 501.875pt x 228.12227pt>
+<classGaussLaguerreRuleFactory.pdf, id=1945, 501.875pt x 228.12227pt>
 File: classGaussLaguerreRuleFactory.pdf Graphic file (type pdf)
 
 <use classGaussLaguerreRuleFactory.pdf>
@@ -1471,7 +1474,7 @@ Underfull \hbox (badness 10000) detected at line 154
  []
 
 ) (./classParamList.tex [46] [47]) (./classPdeSolver1D.tex
-<classPdeSolver1D.pdf, id=2170, 501.875pt x 422.62892pt>
+<classPdeSolver1D.pdf, id=2171, 501.875pt x 422.62892pt>
 File: classPdeSolver1D.pdf Graphic file (type pdf)
 
 <use classPdeSolver1D.pdf>
@@ -1479,7 +1482,7 @@ Package pdftex.def Info: classPdeSolver1D.pdf used on input line 16.
 (pdftex.def)             Requested size: 67.57407pt x 56.9055pt.
  [48 <./classPdeSolver1D.pdf>] [49])
 (./classQuadratureRule.tex
-<classQuadratureRule.pdf, id=2241, 501.875pt x 152.08821pt>
+<classQuadratureRule.pdf, id=2242, 501.875pt x 152.08821pt>
 File: classQuadratureRule.pdf Graphic file (type pdf)
 
 <use classQuadratureRule.pdf>
@@ -1487,7 +1490,7 @@ Package pdftex.def Info: classQuadratureRule.pdf used on input line 16.
 (pdftex.def)             Requested size: 187.78146pt x 56.9055pt.
  [50] [51 <./classQuadratureRule.pdf>])
 (./classQuadratureRuleFactory.tex
-<classQuadratureRuleFactory.pdf, id=2289, 501.875pt x 114.06615pt>
+<classQuadratureRuleFactory.pdf, id=2290, 501.875pt x 114.06615pt>
 File: classQuadratureRuleFactory.pdf Graphic file (type pdf)
 
 <use classQuadratureRuleFactory.pdf>
@@ -2157,13 +2160,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 13522 strings out of 494951
- 205188 string characters out of 6178882
- 268366 words of memory out of 5000000
- 15785 multiletter control sequences out of 15000+600000
- 108779 words of font info for 167 fonts, out of 8000000 for 9000
+ 13520 strings out of 494951
+ 205177 string characters out of 6178882
+ 268405 words of memory out of 5000000
+ 15784 multiletter control sequences out of 15000+600000
+ 108158 words of font info for 165 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,13n,43p,633b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,556b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{page.72} has been referenced but does not exist, 
 replaced by a fixed one
 
@@ -2233,20 +2236,19 @@ dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/c
-ourier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
-etic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (79 pages, 385532 bytes).
+ourier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
+mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on refman.pdf (79 pages, 375501 bytes).
 PDF statistics:
- 2948 PDF objects out of 2984 (max. 8388607)
- 2794 compressed objects within 28 object streams
- 626 named destinations out of 1000 (max. 500000)
+ 2946 PDF objects out of 2984 (max. 8388607)
+ 2793 compressed objects within 28 object streams
+ 627 named destinations out of 1000 (max. 500000)
  1663 words of extra memory for PDF output out of 10000 (max. 10000000)
 

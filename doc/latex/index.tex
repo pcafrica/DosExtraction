@@ -5,49 +5,65 @@ The software is intended to be used on a Unix-\/like operating system.\hypertarg
 The program requires the following software to be installed on your system\-:
 
 \begin{DoxyItemize}
-\item \href{http://www.cmake.org}{\tt {\bfseries C\-Make}} (version 2.\-8 or above), a cross-\/platform configuration tool; \item \href{http://www.gnu.org/software/make}{\tt {\bfseries Make}} (version 3.\-8.\-1 or above), a utility to build executables; \item \label{index_GCC}%
+\item \href{http://www.cmake.org}{\tt C\-Make} (version 2.\-8 or above), a cross-\/platform configuration tool; \item \href{http://www.gnu.org/software/make}{\tt Make} (version 3.\-8.\-1 or above), a utility to build executables; \item \label{index_GCC}%
 \hypertarget{index_GCC}{}%
-\href{http://www.gnu.org/software/gcc}{\tt {\bfseries G\-C\-C}} (version 4.\-8 or above), the G\-N\-U Compiler Collection; \par
+\href{http://www.gnu.org/software/gcc}{\tt G\-C\-C} (version 4.\-8 or above), the G\-N\-U Compiler Collection; \par
  \par
 \item \label{index_Eigen}%
 \hypertarget{index_Eigen}{}%
-\href{http://eigen.tuxfamily.org}{\tt {\bfseries Eigen}} (version 3.\-2 or above), to handle with matrices, vectors and linear algebra; \item \label{index_Gnuplot}%
+\href{http://eigen.tuxfamily.org}{\tt Eigen} (version 3.\-2 or above), to handle with matrices, vectors and linear algebra; \item \label{index_Gnuplot}%
 \hypertarget{index_Gnuplot}{}%
-\href{http://www.gnuplot.info}{\tt {\bfseries Gnuplot}} (version 4.\-6.\-4 or above), a graphical utility to generate plots (the package {\bfseries gnuplot-\/x11}, a terminal for X servers, is also required for the interactive interface); \item \href{http://www.boost.org}{\tt {\bfseries Boost}} (version 1.\-50 or above), a set of libraries used by \hyperlink{index_gnuplot-iostream}{gnuplot-\/iostream}; \item \href{http://www.doxygen.org}{\tt {\bfseries Doxygen}} (version 1.\-8.\-6 or above), a documentation generator (not compulsory).\end{DoxyItemize}
+\href{http://www.gnuplot.info}{\tt Gnuplot} (version 4.\-6.\-4 or above), a graphical utility to generate plots (the package {\bfseries gnuplot-\/x11}, a terminal for X servers, is also required for the interactive interface); \item \href{http://www.boost.org}{\tt Boost} (version 1.\-50 or above), a set of libraries used by \hyperlink{index_gnuplot-iostream}{gnuplot-\/iostream}; \item \label{index_Doxygen}%
+\hypertarget{index_Doxygen}{}%
+\href{http://www.doxygen.org}{\tt Doxygen} (version 1.\-8.\-6 or above), a documentation generator (not compulsory).\end{DoxyItemize}
 It also uses the following libraries, shipped in the {\itshape include/} folder\-:
 
 \begin{DoxyItemize}
-\item \href{http://getpot.sourceforge.net}{\tt {\bfseries Get\-Pot}} (version 1.\-1.\-18), to parse command-\/line and configuration files; \item \label{index_gnuplot-iostream}%
+\item \href{http://getpot.sourceforge.net}{\tt Get\-Pot} (version 1.\-1.\-18), to parse command-\/line and configuration files; \item \label{index_gnuplot-iostream}%
 \hypertarget{index_gnuplot-iostream}{}%
-\href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt {\bfseries gnuplot-\/iostream}} (version 2), a C++ interface for \hyperlink{index_Gnuplot}{Gnuplot}.\end{DoxyItemize}
-Parallel computing capabilities are provided through the \href{http://openmp.org}{\tt {\bfseries Open\-M\-P}} library, shipped together with \hyperlink{index_GCC}{G\-C\-C}.\hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
-In order to generate a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package\-:
+\href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt gnuplot-\/iostream} (version 2), a C++ interface for \hyperlink{index_Gnuplot}{Gnuplot}.\end{DoxyItemize}
+Parallel computing capabilities are provided through the \href{http://openmp.org}{\tt Open\-M\-P} library, shipped together with \hyperlink{index_GCC}{G\-C\-C}.\hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
+In order to generate a test executable, first open the {\itshape C\-Make\-Lists.\-txt} file (in the top-\/level folder) and, if necessary, edit it to your needs.
+
+Then create a build directory and move into it\-:
 
 
 \begin{DoxyCode}
 $ mkdir build
 $ cd build
-$ cmake ..
-$ make
 \end{DoxyCode}
 
 
+Now you're ready to configure your system\-:
+
+
+\begin{DoxyCode}
+$ cmake ..
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
 or, if you want the compiler to produce also debug symbols\-:
 
 
 \begin{DoxyCode}
-$ mkdir build
-$ cd build
-$ cmake .. -DCMAKE\_BUILD\_TYPE=Debug
+$ cmake -DCMAKE\_BUILD\_TYPE=Debug ..
+\end{DoxyCode}
+
+\end{DoxyNote}
+Finally, start building the project\-:
+
+
+\begin{DoxyCode}
 $ make
 \end{DoxyCode}
 
 
-You can specify the name of the test source to be compiled (without extension, for example\-: {\itshape simulate\-\_\-dos}) by editing the variable {\bfseries E\-X\-E\-C}, defined in the {\itshape C\-Make\-Lists.\-txt} file.
+This will generate the {\itshape test\-\_\-filename} (as specified in the {\bfseries T\-A\-R\-G\-E\-T\-\_\-\-N\-A\-M\-E} variable in {\itshape C\-Make\-Lists.\-txt}) executable.
 
-Repeat these instructions for each test you want to compile.
+Repeat these steps for each test source file you want to compile.
 
-The following command will generate this documentation under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt})\-:
+The following command will generate the present documentation, if \hyperlink{index_Doxygen}{Doxygen} is found to be installed, under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt}), \-:
 
 
 \begin{DoxyCode}
@@ -61,12 +77,12 @@ Before you can run an executable, you have to set up the configuration file (def
 Particularly, the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim} can be set, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).
 
 \begin{DoxyWarning}{Warning}
-The program never checks that the input values are numeric but will always try to cast them to floating point numbers, then please pay attention while setting up the variable {\itshape skip\-Headers}.
+The program never checks that the input values are numeric but will always cast them to floating point numbers, then please pay attention while setting up the variable {\itshape skip\-Headers}.
 \end{DoxyWarning}
 You can create multiple configuration files, each with different parameter values\-: the one you aim to use can be specified in the command-\/line before running.\hypertarget{index_run}{}\section{Run!}\label{index_run}
 Executables are placed under the {\itshape bin/} directory (or the one specified in {\itshape C\-Make\-Lists.\-txt}). \par
 \par
-To run by using the default configuration filename ({\itshape config.\-pot}) simply move to the {\itshape bin/} directory and execute\-:
+To run by using the default configuration filename ({\itshape config.\-pot}) simply move into the {\itshape bin/} directory and execute\-:
 
 
 \begin{DoxyCode}
@@ -93,7 +109,7 @@ $ ./test\_filename --file configuration\_filename
 The variable {\itshape configuration\-\_\-filename} should {\bfseries not} contain the path.
 
 \begin{DoxyWarning}{Warning}
-Furthermore, if you run the program from a different folder than {\itshape bin/} or if you chose a different configuration directory, you have to manually specify the {\bfseries full} path to the configuration directory (either absolute or relative to the current directory) by using\-:
+Furthermore, if you run the program from a different folder than {\itshape bin/} or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using\-:
 
 
 \begin{DoxyCode}

@@ -115,57 +115,59 @@ The software is intended to be used on a Unix-like operating system.</p>
 Dependancies</h1>
 <p>The program requires the following software to be installed on your system:</p>
 <ul>
-<li><a href="http://www.cmake.org"><b>CMake</b></a> (version 2.8 or above), a cross-platform configuration tool; </li>
-<li><a href="http://www.gnu.org/software/make"><b>Make</b></a> (version 3.8.1 or above), a utility to build executables; </li>
-<li><a class="anchor" id="GCC"></a><a href="http://www.gnu.org/software/gcc"><b>GCC</b></a> (version 4.8 or above), the GNU Compiler Collection; <br/>
+<li><a href="http://www.cmake.org">CMake</a> (version 2.8 or above), a cross-platform configuration tool; </li>
+<li><a href="http://www.gnu.org/software/make">Make</a> (version 3.8.1 or above), a utility to build executables; </li>
+<li><a class="anchor" id="GCC"></a><a href="http://www.gnu.org/software/gcc">GCC</a> (version 4.8 or above), the GNU Compiler Collection; <br/>
  <br/>
 </li>
-<li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org"><b>Eigen</b></a> (version 3.2 or above), to handle with matrices, vectors and linear algebra; </li>
-<li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info"><b>Gnuplot</b></a> (version 4.6.4 or above), a graphical utility to generate plots (the package <b>gnuplot-x11</b>, a terminal for X servers, is also required for the interactive interface); </li>
-<li><a href="http://www.boost.org"><b>Boost</b></a> (version 1.50 or above), a set of libraries used by <a class="el" href="index.html#gnuplot-iostream">gnuplot-iostream</a>; </li>
-<li><a href="http://www.doxygen.org"><b>Doxygen</b></a> (version 1.8.6 or above), a documentation generator (not compulsory).</li>
+<li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org">Eigen</a> (version 3.2 or above), to handle with matrices, vectors and linear algebra; </li>
+<li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info">Gnuplot</a> (version 4.6.4 or above), a graphical utility to generate plots (the package <b>gnuplot-x11</b>, a terminal for X servers, is also required for the interactive interface); </li>
+<li><a href="http://www.boost.org">Boost</a> (version 1.50 or above), a set of libraries used by <a class="el" href="index.html#gnuplot-iostream">gnuplot-iostream</a>; </li>
+<li><a class="anchor" id="Doxygen"></a><a href="http://www.doxygen.org">Doxygen</a> (version 1.8.6 or above), a documentation generator (not compulsory).</li>
 </ul>
 <p>It also uses the following libraries, shipped in the <em>include/</em> folder:</p>
 <ul>
-<li><a href="http://getpot.sourceforge.net"><b>GetPot</b></a> (version 1.1.18), to parse command-line and configuration files; </li>
-<li><a class="anchor" id="gnuplot-iostream"></a><a href="http://www.stahlke.org/dan/gnuplot-iostream"><b>gnuplot-iostream</b></a> (version 2), a C++ interface for <a class="el" href="index.html#Gnuplot">Gnuplot</a>.</li>
+<li><a href="http://getpot.sourceforge.net">GetPot</a> (version 1.1.18), to parse command-line and configuration files; </li>
+<li><a class="anchor" id="gnuplot-iostream"></a><a href="http://www.stahlke.org/dan/gnuplot-iostream">gnuplot-iostream</a> (version 2), a C++ interface for <a class="el" href="index.html#Gnuplot">Gnuplot</a>.</li>
 </ul>
-<p>Parallel computing capabilities are provided through the <a href="http://openmp.org"><b>OpenMP</b></a> library, shipped together with <a class="el" href="index.html#GCC">GCC</a>.</p>
+<p>Parallel computing capabilities are provided through the <a href="http://openmp.org">OpenMP</a> library, shipped together with <a class="el" href="index.html#GCC">GCC</a>.</p>
 <h1><a class="anchor" id="install_sec"></a>
 Compile</h1>
-<p>In order to generate a test executable, simply execute one of these commands in a terminal pointing to the root directory of this package:</p>
+<p>In order to generate a test executable, first open the <em>CMakeLists.txt</em> file (in the top-level folder) and, if necessary, edit it to your needs.</p>
+<p>Then create a build directory and move into it:</p>
 <div class="fragment"><div class="line">$ mkdir build</div>
 <div class="line">$ cd build</div>
-<div class="line">$ cmake ..</div>
-<div class="line">$ make</div>
-</div><!-- fragment --><p>or, if you want the compiler to produce also debug symbols:</p>
-<div class="fragment"><div class="line">$ mkdir build</div>
-<div class="line">$ cd build</div>
-<div class="line">$ cmake .. -DCMAKE_BUILD_TYPE=Debug</div>
-<div class="line">$ make</div>
-</div><!-- fragment --><p>You can specify the name of the test source to be compiled (without extension, for example: <em>simulate_dos</em>) by editing the variable <b>EXEC</b>, defined in the <em>CMakeLists.txt</em> file.</p>
-<p>Repeat these instructions for each test you want to compile.</p>
-<p>The following command will generate this documentation under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>):</p>
+</div><!-- fragment --><p>Now you're ready to configure your system:</p>
+<div class="fragment"><div class="line">$ cmake ..</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>or, if you want the compiler to produce also debug symbols:</dd>
+<dd>
+<div class="fragment"><div class="line">$ cmake -DCMAKE_BUILD_TYPE=Debug ..</div>
+</div><!-- fragment --></dd></dl>
+<p>Finally, start building the project:</p>
+<div class="fragment"><div class="line">$ make</div>
+</div><!-- fragment --><p>This will generate the <em>test_filename</em> (as specified in the <b>TARGET_NAME</b> variable in <em>CMakeLists.txt</em>) executable.</p>
+<p>Repeat these steps for each test source file you want to compile.</p>
+<p>The following command will generate the present documentation, if <a class="el" href="index.html#Doxygen">Doxygen</a> is found to be installed, under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>), :</p>
 <div class="fragment"><div class="line">$ make doc</div>
 </div><!-- fragment --><h1><a class="anchor" id="configure"></a>
 Set up the configurations</h1>
 <dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
 <p>Before you can run an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
 Particularly, the variables <em>input_params</em> and <em>input_experim</em> can be set, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).</p>
-<dl class="section warning"><dt>Warning</dt><dd>The program never checks that the input values are numeric but will always try to cast them to floating point numbers, then please pay attention while setting up the variable <em>skipHeaders</em>.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The program never checks that the input values are numeric but will always cast them to floating point numbers, then please pay attention while setting up the variable <em>skipHeaders</em>.</dd></dl>
 <p>You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
 <h1><a class="anchor" id="run"></a>
 Run!</h1>
 <p>Executables are placed under the <em>bin/</em> directory (or the one specified in <em>CMakeLists.txt</em>). <br/>
 <br/>
-To run by using the default configuration filename (<em>config.pot</em>) simply move to the <em>bin/</em> directory and execute:</p>
+To run by using the default configuration filename (<em>config.pot</em>) simply move into the <em>bin/</em> directory and execute:</p>
 <div class="fragment"><div class="line">$ ./test_filename</div>
 </div><!-- fragment --><p>To specify a different configuration file previously saved in the configuration directory:</p>
 <div class="fragment"><div class="line">$ ./test_filename -f configuration_filename</div>
 </div><!-- fragment --><p>or:</p>
 <div class="fragment"><div class="line">$ ./test_filename --file configuration_filename</div>
 </div><!-- fragment --><p>The variable <em>configuration_filename</em> should <b>not</b> contain the path.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Furthermore, if you run the program from a different folder than <em>bin/</em> or if you chose a different configuration directory, you have to manually specify the <b>full</b> path to the configuration directory (either absolute or relative to the current directory) by using:</dd>
+<dl class="section warning"><dt>Warning</dt><dd>Furthermore, if you run the program from a different folder than <em>bin/</em> or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using:</dd>
 <dd>
 <div class="fragment"><div class="line">$ ./test_filename -d configuration_directory</div>
 </div><!-- fragment --></dd>
