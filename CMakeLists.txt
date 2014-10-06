@@ -1,4 +1,4 @@
-set(EXEC "simulate_dos")    # Name of the test source file to compile.
+set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
 
 set(BINDIR  "${CMAKE_CURRENT_SOURCE_DIR}/bin" )    # Directory where to store the executables.
 set(DOCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/doc" )    # Directory where to store the API documentation.
@@ -14,8 +14,8 @@ project(DOS_Extraction CXX)
 set(SRCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/src" )    # Directory where to find the library sources.
 set(TESTDIR "${CMAKE_CURRENT_SOURCE_DIR}/test")    # Directory where to find the test sources.
 
-file(GLOB SRCS ${SRCDIR}/*.cc ${TESTDIR}/${EXEC}.cc)
-file(GLOB HDRS ${SRCDIR}/*.h  ${TESTDIR}/${EXEC}.h )
+file(GLOB SRCS ${SRCDIR}/*.cc ${TESTDIR}/${TARGET_NAME}.cc)
+file(GLOB HDRS ${SRCDIR}/*.h  ${TESTDIR}/${TARGET_NAME}.h )
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(EXECUTABLE_OUTPUT_PATH "${BINDIR}")
@@ -72,5 +72,8 @@ endif()
 ################################################################
 ## Executables definition.
 ################################################################
-add_executable(${EXEC} ${SRCS})
-target_link_libraries(${EXEC} ${Boost_LIBRARIES})
+add_executable(${TARGET_NAME} ${SRCS})
+
+set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}")    # Executable filename.
+
+target_link_libraries(${TARGET_NAME} ${Boost_LIBRARIES})
