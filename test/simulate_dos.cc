@@ -83,6 +83,11 @@ int main(const int argc, const char * const * argv, const char * const * envp)
               // Initialize model.
               DosModel model;
               
+              if ( omp_get_thread_num() == 0)
+                {
+                  std::cout << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
+                }
+                
               #pragma omp critical
               {
                 // Re-initialize configuration file for each thread.
@@ -100,9 +105,10 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                   }
               }
               
+              #pragma omp critical
               std::cout << "Performing simulation No. " << model.params().simulationNo() << "..." << std::endl;
               
-              const std::string output_filename = "output_" + std::to_string(model.params().simulationNo());
+              const std::string output_filename = "output_" + std::to_string( model.params().simulationNo() );
               
               // Remove possible old files.
               system( ("exec rm -f " + output_directory + output_filename + "* "
@@ -111,6 +117,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
               // Simulate and save output files.
               model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
               
+              #pragma omp critical
               std::cout << "\tSimulation No. " << model.params().simulationNo() << " complete!" << std::endl;
             }
           catch ( const std::exception & genericException )

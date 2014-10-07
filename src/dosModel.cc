@@ -111,7 +111,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
   print_done(output_fitting);
   
   // Computing nodes and weights of quadrature.
-  output_fitting << "Computing nodes and weights of quadrature quadRule";
+  output_fitting << "Computing nodes and weights of quadrature";
   
   QuadratureRule * quadRule = nullptr;
   
@@ -122,12 +122,12 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     
     if ( method == 1 )
       {
-        output_fitting << " (Gauss-Hermite)";
+        output_fitting << " (Gauss-Hermite rule)";
         quadRuleFactory = new GaussHermiteRuleFactory;
       }
     else if ( method == 0 )
       {
-        output_fitting << " (Gauss-Laguerre)";
+        output_fitting << " (Gauss-Laguerre rule)";
         quadRuleFactory = new GaussLaguerreRuleFactory;
       }
     else

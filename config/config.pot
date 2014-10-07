@@ -18,13 +18,13 @@ skipHeaders = 1
 # Simulate each row in the input_params file:
 # 1 = true,
 # 0 = false.
-simulate_all = 0
+simulate_all = 1
 
     # If "simulate_all = 0", set indexes of rows to simulate.
     indexes = '5 6'
 
 # Number of threads to be used for a parallel simulation.
-nThreads = 3
+nThreads = 7
 
 # The directory where output files will be saved,
 # relative to the executable path.
@@ -49,20 +49,21 @@ DOS = 1
     
     # Number of nodes.
     nNodes = 101
-
+    
     # Maximum number of iterations for the iterative algorithm
     # used to compute nodes and weights.
     maxIterationsNo = 1000
-
+    
     # Tolerance for the iterative algorithm
     # used to compute nodes and weights.
     tolerance = 1.0e-14
 
 [NLP]
 # Newton solver for non-linear Poisson equation.
-
+    
     # Maximum number of iterations.
     maxIterationsNo = 1
-
+    
     # Tolerance.
     tolerance = 1.0e-4
+    
