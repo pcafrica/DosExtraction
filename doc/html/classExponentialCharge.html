@@ -148,10 +148,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memdesc:a4440f979418ee3b20fb2e366933c6aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor (defaulted). <br/></td></tr>
 <tr class="separator:a4440f979418ee3b20fb2e366933c6aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97ff25e546dee1ee5fec866b290ec999"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExponentialCharge.html#a97ff25e546dee1ee5fec866b290ec999">charge</a> (const <a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp;) override</td></tr>
-<tr class="memdesc:a97ff25e546dee1ee5fec866b290ec999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total charge.  <a href="#a97ff25e546dee1ee5fec866b290ec999">More...</a><br/></td></tr>
+<tr class="memdesc:a97ff25e546dee1ee5fec866b290ec999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the total charge density.  <a href="#a97ff25e546dee1ee5fec866b290ec999">More...</a><br/></td></tr>
 <tr class="separator:a97ff25e546dee1ee5fec866b290ec999"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06f7a60ee2bce4590e2a12286aa0e9eb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExponentialCharge.html#a06f7a60ee2bce4590e2a12286aa0e9eb">dcharge</a> (const <a class="el" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> &amp;) override</td></tr>
-<tr class="memdesc:a06f7a60ee2bce4590e2a12286aa0e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the derivative of the total charge with respect to the electric potential.  <a href="#a06f7a60ee2bce4590e2a12286aa0e9eb">More...</a><br/></td></tr>
+<tr class="memdesc:a06f7a60ee2bce4590e2a12286aa0e9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the derivative of the total charge density with respect to the electric potential.  <a href="#a06f7a60ee2bce4590e2a12286aa0e9eb">More...</a><br/></td></tr>
 <tr class="separator:a06f7a60ee2bce4590e2a12286aa0e9eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharge"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharge')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCharge.html">Charge</a></td></tr>
 <tr class="memitem:ad8bd7ca1f5eb4af83b0457a01aeeb001 inherit pub_methods_classCharge"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad8bd7ca1f5eb4af83b0457a01aeeb001"></a>
@@ -263,14 +263,14 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 </table>
 </div><div class="memdoc">
 
-<p>Compute the total charge. </p>
+<p>Compute the total charge density. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">phi</td><td>: the electric potential \( \varphi \). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the total charge \( q \left[ C \right] \). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the total charge density \( q(\varphi) \left[ C \cdot m^{-3} \right] \). </dd></dl>
 
 <p>Implements <a class="el" href="classCharge.html#a597abd6d429e1c18935e4806082d67d8">Charge</a>.</p>
 
@@ -300,14 +300,14 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
 </table>
 </div><div class="memdoc">
 
-<p>Compute the derivative of the total charge with respect to the electric potential. </p>
+<p>Compute the derivative of the total charge density with respect to the electric potential. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">phi</td><td>: the electric potential \( \varphi \). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the derivative: \( \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] \). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the derivative: \( \frac{\mathrm{d}q(\varphi)}{\mathrm{d}\varphi} \left[ C \cdot m^{-3} \cdot V^{-1} \right] \). </dd></dl>
 
 <p>Implements <a class="el" href="classCharge.html#acd71b3197f9081512d70d96ac694a3fc">Charge</a>.</p>
 
@@ -415,7 +415,7 @@ const <a class="el" href="classQuadratureRule.html">QuadratureRule</a> &amp;&#16
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the derivative: \( \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] \). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the derivative: \( \frac{\mathrm{d}n(\varphi)}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] \). </dd></dl>
 
 <p>Definition at line <a class="el" href="charge_8cc_source.html#l00127">127</a> of file <a class="el" href="charge_8cc_source.html">charge.cc</a>.</p>
 

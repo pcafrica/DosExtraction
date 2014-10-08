@@ -9,7 +9,7 @@ var searchData=
   ['sigma_5f2_5f',['sigma_2_',['../classParamList.html#a3ead6e4cc08dc0320e0b98c29e6d9337',1,'ParamList']]],
   ['sigma_5f3_5f',['sigma_3_',['../classParamList.html#ad0e6dd2c004d045b411bf0f0bb0544e2',1,'ParamList']]],
   ['sigma_5f4_5f',['sigma_4_',['../classParamList.html#ae484eb848d5c0716145e00c974ebecca',1,'ParamList']]],
-  ['simulate',['simulate',['../classDosModel.html#a5203629bc44905401b1b0d71a021db40',1,'DosModel']]],
+  ['simulate',['simulate',['../classDosModel.html#a8c3fc92853bec19ee326ceaf3fb0dd9c',1,'DosModel']]],
   ['simulate_5fdos_2ecc',['simulate_dos.cc',['../simulate__dos_8cc.html',1,'']]],
   ['simulationno_5f',['simulationNo_',['../classParamList.html#a54962bcd38fdd7844045a1c93ce005fc',1,'ParamList']]],
   ['solver_5f',['solver_',['../classNonLinearPoisson1D.html#aca4acc679876b21bdbf4c09c589aed69',1,'NonLinearPoisson1D']]],

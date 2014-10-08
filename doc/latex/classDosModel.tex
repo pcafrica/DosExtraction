@@ -24,9 +24,9 @@ Class providing methods to process a simulation to extract the Density of States
 \hypertarget{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}{const \hyperlink{classParamList}{Param\-List} \& \hyperlink{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}{params} () const }\label{classDosModel_a5fd763c7e4ba5d643fdaa061ff3c506a}
 
 \begin{DoxyCompactList}\small\item\em Getter method. \end{DoxyCompactList}\item 
-void \hyperlink{classDosModel_a5203629bc44905401b1b0d71a021db40}{simulate} (const Get\-Pot \&, const std\-::string \&, const std\-::string \&, const std\-::string \&, const std\-::string \&) const 
+void \hyperlink{classDosModel_a8c3fc92853bec19ee326ceaf3fb0dd9c}{simulate} (const Get\-Pot \&, const std\-::string \&, const std\-::string \&, const std\-::string \&, const std\-::string \&)
 \begin{DoxyCompactList}\small\item\em Perform the simulation. \end{DoxyCompactList}\item 
-void \hyperlink{classDosModel_a864b576fe626805c8dbf15aac5461a8e}{post\-\_\-process} (const Get\-Pot \&, const std\-::string \&, std\-::ostream \&, std\-::ostream \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) const 
+void \hyperlink{classDosModel_a7c242ffcdb811bb6378ac14fa113c18f}{post\-\_\-process} (const Get\-Pot \&, const std\-::string \&, std\-::ostream \&, std\-::ostream \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&, const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&)
 \begin{DoxyCompactList}\small\item\em Perform post-\/processing. \end{DoxyCompactList}\item 
 void \hyperlink{classDosModel_a26e64253688b5b51ffc54013bf3bc553}{gnuplot\-\_\-commands} (const std\-::string \&, std\-::ostream \&) const 
 \begin{DoxyCompactList}\small\item\em Defines commands to generate \hyperlink{index_Gnuplot}{Gnuplot} output files. \end{DoxyCompactList}\item 
@@ -40,13 +40,16 @@ void \hyperlink{classDosModel_aa614583c066c644e83085beaad05279d}{save\-\_\-plot}
 \begin{DoxyCompactList}\small\item\em bool to determine if \hyperlink{classDosModel}{Dos\-Model} {\itshape param\-\_\-} has been properly initialized. \end{DoxyCompactList}\item 
 \hypertarget{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}{\hyperlink{classParamList}{Param\-List} \hyperlink{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}{params\-\_\-}}\label{classDosModel_a4deb2401e648f5ad79e0aab68343a96b}
 
-\begin{DoxyCompactList}\small\item\em The parameter list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The parameter list. \end{DoxyCompactList}\item 
+\hypertarget{classDosModel_afd8e6e3c2312d733b446fce08daf48e9}{\hyperlink{typedefs_8h_a060b837c3b4486ee35317744156f3da2}{Real} \hyperlink{classDosModel_afd8e6e3c2312d733b446fce08daf48e9}{V\-\_\-shift\-\_\-}}\label{classDosModel_afd8e6e3c2312d733b446fce08daf48e9}
+
+\begin{DoxyCompactList}\small\item\em Peak shift between experimental data and simulated values $ [V] $. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class providing methods to process a simulation to extract the Density of States starting from a parameter list. 
 
-Definition at line 39 of file dos\-Model.\-h.
+Definition at line 40 of file dos\-Model.\-h.
 
 
 
@@ -74,7 +77,7 @@ Definition at line 22 of file dos\-Model.\-cc.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classDosModel_a5203629bc44905401b1b0d71a021db40}{\index{Dos\-Model@{Dos\-Model}!simulate@{simulate}}
+\hypertarget{classDosModel_a8c3fc92853bec19ee326ceaf3fb0dd9c}{\index{Dos\-Model@{Dos\-Model}!simulate@{simulate}}
 \index{simulate@{simulate}!DosModel@{Dos\-Model}}
 \subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}void simulate (
 \begin{DoxyParamCaption}
@@ -84,7 +87,7 @@ Definition at line 22 of file dos\-Model.\-cc.
 \item[{const std\-::string \&}]{output\-\_\-plot\-\_\-subdir, }
 \item[{const std\-::string \&}]{output\-\_\-filename}
 \end{DoxyParamCaption}
-) const}}\label{classDosModel_a5203629bc44905401b1b0d71a021db40}
+)}}\label{classDosModel_a8c3fc92853bec19ee326ceaf3fb0dd9c}
 
 
 Perform the simulation. 
@@ -106,7 +109,7 @@ Perform the simulation.
 
 Definition at line 25 of file dos\-Model.\-cc.
 
-\hypertarget{classDosModel_a864b576fe626805c8dbf15aac5461a8e}{\index{Dos\-Model@{Dos\-Model}!post\-\_\-process@{post\-\_\-process}}
+\hypertarget{classDosModel_a7c242ffcdb811bb6378ac14fa113c18f}{\index{Dos\-Model@{Dos\-Model}!post\-\_\-process@{post\-\_\-process}}
 \index{post\-\_\-process@{post\-\_\-process}!DosModel@{Dos\-Model}}
 \subsubsection[{post\-\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void post\-\_\-process (
 \begin{DoxyParamCaption}
@@ -114,12 +117,14 @@ Definition at line 25 of file dos\-Model.\-cc.
 \item[{const std\-::string \&}]{input\-\_\-experim, }
 \item[{std\-::ostream \&}]{output\-\_\-fitting, }
 \item[{std\-::ostream \&}]{output\-\_\-\-C\-V, }
+\item[{const {\bf Real} \&}]{A\-\_\-semic, }
+\item[{const {\bf Real} \&}]{C\-\_\-sb, }
 \item[{const {\bf Vector\-Xr} \&}]{x\-\_\-semic, }
 \item[{const {\bf Vector\-Xr} \&}]{dens, }
 \item[{const {\bf Vector\-Xr} \&}]{V\-\_\-simulated, }
 \item[{const {\bf Vector\-Xr} \&}]{C\-\_\-simulated}
 \end{DoxyParamCaption}
-) const}}\label{classDosModel_a864b576fe626805c8dbf15aac5461a8e}
+)}}\label{classDosModel_a7c242ffcdb811bb6378ac14fa113c18f}
 
 
 Perform post-\/processing. 
@@ -134,9 +139,13 @@ Perform post-\/processing.
 \hline
 \mbox{\tt out}  & {\em output\-\_\-\-C\-V} & \-: output file containing infos about capacitance-\/voltage data; \\
 \hline
+\mbox{\tt in}  & {\em A\-\_\-semic} & \-: area of the semiconductor; \\
+\hline
+\mbox{\tt in}  & {\em C\-\_\-sb} & \-: $ C_{sb} $ capacitance (see \hyperlink{classParamList}{Param\-List}); \\
+\hline
 \mbox{\tt in}  & {\em x\-\_\-semic} & \-: the mesh corresponding to the semiconductor domain; \\
 \hline
-\mbox{\tt in}  & {\em dens} & \-: charge density; \\
+\mbox{\tt in}  & {\em dens} & \-: charge density $ \left[ C \cdot m^{-3} \right] $; \\
 \hline
 \mbox{\tt in}  & {\em V\-\_\-simulated} & \-: simulated voltage values; \\
 \hline
@@ -168,7 +177,7 @@ Defines commands to generate \hyperlink{index_Gnuplot}{Gnuplot} output files.
 \end{DoxyParams}
 
 
-Definition at line 364 of file dos\-Model.\-cc.
+Definition at line 362 of file dos\-Model.\-cc.
 
 \hypertarget{classDosModel_aa614583c066c644e83085beaad05279d}{\index{Dos\-Model@{Dos\-Model}!save\-\_\-plot@{save\-\_\-plot}}
 \index{save\-\_\-plot@{save\-\_\-plot}!DosModel@{Dos\-Model}}
@@ -197,7 +206,7 @@ Save the \hyperlink{index_Gnuplot}{Gnuplot} output files.
 \end{DoxyParams}
 
 
-Definition at line 393 of file dos\-Model.\-cc.
+Definition at line 396 of file dos\-Model.\-cc.
 
 
 

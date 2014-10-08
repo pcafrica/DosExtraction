@@ -137,7 +137,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
     }
   catch ( const std::exception & genericException )
     {
-      utility::print_block(genericException.what(), std::cerr);
+      std::cerr << genericException.what() << std::endl;
       return EXIT_FAILURE;
     }
     

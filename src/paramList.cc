@@ -25,8 +25,8 @@ ParamList::ParamList(const RowVectorXr & list)
   assert( list( 9) >= 0.0 );
   assert( list(12) >= 0.0 );
   assert( list(15) >= 0.0 );
-  assert( list(20) >  0   );
-  assert( list(21) >  0   );
+  assert( list(22) >  0   );
+  assert( list(23) >  0   );
   
   simulationNo_ = list( 0)          ;
   t_semic_      = list( 1)          ;
@@ -48,8 +48,10 @@ ParamList::ParamList(const RowVectorXr & list)
   shift_4_      = list(17) * ( - Q) ;
   N0_exp_       = list(18)          ;
   lambda_exp_   = list(19) * K_B * T;
-  nNodes_       = list(20)          ;
-  nSteps_       = list(21)          ;
-  V_min_        = list(22)          ;
-  V_max_        = list(23)          ;
+  A_semic_      = list(20)          ;
+  C_sb_         = list(21)          ;
+  nNodes_       = list(22)          ;
+  nSteps_       = list(23)          ;
+  V_min_        = list(24)          ;
+  V_max_        = list(25)          ;
 }

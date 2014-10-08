@@ -73,6 +73,8 @@ class ParamList
     inline const Real  & shift_4()      const;
     inline const Real  & N0_exp()       const;
     inline const Real  & lambda_exp()   const;
+    inline const Real  & A_semic()      const;
+    inline const Real  & C_sb()         const;
     inline const Index & nNodes()       const;
     inline const Index & nSteps()       const;
     inline const Real  & V_min()        const;
@@ -91,18 +93,20 @@ class ParamList
     Real  Wf_          ;    /**< @brief Work-function @f$ \left[ V \right] @f$. */
     Real  Ea_          ;    /**< @brief Electron affinity @f$ \left[ V \right] @f$. */
     Real  N0_          ;    /**< @brief 1st gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
-    Real  sigma_       ;    /**< @brief 1st gaussian standard deviation (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
-    Real  N0_2_        ;    /**< @brief 2nd gaussian @f$ N_0 @f$. */
-    Real  sigma_2_     ;    /**< @brief 2nd gaussian standard deviation. */
-    Real  shift_2_     ;    /**< @brief 2nd gaussian shift with respect to the 1st gaussian electric potential. */
-    Real  N0_3_        ;    /**< @brief 3rd gaussian @f$ N_0 @f$. */
-    Real  sigma_3_     ;    /**< @brief 3rd gaussian standard deviation. */
-    Real  shift_3_     ;    /**< @brief 3rd gaussian shift with respect to the 1st gaussian electric potential. */
-    Real  N0_4_        ;    /**< @brief 4th gaussian @f$ N_0 @f$. */
-    Real  sigma_4_     ;    /**< @brief 4th gaussian standard deviation. */
-    Real  shift_4_     ;    /**< @brief 4th gaussian shift with respect to the 1st gaussian electric potential. */
-    Real  N0_exp_      ;    /**< @brief Exponential @f$ N_0 @f$. */
-    Real  lambda_exp_  ;    /**< @brief Exponential @f$ \lambda @f$. */
+    Real  sigma_       ;    /**< @brief 1st gaussian standard deviation @f$ \sigma @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
+    Real  N0_2_        ;    /**< @brief 2nd gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
+    Real  sigma_2_     ;    /**< @brief 2nd gaussian standard deviation @f$ \sigma @f$. */
+    Real  shift_2_     ;    /**< @brief 2nd gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
+    Real  N0_3_        ;    /**< @brief 3rd gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
+    Real  sigma_3_     ;    /**< @brief 3rd gaussian standard deviation @f$ \sigma @f$. */
+    Real  shift_3_     ;    /**< @brief 3rd gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
+    Real  N0_4_        ;    /**< @brief 4th gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
+    Real  sigma_4_     ;    /**< @brief 4th gaussian standard deviation @f$ \sigma @f$. */
+    Real  shift_4_     ;    /**< @brief 4th gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
+    Real  N0_exp_      ;    /**< @brief Exponential @f$ N_0 \left[ m^{-3} \right] @f$. */
+    Real  lambda_exp_  ;    /**< @brief Exponential @f$ \lambda @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
+    Real  A_semic_     ;    /**< @brief Area of the semiconductor @f$ \left[ m^2 \right] @f$. */
+    Real  C_sb_        ;    /**< @brief Equivalent capacitance of the series semiconductor-insulator @f$ \left[ F \right] @f$. */
     Index nNodes_      ;    /**< @brief Number of nodes that form the mesh. */
     Index nSteps_      ;    /**< @brief Number of steps to simulate. */
     Real  V_min_       ;    /**< @brief Minimum voltage @f$ \left[ V \right] @f$. */
@@ -208,6 +212,16 @@ inline const Real & ParamList::N0_exp() const
 inline const Real & ParamList::lambda_exp() const
 {
   return lambda_exp_;
+}
+
+inline const Real & ParamList::A_semic() const
+{
+  return A_semic_;
+}
+
+inline const Real & ParamList::C_sb() const
+{
+  return C_sb_;
 }
 
 inline const Index & ParamList::nNodes() const

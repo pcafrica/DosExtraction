@@ -44,15 +44,15 @@ class Charge
     virtual ~Charge() = default;
     
     /**
-     * @brief Compute the total charge.
+     * @brief Compute the total charge density.
      * @param[in] phi : the electric potential @f$ \varphi @f$.
-     * @returns the total charge @f$ q \left[ C \right] @f$.
+     * @returns the total charge density @f$ q(\varphi) \left[ C \cdot m^{-3} \right] @f$.
      */
     virtual VectorXr  charge(const VectorXr & phi) = 0;
     /**
-     * @brief Compute the derivative of the total charge with respect to the electric potential.
+     * @brief Compute the derivative of the total charge density with respect to the electric potential.
      * @param[in] phi : the electric potential @f$ \varphi @f$.
-     * @returns the derivative: @f$ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] @f$.
+     * @returns the derivative: @f$ \frac{\mathrm{d}q(\varphi)}{\mathrm{d}\varphi} \left[ C \cdot m^{-3} \cdot V^{-1} \right] @f$.
      */
     virtual VectorXr dcharge(const VectorXr & phi) = 0;
     
@@ -107,7 +107,7 @@ class GaussianCharge : public Charge
      * @param[in] phi   : the electric potential @f$ \varphi @f$;
      * @param[in] N0    : the gaussian mean @f$ N_0 @f$;
      * @param[in] sigma : the gaussian standard deviation @f$ \sigma @f$.
-     * @returns the derivative: @f$ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
+     * @returns the derivative: @f$ \frac{\mathrm{d}n(\varphi)}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
      */
     Real dn_approx(const Real &, const Real &, const Real &) const;
 };
@@ -158,7 +158,7 @@ class ExponentialCharge : public Charge
      * @param[in] phi : the electric potential @f$ \varphi @f$;
      * @param[in] N0     : the exponential @f$ N_0 @f$;
      * @param[in] lambda : the exponential @f$ \lambda @f$.
-     * @returns the derivative: @f$ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
+     * @returns the derivative: @f$ \frac{\mathrm{d}n(\varphi)}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
      */
     Real dn_approx(const Real &, const Real &, const Real &) const;
     

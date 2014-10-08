@@ -134,7 +134,7 @@
  *     $ ./test_filename --directory configuration_directory
  * @endcode
  * 
- * Once complete, the results of the simulation(s) will be saved in the output directory (relative to @a bin/) specified
+ * Once complete, the results of the simulation(s) will be saved in the output directory (relative to the current folder) specified
  * in the configuration file (default: @a output/). @n
  * @ref Gnuplot scripts are saved too for later re-use under the @a gnuplot/ subdirectory; you can run them through:
  * 

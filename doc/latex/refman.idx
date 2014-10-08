@@ -133,15 +133,15 @@
 \indexentry{Param\discretionary {-}{}{}List@{Param\discretionary {-}{}{}List}!Param\discretionary {-}{}{}List@{Param\discretionary {-}{}{}List}|hyperpage}{48}
 \indexentry{Param\discretionary {-}{}{}List@{Param\discretionary {-}{}{}List}!ParamList@{Param\discretionary {-}{}{}List}|hyperpage}{48}
 \indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{48}
-\indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{49}
-\indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!PdeSolver1D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{49}
+\indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{50}
+\indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!PdeSolver1D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{50}
 \indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff@{assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}|hyperpage}{50}
 \indexentry{assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff@{assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}!PdeSolver1D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{50}
 \indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!assemble\discretionary {-}{}{}Stiff@{assemble\discretionary {-}{}{}Stiff}|hyperpage}{50}
 \indexentry{assemble\discretionary {-}{}{}Stiff@{assemble\discretionary {-}{}{}Stiff}!PdeSolver1D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{50}
 \indexentry{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}!assemble\discretionary {-}{}{}Mass@{assemble\discretionary {-}{}{}Mass}|hyperpage}{50}
 \indexentry{assemble\discretionary {-}{}{}Mass@{assemble\discretionary {-}{}{}Mass}!PdeSolver1D@{Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}|hyperpage}{50}
-\indexentry{Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}|hyperpage}{50}
+\indexentry{Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}|hyperpage}{51}
 \indexentry{Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}!Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}|hyperpage}{52}
 \indexentry{Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}!QuadratureRule@{Quadrature\discretionary {-}{}{}Rule}|hyperpage}{52}
 \indexentry{Quadrature\discretionary {-}{}{}Rule@{Quadrature\discretionary {-}{}{}Rule}!apply@{apply}|hyperpage}{52}

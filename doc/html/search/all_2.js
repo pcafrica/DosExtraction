@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['charge',['Charge',['../classCharge.html',1,'Charge'],['../classCharge.html#a597abd6d429e1c18935e4806082d67d8',1,'Charge::charge()'],['../classGaussianCharge.html#a97ff25e546dee1ee5fec866b290ec999',1,'GaussianCharge::charge()'],['../classExponentialCharge.html#a97ff25e546dee1ee5fec866b290ec999',1,'ExponentialCharge::charge()'],['../classCharge.html#ad8bd7ca1f5eb4af83b0457a01aeeb001',1,'Charge::Charge()=delete'],['../classCharge.html#a447211f3a5181d4efb8f2c7f1012c32b',1,'Charge::Charge(const ParamList &amp;, const QuadratureRule &amp;)']]],
+  ['c_5fsb_5f',['C_sb_',['../classParamList.html#aa50ed4e92fd26b433e17e264fa82af71',1,'ParamList']]],
+  ['charge',['Charge',['../classCharge.html',1,'Charge'],['../classCharge.html#ad8bd7ca1f5eb4af83b0457a01aeeb001',1,'Charge::Charge()=delete'],['../classCharge.html#a447211f3a5181d4efb8f2c7f1012c32b',1,'Charge::Charge(const ParamList &amp;, const QuadratureRule &amp;)'],['../classCharge.html#a597abd6d429e1c18935e4806082d67d8',1,'Charge::charge(const VectorXr &amp;phi)=0'],['../classGaussianCharge.html#a97ff25e546dee1ee5fec866b290ec999',1,'GaussianCharge::charge()'],['../classExponentialCharge.html#a97ff25e546dee1ee5fec866b290ec999',1,'ExponentialCharge::charge()']]],
   ['charge_2ecc',['charge.cc',['../charge_8cc.html',1,'']]],
   ['charge_2eh',['charge.h',['../charge_8h.html',1,'']]],
   ['chargefactory',['ChargeFactory',['../classChargeFactory.html',1,'ChargeFactory'],['../classChargeFactory.html#ac9cd065aedc271933d5d9ee8f82bc76b',1,'ChargeFactory::ChargeFactory()']]],

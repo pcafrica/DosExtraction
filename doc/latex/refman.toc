@@ -136,20 +136,20 @@
 \contentsline {subsubsection}{\numberline {7.15.2.1}Param\discretionary {-}{}{}List}{48}{subsubsection.7.15.2.1}
 \contentsline {section}{\numberline {7.16}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D Class Reference}{48}{section.7.16}
 \contentsline {subsection}{\numberline {7.16.1}Detailed Description}{49}{subsection.7.16.1}
-\contentsline {subsection}{\numberline {7.16.2}Constructor \& Destructor Documentation}{49}{subsection.7.16.2}
-\contentsline {subsubsection}{\numberline {7.16.2.1}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}{49}{subsubsection.7.16.2.1}
+\contentsline {subsection}{\numberline {7.16.2}Constructor \& Destructor Documentation}{50}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}Pde\discretionary {-}{}{}Solver1\discretionary {-}{}{}D}{50}{subsubsection.7.16.2.1}
 \contentsline {subsection}{\numberline {7.16.3}Member Function Documentation}{50}{subsection.7.16.3}
 \contentsline {subsubsection}{\numberline {7.16.3.1}assemble\discretionary {-}{}{}Adv\discretionary {-}{}{}Diff}{50}{subsubsection.7.16.3.1}
 \contentsline {subsubsection}{\numberline {7.16.3.2}assemble\discretionary {-}{}{}Stiff}{50}{subsubsection.7.16.3.2}
 \contentsline {subsubsection}{\numberline {7.16.3.3}assemble\discretionary {-}{}{}Mass}{50}{subsubsection.7.16.3.3}
-\contentsline {section}{\numberline {7.17}Quadrature\discretionary {-}{}{}Rule Class Reference}{50}{section.7.17}
-\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{51}{subsection.7.17.1}
+\contentsline {section}{\numberline {7.17}Quadrature\discretionary {-}{}{}Rule Class Reference}{51}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{52}{subsection.7.17.1}
 \contentsline {subsection}{\numberline {7.17.2}Constructor \& Destructor Documentation}{52}{subsection.7.17.2}
 \contentsline {subsubsection}{\numberline {7.17.2.1}Quadrature\discretionary {-}{}{}Rule}{52}{subsubsection.7.17.2.1}
 \contentsline {subsection}{\numberline {7.17.3}Member Function Documentation}{52}{subsection.7.17.3}
 \contentsline {subsubsection}{\numberline {7.17.3.1}apply}{52}{subsubsection.7.17.3.1}
 \contentsline {section}{\numberline {7.18}Quadrature\discretionary {-}{}{}Rule\discretionary {-}{}{}Factory Class Reference}{52}{section.7.18}
-\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{52}{subsection.7.18.1}
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{53}{subsection.7.18.1}
 \contentsline {subsection}{\numberline {7.18.2}Member Function Documentation}{53}{subsection.7.18.2}
 \contentsline {subsubsection}{\numberline {7.18.2.1}Build\discretionary {-}{}{}Rule}{53}{subsubsection.7.18.2.1}
 \contentsline {chapter}{\numberline {8}File Documentation}{55}{chapter.8}

@@ -28,9 +28,9 @@ Inheritance diagram for Gaussian\-Charge\-:\begin{figure}[H]
 
 \begin{DoxyCompactList}\small\item\em Destructor (defaulted). \end{DoxyCompactList}\item 
 virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}{charge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
-\begin{DoxyCompactList}\small\item\em Compute the total charge. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute the total charge density. \end{DoxyCompactList}\item 
 virtual \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \hyperlink{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}{dcharge} (const \hyperlink{typedefs_8h_aae6cee78ed9cd8f234ed8cb48682548a}{Vector\-Xr} \&) override
-\begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Compute the derivative of the total charge density with respect to the electric potential. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,7 +86,7 @@ Definition at line 20 of file charge.\-cc.
 )\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a97ff25e546dee1ee5fec866b290ec999}
 
 
-Compute the total charge. 
+Compute the total charge density. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -94,7 +94,7 @@ Compute the total charge.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the total charge $ q \left[ C \right] $. 
+the total charge density $ q(\varphi) \left[ C \cdot m^{-3} \right] $. 
 \end{DoxyReturn}
 
 
@@ -113,7 +113,7 @@ Definition at line 51 of file charge.\-cc.
 )\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classGaussianCharge_a06f7a60ee2bce4590e2a12286aa0e9eb}
 
 
-Compute the derivative of the total charge with respect to the electric potential. 
+Compute the derivative of the total charge density with respect to the electric potential. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -121,7 +121,7 @@ Compute the derivative of the total charge with respect to the electric potentia
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the derivative\-: $ \frac{\mathrm{d}q}{\mathrm{d}\varphi} \left[ C \cdot V^{-1} \right] $. 
+the derivative\-: $ \frac{\mathrm{d}q(\varphi)}{\mathrm{d}\varphi} \left[ C \cdot m^{-3} \cdot V^{-1} \right] $. 
 \end{DoxyReturn}
 
 
@@ -183,7 +183,7 @@ Compute the approximate derivative of electrons density (per unit volume) with r
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the derivative\-: $ \frac{\mathrm{d}n}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] $. 
+the derivative\-: $ \frac{\mathrm{d}n(\varphi)}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] $. 
 \end{DoxyReturn}
 
 

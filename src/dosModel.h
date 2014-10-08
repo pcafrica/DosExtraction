@@ -26,8 +26,9 @@
 
 #include "gnuplot-iostream.h"
 
-#include <chrono>    // Timing
-#include <limits>    // NaN
+#include <chrono>    // Timing.
+#include <iomanip>    // setf and precision.
+#include <limits>    // NaN.
 
 /**
  * @class DosModel
@@ -68,7 +69,7 @@ class DosModel
      * @param[in] output_filename    : prefix for the output filename.
      */
     void simulate(const GetPot &, const std::string &, const std::string &,
-                  const std::string &, const std::string &) const;
+                  const std::string &, const std::string &);
                   
     /**
      * @brief Perform post-processing.
@@ -76,13 +77,16 @@ class DosModel
      * @param[in]  input_experim  : the file containing experimental data;
      * @param[out] output_fitting : output file containing infos about fitting experimental data;
      * @param[out] output_CV      : output file containing infos about capacitance-voltage data;
+     * @param[in]  A_semic        : area of the semiconductor;
+     * @param[in]  C_sb           : @f$ C_{sb} @f$ capacitance (see @ref ParamList);
      * @param[in]  x_semic        : the mesh corresponding to the semiconductor domain;
-     * @param[in]  dens           : charge density;
+     * @param[in]  dens           : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
      * @param[in]  V_simulated    : simulated voltage values;
      * @param[in]  C_simulated    : simulated capacitance values.
      */
     void post_process(const GetPot &, const std::string &, std::ostream &, std::ostream &,
-                      const VectorXr &, const VectorXr &, const VectorXr &, const VectorXr &) const;
+                      const Real &, const Real &, const VectorXr &, const VectorXr &,
+                      const VectorXr &, const VectorXr &);
                       
     /**
      * @brief Defines commands to generate @ref Gnuplot output files.
@@ -103,6 +107,8 @@ class DosModel
     bool initialized_;    /**< @brief bool to determine if @ref DosModel @a param_ has been properly initialized. */
     
     ParamList params_;    /**< @brief The parameter list. */
+    
+    Real V_shift_;    /**< @brief Peak shift between experimental data and simulated values @f$ [V] @f$. */
 };
 
 // Implementations.

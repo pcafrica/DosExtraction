@@ -299,9 +299,9 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
   VectorXr u = VectorXr::LinSpaced(phi_.size(), 0, 1);
   
   // Constant term: b = - Jac(2:end-1, [1 end]) * u([1 end]');
-  VectorXr b = VectorXr::Zero( Jac.rows() - 2 );
+  VectorXr b = VectorXr::Zero( phi_.size() - 2 );
   
-  for ( Index i = 1; i < Jac.rows() - 1; ++i )
+  for ( Index i = 1; i < phi_.size() - 1; ++i )
     {
       if ( Jac.coeff(i, 0) != 0.0 || Jac.coeff(i, Jac.cols() - 1) != 0.0 )
         {
@@ -311,7 +311,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     
   u.segment(1, u.size() - 2) = - systemSolver.solve(b);
   
-  for ( Index i = 0; i < phiOld.size(); ++i )
+  for ( Index i = 0; i < phi_.size(); ++i )
     {
       if ( Jac.coeff(Jac.rows() - 1, i) != 0.0 )
         {

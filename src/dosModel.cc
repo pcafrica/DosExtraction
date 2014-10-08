@@ -23,7 +23,7 @@ DosModel::DosModel(const ParamList & params)
   : initialized_(true), params_(params) {}
 
 void DosModel::simulate(const GetPot & config, const std::string & input_experim, const std::string & output_directory,
-                        const std::string & output_plot_subdir, const std::string & output_filename) const
+                        const std::string & output_plot_subdir, const std::string & output_filename)
 {
   if ( !initialized_ )
     {
@@ -249,8 +249,8 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
   charge_fun = nullptr;
   
   // Post-processing and creation of output files.
-  post_process(config, input_experim, output_fitting, output_CV, (VectorXr) x.segment(0, semicNodesNo),
-               (VectorXr) Dens.col(Dens.cols() - 1), V, cTot);
+  post_process(config, input_experim, output_fitting, output_CV, params_.A_semic_, params_.C_sb_,
+               (VectorXr) x.segment(0, semicNodesNo), (VectorXr) Dens.col(Dens.cols() - 1), V, cTot);
                
   output_fitting.close();
   output_CV     .close();
@@ -269,16 +269,14 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
 }
 
 void DosModel::post_process(const GetPot & config, const std::string & input_experim, std::ostream & output_fitting,
-                            std::ostream & output_CV, const VectorXr & x_semic, const VectorXr & dens,
-                            const VectorXr & V_simulated, const VectorXr & C_simulated) const
+                            std::ostream & output_CV, const Real & A_semic, const Real & C_sb,
+                            const VectorXr & x_semic, const VectorXr & dens, const VectorXr & V_simulated,
+                            const VectorXr & C_simulated)
 {
   assert( x_semic    .size() == dens       .size() );
   assert( V_simulated.size() == C_simulated.size() );
   
   CsvParser parser_experim(input_experim, config("skipHeaders", true));
-  
-  Real A_semic = parser_experim.importCell(1, 3);    // Semiconductor area [m^2].
-  Real C_sb    = parser_experim.importCell(1, 4);    // Sbord capacitance [F].
   
   VectorXr V_experim = parser_experim.importCol(1);
   VectorXr C_experim = parser_experim.importCol(2);
@@ -313,19 +311,19 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
   Index j_s = 0;
   dC_dV_simulated.maxCoeff(&j_s);
   
-  Real V_shift = V_simulated(j_s) - V_experim(j_e);
+  V_shift_ = V_simulated(j_s) - V_experim(j_e);
   
-  VectorXr     C_interp = numerics::interp1(V_experim,     C_experim, V_simulated.array() - V_shift);
-  VectorXr dC_dV_interp = numerics::interp1(V_experim, dC_dV_experim, V_simulated.array() - V_shift);
+  VectorXr     C_interp = numerics::interp1(V_experim,     C_experim, V_simulated.array() - V_shift_);
+  VectorXr dC_dV_interp = numerics::interp1(V_experim, dC_dV_experim, V_simulated.array() - V_shift_);
   
-  Real error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift) );
+  Real error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift_) );
   Real error_H1 = std::sqrt( error_L2 * error_L2 +
-                             numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift)
+                             numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift_)
                            );
                            
   // Print to output.
   output_fitting << std::endl;
-  output_fitting << "V_shift = " << V_shift << std::endl;
+  output_fitting << "V_shift = " << V_shift_ << std::endl;
   output_fitting << "Charge center of mass = " << charge_center_of_mass << std::endl;
   output_fitting << "C_acc* = " << cAccStar << std::endl;
   output_fitting << std::endl;
@@ -348,7 +346,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
         
       if ( i < V_simulated.size() )
         {
-          output_CV << V_simulated(i) - V_shift << ", " << C_simulated(i) * A_semic + C_sb << ", " << dC_dV_simulated(i);
+          output_CV << V_simulated(i) - V_shift_ << ", " << C_simulated(i) * A_semic + C_sb << ", " << dC_dV_simulated(i);
         }
       else
         {
@@ -368,24 +366,29 @@ void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ost
   os << std::endl;
   os << "stats \"" + output_CV_filename + "\" using 1 name \"V\" nooutput;" << std::endl;
   os << std::endl;
-  os << "set multiplot;" << std::endl;
-  os << "set size 1, 0.5;" << std::endl;
+  os << "set multiplot layout 2,1 title \"";
+  
+  os.setf(std::ios_base::scientific);
+  os.precision(4);
+  os << "V_shift=" << V_shift_ << " [V]";
+  os << ", N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T);
+  os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_;
+  os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_;
+  os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_;
+  os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_;
+  os << "\" font \",8\";" << std::endl;
+  
+  os << "\tset xlabel \"V_gate - V_shift [V]\" offset 0, 0.75;" << std::endl;
   os << std::endl;
-  os << "set origin 0.0, 0.5;" << std::endl;
-  os << "\tset xlabel \"V_gate [V]\";" << std::endl;
   os << "\tset ylabel \"dC/dV [F/V]\";" << std::endl;
-  os << "\tset title \"dC/dV [F/V], N0 = " << params_.N0_ << "\";" << std::endl;
   os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:3 title \"Experimental\" with lines lw 2, \\" << std::endl;
   os << "\t                   \"" + output_CV_filename + "\" using 4:6 title \"Simulated\"    with lines lw 2;" << std::endl;
   os << std::endl;
-  os << "set origin 0.0, 0.0;" << std::endl;
-  os << "\tset xlabel \"V_gate [V]\";" << std::endl;
   os << "\tset ylabel \"C [F]\";" << std::endl;
-  os << "\tset title \"C [F]\";" << std::endl;
   os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:2 title \"Experimental\" with lines lw 2, \\" << std::endl;
   os << "\t                   \"" + output_CV_filename + "\" using 4:5 title \"Simulated\"    with lines lw 2;" << std::endl;
   os << std::endl;
-  os << "unset multiplot;" << std::endl;;
+  os << "unset multiplot;" << std::endl;
   
   return;
 }
