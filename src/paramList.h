@@ -106,7 +106,7 @@ class ParamList
     Real  N0_exp_      ;    /**< @brief Exponential @f$ N_0 \left[ m^{-3} \right] @f$. */
     Real  lambda_exp_  ;    /**< @brief Exponential @f$ \lambda @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
     Real  A_semic_     ;    /**< @brief Area of the semiconductor @f$ \left[ m^2 \right] @f$. */
-    Real  C_sb_        ;    /**< @brief Equivalent capacitance of the series semiconductor-insulator @f$ \left[ F \right] @f$. */
+    Real  C_sb_        ;    /**< @brief Equivalent capacitance of the series semiconductor-insulator (stray-border capacitance) @f$ \left[ F \right] @f$. */
     Index nNodes_      ;    /**< @brief Number of nodes that form the mesh. */
     Index nSteps_      ;    /**< @brief Number of steps to simulate. */
     Real  V_min_       ;    /**< @brief Minimum voltage @f$ \left[ V \right] @f$. */

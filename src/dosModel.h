@@ -78,7 +78,7 @@ class DosModel
      * @param[out] output_fitting : output file containing infos about fitting experimental data;
      * @param[out] output_CV      : output file containing infos about capacitance-voltage data;
      * @param[in]  A_semic        : area of the semiconductor;
-     * @param[in]  C_sb           : @f$ C_{sb} @f$ capacitance (see @ref ParamList);
+     * @param[in]  C_sb           : stray border capacitance (see @ref ParamList);
      * @param[in]  x_semic        : the mesh corresponding to the semiconductor domain;
      * @param[in]  dens           : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
      * @param[in]  V_simulated    : simulated voltage values;
