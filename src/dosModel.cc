@@ -372,10 +372,10 @@ void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ost
   os.precision(4);
   os << "V_shift=" << V_shift_ << ", (Wf - Ea)=" << (params_.Wf_ - params_.Ea_) / Q;
   os << ", N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T);
-  os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_;
-  os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_;
-  os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_;
-  os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_;
+  os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_ / (- Q);
+  os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_ / (- Q);
+  os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_ / (- Q);
+  os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_ / (K_B * T);
   os << "\" font \",8\";" << std::endl;
   
   os << "\tset xlabel \"V_gate - V_shift [V]\" offset 0, 0.75;" << std::endl;
