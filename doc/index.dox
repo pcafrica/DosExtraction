@@ -33,7 +33,7 @@
  * 
  * @section install_sec Compile
  * 
- * In order to generate a test executable, first open the @a CMakeLists.txt file (in the top-level folder)
+ * In order to generate the executable, first open the @a CMakeLists.txt file (in the top-level folder)
  * and, if necessary, edit it to your needs.
  * 
  * Then create a build directory and move into it:
@@ -49,28 +49,41 @@
  *     $ cmake ..
  * @endcode
  * 
- * @note or, if you want the compiler to produce also debug symbols:
+ * @note or, should you want the compiler to produce also debug symbols:
  * 
  * @note
  * @code
  *     $ cmake -DCMAKE_BUILD_TYPE=Debug ..
  * @endcode
  * 
- * Finally:
+ * and finally:
  * 
  * @code
  *     $ make
  * @endcode
  * 
- * will build the @a test_filename (as specified in the @b TARGET_NAME variable in @a CMakeLists.txt) executable.
+ * will build the @a simulate_dos executable and the @a dosextraction shared library under the @a bin/ and @a lib/
+ * directories (or the ones specified in @a CMakeLists.txt) respectively.
+ * 
+ * If you wish to install:
+ * 
+ * @arg the executable, into @a /usr/bin/;
+ * @arg the shared library, into @a /usr/lib/;
+ * @arg the header files, into @a /usr/local/include/dosextraction/;
+ * 
+ * just type:
  * 
  * @code
  *     # make install
  * @endcode
  * 
- * will also install it on your system, into @a /usr/bin/.
+ * while:
  * 
- * Repeat these steps for each test source file you want to compile.
+ * @code
+ *     # make uninstall
+ * @endcode
+ * 
+ * will remove them. @n
  * 
  * If <a href="http://www.doxygen.org">Doxygen</a> (version 3.8.6 or above) and <a href="http://www.graphviz.org">GraphViz</a>
  * are found, the following command will generate the present documentation under the @a doc/ folder (or the one specified
@@ -84,7 +97,7 @@
  * 
  * @note The default configuration directory is @a config/.
  * 
- * Before you can run an executable, you have to set up the configuration file (default: @a config.pot).
+ * Before you can run the executable, you have to set up the configuration file (default: @a config.pot).
  * Within it you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
  * Particularly, the variables @a input_params and @a input_experim can be set, i.e. the filenames
@@ -100,43 +113,41 @@
  * 
  * @section run Run!
  * 
- * Executables are placed under the @a bin/ directory (or the one specified in @a CMakeLists.txt). @n
- * @n
- * To run by using the default configuration filename (@a config.pot) simply move into the @a bin/ directory
- * and execute:
+ * To run by using the default configuration filename (@a config.pot) simply move into the executable directory
+ * and type:
  * 
  * @code
- *     $ ./test_filename
+ *     $ ./simulate_dos
  * @endcode
  * 
  * To specify a different configuration file previously saved in the configuration directory:
  * 
  * @code
- *     $ ./test_filename -f configuration_filename
+ *     $ ./simulate_dos -f configuration_filename
  * @endcode
  * 
  * or:
  * 
  * @code
- *     $ ./test_filename --file configuration_filename
+ *     $ ./simulate_dos --file configuration_filename
  * @endcode
  * 
  * The variable @a configuration_filename should @b not contain the path.
  * 
- * @warning Furthermore, if you run the program from a different folder than @a bin/ or if you chose a different configuration
+ * @warning Furthermore, if you run the program from a different folder or if you chose a different configuration
  * directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the
  * current directory) by using:
  * 
  * @warning
  * @code
- *     $ ./test_filename -d configuration_directory
+ *     $ ./simulate_dos -d configuration_directory
  * @endcode
  * 
  * @warning or:
  * 
  * @warning
  * @code
- *     $ ./test_filename --directory configuration_directory
+ *     $ ./simulate_dos --directory configuration_directory
  * @endcode
  * 
  * Once complete, the results of the simulation(s) will be saved in the output directory (relative to the current folder) specified

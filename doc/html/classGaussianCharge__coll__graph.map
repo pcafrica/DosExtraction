@@ -1,0 +1,5 @@
+<map id="GaussianCharge" name="GaussianCharge">
+<area shape="rect" id="node2" href="$classCharge.html" title="Abstract class providing methods to calculate total electric charge (the rhs in the Poisson equation)..." alt="" coords="73,96,137,123"/>
+<area shape="rect" id="node3" href="$classParamList.html" title="Class providing methods to handle a list of parameters. " alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node4" href="$classQuadratureRule.html" title="Abstract class providing a quadrature rule. " alt="" coords="110,5,223,32"/>
+</map>

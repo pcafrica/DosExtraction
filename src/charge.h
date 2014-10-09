@@ -5,6 +5,8 @@
  * @author Pasquale Claudio Africa <pasquale.africa@gmail.com>
  * @date   2014
  *
+ * This file is part of the "DosExtraction" project.
+ *
  * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
  * @copyright This project is released under the GNU General Public License.
  *
@@ -34,7 +36,7 @@ class Charge
     Charge() = delete;
     /**
      * @brief Constructor.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      */
     Charge(const ParamList &, const QuadratureRule &);
@@ -80,7 +82,7 @@ class GaussianCharge : public Charge
     GaussianCharge() = delete;
     /**
      * @brief Constructor.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      */
     GaussianCharge(const ParamList &, const QuadratureRule &);
@@ -131,7 +133,7 @@ class ExponentialCharge : public Charge
     ExponentialCharge() = delete;
     /**
      * @brief Constructor.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule : a quadrature rule.
      */
     ExponentialCharge(const ParamList &, const QuadratureRule &);

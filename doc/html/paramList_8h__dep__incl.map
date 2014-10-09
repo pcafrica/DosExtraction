@@ -1,0 +1,12 @@
+<map id="src/paramList.h" name="src/paramList.h">
+<area shape="rect" id="node2" href="$charge_8h.html" title="Classes for computing total electric charge. " alt="" coords="185,80,279,107"/>
+<area shape="rect" id="node4" href="$dosModel_8h.html" title="Mathematical model for Density of States extraction. " alt="" coords="237,229,347,256"/>
+<area shape="rect" id="node7" href="$factory_8h.html" title="Abstract factory design patterns. " alt="" coords="355,155,449,181"/>
+<area shape="rect" id="node11" href="$paramList_8cc.html" title="src/paramList.cc" alt="" coords="406,80,524,107"/>
+<area shape="rect" id="node3" href="$charge_8cc.html" title="src/charge.cc" alt="" coords="5,155,107,181"/>
+<area shape="rect" id="node9" href="$solvers_8h.html" title="Generic solvers for PDEs. " alt="" coords="131,155,228,181"/>
+<area shape="rect" id="node5" href="$simulate__dos_8cc.html" title="A test file. " alt="" coords="143,304,285,331"/>
+<area shape="rect" id="node6" href="$dosModel_8cc.html" title="src/dosModel.cc" alt="" coords="310,304,428,331"/>
+<area shape="rect" id="node8" href="$factory_8cc.html" title="src/factory.cc" alt="" coords="371,229,473,256"/>
+<area shape="rect" id="node10" href="$solvers_8cc.html" title="src/solvers.cc" alt="" coords="108,229,212,256"/>
+</map>

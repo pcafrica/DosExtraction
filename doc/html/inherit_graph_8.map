@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classQuadratureRuleFactory.html" title="Abstract factory to handle a quadrature rule. " alt="" coords="5,31,163,57"/>
+<area shape="rect" id="node2" href="$classGaussHermiteRuleFactory.html" title="Concrete factory to handle a Gauss&#45;Hermite quadrature rule. " alt="" coords="213,5,390,32"/>
+<area shape="rect" id="node3" href="$classGaussLaguerreRuleFactory.html" title="Concrete factory to handle a Gauss&#45;Laguerre quadrature rule. " alt="" coords="211,56,392,83"/>
+</map>

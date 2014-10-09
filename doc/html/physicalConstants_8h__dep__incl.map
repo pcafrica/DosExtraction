@@ -1,0 +1,21 @@
+<map id="src/physicalConstants.h" name="src/physicalConstants.h">
+<area shape="rect" id="node2" href="$typedefs_8h.html" title="Typedefs and utility functions. " alt="" coords="550,80,655,107"/>
+<area shape="rect" id="node3" href="$paramList_8h.html" title="Interface to process a list of simulation parameters. " alt="" coords="474,155,584,181"/>
+<area shape="rect" id="node4" href="$charge_8h.html" title="Classes for computing total electric charge. " alt="" coords="352,229,446,256"/>
+<area shape="rect" id="node6" href="$dosModel_8h.html" title="Mathematical model for Density of States extraction. " alt="" coords="533,379,643,405"/>
+<area shape="rect" id="node11" href="$solvers_8h.html" title="Generic solvers for PDEs. " alt="" coords="913,304,1010,331"/>
+<area shape="rect" id="node14" href="$quadratureRule_8h.html" title="Quadrature rules. " alt="" coords="192,155,334,181"/>
+<area shape="rect" id="node16" href="$csvParser_8h.html" title="Tools to store content from a .csv file in matrices or vectors. " alt="" coords="620,155,735,181"/>
+<area shape="rect" id="node18" href="$numerics_8h.html" title="Generic numeric algorithms. " alt="" coords="821,155,928,181"/>
+<area shape="rect" id="node20" href="$typedefs_8cc.html" title="src/typedefs.cc" alt="" coords="1102,155,1212,181"/>
+<area shape="rect" id="node9" href="$factory_8h.html" title="Abstract factory design patterns. " alt="" coords="266,304,360,331"/>
+<area shape="rect" id="node13" href="$paramList_8cc.html" title="src/paramList.cc" alt="" coords="470,229,588,256"/>
+<area shape="rect" id="node5" href="$charge_8cc.html" title="src/charge.cc" alt="" coords="386,304,487,331"/>
+<area shape="rect" id="node7" href="$simulate__dos_8cc.html" title="A test file. " alt="" coords="440,453,582,480"/>
+<area shape="rect" id="node8" href="$dosModel_8cc.html" title="src/dosModel.cc" alt="" coords="606,453,724,480"/>
+<area shape="rect" id="node10" href="$factory_8cc.html" title="src/factory.cc" alt="" coords="262,379,364,405"/>
+<area shape="rect" id="node12" href="$solvers_8cc.html" title="src/solvers.cc" alt="" coords="910,379,1014,405"/>
+<area shape="rect" id="node15" href="$quadratureRule_8cc.html" title="src/quadratureRule.cc" alt="" coords="24,229,174,256"/>
+<area shape="rect" id="node17" href="$csvParser_8cc.html" title="src/csvParser.cc" alt="" coords="716,229,836,256"/>
+<area shape="rect" id="node19" href="$numerics_8cc.html" title="src/numerics.cc" alt="" coords="912,229,1027,256"/>
+</map>

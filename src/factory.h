@@ -5,6 +5,8 @@
  * @author Pasquale Claudio Africa <pasquale.africa@gmail.com>
  * @date   2014
  *
+ * This file is part of the "DosExtraction" project.
+ *
  * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
  * @copyright This project is released under the GNU General Public License.
  *
@@ -39,7 +41,7 @@ class ChargeFactory
     
     /**
      * @brief Factory method to build an abstract @ref Charge object.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref Charge.
      */
@@ -66,7 +68,7 @@ class GaussianChargeFactory : public ChargeFactory
     
     /**
      * @brief Factory method to build a concrete @ref Charge object.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref GaussianCharge.
      */
@@ -93,7 +95,7 @@ class ExponentialChargeFactory : public ChargeFactory
     
     /**
      * @brief Factory method to build a concrete @ref Charge object.
-     * @param[in] params : the list of simulation parameters;
+     * @param[in] params : a list of simulation parameters;
      * @param[in] rule   : a quadrature rule.
      * @returns a pointer to @ref ExponentialCharge.
      */

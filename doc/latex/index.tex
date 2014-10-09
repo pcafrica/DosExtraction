@@ -21,7 +21,7 @@ It also uses the following libraries, shipped in the {\itshape include/} folder\
 \hypertarget{index_gnuplot-iostream}{}%
 \href{http://www.stahlke.org/dan/gnuplot-iostream}{\tt gnuplot-\/iostream} (version 2), a C++ interface for \hyperlink{index_Gnuplot}{Gnuplot}.\end{DoxyItemize}
 Parallel computing capabilities are provided through the \href{http://openmp.org}{\tt Open\-M\-P} library, shipped together with \hyperlink{index_GCC}{G\-C\-C}.\hypertarget{index_install_sec}{}\section{Compile}\label{index_install_sec}
-In order to generate a test executable, first open the {\itshape C\-Make\-Lists.\-txt} file (in the top-\/level folder) and, if necessary, edit it to your needs.
+In order to generate the executable, first open the {\itshape C\-Make\-Lists.\-txt} file (in the top-\/level folder) and, if necessary, edit it to your needs.
 
 Then create a build directory and move into it\-:
 
@@ -41,7 +41,7 @@ $ cmake ..
 
 
 \begin{DoxyNote}{Note}
-or, if you want the compiler to produce also debug symbols\-:
+or, should you want the compiler to produce also debug symbols\-:
 
 
 \begin{DoxyCode}
@@ -49,7 +49,7 @@ $ cmake -DCMAKE\_BUILD\_TYPE=Debug ..
 \end{DoxyCode}
 
 \end{DoxyNote}
-Finally\-:
+and finally\-:
 
 
 \begin{DoxyCode}
@@ -57,7 +57,13 @@ $ make
 \end{DoxyCode}
 
 
-will build the {\itshape test\-\_\-filename} (as specified in the {\bfseries T\-A\-R\-G\-E\-T\-\_\-\-N\-A\-M\-E} variable in {\itshape C\-Make\-Lists.\-txt}) executable.
+will build the {\itshape simulate\-\_\-dos} executable and the {\itshape dosextraction} shared library under the {\itshape bin/} and {\itshape lib/} directories (or the ones specified in {\itshape C\-Make\-Lists.\-txt}) respectively.
+
+If you wish to install\-:
+
+\begin{DoxyItemize}
+\item the executable, into {\itshape /usr/bin/}; \item the shared library, into {\itshape /usr/lib/}; \item the header files, into {\itshape /usr/local/include/dosextraction/};\end{DoxyItemize}
+just type\-:
 
 
 \begin{DoxyCode}
@@ -65,11 +71,16 @@ will build the {\itshape test\-\_\-filename} (as specified in the {\bfseries T\-
 \end{DoxyCode}
 
 
-will also install it on your system, into {\itshape /usr/bin/}.
+while\-:
 
-Repeat these steps for each test source file you want to compile.
 
-If \href{http://www.doxygen.org}{\tt Doxygen} (version 3.\-8.\-6 or above) and \href{http://www.graphviz.org}{\tt Graph\-Viz} are found, the following command will generate the present documentation under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt})\-:
+\begin{DoxyCode}
+\textcolor{preprocessor}{# make uninstall}
+\end{DoxyCode}
+
+
+will remove them. \par
+ If \href{http://www.doxygen.org}{\tt Doxygen} (version 3.\-8.\-6 or above) and \href{http://www.graphviz.org}{\tt Graph\-Viz} are found, the following command will generate the present documentation under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt})\-:
 
 
 \begin{DoxyCode}
@@ -79,20 +90,18 @@ $ make doc
 \begin{DoxyNote}{Note}
 The default configuration directory is {\itshape config/}.
 \end{DoxyNote}
-Before you can run an executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
+Before you can run the executable, you have to set up the configuration file (default\-: {\itshape config.\-pot}). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. \par
 Particularly, the variables {\itshape input\-\_\-params} and {\itshape input\-\_\-experim} can be set, i.\-e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).
 
 \begin{DoxyWarning}{Warning}
 The program never checks that the input values are numeric but will always cast them to floating point numbers, then please pay attention while setting up the variable {\itshape skip\-Headers}.
 \end{DoxyWarning}
 You can create multiple configuration files, each with different parameter values\-: the one you aim to use can be specified in the command-\/line before running.\hypertarget{index_run}{}\section{Run!}\label{index_run}
-Executables are placed under the {\itshape bin/} directory (or the one specified in {\itshape C\-Make\-Lists.\-txt}). \par
-\par
-To run by using the default configuration filename ({\itshape config.\-pot}) simply move into the {\itshape bin/} directory and execute\-:
+To run by using the default configuration filename ({\itshape config.\-pot}) simply move into the executable directory and type\-:
 
 
 \begin{DoxyCode}
-$ ./test\_filename
+$ ./simulate\_dos
 \end{DoxyCode}
 
 
@@ -100,7 +109,7 @@ To specify a different configuration file previously saved in the configuration 
 
 
 \begin{DoxyCode}
-$ ./test\_filename -f configuration\_filename
+$ ./simulate\_dos -f configuration\_filename
 \end{DoxyCode}
 
 
@@ -108,18 +117,18 @@ or\-:
 
 
 \begin{DoxyCode}
-$ ./test\_filename --file configuration\_filename
+$ ./simulate\_dos --file configuration\_filename
 \end{DoxyCode}
 
 
 The variable {\itshape configuration\-\_\-filename} should {\bfseries not} contain the path.
 
 \begin{DoxyWarning}{Warning}
-Furthermore, if you run the program from a different folder than {\itshape bin/} or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using\-:
+Furthermore, if you run the program from a different folder or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using\-:
 
 
 \begin{DoxyCode}
-$ ./test\_filename -d configuration\_directory
+$ ./simulate\_dos -d configuration\_directory
 \end{DoxyCode}
 
 
@@ -127,7 +136,7 @@ or\-:
 
 
 \begin{DoxyCode}
-$ ./test\_filename --directory configuration\_directory
+$ ./simulate\_dos --directory configuration\_directory
 \end{DoxyCode}
 
 \end{DoxyWarning}

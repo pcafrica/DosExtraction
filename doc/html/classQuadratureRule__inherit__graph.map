@@ -1,0 +1,4 @@
+<map id="QuadratureRule" name="QuadratureRule">
+<area shape="rect" id="node2" href="$classGaussHermiteRule.html" title="Class derived from QuadratureRule providing the Gauss&#45;Hermite quadrature rule. " alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$classGaussLaguerreRule.html" title="Class derived from QuadratureRule providing the Gauss&#45;Laguerre quadrature rule. " alt="" coords="163,80,300,107"/>
+</map>

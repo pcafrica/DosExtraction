@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classPdeSolver1D.html" title="Abstract class providing methods to assemble matrices to solve one&#45;dimensional PDEs. " alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$classBim1D.html" title="Class derived from PdeSolver1D, providing a finite volume Box Integration Method (BIM) solver..." alt="" coords="153,5,215,32"/>
+</map>

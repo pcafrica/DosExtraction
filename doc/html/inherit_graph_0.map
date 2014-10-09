@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classCharge.html" title="Abstract class providing methods to calculate total electric charge (the rhs in the Poisson equation)..." alt="" coords="5,31,69,57"/>
+<area shape="rect" id="node2" href="$classExponentialCharge.html" title="Class derived from Charge, under the hypothesis that Density of States is a single exponential..." alt="" coords="118,5,250,32"/>
+<area shape="rect" id="node3" href="$classGaussianCharge.html" title="Class derived from Charge, under the hypothesis that Density of States is a combination of gaussians..." alt="" coords="125,56,243,83"/>
+</map>

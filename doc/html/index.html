@@ -132,50 +132,56 @@ Dependancies</h1>
 <p>Parallel computing capabilities are provided through the <a href="http://openmp.org">OpenMP</a> library, shipped together with <a class="el" href="index.html#GCC">GCC</a>.</p>
 <h1><a class="anchor" id="install_sec"></a>
 Compile</h1>
-<p>In order to generate a test executable, first open the <em>CMakeLists.txt</em> file (in the top-level folder) and, if necessary, edit it to your needs.</p>
+<p>In order to generate the executable, first open the <em>CMakeLists.txt</em> file (in the top-level folder) and, if necessary, edit it to your needs.</p>
 <p>Then create a build directory and move into it:</p>
 <div class="fragment"><div class="line">$ mkdir build</div>
 <div class="line">$ cd build</div>
 </div><!-- fragment --><p>Now you're ready to configure your system:</p>
 <div class="fragment"><div class="line">$ cmake ..</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>or, if you want the compiler to produce also debug symbols:</dd>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>or, should you want the compiler to produce also debug symbols:</dd>
 <dd>
 <div class="fragment"><div class="line">$ cmake -DCMAKE_BUILD_TYPE=Debug ..</div>
 </div><!-- fragment --></dd></dl>
-<p>Finally:</p>
+<p>and finally:</p>
 <div class="fragment"><div class="line">$ make</div>
-</div><!-- fragment --><p>will build the <em>test_filename</em> (as specified in the <b>TARGET_NAME</b> variable in <em>CMakeLists.txt</em>) executable.</p>
+</div><!-- fragment --><p>will build the <em>simulate_dos</em> executable and the <em>dosextraction</em> shared library under the <em>bin/</em> and <em>lib/</em> directories (or the ones specified in <em>CMakeLists.txt</em>) respectively.</p>
+<p>If you wish to install:</p>
+<ul>
+<li>the executable, into <em>/usr/bin/</em>; </li>
+<li>the shared library, into <em>/usr/lib/</em>; </li>
+<li>the header files, into <em>/usr/local/include/dosextraction/</em>;</li>
+</ul>
+<p>just type:</p>
 <div class="fragment"><div class="line"><span class="preprocessor"># make install</span></div>
-</div><!-- fragment --><p>will also install it on your system, into <em>/usr/bin/</em>.</p>
-<p>Repeat these steps for each test source file you want to compile.</p>
-<p>If <a href="http://www.doxygen.org">Doxygen</a> (version 3.8.6 or above) and <a href="http://www.graphviz.org">GraphViz</a> are found, the following command will generate the present documentation under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>):</p>
+</div><!-- fragment --><p>while:</p>
+<div class="fragment"><div class="line"><span class="preprocessor"># make uninstall</span></div>
+</div><!-- fragment --><p>will remove them. <br/>
+ If <a href="http://www.doxygen.org">Doxygen</a> (version 3.8.6 or above) and <a href="http://www.graphviz.org">GraphViz</a> are found, the following command will generate the present documentation under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>):</p>
 <div class="fragment"><div class="line">$ make doc</div>
 </div><!-- fragment --><h1><a class="anchor" id="configure"></a>
 Set up the configurations</h1>
 <dl class="section note"><dt>Note</dt><dd>The default configuration directory is <em>config/</em>.</dd></dl>
-<p>Before you can run an executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
+<p>Before you can run the executable, you have to set up the configuration file (default: <em>config.pot</em>). Within it you can find a list of parameters, each of which is commented out to explain what modifying it will entail. <br/>
 Particularly, the variables <em>input_params</em> and <em>input_experim</em> can be set, i.e. the filenames where to find input fitting parameters and experimental data respectively. It's recommended (but not compulsory) to put these files in the same directory as the configuration file (otherwise you can specify a relative or absolute path to them).</p>
 <dl class="section warning"><dt>Warning</dt><dd>The program never checks that the input values are numeric but will always cast them to floating point numbers, then please pay attention while setting up the variable <em>skipHeaders</em>.</dd></dl>
 <p>You can create multiple configuration files, each with different parameter values: the one you aim to use can be specified in the command-line before running.</p>
 <h1><a class="anchor" id="run"></a>
 Run!</h1>
-<p>Executables are placed under the <em>bin/</em> directory (or the one specified in <em>CMakeLists.txt</em>). <br/>
-<br/>
-To run by using the default configuration filename (<em>config.pot</em>) simply move into the <em>bin/</em> directory and execute:</p>
-<div class="fragment"><div class="line">$ ./test_filename</div>
+<p>To run by using the default configuration filename (<em>config.pot</em>) simply move into the executable directory and type:</p>
+<div class="fragment"><div class="line">$ ./simulate_dos</div>
 </div><!-- fragment --><p>To specify a different configuration file previously saved in the configuration directory:</p>
-<div class="fragment"><div class="line">$ ./test_filename -f configuration_filename</div>
+<div class="fragment"><div class="line">$ ./simulate_dos -f configuration_filename</div>
 </div><!-- fragment --><p>or:</p>
-<div class="fragment"><div class="line">$ ./test_filename --file configuration_filename</div>
+<div class="fragment"><div class="line">$ ./simulate_dos --file configuration_filename</div>
 </div><!-- fragment --><p>The variable <em>configuration_filename</em> should <b>not</b> contain the path.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Furthermore, if you run the program from a different folder than <em>bin/</em> or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using:</dd>
+<dl class="section warning"><dt>Warning</dt><dd>Furthermore, if you run the program from a different folder or if you chose a different configuration directory, you have also to manually specify the path to the configuration directory (either absolute or relative to the current directory) by using:</dd>
 <dd>
-<div class="fragment"><div class="line">$ ./test_filename -d configuration_directory</div>
+<div class="fragment"><div class="line">$ ./simulate_dos -d configuration_directory</div>
 </div><!-- fragment --></dd>
 <dd>
 or:</dd>
 <dd>
-<div class="fragment"><div class="line">$ ./test_filename --directory configuration_directory</div>
+<div class="fragment"><div class="line">$ ./simulate_dos --directory configuration_directory</div>
 </div><!-- fragment --></dd></dl>
 <p>Once complete, the results of the simulation(s) will be saved in the output directory (relative to the current folder) specified in the configuration file (default: <em>output/</em>). <br/>
 <a class="el" href="index.html#Gnuplot">Gnuplot</a> scripts are saved too for later re-use under the <em>gnuplot/</em> subdirectory; you can run them through:</p>
