@@ -1,5 +1,6 @@
-set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
-
+################################################################
+## Directories definition.
+################################################################
 set(BINDIR "${CMAKE_CURRENT_SOURCE_DIR}/bin" )    # Directory where to store the executable.
 set(DOCDIR "${CMAKE_CURRENT_SOURCE_DIR}/doc" )    # Directory where to store the API documentation.
 set(LIBDIR "${CMAKE_CURRENT_SOURCE_DIR}/lib" )    # Directory where to store the project shared library.
@@ -12,9 +13,12 @@ project(DOS_Extraction CXX)
 ################################################################
 ## Set up some variables.
 ################################################################
+set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
+
 set(LIB_NAME "dosextraction")    # Name of the shared library.
 
 set(LIB_INSTALLDIR "/usr/lib/")    # Installation directory for the shared library.
+set(INC_INSTALLDIR "/usr/local/include/${LIB_NAME}")    # Installation directory for the header files.
 set(BIN_INSTALLDIR "/usr/bin/")    # Installation directory for the executable.
 
 set(SRCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/src" )    # Directory where to find the library sources.
@@ -83,7 +87,7 @@ endif()
 ################################################################
 add_library(${LIB_NAME} SHARED ${SRCS})
 
-set_target_properties(${LIB_NAME} PROPERTIES OUTPUT_NAME "${LIB_NAME}")    # Executable filename.
+set_target_properties(${LIB_NAME} PROPERTIES OUTPUT_NAME "${LIB_NAME}")    # Shared library filename.
 target_link_libraries(${LIB_NAME} ${Boost_LIBRARIES})
 
 ################################################################
@@ -91,11 +95,20 @@ target_link_libraries(${LIB_NAME} ${Boost_LIBRARIES})
 ################################################################
 add_executable(${TARGET_NAME} ${TARGET_SRC})
 
-set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}" INSTALL_RPATH "${LIB_INSTALLDIR}")    # Executable filename.
+set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}"    # Executable filename.
+                                     INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
 target_link_libraries(${TARGET_NAME} ${LIB_NAME})
 
 ################################################################
 ## Installation.
 ################################################################
 install(TARGETS ${LIB_NAME} DESTINATION "${LIB_INSTALLDIR}")
+install(FILES ${HDRS} DESTINATION "${INC_INSTALLDIR}")
 install(TARGETS ${TARGET_NAME} DESTINATION "${BIN_INSTALLDIR}")
+
+################################################################
+## Uninstallation.
+################################################################
+add_custom_target(uninstall
+    "${CMAKE_COMMAND}" -P "${CMAKE_MODULE_PATH}/Uninstall.cmake"
+)
