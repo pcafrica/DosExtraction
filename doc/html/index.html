@@ -147,8 +147,8 @@ Compile</h1>
 </div><!-- fragment --><p>will build the <em>simulate_dos</em> executable and the <em>dosextraction</em> shared library under the <em>bin/</em> and <em>lib/</em> directories (or the ones specified in <em>CMakeLists.txt</em>) respectively.</p>
 <p>If you wish to install:</p>
 <ul>
-<li>the executable, into <em>/usr/bin/</em>; </li>
-<li>the shared library, into <em>/usr/lib/</em>; </li>
+<li>the executable, into <em>/usr/local/bin/</em>; </li>
+<li>the shared library, into <em>/usr/local/lib/</em>; </li>
 <li>the header files, into <em>/usr/local/include/dosextraction/</em>;</li>
 </ul>
 <p>just type:</p>
@@ -169,7 +169,8 @@ Particularly, the variables <em>input_params</em> and <em>input_experim</em> can
 Run!</h1>
 <p>To run by using the default configuration filename (<em>config.pot</em>) simply move into the directory where the executable is located in and type:</p>
 <div class="fragment"><div class="line">$ ./simulate_dos</div>
-</div><!-- fragment --><p>To specify a different configuration file previously saved in the configuration directory:</p>
+</div><!-- fragment --><p>By default, the configuration file is searched in <em></em>../config. <br/>
+ To specify a different configuration file previously saved in the configuration directory:</p>
 <div class="fragment"><div class="line">$ ./simulate_dos -f configuration_filename</div>
 </div><!-- fragment --><p>or:</p>
 <div class="fragment"><div class="line">$ ./simulate_dos --file configuration_filename</div>

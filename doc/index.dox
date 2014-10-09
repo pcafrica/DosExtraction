@@ -67,8 +67,8 @@
  * 
  * If you wish to install:
  * 
- * @arg the executable, into @a /usr/bin/;
- * @arg the shared library, into @a /usr/lib/;
+ * @arg the executable, into @a /usr/local/bin/;
+ * @arg the shared library, into @a /usr/local/lib/;
  * @arg the header files, into @a /usr/local/include/dosextraction/;
  * 
  * just type:
@@ -119,6 +119,8 @@
  * @code
  *     $ ./simulate_dos
  * @endcode
+ * 
+ * By default, the configuration file is searched in @a ../config. @n
  * 
  * To specify a different configuration file previously saved in the configuration directory:
  * 

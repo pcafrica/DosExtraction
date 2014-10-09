@@ -17,9 +17,9 @@ set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
 
 set(LIB_NAME "dosextraction")    # Name of the shared library.
 
-set(LIB_INSTALLDIR "/usr/lib/")    # Installation directory for the shared library.
-set(INC_INSTALLDIR "/usr/local/include/${LIB_NAME}")    # Installation directory for the header files.
-set(BIN_INSTALLDIR "/usr/bin/")    # Installation directory for the executable.
+set(LIB_INSTALLDIR "${CMAKE_INSTALL_PREFIX}/lib/")    # Installation directory for the shared library.
+set(INC_INSTALLDIR "${CMAKE_INSTALL_PREFIX}/include/${LIB_NAME}")    # Installation directory for the header files.
+set(BIN_INSTALLDIR "${CMAKE_INSTALL_PREFIX}/bin/")    # Installation directory for the executable.
 
 set(SRCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/src" )    # Directory where to find the library sources.
 set(TESTDIR "${CMAKE_CURRENT_SOURCE_DIR}/test")    # Directory where to find the test sources.

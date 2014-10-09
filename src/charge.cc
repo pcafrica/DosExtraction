@@ -163,3 +163,4 @@ VectorXr ExponentialCharge::dcharge(const VectorXr & phi)
     
   return dcharge;
 }
+
