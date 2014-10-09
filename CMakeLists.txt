@@ -1,7 +1,8 @@
 set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
 
-set(BINDIR  "${CMAKE_CURRENT_SOURCE_DIR}/bin" )    # Directory where to store the executables.
-set(DOCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/doc" )    # Directory where to store the API documentation.
+set(BINDIR "${CMAKE_CURRENT_SOURCE_DIR}/bin" )    # Directory where to store the executable.
+set(DOCDIR "${CMAKE_CURRENT_SOURCE_DIR}/doc" )    # Directory where to store the API documentation.
+set(LIBDIR "${CMAKE_CURRENT_SOURCE_DIR}/lib" )    # Directory where to store the project shared library.
 
 ##--------------- Do not edit below this line ----------------##
 
@@ -11,13 +12,21 @@ project(DOS_Extraction CXX)
 ################################################################
 ## Set up some variables.
 ################################################################
+set(LIB_NAME "dosextraction")    # Name of the shared library.
+
+set(LIB_INSTALLDIR "/usr/lib/")    # Installation directory for the shared library.
+set(BIN_INSTALLDIR "/usr/bin/")    # Installation directory for the executable.
+
 set(SRCDIR  "${CMAKE_CURRENT_SOURCE_DIR}/src" )    # Directory where to find the library sources.
 set(TESTDIR "${CMAKE_CURRENT_SOURCE_DIR}/test")    # Directory where to find the test sources.
 
-file(GLOB SRCS ${SRCDIR}/*.cc ${TESTDIR}/${TARGET_NAME}.cc)
-file(GLOB HDRS ${SRCDIR}/*.h  ${TESTDIR}/${TARGET_NAME}.h )
+file(GLOB TARGET_SRC ${TESTDIR}/${TARGET_NAME}.cc)
+file(GLOB SRCS ${SRCDIR}/*.cc)
+file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${TARGET_NAME}.h)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${LIBDIR}")
 set(EXECUTABLE_OUTPUT_PATH "${BINDIR}")
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -Wall --pedantic")
@@ -64,16 +73,29 @@ find_package(AStyle)
 
 if(ASTYLE_FOUND)
     add_custom_target(astyle ALL
-        COMMAND ${ASTYLE_EXECUTABLE} -q -A7 -s2 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS}
+        COMMAND ${ASTYLE_EXECUTABLE} -q -A7 -s2 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${TARGET_SRC}
         COMMENT "Formatting source codes..."
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
 
 ################################################################
-## Executables definition.
+## Shared library.
 ################################################################
-add_executable(${TARGET_NAME} ${SRCS})
+add_library(${LIB_NAME} SHARED ${SRCS})
 
-set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}")    # Executable filename.
+set_target_properties(${LIB_NAME} PROPERTIES OUTPUT_NAME "${LIB_NAME}")    # Executable filename.
+target_link_libraries(${LIB_NAME} ${Boost_LIBRARIES})
 
-target_link_libraries(${TARGET_NAME} ${Boost_LIBRARIES})
+################################################################
+## Executable.
+################################################################
+add_executable(${TARGET_NAME} ${TARGET_SRC})
+
+set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}" INSTALL_RPATH "${LIB_INSTALLDIR}")    # Executable filename.
+target_link_libraries(${TARGET_NAME} ${LIB_NAME})
+
+################################################################
+## Installation.
+################################################################
+install(TARGETS ${LIB_NAME} DESTINATION "${LIB_INSTALLDIR}")
+install(TARGETS ${TARGET_NAME} DESTINATION "${BIN_INSTALLDIR}")
