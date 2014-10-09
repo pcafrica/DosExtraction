@@ -49,7 +49,7 @@ class ChargeFactory
 /**
  * @class GaussianChargeFactory
  *
- * @brief Concrete factory to handle a multiple gaussians DoS constitutive relation.
+ * @brief Concrete factory to handle a multiple gaussians DOS constitutive relation.
  *
  */
 class GaussianChargeFactory : public ChargeFactory
@@ -76,7 +76,7 @@ class GaussianChargeFactory : public ChargeFactory
 /**
  * @class ExponentialChargeFactory
  *
- * @brief Concrete factory to handle a single exponential DoS constitutive relation.
+ * @brief Concrete factory to handle a single exponential DOS constitutive relation.
  *
  */
 class ExponentialChargeFactory : public ChargeFactory

@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "DOS extraction", "index.html", [
+  [ "DOS Extraction", "index.html", [
     [ "Index", "index.html", [
       [ "Introduction", "index.html#intro", null ],
       [ "Dependancies", "index.html#dependancies", null ],
@@ -41,7 +41,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespacemembers_func.html"
+"namespacemembers.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

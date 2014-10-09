@@ -1,11 +1,11 @@
 \hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
 This program allows to extract the Density of States (Do\-S), assessed by means of capacitance-\/voltage measurements, in an organic semiconductor device. Simulated values are fitted to experimental data. \par
-Source and header files are written in C++11 language. \par
+All source and header files are written in C++11 language. \par
 The software is intended to be used on a Unix-\/like operating system.\hypertarget{index_dependancies}{}\section{Dependancies}\label{index_dependancies}
 The program requires the following software to be installed on your system\-:
 
 \begin{DoxyItemize}
-\item \href{http://www.cmake.org}{\tt C\-Make} (version 2.\-8 or above), a cross-\/platform configuration tool; \item \href{http://www.gnu.org/software/make}{\tt Make} (version 3.\-8.\-1 or above), a utility to build executables; \item \label{index_GCC}%
+\item \href{http://www.cmake.org}{\tt C\-Make} (version 2.\-8 or above), a cross-\/platform configuration tool; \item \href{http://www.gnu.org/software/make}{\tt Make} (version 3.\-8.\-1 or above), a tool used to build executables; \item \label{index_GCC}%
 \hypertarget{index_GCC}{}%
 \href{http://www.gnu.org/software/gcc}{\tt G\-C\-C} (version 4.\-8 or above), the G\-N\-U Compiler Collection; \par
  \par
@@ -13,9 +13,7 @@ The program requires the following software to be installed on your system\-:
 \hypertarget{index_Eigen}{}%
 \href{http://eigen.tuxfamily.org}{\tt Eigen} (version 3.\-2 or above), to handle with matrices, vectors and linear algebra; \item \label{index_Gnuplot}%
 \hypertarget{index_Gnuplot}{}%
-\href{http://www.gnuplot.info}{\tt Gnuplot} (version 4.\-6.\-4 or above), a graphical utility to generate plots (the package {\bfseries gnuplot-\/x11}, a terminal for X servers, is also required for the interactive interface); \item \href{http://www.boost.org}{\tt Boost} (version 1.\-50 or above), a set of libraries used by \hyperlink{index_gnuplot-iostream}{gnuplot-\/iostream}; \item \label{index_Doxygen}%
-\hypertarget{index_Doxygen}{}%
-\href{http://www.doxygen.org}{\tt Doxygen} (version 1.\-8.\-6 or above), a documentation generator (not compulsory).\end{DoxyItemize}
+\href{http://www.gnuplot.info}{\tt Gnuplot} (version 4.\-6.\-4 or above), a graphical utility to generate plots (the package {\bfseries gnuplot-\/x11}, a terminal for X servers, is also required for the interactive interface); \item \href{http://www.boost.org}{\tt Boost} (version 1.\-50 or above), a set of libraries used by \hyperlink{index_gnuplot-iostream}{gnuplot-\/iostream}.\end{DoxyItemize}
 It also uses the following libraries, shipped in the {\itshape include/} folder\-:
 
 \begin{DoxyItemize}
@@ -51,7 +49,7 @@ $ cmake -DCMAKE\_BUILD\_TYPE=Debug ..
 \end{DoxyCode}
 
 \end{DoxyNote}
-Finally, start building the project\-:
+Finally\-:
 
 
 \begin{DoxyCode}
@@ -59,11 +57,19 @@ $ make
 \end{DoxyCode}
 
 
-This will generate the {\itshape test\-\_\-filename} (as specified in the {\bfseries T\-A\-R\-G\-E\-T\-\_\-\-N\-A\-M\-E} variable in {\itshape C\-Make\-Lists.\-txt}) executable.
+will build the {\itshape test\-\_\-filename} (as specified in the {\bfseries T\-A\-R\-G\-E\-T\-\_\-\-N\-A\-M\-E} variable in {\itshape C\-Make\-Lists.\-txt}) executable.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{# make install}
+\end{DoxyCode}
+
+
+will also install it on your system, into {\itshape /usr/bin/}.
 
 Repeat these steps for each test source file you want to compile.
 
-The following command will generate the present documentation, if \hyperlink{index_Doxygen}{Doxygen} is found to be installed, under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt}), \-:
+If \href{http://www.doxygen.org}{\tt Doxygen} (version 3.\-8.\-6 or above) and \href{http://www.graphviz.org}{\tt Graph\-Viz} are found, the following command will generate the present documentation under the {\itshape doc/} folder (or the one specified in {\itshape C\-Make\-Lists.\-txt})\-:
 
 
 \begin{DoxyCode}

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DOS extraction: Index</title>
+<title>DOS Extraction: Index</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -35,9 +35,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">DOS extraction
+   <div id="projectname">DOS Extraction
    </div>
-   <div id="projectbrief">Project for the PACS course</div>
+   <div id="projectbrief">Extract the Density of States (DOS), assessed by means of capacitance-voltage measurements, in an organic semiconductor device.</div>
   </td>
  </tr>
  </tbody>
@@ -109,21 +109,20 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="textblock"><h1><a class="anchor" id="intro"></a>
 Introduction</h1>
 <p>This program allows to extract the Density of States (DoS), assessed by means of capacitance-voltage measurements, in an organic semiconductor device. Simulated values are fitted to experimental data. <br/>
-Source and header files are written in C++11 language. <br/>
+All source and header files are written in C++11 language. <br/>
 The software is intended to be used on a Unix-like operating system.</p>
 <h1><a class="anchor" id="dependancies"></a>
 Dependancies</h1>
 <p>The program requires the following software to be installed on your system:</p>
 <ul>
 <li><a href="http://www.cmake.org">CMake</a> (version 2.8 or above), a cross-platform configuration tool; </li>
-<li><a href="http://www.gnu.org/software/make">Make</a> (version 3.8.1 or above), a utility to build executables; </li>
+<li><a href="http://www.gnu.org/software/make">Make</a> (version 3.8.1 or above), a tool used to build executables; </li>
 <li><a class="anchor" id="GCC"></a><a href="http://www.gnu.org/software/gcc">GCC</a> (version 4.8 or above), the GNU Compiler Collection; <br/>
  <br/>
 </li>
 <li><a class="anchor" id="Eigen"></a><a href="http://eigen.tuxfamily.org">Eigen</a> (version 3.2 or above), to handle with matrices, vectors and linear algebra; </li>
 <li><a class="anchor" id="Gnuplot"></a><a href="http://www.gnuplot.info">Gnuplot</a> (version 4.6.4 or above), a graphical utility to generate plots (the package <b>gnuplot-x11</b>, a terminal for X servers, is also required for the interactive interface); </li>
-<li><a href="http://www.boost.org">Boost</a> (version 1.50 or above), a set of libraries used by <a class="el" href="index.html#gnuplot-iostream">gnuplot-iostream</a>; </li>
-<li><a class="anchor" id="Doxygen"></a><a href="http://www.doxygen.org">Doxygen</a> (version 1.8.6 or above), a documentation generator (not compulsory).</li>
+<li><a href="http://www.boost.org">Boost</a> (version 1.50 or above), a set of libraries used by <a class="el" href="index.html#gnuplot-iostream">gnuplot-iostream</a>.</li>
 </ul>
 <p>It also uses the following libraries, shipped in the <em>include/</em> folder:</p>
 <ul>
@@ -143,11 +142,13 @@ Compile</h1>
 <dd>
 <div class="fragment"><div class="line">$ cmake -DCMAKE_BUILD_TYPE=Debug ..</div>
 </div><!-- fragment --></dd></dl>
-<p>Finally, start building the project:</p>
+<p>Finally:</p>
 <div class="fragment"><div class="line">$ make</div>
-</div><!-- fragment --><p>This will generate the <em>test_filename</em> (as specified in the <b>TARGET_NAME</b> variable in <em>CMakeLists.txt</em>) executable.</p>
+</div><!-- fragment --><p>will build the <em>test_filename</em> (as specified in the <b>TARGET_NAME</b> variable in <em>CMakeLists.txt</em>) executable.</p>
+<div class="fragment"><div class="line"><span class="preprocessor"># make install</span></div>
+</div><!-- fragment --><p>will also install it on your system, into <em>/usr/bin/</em>.</p>
 <p>Repeat these steps for each test source file you want to compile.</p>
-<p>The following command will generate the present documentation, if <a class="el" href="index.html#Doxygen">Doxygen</a> is found to be installed, under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>), :</p>
+<p>If <a href="http://www.doxygen.org">Doxygen</a> (version 3.8.6 or above) and <a href="http://www.graphviz.org">GraphViz</a> are found, the following command will generate the present documentation under the <em>doc/</em> folder (or the one specified in <em>CMakeLists.txt</em>):</p>
 <div class="fragment"><div class="line">$ make doc</div>
 </div><!-- fragment --><h1><a class="anchor" id="configure"></a>
 Set up the configurations</h1>

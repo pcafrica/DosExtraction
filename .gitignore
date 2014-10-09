@@ -2,6 +2,7 @@
 .kateproject.d/
 bin/
 build/
+lib/
 
 # Files
 .directory

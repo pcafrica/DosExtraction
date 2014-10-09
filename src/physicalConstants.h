@@ -15,8 +15,6 @@
 #ifndef PHYSICALCONSTANTS_H
 #define PHYSICALCONSTANTS_H
 
-#include "typedefs.h"
-
 /**
  * @namespace constants
  *
