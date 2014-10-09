@@ -113,8 +113,8 @@
  * 
  * @section run Run!
  * 
- * To run by using the default configuration filename (@a config.pot) simply move into the executable directory
- * and type:
+ * To run by using the default configuration filename (@a config.pot) simply move into the directory where the
+ * executable is located in and type:
  * 
  * @code
  *     $ ./simulate_dos
