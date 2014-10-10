@@ -152,8 +152,6 @@ Real GaussLaguerreRule::log_gamma(const Real & x)
 {
   assert( x > 0.0 );
   
-  Real temp = 0.0, aux = 0.0;
-  
   static const Real coeff[14] = { 57.1562356658629235, -59.5979603554754912,
                                   14.1360979747417471, -0.491913816097620199,
                                   0.339946499848118887e-4, 0.465236289270485756e-4,
@@ -163,10 +161,11 @@ Real GaussLaguerreRule::log_gamma(const Real & x)
                                   -0.261908384015814087e-4, 0.368991826595316234e-5
                                 };
                                 
-  temp = x + 5.24218750000000000;    // x + 671/128
+  Real temp = x + 5.24218750000000000;    // x + 671/128
+  
   temp = (x + 0.5) * std::log(temp) - temp;
   
-  aux = 0.999999999999997092;
+  Real aux = 0.999999999999997092;
   
   for ( Index j = 0; j < 14; ++j )
     {

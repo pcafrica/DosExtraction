@@ -163,8 +163,6 @@ class ExponentialCharge : public Charge
      * @returns the derivative: @f$ \frac{\mathrm{d}n(\varphi)}{\mathrm{d}\varphi} \left[ m^{-3} \cdot V^{-1} \right] @f$.
      */
     Real dn_approx(const Real &, const Real &, const Real &) const;
-    
-    Real N0_;    /**< @brief Parameter of the exponential density. */
 };
 
 #endif /* CHARGE_H */

@@ -21,10 +21,10 @@ using namespace constants;
 using namespace utility;
 
 DosModel::DosModel()
-  : initialized_(false) {}
+  : initialized_(false), V_shift_(0.0) {}
 
 DosModel::DosModel(const ParamList & params)
-  : initialized_(true), params_(params) {}
+  : initialized_(true), params_(params), V_shift_(0.0) {}
 
 void DosModel::simulate(const GetPot & config, const std::string & input_experim, const std::string & output_directory,
                         const std::string & output_plot_subdir, const std::string & output_filename)

@@ -157,19 +157,19 @@
 \indexentry{Dos\discretionary {-}{}{}Extraction/src/dos\discretionary {-}{}{}Model.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/dos\discretionary {-}{}{}Model.\discretionary {-}{}{}h}|hyperpage}{64}
 \indexentry{Dos\discretionary {-}{}{}Extraction/src/factory.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/factory.\discretionary {-}{}{}cc}|hyperpage}{65}
 \indexentry{Dos\discretionary {-}{}{}Extraction/src/factory.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/factory.\discretionary {-}{}{}h}|hyperpage}{66}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}cc}|hyperpage}{67}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}cc}|hyperpage}{68}
 \indexentry{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}h}|hyperpage}{68}
 \indexentry{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}cc}|hyperpage}{70}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h}|hyperpage}{70}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h}|hyperpage}{71}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc}|hyperpage}{73}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h}|hyperpage}{73}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}cc}|hyperpage}{75}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}h}|hyperpage}{75}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}cc}|hyperpage}{77}
-\indexentry{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}h}|hyperpage}{77}
-\indexentry{typedefs.\discretionary {-}{}{}h@{typedefs.\discretionary {-}{}{}h}!Vector\discretionary {-}{}{}X@{Vector\discretionary {-}{}{}X}|hyperpage}{80}
-\indexentry{Vector\discretionary {-}{}{}X@{Vector\discretionary {-}{}{}X}!typedefs.h@{typedefs.\discretionary {-}{}{}h}|hyperpage}{80}
-\indexentry{typedefs.\discretionary {-}{}{}h@{typedefs.\discretionary {-}{}{}h}!Vector\discretionary {-}{}{}Xpair@{Vector\discretionary {-}{}{}Xpair}|hyperpage}{80}
-\indexentry{Vector\discretionary {-}{}{}Xpair@{Vector\discretionary {-}{}{}Xpair}!typedefs.h@{typedefs.\discretionary {-}{}{}h}|hyperpage}{80}
-\indexentry{Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc}|hyperpage}{80}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h}|hyperpage}{71}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h}|hyperpage}{72}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc}|hyperpage}{74}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h}|hyperpage}{74}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}cc}|hyperpage}{76}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}h}|hyperpage}{77}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}cc}|hyperpage}{78}
+\indexentry{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}h@{Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}h}|hyperpage}{79}
+\indexentry{typedefs.\discretionary {-}{}{}h@{typedefs.\discretionary {-}{}{}h}!Vector\discretionary {-}{}{}X@{Vector\discretionary {-}{}{}X}|hyperpage}{81}
+\indexentry{Vector\discretionary {-}{}{}X@{Vector\discretionary {-}{}{}X}!typedefs.h@{typedefs.\discretionary {-}{}{}h}|hyperpage}{81}
+\indexentry{typedefs.\discretionary {-}{}{}h@{typedefs.\discretionary {-}{}{}h}!Vector\discretionary {-}{}{}Xpair@{Vector\discretionary {-}{}{}Xpair}|hyperpage}{81}
+\indexentry{Vector\discretionary {-}{}{}Xpair@{Vector\discretionary {-}{}{}Xpair}!typedefs.h@{typedefs.\discretionary {-}{}{}h}|hyperpage}{81}
+\indexentry{Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc@{Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc}|hyperpage}{81}

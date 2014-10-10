@@ -63,7 +63,6 @@ var NAVTREEINDEX0 =
 "classExponentialCharge.html#a91f27044b2f7ced7c2330153bb9da652":[2,0,8,5],
 "classExponentialCharge.html#a97ff25e546dee1ee5fec866b290ec999":[2,0,8,3],
 "classExponentialCharge.html#aa231654787ef3e6f60f0df672de44f0d":[2,0,8,0],
-"classExponentialCharge.html#aa51672586248c54289ad6ac1a5d3c274":[2,0,8,7],
 "classExponentialCharge.html#ab5ce245792f1b0d7c2038ebc75bbc758":[2,0,8,6],
 "classExponentialCharge.html#ad643c7a5be928315affe78e164387bd0":[2,0,8,1],
 "classExponentialChargeFactory.html":[2,0,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "index.html#intro":[0,0],
 "index.html#run":[0,4],
 "namespaceconstants.html":[2,0,0],
-"namespaceconstants.html":[1,0,0]
+"namespaceconstants.html":[1,0,0],
+"namespacemembers.html":[1,1,0]
 };

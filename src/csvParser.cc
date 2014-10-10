@@ -99,8 +99,6 @@ RowVectorXr CsvParser::importRow(const Index & index)
   
   reset();
   
-  std::locale locale;
-  
   RowVectorXr data = RowVectorXr::Zero( nCols_ );
   
   for ( Index i = 0; i < index; ++i )
@@ -162,8 +160,6 @@ VectorXr CsvParser::importCol(const Index & index)
   assert( index >= 1 && index <= nCols_ );
   
   reset();
-  
-  std::locale locale;
   
   VectorXr data = VectorXr::Zero( nRows_ );
   

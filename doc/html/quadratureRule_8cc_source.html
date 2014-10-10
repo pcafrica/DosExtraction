@@ -254,162 +254,161 @@ $(document).ready(function(){initNavTree('quadratureRule_8cc_source.html','');})
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  assert( x &gt; 0.0 );</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> temp = 0.0, aux = 0.0;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> coeff[14] = { 57.1562356658629235, -59.5979603554754912,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                  14.1360979747417471, -0.491913816097620199,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                  0.339946499848118887e-4, 0.465236289270485756e-4,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                  -0.983744753048795646e-4, 0.158088703224912494e-3,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                  -0.210264441724104883e-3, 0.217439618115212643e-3,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                  -0.164318106536763890e-3, 0.844182239838527433e-4,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                  -0.261908384015814087e-4, 0.368991826595316234e-5</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                };</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  temp = x + 5.24218750000000000;    <span class="comment">// x + 671/128</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  temp = (x + 0.5) * std::log(temp) - temp;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  aux = 0.999999999999997092;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j = 0; j &lt; 14; ++j )</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      aux += coeff[j] / (x + j);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keywordflow">return</span> temp + std::log(2.5066282746310005 * aux / x);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">  179</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a>()</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">apply_iterative_algorithm</a>();    <span class="comment">// Using default parameters for maximum iterations number and tolerance.</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#a6265ae995213bef29d216da947f5f692">  184</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a>(<span class="keyword">const</span> GetPot &amp; config)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">apply_iterative_algorithm</a>( config(<span class="stringliteral">&quot;QuadratureRule/maxIterationsNo&quot;</span>, 1000), config(<span class="stringliteral">&quot;QuadratureRule/tolerance&quot;</span>, 1.0e-14) );</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">  189</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">GaussLaguerreRule::apply_iterative_algorithm</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp; maxIterationsNo, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; tolerance)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  assert( maxIterationsNo &gt; 0   );</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  assert( tolerance       &gt; 0.0 );</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> z = 0.0, zOld = 0.0;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// Loop over the desired roots.</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>; ++i )</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="comment">// Initial guesses for the largest roots.</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">if</span> ( i == 0 )</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;          z = 3.0 / ( 1.0 + 2.4 * <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( i == 1 )</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;          z += 15.0 / ( 1.0 + 2.5 * <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;          z += ( (1.0 + 2.55 * (i - 1)) / (1.9 * (i - 1)) ) *  (z - <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>(i - 2));</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j = 0;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="keywordflow">for</span> ( ; j &lt; maxIterationsNo; ++j )    <span class="comment">// Refinement by Newton&#39;s method.</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          p1 = 1.0;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;          p2 = 0.0;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;          </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;          <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> k = 0; k &lt; <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>; ++k )    <span class="comment">// Loop up the recurrence relation to evaluate the Hermite polynomial at &quot;z&quot;.</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;              temp = p2;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;              p2 = p1;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;              p1 = ( (2.0 * k + 1.0 - z) * p2 - k * temp ) / ( k + 1.0 );</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;          <span class="comment">// &quot;p1&quot; is now the desidered Hermite polynomial. Computing its derivative &quot;dp&quot; is needed.</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;          dp = nNodes_ * (p1 - p2) / z;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;          <span class="comment">// Newton step</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;          zOld = z;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          z   -= p1 / dp;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;          </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;          <span class="keywordflow">if</span> ( std::abs(z - zOld) &lt;= tolerance )</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;              <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">if</span> ( j == maxIterationsNo )</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;          <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: GaussLaguerreRule::apply_iterative_algorithm() didn&#39;t reach convergence.&quot;</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>(i) = z;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a>(i) = - 1 / (dp * nNodes_ * p2);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">  255</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">GaussLaguerreRule::apply_using_eigendecomposition</a>()</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">if</span> ( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> == 1 )</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>  .fill(0.0);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a>.fill(1.0);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Jac = MatrixXr::Zero( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>, <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );    <span class="comment">// Jacobi matrix.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> k = VectorXr::LinSpaced( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>, 1, <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; Jac.rows() - 1; ++i )</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      Jac(i + 1,   i  ) = k(i);    <span class="comment">// Sub-diagonal.</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      Jac(  i  , i + 1) = k(i);    <span class="comment">// Super-diagonal.</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; Jac.rows(); ++i )</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      Jac(i, i) = 2 * k(i) - 1;    <span class="comment">// Main diagonal.</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  SelfAdjointEigenSolver&lt;MatrixXr&gt; eigSolver(Jac);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a> = eigSolver.eigenvalues();</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> EigVec = eigSolver.eigenvectors();</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> norm2 = (EigVec.transpose() * EigVec ).diagonal().cwiseSqrt();    <span class="comment">// Normalize weights.</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a> = ( 1 * EigVec.row(0).cwiseProduct(EigVec.row(0)).transpose() ).cwiseQuotient(norm2);    <span class="comment">// 1 = beta0;</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> coeff[14] = { 57.1562356658629235, -59.5979603554754912,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                  14.1360979747417471, -0.491913816097620199,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                  0.339946499848118887e-4, 0.465236289270485756e-4,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                  -0.983744753048795646e-4, 0.158088703224912494e-3,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                  -0.210264441724104883e-3, 0.217439618115212643e-3,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                  -0.164318106536763890e-3, 0.844182239838527433e-4,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                  -0.261908384015814087e-4, 0.368991826595316234e-5</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                };</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> temp = x + 5.24218750000000000;    <span class="comment">// x + 671/128</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  temp = (x + 0.5) * std::log(temp) - temp;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> aux = 0.999999999999997092;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j = 0; j &lt; 14; ++j )</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      aux += coeff[j] / (x + j);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">return</span> temp + std::log(2.5066282746310005 * aux / x);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">  178</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a>()</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">apply_iterative_algorithm</a>();    <span class="comment">// Using default parameters for maximum iterations number and tolerance.</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#a6265ae995213bef29d216da947f5f692">  183</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a>(<span class="keyword">const</span> GetPot &amp; config)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">apply_iterative_algorithm</a>( config(<span class="stringliteral">&quot;QuadratureRule/maxIterationsNo&quot;</span>, 1000), config(<span class="stringliteral">&quot;QuadratureRule/tolerance&quot;</span>, 1.0e-14) );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">  188</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">GaussLaguerreRule::apply_iterative_algorithm</a>(<span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> &amp; maxIterationsNo, <span class="keyword">const</span> <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> &amp; tolerance)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;{</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  assert( maxIterationsNo &gt; 0   );</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  assert( tolerance       &gt; 0.0 );</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <a class="code" href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a> z = 0.0, zOld = 0.0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  <span class="comment">// Loop over the desired roots.</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>; ++i )</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="comment">// Initial guesses for the largest roots.</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">if</span> ( i == 0 )</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          z = 3.0 / ( 1.0 + 2.4 * <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( i == 1 )</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;          z += 15.0 / ( 1.0 + 2.5 * <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;          z += ( (1.0 + 2.55 * (i - 1)) / (1.9 * (i - 1)) ) *  (z - <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>(i - 2));</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> j = 0;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">for</span> ( ; j &lt; maxIterationsNo; ++j )    <span class="comment">// Refinement by Newton&#39;s method.</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;          p1 = 1.0;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          p2 = 0.0;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;          </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;          <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> k = 0; k &lt; <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>; ++k )    <span class="comment">// Loop up the recurrence relation to evaluate the Hermite polynomial at &quot;z&quot;.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;              temp = p2;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;              p2 = p1;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;              p1 = ( (2.0 * k + 1.0 - z) * p2 - k * temp ) / ( k + 1.0 );</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;          <span class="comment">// &quot;p1&quot; is now the desidered Hermite polynomial. Computing its derivative &quot;dp&quot; is needed.</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;          dp = nNodes_ * (p1 - p2) / z;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;          </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          <span class="comment">// Newton step</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;          zOld = z;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;          z   -= p1 / dp;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;          <span class="keywordflow">if</span> ( std::abs(z - zOld) &lt;= tolerance )</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;              <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <span class="keywordflow">if</span> ( j == maxIterationsNo )</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;          <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ERROR: GaussLaguerreRule::apply_iterative_algorithm() didn&#39;t reach convergence.&quot;</span>);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>(i) = z;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a>(i) = - 1 / (dp * nNodes_ * p2);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">  254</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">GaussLaguerreRule::apply_using_eigendecomposition</a>()</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">if</span> ( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> == 1 )</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a>  .fill(0.0);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a>.fill(1.0);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> Jac = MatrixXr::Zero( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>, <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );    <span class="comment">// Jacobi matrix.</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> k = VectorXr::LinSpaced( <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a>, 1, <a class="code" href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">nNodes_</a> );</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; Jac.rows() - 1; ++i )</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;      Jac(i + 1,   i  ) = k(i);    <span class="comment">// Sub-diagonal.</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      Jac(  i  , i + 1) = k(i);    <span class="comment">// Super-diagonal.</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keywordflow">for</span> ( <a class="code" href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a> i = 0; i &lt; Jac.rows(); ++i )</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      Jac(i, i) = 2 * k(i) - 1;    <span class="comment">// Main diagonal.</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  SelfAdjointEigenSolver&lt;MatrixXr&gt; eigSolver(Jac);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <a class="code" href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">nodes_</a> = eigSolver.eigenvalues();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <a class="code" href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a> EigVec = eigSolver.eigenvectors();</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <a class="code" href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a> norm2 = (EigVec.transpose() * EigVec ).diagonal().cwiseSqrt();    <span class="comment">// Normalize weights.</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">weights_</a> = ( 1 * EigVec.row(0).cwiseProduct(EigVec.row(0)).transpose() ).cwiseQuotient(norm2);    <span class="comment">// 1 = beta0;</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="classGaussHermiteRule_html_ae5502fed0f3128dce83d1280a834ffac"><div class="ttname"><a href="classGaussHermiteRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussHermiteRule::apply</a></div><div class="ttdeci">virtual void apply() override</div><div class="ttdoc">Apply the quadrature rule in order to compute the nodes and weights. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00031">quadratureRule.cc:31</a></div></div>
 <div class="ttc" id="classQuadratureRule_html"><div class="ttname"><a href="classQuadratureRule.html">QuadratureRule</a></div><div class="ttdoc">Abstract class providing a quadrature rule. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8h_source.html#l00034">quadratureRule.h:34</a></div></div>
-<div class="ttc" id="classGaussLaguerreRule_html_ae5502fed0f3128dce83d1280a834ffac"><div class="ttname"><a href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a></div><div class="ttdeci">virtual void apply() override</div><div class="ttdoc">Apply the quadrature rule in order to compute the nodes and weights. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00179">quadratureRule.cc:179</a></div></div>
+<div class="ttc" id="classGaussLaguerreRule_html_ae5502fed0f3128dce83d1280a834ffac"><div class="ttname"><a href="classGaussLaguerreRule.html#ae5502fed0f3128dce83d1280a834ffac">GaussLaguerreRule::apply</a></div><div class="ttdeci">virtual void apply() override</div><div class="ttdoc">Apply the quadrature rule in order to compute the nodes and weights. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00178">quadratureRule.cc:178</a></div></div>
 <div class="ttc" id="classQuadratureRule_html_af96d558adb075a6049017281e98fbed3"><div class="ttname"><a href="classQuadratureRule.html#af96d558adb075a6049017281e98fbed3">QuadratureRule::nodes_</a></div><div class="ttdeci">VectorXr nodes_</div><div class="ttdoc">Vector containing the computed nodes coordinates. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8h_source.html#l00080">quadratureRule.h:80</a></div></div>
 <div class="ttc" id="quadratureRule_8h_html"><div class="ttname"><a href="quadratureRule_8h.html">quadratureRule.h</a></div><div class="ttdoc">Quadrature rules. </div></div>
 <div class="ttc" id="classGaussHermiteRule_html_add3939f72a845e748c388220bb1ad934"><div class="ttname"><a href="classGaussHermiteRule.html#add3939f72a845e748c388220bb1ad934">GaussHermiteRule::apply_using_eigendecomposition</a></div><div class="ttdeci">void apply_using_eigendecomposition()</div><div class="ttdoc">Compute nodes and weights using an eigendecomposition-based algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00116">quadratureRule.cc:116</a></div></div>
 <div class="ttc" id="classQuadratureRule_html_ac7fb9aaf8e3f9eae03235f68a935880a"><div class="ttname"><a href="classQuadratureRule.html#ac7fb9aaf8e3f9eae03235f68a935880a">QuadratureRule::QuadratureRule</a></div><div class="ttdeci">QuadratureRule()=delete</div><div class="ttdoc">Default constructor (deleted since it is required to specify the number of nodes). </div></div>
-<div class="ttc" id="namespaceconstants_html_af5340fb69690fffd134dcae882754638"><div class="ttname"><a href="namespaceconstants.html#af5340fb69690fffd134dcae882754638">constants::PI</a></div><div class="ttdeci">const Real PI</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00062">typedefs.h:62</a></div></div>
+<div class="ttc" id="namespaceconstants_html_af5340fb69690fffd134dcae882754638"><div class="ttname"><a href="namespaceconstants.html#af5340fb69690fffd134dcae882754638">constants::PI</a></div><div class="ttdeci">const Real PI</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00060">typedefs.h:60</a></div></div>
 <div class="ttc" id="classGaussHermiteRule_html_a5a21a96592fcd473df6739c72c083063"><div class="ttname"><a href="classGaussHermiteRule.html#a5a21a96592fcd473df6739c72c083063">GaussHermiteRule::apply_iterative_algorithm</a></div><div class="ttdeci">void apply_iterative_algorithm(const Index &amp;=1000, const Real &amp;=1.0e-14)</div><div class="ttdoc">Compute nodes and weights using an adapted version of the algorithm presented in:  William H...</div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00041">quadratureRule.cc:41</a></div></div>
-<div class="ttc" id="typedefs_8h_html_a2c726f8f32697958e9d6c2afecda531d"><div class="ttname"><a href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a></div><div class="ttdeci">#define Index</div><div class="ttdoc">Pre-processor macro for indexing variables. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00030">typedefs.h:30</a></div></div>
-<div class="ttc" id="namespaceconstants_html_a3b733bd721f65dc9124f4fb15af3da5c"><div class="ttname"><a href="namespaceconstants.html#a3b733bd721f65dc9124f4fb15af3da5c">constants::PI_M4</a></div><div class="ttdeci">const Real PI_M4</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00064">typedefs.h:64</a></div></div>
-<div class="ttc" id="typedefs_8h_html_a060b837c3b4486ee35317744156f3da2"><div class="ttname"><a href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a></div><div class="ttdeci">#define Real</div><div class="ttdoc">Pre-processor macro for real numbers. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00029">typedefs.h:29</a></div></div>
-<div class="ttc" id="typedefs_8h_html_aae6cee78ed9cd8f234ed8cb48682548a"><div class="ttname"><a href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, 1 &gt; VectorXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized column vectors. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00038">typedefs.h:38</a></div></div>
+<div class="ttc" id="typedefs_8h_html_a2c726f8f32697958e9d6c2afecda531d"><div class="ttname"><a href="typedefs_8h.html#a2c726f8f32697958e9d6c2afecda531d">Index</a></div><div class="ttdeci">#define Index</div><div class="ttdoc">Pre-processor macro for indexing variables. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00029">typedefs.h:29</a></div></div>
+<div class="ttc" id="namespaceconstants_html_a3b733bd721f65dc9124f4fb15af3da5c"><div class="ttname"><a href="namespaceconstants.html#a3b733bd721f65dc9124f4fb15af3da5c">constants::PI_M4</a></div><div class="ttdeci">const Real PI_M4</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00062">typedefs.h:62</a></div></div>
+<div class="ttc" id="typedefs_8h_html_a060b837c3b4486ee35317744156f3da2"><div class="ttname"><a href="typedefs_8h.html#a060b837c3b4486ee35317744156f3da2">Real</a></div><div class="ttdeci">#define Real</div><div class="ttdoc">Pre-processor macro for real numbers. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00028">typedefs.h:28</a></div></div>
+<div class="ttc" id="typedefs_8h_html_aae6cee78ed9cd8f234ed8cb48682548a"><div class="ttname"><a href="typedefs_8h.html#aae6cee78ed9cd8f234ed8cb48682548a">VectorXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, 1 &gt; VectorXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized column vectors. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00036">typedefs.h:36</a></div></div>
 <div class="ttc" id="classQuadratureRule_html_a35b6b677135284647f99765144b3af7a"><div class="ttname"><a href="classQuadratureRule.html#a35b6b677135284647f99765144b3af7a">QuadratureRule::weights_</a></div><div class="ttdeci">VectorXr weights_</div><div class="ttdoc">Vector containing the computed weights. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8h_source.html#l00081">quadratureRule.h:81</a></div></div>
 <div class="ttc" id="classGaussLaguerreRule_html_a0c297bfe019993090adc2df5aba866c7"><div class="ttname"><a href="classGaussLaguerreRule.html#a0c297bfe019993090adc2df5aba866c7">GaussLaguerreRule::log_gamma</a></div><div class="ttdeci">static Real log_gamma(const Real &amp;)</div><div class="ttdoc">Auxiliary function to compute . </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00151">quadratureRule.cc:151</a></div></div>
 <div class="ttc" id="classGaussLaguerreRule_html_a901d09ecb8e1c7af40a264a43395d557"><div class="ttname"><a href="classGaussLaguerreRule.html#a901d09ecb8e1c7af40a264a43395d557">GaussLaguerreRule::GaussLaguerreRule</a></div><div class="ttdeci">GaussLaguerreRule()=delete</div><div class="ttdoc">Default constructor (deleted since it is required to specify the number of nodes). </div></div>
 <div class="ttc" id="classGaussHermiteRule_html_a82318908e412ac924a27d7c816c5e89d"><div class="ttname"><a href="classGaussHermiteRule.html#a82318908e412ac924a27d7c816c5e89d">GaussHermiteRule::GaussHermiteRule</a></div><div class="ttdeci">GaussHermiteRule()=delete</div><div class="ttdoc">Default constructor (deleted since it is required to specify the number of nodes). </div></div>
-<div class="ttc" id="typedefs_8h_html_a81d507f5d0c665fb16966595c9520a55"><div class="ttname"><a href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, Dynamic &gt; MatrixXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized matrices. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00037">typedefs.h:37</a></div></div>
-<div class="ttc" id="namespaceconstants_html_a0ebb82a72cc0395d173fba22dff4d8c0"><div class="ttname"><a href="namespaceconstants.html#a0ebb82a72cc0395d173fba22dff4d8c0">constants::SQRT_PI</a></div><div class="ttdeci">const Real SQRT_PI</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00063">typedefs.h:63</a></div></div>
-<div class="ttc" id="classGaussLaguerreRule_html_a5a21a96592fcd473df6739c72c083063"><div class="ttname"><a href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">GaussLaguerreRule::apply_iterative_algorithm</a></div><div class="ttdeci">void apply_iterative_algorithm(const Index &amp;=1000, const Real &amp;=1.0e-14)</div><div class="ttdoc">Compute nodes and weights using an adapted version of the algorithm presented in:  William H...</div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00189">quadratureRule.cc:189</a></div></div>
-<div class="ttc" id="classGaussLaguerreRule_html_add3939f72a845e748c388220bb1ad934"><div class="ttname"><a href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">GaussLaguerreRule::apply_using_eigendecomposition</a></div><div class="ttdeci">void apply_using_eigendecomposition()</div><div class="ttdoc">Compute nodes and weights using an eigendecomposition-based algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00255">quadratureRule.cc:255</a></div></div>
+<div class="ttc" id="typedefs_8h_html_a81d507f5d0c665fb16966595c9520a55"><div class="ttname"><a href="typedefs_8h.html#a81d507f5d0c665fb16966595c9520a55">MatrixXr</a></div><div class="ttdeci">Matrix&lt; Real, Dynamic, Dynamic &gt; MatrixXr</div><div class="ttdoc">Typedef for dense real-valued dynamic-sized matrices. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00035">typedefs.h:35</a></div></div>
+<div class="ttc" id="namespaceconstants_html_a0ebb82a72cc0395d173fba22dff4d8c0"><div class="ttname"><a href="namespaceconstants.html#a0ebb82a72cc0395d173fba22dff4d8c0">constants::SQRT_PI</a></div><div class="ttdeci">const Real SQRT_PI</div><div class="ttdoc">. </div><div class="ttdef"><b>Definition:</b> <a href="typedefs_8h_source.html#l00061">typedefs.h:61</a></div></div>
+<div class="ttc" id="classGaussLaguerreRule_html_a5a21a96592fcd473df6739c72c083063"><div class="ttname"><a href="classGaussLaguerreRule.html#a5a21a96592fcd473df6739c72c083063">GaussLaguerreRule::apply_iterative_algorithm</a></div><div class="ttdeci">void apply_iterative_algorithm(const Index &amp;=1000, const Real &amp;=1.0e-14)</div><div class="ttdoc">Compute nodes and weights using an adapted version of the algorithm presented in:  William H...</div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00188">quadratureRule.cc:188</a></div></div>
+<div class="ttc" id="classGaussLaguerreRule_html_add3939f72a845e748c388220bb1ad934"><div class="ttname"><a href="classGaussLaguerreRule.html#add3939f72a845e748c388220bb1ad934">GaussLaguerreRule::apply_using_eigendecomposition</a></div><div class="ttdeci">void apply_using_eigendecomposition()</div><div class="ttdoc">Compute nodes and weights using an eigendecomposition-based algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8cc_source.html#l00254">quadratureRule.cc:254</a></div></div>
 <div class="ttc" id="classQuadratureRule_html_a574676917a0d7d70140f4ed29bb1e8b4"><div class="ttname"><a href="classQuadratureRule.html#a574676917a0d7d70140f4ed29bb1e8b4">QuadratureRule::nNodes_</a></div><div class="ttdeci">Index nNodes_</div><div class="ttdoc">Number of nodes of quadrature. </div><div class="ttdef"><b>Definition:</b> <a href="quadratureRule_8h_source.html#l00079">quadratureRule.h:79</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

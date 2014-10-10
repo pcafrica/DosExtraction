@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.24)  10 OCT 2014 02:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.24)  10 OCT 2014 02:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1403,27 +1403,27 @@ coll__graph.pdf
 pdfTeX warning: pdflatex (file ./classExponentialCharge__coll__graph.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >] [33]
-Underfull \hbox (badness 10000) detected at line 114
+Underfull \hbox (badness 10000) detected at line 108
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 141
+Underfull \hbox (badness 10000) detected at line 135
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 174
+Underfull \hbox (badness 10000) detected at line 168
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 203
+Underfull \hbox (badness 10000) detected at line 197
 [][][]
  []
 
 [34]) (./classExponentialChargeFactory.tex
-<classExponentialChargeFactory__inherit__graph.pdf, id=1772, 212.795pt x 156.58
+<classExponentialChargeFactory__inherit__graph.pdf, id=1768, 212.795pt x 156.58
 5pt>
 File: classExponentialChargeFactory__inherit__graph.pdf Graphic file (type pdf)
 
@@ -1432,7 +1432,7 @@ Package pdftex.def Info: classExponentialChargeFactory__inherit__graph.pdf used
  on input line 19.
 (pdftex.def)             Requested size: 212.0pt x 156.00879pt.
 
-<classExponentialChargeFactory__coll__graph.pdf, id=1773, 212.795pt x 156.585pt
+<classExponentialChargeFactory__coll__graph.pdf, id=1769, 212.795pt x 156.585pt
 >
 File: classExponentialChargeFactory__coll__graph.pdf Graphic file (type pdf)
  <use classExponentialChargeFactory__coll__graph.pdf>
@@ -1450,7 +1450,7 @@ Underfull \hbox (badness 10000) detected at line 71
  []
 
 ) (./classGaussHermiteRule.tex
-<classGaussHermiteRule__inherit__graph.pdf, id=1806, 180.675pt x 156.585pt>
+<classGaussHermiteRule__inherit__graph.pdf, id=1802, 180.675pt x 156.585pt>
 File: classGaussHermiteRule__inherit__graph.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRule__inherit__graph.pdf>
@@ -1458,7 +1458,7 @@ Package pdftex.def Info: classGaussHermiteRule__inherit__graph.pdf used on inpu
 t line 19.
 (pdftex.def)             Requested size: 180.0pt x 156.00162pt.
 
-<classGaussHermiteRule__coll__graph.pdf, id=1807, 180.675pt x 156.585pt>
+<classGaussHermiteRule__coll__graph.pdf, id=1803, 180.675pt x 156.585pt>
 File: classGaussHermiteRule__coll__graph.pdf Graphic file (type pdf)
 
 <use classGaussHermiteRule__coll__graph.pdf>
@@ -1470,7 +1470,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36 <./classGaussHermiteRule__inherit__graph.pdf>] [37 <./classGaussHermiteRul
 e__coll__graph.pdf>]) (./classGaussHermiteRuleFactory.tex
-<classGaussHermiteRuleFactory__inherit__graph.pdf, id=1851, 212.795pt x 156.585
+<classGaussHermiteRuleFactory__inherit__graph.pdf, id=1847, 212.795pt x 156.585
 pt>
 File: classGaussHermiteRuleFactory__inherit__graph.pdf Graphic file (type pdf)
  <use classGaussHermiteRuleFactory__inherit__graph.pdf>
@@ -1478,7 +1478,7 @@ Package pdftex.def Info: classGaussHermiteRuleFactory__inherit__graph.pdf used
 on input line 19.
 (pdftex.def)             Requested size: 212.0pt x 156.00879pt.
 
-<classGaussHermiteRuleFactory__coll__graph.pdf, id=1852, 212.795pt x 156.585pt>
+<classGaussHermiteRuleFactory__coll__graph.pdf, id=1848, 212.795pt x 156.585pt>
 File: classGaussHermiteRuleFactory__coll__graph.pdf Graphic file (type pdf)
 <use classGaussHermiteRuleFactory__coll__graph.pdf>
 Package pdftex.def Info: classGaussHermiteRuleFactory__coll__graph.pdf used on 
@@ -1493,7 +1493,7 @@ Underfull \hbox (badness 10000) detected at line 68
  []
 
 ) (./classGaussianCharge.tex [39 <./classGaussHermiteRuleFactory__coll__graph.p
-df>] <classGaussianCharge__inherit__graph.pdf, id=1892, 168.63pt x 156.585pt>
+df>] <classGaussianCharge__inherit__graph.pdf, id=1888, 168.63pt x 156.585pt>
 File: classGaussianCharge__inherit__graph.pdf Graphic file (type pdf)
 
 <use classGaussianCharge__inherit__graph.pdf>
@@ -1501,7 +1501,7 @@ Package pdftex.def Info: classGaussianCharge__inherit__graph.pdf used on input
 line 19.
 (pdftex.def)             Requested size: 168.0pt x 156.004pt.
 
-<classGaussianCharge__coll__graph.pdf, id=1893, 243.91125pt x 226.8475pt>
+<classGaussianCharge__coll__graph.pdf, id=1889, 243.91125pt x 226.8475pt>
 File: classGaussianCharge__coll__graph.pdf Graphic file (type pdf)
 
 <use classGaussianCharge__coll__graph.pdf>
@@ -1534,7 +1534,7 @@ Underfull \hbox (badness 10000) detected at line 197
  []
 
 ) (./classGaussianChargeFactory.tex
-<classGaussianChargeFactory__inherit__graph.pdf, id=1951, 202.7575pt x 156.585p
+<classGaussianChargeFactory__inherit__graph.pdf, id=1947, 202.7575pt x 156.585p
 t>
 File: classGaussianChargeFactory__inherit__graph.pdf Graphic file (type pdf)
  <use classGaussianChargeFactory__inherit__graph.pdf>
@@ -1542,7 +1542,7 @@ Package pdftex.def Info: classGaussianChargeFactory__inherit__graph.pdf used on
  input line 19.
 (pdftex.def)             Requested size: 202.0pt x 156.004pt.
  [42]
-<classGaussianChargeFactory__coll__graph.pdf, id=1957, 202.7575pt x 156.585pt>
+<classGaussianChargeFactory__coll__graph.pdf, id=1952, 202.7575pt x 156.585pt>
 File: classGaussianChargeFactory__coll__graph.pdf Graphic file (type pdf)
 
 <use classGaussianChargeFactory__coll__graph.pdf>
@@ -1560,7 +1560,7 @@ Underfull \hbox (badness 10000) detected at line 71
  []
 
 ) (./classGaussLaguerreRule.tex
-<classGaussLaguerreRule__inherit__graph.pdf, id=1989, 182.6825pt x 156.585pt>
+<classGaussLaguerreRule__inherit__graph.pdf, id=1985, 182.6825pt x 156.585pt>
 File: classGaussLaguerreRule__inherit__graph.pdf Graphic file (type pdf)
 
 <use classGaussLaguerreRule__inherit__graph.pdf>
@@ -1568,7 +1568,7 @@ Package pdftex.def Info: classGaussLaguerreRule__inherit__graph.pdf used on inp
 ut line 19.
 (pdftex.def)             Requested size: 182.0pt x 156.0064pt.
 
-<classGaussLaguerreRule__coll__graph.pdf, id=1990, 182.6825pt x 156.585pt>
+<classGaussLaguerreRule__coll__graph.pdf, id=1986, 182.6825pt x 156.585pt>
 File: classGaussLaguerreRule__coll__graph.pdf Graphic file (type pdf)
 
 <use classGaussLaguerreRule__coll__graph.pdf>
@@ -1586,7 +1586,7 @@ Underfull \hbox (badness 10000) detected at line 113
  []
 
 ) (./classGaussLaguerreRuleFactory.tex
-<classGaussLaguerreRuleFactory__inherit__graph.pdf, id=2038, 216.81pt x 156.585
+<classGaussLaguerreRuleFactory__inherit__graph.pdf, id=2034, 216.81pt x 156.585
 pt>
 File: classGaussLaguerreRuleFactory__inherit__graph.pdf Graphic file (type pdf)
 
@@ -1595,7 +1595,7 @@ Package pdftex.def Info: classGaussLaguerreRuleFactory__inherit__graph.pdf used
  on input line 19.
 (pdftex.def)             Requested size: 216.0pt x 156.00879pt.
 
-<classGaussLaguerreRuleFactory__coll__graph.pdf, id=2039, 216.81pt x 156.585pt>
+<classGaussLaguerreRuleFactory__coll__graph.pdf, id=2035, 216.81pt x 156.585pt>
 File: classGaussLaguerreRuleFactory__coll__graph.pdf Graphic file (type pdf)
 <use classGaussLaguerreRuleFactory__coll__graph.pdf>
 Package pdftex.def Info: classGaussLaguerreRuleFactory__coll__graph.pdf used on
@@ -1611,7 +1611,7 @@ Underfull \hbox (badness 10000) detected at line 68
 
 ) (./classNonLinearPoisson1D.tex [47 <./classGaussLaguerreRuleFactory__coll__gr
 aph.pdf>]
-<classNonLinearPoisson1D__coll__graph.pdf, id=2077, 188.705pt x 168.63pt>
+<classNonLinearPoisson1D__coll__graph.pdf, id=2073, 188.705pt x 168.63pt>
 File: classNonLinearPoisson1D__coll__graph.pdf Graphic file (type pdf)
 
 <use classNonLinearPoisson1D__coll__graph.pdf>
@@ -1624,7 +1624,7 @@ Underfull \hbox (badness 10000) detected at line 163
  []
 
 ) (./classParamList.tex [50] [51]) (./classPdeSolver1D.tex
-<classPdeSolver1D__inherit__graph.pdf, id=2298, 154.5775pt x 156.585pt>
+<classPdeSolver1D__inherit__graph.pdf, id=2294, 154.5775pt x 156.585pt>
 File: classPdeSolver1D__inherit__graph.pdf Graphic file (type pdf)
 
 <use classPdeSolver1D__inherit__graph.pdf>
@@ -1633,7 +1633,7 @@ e 19.
 (pdftex.def)             Requested size: 154.0pt x 156.01357pt.
  [52 <./classPdeSolver1D__inherit__graph.pdf>] [53]) (./classQuadratureRule.tex
 
-<classQuadratureRule__inherit__graph.pdf, id=2367, 302.12875pt x 156.585pt>
+<classQuadratureRule__inherit__graph.pdf, id=2363, 302.12875pt x 156.585pt>
 File: classQuadratureRule__inherit__graph.pdf Graphic file (type pdf)
 
 <use classQuadratureRule__inherit__graph.pdf>
@@ -1642,7 +1642,7 @@ line 19.
 (pdftex.def)             Requested size: 301.0pt x 155.99922pt.
  [54] [55 <./classQuadratureRule__inherit__graph.pdf>]) (./classQuadratureRuleF
 actory.tex
-<classQuadratureRuleFactory__inherit__graph.pdf, id=2416, 368.37625pt x 156.585
+<classQuadratureRuleFactory__inherit__graph.pdf, id=2412, 368.37625pt x 156.585
 pt>
 File: classQuadratureRuleFactory__inherit__graph.pdf Graphic file (type pdf)
  <use classQuadratureRuleFactory__inherit__graph.pdf>
@@ -1661,12 +1661,12 @@ Underfull \hbox (badness 10000) detected at line 59
 
 ]
 Chapter 8.
-(./charge_8cc.tex <charge_8cc__incl.pdf, id=2450, 692.5875pt x 325.215pt>
+(./charge_8cc.tex <charge_8cc__incl.pdf, id=2446, 577.15625pt x 325.215pt>
 File: charge_8cc__incl.pdf Graphic file (type pdf)
 
 <use charge_8cc__incl.pdf>
 Package pdftex.def Info: charge_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 164.34889pt.
+(pdftex.def)             Requested size: 350.0pt x 197.22462pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -1683,14 +1683,14 @@ Underfull \hbox (badness 10000) detected at line 24
  []
 
 ) (./charge_8h.tex [59 <./charge_8cc__incl.pdf>]
-<charge_8h__incl.pdf, id=2465, 692.5875pt x 269.005pt>
+<charge_8h__incl.pdf, id=2461, 577.15625pt x 269.005pt>
 File: charge_8h__incl.pdf Graphic file (type pdf)
 
 <use charge_8h__incl.pdf>
 Package pdftex.def Info: charge_8h__incl.pdf used on input line 17.
-(pdftex.def)             Requested size: 350.0pt x 135.9429pt.
+(pdftex.def)             Requested size: 350.0pt x 163.13641pt.
 
-<charge_8h__dep__incl.pdf, id=2466, 413.545pt x 269.005pt>
+<charge_8h__dep__incl.pdf, id=2462, 413.545pt x 269.005pt>
 File: charge_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use charge_8h__dep__incl.pdf>
@@ -1716,12 +1716,12 @@ Underfull \hbox (badness 10000) detected at line 47
  []
 
 ) (./csvParser_8cc.tex
-<csvParser_8cc__incl.pdf, id=2490, 797.98125pt x 269.005pt>
+<csvParser_8cc__incl.pdf, id=2486, 682.55pt x 269.005pt>
 File: csvParser_8cc__incl.pdf Graphic file (type pdf)
 
 <use csvParser_8cc__incl.pdf>
 Package pdftex.def Info: csvParser_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 117.98492pt.
+(pdftex.def)             Requested size: 350.0pt x 137.94188pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -1738,14 +1738,14 @@ Underfull \hbox (badness 10000) detected at line 24
  []
 
 ) (./csvParser_8h.tex [61 <./csvParser_8cc__incl.pdf>]
-<csvParser_8h__incl.pdf, id=2505, 797.98125pt x 212.795pt>
+<csvParser_8h__incl.pdf, id=2501, 682.55pt x 212.795pt>
 File: csvParser_8h__incl.pdf Graphic file (type pdf)
 
 <use csvParser_8h__incl.pdf>
 Package pdftex.def Info: csvParser_8h__incl.pdf used on input line 19.
-(pdftex.def)             Requested size: 350.0pt x 93.33136pt.
+(pdftex.def)             Requested size: 350.0pt x 109.1182pt.
 
-<csvParser_8h__dep__incl.pdf, id=2506, 333.245pt x 212.795pt>
+<csvParser_8h__dep__incl.pdf, id=2502, 333.245pt x 212.795pt>
 File: csvParser_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use csvParser_8h__dep__incl.pdf>
@@ -1777,12 +1777,12 @@ Underfull \hbox (badness 10000) detected at line 45
  []
 
 ) (./dosModel_8cc.tex
-<dosModel_8cc__incl.pdf, id=2528, 914.41624pt x 437.635pt>
+<dosModel_8cc__incl.pdf, id=2524, 880.28876pt x 437.635pt>
 File: dosModel_8cc__incl.pdf Graphic file (type pdf)
 
 <use dosModel_8cc__incl.pdf>
 Package pdftex.def Info: dosModel_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 167.50502pt.
+(pdftex.def)             Requested size: 350.0pt x 174.00249pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -1798,14 +1798,14 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./dosModel_8h.tex <dosModel_8h__incl.pdf, id=2531, 914.41624pt x 381.425pt>
+) (./dosModel_8h.tex <dosModel_8h__incl.pdf, id=2527, 880.28876pt x 381.425pt>
 File: dosModel_8h__incl.pdf Graphic file (type pdf)
 
 <use dosModel_8h__incl.pdf>
 Package pdftex.def Info: dosModel_8h__incl.pdf used on input line 26.
-(pdftex.def)             Requested size: 350.0pt x 145.99062pt.
+(pdftex.def)             Requested size: 350.0pt x 151.65353pt.
  [63 <./dosModel_8cc__incl.pdf>]
-<dosModel_8h__dep__incl.pdf, id=2544, 294.09875pt x 156.585pt>
+<dosModel_8h__dep__incl.pdf, id=2540, 294.09875pt x 156.585pt>
 File: dosModel_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use dosModel_8h__dep__incl.pdf>
@@ -1830,12 +1830,12 @@ Underfull \hbox (badness 10000) detected at line 52
 [][][]
  []
 
-) (./factory_8cc.tex <factory_8cc__incl.pdf, id=2565, 692.5875pt x 381.425pt>
+) (./factory_8cc.tex <factory_8cc__incl.pdf, id=2561, 577.15625pt x 381.425pt>
 File: factory_8cc__incl.pdf Graphic file (type pdf)
 
 <use factory_8cc__incl.pdf>
 Package pdftex.def Info: factory_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 192.75487pt.
+(pdftex.def)             Requested size: 350.0pt x 231.31282pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -1846,30 +1846,28 @@ Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
-
+[65 <./factory_8cc__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./factory_8h.tex [65 <./factory_8cc__incl.pdf>]
-<factory_8h__incl.pdf, id=2580, 692.5875pt x 325.215pt>
+) (./factory_8h.tex <factory_8h__incl.pdf, id=2576, 577.15625pt x 325.215pt>
 File: factory_8h__incl.pdf Graphic file (type pdf)
 
 <use factory_8h__incl.pdf>
 Package pdftex.def Info: factory_8h__incl.pdf used on input line 17.
-(pdftex.def)             Requested size: 350.0pt x 164.34889pt.
+(pdftex.def)             Requested size: 350.0pt x 197.22462pt.
 
-<factory_8h__dep__incl.pdf, id=2581, 328.22626pt x 212.795pt>
+<factory_8h__dep__incl.pdf, id=2577, 328.22626pt x 212.795pt>
 File: factory_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use factory_8h__dep__incl.pdf>
 Package pdftex.def Info: factory_8h__dep__incl.pdf used on input line 24.
 (pdftex.def)             Requested size: 327.0pt x 212.0022pt.
- [66 <./factory_8h__incl.pdf> <./factory_8h__dep__incl.pdf
 
-pdfTeX warning: pdflatex (file ./factory_8h__dep__incl.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66 <./factory_8h__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
@@ -1885,13 +1883,13 @@ Underfull \hbox (badness 10000) detected at line 53
  []
 
 ) (./numerics_8cc.tex
-<numerics_8cc__incl.pdf, id=2607, 692.5875pt x 269.005pt>
+<numerics_8cc__incl.pdf, id=2597, 577.15625pt x 269.005pt>
 File: numerics_8cc__incl.pdf Graphic file (type pdf)
 
 <use numerics_8cc__incl.pdf>
 Package pdftex.def Info: numerics_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 135.9429pt.
- [67 <./numerics_8cc__incl.pdf>]
+(pdftex.def)             Requested size: 350.0pt x 163.13641pt.
+ [67 <./factory_8h__dep__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
  []
@@ -1906,20 +1904,23 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./numerics_8h.tex <numerics_8h__incl.pdf, id=2621, 692.5875pt x 212.795pt>
+) (./numerics_8h.tex <numerics_8h__incl.pdf, id=2612, 577.15625pt x 212.795pt>
 File: numerics_8h__incl.pdf Graphic file (type pdf)
 
 <use numerics_8h__incl.pdf>
 Package pdftex.def Info: numerics_8h__incl.pdf used on input line 16.
-(pdftex.def)             Requested size: 350.0pt x 107.53691pt.
+(pdftex.def)             Requested size: 350.0pt x 129.0482pt.
 
-<numerics_8h__dep__incl.pdf, id=2622, 338.26375pt x 212.795pt>
+Underfull \vbox (badness 7740) has occurred while \output is active []
+
+ [68 <./numerics_8cc__incl.pdf>]
+<numerics_8h__dep__incl.pdf, id=2624, 338.26375pt x 212.795pt>
 File: numerics_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use numerics_8h__dep__incl.pdf>
 Package pdftex.def Info: numerics_8h__dep__incl.pdf used on input line 23.
 (pdftex.def)             Requested size: 337.0pt x 212.00543pt.
- [68 <./numerics_8h__incl.pdf> <./numerics_8h__dep__incl.pdf
+ [69 <./numerics_8h__incl.pdf> <./numerics_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./numerics_8h__dep__incl.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
@@ -1939,18 +1940,18 @@ Underfull \hbox (badness 10000) detected at line 61
  []
 
 ) (./paramList_8cc.tex
-<paramList_8cc__incl.pdf, id=2677, 692.5875pt x 269.005pt>
+<paramList_8cc__incl.pdf, id=2680, 577.15625pt x 269.005pt>
 File: paramList_8cc__incl.pdf Graphic file (type pdf)
 
 <use paramList_8cc__incl.pdf>
 Package pdftex.def Info: paramList_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 135.9429pt.
- [69]
+(pdftex.def)             Requested size: 350.0pt x 163.13641pt.
+
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
  []
 
-
+[70 <./paramList_8cc__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
@@ -1961,24 +1962,23 @@ Underfull \hbox (badness 10000) detected at line 24
  []
 
 ) (./paramList_8h.tex
-<paramList_8h__incl.pdf, id=2688, 692.5875pt x 212.795pt>
+<paramList_8h__incl.pdf, id=2695, 577.15625pt x 212.795pt>
 File: paramList_8h__incl.pdf Graphic file (type pdf)
 
 <use paramList_8h__incl.pdf>
 Package pdftex.def Info: paramList_8h__incl.pdf used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 107.53691pt.
+(pdftex.def)             Requested size: 350.0pt x 129.0482pt.
 
-<paramList_8h__dep__incl.pdf, id=2689, 470.75874pt x 325.215pt>
+<paramList_8h__dep__incl.pdf, id=2696, 470.75874pt x 325.215pt>
 File: paramList_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use paramList_8h__dep__incl.pdf>
 Package pdftex.def Info: paramList_8h__dep__incl.pdf used on input line 22.
 (pdftex.def)             Requested size: 350.0pt x 241.79172pt.
- [70 <./paramList_8cc__incl.pdf> <./paramList_8h__incl.pdf
 
-pdfTeX warning: pdflatex (file ./paramList_8h__incl.pdf): PDF inclusion: multip
-le pdfs with page group included in a single page
->]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [71 <./paramList_8h__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
@@ -1994,14 +1994,14 @@ Underfull \hbox (badness 10000) detected at line 41
  []
 
 ) (./physicalConstants_8h.tex
-<physicalConstants_8h__dep__incl.pdf, id=2709, 989.6975pt x 437.635pt>
+<physicalConstants_8h__dep__incl.pdf, id=2712, 989.6975pt x 437.635pt>
 File: physicalConstants_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use physicalConstants_8h__dep__incl.pdf>
 Package pdftex.def Info: physicalConstants_8h__dep__incl.pdf used on input line
  13.
 (pdftex.def)             Requested size: 350.0pt x 154.76384pt.
- [71 <./paramList_8h__dep__incl.pdf>]pdfTeX warning (ext4): destination with th
+ [72 <./paramList_8h__dep__incl.pdf>]pdfTeX warning (ext4): destination with th
 e same identifier (name{namespaceconstants_a791181f54af6cd7794fe58fec8e4ce97}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -2058,13 +2058,13 @@ Underfull \hbox (badness 10000) detected at line 53
 [][][]
  []
 
-) (./quadratureRule_8cc.tex [72 <./physicalConstants_8h__dep__incl.pdf>]
-<quadratureRule_8cc__incl.pdf, id=2751, 692.5875pt x 281.05pt>
+) (./quadratureRule_8cc.tex [73 <./physicalConstants_8h__dep__incl.pdf>]
+<quadratureRule_8cc__incl.pdf, id=2753, 577.15625pt x 281.05pt>
 File: quadratureRule_8cc__incl.pdf Graphic file (type pdf)
 
 <use quadratureRule_8cc__incl.pdf>
 Package pdftex.def Info: quadratureRule_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 142.02989pt.
+(pdftex.def)             Requested size: 350.0pt x 170.44102pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -2081,30 +2081,33 @@ Underfull \hbox (badness 10000) detected at line 24
  []
 
 ) (./quadratureRule_8h.tex
-<quadratureRule_8h__incl.pdf, id=2754, 692.5875pt x 224.84pt>
+<quadratureRule_8h__incl.pdf, id=2756, 577.15625pt x 224.84pt>
 File: quadratureRule_8h__incl.pdf Graphic file (type pdf)
 
 <use quadratureRule_8h__incl.pdf>
 Package pdftex.def Info: quadratureRule_8h__incl.pdf used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 113.62392pt.
+(pdftex.def)             Requested size: 350.0pt x 136.35281pt.
 
-<quadratureRule_8h__dep__incl.pdf, id=2755, 494.84875pt x 325.215pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74 <./quadratureRule_8cc__incl.pdf>]
+<quadratureRule_8h__dep__incl.pdf, id=2768, 494.84875pt x 325.215pt>
 File: quadratureRule_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use quadratureRule_8h__dep__incl.pdf>
 Package pdftex.def Info: quadratureRule_8h__dep__incl.pdf used on input line 22
 .
 (pdftex.def)             Requested size: 350.0pt x 230.02095pt.
- [73 <./quadratureRule_8cc__incl.pdf> <./quadratureRule_8h__incl.pdf
 
-pdfTeX warning: pdflatex (file ./quadratureRule_8h__incl.pdf): PDF inclusion: m
-ultiple pdfs with page group included in a single page
->]
 Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
+[75 <./quadratureRule_8h__incl.pdf> <./quadratureRule_8h__dep__incl.pdf
 
+pdfTeX warning: pdflatex (file ./quadratureRule_8h__dep__incl.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>]
 Underfull \hbox (badness 10000) detected at line 40
 [][][]
  []
@@ -2114,13 +2117,13 @@ Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
 
-) (./solvers_8cc.tex <solvers_8cc__incl.pdf, id=2779, 692.5875pt x 381.425pt>
+) (./solvers_8cc.tex <solvers_8cc__incl.pdf, id=2793, 577.15625pt x 381.425pt>
 File: solvers_8cc__incl.pdf Graphic file (type pdf)
 
 <use solvers_8cc__incl.pdf>
 Package pdftex.def Info: solvers_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 192.75487pt.
- [74 <./quadratureRule_8h__dep__incl.pdf>]
+(pdftex.def)             Requested size: 350.0pt x 231.31282pt.
+
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
  []
@@ -2135,32 +2138,30 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./solvers_8h.tex <solvers_8h__incl.pdf, id=2795, 692.5875pt x 325.215pt>
+) (./solvers_8h.tex [76 <./solvers_8cc__incl.pdf>]
+<solvers_8h__incl.pdf, id=2808, 577.15625pt x 325.215pt>
 File: solvers_8h__incl.pdf Graphic file (type pdf)
 
 <use solvers_8h__incl.pdf>
 Package pdftex.def Info: solvers_8h__incl.pdf used on input line 18.
-(pdftex.def)             Requested size: 350.0pt x 164.34889pt.
+(pdftex.def)             Requested size: 350.0pt x 197.22462pt.
 
-Underfull \vbox (badness 1430) has occurred while \output is active []
-
- [75 <./solvers_8cc__incl.pdf>]
-<solvers_8h__dep__incl.pdf, id=2807, 330.23375pt x 212.795pt>
+<solvers_8h__dep__incl.pdf, id=2809, 330.23375pt x 212.795pt>
 File: solvers_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use solvers_8h__dep__incl.pdf>
 Package pdftex.def Info: solvers_8h__dep__incl.pdf used on input line 25.
 (pdftex.def)             Requested size: 329.0pt x 212.00868pt.
-
-Underfull \hbox (badness 10000) detected at line 40
-[][][]
- []
-
-[76 <./solvers_8h__incl.pdf> <./solvers_8h__dep__incl.pdf
+ [77 <./solvers_8h__incl.pdf> <./solvers_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./solvers_8h__dep__incl.pdf): PDF inclusion: mul
 tiple pdfs with page group included in a single page
 >]
+Underfull \hbox (badness 10000) detected at line 40
+[][][]
+ []
+
+
 Underfull \hbox (badness 10000) detected at line 43
 [][][]
  []
@@ -2171,12 +2172,12 @@ Underfull \hbox (badness 10000) detected at line 48
  []
 
 ) (./typedefs_8cc.tex
-<typedefs_8cc__incl.pdf, id=2830, 692.5875pt x 212.795pt>
+<typedefs_8cc__incl.pdf, id=2833, 577.15625pt x 212.795pt>
 File: typedefs_8cc__incl.pdf Graphic file (type pdf)
 
 <use typedefs_8cc__incl.pdf>
 Package pdftex.def Info: typedefs_8cc__incl.pdf used on input line 10.
-(pdftex.def)             Requested size: 350.0pt x 107.53691pt.
+(pdftex.def)             Requested size: 350.0pt x 129.0482pt.
 
 Underfull \hbox (badness 10000) detected at line 16
 [][][]
@@ -2192,20 +2193,21 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./typedefs_8h.tex <typedefs_8h__incl.pdf, id=2833, 692.5875pt x 156.585pt>
+) (./typedefs_8h.tex [78 <./typedefs_8cc__incl.pdf>]
+<typedefs_8h__incl.pdf, id=2847, 577.15625pt x 156.585pt>
 File: typedefs_8h__incl.pdf Graphic file (type pdf)
 
 <use typedefs_8h__incl.pdf>
-Package pdftex.def Info: typedefs_8h__incl.pdf used on input line 21.
-(pdftex.def)             Requested size: 350.0pt x 79.13094pt.
- [77 <./typedefs_8cc__incl.pdf>]
-<typedefs_8h__dep__incl.pdf, id=2847, 989.6975pt x 381.425pt>
+Package pdftex.def Info: typedefs_8h__incl.pdf used on input line 20.
+(pdftex.def)             Requested size: 350.0pt x 94.95999pt.
+
+<typedefs_8h__dep__incl.pdf, id=2848, 989.6975pt x 381.425pt>
 File: typedefs_8h__dep__incl.pdf Graphic file (type pdf)
 
 <use typedefs_8h__dep__incl.pdf>
-Package pdftex.def Info: typedefs_8h__dep__incl.pdf used on input line 28.
+Package pdftex.def Info: typedefs_8h__dep__incl.pdf used on input line 27.
 (pdftex.def)             Requested size: 350.0pt x 134.88591pt.
- [78 <./typedefs_8h__incl.pdf> <./typedefs_8h__dep__incl.pdf
+ [79 <./typedefs_8h__incl.pdf> <./typedefs_8h__dep__incl.pdf
 
 pdfTeX warning: pdflatex (file ./typedefs_8h__dep__incl.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
@@ -2214,64 +2216,64 @@ nstants_a8d66156216c7101bc75f6f62a7449cf7}) has been already used, duplicate ig
 nored
 <to be read again> 
                    \relax 
-l.79 ...49cf7}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 26}
+l.78 ...49cf7}{P\-A\-R\-A\-M\-S\-\_\-\-N\-O} = 26}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
 tants_af5340fb69690fffd134dcae882754638}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.82 ...fd134dcae882754638}{P\-I} = M\-\_\-\-P\-I}
+l.81 ...fd134dcae882754638}{P\-I} = M\-\_\-\-P\-I}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
 tants_a0ebb82a72cc0395d173fba22dff4d8c0}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.85 ...-Q\-R\-T\-\_\-\-P\-I} = std\-::sqrt(P\-I)}
+l.84 ...-Q\-R\-T\-\_\-\-P\-I} = std\-::sqrt(P\-I)}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
 tants_a3b733bd721f65dc9124f4fb15af3da5c}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.88 ...c}{P\-I\-\_\-\-M4} = 0.\-7511255444649425}
+l.87 ...c}{P\-I\-\_\-\-M4} = 0.\-7511255444649425}
                                                   \label{namespaceconstants_...
 pdfTeX warning (ext4): destination with the same identifier (name{namespacecons
 tants_ab0c53d0b9c422d694073f97eb185d292}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.91 ...d292}{S\-Q\-R\-T\-\_\-2} = std\-::sqrt(2)}
+l.90 ...d292}{S\-Q\-R\-T\-\_\-2} = std\-::sqrt(2)}
                                                   \label{namespaceconstants_...
 
-Underfull \hbox (badness 10000) detected at line 97
+Underfull \hbox (badness 10000) detected at line 96
+[][][]
+ []
+
+[80]
+Underfull \hbox (badness 10000) detected at line 99
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 100
+Underfull \hbox (badness 10000) detected at line 104
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 105
-[][][]
- []
-
-[79]) (./simulate__dos_8cc.tex
-<simulate__dos_8cc__incl.pdf, id=2909, 914.41624pt x 449.68pt>
+) (./simulate__dos_8cc.tex
+<simulate__dos_8cc__incl.pdf, id=2910, 880.28876pt x 449.68pt>
 File: simulate__dos_8cc__incl.pdf Graphic file (type pdf)
 
 <use simulate__dos_8cc__incl.pdf>
 Package pdftex.def Info: simulate__dos_8cc__incl.pdf used on input line 15.
-(pdftex.def)             Requested size: 350.0pt x 172.11525pt.
-
+(pdftex.def)             Requested size: 350.0pt x 178.79153pt.
+ [81 <./simulate__dos_8cc__incl.pdf>]
 Underfull \hbox (badness 10000) detected at line 27
 [][][]
  []
 
-[80 <./simulate__dos_8cc__incl.pdf>]
+
 Underfull \hbox (badness 10000) detected at line 30
 [][][]
  []
@@ -2281,9 +2283,9 @@ Underfull \hbox (badness 10000) detected at line 35
 [][][]
  []
 
-) [81] (./refman.ind [82
+) [82] (./refman.ind [83
 
-] [83] [84
+] [84] [85
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
@@ -2292,7 +2294,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 37491138FBA71B12CE3DEB8EA16C7DDE;34651.
+(rerunfilecheck)             Checksum: 6BE7201ED832E909B7BD8DEAF6B8C941;34651.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2303,10 +2305,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 13759 strings out of 494951
- 213676 string characters out of 6178882
- 268762 words of memory out of 5000000
- 15952 multiletter control sequences out of 15000+600000
+ 13757 strings out of 494951
+ 213558 string characters out of 6178882
+ 268716 words of memory out of 5000000
+ 15951 multiletter control sequences out of 15000+600000
  108158 words of font info for 165 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  48i,13n,43p,683b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2385,10 +2387,10 @@ ype1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
 mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (92 pages, 494398 bytes).
+Output written on refman.pdf (93 pages, 492787 bytes).
 PDF statistics:
- 3307 PDF objects out of 3580 (max. 8388607)
+ 3308 PDF objects out of 3580 (max. 8388607)
  3056 compressed objects within 31 object streams
- 643 named destinations out of 1000 (max. 500000)
+ 642 named destinations out of 1000 (max. 500000)
  1868 words of extra memory for PDF output out of 10000 (max. 10000000)
 
