@@ -1,6 +1,5 @@
 # Directories
 .kateproject.d/
-.kdev4/
 bin/
 build/
 lib/
@@ -8,6 +7,5 @@ lib/
 # Files
 .directory
 .kateproject
-DosExtraction.kdev4
 .fuse_hidden*
 *.orig
