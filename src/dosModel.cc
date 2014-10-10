@@ -14,6 +14,8 @@
 
 #include "dosModel.h"
 
+using namespace gnuplotio;
+
 using namespace std::chrono;
 using namespace constants;
 using namespace utility;

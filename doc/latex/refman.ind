@@ -107,29 +107,29 @@
   \item {Dos\discretionary {-}{}{}Extraction/src/factory.\discretionary {-}{}{}h}, 
 		\hyperpage{66}
   \item {Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}cc}, 
-		\hyperpage{68}
+		\hyperpage{67}
   \item {Dos\discretionary {-}{}{}Extraction/src/numerics.\discretionary {-}{}{}h}, 
 		\hyperpage{68}
   \item {Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}cc}, 
 		\hyperpage{70}
   \item {Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.\discretionary {-}{}{}h}, 
-		\hyperpage{71}
+		\hyperpage{70}
   \item {Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.\discretionary {-}{}{}h}, 
-		\hyperpage{72}
+		\hyperpage{71}
   \item {Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}cc}, 
-		\hyperpage{74}
+		\hyperpage{73}
   \item {Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.\discretionary {-}{}{}h}, 
-		\hyperpage{74}
+		\hyperpage{73}
   \item {Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}cc}, 
-		\hyperpage{76}
+		\hyperpage{75}
   \item {Dos\discretionary {-}{}{}Extraction/src/solvers.\discretionary {-}{}{}h}, 
-		\hyperpage{76}
+		\hyperpage{75}
   \item {Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}cc}, 
-		\hyperpage{78}
+		\hyperpage{77}
   \item {Dos\discretionary {-}{}{}Extraction/src/typedefs.\discretionary {-}{}{}h}, 
-		\hyperpage{79}
+		\hyperpage{77}
   \item {Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.\discretionary {-}{}{}cc}, 
-		\hyperpage{81}
+		\hyperpage{80}
   \item {Dos\discretionary {-}{}{}Model}, \hyperpage{29}
     \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{30}
     \subitem {Dos\discretionary {-}{}{}Model}, \hyperpage{30}
@@ -302,8 +302,8 @@
   \item {trapz}
     \subitem {numerics}, \hyperpage{15}
   \item {typedefs.\discretionary {-}{}{}h}
-    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{81}
-    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{81}
+    \subitem {Vector\discretionary {-}{}{}X}, \hyperpage{80}
+    \subitem {Vector\discretionary {-}{}{}Xpair}, \hyperpage{80}
 
   \indexspace
 
@@ -318,8 +318,8 @@
   \indexspace
 
   \item {Vector\discretionary {-}{}{}X}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{81}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{80}
   \item {Vector\discretionary {-}{}{}Xpair}
-    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{81}
+    \subitem {typedefs.\discretionary {-}{}{}h}, \hyperpage{80}
 
 \end{theindex}

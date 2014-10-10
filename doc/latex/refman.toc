@@ -169,31 +169,31 @@
 \contentsline {subsection}{\numberline {8.7.1}Detailed Description}{65}{subsection.8.7.1}
 \contentsline {section}{\numberline {8.8}Dos\discretionary {-}{}{}Extraction/src/factory.h File Reference}{66}{section.8.8}
 \contentsline {subsection}{\numberline {8.8.1}Detailed Description}{67}{subsection.8.8.1}
-\contentsline {section}{\numberline {8.9}Dos\discretionary {-}{}{}Extraction/src/numerics.cc File Reference}{68}{section.8.9}
+\contentsline {section}{\numberline {8.9}Dos\discretionary {-}{}{}Extraction/src/numerics.cc File Reference}{67}{section.8.9}
 \contentsline {subsection}{\numberline {8.9.1}Detailed Description}{68}{subsection.8.9.1}
 \contentsline {section}{\numberline {8.10}Dos\discretionary {-}{}{}Extraction/src/numerics.h File Reference}{68}{section.8.10}
-\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{70}{subsection.8.10.1}
+\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{69}{subsection.8.10.1}
 \contentsline {section}{\numberline {8.11}Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.cc File Reference}{70}{section.8.11}
 \contentsline {subsection}{\numberline {8.11.1}Detailed Description}{70}{subsection.8.11.1}
-\contentsline {section}{\numberline {8.12}Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.h File Reference}{71}{section.8.12}
-\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{72}{subsection.8.12.1}
-\contentsline {section}{\numberline {8.13}Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.h File Reference}{72}{section.8.13}
-\contentsline {subsection}{\numberline {8.13.1}Detailed Description}{73}{subsection.8.13.1}
-\contentsline {section}{\numberline {8.14}Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.cc File Reference}{74}{section.8.14}
-\contentsline {subsection}{\numberline {8.14.1}Detailed Description}{74}{subsection.8.14.1}
-\contentsline {section}{\numberline {8.15}Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{74}{section.8.15}
-\contentsline {subsection}{\numberline {8.15.1}Detailed Description}{75}{subsection.8.15.1}
-\contentsline {section}{\numberline {8.16}Dos\discretionary {-}{}{}Extraction/src/solvers.cc File Reference}{76}{section.8.16}
-\contentsline {subsection}{\numberline {8.16.1}Detailed Description}{76}{subsection.8.16.1}
-\contentsline {section}{\numberline {8.17}Dos\discretionary {-}{}{}Extraction/src/solvers.h File Reference}{76}{section.8.17}
-\contentsline {subsection}{\numberline {8.17.1}Detailed Description}{77}{subsection.8.17.1}
-\contentsline {section}{\numberline {8.18}Dos\discretionary {-}{}{}Extraction/src/typedefs.cc File Reference}{78}{section.8.18}
-\contentsline {subsection}{\numberline {8.18.1}Detailed Description}{78}{subsection.8.18.1}
-\contentsline {section}{\numberline {8.19}Dos\discretionary {-}{}{}Extraction/src/typedefs.h File Reference}{79}{section.8.19}
-\contentsline {subsection}{\numberline {8.19.1}Detailed Description}{80}{subsection.8.19.1}
-\contentsline {subsection}{\numberline {8.19.2}Typedef Documentation}{81}{subsection.8.19.2}
-\contentsline {subsubsection}{\numberline {8.19.2.1}Vector\discretionary {-}{}{}X}{81}{subsubsection.8.19.2.1}
-\contentsline {subsubsection}{\numberline {8.19.2.2}Vector\discretionary {-}{}{}Xpair}{81}{subsubsection.8.19.2.2}
-\contentsline {section}{\numberline {8.20}Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.cc File Reference}{81}{section.8.20}
-\contentsline {subsection}{\numberline {8.20.1}Detailed Description}{81}{subsection.8.20.1}
-\contentsline {chapter}{Index}{83}{section*.62}
+\contentsline {section}{\numberline {8.12}Dos\discretionary {-}{}{}Extraction/src/param\discretionary {-}{}{}List.h File Reference}{70}{section.8.12}
+\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{71}{subsection.8.12.1}
+\contentsline {section}{\numberline {8.13}Dos\discretionary {-}{}{}Extraction/src/physical\discretionary {-}{}{}Constants.h File Reference}{71}{section.8.13}
+\contentsline {subsection}{\numberline {8.13.1}Detailed Description}{72}{subsection.8.13.1}
+\contentsline {section}{\numberline {8.14}Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.cc File Reference}{73}{section.8.14}
+\contentsline {subsection}{\numberline {8.14.1}Detailed Description}{73}{subsection.8.14.1}
+\contentsline {section}{\numberline {8.15}Dos\discretionary {-}{}{}Extraction/src/quadrature\discretionary {-}{}{}Rule.h File Reference}{73}{section.8.15}
+\contentsline {subsection}{\numberline {8.15.1}Detailed Description}{74}{subsection.8.15.1}
+\contentsline {section}{\numberline {8.16}Dos\discretionary {-}{}{}Extraction/src/solvers.cc File Reference}{75}{section.8.16}
+\contentsline {subsection}{\numberline {8.16.1}Detailed Description}{75}{subsection.8.16.1}
+\contentsline {section}{\numberline {8.17}Dos\discretionary {-}{}{}Extraction/src/solvers.h File Reference}{75}{section.8.17}
+\contentsline {subsection}{\numberline {8.17.1}Detailed Description}{76}{subsection.8.17.1}
+\contentsline {section}{\numberline {8.18}Dos\discretionary {-}{}{}Extraction/src/typedefs.cc File Reference}{77}{section.8.18}
+\contentsline {subsection}{\numberline {8.18.1}Detailed Description}{77}{subsection.8.18.1}
+\contentsline {section}{\numberline {8.19}Dos\discretionary {-}{}{}Extraction/src/typedefs.h File Reference}{77}{section.8.19}
+\contentsline {subsection}{\numberline {8.19.1}Detailed Description}{79}{subsection.8.19.1}
+\contentsline {subsection}{\numberline {8.19.2}Typedef Documentation}{80}{subsection.8.19.2}
+\contentsline {subsubsection}{\numberline {8.19.2.1}Vector\discretionary {-}{}{}X}{80}{subsubsection.8.19.2.1}
+\contentsline {subsubsection}{\numberline {8.19.2.2}Vector\discretionary {-}{}{}Xpair}{80}{subsubsection.8.19.2.2}
+\contentsline {section}{\numberline {8.20}Dos\discretionary {-}{}{}Extraction/test/simulate\discretionary {-}{}{}\_\discretionary {-}{}{}dos.cc File Reference}{80}{section.8.20}
+\contentsline {subsection}{\numberline {8.20.1}Detailed Description}{80}{subsection.8.20.1}
+\contentsline {chapter}{Index}{82}{section*.62}
