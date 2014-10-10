@@ -16,6 +16,8 @@
 
 #include "src/dosModel.h"
 
+#include <omp.h>
+
 /**
  *  @brief The @b main function.
  */
