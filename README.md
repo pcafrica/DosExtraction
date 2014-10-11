@@ -38,9 +38,9 @@ directories (or the ones specified in *CMakeLists.txt*) respectively.
 
 If you wish to install:
 
-* the executable, into */usr/local/bin/*;
-* the shared library, into */usr/local/lib/*;
-* the header files, into */usr/local/include/dosextraction/*;
+- the executable, into */usr/local/bin/*;
+- the shared library, into */usr/local/lib/*;
+- the header files, into */usr/local/include/dosextraction/*;
 
 just type:
 
