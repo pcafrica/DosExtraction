@@ -2,6 +2,8 @@
 .kateproject.d/
 bin/
 build/
+doc/html/
+doc/latex/
 lib/
 
 # Files

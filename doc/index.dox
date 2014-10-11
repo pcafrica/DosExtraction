@@ -56,7 +56,7 @@
  *     $ cmake -DCMAKE_BUILD_TYPE=Debug ..
  * @endcode
  * 
- * and finally:
+ * Finally:
  * 
  * @code
  *     $ make

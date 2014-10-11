@@ -10,7 +10,7 @@
  * @copyright Copyright © 2014 Pasquale Claudio Africa. All rights reserved.
  * @copyright This project is released under the GNU General Public License.
  *
- * @brief Classes for computing total electric charge.
+ * @brief Classes for computing total electric charge density.
  *
  */
 
@@ -24,7 +24,7 @@
 /**
  * @class Charge
  *
- * @brief Abstract class providing methods to calculate total electric charge (the rhs in the Poisson equation).
+ * @brief Abstract class providing methods to calculate total electric charge density (the rhs in the Poisson equation).
  *
  */
 class Charge
