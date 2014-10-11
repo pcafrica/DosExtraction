@@ -67,4 +67,4 @@ in *CMakeLists.txt*):
 $ make doc
 ```
 
-Please read it for further information.
+Please **read it** for further information.
