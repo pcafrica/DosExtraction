@@ -1,4 +1,0 @@
-<map id="Charge" name="Charge">
-<area shape="rect" id="node2" href="$classExponentialCharge.html" title="Class derived from Charge, under the hypothesis that Density of States is a single exponential..." alt="" coords="5,80,136,107"/>
-<area shape="rect" id="node3" href="$classGaussianCharge.html" title="Class derived from Charge, under the hypothesis that Density of States is a combination of gaussians..." alt="" coords="161,80,279,107"/>
-</map>
