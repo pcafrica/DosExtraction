@@ -1,7 +1,7 @@
 /**
- * @mainpage Index
+ * @mainpage Introduction
  * 
- * @section intro Introduction
+ * @section description Description
  * 
  * This program allows to extract the Density of States (DoS), assessed by means of capacitance-voltage measurements,
  * in an organic semiconductor device. Simulated values are fitted to experimental data. @n
@@ -15,7 +15,6 @@
  * @arg <a href="http://www.cmake.org">CMake</a> (version 2.8 or above), a cross-platform configuration tool;
  * @arg <a href="http://www.gnu.org/software/make">Make</a> (version 3.8.1 or above), a tool used to build executables;
  * @arg @anchor GCC <a href="http://www.gnu.org/software/gcc">GCC</a> (version 4.8 or above), the GNU Compiler Collection;
- * @n @n
  * @arg @anchor Eigen <a href="http://eigen.tuxfamily.org">Eigen</a> (version 3.2 or above),
  * to handle with matrices, vectors and linear algebra;
  * @arg @anchor Gnuplot <a href="http://www.gnuplot.info">Gnuplot</a> (version 4.6.4 or above), a graphical utility
