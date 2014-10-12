@@ -29,23 +29,23 @@
  */
 class ChargeFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    ChargeFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~ChargeFactory() = default;
-    
-    /**
-     * @brief Factory method to build an abstract @ref Charge object.
-     * @param[in] params : a list of simulation parameters;
-     * @param[in] rule   : a quadrature rule.
-     * @returns a pointer to @ref Charge.
-     */
-    virtual Charge * BuildCharge(const ParamList & params, const QuadratureRule & rule) = 0;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        ChargeFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~ChargeFactory() = default;
+        
+        /**
+         * @brief Factory method to build an abstract @ref Charge object.
+         * @param[in] params : a list of simulation parameters;
+         * @param[in] rule   : a quadrature rule.
+         * @returns a pointer to @ref Charge.
+         */
+        virtual Charge * BuildCharge(const ParamList & params, const QuadratureRule & rule) = 0;
 };
 
 /**
@@ -56,23 +56,23 @@ class ChargeFactory
  */
 class GaussianChargeFactory : public ChargeFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    GaussianChargeFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~GaussianChargeFactory() = default;
-    
-    /**
-     * @brief Factory method to build a concrete @ref Charge object.
-     * @param[in] params : a list of simulation parameters;
-     * @param[in] rule   : a quadrature rule.
-     * @returns a pointer to @ref GaussianCharge.
-     */
-    virtual Charge * BuildCharge(const ParamList &, const QuadratureRule &) override;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        GaussianChargeFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~GaussianChargeFactory() = default;
+        
+        /**
+         * @brief Factory method to build a concrete @ref Charge object.
+         * @param[in] params : a list of simulation parameters;
+         * @param[in] rule   : a quadrature rule.
+         * @returns a pointer to @ref GaussianCharge.
+         */
+        virtual Charge * BuildCharge(const ParamList &, const QuadratureRule &) override;
 };
 
 /**
@@ -83,23 +83,23 @@ class GaussianChargeFactory : public ChargeFactory
  */
 class ExponentialChargeFactory : public ChargeFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    ExponentialChargeFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~ExponentialChargeFactory() = default;
-    
-    /**
-     * @brief Factory method to build a concrete @ref Charge object.
-     * @param[in] params : a list of simulation parameters;
-     * @param[in] rule   : a quadrature rule.
-     * @returns a pointer to @ref ExponentialCharge.
-     */
-    virtual Charge * BuildCharge(const ParamList &, const QuadratureRule &) override;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        ExponentialChargeFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~ExponentialChargeFactory() = default;
+        
+        /**
+         * @brief Factory method to build a concrete @ref Charge object.
+         * @param[in] params : a list of simulation parameters;
+         * @param[in] rule   : a quadrature rule.
+         * @returns a pointer to @ref ExponentialCharge.
+         */
+        virtual Charge * BuildCharge(const ParamList &, const QuadratureRule &) override;
 };
 
 /**
@@ -110,22 +110,22 @@ class ExponentialChargeFactory : public ChargeFactory
  */
 class QuadratureRuleFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    QuadratureRuleFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~QuadratureRuleFactory() = default;
-    
-    /**
-     * @brief Factory method to build an abstract @ref QuadratureRule object.
-     * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
-     * @returns a pointer to @ref QuadratureRule.
-     */
-    virtual QuadratureRule * BuildRule(const Index & nNodes) = 0;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        QuadratureRuleFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~QuadratureRuleFactory() = default;
+        
+        /**
+         * @brief Factory method to build an abstract @ref QuadratureRule object.
+         * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
+         * @returns a pointer to @ref QuadratureRule.
+         */
+        virtual QuadratureRule * BuildRule(const Index & nNodes) = 0;
 };
 
 /**
@@ -136,22 +136,22 @@ class QuadratureRuleFactory
  */
 class GaussHermiteRuleFactory : public QuadratureRuleFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    GaussHermiteRuleFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~GaussHermiteRuleFactory() = default;
-    
-    /**
-     * @brief Factory method to build a concrete @ref QuadratureRule object.
-     * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
-     * @returns a pointer to @ref GaussHermiteRule.
-     */
-    virtual QuadratureRule * BuildRule(const Index &) override;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        GaussHermiteRuleFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~GaussHermiteRuleFactory() = default;
+        
+        /**
+         * @brief Factory method to build a concrete @ref QuadratureRule object.
+         * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
+         * @returns a pointer to @ref GaussHermiteRule.
+         */
+        virtual QuadratureRule * BuildRule(const Index &) override;
 };
 
 /**
@@ -162,22 +162,22 @@ class GaussHermiteRuleFactory : public QuadratureRuleFactory
  */
 class GaussLaguerreRuleFactory : public QuadratureRuleFactory
 {
-  public:
-    /**
-     * @brief Default constructor (defaulted).
-     */
-    GaussLaguerreRuleFactory() = default;
-    /**
-     * @brief Destructor (defaulted).
-     */
-    virtual ~GaussLaguerreRuleFactory() = default;
-    
-    /**
-     * @brief Factory method to build a concrete @ref QuadratureRule object.
-     * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
-     * @returns a pointer to @ref GaussLaguerreRule.
-     */
-    virtual QuadratureRule * BuildRule(const Index &) override;
+    public:
+        /**
+         * @brief Default constructor (defaulted).
+         */
+        GaussLaguerreRuleFactory() = default;
+        /**
+         * @brief Destructor (defaulted).
+         */
+        virtual ~GaussLaguerreRuleFactory() = default;
+        
+        /**
+         * @brief Factory method to build a concrete @ref QuadratureRule object.
+         * @param[in] nNodes : the number of nodes to be used for the quadrature rule.
+         * @returns a pointer to @ref GaussLaguerreRule.
+         */
+        virtual QuadratureRule * BuildRule(const Index &) override;
 };
 
 #endif /* FACTORY_H */

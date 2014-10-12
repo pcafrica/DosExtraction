@@ -77,7 +77,7 @@ find_package(AStyle)
 
 if(ASTYLE_FOUND)
     add_custom_target(astyle ALL
-        COMMAND ${ASTYLE_EXECUTABLE} -q -A7 -s2 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${TARGET_SRC}
+        COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${TARGET_SRC}
         COMMENT "Formatting source codes..."
         WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 endif()
