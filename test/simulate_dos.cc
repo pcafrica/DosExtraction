@@ -87,7 +87,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Initialize model.
                 DosModel model;
                 
-                if ( omp_get_thread_num() == 0 )
+                if ( omp_get_thread_num() == 0 && i == 0 )
                 {
                     std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
                 }
