@@ -320,9 +320,9 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     VectorXr     C_interp = numerics::interp1(V_experim,     C_experim, V_simulated.array() - V_shift_);
     VectorXr dC_dV_interp = numerics::interp1(V_experim, dC_dV_experim, V_simulated.array() - V_shift_);
     
-    Real error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated, V_shift_) );
+    Real error_L2 = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated.array() - V_shift_) );
     Real error_H1 = std::sqrt( error_L2 * error_L2 +
-                               numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated, V_shift_)
+                               numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated.array() - V_shift_)
                              );
                              
     // Print to output.
@@ -331,7 +331,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     output_fitting << "Charge center of mass = " << charge_center_of_mass << std::endl;
     output_fitting << "C_acc* = " << cAccStar << std::endl;
     output_fitting << std::endl;
-    output_fitting << "Distance between experimental and simulated voltage values:" << std::endl;
+    output_fitting << "Distance between experimental and simulated capacitance values:" << std::endl;
     output_fitting << "\t L2-distance = " << error_L2 << std::endl;
     output_fitting << "\t H1-distance = " << error_H1 << std::endl;
     

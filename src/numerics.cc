@@ -92,7 +92,7 @@ VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorX
 }
 
 Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
-                        const VectorXr & V, const Real & V_shift)
+                        const VectorXr & V)
 {
     // Number of not-NaN values.
     Index nNotNaN = std::min( (interp   .array() != std::numeric_limits<Real>::quiet_NaN()).count(),
@@ -118,5 +118,5 @@ Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
         }
     }
     
-    return trapz(V_centered.array() - V_shift, (interp_centered - simulated_centered).array().square().matrix());
+    return trapz(V_centered, (interp_centered - simulated_centered).array().square().matrix());
 }
