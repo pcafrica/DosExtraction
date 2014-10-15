@@ -368,21 +368,23 @@ void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ost
     os << "set datafile separator \",\";" << std::endl;
     os << "set format y \"%.2te%+03T\";" << std::endl;
     os << std::endl;
+    os << "set key right center;" << std::endl;
+    os << std::endl;
     os << "stats \"" + output_CV_filename + "\" using 1 name \"V\" nooutput;" << std::endl;
     os << std::endl;
-    os << "set multiplot layout 2,1 title \"";
+    os << "set multiplot layout 2, 1 title \"";
     
     os.setf(std::ios_base::scientific);
     os.precision(4);
-    os << "V_shift=" << V_shift_ << ", (Wf - Ea)=" << (params_.Wf_ - params_.Ea_) / Q;
-    os << ", N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T);
+    os << "N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T) << ", (Wf - Ea)=" << (params_.Wf_ - params_.Ea_) / Q;
     os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_ / (- Q);
     os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_ / (- Q);
     os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_ / (- Q);
     os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_ / (K_B * T);
-    os << "\" font \",8\";" << std::endl;
+    os << "\\nV_{shift}=" << V_shift_ << ", nNodes=" << params_.nNodes_ << ", nSteps=" << params_.nSteps_;
+    os << "\" font \", 10\";" << std::endl;
     
-    os << "\tset xlabel \"V_gate - V_shift [V]\" offset 0, 0.75;" << std::endl;
+    os << "\tset xlabel \"V_{gate} - V_{shift} [V]\" offset 0, 0.75;" << std::endl;
     os << std::endl;
     os << "\tset ylabel \"dC/dV [F/V]\";" << std::endl;
     os << "\tplot [V_min:V_max] \"" + output_CV_filename + "\" using 1:3 title \"Experimental\" with lines lw 2, \\" << std::endl;
@@ -416,14 +418,14 @@ void DosModel::save_plot(const std::string & output_directory, const std::string
     output_plot << "pause mouse;" << std::endl;
     output_plot.close();
     
-    // Create .pdf plot file.
-    Gnuplot output_pdf;
-    output_pdf << "set terminal pdf;" << std::endl;
-    output_pdf << "set output \"" + output_directory + output_filename + "_plot.pdf\";" << std::endl;
-    output_pdf << std::endl;
-    gnuplot_commands(output_directory + output_CV_filename, output_pdf);
-    output_pdf << std::endl;
-    output_pdf << "set output;" << std::endl;
+    // Create .png plot file.
+    Gnuplot output_png;
+    output_png << "set terminal pngcairo enhanced size 891, 614;" << std::endl;
+    output_png << "set output \"" + output_directory + output_filename + "_plot.png\";" << std::endl;
+    output_png << std::endl;
+    gnuplot_commands(output_directory + output_CV_filename, output_png);
+    output_png << std::endl;
+    output_png << "set output;" << std::endl;
     
     return;
 }
