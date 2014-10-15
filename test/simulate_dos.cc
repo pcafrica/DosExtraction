@@ -87,9 +87,9 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Initialize model.
                 DosModel model;
                 
-                if ( omp_get_thread_num() == 0)
+                if ( omp_get_thread_num() == 0 )
                 {
-                    std::cout << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
+                    std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
                 }
                 
                 #pragma omp critical
@@ -122,7 +122,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
                 
                 #pragma omp critical
-                std::cout << "\tSimulation No. " << model.params().simulationNo() << " complete!" << std::endl;
+                std::cout << "\t\t\t\tSimulation No. " << model.params().simulationNo() << " complete!" << std::endl;
             }
             catch ( const std::exception & genericException )
             {

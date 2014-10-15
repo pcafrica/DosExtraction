@@ -7,8 +7,8 @@
 ################################################################
 
 # Input filenames.
-input_params  = input_params.csv
-input_experim = input_experim.csv
+input_params  = IIT/TEST_1_Single_Sigma.csv
+input_experim = IIT/Exp_Data_14-07-26_N2200_CNCF-9283Hz.csv
 
 # Input files contain headers definition:
 # 1 = true,
@@ -24,11 +24,11 @@ simulate_all = 1
     indexes = '5 6'
 
 # Number of threads to be used for a parallel simulation.
-nThreads = 7
+nThreads = 8
 
 # The directory where output files will be saved,
 # relative to the executable path.
-output_directory = ./output
+output_directory = ./output_TEST_1_Single_Sigma
 
 ################################################################
 ## Numerical methods
