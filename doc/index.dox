@@ -3,9 +3,8 @@
  * 
  * @section description Description
  * 
- * This program allows to extract the Density of States (DoS)in polymer semiconductors, assessed by means of Capacitance-Voltage
- * measurements on Metal-Insulator-Semiconductor capacitors, assessed by means of capacitance-voltage measurements,
- * in an organic semiconductor device. Simulated values are fitted to experimental data. @n
+ * This program allows to extract the Density of States (DoS) in polymer semiconductors, assessed by means of Capacitance-Voltage
+ * measurements on Metal-Insulator-Semiconductor capacitors. Simulated values are fitted to experimental data. @n
  * All source and header files are written in C++11 language. @n
  * The software is intended to be used on a Unix-like operating system.
  * 

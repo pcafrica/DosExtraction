@@ -1,7 +1,7 @@
 DosExtraction
 =============
 
-This program allows to extract the Density of States (DoS), assessed by means of capacitance-voltage measurements, in an organic semiconductor device.
+This program allows to extract the Density of States (DoS) in polymer semiconductors, assessed by means of Capacitance-Voltage measurements on Metal-Insulator-Semiconductor capacitors.
 
 Compile
 =======
