@@ -318,9 +318,9 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
         }
         
         /* if ( Jac.coeff(0, i) != 0.0 )
-             {
-                cTot_n_ += Jac.coeff(0, i) * u(i);
-             } */
+        {
+            cTot_n_ += Jac.coeff(0, i) * u(i);
+        } */
     }
     
     // cTot_n_ += cTot_;
