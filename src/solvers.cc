@@ -225,8 +225,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     VectorXr  charge = VectorXr::Zero( mesh.size() );
     VectorXr dcharge = VectorXr::Zero( mesh.size() );
     
-    SparseXr    Jac( solver_.Stiff_.rows()    , solver_.Stiff_.rows()     );
-    SparseXr CutJac( solver_.Stiff_.rows() - 1, solver_.Stiff_.rows() - 1 );
+    SparseXr Jac(solver_.Stiff_.rows(), solver_.Stiff_.rows());
     
     SimplicialLDLT<SparseXr> systemSolver;    // Initialize system solver.
     
@@ -242,26 +241,25 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
             dcharge = charge_fun.dcharge(phiOld);
             
             // System assembly.
-            Jac    = computeJac(dcharge);
-            CutJac = Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2);
+            Jac = computeJac(dcharge);
             
-            systemSolver.compute(CutJac);
+            systemSolver.compute( (SparseXr) Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2) );
             
             VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge).segment(1, phiOld.size() - 2);
             
             VectorXr dphi = - systemSolver.solve(res);
             
-            /* for ( Index i = 0; i < dphi.size(); ++i )    // Tolerance cut-off.
-                 {
-                    if ( dphi(i) > tolerance_ )
-                      {
-                        dphi(i) = tolerance_;
-                      }
-                    else if ( dphi(i) < - tolerance_ )
-                      {
-                        dphi(i) = - tolerance_;
-                      }
-                 } */
+            /* for ( Index i = 0; i < dphi.size(); ++i )      // Tolerance cut-off.
+            {
+                if ( dphi(i) > tolerance_ )
+                {
+                    dphi(i) = tolerance_;
+                }
+                else if ( dphi(i) < - tolerance_ )
+                {
+                    dphi(i) = - tolerance_;
+                }
+            } */
             
             // Newton step.
             phi_.segment(1, phi_.size() - 2) += dphi;    // Dirichlet conditions on boundary.
@@ -294,9 +292,8 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     
     // System assembly.
     Jac    = computeJac(dcharge);
-    CutJac = Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2);
     
-    systemSolver.compute(CutJac);
+    systemSolver.compute( (SparseXr) Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2) );
     
     VectorXr u = VectorXr::LinSpaced(phi_.size(), 0, 1);
     

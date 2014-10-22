@@ -201,9 +201,12 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     
     print_done(output_fitting);
     
+    Index maxIterationsNo = config("NLP/maxIterationsNo", 100);
+    Real  tolerance       = config("NLP/tolerance", 1.0e-4);
+    
     output_fitting << "Running Newton solver for non-linear Poisson equation..." << std::endl;
-    output_fitting << "\tMax No. of iterations set: " << config("NLP/maxIterationsNo", 1000) << std::endl;
-    output_fitting << "\tTolerance set: " << config("NLP/tolerance", 1.0e-4) << std::endl;
+    output_fitting << "\tMax No. of iterations set: " << maxIterationsNo << std::endl;
+    output_fitting << "\tTolerance set: " << tolerance << std::endl;
     
     // Start simulation.
     for ( Index i = 0; i < V.size(); ++i )
@@ -225,7 +228,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
             phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));
         }
         
-        NonLinearPoisson1D nlpSolver( bimSolver, config("NLP/maxIterationsNo", 1), config("NLP/tolerance", 1.0e-4) );
+        NonLinearPoisson1D nlpSolver(bimSolver, maxIterationsNo, tolerance);
         nlpSolver.apply(x, phiOld, *charge_fun);
         
         Phi.col(i) = nlpSolver.phi();
@@ -377,9 +380,9 @@ void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ost
     os.setf(std::ios_base::scientific);
     os.precision(4);
     os << "N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T) << ", (Wf - Ea)=" << (params_.Wf_ - params_.Ea_) / Q;
-    os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_ / (- Q);
-    os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_ / (- Q);
-    os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_ / (- Q);
+    os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T) << ", shift_2=" << params_.shift_2_;
+    os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T) << ", shift_3=" << params_.shift_3_;
+    os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T) << ", shift_4=" << params_.shift_4_;
     os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_ / (K_B * T);
     os << "\\nV_{shift}=" << V_shift_ << ", nNodes=" << params_.nNodes_ << ", nSteps=" << params_.nSteps_;
     os << "\" font \", 10\";" << std::endl;

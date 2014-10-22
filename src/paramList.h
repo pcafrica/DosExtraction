@@ -98,13 +98,13 @@ class ParamList
         Real  sigma_       ;    /**< @brief 1st gaussian standard deviation @f$ \sigma @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
         Real  N0_2_        ;    /**< @brief 2nd gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
         Real  sigma_2_     ;    /**< @brief 2nd gaussian standard deviation @f$ \sigma @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
-        Real  shift_2_     ;    /**< @brief 2nd gaussian shift with respect to the 1st gaussian electric potential (normalized by @f$ -Q @f$) @f$ \left[ V \right] @f$. */
+        Real  shift_2_     ;    /**< @brief 2nd gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
         Real  N0_3_        ;    /**< @brief 3rd gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
         Real  sigma_3_     ;    /**< @brief 3rd gaussian standard deviation @f$ \sigma @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
-        Real  shift_3_     ;    /**< @brief 3rd gaussian shift with respect to the 1st gaussian electric potential (normalized by @f$ -Q @f$) @f$ \left[ V \right] @f$. */
+        Real  shift_3_     ;    /**< @brief 3rd gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
         Real  N0_4_        ;    /**< @brief 4th gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
         Real  sigma_4_     ;    /**< @brief 4th gaussian standard deviation @f$ \sigma @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
-        Real  shift_4_     ;    /**< @brief 4th gaussian shift with respect to the 1st gaussian electric potential (normalized by @f$ -Q @f$) @f$ \left[ V \right] @f$. */
+        Real  shift_4_     ;    /**< @brief 4th gaussian shift with respect to the 1st gaussian electric potential @f$ \left[ V \right] @f$. */
         Real  N0_exp_      ;    /**< @brief Exponential @f$ N_0 \left[ m^{-3} \right] @f$. */
         Real  lambda_exp_  ;    /**< @brief Exponential @f$ \lambda @f$ (normalized by @f$ K_B \cdot T @f$) @f$ \left[ ~ \right] @f$. */
         Real  A_semic_     ;    /**< @brief Area of the semiconductor @f$ \left[ m^2 \right] @f$. */

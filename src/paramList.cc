@@ -41,13 +41,13 @@ ParamList::ParamList(const RowVectorXr & list)
     sigma_        = list( 8) * K_B * T;
     N0_2_         = list( 9)          ;
     sigma_2_      = list(10) * K_B * T;
-    shift_2_      = list(11) * ( - Q) ;
+    shift_2_      = list(11)          ;
     N0_3_         = list(12)          ;
     sigma_3_      = list(13) * K_B * T;
-    shift_3_      = list(14) * ( - Q) ;
+    shift_3_      = list(14)          ;
     N0_4_         = list(15)          ;
     sigma_4_      = list(16) * K_B * T;
-    shift_4_      = list(17) * ( - Q) ;
+    shift_4_      = list(17)          ;
     N0_exp_       = list(18)          ;
     lambda_exp_   = list(19) * K_B * T;
     A_semic_      = list(20)          ;
