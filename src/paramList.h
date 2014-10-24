@@ -77,6 +77,7 @@ class ParamList
         inline const Real  & lambda_exp()   const;
         inline const Real  & A_semic()      const;
         inline const Real  & C_sb()         const;
+        inline const Real  & T()            const;
         inline const Index & nNodes()       const;
         inline const Index & nSteps()       const;
         inline const Real  & V_min()        const;
@@ -92,6 +93,7 @@ class ParamList
         Real  t_ins_       ;    /**< @brief Thickness of the insulator layer @f$ \left[ m \right] @f$. */
         Real  eps_semic_   ;    /**< @brief Relative electrical permittivity of the semiconductor layer @f$ \left[ ~ \right] @f$. */
         Real  eps_ins_     ;    /**< @brief Relative electrical permittivity of the insulator layer @f$ \left[ ~ \right] @f$. */
+        Real  T_           ;    /**< @brief Reference temperature @f$ \left[ K \right] @f$. */
         Real  Wf_          ;    /**< @brief Work-function (normalized by @f$ Q @f$) @f$ \left[ V \right] @f$. */
         Real  Ea_          ;    /**< @brief Electron affinity (normalized by @f$ Q @f$) @f$ \left[ V \right] @f$. */
         Real  N0_          ;    /**< @brief 1st gaussian @f$ N_0 \left[ m^{-3} \right] @f$. */
@@ -139,6 +141,11 @@ inline const Real & ParamList::eps_semic() const
 inline const Real & ParamList::eps_ins() const
 {
     return eps_ins_;
+}
+
+inline const Real & ParamList::T() const
+{
+    return T_;
 }
 
 inline const Real & ParamList::Wf() const

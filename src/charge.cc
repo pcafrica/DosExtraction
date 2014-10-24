@@ -30,7 +30,7 @@ Real GaussianCharge::n_approx(const Real & phi, const Real & N0, const Real & si
     
     for ( Index i = 0; i < rule_.nNodes_; ++i )
     {
-        n += rule_.weights_(i) * N0 / SQRT_PI / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
+        n += rule_.weights_(i) * N0 / SQRT_PI / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * params_.T_) ) );
     }
     
     return n;
@@ -44,7 +44,7 @@ Real GaussianCharge::dn_approx(const Real & phi, const Real & N0, const Real & s
     
     for ( Index i = 0; i < rule_.nNodes_; ++i )
     {
-        dn += - Q * rule_.weights_(i) * N0 * SQRT_2 / (sigma * SQRT_PI) * rule_.nodes_(i) / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
+        dn += - Q * rule_.weights_(i) * N0 * SQRT_2 / (sigma * SQRT_PI) * rule_.nodes_(i) / ( 1.0 + std::exp( (SQRT_2 * sigma * rule_.nodes_(i) - Q * phi) / (K_B * params_.T_) ) );
     }
     
     return dn;
@@ -120,7 +120,7 @@ Real ExponentialCharge::n_approx(const Real & phi, const Real & N0, const Real &
     
     for ( Index i = 0; i < rule_.nNodes_; ++i )
     {
-        n += rule_.weights_(i) * N0 / ( 1.0 + std::exp( (lambda * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
+        n += rule_.weights_(i) * N0 / ( 1.0 + std::exp( (lambda * rule_.nodes_(i) - Q * phi) / (K_B * params_.T_) ) );
     }
     
     return n;
@@ -134,7 +134,7 @@ Real ExponentialCharge::dn_approx(const Real & phi, const Real & N0, const Real 
     
     for ( Index i = 0; i < rule_.nNodes_; ++i )
     {
-        dn += - Q * rule_.weights_(i) * N0 / (lambda) * rule_.nodes_(i) / ( 1.0 + std::exp( (lambda * rule_.nodes_(i) - Q * phi) / (K_B * T) ) );
+        dn += - Q * rule_.weights_(i) * N0 / (lambda) * rule_.nodes_(i) / ( 1.0 + std::exp( (lambda * rule_.nodes_(i) - Q * phi) / (K_B * params_.T_) ) );
     }
     
     return dn;
