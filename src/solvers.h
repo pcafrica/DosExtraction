@@ -216,7 +216,7 @@ class NonLinearPoisson1D
          * @param[in] init_guess : initial guess for the Newton algorithm;
          * @param[in] charge_fun : an object of class @ref Charge specifying how to compute total electric charge.
          */
-        void apply(const VectorXr &, const VectorXr &, Charge &);
+        void apply(const VectorXr &, const VectorXr &, const Charge &);
         
         /**
          * @name Getter methods

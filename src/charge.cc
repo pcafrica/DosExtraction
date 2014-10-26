@@ -50,7 +50,7 @@ Real GaussianCharge::dn_approx(const Real & phi, const Real & N0, const Real & s
     return dn;
 }
 
-VectorXr GaussianCharge::charge(const VectorXr & phi)
+VectorXr GaussianCharge::charge(const VectorXr & phi) const
 {
     VectorXr charge = VectorXr::Zero( phi.size() );
     
@@ -77,7 +77,7 @@ VectorXr GaussianCharge::charge(const VectorXr & phi)
     return charge;
 }
 
-VectorXr GaussianCharge::dcharge(const VectorXr & phi)
+VectorXr GaussianCharge::dcharge(const VectorXr & phi) const
 {
     VectorXr dcharge = VectorXr::Zero( phi.size() );
     
@@ -140,7 +140,7 @@ Real ExponentialCharge::dn_approx(const Real & phi, const Real & N0, const Real 
     return dn;
 }
 
-VectorXr ExponentialCharge::charge(const VectorXr & phi)
+VectorXr ExponentialCharge::charge(const VectorXr & phi) const
 {
     VectorXr charge = VectorXr::Zero( phi.size() );
     
@@ -152,7 +152,7 @@ VectorXr ExponentialCharge::charge(const VectorXr & phi)
     return charge;
 }
 
-VectorXr ExponentialCharge::dcharge(const VectorXr & phi)
+VectorXr ExponentialCharge::dcharge(const VectorXr & phi) const
 {
     VectorXr dcharge = VectorXr::Zero( phi.size() );
     

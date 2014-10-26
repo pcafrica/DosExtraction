@@ -208,7 +208,7 @@ NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const Index &
     assert( tolerance_       > 0.0 );
 }
 
-void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_guess, Charge & charge_fun)
+void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_guess, const Charge & charge_fun)
 {
     assert( init_guess    .size() == mesh.size() );
     assert( solver_.Stiff_.rows() == mesh.size() );

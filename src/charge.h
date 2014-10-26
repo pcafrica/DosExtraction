@@ -50,13 +50,13 @@ class Charge
          * @param[in] phi : the electric potential @f$ \varphi @f$.
          * @returns the total charge density @f$ q(\varphi) \left[ C \cdot m^{-3} \right] @f$.
          */
-        virtual VectorXr  charge(const VectorXr & phi) = 0;
+        virtual VectorXr  charge(const VectorXr & phi) const = 0;
         /**
          * @brief Compute the derivative of the total charge density with respect to the electric potential.
          * @param[in] phi : the electric potential @f$ \varphi @f$.
          * @returns the derivative: @f$ \frac{\mathrm{d}q(\varphi)}{\mathrm{d}\varphi} \left[ C \cdot m^{-3} \cdot V^{-1} \right] @f$.
          */
-        virtual VectorXr dcharge(const VectorXr & phi) = 0;
+        virtual VectorXr dcharge(const VectorXr & phi) const = 0;
         
     protected:
         const ParamList      & params_;    /**< @brief Parameter list handler. */
@@ -91,8 +91,8 @@ class GaussianCharge : public Charge
          */
         virtual ~GaussianCharge() = default;
         
-        virtual VectorXr  charge(const VectorXr &) override;
-        virtual VectorXr dcharge(const VectorXr &) override;
+        virtual VectorXr  charge(const VectorXr &) const override;
+        virtual VectorXr dcharge(const VectorXr &) const override;
         
     private:
         /**
@@ -142,8 +142,8 @@ class ExponentialCharge : public Charge
          */
         virtual ~ExponentialCharge() = default;
         
-        virtual VectorXr  charge(const VectorXr &) override;
-        virtual VectorXr dcharge(const VectorXr &) override;
+        virtual VectorXr  charge(const VectorXr &) const override;
+        virtual VectorXr dcharge(const VectorXr &) const override;
         
     private:
         /**
