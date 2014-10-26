@@ -25,8 +25,8 @@
 #include <iostream>
 #include <fstream>
 
-#define Real  double    /**< @brief Pre-processor macro for real numbers. */
-#define Index ptrdiff_t    /**< @brief Pre-processor macro for indexing variables. */
+typedef double Real;    /**< @brief Typedef for real numbers. */
+typedef ptrdiff_t Index;    /**< @brief Typedef for indexing variables. */
 
 #include "physicalConstants.h"
 

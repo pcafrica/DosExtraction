@@ -291,7 +291,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     dcharge = charge_fun.dcharge(phi_);
     
     // System assembly.
-    Jac    = computeJac(dcharge);
+    Jac = computeJac(dcharge);
     
     systemSolver.compute( (SparseXr) Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2) );
     
@@ -304,11 +304,11 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     {
         if ( Jac.coeff(i, 0) != 0.0 || Jac.coeff(i, Jac.cols() - 1) != 0.0 )
         {
-            b(i - 1) = Jac.coeff(i, 0) * u(0) + Jac.coeff(i, Jac.cols() - 1) * u(u.size() - 1);
+            b(i - 1) = - (Jac.coeff(i, 0) * u(0) + Jac.coeff(i, Jac.cols() - 1) * u(u.size() - 1));
         }
     }
     
-    u.segment(1, u.size() - 2) = - systemSolver.solve(b);
+    u.segment(1, u.size() - 2) = systemSolver.solve(b);
     
     for ( Index i = 0; i < phi_.size(); ++i )
     {
