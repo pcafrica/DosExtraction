@@ -379,11 +379,11 @@ void DosModel::gnuplot_commands(const std::string & output_CV_filename, std::ost
     
     os.setf(std::ios_base::scientific);
     os.precision(4);
-    os << "N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * params_.T_) << ", T=" << params_.T_ <<  ",  Phi_B=" << (params_.Wf_ - params_.Ea_) / Q;
-    os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * params_.T_) << ", shift_2=" << params_.shift_2_;
-    os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * params_.T_) << ", shift_3=" << params_.shift_3_;
-    os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * params_.T_) << ", shift_4=" << params_.shift_4_;
-    os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_ / (K_B * params_.T_);
+    os << "N0=" << params_.N0_ << ", σ=" << params_.sigma_ / (K_B * T_REF) << ", T=" << params_.T_ <<  ",  Phi_B=" << (params_.Wf_ - params_.Ea_) / Q;
+    os << "\\nN0_2=" << params_.N0_2_ << ", σ_2=" << params_.sigma_2_ / (K_B * T_REF) << ", shift_2=" << params_.shift_2_;
+    os << "\\nN0_3=" << params_.N0_3_ << ", σ_3=" << params_.sigma_3_ / (K_B * T_REF) << ", shift_3=" << params_.shift_3_;
+    os << "\\nN0_4=" << params_.N0_4_ << ", σ_4=" << params_.sigma_4_ / (K_B * T_REF) << ", shift_4=" << params_.shift_4_;
+    os << "\\nN0_e=" << params_.N0_exp_ << ", λ_e=" << params_.lambda_exp_ / (K_B * T_REF);
     os << "\\nV_{shift}=" << V_shift_ << ", nNodes=" << params_.nNodes_ << ", nSteps=" << params_.nSteps_;
     os << "\" font \", 10\";" << std::endl;
     
