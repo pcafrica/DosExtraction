@@ -122,7 +122,7 @@ void Bim1D::assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma, cons
     
     VectorXr v_k = VectorXr::Zero( nNodes_ - 1 );
     
-    if ( beta.size() == 1)
+    if ( beta.size() == 1 )
     {
         v_k.fill(0.0);
     }
@@ -154,8 +154,8 @@ void Bim1D::assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma, cons
     
     for ( Index i = 0; i < AdvDiff_.rows() - 1; ++i )
     {
-        AdvDiff_.insert(i + 1,  i ) = - c_k(i) * bp(i);    // Sub-diagonal.
-        AdvDiff_.insert( i , i + 1) = - c_k(i) * bn(i);    // Super-diagonal.
+        AdvDiff_.insert(i + 1,  i  ) = - c_k(i) * bp(i);    // Sub-diagonal.
+        AdvDiff_.insert(  i , i + 1) = - c_k(i) * bn(i);    // Super-diagonal.
     }
     
     AdvDiff_.insert(0, 0) = c_k(0) * bn(0);
@@ -172,7 +172,7 @@ void Bim1D::assembleAdvDiff(const VectorXr & alpha, const VectorXr & gamma, cons
 
 void Bim1D::assembleStiff(const VectorXr & eps, const VectorXr & kappa)
 {
-    assembleAdvDiff( eps, kappa, VectorXr::Ones( nNodes_ ), VectorXr::Zero( 1 ) );
+    assembleAdvDiff( eps, kappa, VectorXr::Ones( nNodes_ ), VectorXr::Zero(1) );
     
     Stiff_ = AdvDiff_;
     
