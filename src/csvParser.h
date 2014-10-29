@@ -105,7 +105,7 @@ class CsvParser
          * @param[in] colIndex : the cell column index.
          * @returns a scalar containing the value read.
          */
-        Real      importCell     (const Index &, const Index &);
+        Real        importCell     (const Index &, const Index &);
         
         /**
          * @brief Method to import the whole input file.
