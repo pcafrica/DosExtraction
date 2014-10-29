@@ -50,7 +50,7 @@ include_directories(SYSTEM "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE
 find_package(Eigen3 REQUIRED)
 include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
 
-find_package(Boost REQUIRED COMPONENTS iostreams system filesystem)
+find_package(Boost 1.50 REQUIRED COMPONENTS iostreams system filesystem)
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
 find_package(OpenMP)

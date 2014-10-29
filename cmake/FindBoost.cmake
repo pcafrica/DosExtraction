@@ -583,13 +583,13 @@ if(NOT Boost_INCLUDE_DIR)
     list(APPEND _boost_INCLUDE_SEARCH_DIRS ${_ENV_BOOST_INCLUDEDIR})
   endif()
 
-  if( BOOST_ROOT )
+  if(BOOST_ROOT)
     list(APPEND _boost_INCLUDE_SEARCH_DIRS ${BOOST_ROOT}/include ${BOOST_ROOT})
   elseif( _ENV_BOOST_ROOT )
     list(APPEND _boost_INCLUDE_SEARCH_DIRS ${_ENV_BOOST_ROOT}/include ${_ENV_BOOST_ROOT})
   endif()
 
-  if( Boost_NO_SYSTEM_PATHS)
+  if(Boost_NO_SYSTEM_PATHS)
     list(APPEND _boost_INCLUDE_SEARCH_DIRS NO_CMAKE_SYSTEM_PATH)
   else()
     list(APPEND _boost_INCLUDE_SEARCH_DIRS PATHS
@@ -639,9 +639,19 @@ if(NOT Boost_INCLUDE_DIR)
   # Look for a standard boost header file.
   find_path(Boost_INCLUDE_DIR
     NAMES         boost/config.hpp
-    HINTS         ${_boost_INCLUDE_SEARCH_DIRS}
+    HINTS         ${_boost_INCLUDE_SEARCH_DIRS}/..
     PATH_SUFFIXES ${_boost_PATH_SUFFIXES}
     )
+
+  if(NOT Boost_INCLUDE_DIR)
+    find_path(Boost_INCLUDE_DIR
+      NAMES         config.hpp
+      HINTS         ${_boost_INCLUDE_SEARCH_DIRS}
+      PATH_SUFFIXES ${_boost_PATH_SUFFIXES}
+      )
+    set(Boost_PREFIX "../")
+  endif()
+  
 endif()
 
 # ------------------------------------------------------------------------
@@ -653,13 +663,13 @@ endif()
 if(Boost_INCLUDE_DIR)
   if(Boost_DEBUG)
     message(STATUS "[ ${CMAKE_CURRENT_LIST_FILE}:${CMAKE_CURRENT_LIST_LINE} ] "
-                   "location of version.hpp: ${Boost_INCLUDE_DIR}/boost/version.hpp")
+                   "location of version.hpp: ${Boost_INCLUDE_DIR}/boost/${Boost_PREFIX}version.hpp")
   endif()
 
   # Extract Boost_VERSION and Boost_LIB_VERSION from version.hpp
   set(Boost_VERSION 0)
   set(Boost_LIB_VERSION "")
-  file(STRINGS "${Boost_INCLUDE_DIR}/boost/version.hpp" _boost_VERSION_HPP_CONTENTS REGEX "#define BOOST_(LIB_)?VERSION ")
+  file(STRINGS "${Boost_INCLUDE_DIR}/boost/${Boost_PREFIX}version.hpp" _boost_VERSION_HPP_CONTENTS REGEX "#define BOOST_(LIB_)?VERSION ")
   set(_Boost_VERSION_REGEX "([0-9]+)")
   set(_Boost_LIB_VERSION_REGEX "\"([0-9_]+)\"")
   foreach(v VERSION LIB_VERSION)
