@@ -331,7 +331,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     // Print to output.
     output_fitting << std::endl;
     output_fitting << "V_shift = " << V_shift_ << std::endl;
-    output_fitting << "Charge center of mass = " << charge_center_of_mass << std::endl;
+    output_fitting << "Center of charge = " << charge_center_of_mass << std::endl;
     output_fitting << "C_acc* = " << cAccStar << std::endl;
     output_fitting << std::endl;
     output_fitting << "Distance between experimental and simulated capacitance values:" << std::endl;
