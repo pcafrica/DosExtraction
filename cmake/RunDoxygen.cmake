@@ -11,14 +11,14 @@
 # Install it with:
 #  cmake ./ && sudo make install
 # Add the following to the CMakeLists.txt of your project:
-#  include(UseDoxygen OPTIONAL)
+#  include(RunDoxygen OPTIONAL)
 # Optionally copy Doxyfile.in in the directory of CMakeLists.txt and edit it.
 #
 # USAGE: INCLUDE IN PROJECT
 #
 #  set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
-#  include(UseDoxygen)
-# Add the Doxyfile.in and UseDoxygen.cmake files to the projects source directory.
+#  include(RunDoxygen)
+# Add the Doxyfile.in and RunDoxygen.cmake files to the projects source directory.
 #
 #
 # CONFIGURATION
