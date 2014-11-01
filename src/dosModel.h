@@ -75,35 +75,55 @@ class DosModel
                       
         /**
          * @brief Perform post-processing.
-         * @param[in]  config         : the GetPot configuration object;
-         * @param[in]  input_experim  : the file containing experimental data;
-         * @param[out] output_fitting : output file containing infos about fitting experimental data;
-         * @param[out] output_CV      : output file containing infos about capacitance-voltage data;
-         * @param[in]  A_semic        : area of the semiconductor;
-         * @param[in]  C_sb           : stray border capacitance (see @ref ParamList);
-         * @param[in]  x_semic        : the mesh corresponding to the semiconductor domain;
-         * @param[in]  dens           : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
-         * @param[in]  V_simulated    : simulated voltage values;
-         * @param[in]  C_simulated    : simulated capacitance values.
+         * @param[in]  config        : the GetPot configuration object;
+         * @param[in]  input_experim : the file containing experimental data;
+         * @param[out] output_info   : output file containing infos about the simulation;
+         * @param[out] output_CV     : output file containing infos about capacitance-voltage data;
+         * @param[in]  A_semic       : area of the semiconductor @f$ \left[ m^{-2} \right] @f$;
+         * @param[in]  C_sb          : stray border capacitance (see @ref ParamList) @f$ \left[ F \right] @f$;
+         * @param[in]  x_semic       : the mesh corresponding to the semiconductor domain;
+         * @param[in]  dens          : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
+         * @param[in]  V_simulated   : simulated voltage values @f$ \left[ V \right] @f$;
+         * @param[in]  C_simulated   : simulated capacitance values @f$ \left[ F \right] @f$.
          */
         void post_process(const GetPot &, const std::string &, std::ostream &, std::ostream &,
                           const Real &, const Real &, const VectorXr &, const VectorXr &,
                           const VectorXr &, const VectorXr &);
                           
         /**
-         * @brief Defines commands to generate @ref Gnuplot output files.
-         * @param[in]  output_CV_filename : output CV filename;
-         * @param[out] os                 : output stream.
+         * @brief Simulate and automatically fit @f$ \sigma @f$ in a range of values specified in the configuration file.
+         * @param[in] config             : the GetPot configuration object;
+         * @param[in] input_experim      : the file containing experimental data;
+         * @param[in] output_directory   : directory where to store output files;
+         * @param[in] output_plot_subdir : sub-directory where to store @ref Gnuplot files;
+         * @param[in] output_filename    : prefix for the output filename.
          */
-        void gnuplot_commands(const std::string &, std::ostream &) const;
+        void fit(const GetPot &, const std::string &, const std::string &,
+                 const std::string &, const std::string &);
+                 
         /**
          * @brief Save the @ref Gnuplot output files.
          * @param[in] output_directory   : directory where to store output files;
          * @param[in] output_plot_subdir : sub-directory where to store @ref Gnuplot files;
-         * @param[in] output_CV_filename : output CV filename;
-         * @param[in] output_filename    : prefix for the output filename.
+         * @param[in] csv_filename       : .csv file to plot;
+         * @param[in] output_filename    : prefix for the output filename;
+         * @param[in] fitting            : bool to specify if fitting error plots or C-V plots should be saved.
          */
-        void save_plot(const std::string &, const std::string &, const std::string &, const std::string &) const;
+        void save_plot(const std::string &, const std::string &, const std::string &, const std::string &, const bool &) const;
+        
+        /**
+         * @brief Defines commands to generate @ref Gnuplot output files.
+         * @param[in]  csv_filename : .csv file to plot;
+         * @param[out] os           : output stream.
+         */
+        void gnuplot_commands(const std::string &, std::ostream &) const;
+        
+        /**
+         * @brief Defines commands to generate @ref Gnuplot output files for @f$ L^2 @f$ and @f$ H^1 @f$ errors.
+         * @param[in]  csv_filename : .csv file to plot;
+         * @param[out] os           : output stream.
+         */
+        void gnuplot_errorPlot_commands(const std::string &, std::ostream &) const;
         
     private:
         bool initialized_;    /**< @brief bool to determine if @ref DosModel @a param_ has been properly initialized. */
@@ -111,6 +131,13 @@ class DosModel
         ParamList params_;    /**< @brief The parameter list. */
         
         Real V_shift_;    /**< @brief Peak shift between experimental data and simulated values @f$ [V] @f$. */
+        
+        Real C_acc_experim_  ;    /**< @brief Experimental accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
+        Real C_acc_simulated_;    /**< @brief Simulated accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
+        Real C_dep_experim_  ;    /**< @brief Experimental depletion capacitance, used for automatic fitting @f$ [F] @f$. */
+        
+        Real error_L2_;    /**< @brief @f$ L^2 @f$-distance between experimental and simulated capacitance values. */
+        Real error_H1_;    /**< @brief @f$ H^1 @f$-distance between experimental and simulated capacitance values. */
 };
 
 // Implementations.

@@ -23,7 +23,7 @@
  * 
  * It also uses the following libraries, shipped in the @a include/ folder:
  * 
- * @arg <a href="http://getpot.sourceforge.net">GetPot</a> (version 1.1.18), to parse command-line and configuration files;
+ * @arg <a href="http://getpot.sourceforge.net">GetPot</a> (version 1.1.17), to parse command-line and configuration files;
  * @arg @anchor gnuplot-iostream <a href="http://www.stahlke.org/dan/gnuplot-iostream">gnuplot-iostream</a> (version 2),
  * a C++ interface for @ref Gnuplot.
  * 
@@ -100,7 +100,7 @@
  * Within it you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
  * Particularly, the variables @a input_params and @a input_experim can be set, i.e. the filenames
- * where to find input fitting parameters and experimental data respectively.
+ * where to find input simulation parameters and experimental data respectively.
  * It's recommended (but not compulsory) to put these files in the same directory as the configuration
  * file (otherwise you can specify a relative or absolute path to them).
  * 

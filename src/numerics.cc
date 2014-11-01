@@ -65,7 +65,7 @@ Real numerics::interp1(const VectorXr & x, const VectorXr & y, const Real & xNew
         return std::numeric_limits<Real>::quiet_NaN();
     }
     
-    // Index of the last element in "x" lower than xNew.s: "x(index + 1)" is greater or equal than "xNew".
+    // Index of the last element in "x" lower than xNew: "x(index + 1)" is greater or equal than "xNew".
     Index index = std::lower_bound(x.data(), x.data() + x.size(), xNew) - x.data() - 1;
     
     if ( x(index + 1) == xNew )    // If "xNew" belongs to the original grid.

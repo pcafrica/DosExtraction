@@ -3,7 +3,7 @@
 ################################################################
 
 ################################################################
-## General settings
+## General settings.
 ################################################################
 
 # Input filenames.
@@ -31,7 +31,24 @@ nThreads = 8
 output_directory = ./output_TEST_1_Single_Sigma
 
 ################################################################
-## Numerical methods
+## Fitting.
+################################################################
+[FIT]
+# Parameters for automatically fit sigma_1.
+
+    # Define the range of values where to find the best sigma
+    # as [sigma - negative_shift, sigma + positive_shift]:
+    # 1 = Gauss-Hermite (Gaussian weight),
+    # 0 = Gauss-Laguerre (Exponential weight).
+    negative_shift = 2
+    positive_shift = 2
+    
+    # [sigma - negative_shift, sigma] and [sigma, sigma + positive_shift]
+    # are split into nSplits subdivisions.
+    nSplits = 5
+
+################################################################
+## Numerical methods.
 ################################################################
 
 # Constitutive relation for the Density of States:

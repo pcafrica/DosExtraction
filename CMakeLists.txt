@@ -15,7 +15,8 @@ project(DOS_Extraction CXX)
 ################################################################
 ## Set up some variables.
 ################################################################
-set(TARGET_NAME "simulate_dos")    # Name of the test source file to compile.
+set(FIT "fit_dos")    # Name of the test source file to compile.
+set(SIMULATE "simulate_dos")    # Name of the test source file to compile.
 
 set(DOS_EXTRACTION "dosextraction")    # Name of the shared library.
 
@@ -27,9 +28,10 @@ set(SHARE_INSTALLDIR "${CMAKE_INSTALL_PREFIX}/share/${DOS_EXTRACTION}")    # Ins
 set(SRCDIR  "${CMAKE_SOURCE_DIR}/src" )    # Directory where to find the library sources.
 set(TESTDIR "${CMAKE_SOURCE_DIR}/test")    # Directory where to find the test sources.
 
-file(GLOB TARGET_SRC ${TESTDIR}/${TARGET_NAME}.cc)
+file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
+file(GLOB SIMULATE_SRC ${TESTDIR}/${SIMULATE}.cc)
 file(GLOB SRCS ${SRCDIR}/*.cc)
-file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${TARGET_NAME}.h)
+file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${FIT_SRC}.h ${TESTDIR}/${SIMULATE_SRC}.h)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
@@ -80,7 +82,7 @@ find_package(AStyle)
 
 if(ASTYLE_FOUND)
     add_custom_target(astyle ALL
-        COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${TARGET_SRC}
+        COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${SIMULATE_SRC} ${FIT_SRC}
         COMMENT "Formatting source codes..."
         WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
 endif()
@@ -100,21 +102,33 @@ set_target_properties(${DOS_EXTRACTION} PROPERTIES OUTPUT_NAME "${DOS_EXTRACTION
 target_link_libraries(${DOS_EXTRACTION} ${Boost_LIBRARIES})
 
 ################################################################
-## Executable.
+## Target 1.
 ################################################################
-add_executable(${TARGET_NAME} ${TARGET_SRC})
+add_executable(${FIT} ${FIT_SRC})
 
-set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "${TARGET_NAME}"    # Executable filename.
+set_target_properties(${FIT} PROPERTIES OUTPUT_NAME "${FIT}"    # Executable filename.
                                      INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
-target_link_libraries(${TARGET_NAME} ${DOS_EXTRACTION})
+target_link_libraries(${FIT} ${DOS_EXTRACTION})
+
+################################################################
+## Target 2.
+################################################################
+add_executable(${SIMULATE} ${SIMULATE_SRC})
+
+set_target_properties(${SIMULATE} PROPERTIES OUTPUT_NAME "${SIMULATE}"    # Executable filename.
+                                     INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
+target_link_libraries(${SIMULATE} ${DOS_EXTRACTION})
 
 ################################################################
 ## Installation.
 ################################################################
 install(TARGETS ${DOS_EXTRACTION} DESTINATION "${LIB_INSTALLDIR}")
 install(FILES ${HDRS} DESTINATION "${INC_INSTALLDIR}")
-install(TARGETS ${TARGET_NAME} DESTINATION "${BIN_INSTALLDIR}")
+
 install(DIRECTORY ${SHARE_DIR} DESTINATION "${SHARE_INSTALLDIR}")
+
+install(TARGETS ${FIT} DESTINATION "${BIN_INSTALLDIR}")
+install(TARGETS ${SIMULATE} DESTINATION "${BIN_INSTALLDIR}")
 
 ################################################################
 ## Uninstallation.

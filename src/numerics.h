@@ -72,16 +72,16 @@ namespace numerics
     
     /**
      * @brief Linear 1D interpolation. Interpolate @a y, defined at points @a x, at the point @a xNew.
-     * @param[in] y    : the vector of values to interpolate;
      * @param[in] x    : the vector of the discrete domain;
+     * @param[in] y    : the vector of values to interpolate;
      * @param[in] xNew : the point to interpolate at.
      * @returns a scalar containing the interpolated value.
      */
     Real   interp1(const VectorXr &, const VectorXr &, const Real &);
     /**
      * @brief Linear 1D interpolation. Interpolate @a y, defined at points @a x, at the points @a xNew.
-     * @param[in] y    : the vector of values to interpolate;
      * @param[in] x    : the vector of the discrete domain;
+     * @param[in] y    : the vector of values to interpolate;
      * @param[in] xNew : the vector of points to interpolate at.
      * @returns a vector of the same length as @a xNew containing the interpolated values.
      */
