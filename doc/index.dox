@@ -30,9 +30,9 @@
  * Parallel computing capabilities are provided through the <a href="http://openmp.org">OpenMP</a> library,
  * shipped together with @ref GCC.
  * 
- * @section install_sec Compile
+ * @section compile Compile
  * 
- * In order to generate the executable, first open the @a CMakeLists.txt file (in the top-level folder)
+ * In order to generate the executables, first open the @a CMakeLists.txt file (in the top-level folder)
  * and, if necessary, edit it to your needs.
  * 
  * Then create a build directory and move into it:
@@ -55,20 +55,30 @@
  *     $ cmake -DCMAKE_BUILD_TYPE=Debug ..
  * @endcode
  * 
+ * The further option:
+ * 
+ * @code
+ *     -DCMAKE_INSTALL_PREFIX=my_dir
+ * @endcode
+ * 
+ * will allow you to customize the installation directory, which is by default @a /usr/local.
+ * 
  * Finally:
  * 
  * @code
  *     $ make
  * @endcode
  * 
- * will build the @a simulate_dos executable and the @a dosextraction shared library under the @a bin/ and @a lib/
+ * will build the @a simulate_dos and @a fit_dos executables and the @a dosextraction shared library under the @a bin/ and @a lib/
  * directories (or the ones specified in @a CMakeLists.txt) respectively.
+ * 
+ * @section install Install
  * 
  * If you wish to install:
  * 
- * @arg the executable, into @a /usr/local/bin/;
- * @arg the shared library, into @a /usr/local/lib/;
- * @arg the header files, into @a /usr/local/include/dosextraction/;
+ * @arg the executables, into @a ${CMAKE_INSTALL_PREFIX}/bin/;
+ * @arg the shared library, into @a ${CMAKE_INSTALL_PREFIX}/lib/;
+ * @arg the header files, into @a ${CMAKE_INSTALL_PREFIX}/include/dosextraction/;
  * 
  * just type:
  * 
@@ -96,7 +106,7 @@
  * 
  * @note The default configuration directory is @a config/.
  * 
- * Before you can run the executable, you have to set up the configuration file (default: @a config.pot).
+ * Before you can run the executables, you have to set up the configuration file (default: @a config.pot).
  * Within it you can find a list of parameters, each of which is commented out to explain what
  * modifying it will entail. @n
  * Particularly, the variables @a input_params and @a input_experim can be set, i.e. the filenames
@@ -113,10 +123,16 @@
  * @section run Run!
  * 
  * To run by using the default configuration filename (@a config.pot) simply move into the directory where the
- * executable is located in and type:
+ * executables are located in and type:
  * 
  * @code
  *     $ ./simulate_dos
+ * @endcode
+ * 
+ * or:
+ * 
+ * @code
+ *     $ ./fit_dos
  * @endcode
  * 
  * By default, the configuration file is searched in @a ../config. @n
@@ -132,6 +148,8 @@
  * @code
  *     $ ./simulate_dos --file configuration_filename
  * @endcode
+ * 
+ * (the same holds for @a fit_dos).
  * 
  * The variable @a configuration_filename should @b not contain the path.
  * 

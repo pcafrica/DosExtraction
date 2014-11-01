@@ -6,7 +6,7 @@ This program allows to extract the Density of States (DoS) in polymer semiconduc
 Compile
 =======
 
-In order to generate the executable, first open the *CMakeLists.txt* file (in the top-level folder) and, if necessary, edit it to your needs.
+In order to generate the executables, first open the *CMakeLists.txt* file (in the top-level folder) and, if necessary, edit it to your needs.
 
 Then create a build directory and move into it:
 
@@ -27,20 +27,31 @@ or, should you want the compiler to produce also debug symbols:
 $ cmake -DCMAKE_BUILD_TYPE=Debug ..
 ```
 
+The further option:
+
+```
+$ -DCMAKE_INSTALL_PREFIX=my_dir
+```
+
+will allow you to customize the installation directory, which is by default */usr/local*.
+
 Finally:
 
 ```
 $ make
 ```
 
-will build the *simulate\_dos* executable and the *dosextraction* shared library under the *bin/* and *lib/*
+will build the *simulate\_dos* and *fit\_dos* executables and the *dosextraction* shared library under the *bin/* and *lib/*
 directories (or the ones specified in *CMakeLists.txt*) respectively.
+
+Install
+=======
 
 If you wish to install:
 
-- the executable, into */usr/local/bin/*;
-- the shared library, into */usr/local/lib/*;
-- the header files, into */usr/local/include/dosextraction/*;
+- the executable, into *${CMAKE_INSTALL_PREFIX}/bin/*;
+- the shared library, into *${CMAKE_INSTALL_PREFIX}/lib/*;
+- the header files, into *${CMAKE_INSTALL_PREFIX}/include/dosextraction/*;
 
 just type:
 

@@ -107,7 +107,7 @@ target_link_libraries(${DOS_EXTRACTION} ${Boost_LIBRARIES})
 add_executable(${FIT} ${FIT_SRC})
 
 set_target_properties(${FIT} PROPERTIES OUTPUT_NAME "${FIT}"    # Executable filename.
-                                     INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
+                             INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
 target_link_libraries(${FIT} ${DOS_EXTRACTION})
 
 ################################################################
@@ -116,7 +116,7 @@ target_link_libraries(${FIT} ${DOS_EXTRACTION})
 add_executable(${SIMULATE} ${SIMULATE_SRC})
 
 set_target_properties(${SIMULATE} PROPERTIES OUTPUT_NAME "${SIMULATE}"    # Executable filename.
-                                     INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
+                                  INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
 target_link_libraries(${SIMULATE} ${DOS_EXTRACTION})
 
 ################################################################

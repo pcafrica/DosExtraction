@@ -27,7 +27,7 @@ simulate_all = 1
 nThreads = 8
 
 # The directory where output files will be saved,
-# relative to the executable path.
+# relative to the path where the executable is run from.
 output_directory = ./output_TEST_1_Single_Sigma
 
 ################################################################
