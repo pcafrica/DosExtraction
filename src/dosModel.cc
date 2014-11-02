@@ -81,13 +81,13 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     
     // System assembly.
     output_info << "Assembling system matrices...";
-    VectorXr eps = EPS0 * params_.eps_semic_ * VectorXr::Ones( xm.size() );
+    VectorXr eps = params_.eps_semic_ * VectorXr::Ones( xm.size() );
     
     for ( Index i = 0; i < eps.size(); ++i )
     {
         if ( xm(i) > 0.0 )
         {
-            eps(i) = EPS0 * params_.eps_ins_;
+            eps(i) = params_.eps_ins_;
         }
     }
     
@@ -455,8 +455,8 @@ void DosModel::fit(const GetPot & config, const std::string & input_experim, con
         params_.C_sb_ += C_acc_experim_ - C_acc_simulated_;
         
         // Step 3.
-        params_.t_semic_ = EPS0 * params_.eps_semic_ * (params_.A_semic_ / (C_dep_experim_ - params_.C_sb_)
-                           - params_.t_ins_ / (EPS0 * params_.eps_ins_));
+        params_.t_semic_ = params_.eps_semic_ * (params_.A_semic_ / (C_dep_experim_ - params_.C_sb_)
+                           - params_.t_ins_ / params_.eps_ins_);
                            
         // Print data to file.
         output_fitting << sigma(i) / KB_T << ", " << error_L2(i) << ", " << error_H1(i) << std::endl;

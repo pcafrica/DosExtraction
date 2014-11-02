@@ -91,8 +91,8 @@ class ParamList
         Index simulationNo_;    /**< @brief Simulation number index. */
         Real  t_semic_     ;    /**< @brief Thickness of the semiconductor layer @f$ \left[ m \right] @f$. */
         Real  t_ins_       ;    /**< @brief Thickness of the insulator layer @f$ \left[ m \right] @f$. */
-        Real  eps_semic_   ;    /**< @brief Relative electrical permittivity of the semiconductor layer @f$ \left[ ~ \right] @f$. */
-        Real  eps_ins_     ;    /**< @brief Relative electrical permittivity of the insulator layer @f$ \left[ ~ \right] @f$. */
+        Real  eps_semic_   ;    /**< @brief Absolute electrical permittivity of the semiconductor layer @f$ \left[ ~ \right] @f$. */
+        Real  eps_ins_     ;    /**< @brief Absolute electrical permittivity of the insulator layer @f$ \left[ ~ \right] @f$. */
         Real  T_           ;    /**< @brief Temperature @f$ \left[ K \right] @f$. */
         Real  Wf_          ;    /**< @brief Work-function @f$ \left[ eV \right] @f$. */
         Real  Ea_          ;    /**< @brief Electron affinity @f$ \left[ eV \right] @f$. */

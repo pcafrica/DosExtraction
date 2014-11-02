@@ -39,8 +39,8 @@ ParamList::ParamList(const RowVectorXr & list)
     simulationNo_ = list( 0)       ;
     t_semic_      = list( 1)       ;
     t_ins_        = list( 2)       ;
-    eps_semic_    = list( 3)       ;
-    eps_ins_      = list( 4)       ;
+    eps_semic_    = list( 3) * EPS0;
+    eps_ins_      = list( 4) * EPS0;
     T_            = list( 5)       ;
     Wf_           = list( 6) * Q   ;
     Ea_           = list( 7) * Q   ;
