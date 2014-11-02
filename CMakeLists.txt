@@ -15,8 +15,8 @@ project(DOS_Extraction CXX)
 ################################################################
 ## Set up some variables.
 ################################################################
-set(FIT "fit_dos")    # Name of the test source file to compile.
 set(SIMULATE "simulate_dos")    # Name of the test source file to compile.
+set(FIT "fit_dos")    # Name of the test source file to compile.
 
 set(DOS_EXTRACTION "dosextraction")    # Name of the shared library.
 
@@ -28,10 +28,10 @@ set(SHARE_INSTALLDIR "${CMAKE_INSTALL_PREFIX}/share/${DOS_EXTRACTION}")    # Ins
 set(SRCDIR  "${CMAKE_SOURCE_DIR}/src" )    # Directory where to find the library sources.
 set(TESTDIR "${CMAKE_SOURCE_DIR}/test")    # Directory where to find the test sources.
 
-file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
 file(GLOB SIMULATE_SRC ${TESTDIR}/${SIMULATE}.cc)
+file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
 file(GLOB SRCS ${SRCDIR}/*.cc)
-file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${FIT_SRC}.h ${TESTDIR}/${SIMULATE_SRC}.h)
+file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
@@ -55,16 +55,16 @@ include_directories(SYSTEM "${CMAKE_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}/include")
 find_package(Eigen3 REQUIRED)
 include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
 
-find_package(Boost 1.50 REQUIRED COMPONENTS iostreams system filesystem)
-include_directories(SYSTEM ${Boost_INCLUDE_DIR})
-
 find_package(OpenMP)
 
 if(OPENMP_FOUND)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
-find_package(Gnuplot)
+find_package(Gnuplot REQUIRED)
+
+find_package(Boost 1.50 REQUIRED COMPONENTS iostreams system filesystem)
+include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
 ################################################################
 ## Documentation generation settings.
@@ -104,20 +104,20 @@ target_link_libraries(${DOS_EXTRACTION} ${Boost_LIBRARIES})
 ################################################################
 ## Target 1.
 ################################################################
-add_executable(${FIT} ${FIT_SRC})
-
-set_target_properties(${FIT} PROPERTIES OUTPUT_NAME "${FIT}"    # Executable filename.
-                             INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
-target_link_libraries(${FIT} ${DOS_EXTRACTION})
-
-################################################################
-## Target 2.
-################################################################
 add_executable(${SIMULATE} ${SIMULATE_SRC})
 
 set_target_properties(${SIMULATE} PROPERTIES OUTPUT_NAME "${SIMULATE}"    # Executable filename.
                                   INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
 target_link_libraries(${SIMULATE} ${DOS_EXTRACTION})
+
+################################################################
+## Target 2.
+################################################################
+add_executable(${FIT} ${FIT_SRC})
+
+set_target_properties(${FIT} PROPERTIES OUTPUT_NAME "${FIT}"    # Executable filename.
+                             INSTALL_RPATH "${LIB_INSTALLDIR}")    # rpath after installation.
+target_link_libraries(${FIT} ${DOS_EXTRACTION})
 
 ################################################################
 ## Installation.
@@ -127,8 +127,8 @@ install(FILES ${HDRS} DESTINATION "${INC_INSTALLDIR}")
 
 install(DIRECTORY ${SHARE_DIR} DESTINATION "${SHARE_INSTALLDIR}")
 
-install(TARGETS ${FIT} DESTINATION "${BIN_INSTALLDIR}")
 install(TARGETS ${SIMULATE} DESTINATION "${BIN_INSTALLDIR}")
+install(TARGETS ${FIT} DESTINATION "${BIN_INSTALLDIR}")
 
 ################################################################
 ## Uninstallation.
