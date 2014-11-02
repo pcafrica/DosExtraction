@@ -59,10 +59,10 @@ DOS = 1
 [QuadratureRule]
 # Quadrature rule.
 
-    # Method to be used:
+    # Rule to be used:
     # 1 = Gauss-Hermite (Gaussian weight),
     # 0 = Gauss-Laguerre (Exponential weight).
-    method = 1
+    rule = 1
     
     # Number of nodes.
     nNodes = 101

@@ -122,21 +122,23 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     {
         QuadratureRuleFactory * quadRuleFactory;
         
-        Index method = config("QuadratureRule/method", 1);
+        Index rule = config("QuadratureRule/rule", 1);
         
-        if ( method == 1 )
+        switch ( rule )
         {
-            output_info << " (Gauss-Hermite rule)";
-            quadRuleFactory = new GaussHermiteRuleFactory;
-        }
-        else if ( method == 0 )
-        {
-            output_info << " (Gauss-Laguerre rule)";
-            quadRuleFactory = new GaussLaguerreRuleFactory;
-        }
-        else
-        {
-            throw std::runtime_error("ERROR: wrong variable \"method\" set in the configuration file (only 1 or 0 allowed).");
+            case 1:
+                output_info << " (Gauss-Hermite rule)";
+                quadRuleFactory = new GaussHermiteRuleFactory;
+                break;
+                
+            case 0:
+                output_info << " (Gauss-Laguerre rule)";
+                quadRuleFactory = new GaussLaguerreRuleFactory;
+                break;
+                
+            default:
+                throw std::runtime_error("ERROR: wrong variable \"rule\" set in the configuration file (only 1 or 0 allowed).");
+                break;
         }
         
         quadRule = quadRuleFactory->BuildRule( config("QuadratureRule/nNodes", 101) );
@@ -167,19 +169,21 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
         
         Index constitutive_relation = config("DOS", 1);
         
-        if ( constitutive_relation == 1 )
+        switch ( constitutive_relation )
         {
-            output_info << " (Gaussian)";
-            chargeFactory = new GaussianChargeFactory;
-        }
-        else if ( constitutive_relation == 0 )
-        {
-            output_info << " (Exponential)";
-            chargeFactory = new ExponentialChargeFactory;
-        }
-        else
-        {
-            throw std::runtime_error("ERROR: wrong variable \"DOS\" set in the configuration file (only 1 or 0 allowed).");
+            case 1:
+                output_info << " (Gaussian)";
+                chargeFactory = new GaussianChargeFactory;
+                break;
+                
+            case 0:
+                output_info << " (Exponential)";
+                chargeFactory = new ExponentialChargeFactory;
+                break;
+                
+            default:
+                throw std::runtime_error("ERROR: wrong variable \"DOS\" set in the configuration file (only 1 or 0 allowed).");
+                break;
         }
         
         charge_fun = chargeFactory->BuildCharge(params_, *quadRule);
