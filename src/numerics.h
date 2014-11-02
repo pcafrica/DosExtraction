@@ -77,7 +77,7 @@ namespace numerics
      * @param[in] xNew : the point to interpolate at.
      * @returns a scalar containing the interpolated value.
      */
-    Real   interp1(const VectorXr &, const VectorXr &, const Real &);
+    Real     interp1(const VectorXr &, const VectorXr &, const Real &);
     /**
      * @brief Linear 1D interpolation. Interpolate @a y, defined at points @a x, at the points @a xNew.
      * @param[in] x    : the vector of the discrete domain;
