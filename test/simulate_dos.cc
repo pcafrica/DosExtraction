@@ -84,13 +84,13 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         {
             try    // Exception handling inside parallel region.
             {
-                // Initialize model.
-                DosModel model;
-                
                 if ( omp_get_thread_num() == 0 && i == 0 )
                 {
                     std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
                 }
+                
+                // Initialize model.
+                DosModel model;
                 
                 #pragma omp critical
                 {
@@ -115,9 +115,9 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 const std::string output_filename = "output_" + std::to_string( model.params().simulationNo() );
                 
                 // Remove possible old files.
-                system( ("exec rm -f " + output_directory + output_filename + "* "
-                         + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() );
-                         
+                if ( system( ("exec rm -f " + output_directory + output_filename + "* "
+                              + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() ) );
+                              
                 // Simulate and save output files.
                 model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
                 

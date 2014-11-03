@@ -87,6 +87,16 @@ class ParamList
          * @}
          */
         
+        /**
+         * @name Setter methods
+         * @{
+         */
+        inline void setT_semic(const Real &);
+        inline void setC_sb(const Real &);
+        /**
+         * @}
+         */
+        
     private:
         Index simulationNo_;    /**< @brief Simulation number index. */
         Real  t_semic_     ;    /**< @brief Thickness of the semiconductor layer @f$ \left[ m \right] @f$. */
@@ -251,6 +261,20 @@ inline const Real & ParamList::V_min() const
 inline const Real & ParamList::V_max() const
 {
     return V_max_;
+}
+
+inline void ParamList::setT_semic(const Real & t_semic)
+{
+    assert( t_semic >= 0.0);
+    
+    t_semic_ = t_semic;
+}
+
+inline void ParamList::setC_sb(const Real & C_sb)
+{
+    assert( C_sb >= 0.0);
+    
+    C_sb_ = C_sb;
 }
 
 #endif /* PARAMLIST_H */

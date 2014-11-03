@@ -21,10 +21,12 @@ using namespace constants;
 using namespace utility;
 
 DosModel::DosModel()
-    : initialized_(false), V_shift_(0.0) {}
+    : initialized_(false), params_(), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0),
+      C_acc_experim_(0.0), C_acc_simulated_(0.0), C_dep_experim_(0.0) {}
 
 DosModel::DosModel(const ParamList & params)
-    : initialized_(true), params_(params), V_shift_(0.0) {}
+    : initialized_(true), params_(params), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0),
+      C_acc_experim_(0.0), C_acc_simulated_(0.0), C_dep_experim_(0.0) {}
 
 void DosModel::simulate(const GetPot & config, const std::string & input_experim, const std::string & output_directory,
                         const std::string & output_plot_subdir, const std::string & output_filename)
@@ -263,13 +265,17 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     post_process(config, input_experim, output_info, output_CV, params_.A_semic_, params_.C_sb_,
                  (VectorXr) x.segment(0, semicNodesNo), (VectorXr) Dens.col(Dens.cols() - 1), V, cTot);
                  
+    output_info << std::endl;
+    output_info << "C_sb = " << params_.C_sb_ << std::endl;
+    output_info << "t_semic = " << params_.t_semic_ << std::endl;
+    
     output_info.close();
     output_CV.close();
     
     // Create output Gnuplot files.
     try
     {
-        save_plot(output_directory, output_plot_subdir, output_CV_filename, output_filename, false);
+        save_plot(output_directory, output_plot_subdir, output_CV_filename, output_filename);
     }
     catch ( const std::exception & genericException )
     {
@@ -356,8 +362,8 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     output_info << "C_acc* = " << cAccStar << std::endl;
     output_info << std::endl;
     output_info << "Distance between experimental and simulated capacitance values:" << std::endl;
-    output_info << "\t L2-distance = " << error_L2_ << std::endl;
-    output_info << "\t H1-distance = " << error_H1_ << std::endl;
+    output_info << "\tL2-distance = " << error_L2_ << std::endl;
+    output_info << "\tH1-distance = " << error_H1_ << std::endl;
     
     output_CV << "V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated" << std::endl;
     
@@ -387,122 +393,8 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     return;
 }
 
-void DosModel::fit(const GetPot & config, const std::string & input_experim, const std::string & output_directory,
-                   const std::string & output_plot_subdir, const std::string & output_filename)
-{
-    assert( params_.N0_ > 0 && params_.sigma_ > 0 );
-    
-    const Real & negative_shift = config("FIT/negative_shift", 1.0) * KB_T;
-    const Real & positive_shift = config("FIT/positive_shift", 1.0) * KB_T;
-    
-    assert( negative_shift > 0 && positive_shift > 0 );
-    
-    const Real & nSplits = config("FIT/nSplits", 5);
-    
-    // Define output filenames.
-    const std::string output_info_filename = output_filename + "_info.txt";
-    const std::string output_fitting_filename = output_filename + "_fitting.csv";
-    
-    // Open output files.
-    std::ofstream output_info;
-    std::ofstream output_fitting;
-    
-    output_info.open(output_directory + output_info_filename, std::ios_base::out);
-    output_info.setf(std::ios_base::scientific);
-    output_info.precision(std::numeric_limits<Real>::digits10);
-    
-    output_fitting.open(output_directory + output_fitting_filename, std::ios_base::out);
-    output_fitting.setf(std::ios_base::scientific);
-    output_fitting.precision(std::numeric_limits<Real>::digits10);
-    
-    if ( !output_info.is_open() || !output_fitting.is_open() )
-    {
-        throw std::ofstream::failure("ERROR: output files cannot be opened or directory does not exist.");
-    }
-    
-    output_info << "Running on thread: " << omp_get_thread_num() << "." << std::endl;
-    
-    output_fitting << "sigma, L2-error, H1-error" << std::endl;
-    
-    // Timing.
-    high_resolution_clock::time_point initTime = high_resolution_clock::now();
-    
-    print_block( ( "Simulation No. " + std::to_string(params_.simulationNo_) + " started.").c_str(), output_info );
-    
-    VectorXr sigma = VectorXr::Zero( 2 * nSplits );
-    VectorXr error_L2 = VectorXr::Zero( sigma.size() );
-    VectorXr error_H1 = VectorXr::Zero( sigma.size() );
-    
-    {
-        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params_.sigma_ - negative_shift, 0.1 * KB_T), params_.sigma_);
-        VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, params_.sigma_, params_.sigma_ + positive_shift);
-        
-        sigma << temp1, temp2.segment(1, temp2.size() - 1);
-    }
-    
-    // Start fitting.
-    for ( Index i = 0; i < sigma.size(); ++i )
-    {
-        // Print current iteration number.
-        output_info << std::endl << "\titeration: " << i << "/" << sigma.size();
-        output_info << " (sigma = " << params_.sigma_ / KB_T << ")";
-        
-        params_.sigma_ = sigma(i);
-        
-        // Step 1.
-        simulate(config, input_experim, output_directory, output_plot_subdir, output_filename + "_" + std::to_string(i + 1));
-        
-        error_L2(i) = error_L2_;
-        error_H1(i) = error_H1_;
-        
-        // Step 2.
-        params_.C_sb_ += C_acc_experim_ - C_acc_simulated_;
-        
-        // Step 3.
-        params_.t_semic_ = params_.eps_semic_ * (params_.A_semic_ / (C_dep_experim_ - params_.C_sb_)
-                           - params_.t_ins_ / params_.eps_ins_);
-                           
-        // Print data to file.
-        output_fitting << sigma(i) / KB_T << ", " << error_L2(i) << ", " << error_H1(i) << std::endl;
-    }
-    
-    print_done(output_info);
-    
-    // Timing.
-    high_resolution_clock::time_point finalTime = high_resolution_clock::now();
-    output_info << "Simulation took " << duration_cast<seconds>(finalTime - initTime).count()
-                << " seconds." << std::endl;
-                
-    output_info << std::endl;
-    
-    // Find the minimum.
-    {
-        Index i = 0;
-        error_L2.maxCoeff(&i);
-        output_info << "Minimum L2-error corresponds to sigma = " << sigma(i) / KB_T << std::endl;
-        
-        error_H1.maxCoeff(&i);
-        output_info << "Minimum H1-error corresponds to sigma = " << sigma(i) / KB_T << std::endl;
-    }
-    
-    output_info.close();
-    output_fitting.close();
-    
-    // Create output Gnuplot files.
-    try
-    {
-        save_plot(output_directory, output_plot_subdir, output_fitting_filename, output_filename + "_fitting", true);
-    }
-    catch ( const std::exception & genericException )
-    {
-        throw;
-    }
-    
-    return;
-}
-
 void DosModel::save_plot(const std::string & output_directory, const std::string & output_plot_subdir,
-                         const std::string & csv_filename, const std::string & output_filename, const bool & fitting) const
+                         const std::string & csv_filename, const std::string & output_filename) const
 {
     // Save script for later reuse.
     const std::string output_plot_filename = output_plot_subdir + output_filename + "_plot.gp";
@@ -515,16 +407,7 @@ void DosModel::save_plot(const std::string & output_directory, const std::string
         throw std::runtime_error("ERROR: Gnuplot output file cannot be opened or directory does not exist.");
     }
     
-    switch ( fitting )
-    {
-        case false:
-            gnuplot_commands("../" + csv_filename, output_plot);
-            break;
-            
-        default:
-            gnuplot_errorPlot_commands("../" + csv_filename, output_plot);
-            break;
-    }
+    gnuplot_commands("../" + csv_filename, output_plot);
     
     output_plot << std::endl;
     output_plot << "pause mouse;" << std::endl;
@@ -536,16 +419,7 @@ void DosModel::save_plot(const std::string & output_directory, const std::string
     output_png << "set output \"" + output_directory + output_filename + "_plot.png\";" << std::endl;
     output_png << std::endl;
     
-    switch ( fitting )
-    {
-        case false:
-            gnuplot_commands(output_directory + csv_filename, output_png);
-            break;
-            
-        default:
-            gnuplot_errorPlot_commands(output_directory + csv_filename, output_png);
-            break;
-    }
+    gnuplot_commands(output_directory + csv_filename, output_png);
     
     output_png << std::endl;
     output_png << "set output;" << std::endl;
@@ -583,35 +457,6 @@ void DosModel::gnuplot_commands(const std::string & csv_filename, std::ostream &
     os << "\tset ylabel \"C [F]\";" << std::endl;
     os << "\tplot [V_min:V_max] \"" + csv_filename + "\" using 1:2 title \"Experimental\" with lines lw 2, \\" << std::endl;
     os << "\t                   \"" + csv_filename + "\" using 4:5 title \"Simulated\"    with lines lw 2;" << std::endl;
-    os << std::endl;
-    os << "unset multiplot;" << std::endl;
-    
-    return;
-}
-
-void DosModel::gnuplot_errorPlot_commands(const std::string & csv_filename, std::ostream & os) const
-{
-    os << "set datafile separator \",\";" << std::endl;
-    os << "set format y \"%.2te%+03T\";" << std::endl;
-    os << std::endl;
-    os << "set key right center;" << std::endl;
-    os << std::endl;
-    os << "stats \"" + csv_filename + "\" using 1 name \"sigma\" nooutput;" << std::endl;
-    os << "stats \"" + csv_filename + "\" using 2 name \"error_L2\" nooutput;" << std::endl;
-    os << "stats \"" + csv_filename + "\" using 3 name \"error_H1\" nooutput;" << std::endl;
-    os << std::endl;
-    os << "set multiplot layout 2, 1 title \"Errors between experimental and simulated capacitance values\" font \", 10\";";
-    os << std::endl;
-    
-    os << "\tset xlabel \"sigma [K_B * 300K]\" offset 0, 0.75; " << std::endl;
-    os << std::endl;
-    os << "\tset ylabel \"L2-error\";" << std::endl;
-    os << "\tplot [sigma_min:sigma_max] \"" + csv_filename + "\" using 1:2 title \"L2-error\" with lines lw 2, ";
-    os << "error_L2_min title \"Minimum\";" << std::endl;
-    os << std::endl;
-    os << "\tset ylabel \"H1-error\";" << std::endl;
-    os << "\tplot [sigma_min:sigma_max] \"" + csv_filename + "\" using 1:3 title \"H1-error\" with lines lw 2, ";
-    os << "error_H1_min title \"Minimum\";" << std::endl;
     os << std::endl;
     os << "unset multiplot;" << std::endl;
     

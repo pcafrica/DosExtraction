@@ -33,6 +33,8 @@ ParamList::ParamList(const RowVectorXr & list)
     assert( list(14) >= 0.0 );
     assert( list(16) >= 0.0 );
     assert( list(17) >= 0.0 );
+    assert( list(21) >  0   );
+    assert( list(22) >  0   );
     assert( list(23) >  0   );
     assert( list(24) >  0   );
     
