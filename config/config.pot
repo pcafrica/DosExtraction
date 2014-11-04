@@ -18,7 +18,7 @@ skipHeaders = 1
 # Simulate each row in the input_params file:
 # 1 = true,
 # 0 = false.
-simulate_all = 1
+simulate_all = 0
 
     # If "simulate_all = 0", set indexes of rows to simulate.
     indexes = '5 6'

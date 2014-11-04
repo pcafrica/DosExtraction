@@ -97,11 +97,6 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         
         for ( Index i = 0; i < nSimulations; ++i )
         {
-        
-            // Re-initialize configuration file for each thread.
-            config = (GetPot) utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
-                                                 config_directory).c_str();
-                                                 
             // Initialize parameter list.
             ParamList params;
             
