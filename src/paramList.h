@@ -60,6 +60,7 @@ class ParamList
         inline const Real  & t_ins()        const;
         inline const Real  & eps_semic()    const;
         inline const Real  & eps_ins()      const;
+        inline const Real  & T()            const;
         inline const Real  & Wf()           const;
         inline const Real  & Ea()           const;
         inline const Real  & N0()           const;
@@ -77,7 +78,6 @@ class ParamList
         inline const Real  & lambda_exp()   const;
         inline const Real  & A_semic()      const;
         inline const Real  & C_sb()         const;
-        inline const Real  & T()            const;
         inline const Index & nNodes()       const;
         inline const Index & nSteps()       const;
         inline const Real  & V_min()        const;
