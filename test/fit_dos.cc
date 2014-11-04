@@ -208,7 +208,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
                 output_fit << "\tt_semic: " << params.t_semic() << std::endl;
                 
-                if ( k != iterationsNo )
+                if ( k < iterationsNo - 1 )
                 {
                     output_fit << std::endl;
                 }
