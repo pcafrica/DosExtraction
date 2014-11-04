@@ -135,7 +135,7 @@
  *     $ ./fit_dos
  * @endcode
  * 
- * By default, the configuration file is searched in @a ../config. @n
+ * By default, the configuration file is searched in <em>../config</em>. @n
  * 
  * To specify a different configuration file previously saved in the configuration directory:
  * 
