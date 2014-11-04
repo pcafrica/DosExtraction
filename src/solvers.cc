@@ -289,6 +289,7 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     
     dcharge = charge_fun.dcharge(phi_);
     
+    // Compute total capacitance.
     // System assembly.
     Jac = computeJac(dcharge);
     
