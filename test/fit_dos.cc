@@ -194,7 +194,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 
                 // Find the best fitting, i.e. the one with the lowest H1-error.
                 Index minimum = 0;
-                error_H1.maxCoeff(&minimum);
+                error_H1.minCoeff(&minimum);
                 
                 // Step 2: update C_sb.
                 params.setC_sb( params.C_sb() + C_acc_experim(minimum) - C_acc_simulated(minimum) );
