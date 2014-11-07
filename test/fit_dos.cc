@@ -76,7 +76,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         
         assert( negative_shift > 0 && positive_shift > 0 );
         
-        const Real & nSplits = config("FIT/nSplits", 5);
+        const Real & nSplits = config("FIT/nSplits", 3);
         
         // Initialize vectors.
         VectorXr sigma = VectorXr::Zero( 2 * nSplits );
@@ -136,18 +136,18 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             
             Index iterationsNo = config("FIT/iterationsNo", 3);
             
-            for ( Index k = 0; k < iterationsNo; ++k )
+            for ( Index j = 0; j < iterationsNo; ++j )
             {
-                output_fit << "Iteration " << (k + 1) << "/" << iterationsNo << "..." << std::endl;
+                output_fit << "Iteration " << (j + 1) << "/" << iterationsNo << "..." << std::endl;
                 
                 // Step 1: find the best sigma.
                 #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)
                 
-                for ( Index j = 0; j < sigma.size(); ++j )
+                for ( Index k = 0; k < sigma.size(); ++k )
                 {
                     try    // Exception handling inside parallel region.
                     {
-                        if ( omp_get_thread_num() == 0 && k == 0 )
+                        if ( omp_get_thread_num() == 0 && j == 0 )
                         {
                             std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
                             std::cout << "Performing simulation No. " << params.simulationNo() << " (fitting)..." << std::endl;
@@ -159,18 +159,18 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                         #pragma omp critical
                         {
                             model = (DosModel) params;
-                            model.setSigma( sigma(j) );
+                            model.setSigma( sigma(k) );
                         }
                         
                         // Simulate and save output files.
                         model.simulate(config, input_experim, output_directory, output_plot_subdir,
-                                       output_filename + "_" + std::to_string(k + 1) + "_" + std::to_string(j + 1));
+                                       output_filename + "_" + std::to_string(j + 1) + "_" + std::to_string(k + 1));
                                        
-                        error_H1(j) = model.error_H1();
+                        error_H1(k) = model.error_H1();
                         
-                        C_acc_experim(j)   = model.C_acc_experim();
-                        C_acc_simulated(j) = model.C_acc_simulated();
-                        C_dep_experim(j)   = model.C_dep_experim();
+                        C_acc_experim(k)   = model.C_acc_experim();
+                        C_acc_simulated(k) = model.C_acc_simulated();
+                        C_dep_experim(k)   = model.C_dep_experim();
                     }
                     catch ( const std::exception & genericException )
                     {
@@ -201,13 +201,13 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Print to output.
                 output_fit << "\tBest sigma: " << sigma(minimum) / KB_T;
                 output_fit << " (from simulation " << params.simulationNo();
-                output_fit << "_" << (k + 1) << "_" << minimum << ")" << std::endl;
+                output_fit << "_" << (j + 1) << "_" << minimum << ")" << std::endl;
                 
                 output_fit << "\tH1-error: " << error_H1(minimum) << std::endl;
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
                 output_fit << "\tt_semic: " << params.t_semic() << std::endl;
                 
-                if ( k < iterationsNo - 1 )
+                if ( j < iterationsNo - 1 )
                 {
                     output_fit << std::endl;
                 }

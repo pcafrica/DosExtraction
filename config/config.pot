@@ -45,7 +45,7 @@ output_directory = ./output_TEST_1_Single_Sigma
     
     # [sigma - negative_shift, sigma] and [sigma, sigma + positive_shift]
     # are split into nSplits subdivisions.
-    nSplits = 5
+    nSplits = 3
     
     # Number of fitting iterations.
     iterationsNo = 3
