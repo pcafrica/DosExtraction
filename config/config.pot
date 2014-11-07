@@ -41,7 +41,7 @@ output_directory = ./output_TEST_1_Single_Sigma
     # 1 = Gauss-Hermite (Gaussian weight),
     # 0 = Gauss-Laguerre (Exponential weight).
     negative_shift = 2
-    positive_shift = 2
+    positive_shift = 3
     
     # [sigma - negative_shift, sigma] and [sigma, sigma + positive_shift]
     # are split into nSplits subdivisions.
