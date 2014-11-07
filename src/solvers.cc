@@ -216,9 +216,12 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     assert( solver_.Mass_ .rows() == mesh.size() );
     assert( solver_.Mass_ .cols() == mesh.size() );
     
-    norm_ = VectorXr::Zero( maxIterationsNo_ );
+    phi_    = init_guess;
+    norm_   = VectorXr::Zero( maxIterationsNo_ );
+    qTot_   = 0.0;
+    cTot_   = 0.0;
+    /* cTot_n_ = 0.0; */
     
-    phi_ = init_guess;
     VectorXr phiOld = phi_;
     
     VectorXr  charge = VectorXr::Zero( mesh.size() );
