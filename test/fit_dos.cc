@@ -198,7 +198,11 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 params.setT_semic( params.eps_semic() * (params.A_semic() / (C_dep_experim(minimum) - params.C_sb())
                                    - params.t_ins() / params.eps_ins()) );
                                    
-                output_fit << "\tBest sigma: " << sigma(minimum) / KB_T << std::endl;
+                // Print to output.
+                output_fit << "\tBest sigma: " << sigma(minimum) / KB_T;
+                output_fit << " (from simulation " << params.simulationNo();
+                output_fit << "_" << (k + 1) << "_" << minimum << ")" << std::endl;
+                
                 output_fit << "\tH1-error: " << error_H1(minimum) << std::endl;
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
                 output_fit << "\tt_semic: " << params.t_semic() << std::endl;
