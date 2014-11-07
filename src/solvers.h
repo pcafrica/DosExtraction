@@ -188,7 +188,7 @@ class Bim1D : public PdeSolver1D
  * - q \cdot \frac{N_0}{\sqrt{\pi}} \int_{-\infty}^{+\infty} \exp\left(-\alpha^2\right) \left( 1 +
  * \exp\left( \frac{\sqrt{2}\sigma\alpha - q\varphi(z)}{K_B \cdot T} \right) \right)^{-1} \mathrm{d}\alpha ~ . @f]
  *
- * @brief Provide a solver for a non-linear Poisson equation.
+ * @brief Provide a solver for the non-linear Poisson equation.
  *
  */
 class NonLinearPoisson1D

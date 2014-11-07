@@ -196,6 +196,12 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     output_info << "...";
     print_done(output_info);
     
+    // Initialize Newton solver for the non-linear Poisson equation.
+    Index maxIterationsNo = config("NLP/maxIterationsNo", 100);
+    Real  tolerance       = config("NLP/tolerance", 1.0e-4);
+    
+    NonLinearPoisson1D nlpSolver(bimSolver, maxIterationsNo, tolerance);
+    
     // Variables initialization.
     output_info << "Initializing variables...";
     
@@ -206,9 +212,6 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     VectorXr charge_n = VectorXr::Zero( V.size() );
     
     print_done(output_info);
-    
-    Index maxIterationsNo = config("NLP/maxIterationsNo", 100);
-    Real  tolerance       = config("NLP/tolerance", 1.0e-4);
     
     output_info << "Running Newton solver for non-linear Poisson equation..." << std::endl;
     output_info << "\tMax No. of iterations set: " << maxIterationsNo << std::endl;
@@ -234,7 +237,6 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
             phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));
         }
         
-        NonLinearPoisson1D nlpSolver(bimSolver, maxIterationsNo, tolerance);
         nlpSolver.apply(x, phiOld, *charge_fun);
         
         Phi.col(i) = nlpSolver.phi();
