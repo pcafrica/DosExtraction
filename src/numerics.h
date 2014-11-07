@@ -110,9 +110,11 @@ VectorX<ScalarType> numerics::sort(const VectorX<ScalarType> & vector)
 template<typename ScalarType>
 VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
 {
-    auto sort_pair_lambda = [] (const std::pair<ScalarType, Index> & v1, const std::pair<ScalarType, Index> & v2)
+    // Lambda function, specifying a criterion to sort pairs.
+    auto sort_pair_lambda = [] (const std::pair<ScalarType, Index> & v1,
+                                const std::pair<ScalarType, Index> & v2) -> bool
     {
-        return v1.first < v2.first;
+        return (v1.first < v2.first);
     };
     
     VectorXpair<ScalarType> copy( vector.size() );
