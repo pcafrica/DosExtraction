@@ -201,7 +201,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Print to output.
                 output_fit << "\tBest sigma: " << sigma(minimum) / KB_T;
                 output_fit << " (from simulation " << params.simulationNo();
-                output_fit << "_" << (j + 1) << "_" << minimum << ")" << std::endl;
+                output_fit << "_" << (j + 1) << "_" << (minimum + 1) << ")" << std::endl;
                 
                 output_fit << "\tH1-error: " << error_H1(minimum) << std::endl;
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
