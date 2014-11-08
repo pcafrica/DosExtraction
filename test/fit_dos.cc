@@ -95,6 +95,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         std::string ompException;
         bool ompThrewException = false;
         
+        // Loop for the simulations.
+        
         for ( Index i = 0; i < nSimulations; ++i )
         {
             // Initialize parameter list.
@@ -117,13 +119,14 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 sigma << temp1, temp2.segment(1, temp2.size() - 1);
             }
             
+            // Output filename.
             const std::string output_filename = "output_" + std::to_string( params.simulationNo() );
             
             // Remove possible old files.
             if ( system( ("exec rm -f " + output_directory + output_filename + "* "
                           + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() ) );
                           
-                          
+            // Fitting output file.
             std::ofstream output_fit;
             output_fit.open(output_directory + output_filename + "_fit.txt", std::ios_base::out);
             output_fit.setf(std::ios_base::scientific);
@@ -135,6 +138,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             }
             
             Index iterationsNo = config("FIT/iterationsNo", 3);
+            
+            // Fitting loop.
             
             for ( Index j = 0; j < iterationsNo; ++j )
             {

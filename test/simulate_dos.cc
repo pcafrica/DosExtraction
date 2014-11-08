@@ -77,7 +77,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         std::string ompException;
         bool ompThrewException = false;
         
-        // Loop for the parallel simulation.
+        // Loop for the parallel simulations.
         #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)
         
         for ( Index i = 0; i < nSimulations; ++i )
@@ -112,6 +112,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 #pragma omp critical
                 std::cout << "Performing simulation No. " << model.params().simulationNo() << "..." << std::endl;
                 
+                // Output filename.
                 const std::string output_filename = "output_" + std::to_string( model.params().simulationNo() );
                 
                 // Remove possible old files.
