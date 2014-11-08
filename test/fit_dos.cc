@@ -145,6 +145,16 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             {
                 output_fit << "Iteration " << (j + 1) << "/" << iterationsNo << "..." << std::endl;
                 
+                if ( omp_get_thread_num() == 0 && j == 0 )
+                {
+                    if ( i == 0 )
+                    {
+                        std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
+                    }
+                    
+                    std::cout << "Performing simulation No. " << params.simulationNo() << " (fitting)..." << std::endl;
+                }
+                
                 // Step 1: find the best sigma.
                 #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)
                 
@@ -152,12 +162,6 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 {
                     try    // Exception handling inside parallel region.
                     {
-                        if ( omp_get_thread_num() == 0 && j == 0 )
-                        {
-                            std::cout << std::endl << "Running on " << omp_get_num_threads() << " thread(s)." << std::endl << std::endl;
-                            std::cout << "Performing simulation No. " << params.simulationNo() << " (fitting)..." << std::endl;
-                        }
-                        
                         // Initialize model.
                         DosModel model;
                         
