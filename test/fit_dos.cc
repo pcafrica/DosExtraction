@@ -149,7 +149,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 
                 if ( j > 0 )
                 {
-                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, 0.1 * KB_T), sigma(minimum));
+                    // Sigma can't be < 0. If so, let it be std::numeric_limits<Real>::digits10
+                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, std::numeric_limits<Real>::digits10 * KB_T), sigma(minimum));
                     VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
                     
                     sigma << temp1, temp2.segment(1, temp2.size() - 1);
