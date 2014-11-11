@@ -111,7 +111,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 params = (ParamList) parser.importRow( config("indexes", (int) (i + 1), i) );
             }
             
-            // Construct sigma.
+            // Initial guess for sigma (read from the parameter list).
             {
                 VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params.sigma() - negative_shift, 0.1 * KB_T), params.sigma());
                 VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, params.sigma(), params.sigma() + positive_shift);
@@ -130,7 +130,6 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             std::ofstream output_fit;
             output_fit.open(output_directory + output_filename + "_fit.txt", std::ios_base::out);
             output_fit.setf(std::ios_base::scientific);
-            output_fit.precision(std::numeric_limits<Real>::digits10);
             
             if ( !output_fit.is_open() )
             {
@@ -138,12 +137,23 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             }
             
             Index iterationsNo = config("FIT/iterationsNo", 3);
+            Index minimum = 0;    // The index of the minimum in
             
             // Fitting loop.
             
             for ( Index j = 0; j < iterationsNo; ++j )
             {
                 output_fit << "Iteration " << (j + 1) << "/" << iterationsNo << "..." << std::endl;
+                
+                // Update sigma based on the previous step.
+                
+                if ( j > 0 )
+                {
+                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, 0.1 * KB_T), sigma(minimum));
+                    VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
+                    
+                    sigma << temp1, temp2.segment(1, temp2.size() - 1);
+                }
                 
                 // Step 1: find the best sigma.
                 #pragma omp parallel for shared(ompException, ompThrewException) private(config) schedule(dynamic, 1)
@@ -196,8 +206,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     }
                 }
                 
-                // Find the best fitting, i.e. the one with the lowest H1-error.
-                Index minimum = 0;
+                // Find the best fitting, i.e. the one with the minimum H1-error.
                 error_H1.minCoeff(&minimum);
                 
                 // Step 2: update C_sb.
@@ -208,10 +217,11 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                                    - params.t_ins() / params.eps_ins()) );
                                    
                 // Print to output.
-                output_fit << "\tBest sigma: " << sigma(minimum) / KB_T;
+                output_fit << "\tBest sigma: " << std::setprecision(4) << sigma(minimum) / KB_T;
                 output_fit << " (from simulation " << params.simulationNo();
                 output_fit << "_" << (j + 1) << "_" << (minimum + 1) << ")" << std::endl;
                 
+                output_fit.precision(std::numeric_limits<Real>::digits10);
                 output_fit << "\tH1-error: " << error_H1(minimum) << std::endl;
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
                 output_fit << "\tt_semic: " << params.t_semic() << std::endl;
