@@ -86,7 +86,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         VectorXr C_acc_simulated = VectorXr::Zero( sigma.size() );
         VectorXr C_dep_experim   = VectorXr::Zero( sigma.size() );
         
-        Real sigmaMin = 0.1;    // Lowest sigma allowed (>=0).
+        Real sigmaMin = 0.1 * KB_T;    // Lowest sigma allowed (>=0).
         
         // Create output directories, if they don't exist.
         if ( system( ("exec mkdir " + output_directory + " " + output_directory
@@ -117,7 +117,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             {
                 if ( params.sigma() != sigmaMin )
                 {
-                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params.sigma() - negative_shift, sigmaMin * KB_T), params.sigma());
+                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params.sigma() - negative_shift, sigmaMin), params.sigma());
                     VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, params.sigma(), params.sigma() + positive_shift);
                     
                     sigma << temp1, temp2.segment(1, temp2.size() - 1);
@@ -161,7 +161,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     if ( params.sigma() != sigmaMin )
                     {
                         // Sigma can't be < 0. If so, let it be sigmaMin.
-                        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, sigmaMin * KB_T), sigma(minimum));
+                        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, sigmaMin), sigma(minimum));
                         VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
                         
                         sigma << temp1, temp2.segment(1, temp2.size() - 1);
