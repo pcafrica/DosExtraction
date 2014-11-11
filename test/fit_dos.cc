@@ -86,6 +86,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         VectorXr C_acc_simulated = VectorXr::Zero( sigma.size() );
         VectorXr C_dep_experim   = VectorXr::Zero( sigma.size() );
         
+        Real sigmaMin = 0.1;    // Lowest sigma allowed (>=0).
+        
         // Create output directories, if they don't exist.
         if ( system( ("exec mkdir " + output_directory + " " + output_directory
                       + output_plot_subdir + " 2> /dev/null").c_str() ) );
@@ -113,10 +115,17 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             
             // Initial guess for sigma (read from the parameter list).
             {
-                VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params.sigma() - negative_shift, 0.1 * KB_T), params.sigma());
-                VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, params.sigma(), params.sigma() + positive_shift);
-                
-                sigma << temp1, temp2.segment(1, temp2.size() - 1);
+                if ( params.sigma() != sigmaMin )
+                {
+                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(params.sigma() - negative_shift, sigmaMin * KB_T), params.sigma());
+                    VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, params.sigma(), params.sigma() + positive_shift);
+                    
+                    sigma << temp1, temp2.segment(1, temp2.size() - 1);
+                }
+                else
+                {
+                    sigma = VectorXr::LinSpaced(2 * nSplits, params.sigma(), params.sigma() + positive_shift);
+                }
             }
             
             // Output filename.
@@ -149,11 +158,18 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 
                 if ( j > 0 )
                 {
-                    // Sigma can't be < 0. If so, let it be 0.1.
-                    VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, 0.1 * KB_T), sigma(minimum));
-                    VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
-                    
-                    sigma << temp1, temp2.segment(1, temp2.size() - 1);
+                    if ( params.sigma() != sigmaMin )
+                    {
+                        // Sigma can't be < 0. If so, let it be sigmaMin.
+                        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, sigmaMin * KB_T), sigma(minimum));
+                        VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
+                        
+                        sigma << temp1, temp2.segment(1, temp2.size() - 1);
+                    }
+                    else
+                    {
+                        sigma = VectorXr::LinSpaced(2 * nSplits, sigma(minimum), sigma(minimum) + positive_shift);
+                    }
                 }
                 
                 // Step 1: find the best sigma.
