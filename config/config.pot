@@ -54,7 +54,7 @@ output_directory = ./output_TEST_1_Single_Sigma
     # 0 = L^2
     # 1 = H^1
     # 2 = L^inf
-    errorNorm = 2
+    errorNorm = 1
     
 ################################################################
 ## Numerical methods.

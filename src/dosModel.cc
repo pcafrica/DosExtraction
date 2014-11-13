@@ -367,6 +367,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     output_info << "Distance between experimental and simulated capacitance values:" << std::endl;
     output_info << "\tL2-distance = " << error_L2_ << std::endl;
     output_info << "\tH1-distance = " << error_H1_ << std::endl;
+    output_info << "\tL^inf-distance (on dC/dV) = " << error_L_inf_ << std::endl;
     
     output_CV << "V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated" << std::endl;
     
