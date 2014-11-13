@@ -78,9 +78,11 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         
         const Real & nSplits = config("FIT/nSplits", 3);
         
+        const unsigned & errorNorm = config("FIT/errorNorm", 2);
+        
         // Initialize vectors.
         VectorXr sigma = VectorXr::Zero( 2 * nSplits );
-        VectorXr error_H1 = VectorXr::Zero( sigma.size() );
+        VectorXr error = VectorXr::Zero( sigma.size() );
         
         VectorXr C_acc_experim   = VectorXr::Zero( sigma.size() );
         VectorXr C_acc_simulated = VectorXr::Zero( sigma.size() );
@@ -202,7 +204,21 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                         model.simulate(config, input_experim, output_directory, output_plot_subdir,
                                        output_filename + "_" + std::to_string(j + 1) + "_" + std::to_string(k + 1));
                                        
-                        error_H1(k) = model.error_H1();
+                        // Get the desired error.
+                        switch ( errorNorm )
+                        {
+                            case 0:
+                                error(k) = model.error_L2();
+                                break;
+                                
+                            case 1:
+                                error(k) = model.error_H1();
+                                break;
+                                
+                            case 2:
+                                error(k) = model.error_L_inf();
+                                break;
+                        }
                         
                         C_acc_experim(k)   = model.C_acc_experim();
                         C_acc_simulated(k) = model.C_acc_simulated();
@@ -223,8 +239,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     }
                 }
                 
-                // Find the best fitting, i.e. the one with the minimum H1-error.
-                error_H1.minCoeff(&minimum);
+                // Find the best fitting, i.e. the one with the minimum error.
+                error.minCoeff(&minimum);
                 
                 // Step 2: update C_sb.
                 params.setC_sb( params.C_sb() + C_acc_experim(minimum) - C_acc_simulated(minimum) );
@@ -239,7 +255,24 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 output_fit << "_" << (j + 1) << "_" << (minimum + 1) << ")" << std::endl;
                 
                 output_fit.precision(std::numeric_limits<Real>::digits10);
-                output_fit << "\tH1-error: " << error_H1(minimum) << std::endl;
+                
+                switch ( errorNorm )
+                {
+                    case 0:
+                        output_fit << "\tL2-error: ";
+                        break;
+                        
+                    case 1:
+                        output_fit << "\tH1-error: ";
+                        break;
+                        
+                    case 2:
+                        output_fit << "\tL^inf-error: ";
+                        break;
+                }
+                
+                output_fit << error(minimum) << std::endl;
+                
                 output_fit << "\tC_sb: " << params.C_sb() << std::endl;
                 output_fit << "\tt_semic: " << params.t_semic() << std::endl;
                 

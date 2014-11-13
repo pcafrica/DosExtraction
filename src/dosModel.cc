@@ -351,12 +351,13 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
         C_dep_experim_ = C_experim(0);
     }
     
-    // Compute L2- and H1-errors.
+    // Compute errors.
     error_L2_ = std::sqrt( numerics::error_L2(C_interp, C_simulated.array() * A_semic + C_sb, V_simulated.array() - V_shift_) );
     error_H1_ = std::sqrt( error_L2_ * error_L2_ +
                            numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated.array() - V_shift_)
                          );
-                         
+    error_L_inf_ = std::abs( dC_dV_experim.maxCoeff() - dC_dV_simulated.maxCoeff() );
+    
     // Print to output.
     output_info << std::endl;
     output_info << "V_shift = " << V_shift_ << std::endl;
