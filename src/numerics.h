@@ -48,6 +48,15 @@ namespace numerics
     VectorXpair<ScalarType> sort_pair(const VectorX<ScalarType> & vector);
     
     /**
+     * @brief Take the NaNs out from an input vector.
+     * @tparam ScalarType : the scalar type.
+     * @param[in] vector : the input vector.
+     * @returns a vector containing the non-NaN values of @a vector.
+     */
+    template<typename ScalarType>
+    VectorX<ScalarType> nonNaN(const VectorX<ScalarType> & vector);
+    
+    /**
      * @brief Function to compute approximate integral of @a y with
      * spacing increment specified by @a x, using trapezoidal rule.
      * @param[in] x : the vector of the discrete domain;
@@ -87,12 +96,6 @@ namespace numerics
      */
     VectorXr interp1(const VectorXr &, const VectorXr &, const VectorXr &);
     
-    /**
-     * @brief Take the NaNs out from an input vector @a v.
-     * @param[in] v : the input vector.
-     * @returns a vector containing the non-NaN values of @a v.
-     */
-    VectorXr nonNaN(const VectorXr &);
     /**
      * @brief Compute the @f$ L^2 @f$-norm error @b squared between simulated and interpolated experimental values, using @ref trapz.
      * @param[in] interp    : the interpolated values;
@@ -142,6 +145,28 @@ VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
     std::sort(copy.data(), copy.data() + copy.size(), sort_pair_lambda);
     
     return copy;
+}
+
+template<typename ScalarType>
+VectorX<ScalarType> numerics::nonNaN(const VectorX<ScalarType> & vector)
+{
+    // Number of non-NaN values.
+    Index nNonNaN = (vector.array() != std::numeric_limits<ScalarType>::quiet_NaN()).count();
+    
+    VectorX<ScalarType> v_nonNan = VectorX<ScalarType>::Zero( nNonNaN );
+    
+    Index k = 0;
+    
+    for ( Index i = 0; i < vector.size(); ++i )
+    {
+        if ( !std::isnan(vector(i)) )
+        {
+            v_nonNan(k) = vector(i);
+            ++k;
+        }
+    }
+    
+    return v_nonNan;
 }
 
 #endif /* NUMERICS_H */

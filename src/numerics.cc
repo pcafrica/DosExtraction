@@ -91,27 +91,6 @@ VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorX
     return yNew;
 }
 
-VectorXr numerics::nonNaN(const VectorXr & v)
-{
-    // Number of non-NaN values.
-    Index nonNaNNo = (v.array() != std::numeric_limits<Real>::quiet_NaN()).count();
-    
-    VectorXr v_nonNan = VectorXr::Zero( nonNaNNo );
-    
-    Index k = 0;
-    
-    for ( Index i = 0; i < v.size(); ++i )
-    {
-        if ( !std::isnan(v(i)) )
-        {
-            v_nonNan(k) = v(i);
-            ++k;
-        }
-    }
-    
-    return v_nonNan;
-}
-
 Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
                         const VectorXr & V)
 {
