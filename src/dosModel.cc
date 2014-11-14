@@ -356,7 +356,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     error_H1_ = std::sqrt( error_L2_ * error_L2_ +
                            numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated.array() - V_shift_)
                          );
-    error_L_inf_ = std::abs( (dC_dV_interp - dC_dV_simulated).maxCoeff() );
+    error_L_inf_ = numerics::error_L_inf(dC_dV_interp, dC_dV_simulated);
     
     // Print to output.
     output_info << std::endl;

@@ -91,32 +91,42 @@ VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorX
     return yNew;
 }
 
-Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
-                        const VectorXr & V)
+VectorXr numerics::nonNaN(const VectorXr & v)
 {
-    // Number of not-NaN values.
-    Index nNotNaN = std::min( (interp   .array() != std::numeric_limits<Real>::quiet_NaN()).count(),
-                              (simulated.array() != std::numeric_limits<Real>::quiet_NaN()).count()
-                            );
-                            
-    VectorXr         V_centered = VectorXr::Zero( nNotNaN );
-    VectorXr simulated_centered = VectorXr::Zero( nNotNaN );
-    VectorXr    interp_centered = VectorXr::Zero( nNotNaN );
+    // Number of non-NaN values.
+    Index nonNaNNo = (v.array() != std::numeric_limits<Real>::quiet_NaN()).count();
     
+    VectorXr v_nonNan = VectorXr::Zero( nonNaNNo );
+    
+    Index k = 0;
+    
+    for ( Index i = 0; i < v.size(); ++i )
     {
-        Index k = 0;
-        
-        for ( Index i = 0; i < nNotNaN; ++i )
+        if ( !std::isnan(v(i)) )
         {
-            if ( !std::isnan(interp(i)) && !std::isnan(simulated(i)) )
-            {
-                V_centered(k) = V(i);
-                simulated_centered(k) = simulated(i);
-                interp_centered(k) = interp(i);
-                ++k;
-            }
+            v_nonNan(k) = v(i);
+            ++k;
         }
     }
     
+    return v_nonNan;
+}
+
+Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
+                        const VectorXr & V)
+{
+    assert( interp.size() == simulated.size() );
+    
+    VectorXr V_centered         = nonNaN(V);
+    VectorXr interp_centered    = nonNaN(interp);
+    VectorXr simulated_centered = nonNaN(simulated);
+    
     return trapz(V_centered, (interp_centered - simulated_centered).array().square().matrix());
+}
+
+Real numerics::error_L_inf(const VectorXr & interp, const VectorXr & simulated)
+{
+    assert( interp.size() == simulated.size() );
+    
+    return std::abs( (nonNaN(interp) - nonNaN(simulated)).maxCoeff() );
 }

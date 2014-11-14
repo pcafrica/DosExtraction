@@ -88,6 +88,12 @@ namespace numerics
     VectorXr interp1(const VectorXr &, const VectorXr &, const VectorXr &);
     
     /**
+     * @brief Take the NaNs out from an input vector @a v.
+     * @param[in] v : the input vector.
+     * @returns a vector containing the non-NaN values of @a v.
+     */
+    VectorXr nonNaN(const VectorXr &);
+    /**
      * @brief Compute the @f$ L^2 @f$-norm error @b squared between simulated and interpolated experimental values, using @ref trapz.
      * @param[in] interp    : the interpolated values;
      * @param[in] simulated : the simulated values;
@@ -95,6 +101,14 @@ namespace numerics
      * @returns the value of the @f$ L^2 @f$-norm error.
      */
     Real error_L2(const VectorXr &, const VectorXr &, const VectorXr &);
+    
+    /**
+     * @brief Compute the @f$ L^{\infty} @f$-norm error between simulated and interpolated experimental values.
+     * @param[in] interp    : the interpolated values;
+     * @param[in] simulated : the simulated values.
+     * @returns the value of the @f$ L^{\infty} @f$-norm error.
+     */
+    Real error_L_inf(const VectorXr &, const VectorXr &);
 }
 
 // Implementations.
