@@ -104,14 +104,6 @@ namespace numerics
      * @returns the value of the @f$ L^2 @f$-norm error.
      */
     Real error_L2(const VectorXr &, const VectorXr &, const VectorXr &);
-    
-    /**
-     * @brief Compute the @f$ L^{\infty} @f$-norm error between simulated and interpolated experimental values.
-     * @param[in] interp    : the interpolated values;
-     * @param[in] simulated : the simulated values.
-     * @returns the value of the @f$ L^{\infty} @f$-norm error.
-     */
-    Real error_L_inf(const VectorXr &, const VectorXr &);
 }
 
 // Implementations.

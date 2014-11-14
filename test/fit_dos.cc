@@ -216,7 +216,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                                 break;
                                 
                             case 2:
-                                error(k) = model.error_L_inf();
+                                error(k) = model.error_Peak();
                                 break;
                         }
                         

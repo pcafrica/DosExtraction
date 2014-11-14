@@ -51,9 +51,9 @@ output_directory = ./output_TEST_1_Single_Sigma
     iterationsNo = 3
     
     # Error norm to minimize:
-    # 0 = L^2
-    # 1 = H^1
-    # 2 = L^inf (on dC/dV)
+    # 0 = L^2,
+    # 1 = H^1,
+    # 2 = distance between peaks (on dC/dV).
     errorNorm = 1
     
 ################################################################

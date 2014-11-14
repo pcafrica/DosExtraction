@@ -102,10 +102,3 @@ Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
     
     return trapz(V_centered, (interp_centered - simulated_centered).array().square().matrix());
 }
-
-Real numerics::error_L_inf(const VectorXr & interp, const VectorXr & simulated)
-{
-    assert( interp.size() == simulated.size() );
-    
-    return std::abs( (nonNaN(interp) - nonNaN(simulated)).maxCoeff() );
-}

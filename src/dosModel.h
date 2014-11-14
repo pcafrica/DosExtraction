@@ -109,7 +109,7 @@ class DosModel
         
         inline const Real & error_L2() const;
         inline const Real & error_H1() const;
-        inline const Real & error_L_inf() const;
+        inline const Real & error_Peak() const;
         
         inline const Real & C_acc_experim()   const;
         inline const Real & C_acc_simulated() const;
@@ -137,7 +137,7 @@ class DosModel
         
         Real error_L2_;    /**< @brief @f$ L^2 @f$-distance between experimental and simulated capacitance values. */
         Real error_H1_;    /**< @brief @f$ H^1 @f$-distance between experimental and simulated capacitance values. */
-        Real error_L_inf_;    /**< @brief @f$ L^{\infty} @f$-distance between experimental and simulated derivative of capacitance values with respect to the gate potential. */
+        Real error_Peak_;    /**< @brief @f$ Distance between the ordinates in the peak of experimental and simulated derivative of capacitance values with respect to the gate potential. */
         
         Real C_acc_experim_  ;    /**< @brief Experimental accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
         Real C_acc_simulated_;    /**< @brief Simulated accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
@@ -160,9 +160,9 @@ inline const Real & DosModel::error_H1() const
     return error_H1_;
 }
 
-inline const Real & DosModel::error_L_inf() const
+inline const Real & DosModel::error_Peak() const
 {
-    return error_L_inf_;
+    return error_Peak_;
 }
 
 inline const Real & DosModel::C_acc_experim() const

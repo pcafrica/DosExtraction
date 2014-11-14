@@ -21,11 +21,11 @@ using namespace constants;
 using namespace utility;
 
 DosModel::DosModel()
-    : initialized_(false), params_(), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0),
+    : initialized_(false), params_(), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0), error_Peak_(0.0),
       C_acc_experim_(0.0), C_acc_simulated_(0.0), C_dep_experim_(0.0) {}
 
 DosModel::DosModel(const ParamList & params)
-    : initialized_(true), params_(params), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0),
+    : initialized_(true), params_(params), V_shift_(0.0), error_L2_(0.0), error_H1_(0.0), error_Peak_(0.0),
       C_acc_experim_(0.0), C_acc_simulated_(0.0), C_dep_experim_(0.0) {}
 
 void DosModel::simulate(const GetPot & config, const std::string & input_experim, const std::string & output_directory,
@@ -220,10 +220,10 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
     // Start simulation.
     for ( Index i = 0; i < V.size(); ++i )
     {
-        // Print current iteration number.
+        // Print current step number.
         if ( i == 0 || (i + 1) % 10 == 0 || i == V.size() - 1 )
         {
-            output_info << std::endl << "\titeration: " << (i + 1) << "/" << params_.nSteps_;
+            output_info << std::endl << "\tstep: " << (i + 1) << "/" << params_.nSteps_;
         }
         
         VectorXr phiOld = VectorXr::Zero( x.size() );
@@ -356,7 +356,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     error_H1_ = std::sqrt( error_L2_ * error_L2_ +
                            numerics::error_L2(dC_dV_interp, dC_dV_simulated, V_simulated.array() - V_shift_)
                          );
-    error_L_inf_ = numerics::error_L_inf(dC_dV_interp, dC_dV_simulated);
+    error_Peak_ = std::abs( numerics::nonNaN(dC_dV_interp).maxCoeff() - numerics::nonNaN(dC_dV_simulated).maxCoeff() );
     
     // Print to output.
     output_info << std::endl;
@@ -367,7 +367,7 @@ void DosModel::post_process(const GetPot & config, const std::string & input_exp
     output_info << "Distance between experimental and simulated capacitance values:" << std::endl;
     output_info << "\tL2-distance = " << error_L2_ << std::endl;
     output_info << "\tH1-distance = " << error_H1_ << std::endl;
-    output_info << "\tL^inf-distance (on dC/dV) = " << error_L_inf_ << std::endl;
+    output_info << "\tPeak-distance (on dC/dV) = " << error_Peak_ << std::endl;
     
     output_CV << "V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated" << std::endl;
     
