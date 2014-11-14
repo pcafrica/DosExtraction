@@ -150,10 +150,19 @@ VectorXpair<ScalarType> numerics::sort_pair(const VectorX<ScalarType> & vector)
 template<typename ScalarType>
 VectorX<ScalarType> numerics::nonNaN(const VectorX<ScalarType> & vector)
 {
-    // Number of non-NaN values.
-    Index nNonNaN = (vector.array() != std::numeric_limits<ScalarType>::quiet_NaN()).count();
+    // Get number of non-NaN values.
+    Index nNonNaN = 0;
     
-    VectorX<ScalarType> v_nonNan = VectorX<ScalarType>::Zero( nNonNaN );
+    for ( Index i = 0; i < vector.size(); ++i )
+    {
+        if ( !std::isnan(vector(i)) )
+        {
+            ++nNonNaN;
+        }
+    }
+    
+    // Create and fill the new vector.
+    VectorX<ScalarType> nonNan = VectorX<ScalarType>::Zero( nNonNaN );
     
     Index k = 0;
     
@@ -161,12 +170,12 @@ VectorX<ScalarType> numerics::nonNaN(const VectorX<ScalarType> & vector)
     {
         if ( !std::isnan(vector(i)) )
         {
-            v_nonNan(k) = vector(i);
+            nonNan(k) = vector(i);
             ++k;
         }
     }
     
-    return v_nonNan;
+    return nonNan;
 }
 
 #endif /* NUMERICS_H */
