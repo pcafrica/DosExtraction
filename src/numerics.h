@@ -88,7 +88,7 @@ namespace numerics
     VectorXr interp1(const VectorXr &, const VectorXr &, const VectorXr &);
     
     /**
-     * @brief Compute the @f$ L^2 @f$-norm error between simulated and interpolated experimental values, using @ref trapz.
+     * @brief Compute the @f$ L^2 @f$-norm error @b squared between simulated and interpolated experimental values, using @ref trapz.
      * @param[in] interp    : the interpolated values;
      * @param[in] simulated : the simulated values;
      * @param[in] V         : the vector of the electric potential.
