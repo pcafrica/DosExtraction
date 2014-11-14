@@ -94,11 +94,45 @@ VectorXr numerics::interp1(const VectorXr & x, const VectorXr & y, const VectorX
 Real numerics::error_L2(const VectorXr & interp, const VectorXr & simulated,
                         const VectorXr & V)
 {
+    assert( V     .size() == interp   .size() );
     assert( interp.size() == simulated.size() );
     
-    VectorXr V_centered         = nonNaN(V);
-    VectorXr interp_centered    = nonNaN(interp);
-    VectorXr simulated_centered = nonNaN(simulated);
+    // Get number of non-NaN values.
+    Index nInterpNonNaN = 0, nSimulatedNonNaN = 0;
+    
+    for ( Index i = 0; i < V.size(); ++i )
+    {
+        if ( !std::isnan(interp(i)) )
+        {
+            ++nInterpNonNaN;
+        }
+        
+        if ( !std::isnan(simulated(i)) )
+        {
+            ++nSimulatedNonNaN;
+        }
+    }
+    
+    Index nNonNaN = std::min( nInterpNonNaN, nSimulatedNonNaN );
+    
+    VectorXr V_centered         = VectorXr::Zero( nNonNaN );
+    VectorXr simulated_centered = VectorXr::Zero( nNonNaN );
+    VectorXr interp_centered    = VectorXr::Zero( nNonNaN );
+    
+    {
+        Index k = 0;
+        
+        for ( Index i = 0; i < V.size(); ++i )
+        {
+            if ( !std::isnan(interp(i)) && !std::isnan(simulated(i)) )
+            {
+                V_centered(k)         = V(i);
+                simulated_centered(k) = simulated(i);
+                interp_centered(k)    = interp(i);
+                ++k;
+            }
+        }
+    }
     
     return trapz(V_centered, (interp_centered - simulated_centered).array().square().matrix());
 }
