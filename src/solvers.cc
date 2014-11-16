@@ -208,13 +208,13 @@ NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const Index &
     assert( tolerance_       > 0.0 );
 }
 
-void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_guess, const Charge & charge_fun)
+void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charge_fun)
 {
-    assert( init_guess    .size() == mesh.size() );
-    assert( solver_.Stiff_.rows() == mesh.size() );
-    assert( solver_.Stiff_.cols() == mesh.size() );
-    assert( solver_.Mass_ .rows() == mesh.size() );
-    assert( solver_.Mass_ .cols() == mesh.size() );
+    assert( init_guess    .size() == solver_.mesh_.size() );
+    assert( solver_.Stiff_.rows() == solver_.mesh_.size() );
+    assert( solver_.Stiff_.cols() == solver_.mesh_.size() );
+    assert( solver_.Mass_ .rows() == solver_.mesh_.size() );
+    assert( solver_.Mass_ .cols() == solver_.mesh_.size() );
     
     phi_    = init_guess;
     norm_   = VectorXr::Zero( maxIterationsNo_ );
@@ -224,8 +224,8 @@ void NonLinearPoisson1D::apply(const VectorXr & mesh, const VectorXr & init_gues
     
     VectorXr phiOld = phi_;
     
-    VectorXr  charge = VectorXr::Zero( mesh.size() );
-    VectorXr dcharge = VectorXr::Zero( mesh.size() );
+    VectorXr  charge = VectorXr::Zero( solver_.mesh_.size() );
+    VectorXr dcharge = VectorXr::Zero( solver_.mesh_.size() );
     
     SparseXr Jac(solver_.Stiff_.rows(), solver_.Stiff_.rows());
     

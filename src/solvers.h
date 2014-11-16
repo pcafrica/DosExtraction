@@ -212,11 +212,10 @@ class NonLinearPoisson1D
         
         /**
          * @brief Apply a Newton method to the equation and then discretize it using the solver specified.
-         * @param[in] mesh       : the mesh;
          * @param[in] init_guess : initial guess for the Newton algorithm;
          * @param[in] charge_fun : an object of class @ref Charge specifying how to compute total electric charge.
          */
-        void apply(const VectorXr &, const VectorXr &, const Charge &);
+        void apply(const VectorXr &, const Charge &);
         
         /**
          * @name Getter methods

@@ -237,7 +237,7 @@ void DosModel::simulate(const GetPot & config, const std::string & input_experim
             phiOld = Phi.col(i - 1) + VectorXr::LinSpaced(phiOld.size(), 0, V(i) - V(i - 1));
         }
         
-        nlpSolver.apply(x, phiOld, *charge_fun);
+        nlpSolver.apply(phiOld, *charge_fun);
         
         Phi.col(i) = nlpSolver.phi();
         

@@ -56,9 +56,9 @@ CsvParser::CsvParser(const std::string & input_filename, const bool & hasHeaders
     {
         separator_ = '\t';
     }
-    else if ( std::find(line_.begin(), line_.end(), ':') != line_.end() )
+    else if ( std::find(line_.begin(), line_.end(), ';') != line_.end() )
     {
-        separator_ = ':';
+        separator_ = ';';
     }
     else if ( std::find(line_.begin(), line_.end(), ' ') != line_.end() )
     {
