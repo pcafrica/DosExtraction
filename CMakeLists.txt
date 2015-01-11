@@ -78,14 +78,14 @@ include(RunDoxygen)
 ################################################################
 ## Artistic style.
 ################################################################
-find_package(AStyle)
+# find_package(AStyle)
 
-if(ASTYLE_FOUND)
-    add_custom_target(astyle ALL
-        COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${SIMULATE_SRC} ${FIT_SRC}
-        COMMENT "Formatting source codes..."
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
-endif()
+# if(ASTYLE_FOUND)
+#     add_custom_target(astyle ALL
+#         COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${SIMULATE_SRC} ${FIT_SRC}
+#         COMMENT "Formatting source codes..."
+#         WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+# endif()
 
 ################################################################
 ## Copy test and configuration files; create documentation dir.
