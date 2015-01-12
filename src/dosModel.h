@@ -41,7 +41,7 @@
  */
 class DosModel
 {
- public:
+public:
   /**
    * @brief Default constructor.
    */
@@ -51,11 +51,14 @@ class DosModel
    * @brief Explicit conversion constructor.
    * @param[in] params : a parameter list.
    */
-  explicit DosModel (const ParamList &);
+  explicit
+  DosModel (const ParamList &);
+  
   /**
    * @brief Destructor (defaulted).
    */
-  virtual ~DosModel() = default;
+  virtual
+  ~DosModel() = default;
 
   /**
    * @brief Perform the simulation.
@@ -65,9 +68,10 @@ class DosModel
    * @param[in] output_plot_subdir : sub-directory where to store @ref Gnuplot files;
    * @param[in] output_filename    : prefix for the output filename.
    */
-  void simulate (const GetPot &, const std::string &,
-                 const std::string &,
-                 const std::string &, const std::string &);
+  void
+  simulate (const GetPot &, const std::string &,
+            const std::string &,
+            const std::string &, const std::string &);
 
   /**
    * @brief Perform post-processing.
@@ -84,11 +88,12 @@ class DosModel
    * @param[in]  V_simulated   : simulated voltage values @f$ \left[ V \right] @f$;
    * @param[in]  C_simulated   : simulated capacitance values @f$ \left[ F \right] @f$.
    */
-  void post_process (const GetPot &, const std::string &,
-                     std::ostream &, std::ostream &,
-                     const Real &, const Real &, const VectorXr &, const MatrixXr &,
-                     const MatrixXr &,
-                     const Index, const VectorXr &, const VectorXr &);
+  void
+  post_process (const GetPot &, const std::string &,
+                std::ostream &, std::ostream &,
+                const Real &, const Real &, const VectorXr &, const MatrixXr &,
+                const MatrixXr &,
+                const Index, const VectorXr &, const VectorXr &);
 
   /**
    * @brief Save the @ref Gnuplot output files.
@@ -97,29 +102,43 @@ class DosModel
    * @param[in] csv_filename       : .csv file to plot;
    * @param[in] output_filename    : prefix for the output filename.
    */
-  void save_plot (const std::string &, const std::string &,
-                  const std::string &, const std::string &) const;
+  void
+  save_plot (const std::string &, const std::string &,
+             const std::string &, const std::string &) const;
 
   /**
    * @brief Defines commands to generate @ref Gnuplot output files.
    * @param[in]  csv_filename : .csv file to plot;
    * @param[out] os           : output stream.
    */
-  void gnuplot_commands (const std::string &, std::ostream &) const;
+  void
+  gnuplot_commands (const std::string &, std::ostream &) const;
 
   /**
    * @name Getter methods
    * @{
    */
-  inline const ParamList & params() const;
+  inline const ParamList&
+  params() const;
 
-  inline const Real & error_L2() const;
-  inline const Real & error_H1() const;
-  inline const Real & error_Peak() const;
+  inline const Real&
+  error_L2() const;
+  
+  inline const Real&
+  error_H1() const;
+  
+  inline const Real&
+  error_Peak() const;
 
-  inline const Real & C_acc_experim()   const;
-  inline const Real & C_acc_simulated() const;
-  inline const Real & C_dep_experim()   const;
+  inline const Real&
+  C_acc_experim() const;
+  
+  inline const Real&
+  C_acc_simulated() const;
+  
+  inline const Real&
+  C_dep_experim() const;
+  
   /**
    * @}
    */
@@ -128,13 +147,14 @@ class DosModel
    * @name Setter methods
    * @{
    */
-  inline void setSigma (const Real &);
+  inline void
+  setSigma (const Real &);
 
   /**
    * @}
    */
 
- private:
+private:
   bool initialized_;    /**< @brief bool to determine if @ref DosModel @a param_ has been properly initialized. */
 
   ParamList params_;    /**< @brief The parameter list. */
@@ -145,53 +165,44 @@ class DosModel
   Real error_H1_;    /**< @brief @f$ H^1 @f$-distance between experimental and simulated capacitance values. */
   Real error_Peak_;    /**< @brief @f$ Distance between the ordinates in the peak of experimental and simulated derivative of capacitance values with respect to the gate potential. */
 
-  Real C_acc_experim_
-    ;    /**< @brief Experimental accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
+  Real C_acc_experim_;    /**< @brief Experimental accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
   Real C_acc_simulated_;    /**< @brief Simulated accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
-  Real C_dep_experim_
-    ;    /**< @brief Experimental depletion capacitance, used for automatic fitting @f$ [F] @f$. */
+  Real C_dep_experim_;    /**< @brief Experimental depletion capacitance, used for automatic fitting @f$ [F] @f$. */
 };
 
 // Implementations.
-inline const ParamList & DosModel::params() const
-{
-  return params_;
-}
+inline const ParamList&
+DosModel::params() const
+{ return params_; }
 
-inline const Real & DosModel::error_L2() const
-{
-  return error_L2_;
-}
+inline const Real&
+DosModel::error_L2() const
+{ return error_L2_; }
 
-inline const Real & DosModel::error_H1() const
-{
-  return error_H1_;
-}
+inline const Real&
+DosModel::error_H1() const
+{ return error_H1_; }
 
-inline const Real & DosModel::error_Peak() const
-{
-  return error_Peak_;
-}
+inline const Real&
+DosModel::error_Peak() const
+{ return error_Peak_; }
 
-inline const Real & DosModel::C_acc_experim() const
-{
-  return C_acc_experim_;
-}
+inline const Real&
+DosModel::C_acc_experim() const
+{ return C_acc_experim_; }
 
-inline const Real & DosModel::C_acc_simulated() const
-{
-  return C_acc_simulated_;
-}
+inline const Real&
+DosModel::C_acc_simulated() const
+{ return C_acc_simulated_; }
 
-inline const Real & DosModel::C_dep_experim() const
-{
-  return C_dep_experim_;
-}
+inline const Real&
+DosModel::C_dep_experim() const
+{ return C_dep_experim_; }
 
-inline void DosModel::setSigma (const Real & sigma)
+inline void
+DosModel::setSigma (const Real & sigma)
 {
   assert (sigma >= 0.0);
-
   params_.sigma_ = sigma;
 }
 
