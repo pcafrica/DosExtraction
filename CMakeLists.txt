@@ -30,8 +30,8 @@ set(TESTDIR "${CMAKE_SOURCE_DIR}/test")    # Directory where to find the test so
 
 file(GLOB SIMULATE_SRC ${TESTDIR}/${SIMULATE}.cc)
 file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
-file(GLOB SRCS ${SRCDIR}/*.cc)
-file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
+file(GLOB SRCS ${SRCDIR}/*.cc ${SRCDIR}/*.cpp)
+file(GLOB HDRS ${SRCDIR}/*.h ${SRCDIR}/*.hpp ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
