@@ -168,13 +168,9 @@ void DosModel::simulate (const GetPot & config,
   output_info << " using " << quadRule->nNodes() << " nodes...";
 
   try
-    {
-      quadRule->apply (config);
-    }
+    { quadRule->apply (config); }
   catch (const std::exception & genericException)
-    {
-      throw;
-    }
+    { throw; }
 
   print_done (output_info);
 
@@ -202,7 +198,8 @@ void DosModel::simulate (const GetPot & config,
         break;
 
       default:
-        throw std::runtime_error ("ERROR: wrong variable \"DOS\" set in the configuration file (only 1 or 0 allowed).");
+        throw std::runtime_error
+          ("ERROR: wrong variable \"DOS\" set in the configuration file (only 1 or 0 allowed).");
         break;
       }
 
