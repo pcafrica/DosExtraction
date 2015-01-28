@@ -82,8 +82,8 @@ public:
    * @param[in]  A_semic       : area of the semiconductor @f$ \left[ m^{-2} \right] @f$;
    * @param[in]  C_sb          : stray capacitance (see @ref ParamList) @f$ \left[ F \right] @f$;
    * @param[in]  x             : the mesh;
-   * @param[in]  dens          : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
-   * @param[in]  phi           : LUMO;
+   * @param[in]  Dens          : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
+   * @param[in]  Phi           : LUMO;
    * @param[in]  semicNodesNo  : number of nodes in the semconductor region;
    * @param[in]  V_simulated   : simulated voltage values @f$ \left[ V \right] @f$;
    * @param[in]  C_simulated   : simulated capacitance values @f$ \left[ F \right] @f$.
@@ -163,7 +163,7 @@ private:
 
   Real error_L2_;    /**< @brief @f$ L^2 @f$-distance between experimental and simulated capacitance values. */
   Real error_H1_;    /**< @brief @f$ H^1 @f$-distance between experimental and simulated capacitance values. */
-  Real error_Peak_;    /**< @brief @f$ Distance between the ordinates in the peak of experimental and simulated derivative of capacitance values with respect to the gate potential. */
+  Real error_Peak_;    /**< @brief Distance between the ordinates in the peak of experimental and simulated derivative of capacitance values with respect to the gate potential. */
 
   Real C_acc_experim_;    /**< @brief Experimental accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
   Real C_acc_simulated_;    /**< @brief Simulated accumulation capacitance, used for automatic fitting @f$ [F] @f$. */
