@@ -202,14 +202,8 @@ DosModel::C_dep_experim() const
 inline void
 DosModel::setSigma (const Real & sigma)
 {
-<<<<<<< HEAD
-    assert( sigma >= 0.0 );
-    
-    params_.sigma_ = sigma;
-=======
-  assert (sigma >= 0.0);
+  assert( sigma >= 0.0 );
   params_.sigma_ = sigma;
->>>>>>> 0ba363c4a19e8b491f5a5d882bdb3b92caa9573c
 }
 
 #endif /* DOSMODEL_H */
