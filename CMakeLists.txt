@@ -30,8 +30,8 @@ set(TESTDIR "${CMAKE_SOURCE_DIR}/test")    # Directory where to find the test so
 
 file(GLOB SIMULATE_SRC ${TESTDIR}/${SIMULATE}.cc)
 file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
-file(GLOB SRCS ${SRCDIR}/*.cc)
-file(GLOB HDRS ${SRCDIR}/*.h ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
+file(GLOB SRCS ${SRCDIR}/*.cc ${SRCDIR}/*.cpp)
+file(GLOB HDRS ${SRCDIR}/*.h ${SRCDIR}/*.hpp ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
@@ -78,14 +78,14 @@ include(RunDoxygen)
 ################################################################
 ## Artistic style.
 ################################################################
-find_package(AStyle)
+# find_package(AStyle)
 
-if(ASTYLE_FOUND)
-    add_custom_target(astyle ALL
-        COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${SIMULATE_SRC} ${FIT_SRC}
-        COMMENT "Formatting source codes..."
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
-endif()
+# if(ASTYLE_FOUND)
+#     add_custom_target(astyle ALL
+#         COMMAND ${ASTYLE_EXECUTABLE} -q -A1 -s4 -C -S -N -Y -f -p -H -E ${SRCS} ${HDRS} ${SIMULATE_SRC} ${FIT_SRC}
+#         COMMENT "Formatting source codes..."
+#         WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
+# endif()
 
 ################################################################
 ## Copy test and configuration files; create documentation dir.
