@@ -1,4 +1,4 @@
-/* C++ */
+/* C++11 */
 
 /**
  * @file   quadratureRule.h

@@ -1,4 +1,4 @@
-/* C++ */
+/* C++11 */
 
 /**
  * @file   dosModel.h
@@ -182,7 +182,7 @@ inline const Real & DosModel::C_dep_experim() const
 
 inline void DosModel::setSigma(const Real & sigma)
 {
-    assert( sigma >= 0.0);
+    assert( sigma >= 0.0 );
     
     params_.sigma_ = sigma;
 }
