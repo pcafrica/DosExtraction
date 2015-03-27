@@ -97,10 +97,10 @@ std::pair<VectorXr, VectorXr> Bim1D::bernoulli(const VectorXr & x)
             while ( std::abs(df) > 1.0e-16 )
             {
                 j += 1.0;
-                segno = -segno;
+                sign = -sign;
                 df *= x(i) / j;
                 fp += df;
-                fn += segno * df;
+                fn += sign * df;
             }
             
             bp(i) = 1.0 / fp;
