@@ -80,7 +80,7 @@ std::pair<VectorXr, VectorXr> Bim1D::bernoulli(const VectorXr & x)
                 bn(i) = 0.0  ;
             }
         }
-        else if ( ax(i) <= 800.0 && ax(i) > lim )    // Intermediate values.
+        else if ( ax(i) <= 80.0 && ax(i) > lim )    // Intermediate values.
         {
             bp(i) = x(i) / ( std::exp(x(i)) - 1.0 );
             bn(i) = x(i) + bp(i);
