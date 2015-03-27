@@ -91,7 +91,8 @@ std::pair<VectorXr, VectorXr> Bim1D::bernoulli(const VectorXr & x)
             Real fp = 1.0;
             Real fn = 1.0;
             Real df = 1.0;
-            int segno = 1  ;
+            
+            int sign = 1;
             
             while ( std::abs(df) > 1.0e-16 )
             {
