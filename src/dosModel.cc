@@ -262,7 +262,7 @@ void DosModel::simulate (const GetPot & config,
 
       VectorXr charge = charge_fun->charge (Phi.col (i).segment (0,
                                             semicNodesNo));
-      Dens.col (i) = charge / Q;
+      Dens.col (i) = -charge / Q;
 
       cTot (i) = nlpSolver.cTot();
 
