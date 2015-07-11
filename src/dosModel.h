@@ -75,22 +75,23 @@ public:
 
   /**
    * @brief Perform post-processing.
-   * @param[in]  config        : the GetPot configuration object;
-   * @param[in]  input_experim : the file containing experimental data;
-   * @param[out] output_info   : output file containing infos about the simulation;
-   * @param[out] output_CV     : output file containing infos about capacitance-voltage data;
-   * @param[in]  A_semic       : area of the semiconductor @f$ \left[ m^{-2} \right] @f$;
-   * @param[in]  C_sb          : stray capacitance (see @ref ParamList) @f$ \left[ F \right] @f$;
-   * @param[in]  x             : the mesh;
-   * @param[in]  Dens          : charge density @f$ \left[ C \cdot m^{-3} \right] @f$;
-   * @param[in]  Phi           : LUMO;
-   * @param[in]  semicNodesNo  : number of nodes in the semconductor region;
-   * @param[in]  V_simulated   : simulated voltage values @f$ \left[ V \right] @f$;
-   * @param[in]  C_simulated   : simulated capacitance values @f$ \left[ F \right] @f$.
+   * @param[in]  config           : the GetPot configuration object;
+   * @param[in]  output_filename  : prefix for the output filename;
+   * @param[in]  input_experim    : the file containing experimental data;
+   * @param[out] output_info      : output file containing infos about the simulation;
+   * @param[out] output_CV        : output file containing infos about capacitance-voltage data;
+   * @param[in]  A_semic          : area of the semiconductor @f$ \left[ m^{-2} \right] @f$;
+   * @param[in]  C_sb             : stray capacitance (see @ref ParamList) @f$ \left[ F \right] @f$;
+   * @param[in]  x                : the mesh;
+   * @param[in]  Dens             : charge-carrier density @f$ \left[ m^{-3} \right] @f$;
+   * @param[in]  Phi              : LUMO;
+   * @param[in]  semicNodesNo     : number of nodes in the semconductor region;
+   * @param[in]  V_simulated      : simulated voltage values @f$ \left[ V \right] @f$;
+   * @param[in]  C_simulated      : simulated capacitance values @f$ \left[ F \right] @f$.
    */
   void
   post_process (const GetPot &, const std::string &,
-                std::ostream &, std::ostream &,
+                const std::string &, std::ostream &, std::ostream &,
                 const Real &, const Real &, const VectorXr &, const MatrixXr &,
                 const MatrixXr &,
                 const Index, const VectorXr &, const VectorXr &);

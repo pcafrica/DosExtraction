@@ -57,8 +57,8 @@ void DosModel::simulate (const GetPot & config,
                   std::ios_base::out);
   output_CV.setf (std::ios_base::scientific);
   output_CV.precision (std::numeric_limits<Real>::digits10);
-
-  if (!output_info.is_open() || !output_CV.is_open())
+  
+  if (output_info.bad() || output_CV.bad())
     {
       throw std::ofstream::failure ("ERROR: output files cannot be opened or directory does not exist.");
     }
@@ -262,7 +262,7 @@ void DosModel::simulate (const GetPot & config,
 
       VectorXr charge = charge_fun->charge (Phi.col (i).segment (0,
                                             semicNodesNo));
-      Dens.col (i) = - charge / Q;
+      Dens.col (i) = charge / Q;
 
       cTot (i) = nlpSolver.cTot();
 
@@ -270,7 +270,7 @@ void DosModel::simulate (const GetPot & config,
         numerics::trapz ((VectorXr) x.segment
                          (0, semicNodesNo), charge);
     }
-
+    
   print_done (output_info);
 
   // Timing.
@@ -288,13 +288,21 @@ void DosModel::simulate (const GetPot & config,
   charge_fun = nullptr;
 
   // Post-processing and creation of output files.
-  post_process (config, input_experim, output_info, output_CV,
-                params_.A_semic_, params_.C_sb_,
-                x, Dens, Phi, semicNodesNo, V, cTot);
+  try
+  {
+    post_process (config, output_directory + output_filename,
+                  input_experim, output_info, output_CV,
+                  params_.A_semic_, params_.C_sb_,
+                  x, Dens, Phi, semicNodesNo, V, cTot);
+  }
+  catch (const std::exception & genericException)
+  {
+      throw;
+  }
 
   output_info << std::endl;
-  output_info << "C_sb = " << params_.C_sb_ << std::endl;
-  output_info << "t_semic = " << params_.t_semic_ << std::endl;
+  output_info << "C_sb = " << params_.C_sb_ << " [F]" << std::endl;
+  output_info << "t_semic = " << params_.t_semic_ << " [m]" << std::endl;
 
   output_info.close();
   output_CV.close();
@@ -314,6 +322,7 @@ void DosModel::simulate (const GetPot & config,
 }
 
 void DosModel::post_process (const GetPot & config,
+                             const std::string & output_filename,
                              const std::string & input_experim,
                              std::ostream & output_info,
                              std::ostream & output_CV,
@@ -333,6 +342,8 @@ void DosModel::post_process (const GetPot & config,
 
   assert (x_semic.size() == dens.size());
   assert (V_simulated.size() == C_simulated.size());
+  assert (Phi.rows() == Dens.rows());
+  assert (Phi.cols() == Dens.cols());
 
   CsvParser parser_experim (input_experim, config ("skipHeaders",
                             true));
@@ -412,10 +423,10 @@ void DosModel::post_process (const GetPot & config,
 
   // Print to output.
   output_info << std::endl
-              << "V_shift = " << V_shift_ << std::endl
+              << "V_shift = " << V_shift_ << " [V]" << std::endl
               << "Center of charge = "
-              << center_of_charge << std::endl
-              << "C_acc* = " << cAccStar << std::endl
+              << center_of_charge << " [m]" << std::endl
+              << "C_acc* = " << cAccStar << " [F]" << std::endl
               << std::endl
               << "Distance between experimental and simulated capacitance values:"
               << std::endl
@@ -425,9 +436,10 @@ void DosModel::post_process (const GetPot & config,
               << std::endl;
 
   output_CV
-    << "V_experim, C_experim, dC/dV_experim, V_simulated, C_simulated, dC/dV_simulated, LUMO_at_interface"
+    << "V_experim [V], C_experim [F], dC/dV_experim [F/V], V_simulated [V], C_simulated [F], dC/dV_simulated [F/V], LUMO_at_interface [V]"
     << std::endl;
 
+  // Save CV data.
   for (Index i = 0;
        i < std::max (V_simulated.size(), V_experim.size());
        ++i)
@@ -451,7 +463,19 @@ void DosModel::post_process (const GetPot & config,
 
       output_CV << std::endl;
     }
-
+  
+  // Store solutions.
+  try
+  {
+      write_binary(output_filename + "_solution_V.dat"   , V_simulated); // [V].
+      write_binary(output_filename + "_solution_phi.dat" , Phi        ); // [V].
+      write_binary(output_filename + "_solution_dens.dat", Dens       ); // [m^{-3}].
+  }
+  catch (const std::exception & genericException)
+  {
+      throw;
+  }
+  
   return;
 }
 

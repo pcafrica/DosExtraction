@@ -46,18 +46,10 @@ void GaussHermiteRule::apply_iterative_algorithm
   assert (maxIterationsNo > 0);
   assert (tolerance > 0.0);
 
-  std::vector<double> x(nNodes_, 0.0), w(nNodes_, 0.0);
   webbur::hermite_compute ((int) nNodes_,
-                           &(*x.begin ()),
-                           &(*w.begin ()));
-
-  for (Index i = 0; i < nNodes_; ++i)
-    {
-      nodes_ (i) = x[i];
-      weights_ (i) = w[i];
-      // std::cout << x[i] << " " << w[i] << std::endl;
-    }
-      
+                           nodes_.data(),
+                           weights_.data());
+  
   // Real p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;
   // Real z = 0.0, zOld = 0.0;    
   // // The roots are symmetric about the origin:

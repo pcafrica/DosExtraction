@@ -91,6 +91,66 @@ namespace utility
      * @param[out] os : output stream.
      */
     void print_done (std::ostream & = std::cout);
+    
+    /**
+     * @brief Auxiliary function to write an Eigen matrix to a binary file.
+     * @tparam Matrix : the matrix type.
+     * @param[in] filename : the filename;
+     * @param[in] matrix   : the matrix to write.
+     */
+    template<class Matrix>
+    void write_binary(const std::string &, const Matrix &);
+    
+    /**
+     * @brief Auxiliary function to write a binary file to an Eigen matrix.
+     * @tparam Matrix : the matrix type.
+     * @param[in] filename : the filename;
+     * @param[in] matrix   : the matrix to write on.
+     */
+    template<class Matrix>
+    void read_binary(const std::string &, Matrix &);
+}
+
+// Implementations.
+template<class Matrix>
+void utility::write_binary(const std::string & filename, const Matrix & matrix)
+{
+    std::ofstream output;
+    
+    output.open(filename, std::ios_base::out | std::ios_base::binary);
+    
+    if (output.bad())
+    {
+        throw std::ofstream::failure ("ERROR: output files cannot be opened or directory does not exist.");
+    }
+    
+    typename Matrix::Index nRows = matrix.rows();
+    typename Matrix::Index nCols = matrix.cols();
+    
+    output.write((char*) (&nRows), sizeof(typename Matrix::Index));
+    output.write((char*) (&nCols), sizeof(typename Matrix::Index));
+    output.write((char *) matrix.data(), nRows * nCols * sizeof(typename Matrix::Scalar));
+    
+    output.close();
+}
+
+template<class Matrix>
+void utility::read_binary(const std::string & filename, Matrix & matrix)
+{
+    std::ifstream input;
+    
+    input.open(filename, std::ios_base::in | std::ios_base::binary);
+    
+    typename Matrix::Index nRows=0, nCols=0;
+    
+    input.read((char*) (&nRows), sizeof(typename Matrix::Index));
+    input.read((char*) (&nCols), sizeof(typename Matrix::Index));
+    
+    matrix.resize(nRows, nCols);
+    
+    input.read((char *) matrix.data() , nRows * nCols * sizeof(typename Matrix::Scalar));
+    
+    input.close();
 }
 
 #endif /* TYPEDEFS_H */

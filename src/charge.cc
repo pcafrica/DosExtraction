@@ -70,7 +70,6 @@ GaussianCharge::charge (const VectorXr & phi) const
           - Q * n_approx (phi (i) + params_.shift_2_,
                           params_.N0_2_, params_.sigma_2_);
 
-
       if (params_.N0_3_ > 0.0)
         charge (i) +=
           - Q * n_approx (phi (i) + params_.shift_3_,
