@@ -55,7 +55,7 @@ void GaussHermiteRule::apply_iterative_algorithm
     {
       nodes_ (i) = x[i];
       weights_ (i) = w[i];
-      std::cout << x[i] << " " << w[i] << std::endl;
+      // std::cout << x[i] << " " << w[i] << std::endl;
     }
       
   // Real p1 = 0.0, p2 = 0.0, temp = 0.0, dp = 0.0;
