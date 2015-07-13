@@ -467,10 +467,19 @@ void DosModel::post_process (const GetPot & config,
   // Store solutions.
   try
   {
-      write_binary(output_filename + "_solution_V_shift.dat", VectorXr(V_shift_)); // [V].
-      write_binary(output_filename + "_solution_V.dat"      , V_simulated       ); // [V].
-      write_binary(output_filename + "_solution_phi.dat"    , Phi               ); // [V].
-      write_binary(output_filename + "_solution_dens.dat"   , Dens              ); // [m^{-3}].
+      {
+          std::ofstream output;
+          output.open(output_filename + "_solution_V_shift.dat",
+                      std::ios_base::out | std::ios_base::binary);
+          
+          output.write((char*) (&V_shift_), sizeof(V_shift_)); // [V].
+          
+          output.close();
+      }
+      
+      write_binary(output_filename + "_solution_V.dat"   , V_simulated); // [V].
+      write_binary(output_filename + "_solution_phi.dat" , Phi        ); // [V].
+      write_binary(output_filename + "_solution_dens.dat", Dens       ); // [m^{-3}].
   }
   catch (const std::exception & genericException)
   {
