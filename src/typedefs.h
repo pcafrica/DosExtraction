@@ -32,11 +32,12 @@ typedef ptrdiff_t Index;    /**< @brief Typedef for indexing variables. */
 
 using namespace Eigen;
 
-typedef Matrix<Real, Dynamic, Dynamic> MatrixXr   ;    /**< @brief Typedef for dense real-valued dynamic-sized matrices. */
-typedef Matrix<Real, Dynamic,       1> VectorXr   ;    /**< @brief Typedef for dense real-valued dynamic-sized column vectors. */
-typedef Matrix<Real,       1, Dynamic> RowVectorXr;    /**< @brief Typedef for dense real-valued dynamic-sized row vectors. */
-
-typedef SparseMatrix<Real>             SparseXr   ;    /**< @brief Typedef for sparse real-valued dynamic-sized matrices. */
+/**
+ * @brief Template alias for @ref Eigen matrices.
+ * @tparam ScalarType : the scalar type.
+ */
+template<typename ScalarType>
+using MatrixX = Matrix<ScalarType, Dynamic, Dynamic>;
 
 /**
  * @brief Template alias for @ref Eigen vectors.
@@ -51,6 +52,12 @@ using VectorX = Matrix<ScalarType, Dynamic, 1>;
  */
 template<typename T>
 using VectorXpair = VectorX<std::pair<T, Index> >;
+
+using MatrixXr    = MatrixX<Real>            ;    /**< @brief Typedef for dense real-valued dynamic-sized matrices. */
+using VectorXr    = VectorX<Real>            ;    /**< @brief Typedef for dense real-valued dynamic-sized column vectors. */
+using RowVectorXr = Matrix<Real, 1, Dynamic> ;    /**< @brief Typedef for dense real-valued dynamic-sized row vectors. */
+
+using SparseXr = SparseMatrix<Real>;    /**< @brief Typedef for sparse real-valued dynamic-sized matrices. */
 
 namespace constants
 {
