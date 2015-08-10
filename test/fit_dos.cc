@@ -71,8 +71,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         const std::string output_plot_subdir = (std::string) "gnuplot" + "/";
         
         // Fitting parameters.
-        const Real & negative_shift = config("FIT/negative_shift", 1.0) * KB_T;
-        const Real & positive_shift = config("FIT/positive_shift", 1.0) * KB_T;
+        Real negative_shift = config("FIT/negative_shift", 1.0) * K_B * 300;
+        Real positive_shift = config("FIT/positive_shift", 1.0) * K_B * 300;
         
         assert( negative_shift > 0 && positive_shift > 0 );
         
@@ -148,7 +148,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             }
             
             Index iterationsNo = config("FIT/iterationsNo", 3);
-            Index minimum = 0;    // The index of the minimum in
+            Index minimum = 0;    // The index of the minimum sigma.
+            Index sigmaOld = params.sigma();    // Old optimum value.
             
             // Fitting loop.
             
@@ -158,19 +159,21 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 
                 // Update sigma based on the previous step.
                 
-                if ( j > 0 )
+                if ( j >= 1 )
                 {
-                    if ( params.sigma() != sigmaMin )
+                    sigmaOld = sigma(minimum);
+                    
+                    if ( sigmaOld != sigmaMin )
                     {
-                        // Sigma can't be < 0. If so, let it be sigmaMin.
-                        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigma(minimum) - negative_shift, sigmaMin), sigma(minimum));
-                        VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigma(minimum), sigma(minimum) + positive_shift);
+                        // Sigma can't be < 0. If so, set it equal to sigmaMin.
+                        VectorXr temp1 = VectorXr::LinSpaced(nSplits, std::max(sigmaOld - negative_shift, sigmaMin), sigmaOld);
+                        VectorXr temp2 = VectorXr::LinSpaced(nSplits + 1, sigmaOld, sigmaOld + positive_shift);
                         
                         sigma << temp1, temp2.segment(1, temp2.size() - 1);
                     }
                     else
                     {
-                        sigma = VectorXr::LinSpaced(2 * nSplits, sigma(minimum), sigma(minimum) + positive_shift);
+                        sigma = VectorXr::LinSpaced(2 * nSplits, sigmaOld, sigmaOld + positive_shift);
                     }
                 }
                 
@@ -249,6 +252,20 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 params.setT_semic( params.eps_semic() * (params.A_semic() / (C_dep_experim(minimum) - params.C_sb())
                                    - params.t_ins() / params.eps_ins()) );
                                    
+                // Step 4: update fitting parameters.
+                if ( sigma(minimum) < sigmaOld )
+                {
+                    positive_shift = sigmaOld - sigma(minimum);
+                }
+                else if ( sigma(minimum) > sigmaOld )
+                {
+                    negative_shift = sigma(minimum) - sigmaOld;
+                }
+                else if ( sigma(minimum) == sigmaOld )
+                {
+                    break;
+                }
+                
                 // Print to output.
                 output_fit << "\tBest sigma: " << std::setprecision(4) << sigma(minimum) / KB_T;
                 output_fit << " (from simulation " << params.simulationNo();
@@ -267,7 +284,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                         break;
                         
                     case 2:
-                        output_fit << "\tL^inf-error: ";
+                        output_fit << "\tPeak-error: ";
                         break;
                 }
                 
