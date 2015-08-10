@@ -251,20 +251,6 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Step 3: update t_semic.
                 params.setT_semic( params.eps_semic() * (params.A_semic() / (C_dep_experim(minimum) - params.C_sb())
                                    - params.t_ins() / params.eps_ins()) );
-                                   
-                // Step 4: update fitting parameters.
-                if ( sigma(minimum) < sigmaOld )
-                {
-                    positive_shift = sigmaOld - sigma(minimum);
-                }
-                else if ( sigma(minimum) > sigmaOld )
-                {
-                    negative_shift = sigma(minimum) - sigmaOld;
-                }
-                else if ( sigma(minimum) == sigmaOld )
-                {
-                    break;
-                }
                 
                 // Print to output.
                 output_fit << "\tBest sigma: " << std::setprecision(4) << sigma(minimum) / KB_T;
@@ -296,6 +282,20 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 if ( j < iterationsNo - 1 )
                 {
                     output_fit << std::endl;
+                }
+                                   
+                // Update fitting parameters.
+                if ( sigma(minimum) < sigmaOld )
+                {
+                    positive_shift = sigmaOld - sigma(minimum);
+                }
+                else if ( sigma(minimum) > sigmaOld )
+                {
+                    negative_shift = sigma(minimum) - sigmaOld;
+                }
+                else if ( sigma(minimum) == sigmaOld )
+                {
+                    break;
                 }
             }
             
