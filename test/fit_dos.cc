@@ -295,6 +295,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 }
                 else if ( sigma(minimum) == sigmaOld )
                 {
+                    output_fit << "Convergence reached!" << std::endl;
+                    
                     break;
                 }
             }
