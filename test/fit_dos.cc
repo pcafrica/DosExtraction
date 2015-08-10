@@ -149,7 +149,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             
             Index iterationsNo = config("FIT/iterationsNo", 3);
             Index minimum = 0;    // The index of the minimum sigma.
-            Index sigmaOld = params.sigma();    // Old optimum value.
+            Real sigmaOld = params.sigma();    // Previous minimum value.
             
             // Fitting loop.
             
@@ -283,7 +283,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 {
                     output_fit << std::endl;
                 }
-                                   
+                
                 // Update fitting parameters.
                 if ( sigma(minimum) < sigmaOld )
                 {
