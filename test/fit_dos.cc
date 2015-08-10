@@ -199,6 +199,10 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                         
                         #pragma omp critical
                         {
+                            // Re-initialize configuration file for each thread.
+                            config = (GetPot) utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
+                                                                config_directory).c_str();
+                                                                
                             model = (DosModel) params;
                             model.setSigma( sigma(k) );
                         }
