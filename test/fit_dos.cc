@@ -71,8 +71,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
         const std::string output_plot_subdir = (std::string) "gnuplot" + "/";
         
         // Fitting parameters.
-        Real negative_shift = config("FIT/negative_shift", 1.0) * K_B * 300;
-        Real positive_shift = config("FIT/positive_shift", 1.0) * K_B * 300;
+        Real negative_shift = config("FIT/negative_shift", 1.0) * KB_T;
+        Real positive_shift = config("FIT/positive_shift", 1.0) * KB_T;
         
         assert( negative_shift > 0 && positive_shift > 0 );
         
