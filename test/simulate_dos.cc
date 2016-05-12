@@ -115,7 +115,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 std::stringstream simulationNo;
                 simulationNo << std::setw(2) << std::setfill('0') << params.simulationNo();
                 
-                for ( Index j = 0; j < iterationsNo && ompThrewException; ++j )
+                for ( Index j = 0; j < iterationsNo; ++j )
                 {
                         model = (DosModel) params;
                         
