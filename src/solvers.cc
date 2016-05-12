@@ -202,8 +202,8 @@ void Bim1D::assembleMass(const VectorXr & delta, const VectorXr & zeta)
     return;
 }
 
-NonLinearPoisson1D::NonLinearPoisson1D(const PdeSolver1D & solver, const Index & maxIterationsNo, const Real & tolerance)
-    : solver_(solver), maxIterationsNo_(maxIterationsNo), tolerance_(tolerance), qTot_(0.0), cTot_(0.0)/*, cTot_n_(0.0) */
+NonLinearPoisson1D::NonLinearPoisson1D(const ParamList & params, const PdeSolver1D & solver, const Index & maxIterationsNo, const Real & tolerance)
+    : params_(params), solver_(solver), maxIterationsNo_(maxIterationsNo), tolerance_(tolerance), PhiBcorr_(0.0), qTot_(0.0), cTot_(0.0)/*, cTot_n_(0.0) */
 {
     assert( maxIterationsNo_ > 0   );
     assert( tolerance_       > 0.0 );
@@ -217,11 +217,11 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
     assert( solver_.Mass_ .rows() == solver_.mesh_.size() );
     assert( solver_.Mass_ .cols() == solver_.mesh_.size() );
     
-    phi_    = init_guess;
-    norm_   = VectorXr::Zero( maxIterationsNo_ );
-    qTot_   = 0.0;
-    cTot_   = 0.0;
-    /* cTot_n_ = 0.0; */
+    phi_      = init_guess;
+    norm_     = VectorXr::Zero( maxIterationsNo_ );
+    
+    PhiBcorr_ = 0.0;
+    qTot_     = 0.0;
     
     VectorXr phiOld = phi_;
     
@@ -230,7 +230,7 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
     
     SparseXr Jac(solver_.Stiff_.rows(), solver_.Stiff_.rows());
     
-    SimplicialLDLT<SparseXr> systemSolver;    // Initialize system solver.
+    SparseLU<SparseXr> systemSolver;    // Initialize system solver.
     
     // Newton loop.
     {
@@ -238,21 +238,35 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
         
         for ( ; k < maxIterationsNo_; ++k )
         {
-            phiOld.segment(1, phiOld.size() - 2) = phi_.segment(1, phiOld.size() - 2);
+            phiOld = phi_;
             
-            charge  = charge_fun. charge(phiOld);
-            dcharge = charge_fun.dcharge(phiOld);
+            charge  = charge_fun. charge(phiOld.array() + PhiBcorr_);
+            dcharge = charge_fun.dcharge(phiOld.array() + PhiBcorr_);
             
             // System assembly.
+            VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge);
+            
+            Real E = res(0) / params_.eps_semic();
+            
+            const Real coeff = params_.PhiBcoeff();
+            const Real f = coeff * coeff * (-E); // Negative field => electron injection.
+            
+            if (f > 0)
+            {
+                PhiBcorr_ = std::sqrt(f);
+            }
+            else
+            {
+                PhiBcorr_ = f / 4;
+            }
+            
             Jac = computeJac(dcharge);
             
             systemSolver.compute( (SparseXr) Jac.block(1, 1, Jac.rows() - 2, Jac.cols() - 2) );
             
-            VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge).segment(1, phiOld.size() - 2);
+            VectorXr dphi = - systemSolver.solve(res.segment(1, phiOld.size() - 2));
             
-            VectorXr dphi = - systemSolver.solve(res);
-            
-            /* for ( Index i = 0; i < dphi.size(); ++i )      // Tolerance cut-off.
+            /*for ( Index i = 0; i < dphi.size(); ++i )    // Damping.
             {
                 if ( dphi(i) > tolerance_ )
                 {
@@ -262,7 +276,7 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
                 {
                     dphi(i) = - tolerance_;
                 }
-            } */
+            }*/
             
             // Newton step.
             phi_.segment(1, phi_.size() - 2) += dphi;    // Dirichlet conditions on boundary.
@@ -291,7 +305,7 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
     
     qTot_ -= solver_.Mass_.coeff(solver_.Mass_.rows() - 1, solver_.Mass_.cols() - 1) * charge(charge.size() - 1);
     
-    dcharge = charge_fun.dcharge(phi_);
+    dcharge = charge_fun.dcharge(phi_.array() + PhiBcorr_);
     
     // Compute total capacitance.
     // System assembly.
@@ -302,32 +316,13 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
     VectorXr u = VectorXr::LinSpaced(phi_.size(), 0, 1);
     
     // Constant term: b = - Jac(2:end-1, [1 end]) * u([1 end]');
-    VectorXr b = VectorXr::Zero( phi_.size() - 2 );
-    
-    for ( Index i = 1; i < phi_.size() - 1; ++i )
-    {
-        if ( Jac.coeff(i, 0) != 0.0 || Jac.coeff(i, Jac.cols() - 1) != 0.0 )
-        {
-            b(i - 1) = - (Jac.coeff(i, 0) * u(0) + Jac.coeff(i, Jac.cols() - 1) * u(u.size() - 1));
-        }
-    }
-    
+    VectorXr b = -(Jac.block(1, 0, Jac.rows() - 2, 1) * u(0) +
+                   Jac.block(1, Jac.cols() - 1, Jac.rows() - 2, 1) * u(u.size() - 1));
+                   
     u.segment(1, u.size() - 2) = systemSolver.solve(b);
     
-    for ( Index i = 0; i < phi_.size(); ++i )
-    {
-        if ( Jac.coeff(Jac.rows() - 1, i) != 0.0 )
-        {
-            cTot_   += Jac.coeff(Jac.rows() - 1, i) * u(i);
-        }
-        
-        /* if ( Jac.coeff(0, i) != 0.0 )
-        {
-            cTot_n_ += Jac.coeff(0, i) * u(i);
-        } */
-    }
-    
-    // cTot_n_ += cTot_;
+    cTot_ = ((VectorXr) Jac.row(Jac.rows() - 1)).dot(u);
+    /* cTot_n_ = ((VectorXr) Jac.row(0)).dot(u) + cTot_; */
 }
 
 SparseXr NonLinearPoisson1D::computeJac(const VectorXr & x) const

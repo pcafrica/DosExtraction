@@ -37,6 +37,8 @@ ParamList::ParamList(const RowVectorXr & list)
     assert( list(22) >  0   );
     assert( list(23) >  0   );
     assert( list(24) >  0   );
+    assert( list(25) <  0   );
+    assert( list(26) >  0   );
     
     simulationNo_ = list( 0)       ;
     t_semic_      = list( 1)       ;

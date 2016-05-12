@@ -136,7 +136,7 @@ void utility::write_binary(const std::string & filename, const Matrix & matrix)
     
     output.write((char*) (&nRows), sizeof(typename Matrix::Index));
     output.write((char*) (&nCols), sizeof(typename Matrix::Index));
-    output.write((char *) matrix.data(), nRows * nCols * sizeof(typename Matrix::Scalar));
+    output.write((char*) matrix.data(), nRows * nCols * sizeof(typename Matrix::Scalar));
     
     output.close();
 }
@@ -148,14 +148,19 @@ void utility::read_binary(const std::string & filename, Matrix & matrix)
     
     input.open(filename, std::ios_base::in | std::ios_base::binary);
     
-    typename Matrix::Index nRows=0, nCols=0;
+    if (input.bad())
+    {
+        throw std::ofstream::failure ("ERROR: input files cannot be opened or directory does not exist.");
+    }
+    
+    typename Matrix::Index nRows = 0, nCols = 0;
     
     input.read((char*) (&nRows), sizeof(typename Matrix::Index));
     input.read((char*) (&nCols), sizeof(typename Matrix::Index));
     
     matrix.resize(nRows, nCols);
     
-    input.read((char *) matrix.data() , nRows * nCols * sizeof(typename Matrix::Scalar));
+    input.read((char*) matrix.data() , nRows * nCols * sizeof(typename Matrix::Scalar));
     
     input.close();
 }

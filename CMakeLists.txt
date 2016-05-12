@@ -31,7 +31,7 @@ set(TESTDIR "${CMAKE_SOURCE_DIR}/test")    # Directory where to find the test so
 file(GLOB SIMULATE_SRC ${TESTDIR}/${SIMULATE}.cc)
 file(GLOB FIT_SRC ${TESTDIR}/${FIT}.cc)
 file(GLOB SRCS ${SRCDIR}/*.cc ${SRCDIR}/*.cpp)
-file(GLOB HDRS ${SRCDIR}/*.h ${SRCDIR}/*.hpp ${TESTDIR}/${SIMULATE_SRC}.h ${TESTDIR}/${FIT_SRC}.h)
+file(GLOB HDRS ${SRCDIR}/*.h ${SRCDIR}/*.hpp)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
@@ -43,7 +43,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-Og -g")
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING    # Default build type: Release.
-      "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+      "Choose the type of build, options are: None Debug MinSizeRel Release RelWithDebInfo."
       FORCE)
 endif()
 
@@ -52,7 +52,7 @@ endif()
 ################################################################
 include_directories(SYSTEM "${CMAKE_SOURCE_DIR}" "${CMAKE_SOURCE_DIR}/include")
 
-find_package(Eigen3 REQUIRED)
+find_package(Eigen3 3.2 REQUIRED)
 include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
 
 find_package(OpenMP)

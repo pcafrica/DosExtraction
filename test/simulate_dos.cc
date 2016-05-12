@@ -61,6 +61,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
             }
         }
         
+        Index iterationsNo = config("FIT/iterationsNo", 3);
+        
         // Set number of threads.
         omp_set_num_threads( config("nThreads", (int) nSimulations) );
         
@@ -90,6 +92,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 }
                 
                 // Initialize model.
+                ParamList params;
                 DosModel model;
                 
                 #pragma omp critical
@@ -101,29 +104,48 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     // Import params.
                     if ( nSimulations == parser.nRows() )    // Simulate each row in the input file.
                     {
-                        model = (DosModel) (ParamList) parser.importRow( i + 1 );
+                        params = (ParamList) parser.importRow( i + 1 );
                     }
                     else
                     {
-                        model = (DosModel) (ParamList) parser.importRow( config("indexes", (int) (i + 1), i) );
+                        params = (ParamList) parser.importRow( config("indexes", (int) (i + 1), i) );
                     }
                 }
                 
+                std::stringstream simulationNo;
+                simulationNo << std::setw(2) << std::setfill('0') << params.simulationNo();
+                
+                for ( Index j = 0; j < iterationsNo; ++j )
+                {
+                        model = (DosModel) params;
+                        
+                        #pragma omp critical
+                        {
+                            for ( Index k = 0; k < j; ++k )
+                            {
+                                std::cout << "  ";
+                            }
+                            
+                            std::cout << "Performing simulation No. " << simulationNo.str() << ", fitting iteration " << (j + 1) << "..." << std::endl;
+                        }
+                        
+                        // Output filename.
+                        const std::string output_filename = "output_" + simulationNo.str();
+                        
+                        // Remove possible old files.
+                        if ( system( ("exec rm -f " + output_directory + output_filename + "* "
+                                    + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() ) );
+                                    
+                        // Simulate and save output files.
+                        model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
+                        
+                        params.setC_sb( params.C_sb() + model.C_acc_experim() - model.C_acc_simulated() );
+                        params.setT_semic( params.eps_semic() * (params.A_semic() / (model.C_dep_experim() - params.C_sb())
+                                          - params.t_ins() / params.eps_ins()) );
+                }
+                
                 #pragma omp critical
-                std::cout << "Performing simulation No. " << model.params().simulationNo() << "..." << std::endl;
-                
-                // Output filename.
-                const std::string output_filename = "output_" + std::to_string( model.params().simulationNo() );
-                
-                // Remove possible old files.
-                if ( system( ("exec rm -f " + output_directory + output_filename + "* "
-                              + output_directory + output_plot_subdir + output_filename + "* 2> /dev/null").c_str() ) );
-                              
-                // Simulate and save output files.
-                model.simulate(config, input_experim, output_directory, output_plot_subdir, output_filename);
-                
-                #pragma omp critical
-                std::cout << "\t\t\t\tSimulation No. " << model.params().simulationNo() << " complete!" << std::endl;
+                std::cout << "\t\t\t\tSimulation No. " << simulationNo.str() << " complete!" << std::endl;
             }
             catch ( const std::exception & genericException )
             {
@@ -132,6 +154,11 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     ompException = genericException.what();
                     ompThrewException = true;
                 }
+            }
+            
+            if ( ompThrewException )
+            {
+                break;
             }
         }
         

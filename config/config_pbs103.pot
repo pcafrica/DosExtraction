@@ -1,0 +1,93 @@
+################################################################
+##                     Configuration file                     ##
+################################################################
+
+################################################################
+## General settings.
+################################################################
+
+# Input filenames.
+input_params  = input_params_12-10-27/PhiB_0.53eV_23318Hz.csv
+input_experim = data_CV_N2200_12-10-27_23318Hz.csv
+
+# Input files contain headers definition:
+# 1 = true,
+# 0 = false.
+skipHeaders = 1
+
+# Simulate each row in the input_params file:
+# 1 = true,
+# 0 = false.
+simulate_all = 1
+
+    # If "simulate_all = 0", set indexes of rows to simulate.
+    indexes = '4 9'
+
+# Number of threads to be used for a parallel simulation.
+nThreads = 32
+
+# The directory where output files will be saved,
+# relative to the path where the executable is run from.
+output_directory = ./output_12-10-27_PhiB_0.53eV_23318Hz
+
+################################################################
+## Fitting.
+################################################################
+[FIT]
+# Parameters for automatically fit sigma_1.
+
+    # Define the range of values where to find the best sigma
+    # as [sigma - negative_shift, sigma + positive_shift]:
+    negative_shift = 1
+    positive_shift = 1
+    
+    # [sigma - negative_shift, sigma] and (sigma, sigma + positive_shift]
+    # are split into nSplits subdivisions.
+    nSplits = 4
+    
+    # Number of fitting iterations.
+    iterationsNo = 1
+    
+    # Error norm to minimize:
+    # 0 = L^2,
+    # 1 = H^1,
+    # 2 = distance between peaks (on dC/dV).
+    errorNorm = 2
+    
+################################################################
+## Numerical methods.
+################################################################
+
+# Constitutive relation for the Density of States:
+# 1 = Multiple Gaussians,
+# 0 = Single Exponential.
+DOS = 1
+
+[QuadratureRule]
+# Quadrature rule.
+
+    # Rule to be used:
+    # 1 = Gauss-Hermite (Gaussian weight),
+    # 0 = Gauss-Laguerre (Exponential weight).
+    rule = 1
+    
+    # Number of nodes.
+    nNodes = 101
+    
+    # Maximum number of iterations for the iterative algorithm
+    # used to compute nodes and weights.
+    maxIterationsNo = 1000
+    
+    # Tolerance for the iterative algorithm
+    # used to compute nodes and weights.
+    tolerance = 1.0e-14
+
+[NLP]
+# Newton solver for non-linear Poisson equation.
+    
+    # Maximum number of iterations.
+    maxIterationsNo = 100
+    
+    # Tolerance.
+    tolerance = 1.0e-10
+    

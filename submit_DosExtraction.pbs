@@ -1,0 +1,30 @@
+#!/bin/bash
+#PBS -S /bin/bash
+
+#PBS -N DosExtraction
+#PBS -q gigat
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=32
+
+#PBS -m abe
+#PBS -M pasqualeclaudio.africa@polimi.it
+
+LogFile=pbs_error_${PBS_ARRAYID}.log
+
+cd ${PBS_O_WORKDIR}
+echo -e "Script host: ${PBS_O_HOST} \n"
+echo -e "Allocated nodes: $(cat ${PBS_NODEFILE} -)\n"
+echo -e "Working directory: ${PBS_O_WORKDIR} \n"
+echo -e "Start date: $(date) \n"
+
+# Run the executable.
+./simulate_dos -f ${CONFIG_NAME}${PBS_ARRAYID}.pot \
+2> $LogFile
+
+wait
+
+if ! [[ -s $LogFile ]] ; then
+    rm -rf $LogFile &> /dev/null
+fi;
+
+echo -e "End date: $(date) \n"

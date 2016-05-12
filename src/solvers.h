@@ -200,11 +200,12 @@ class NonLinearPoisson1D
         NonLinearPoisson1D() = delete;
         /**
          * @brief Constructor.
+         * @param[in] params          : a parameter list;
          * @param[in] solver          : the solver to be used;
          * @param[in] maxIterationsNo : maximum number of iterations desired;
          * @param[in] tolerance       : tolerance desired.
          */
-        NonLinearPoisson1D(const PdeSolver1D &, const Index & = 100, const Real & = 1.0e-6);
+        NonLinearPoisson1D(const ParamList &, const PdeSolver1D &, const Index & = 100, const Real & = 1.0e-6);
         /**
          * @brief Destructor (defaulted).
          */
@@ -221,11 +222,12 @@ class NonLinearPoisson1D
          * @name Getter methods
          * @{
          */
-        inline const VectorXr & phi()    const;
-        inline const VectorXr & norm()   const;
-        inline const Real     & qTot()   const;
-        inline const Real     & cTot()   const;
-        /* inline const Real     & cTot_n() const; */
+        inline const Real     & PhiBcorr() const;
+        inline const VectorXr & phi()      const;
+        inline const VectorXr & norm()     const;
+        inline const Real     & qTot()     const;
+        inline const Real     & cTot()     const;
+        /*inline const Real     & cTot_n()   const; */
         
         /**
          * @}
@@ -239,10 +241,13 @@ class NonLinearPoisson1D
          */
         SparseXr computeJac(const VectorXr &) const;
         
+        const ParamList   & params_;    /**< @brief The arameter list. */
         const PdeSolver1D & solver_;    /**< @brief Solver handler. */
         
         const Index & maxIterationsNo_;    /**< @brief Maximum number of iterations. */
         const Real  & tolerance_      ;    /**< @brief Tolerance. */
+        
+        Real PhiBcorr_;    /**< @brief Barrier correction. */
         
         VectorXr phi_ ;    /**< @brief The electric potential. */
         VectorXr norm_;    /**< @brief Vector holding @f$ L^\infty @f$-norm errors for each iteration. */
@@ -266,6 +271,11 @@ inline const SparseXr & PdeSolver1D::Stiff() const
 inline const SparseXr & PdeSolver1D::Mass() const
 {
     return Mass_;
+}
+
+inline const Real & NonLinearPoisson1D::PhiBcorr() const
+{
+    return PhiBcorr_;
 }
 
 inline const VectorXr & NonLinearPoisson1D::phi() const

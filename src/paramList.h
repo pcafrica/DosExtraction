@@ -83,6 +83,7 @@ class ParamList
         inline const Real  & V_min()        const;
         inline const Real  & V_max()        const;
         
+        inline Real PhiBcoeff() const;
         /**
          * @}
          */
@@ -261,6 +262,13 @@ inline const Real & ParamList::V_min() const
 inline const Real & ParamList::V_max() const
 {
     return V_max_;
+}
+
+inline Real ParamList::PhiBcoeff() const
+{
+    Real schottky = std::sqrt(constants::Q / (4 * constants::PI * eps_semic_));
+    
+    return schottky;
 }
 
 inline void ParamList::setT_semic(const Real & t_semic)

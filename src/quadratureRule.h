@@ -17,8 +17,8 @@
 #ifndef QUADRATURERULE_H
 #define QUADRATURERULE_H
 
-#include "typedefs.h"
 #include "sandia_rules.hpp"
+#include "typedefs.h"
 
 /**
  * @class QuadratureRule

@@ -201,8 +201,8 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                         {
                             // Re-initialize configuration file for each thread.
                             config = (GetPot) utility::full_path(commandLine.follow("config.pot", 2, "-f", "--file"),
-                                                                config_directory).c_str();
-                                                                
+                                                                 config_directory).c_str();
+                                                                 
                             model = (DosModel) params;
                             model.setSigma( sigma(k) );
                         }
@@ -255,7 +255,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 // Step 3: update t_semic.
                 params.setT_semic( params.eps_semic() * (params.A_semic() / (C_dep_experim(minimum) - params.C_sb())
                                    - params.t_ins() / params.eps_ins()) );
-                
+                                   
                 // Print to output.
                 output_fit << "\tBest sigma: " << std::setprecision(4) << sigma(minimum) / KB_T;
                 output_fit << " (from simulation " << params.simulationNo();
