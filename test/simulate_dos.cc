@@ -115,7 +115,7 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                 std::stringstream simulationNo;
                 simulationNo << std::setw(2) << std::setfill('0') << params.simulationNo();
                 
-                for ( Index j = 0; j < iterationsNo; ++j )
+                for ( Index j = 0; j < iterationsNo && ompThrewException; ++j )
                 {
                         model = (DosModel) params;
                         
@@ -154,11 +154,6 @@ int main(const int argc, const char * const * argv, const char * const * envp)
                     ompException = genericException.what();
                     ompThrewException = true;
                 }
-            }
-            
-            if ( ompThrewException )
-            {
-                break;
             }
         }
         
