@@ -240,8 +240,8 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
         {
             phiOld = phi_;
             
-            charge  = charge_fun. charge(phiOld.array() + PhiBcorr_);
-            dcharge = charge_fun.dcharge(phiOld.array() + PhiBcorr_);
+            charge  = charge_fun. charge(phiOld.array() + constants::V_TH * PhiBcorr_);
+            dcharge = charge_fun.dcharge(phiOld.array() + constants::V_TH * PhiBcorr_);
             
             // System assembly.
             VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge);

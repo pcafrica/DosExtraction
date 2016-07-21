@@ -31,6 +31,7 @@ namespace constants
     const Real   K_B = 1.380648813131e-23;    /**< @brief Boltzmann's constant @f$ \left[ J \cdot K^{-1} \right] @f$. */
     const Real T_REF = 300               ;    /**< @brief Reference temperature, used to normalize disorder parameters @f$ \left[ K \right] @f$. */
     const Real  KB_T = K_B * T_REF       ;    /**< @brief @f$ K_B \cdot T \left[ J \right] @f$. */
+    const Real  V_TH = KB_T / Q          ;    /**< @brief Thermall voltage @f$ \left[ V \right] @f$. */
     const Real  EPS0 = 8.854187817620e-12;    /**< @brief Vacuum electrical permittivity @f$ \left[ C \cdot V^{-1} \cdot m^{-1} \right] @f$. */
 }
 

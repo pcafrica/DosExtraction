@@ -266,7 +266,7 @@ inline const Real & ParamList::V_max() const
 
 inline Real ParamList::PhiBcoeff() const
 {
-    Real schottky = std::sqrt(constants::Q / (4 * constants::PI * eps_semic_));
+    Real schottky = std::sqrt(constants::Q / (4 * constants::PI * eps_semic_)) * constants::V_TH;
     
     return schottky;
 }
