@@ -246,10 +246,11 @@ void NonLinearPoisson1D::apply(const VectorXr & init_guess, const Charge & charg
             // System assembly.
             VectorXr res = (solver_.Stiff_ * phiOld - solver_.Mass_ * charge);
             
-            Real E = res(0) / params_.eps_semic();
+			// Outward electric field.
+            Real E = -res(0) / params_.eps_semic();
             
             const Real coeff = params_.PhiBcoeff();
-            const Real f = coeff * coeff * (-E); // Negative field => electron injection.
+            const Real f = coeff * coeff * E;
             
             if (f > 0)
             {
